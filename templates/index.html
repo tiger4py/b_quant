@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A股数据面板</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    min-height: 100vh;
+  }
+
+  /* ── Header ────────────────────────────────── */
+  .header {
+    background: linear-gradient(135deg, #1a1d2e 0%, #161822 100%);
+    border-bottom: 1px solid #2a2d3e;
+    padding: 20px 32px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .header .logo {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; color: #fff; font-weight: 700;
+  }
+  .header h1 { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; }
+  .header .sub { color: #6b7280; font-size: 13px; margin-left: auto; }
+
+  /* ── Layout ────────────────────────────────── */
+  .content { max-width: 1200px; margin: 0 auto; padding: 28px 32px; }
+
+  .section-title {
+    font-size: 15px; font-weight: 600; color: #8b92a0;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 16px; margin-top: 36px;
+  }
+  .section-title:first-of-type { margin-top: 0; }
+
+  /* ── Stat Cards ────────────────────────────── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .stat-card {
+    background: #161822;
+    border: 1px solid #2a2d3e;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex; align-items: center; gap: 16px;
+    transition: border-color .2s;
+  }
+  .stat-card:hover { border-color: #3d4158; }
+  .stat-icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .stat-icon.blue   { background: rgba(59,130,246,.15); color: #60a5fa; }
+  .stat-icon.green  { background: rgba(16,185,129,.15); color: #34d399; }
+  .stat-icon.purple { background: rgba(139,92,246,.15); color: #a78bfa; }
+  .stat-icon.amber  { background: rgba(245,158,11,.15); color: #fbbf24; }
+  .stat-icon.rose   { background: rgba(244,63,94,.15); color: #fb7185; }
+  .stat-label { font-size: 12px; color: #6b7280; margin-bottom: 4px; }
+  .stat-value { font-size: 26px; font-weight: 700; color: #f1f5f9; }
+  .stat-date  { font-size: 14px; font-weight: 600; color: #f1f5f9; }
+
+  /* ── Action Buttons ────────────────────────── */
+  .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    padding: 10px 22px; border: none; border-radius: 8px;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 7px;
+    transition: all .2s; letter-spacing: .2px;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-blue   { background: #3b82f6; color: #fff; }
+  .btn-blue:hover   { background: #2563eb; }
+  .btn-teal   { background: #0d9488; color: #fff; }
+  .btn-teal:hover   { background: #0f766e; }
+  .btn-orange { background: #d97706; color: #fff; }
+  .btn-orange:hover { background: #b45309; }
+  .btn-ghost  { background: #1e2033; color: #c9cdd4; border: 1px solid #2a2d3e; }
+  .btn-ghost:hover  { background: #282b3d; border-color: #3d4158; }
+  .btn:disabled { opacity: .5; pointer-events: none; }
+
+  /* ── Search Bar ────────────────────────────── */
+  .search-bar {
+    display: flex; gap: 10px; align-items: center;
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 10px;
+    padding: 6px;
+  }
+  .search-bar input {
+    flex: 1; background: transparent; border: none; outline: none;
+    padding: 10px 12px; color: #e1e4e8; font-size: 14px;
+  }
+  .search-bar input::placeholder { color: #4b5263; }
+
+  /* ── Result Table ──────────────────────────── */
+  .result-table {
+    width: 100%; border-collapse: collapse;
+    background: #161822; border-radius: 12px; overflow: hidden;
+    border: 1px solid #2a2d3e; margin-top: 16px;
+  }
+  .result-table th {
+    text-align: left; padding: 12px 16px;
+    font-size: 12px; font-weight: 600; color: #6b7280;
+    text-transform: uppercase; letter-spacing: .5px;
+    background: #1a1d2e; border-bottom: 1px solid #2a2d3e;
+  }
+  .result-table td {
+    padding: 10px 16px; font-size: 14px;
+    border-bottom: 1px solid #1e2033; font-variant-numeric: tabular-nums;
+  }
+  .result-table tr:hover td { background: #1a1d2e; }
+  .price-up   { color: #ef4444; }
+  .price-down { color: #22c55e; }
+
+  /* ── Toast ──────────────────────────────────── */
+  .toast-container { position: fixed; top: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
+  .toast {
+    padding: 14px 20px; border-radius: 10px; font-size: 14px; font-weight: 500;
+    animation: slideIn .3s ease; max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .toast.success { background: #064e3b; color: #6ee7b7; border: 1px solid #065f46; }
+  .toast.error   { background: #7f1d1d; color: #fca5a5; border: 1px solid #991b1b; }
+  .toast.info    { background: #1e3a5f; color: #93c5fd; border: 1px solid #1e3a8a; }
+  @keyframes slideIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+  /* ── Spinner ───────────────────────────────── */
+  .spinner {
+    display: inline-block; width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,.2);
+    border-top-color: #fff; border-radius: 50%;
+    animation: spin .6s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Empty state ───────────────────────────── */
+  .empty { text-align: center; padding: 48px 0; color: #6b7280; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">股</div>
+  <h1>A股数据面板</h1>
+  <span class="sub">BaoStock &middot; AkShare</span>
+</div>
+
+<div class="content">
+
+  <div class="section-title">数据概览</div>
+  <div class="stats-grid" id="stats">
+    <div class="stat-card">
+      <div class="stat-icon blue">&#x1F4CA;</div>
+      <div>
+        <div class="stat-label">股票总数</div>
+        <div class="stat-value" id="v-stocks">--</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon green">&#x1F4C8;</div>
+      <div>
+        <div class="stat-label">日线记录</div>
+        <div class="stat-value" id="v-daily">--</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon purple">&#x1F9E9;</div>
+      <div>
+        <div class="stat-label">概念板块</div>
+        <div class="stat-value" id="v-concepts">--</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon amber">&#x1F517;</div>
+      <div>
+        <div class="stat-label">概念关联</div>
+        <div class="stat-value" id="v-rels">--</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon rose">&#x1F4C5;</div>
+      <div>
+        <div class="stat-label">最新交易日</div>
+        <div class="stat-date" id="v-date">--</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">数据下载</div>
+  <div class="btn-row">
+    <button class="btn btn-blue" onclick="downloadStocks()">
+      <span>&#x2B07;</span> 下载股票列表
+    </button>
+    <button class="btn btn-teal" onclick="downloadDaily()">
+      <span>&#x2B07;</span> 下载日K线 (全部)
+    </button>
+    <button class="btn btn-orange" onclick="downloadConcepts()">
+      <span>&#x2B07;</span> 下载同花顺概念
+    </button>
+  </div>
+
+  <div class="section-title">日K线查询</div>
+  <div class="search-bar">
+    <input id="q-code" placeholder="输入股票代码，如 sh.600000" onkeydown="if(event.key==='Enter') queryDaily()">
+    <button class="btn btn-ghost" onclick="queryDaily()">&#x1F50D; 查询</button>
+  </div>
+  <div style="display:none; margin-top:16px;" id="result-wrap">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+      <span style="font-weight:600; color:#c9cdd4;" id="result-title"></span>
+      <span style="font-size:12px; color:#6b7280;" id="result-count"></span>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>开盘</th>
+            <th>最高</th>
+            <th>最低</th>
+            <th>收盘</th>
+            <th>成交量</th>
+            <th>换手率</th>
+            <th>PE(TTM)</th>
+          </tr>
+        </thead>
+        <tbody id="result-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast-container" id="toasts"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+// ── Toast ───────────────────────────────────────
+let toastId = 0;
+function toast(text, type) {
+  type = type || 'info';
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  const icons = { success: '&#x2705;', error: '&#x274C;', info: '&#x2139;&#xFE0F;' };
+  t.innerHTML = '<span>' + (icons[type] || '') + '</span> ' + text;
+  $('toasts').appendChild(t);
+  const id = ++toastId;
+  setTimeout(() => { if (id === toastId) t.remove(); }, 3500);
+}
+
+// ── Stats ───────────────────────────────────────
+async function loadStats() {
+  try {
+    const r = await fetch('/api/stats').then(x => x.json());
+    $('v-stocks').textContent = r.stocks.toLocaleString();
+    $('v-daily').textContent = r.daily_records.toLocaleString();
+    $('v-concepts').textContent = r.concepts.toLocaleString();
+    $('v-rels').textContent = r.stock_concept_relations.toLocaleString();
+    $('v-date').textContent = r.latest_trade_date || '--';
+  } catch(e) { /* silent */ }
+}
+
+// ── Downloads ───────────────────────────────────
+async function downloadStocks() {
+  const btn = event.target.closest('button');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 下载中...';
+  try {
+    const r = await fetch('/api/download/stocks', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:'{}'
+    }).then(x => x.json());
+    toast('股票列表下载完成，新增 ' + r.new_stocks + ' 只', 'success');
+    loadStats();
+  } catch(e) { toast(e.message, 'error'); }
+  finally { btn.disabled = false; btn.innerHTML = '<span>&#x2B07;</span> 下载股票列表'; }
+}
+
+async function downloadDaily() {
+  const btn = event.target.closest('button');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 下载中...';
+  try {
+    const r = await fetch('/api/download/daily', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:'{}'
+    }).then(x => x.json());
+    toast('日K线下载完成，更新 ' + r.rows_upserted.toLocaleString() + ' 行', 'success');
+    loadStats();
+  } catch(e) { toast(e.message, 'error'); }
+  finally { btn.disabled = false; btn.innerHTML = '<span>&#x2B07;</span> 下载日K线 (全部)'; }
+}
+
+async function downloadConcepts() {
+  const btn = event.target.closest('button');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> 下载中...';
+  try {
+    const r = await fetch('/api/download/concepts', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:'{}'
+    }).then(x => x.json());
+    toast('概念下载完成，新增 ' + r.new_concepts + ' 个概念, ' + r.new_relations + ' 条关联', 'success');
+    loadStats();
+  } catch(e) { toast(e.message, 'error'); }
+  finally { btn.disabled = false; btn.innerHTML = '<span>&#x2B07;</span> 下载同花顺概念'; }
+}
+
+// ── Query ───────────────────────────────────────
+const COL_KEYS = ['trade_date','open','high','low','close','volume','turn','pe_ttm'];
+async function queryDaily() {
+  const code = $('q-code').value.trim();
+  if (!code) { toast('请输入股票代码', 'error'); return; }
+
+  const r = await fetch('/api/stocks/' + code + '/daily').then(x => x.json());
+  const wrap = $('result-wrap');
+  wrap.style.display = 'block';
+  $('result-title').textContent = code;
+
+  if (!Array.isArray(r) || r.length === 0) {
+    $('result-count').textContent = '无数据';
+    $('result-body').innerHTML = '<tr><td colspan="8" class="empty">暂无数据</td></tr>';
+    return;
+  }
+  $('result-count').textContent = '共 ' + r.length + ' 条';
+
+  let html = '';
+  for (let i = r.length - 1; i >= 0; i--) {
+    const d = r[i];
+    let changeClass = '';
+    if (d.close != null && d.open != null) {
+      changeClass = d.close >= d.open ? 'price-up' : 'price-down';
+    }
+    html += '<tr>';
+    html += '<td style="color:#8b92a0">' + (d.trade_date||'') + '</td>';
+    html += '<td>' + fmt(d.open) + '</td>';
+    html += '<td>' + fmt(d.high) + '</td>';
+    html += '<td>' + fmt(d.low) + '</td>';
+    html += '<td class="' + changeClass + '">' + fmt(d.close) + '</td>';
+    html += '<td>' + fmtVol(d.volume) + '</td>';
+    html += '<td>' + fmtPct(d.turn) + '</td>';
+    html += '<td>' + fmt(d.pe_ttm) + '</td>';
+    html += '</tr>';
+  }
+  $('result-body').innerHTML = html;
+}
+
+function fmt(v)  { return v != null ? Number(v).toFixed(2) : '-'; }
+function fmtPct(v) { return v != null ? Number(v).toFixed(2) + '%' : '-'; }
+function fmtVol(v) {
+  if (v == null) return '-';
+  if (v >= 1e8) return (v/1e8).toFixed(2) + '亿';
+  if (v >= 1e4) return (v/1e4).toFixed(1) + '万';
+  return v.toString();
+}
+
+loadStats();
+</script>
+</body>
+</html>
