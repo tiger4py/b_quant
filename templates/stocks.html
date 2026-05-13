@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个股行情 - A股数据面板</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<script>if(typeof echarts==='undefined'){document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"><\/script>');}</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    min-height: 100vh;
+  }
+
+  .nav {
+    background: #161822;
+    border-bottom: 1px solid #2a2d3e;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+
+  .brand {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e1e4e8;
+    margin-right: 24px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #8b92a0;
+    font-size: 13px;
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: all .15s;
+  }
+
+  .nav a:hover,
+  .nav a.on {
+    color: #e1e4e8;
+    border-bottom-color: #3b82f6;
+  }
+
+  .page {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 20px 24px 24px;
+  }
+
+  .toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .search-box {
+    flex: 1;
+  }
+
+  .search-box input {
+    width: 100%;
+    background: #0f1117;
+    border: 1px solid #2a2d3e;
+    border-radius: 6px;
+    padding: 8px 10px;
+    height: 42px;
+    display: block;
+    outline: none;
+    color: #e1e4e8;
+    font-size: 13px;
+  }
+
+  .search-box input::placeholder {
+    color: #6b7280;
+  }
+
+  .total {
+    color: #9ca3af;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .btn {
+    height: 42px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: #1d4ed8;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .panel {
+    background: #161a22;
+    border: 1px solid #262b36;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .panel-head {
+    padding: 14px 16px;
+    border-bottom: 1px solid #262b36;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f3f4f6;
+  }
+
+  .table-wrap {
+    max-height: calc(100vh - 190px);
+    overflow: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    background: #1a1f29;
+    color: #9ca3af;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #262b36;
+  }
+
+  td {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #20242e;
+  }
+
+  tr.clickable {
+    cursor: pointer;
+  }
+
+  tr.clickable:hover td {
+    background: #1c212c;
+  }
+
+  tr.active td {
+    background: #1a2638;
+  }
+
+  tr.active td:first-child {
+    box-shadow: inset 2px 0 0 #3b82f6;
+  }
+
+  .code {
+    color: #cbd5e1;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+  }
+
+  .name {
+    color: #f3f4f6;
+  }
+
+  .mkt,
+  .date {
+    color: #9ca3af;
+    font-size: 13px;
+  }
+
+  .pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 16px;
+    border-top: 1px solid #262b36;
+  }
+
+  .pager button {
+    min-width: 34px;
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #313846;
+    border-radius: 8px;
+    background: #1a1f29;
+    color: #cbd5e1;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .pager button:hover {
+    background: #222936;
+  }
+
+  .pager button.on {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+  }
+
+  .pager button:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .pager .info,
+  .pager .dots {
+    color: #9ca3af;
+    font-size: 13px;
+  }
+
+  .chart-panel {
+    min-height: 760px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chart-info {
+    padding: 16px;
+    border-bottom: 1px solid #262b36;
+  }
+
+  .chart-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f3f4f6;
+  }
+
+  .chart-meta {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #9ca3af;
+  }
+
+  #kline-chart {
+    width: 100%;
+    height: 680px;
+  }
+
+  .empty-chart,
+  .empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 14px;
+  }
+
+  .empty {
+    padding: 48px 16px;
+  }
+
+  .empty-chart {
+    min-height: 760px;
+  }
+
+  .toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #7f1d1d;
+    color: #fecaca;
+    border: 1px solid #991b1b;
+  }
+
+  .red { color: #f87171; }
+  .green { color: #4ade80; }
+
+  @media (max-width: 980px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+
+    .table-wrap {
+      max-height: none;
+    }
+
+    .chart-panel,
+    .empty-chart {
+      min-height: 520px;
+    }
+
+    #kline-chart {
+      height: 460px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .nav {
+      padding: 0 16px;
+      overflow-x: auto;
+    }
+
+    .page {
+      padding: 16px;
+    }
+
+    .toolbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="brand">A股数据面板</span>
+  <a href="/">首页</a>
+  <a href="/stocks" class="on">个股</a>
+  <a href="/concepts">概念</a>
+</nav>
+
+<div class="page">
+  <div class="toolbar">
+    <div class="search-box">
+      <input id="q" placeholder="输入股票代码或名称" onkeydown="if(event.key==='Enter')load(1)">
+    </div>
+    <span class="total" id="total-info">--</span>
+    <button class="btn" onclick="load(1)">搜索</button>
+  </div>
+
+  <div class="layout">
+    <div class="panel">
+      <div class="panel-head">股票列表</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 110px;">代码</th>
+              <th>名称</th>
+              <th style="width: 72px;">市场</th>
+              <th style="width: 110px;">上市日期</th>
+            </tr>
+          </thead>
+          <tbody id="stock-tbody"></tbody>
+        </table>
+      </div>
+      <div class="pager" id="pager"></div>
+    </div>
+
+    <div class="panel" id="chart-wrapper">
+      <div class="empty-chart" id="chart-empty">点击左侧股票显示图表</div>
+      <div class="chart-panel" id="chart-panel" style="display:none;">
+        <div class="chart-info">
+          <div class="chart-title" id="chart-title"></div>
+          <div class="chart-meta" id="chart-meta"></div>
+        </div>
+        <div id="kline-chart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const PER_PAGE = 10;
+
+let page = 1;
+let total = 0;
+let activeCode = "";
+let chart;
+
+function toast(msg) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.style.display = "block";
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => {
+    t.style.display = "none";
+  }, 3000);
+}
+
+function formatCount(v) {
+  if (v === null || v === undefined || Number.isNaN(v)) return "--";
+  return Number(v).toLocaleString();
+}
+
+function formatVolume(v) {
+  if (!v) return "--";
+  if (v >= 1e8) return `${(v / 1e8).toFixed(2)}亿`;
+  if (v >= 1e4) return `${(v / 1e4).toFixed(0)}万`;
+  return formatCount(v);
+}
+
+async function load(p) {
+  page = p;
+  const q = $("q").value.trim();
+  const url = `/api/stocks?page=${page}&per_page=${PER_PAGE}&q=${encodeURIComponent(q)}`;
+  const r = await fetch(url).then(x => x.json());
+  total = r.total || 0;
+  $("total-info").textContent = `共 ${formatCount(total)} 条`;
+
+  let html = "";
+  if (!r.items || r.items.length === 0) {
+    html = '<tr><td colspan="4" class="empty">没有匹配结果</td></tr>';
+  } else {
+    for (const s of r.items) {
+      const cls = s.code === activeCode ? " active" : "";
+      html += `<tr class="clickable${cls}" data-code="${s.code}" data-name="${s.name}" onclick="pick(this)">
+        <td class="code">${s.code}</td>
+        <td class="name">${s.name}</td>
+        <td class="mkt">${(s.market || "-").toUpperCase()}</td>
+        <td class="date">${s.ipo_date || "-"}</td>
+      </tr>`;
+    }
+  }
+  $("stock-tbody").innerHTML = html;
+
+  const pages = Math.max(1, Math.ceil(total / PER_PAGE));
+  const items = [];
+  items.push(`<button ${page <= 1 ? "disabled" : ""} onclick="load(1)">首页</button>`);
+  items.push(`<button ${page <= 1 ? "disabled" : ""} onclick="load(${page - 1})">上一页</button>`);
+
+  let lastShown = 0;
+  for (let i = 1; i <= pages; i++) {
+    const shouldShow = pages <= 7 || i === 1 || i === pages || Math.abs(i - page) <= 1;
+    if (!shouldShow) continue;
+    if (lastShown && i - lastShown > 1) items.push('<span class="dots">...</span>');
+    items.push(`<button class="${i === page ? "on" : ""}" onclick="load(${i})">${i}</button>`);
+    lastShown = i;
+  }
+
+  items.push(`<button ${page >= pages ? "disabled" : ""} onclick="load(${page + 1})">下一页</button>`);
+  items.push(`<button ${page >= pages ? "disabled" : ""} onclick="load(${pages})">末页</button>`);
+  items.push(`<span class="info">${page} / ${pages} 页</span>`);
+  $("pager").innerHTML = items.join("");
+}
+
+async function pick(row) {
+  const code = row.dataset.code;
+  const name = row.dataset.name;
+  activeCode = code;
+
+  document.querySelectorAll("#stock-tbody tr").forEach(r => r.classList.remove("active"));
+  row.classList.add("active");
+
+  const data = await fetch(`/api/stocks/${code}/daily`).then(x => x.json());
+  if (!Array.isArray(data) || data.length === 0) {
+    toast("暂无日线数据");
+    return;
+  }
+
+  $("chart-empty").style.display = "none";
+  $("chart-panel").style.display = "flex";
+  renderChart(name, code, data.slice(-100));
+  requestAnimationFrame(() => {
+    if (chart) chart.resize();
+  });
+}
+
+function renderChart(name, code, data) {
+  $("chart-title").textContent = `${name} (${code})`;
+
+  const dates = data.map(d => d.trade_date);
+  const ohlc = data.map(d => [d.open, d.close, d.low, d.high]);
+  const volumes = data.map(d => d.volume || 0);
+  const ma5 = calcMA(5, data);
+  const ma10 = calcMA(10, data);
+  const ma20 = calcMA(20, data);
+
+  const firstClose = data[0]?.close || 1;
+  const last = data[data.length - 1] || {};
+  const lastClose = last.close || firstClose;
+  const changePct = ((lastClose - firstClose) / firstClose * 100).toFixed(2);
+  const colorCls = Number(changePct) >= 0 ? "red" : "green";
+  const sign = Number(changePct) >= 0 ? "+" : "";
+
+  $("chart-meta").innerHTML = `最近 ${data.length} 个交易日，最新收盘 ${lastClose.toFixed(2)}，<span class="${colorCls}">${sign}${changePct}%</span>，成交量 ${formatVolume(last.volume)}`;
+
+  if (chart) {
+    chart.dispose();
+    chart = null;
+  }
+  chart = echarts.init($("kline-chart"));
+
+  const upColor = "#ef4444";
+  const downColor = "#22c55e";
+
+  chart.setOption({
+    backgroundColor: "transparent",
+    animation: false,
+    tooltip: {
+      trigger: "axis",
+      axisPointer: { type: "cross" },
+      backgroundColor: "rgba(22, 26, 34, 0.96)",
+      borderColor: "#374151",
+      textStyle: { color: "#e5e7eb" }
+    },
+    axisPointer: {
+      link: [{ xAxisIndex: "all" }],
+      label: { backgroundColor: "#374151" }
+    },
+    legend: {
+      top: 12,
+      right: 16,
+      textStyle: { color: "#9ca3af" }
+    },
+    grid: [
+      { left: 56, right: 24, top: 48, height: "58%" },
+      { left: 56, right: 24, top: "80%", height: "12%" }
+    ],
+    xAxis: [
+      {
+        type: "category",
+        data: dates,
+        gridIndex: 0,
+        boundaryGap: true,
+        axisLine: { lineStyle: { color: "#374151" } },
+        axisTick: { show: false },
+        axisLabel: { show: false },
+        splitLine: { show: false },
+        min: "dataMin",
+        max: "dataMax"
+      },
+      {
+        type: "category",
+        data: dates,
+        gridIndex: 1,
+        boundaryGap: true,
+        axisLine: { lineStyle: { color: "#374151" } },
+        axisTick: { show: false },
+        axisLabel: {
+          color: "#9ca3af",
+          fontSize: 10,
+          formatter: value => value.slice(5)
+        },
+        splitLine: { show: false }
+      }
+    ],
+    yAxis: [
+      {
+        type: "value",
+        gridIndex: 0,
+        scale: true,
+        splitNumber: 4,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        axisLabel: {
+          color: "#9ca3af",
+          fontSize: 10,
+          formatter: value => Number(value).toFixed(2)
+        },
+        splitLine: { lineStyle: { color: "#222936", type: "dashed" } }
+      },
+      {
+        type: "value",
+        gridIndex: 1,
+        scale: true,
+        splitNumber: 2,
+        axisLine: { show: false },
+        axisTick: { show: false },
+        axisLabel: {
+          color: "#9ca3af",
+          fontSize: 10,
+          formatter: value => {
+            if (value >= 1e8) return `${(value / 1e8).toFixed(1)}亿`;
+            if (value >= 1e4) return `${(value / 1e4).toFixed(0)}万`;
+            return `${value}`;
+          }
+        },
+        splitLine: { lineStyle: { color: "#222936", type: "dashed" } }
+      }
+    ],
+    dataZoom: [
+      { type: "inside", xAxisIndex: [0, 1], start: 0, end: 100 }
+    ],
+    series: [
+      {
+        name: "K线",
+        type: "candlestick",
+        xAxisIndex: 0,
+        yAxisIndex: 0,
+        data: ohlc,
+        itemStyle: {
+          color: upColor,
+          color0: downColor,
+          borderColor: upColor,
+          borderColor0: downColor
+        },
+        barMaxWidth: 12,
+        barMinWidth: 4
+      },
+      {
+        name: "MA5",
+        type: "line",
+        xAxisIndex: 0,
+        yAxisIndex: 0,
+        data: ma5,
+        symbol: "none",
+        smooth: true,
+        lineStyle: { width: 1, color: "#f59e0b" }
+      },
+      {
+        name: "MA10",
+        type: "line",
+        xAxisIndex: 0,
+        yAxisIndex: 0,
+        data: ma10,
+        symbol: "none",
+        smooth: true,
+        lineStyle: { width: 1, color: "#60a5fa" }
+      },
+      {
+        name: "MA20",
+        type: "line",
+        xAxisIndex: 0,
+        yAxisIndex: 0,
+        data: ma20,
+        symbol: "none",
+        smooth: true,
+        lineStyle: { width: 1, color: "#a78bfa" }
+      },
+      {
+        name: "成交量",
+        type: "bar",
+        xAxisIndex: 1,
+        yAxisIndex: 1,
+        data: volumes.map((value, i) => ({
+          value,
+          itemStyle: {
+            color: ohlc[i][1] >= ohlc[i][0] ? "rgba(239, 68, 68, 0.45)" : "rgba(34, 197, 94, 0.45)",
+            borderColor: ohlc[i][1] >= ohlc[i][0] ? upColor : downColor,
+            borderWidth: 1
+          }
+        })),
+        barMaxWidth: 12,
+        barMinWidth: 4
+      }
+    ]
+  });
+
+  setTimeout(() => {
+    if (chart) chart.resize();
+  }, 0);
+}
+
+function calcMA(day, data) {
+  const result = [];
+  for (let i = 0; i < data.length; i++) {
+    if (i < day - 1) {
+      result.push(null);
+      continue;
+    }
+    let sum = 0;
+    for (let j = 0; j < day; j++) sum += data[i - j].close || 0;
+    result.push(+(sum / day).toFixed(2));
+  }
+  return result;
+}
+
+window.addEventListener("resize", () => {
+  if (chart) chart.resize();
+});
+
+load(1);
+</script>
+</body>
+</html>

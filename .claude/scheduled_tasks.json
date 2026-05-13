@@ -1,0 +1,13 @@
+{
+  "tasks": [
+    {
+      "id": "83e2f611",
+      "cron": "0 18 * * 1-5",
+      "prompt": "在 d:/my_import/sync_content/code/b_quant 目录下执行: python script/update_daily.py",
+      "createdAt": 1778657376872,
+      "recurring": true,
+      "createdBySessionId": "9749e9f7-a6a2-47d1-905a-245e125452db",
+      "createdByPid": 16004
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import baostock as bs
 from sqlalchemy.orm import Session
 
 from config import K_FIELDS, K_FREQUENCY
+from logic.progress import start, step, finish
 from models.stock import StockInfo, StockDaily
 
 logger = logging.getLogger(__name__)
@@ -26,8 +27,17 @@ class BaoStockDownloader:
     def _logout():
         bs.logout()
 
+    @staticmethod
+    def _is_valid_stock(name: str, sec_type: str, status: str) -> bool:
+        """只保留正常可交易的A股: type=1, status=1, 不含ST"""
+        if sec_type != "1" or status != "1":
+            return False
+        if "ST" in name.upper():
+            return False
+        return True
+
     def download_stock_basic(self) -> int:
-        """下载股票基本信息，返回新增数量"""
+        """下载股票基本信息，返回新增数量（仅正常A股）"""
         self._login()
         try:
             rs = bs.query_stock_basic()
@@ -35,16 +45,18 @@ class BaoStockDownloader:
             while rs.next():
                 row = rs.get_row_data()
                 code = row[0]
+                # baostock: code, name, ipoDate, outDate, type, status
+                if not self._is_valid_stock(row[1], row[4], row[5]):
+                    continue
                 if self.session.get(StockInfo, code):
                     continue
-                # baostock query_stock_basic returns: code, name, ipoDate, outDate, type, status
                 self.session.add(StockInfo(
                     code=code,
                     name=row[1],
                     market="sh" if code.startswith("sh") else "sz",
                     ipo_date=row[2] if row[2] else None,
-                    type=row[4] if row[4] else None,
-                    status=1 if row[5] == "1" else 0,
+                    type=row[4],
+                    status=1,
                 ))
                 count += 1
             self.session.commit()
@@ -59,20 +71,28 @@ class BaoStockDownloader:
 
         codes = [code] if code else [
             r[0] for r in self.session.query(StockInfo.code)
-            .filter(StockInfo.status == 1).all()
+            .filter(StockInfo.type == "1", StockInfo.status == 1).all()
         ]
 
         self._login()
         count = 0
+        total = len(codes)
+        start("daily", total, label="开始下载日K线...")
         try:
-            for code in codes:
-                rs = bs.query_history_k_data_plus(
-                    code, K_FIELDS,
-                    start_date=start_date, end_date=end_date,
-                    frequency=K_FREQUENCY, adjustflag="3"
-                )
+            for i, code in enumerate(codes):
+                try:
+                    rs = bs.query_history_k_data_plus(
+                        code, K_FIELDS,
+                        start_date=start_date, end_date=end_date,
+                        frequency=K_FREQUENCY, adjustflag="3"
+                    )
+                except UnicodeDecodeError:
+                    logger.warning("query %s: gbk decode error, skipping", code)
+                    step("daily", 1, label=f"{i+1}/{total} {code} (编码)")
+                    continue
                 if rs.error_code != "0":
                     logger.warning("query %s error: %s", code, rs.error_msg)
+                    step("daily", 1, label=f"{i+1}/{total} {code} (错误)")
                     continue
 
                 rows = []
@@ -80,9 +100,9 @@ class BaoStockDownloader:
                     rows.append(rs.get_row_data())
 
                 if not rows:
+                    step("daily", 1, label=f"{i+1}/{total} {code} (无数据)")
                     continue
 
-                # Drop the oldest tradedays so we keep exactly self.days trading days
                 rows = rows[-self.days:] if len(rows) > self.days else rows
 
                 for row in rows:
@@ -95,7 +115,7 @@ class BaoStockDownloader:
                         existing.high = float(row[2]) if row[2] else None
                         existing.low = float(row[3]) if row[3] else None
                         existing.close = float(row[4]) if row[4] else None
-                        existing.volume = int(row[5]) if row[5] else None
+                        existing.volume = int(float(row[5])) if row[5] else None
                         existing.amount = float(row[6]) if row[6] else None
                         existing.turn = float(row[7]) if row[7] else None
                         existing.pe_ttm = float(row[8]) if row[8] else None
@@ -107,7 +127,7 @@ class BaoStockDownloader:
                             high=float(row[2]) if row[2] else None,
                             low=float(row[3]) if row[3] else None,
                             close=float(row[4]) if row[4] else None,
-                            volume=int(row[5]) if row[5] else None,
+                            volume=int(float(row[5])) if row[5] else None,
                             amount=float(row[6]) if row[6] else None,
                             turn=float(row[7]) if row[7] else None,
                             pe_ttm=float(row[8]) if row[8] else None,
@@ -115,8 +135,10 @@ class BaoStockDownloader:
                     count += 1
 
                 self.session.commit()
+                step("daily", 1, label=f"{i+1}/{total} {code} ({len(rows)}条)")
                 logger.info("downloaded %s: %d rows", code, len(rows))
         finally:
             self._logout()
+            finish("daily")
 
         return count

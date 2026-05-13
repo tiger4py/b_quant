@@ -1,1 +1,1 @@
-from .stock import StockInfo, StockDaily, Concept, StockConcept
+from .stock import StockInfo, StockDaily, Concept, StockConcept, ConceptDaily

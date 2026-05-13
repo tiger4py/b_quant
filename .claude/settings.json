@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show *)",
+      "Bash(pip install *)",
+      "Bash(python test_em.py)",
+      "Bash(python find_api.py)",
+      "Bash(python test_fix.py)",
+      "Bash(curl -s -X POST http://127.0.0.1:8000/api/download/daily -H \"Content-Type: application/json\" -d \"{\\\\\"days\\\\\": 1000}\" --max-time 1800)"
+    ]
+  }
+}

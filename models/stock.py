@@ -56,3 +56,21 @@ class StockConcept(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     stock_code = Column(String(16), nullable=False, comment="股票代码")
     concept_code = Column(String(32), nullable=False, comment="概念代码")
+
+
+class ConceptDaily(Base):
+    """概念指数日K线"""
+    __tablename__ = "concept_daily"
+    __table_args__ = (
+        Index("ix_concept_daily_code_date", "concept_code", "trade_date", unique=True),
+    )
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    concept_code = Column(String(32), nullable=False, comment="概念代码")
+    trade_date = Column(String(10), nullable=False, comment="交易日期")
+    open = Column(Float, comment="开盘指数")
+    high = Column(Float, comment="最高指数")
+    low = Column(Float, comment="最低指数")
+    close = Column(Float, comment="收盘指数")
+    volume = Column(BigInteger, comment="成交量(手)")
+    amount = Column(Float, comment="成交额(元)")
