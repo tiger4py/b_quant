@@ -1,67 +1,60 @@
-"""下载进度追踪"""
 import json
 import os
 import threading
 from datetime import datetime
 
-PROGRESS_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "progress.json")
+from config import DATA_DIR
+
 _lock = threading.Lock()
+_path = os.path.join(DATA_DIR, "progress.json")
+_state = {}
 
 
-def _now():
-    return datetime.now().strftime("%H:%M:%S")
+def _save():
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(_path, "w", encoding="utf-8") as f:
+        json.dump(_state, f, ensure_ascii=False, indent=2)
 
 
-def update(task: str, **kwargs):
-    """写入进度字段"""
-    data = _read()
-    data[task] = {**data.get(task, {}), **kwargs, "ts": _now()}
-    _write(data)
-
-
-def start(task: str, total: int, label: str = ""):
-    """开始任务"""
+def start(key, total=0, label=""):
     with _lock:
-        data = _read()
-        data[task] = {"total": total, "done": 0, "label": label, "ts": _now()}
-        _write(data)
+        _state[key] = {
+            "key": key,
+            "total": total,
+            "current": 0,
+            "label": label,
+            "status": "running",
+            "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        }
+        _save()
 
 
-def step(task: str, delta: int = 1, label: str = ""):
-    """增加完成数"""
+def step(key, inc=1, label=None):
     with _lock:
-        data = _read()
-        if task in data:
-            data[task]["done"] = data[task].get("done", 0) + delta
-            if label:
-                data[task]["label"] = label
-            data[task]["ts"] = _now()
-            _write(data)
+        item = _state.setdefault(key, {"key": key, "total": 0, "current": 0, "status": "running"})
+        item["current"] = item.get("current", 0) + inc
+        if label is not None:
+            item["label"] = label
+        item["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        _save()
 
 
-def finish(task: str):
-    """标记完成"""
+def finish(key, label=None):
     with _lock:
-        data = _read()
-        if task in data:
-            data[task]["done"] = data[task]["total"]
-            data[task]["ts"] = _now()
-            _write(data)
+        item = _state.setdefault(key, {"key": key, "total": 0, "current": 0})
+        if label is not None:
+            item["label"] = label
+        item["status"] = "finished"
+        item["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        _save()
 
 
-def get() -> dict:
-    return _read()
-
-
-def _read() -> dict:
-    try:
-        with open(PROGRESS_FILE, "r") as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return {}
-
-
-def _write(data: dict):
-    os.makedirs(os.path.dirname(PROGRESS_FILE), exist_ok=True)
-    with open(PROGRESS_FILE, "w") as f:
-        json.dump(data, f)
+def get():
+    with _lock:
+        if not _state and os.path.exists(_path):
+            try:
+                with open(_path, "r", encoding="utf-8") as f:
+                    _state.update(json.load(f))
+            except (OSError, json.JSONDecodeError):
+                pass
+        return _state

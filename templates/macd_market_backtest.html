@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MACD全市场 - A股数据面板</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<script>if(typeof echarts==='undefined'){document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"><\/script>');}</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #101318;
+    color: #e5e7eb;
+  }
+  .nav {
+    height: 48px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    background: #161a22;
+    border-bottom: 1px solid #29303b;
+  }
+  .brand { font-size: 14px; font-weight: 600; margin-right: 24px; color: #f3f4f6; }
+  .nav a {
+    height: 100%;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .nav a:hover, .nav a.on { color: #f9fafb; border-bottom-color: #38bdf8; }
+  .page { max-width: 1450px; margin: 0 auto; padding: 18px 22px 28px; }
+  .toolbar {
+    display: grid;
+    grid-template-columns: 170px 190px auto 1fr;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 12px;
+  }
+  label { display: grid; gap: 7px; color: #aab2bf; font-size: 12px; }
+  input {
+    height: 38px;
+    border: 1px solid #343d4c;
+    border-radius: 6px;
+    background: #11151c;
+    color: #e5e7eb;
+    padding: 0 10px;
+    outline: none;
+    font-size: 13px;
+  }
+  .btn {
+    height: 38px;
+    min-width: 120px;
+    border: 0;
+    border-radius: 6px;
+    background: #0ea5e9;
+    color: #06121a;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn:hover { background: #38bdf8; }
+  .btn:disabled { opacity: .55; cursor: default; }
+  .hint { color: #8b95a5; font-size: 13px; align-self: center; line-height: 1.5; }
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 12px 0 16px;
+  }
+  .metric {
+    background: #171c24;
+    border: 1px solid #2b3340;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .metric span { display: block; color: #8b95a5; font-size: 12px; margin-bottom: 7px; }
+  .metric strong { font-size: 20px; color: #f9fafb; }
+  .panel {
+    background: #171c24;
+    border: 1px solid #2b3340;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .panel + .panel { margin-top: 16px; }
+  .panel-head {
+    padding: 13px 15px;
+    border-bottom: 1px solid #2b3340;
+    color: #f3f4f6;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .panel-head span { color: #8b95a5; font-weight: 400; font-size: 12px; }
+  #equity-chart { height: 340px; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .table-wrap { max-height: 430px; overflow: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #242b36;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  th {
+    position: sticky;
+    top: 0;
+    background: #1d2430;
+    color: #aab2bf;
+    font-weight: 600;
+    z-index: 1;
+  }
+  .code { color: #cbd5e1; font-family: Consolas, monospace; }
+  .stock-cell { display: inline-flex; align-items: center; gap: 8px; }
+  .stock-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--stock-color);
+  }
+  tr.stock-mark td:first-child { box-shadow: inset 3px 0 0 var(--stock-color); }
+  .action-badge {
+    display: inline-flex;
+    min-width: 42px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .action-buy {
+    color: #bae6fd;
+    background: rgba(14, 165, 233, .18);
+    border: 1px solid rgba(56, 189, 248, .42);
+  }
+  .action-sell {
+    color: #fecaca;
+    background: rgba(239, 68, 68, .16);
+    border: 1px solid rgba(248, 113, 113, .42);
+  }
+  .muted { color: #8b95a5; }
+  .red { color: #f87171 !important; }
+  .green { color: #4ade80 !important; }
+  .toast {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: none;
+    max-width: 360px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    color: #fecaca;
+    background: #7f1d1d;
+    border: 1px solid #991b1b;
+    font-size: 13px;
+  }
+  @media (max-width: 980px) {
+    .toolbar, .grid { grid-template-columns: 1fr; }
+    .summary { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .nav { padding: 0 14px; overflow-x: auto; }
+    .page { padding: 14px; }
+    .summary { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="brand">A股数据面板</span>
+  <a href="/">首页</a>
+  <a href="/stocks">个股</a>
+  <a href="/concepts">概念</a>
+  <a href="/stock-backtest">个股回测</a>
+  <a href="/backtest-battle">回测大比拼</a>
+  <a href="/macd-market-backtest" class="on">MACD全市场</a>
+</nav>
+
+<div class="page">
+  <div class="toolbar">
+    <button class="btn" id="run-btn" onclick="loadMarket()">刷新结果</button>
+    <div class="hint" id="note">读取数据库缓存：MACD 金叉死叉，全市场正常股票，1000天；最多持有5只，每只最多20万。</div>
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <section class="panel">
+    <div class="panel-head">账户收益曲线 <span id="curve-hint">等待回测</span></div>
+    <div id="equity-chart"></div>
+  </section>
+
+  <div class="grid" style="margin-top:16px;">
+    <section class="panel">
+      <div class="panel-head">贡献股票 <span>按累计盈亏排序</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th>股票</th>
+              <th>盈亏</th>
+              <th>交易次数</th>
+              <th>胜率</th>
+            </tr>
+          </thead>
+          <tbody id="stock-body">
+            <tr><td colspan="5" class="muted">暂无数据</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">买卖流水 <span id="trade-hint">按时间顺序</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>步骤</th>
+              <th>动作</th>
+              <th>股票</th>
+              <th>价格</th>
+              <th>股数</th>
+              <th>金额</th>
+              <th>收益</th>
+              <th>账户收益</th>
+              <th>原因</th>
+            </tr>
+          </thead>
+          <tbody id="trade-body">
+            <tr><td colspan="10" class="muted">暂无流水</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+let equityChart = null;
+
+const STOCK_COLORS = [
+  "#38bdf8", "#f97316", "#a78bfa", "#22c55e", "#f43f5e",
+  "#eab308", "#14b8a6", "#fb7185", "#60a5fa", "#c084fc",
+  "#84cc16", "#f59e0b", "#2dd4bf", "#818cf8", "#f472b6",
+];
+
+function toast(msg) {
+  const el = $("toast");
+  el.textContent = msg;
+  el.style.display = "block";
+  clearTimeout(el._timer);
+  el._timer = setTimeout(() => el.style.display = "none", 3500);
+}
+
+function fmtMoney(v) {
+  return Number(v || 0).toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
+function pctClass(v) {
+  return Number(v) >= 0 ? "red" : "green";
+}
+
+function stockColor(code) {
+  let hash = 0;
+  for (const ch of code) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+  return STOCK_COLORS[hash % STOCK_COLORS.length];
+}
+
+function stockLabel(code, name) {
+  return `<span class="stock-cell" style="--stock-color:${stockColor(code)}">
+    <span class="stock-dot"></span>
+    <span><span class="code">${code}</span> ${name}</span>
+  </span>`;
+}
+
+async function loadMarket() {
+  const btn = $("run-btn");
+  btn.disabled = true;
+  btn.textContent = "读取中...";
+  try {
+    const res = await fetch("/api/backtest/macd-market");
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "缓存读取失败");
+    renderResult(data);
+  } catch (err) {
+    toast(err.message);
+    $("note").textContent = err.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "刷新结果";
+  }
+}
+
+function renderResult(data) {
+  const s = data.summary;
+  $("note").textContent = `${data.selection.criteria}；股票池 ${data.selection.stock_count} 只，${data.selection.days} 天，最新交易日 ${data.selection.latest_trade_date}，生成时间 ${data.cache?.created_at || "--"}。`;
+  $("summary").innerHTML = `
+    <div class="metric"><span>策略</span><strong>${data.strategy.name}</strong></div>
+    <div class="metric"><span>账户收益</span><strong class="${pctClass(s.total_return_pct)}">${s.total_return_pct}%</strong></div>
+    <div class="metric"><span>期末资产</span><strong>${fmtMoney(s.final_equity)}</strong></div>
+    <div class="metric"><span>最大回撤</span><strong class="green">${s.max_drawdown_pct}%</strong></div>
+    <div class="metric"><span>交易胜率</span><strong>${s.win_rate_pct}%</strong></div>
+  `;
+  renderEquity(data.equity_curve);
+  renderStocks(data.stock_summaries);
+  renderTrades(data);
+}
+
+function renderEquity(curve) {
+  if (equityChart) equityChart.dispose();
+  equityChart = echarts.init($("equity-chart"));
+  $("curve-hint").textContent = `${curve.length} 个交易日`;
+  equityChart.setOption({
+    backgroundColor: "transparent",
+    tooltip: { trigger: "axis" },
+    grid: { left: 60, right: 24, top: 28, bottom: 42 },
+    xAxis: {
+      type: "category",
+      data: curve.map(x => x.date),
+      axisLabel: { color: "#9ca3af" },
+      axisLine: { lineStyle: { color: "#374151" } },
+    },
+    yAxis: {
+      type: "value",
+      scale: true,
+      axisLabel: { color: "#9ca3af" },
+      splitLine: { lineStyle: { color: "#27313f" } },
+    },
+    series: [{
+      name: "账户权益",
+      type: "line",
+      smooth: true,
+      showSymbol: false,
+      data: curve.map(x => x.equity),
+      areaStyle: { color: "rgba(14, 165, 233, .14)" },
+      lineStyle: { color: "#38bdf8", width: 2 },
+    }]
+  });
+}
+
+function renderStocks(stocks) {
+  const shown = (stocks || []).slice(0, 120);
+  if (!shown.length) {
+    $("stock-body").innerHTML = '<tr><td colspan="5" class="muted">暂无贡献股票</td></tr>';
+    return;
+  }
+  $("stock-body").innerHTML = shown.map((x, i) => `
+    <tr>
+      <td>${i + 1}</td>
+      <td>${stockLabel(x.code, x.name)}</td>
+      <td class="${pctClass(x.profit)}">${fmtMoney(x.profit)}</td>
+      <td>${x.trade_count}</td>
+      <td>${x.win_rate_pct}%</td>
+    </tr>
+  `).join("");
+}
+
+function renderTrades(data) {
+  const events = buildTradeEvents(data);
+  $("trade-hint").textContent = `${events.length} 条买卖事件`;
+  if (!events.length) {
+    $("trade-body").innerHTML = '<tr><td colspan="10" class="muted">没有交易</td></tr>';
+    return;
+  }
+  $("trade-body").innerHTML = events.map((e, i) => {
+    const actionText = e.action === "buy" ? "买入" : "卖出";
+    const actionClass = e.action === "buy" ? "action-buy" : "action-sell";
+    return `
+      <tr class="stock-mark" style="--stock-color:${stockColor(e.code)}">
+        <td>${e.date}</td>
+        <td>第 ${i + 1} 步</td>
+        <td><span class="action-badge ${actionClass}">${actionText}</span></td>
+        <td>${stockLabel(e.code, e.name)}</td>
+        <td>${e.price}</td>
+        <td>${e.shares}</td>
+        <td>${fmtMoney(e.amount)}</td>
+        <td class="${e.action === "sell" ? pctClass(e.profit) : "muted"}">${e.action === "sell" ? fmtMoney(e.profit) : "--"}</td>
+        <td class="${pctClass(e.account_return_pct)}">${e.account_return_pct}%</td>
+        <td>${e.reason}</td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function buildTradeEvents(data) {
+  const initialCash = Number(data.selection.initial_cash || 0);
+  const equityByDate = {};
+  for (const point of data.equity_curve || []) equityByDate[point.date] = point.equity;
+  const events = [];
+  for (const t of data.trades || []) {
+    events.push({
+      action: "buy",
+      date: t.buy_date,
+      code: t.code,
+      name: t.name,
+      price: t.buy_price,
+      shares: t.shares,
+      amount: t.buy_amount,
+      reason: t.buy_reason,
+      sort: 1,
+    });
+    events.push({
+      action: "sell",
+      date: t.sell_date,
+      code: t.code,
+      name: t.name,
+      price: t.sell_price,
+      shares: t.shares,
+      amount: t.sell_amount,
+      profit: t.profit,
+      reason: t.sell_reason,
+      sort: 0,
+    });
+  }
+  events.sort((a, b) => {
+    if (a.date !== b.date) return a.date.localeCompare(b.date);
+    if (a.sort !== b.sort) return a.sort - b.sort;
+    return a.code.localeCompare(b.code);
+  });
+  let lastReturn = 0;
+  for (const event of events) {
+    if (equityByDate[event.date] !== undefined && initialCash) {
+      lastReturn = (equityByDate[event.date] - initialCash) / initialCash * 100;
+    }
+    event.account_return_pct = Number(lastReturn.toFixed(2));
+  }
+  return events;
+}
+
+window.addEventListener("resize", () => {
+  if (equityChart) equityChart.resize();
+});
+
+loadMarket();
+</script>
+</body>
+</html>

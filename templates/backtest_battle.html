@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>回测大比拼 - A股数据面板</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<script>if(typeof echarts==='undefined'){document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"><\/script>');}</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #101318;
+    color: #e5e7eb;
+  }
+  .nav {
+    height: 48px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    background: #161a22;
+    border-bottom: 1px solid #29303b;
+  }
+  .brand { font-size: 14px; font-weight: 600; margin-right: 24px; color: #f3f4f6; }
+  .nav a {
+    height: 100%;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .nav a:hover, .nav a.on { color: #f9fafb; border-bottom-color: #38bdf8; }
+  .page { max-width: 1400px; margin: 0 auto; padding: 18px 22px 28px; }
+  .toolbar {
+    display: grid;
+    grid-template-columns: 150px 150px 180px auto 1fr;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 12px;
+  }
+  label { display: grid; gap: 7px; color: #aab2bf; font-size: 12px; }
+  input, select {
+    height: 38px;
+    border: 1px solid #343d4c;
+    border-radius: 6px;
+    background: #11151c;
+    color: #e5e7eb;
+    padding: 0 10px;
+    outline: none;
+    font-size: 13px;
+  }
+  .btn {
+    height: 38px;
+    min-width: 110px;
+    border: 0;
+    border-radius: 6px;
+    background: #0ea5e9;
+    color: #06121a;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn:hover { background: #38bdf8; }
+  .btn:disabled { opacity: .55; cursor: default; }
+  .hint {
+    color: #8b95a5;
+    font-size: 13px;
+    align-self: center;
+    line-height: 1.5;
+  }
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 10px;
+    margin: 12px 0 16px;
+  }
+  .metric {
+    background: #171c24;
+    border: 1px solid #2b3340;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .metric span { display: block; color: #8b95a5; font-size: 12px; margin-bottom: 7px; }
+  .metric strong { font-size: 20px; color: #f9fafb; }
+  .panel {
+    background: #171c24;
+    border: 1px solid #2b3340;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .panel + .panel { margin-top: 16px; }
+  .panel-head {
+    padding: 13px 15px;
+    border-bottom: 1px solid #2b3340;
+    color: #f3f4f6;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .panel-head span { color: #8b95a5; font-weight: 400; font-size: 12px; }
+  #return-chart { height: 320px; }
+  .table-wrap { max-height: 420px; overflow: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #242b36;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  th {
+    position: sticky;
+    top: 0;
+    background: #1d2430;
+    color: #aab2bf;
+    font-weight: 600;
+    z-index: 1;
+  }
+  .code { color: #cbd5e1; font-family: Consolas, monospace; }
+  .stock-cell {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .stock-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--stock-color) 18%, transparent);
+    background: var(--stock-color);
+  }
+  tr.stock-mark td:first-child {
+    box-shadow: inset 3px 0 0 var(--stock-color);
+  }
+  .strategy-link {
+    color: #e5e7eb;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #38bdf8;
+    text-underline-offset: 5px;
+  }
+  .strategy-link:hover { color: #38bdf8; }
+  .action-badge {
+    display: inline-flex;
+    min-width: 42px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .action-buy {
+    color: #bae6fd;
+    background: rgba(14, 165, 233, .18);
+    border: 1px solid rgba(56, 189, 248, .42);
+  }
+  .action-sell {
+    color: #fecaca;
+    background: rgba(239, 68, 68, .16);
+    border: 1px solid rgba(248, 113, 113, .42);
+  }
+  .muted { color: #8b95a5; }
+  .red { color: #f87171 !important; }
+  .green { color: #4ade80 !important; }
+  .toast {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    display: none;
+    max-width: 360px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    color: #fecaca;
+    background: #7f1d1d;
+    border: 1px solid #991b1b;
+    font-size: 13px;
+  }
+  @media (max-width: 980px) {
+    .toolbar { grid-template-columns: 1fr 1fr; }
+    .hint { grid-column: 1 / -1; }
+    .summary { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .nav { padding: 0 14px; overflow-x: auto; }
+    .page { padding: 14px; }
+    .toolbar, .summary { grid-template-columns: 1fr; }
+    #return-chart { height: 280px; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="brand">A股数据面板</span>
+  <a href="/">首页</a>
+  <a href="/stocks">个股</a>
+  <a href="/concepts">概念</a>
+  <a href="/stock-backtest">个股回测</a>
+  <a href="/backtest-battle" class="on">回测大比拼</a>
+  <a href="/macd-market-backtest">MACD全市场</a>
+</nav>
+
+<div class="page">
+  <div class="toolbar">
+    <label>
+      股票样本
+      <select id="stock-limit">
+        <option value="30">30 只</option>
+        <option value="50" selected>50 只</option>
+        <option value="100">100 只</option>
+        <option value="200">200 只</option>
+      </select>
+    </label>
+    <label>
+      回测天数
+      <input id="days" type="number" value="500" min="120" max="1500" step="50">
+    </label>
+    <label>
+      账户资金
+      <input id="cash" type="number" value="1000000" min="100000" step="100000">
+    </label>
+    <button class="btn" id="run-btn" onclick="runBattle()">开始比拼</button>
+    <button class="btn" id="stable-btn" onclick="runStability()">稳定性评测</button>
+    <div class="hint" id="note">100万账户，最多持有5只，每只最多20万；自动选择成交额靠前且数据足够的股票。</div>
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <section class="panel">
+    <div class="panel-head">收益排名 <span id="chart-hint">点击下方策略名称查看买卖流水</span></div>
+    <div id="return-chart"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">策略排行 <span id="rank-hint"></span></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>策略</th>
+            <th>账户收益</th>
+            <th>期末资产</th>
+            <th>最大回撤</th>
+            <th>交易胜率</th>
+            <th>交易次数</th>
+            <th>贡献最大</th>
+            <th>拖累最大</th>
+          </tr>
+        </thead>
+        <tbody id="rank-body">
+          <tr><td colspan="9" class="muted">计算中...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">稳定性评测 <span id="stable-hint">120/250/500天 × 30/50/100只，共9组</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>策略</th>
+            <th>平均排名</th>
+            <th>前三次数</th>
+            <th>冠军次数</th>
+            <th>平均收益</th>
+            <th>最差收益</th>
+            <th>平均回撤</th>
+            <th>平均胜率</th>
+          </tr>
+        </thead>
+        <tbody id="stable-body">
+          <tr><td colspan="9" class="muted">点击“稳定性评测”后显示</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">买卖流水 <span id="trade-hint">按时间顺序展示买入、卖出事件</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>日期</th>
+            <th>全账户第几步</th>
+            <th>动作</th>
+            <th>股票</th>
+            <th>该股次数</th>
+            <th>价格</th>
+            <th>股数</th>
+            <th>金额</th>
+            <th>本次收益</th>
+            <th>本次收益率</th>
+            <th>截至当日账户收益</th>
+            <th>原因</th>
+          </tr>
+        </thead>
+        <tbody id="strategy-trade-body">
+          <tr><td colspan="11" class="muted">暂无交易流水</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+let returnChart = null;
+let lastBattleParams = null;
+
+function toast(msg) {
+  const el = $("toast");
+  el.textContent = msg;
+  el.style.display = "block";
+  clearTimeout(el._timer);
+  el._timer = setTimeout(() => el.style.display = "none", 3500);
+}
+
+function pctClass(v) {
+  return Number(v) >= 0 ? "red" : "green";
+}
+
+function fmtMoney(v) {
+  return Number(v || 0).toLocaleString(undefined, { maximumFractionDigits: 2 });
+}
+
+const STOCK_COLORS = [
+  "#38bdf8", "#f97316", "#a78bfa", "#22c55e", "#f43f5e",
+  "#eab308", "#14b8a6", "#fb7185", "#60a5fa", "#c084fc",
+  "#84cc16", "#f59e0b", "#2dd4bf", "#818cf8", "#f472b6",
+];
+
+function stockColor(code) {
+  let hash = 0;
+  for (const ch of code) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+  return STOCK_COLORS[hash % STOCK_COLORS.length];
+}
+
+function stockLabel(code, name) {
+  const color = stockColor(code);
+  return `<span class="stock-cell" style="--stock-color:${color}">
+    <span class="stock-dot"></span>
+    <span><span class="code">${code}</span> ${name}</span>
+  </span>`;
+}
+
+async function runBattle() {
+  const btn = $("run-btn");
+  btn.disabled = true;
+  btn.textContent = "计算中...";
+  $("rank-body").innerHTML = '<tr><td colspan="9" class="muted">计算中...</td></tr>';
+  try {
+    const body = {
+      stock_limit: Number($("stock-limit").value),
+      days: Number($("days").value || 500),
+      initial_cash: Number($("cash").value || 1000000),
+    };
+    const res = await fetch("/api/backtest/battle", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "回测失败");
+    lastBattleParams = body;
+    renderBattle(data);
+  } catch (err) {
+    toast(err.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "开始比拼";
+  }
+}
+
+function renderBattle(data) {
+  const best = data.ranking[0];
+  const worst = data.ranking[data.ranking.length - 1];
+  $("note").textContent = `${fmtMoney(data.selection.initial_cash)} 账户，最多 ${data.selection.max_positions} 只，每只最多 ${fmtMoney(data.selection.max_position_cash)}；样本 ${data.selection.stock_count} 只，最新交易日 ${data.selection.latest_trade_date}。`;
+  $("summary").innerHTML = `
+    <div class="metric"><span>冠军策略</span><strong>${best.strategy_name}</strong></div>
+    <div class="metric"><span>账户收益</span><strong class="${pctClass(best.avg_return_pct)}">${best.avg_return_pct}%</strong></div>
+    <div class="metric"><span>期末资产</span><strong>${fmtMoney(best.final_equity)}</strong></div>
+    <div class="metric"><span>交易胜率</span><strong>${best.positive_rate_pct}%</strong></div>
+  `;
+  renderReturnChart(data.ranking);
+  renderRanking(data.ranking);
+  if (best) loadStrategyTrades(best.strategy_id, best.strategy_name);
+}
+
+function renderReturnChart(ranking) {
+  if (returnChart) returnChart.dispose();
+  returnChart = echarts.init($("return-chart"));
+  returnChart.setOption({
+    backgroundColor: "transparent",
+    tooltip: { trigger: "axis" },
+    grid: { left: 56, right: 24, top: 26, bottom: 88 },
+    xAxis: {
+      type: "category",
+      data: ranking.map(x => x.strategy_name),
+      axisLabel: { color: "#9ca3af", rotate: 28 },
+      axisLine: { lineStyle: { color: "#374151" } },
+    },
+    yAxis: {
+      type: "value",
+      axisLabel: { color: "#9ca3af", formatter: "{value}%" },
+      splitLine: { lineStyle: { color: "#27313f" } },
+    },
+    series: [{
+      name: "账户收益",
+      type: "bar",
+      data: ranking.map(x => ({
+        value: x.avg_return_pct,
+        itemStyle: { color: x.avg_return_pct >= 0 ? "#ef4444" : "#22c55e" },
+      })),
+      label: { show: true, position: "top", color: "#cbd5e1", formatter: "{c}%" },
+      barMaxWidth: 34,
+    }]
+  });
+}
+
+function renderRanking(ranking) {
+  $("rank-hint").textContent = "收益优先，同时参考回撤和胜率";
+  $("rank-body").innerHTML = ranking.map((x, i) => `
+    <tr>
+      <td>${i + 1}</td>
+      <td><span class="strategy-link" onclick="loadStrategyTrades('${x.strategy_id}', '${x.strategy_name.replace(/'/g, "\\'")}')">${x.strategy_name}</span></td>
+      <td class="${pctClass(x.avg_return_pct)}">${x.avg_return_pct}%</td>
+      <td>${fmtMoney(x.final_equity)}</td>
+      <td class="green">${x.avg_drawdown_pct}%</td>
+      <td>${x.positive_rate_pct}%</td>
+      <td>${x.trade_count}</td>
+      <td>${formatStockProfit(x.best_stock)}</td>
+      <td>${formatStockProfit(x.worst_stock)}</td>
+    </tr>
+  `).join("");
+}
+
+async function runStability() {
+  const btn = $("stable-btn");
+  btn.disabled = true;
+  btn.textContent = "评测中...";
+  $("stable-body").innerHTML = '<tr><td colspan="9" class="muted">稳定性评测计算中，可能需要几十秒...</td></tr>';
+  try {
+    const res = await fetch("/api/backtest/stability", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        initial_cash: Number($("cash").value || 1000000),
+      }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "稳定性评测失败");
+    renderStability(data);
+  } catch (err) {
+    toast(err.message);
+    $("stable-body").innerHTML = '<tr><td colspan="9" class="muted">稳定性评测失败</td></tr>';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "稳定性评测";
+  }
+}
+
+function renderStability(data) {
+  $("stable-hint").textContent = `${data.settings.run_count} 组测试，账户资金 ${fmtMoney(data.settings.initial_cash)}`;
+  if (!data.ranking.length) {
+    $("stable-body").innerHTML = '<tr><td colspan="9" class="muted">没有稳定性结果</td></tr>';
+    return;
+  }
+  $("stable-body").innerHTML = data.ranking.map((x, i) => `
+    <tr>
+      <td>${i + 1}</td>
+      <td>${x.strategy_name}</td>
+      <td>${x.avg_rank}</td>
+      <td>${x.top3_count} / ${x.runs}</td>
+      <td>${x.champion_count} / ${x.runs}</td>
+      <td class="${pctClass(x.avg_return_pct)}">${x.avg_return_pct}%</td>
+      <td class="${pctClass(x.worst_return_pct)}">${x.worst_return_pct}%</td>
+      <td class="green">${x.avg_drawdown_pct}%</td>
+      <td>${x.avg_win_rate_pct}%</td>
+    </tr>
+  `).join("");
+}
+
+function formatStockProfit(stock) {
+  if (!stock) return "--";
+  return `<span class="code">${stock.code}</span> ${stock.name} <span class="${pctClass(stock.profit)}">${fmtMoney(stock.profit)}</span>`;
+}
+
+async function loadStrategyTrades(strategyId, strategyName) {
+  if (!lastBattleParams) return;
+  $("trade-hint").textContent = `${strategyName} 明细加载中...`;
+  $("strategy-trade-body").innerHTML = '<tr><td colspan="11" class="muted">加载中...</td></tr>';
+  try {
+    const res = await fetch("/api/backtest/battle/strategy", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...lastBattleParams, strategy: strategyId }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "交易流水加载失败");
+    renderStrategyTrades(data);
+  } catch (err) {
+    toast(err.message);
+    $("trade-hint").textContent = `${strategyName} 加载失败`;
+    $("strategy-trade-body").innerHTML = '<tr><td colspan="11" class="muted">加载失败</td></tr>';
+  }
+}
+
+function renderStrategyTrades(data) {
+  const trades = data.trades || [];
+  $("trade-hint").textContent = `${data.strategy.name}：${trades.length} 笔交易，最多 ${data.selection.max_positions} 只，每只最多 ${fmtMoney(data.selection.max_position_cash)}`;
+  if (!trades.length) {
+    $("strategy-trade-body").innerHTML = '<tr><td colspan="11" class="muted">这个策略没有完成买卖交易</td></tr>';
+    return;
+  }
+  const events = buildTradeEvents(data);
+  const actionCounts = {};
+  $("strategy-trade-body").innerHTML = events.map((event, index) => {
+    const key = `${event.code}:${event.action}`;
+    actionCounts[key] = (actionCounts[key] || 0) + 1;
+    const actionText = event.action === "buy" ? "买入" : "卖出";
+    const actionClass = event.action === "buy" ? "action-buy" : "action-sell";
+    const countText = `第 ${actionCounts[key]} 次${event.action === "buy" ? "买" : "卖"}`;
+    return `
+    <tr class="stock-mark" style="--stock-color:${stockColor(event.code)}">
+      <td>${event.date}</td>
+      <td>第 ${index + 1} 步</td>
+      <td><span class="action-badge ${actionClass}">${actionText}</span></td>
+      <td>${stockLabel(event.code, event.name)}</td>
+      <td>${countText}</td>
+      <td>${event.price}</td>
+      <td>${event.shares}</td>
+      <td>${fmtMoney(event.amount)}</td>
+      <td class="${event.action === "sell" ? pctClass(event.profit) : "muted"}">${event.action === "sell" ? fmtMoney(event.profit) : "--"}</td>
+      <td class="${event.action === "sell" ? pctClass(event.profit_pct) : "muted"}">${event.action === "sell" ? `${event.profit_pct}%` : "--"}</td>
+      <td class="${pctClass(event.account_return_pct)}">${event.account_return_pct}%</td>
+      <td>${event.reason}</td>
+    </tr>
+  `}).join("");
+}
+
+function buildTradeEvents(data) {
+  const initialCash = Number(data.selection.initial_cash || 0);
+  const equityByDate = {};
+  for (const point of data.equity_curve || []) {
+    equityByDate[point.date] = point.equity;
+  }
+  const events = [];
+  for (const t of data.trades || []) {
+    events.push({
+      action: "buy",
+      date: t.buy_date,
+      code: t.code,
+      name: t.name,
+      price: t.buy_price,
+      shares: t.shares,
+      amount: t.buy_amount,
+      reason: t.buy_reason,
+      sort: 1,
+    });
+    events.push({
+      action: "sell",
+      date: t.sell_date,
+      code: t.code,
+      name: t.name,
+      price: t.sell_price,
+      shares: t.shares,
+      amount: t.sell_amount,
+      profit: t.profit,
+      profit_pct: t.profit_pct,
+      reason: t.sell_reason,
+      sort: 0,
+    });
+  }
+  events.sort((a, b) => {
+    if (a.date !== b.date) return a.date.localeCompare(b.date);
+    if (a.sort !== b.sort) return a.sort - b.sort;
+    return a.code.localeCompare(b.code);
+  });
+  let lastReturn = 0;
+  for (const event of events) {
+    if (equityByDate[event.date] !== undefined && initialCash) {
+      lastReturn = (equityByDate[event.date] - initialCash) / initialCash * 100;
+    }
+    event.account_return_pct = Number(lastReturn.toFixed(2));
+  }
+  return events;
+}
+
+window.addEventListener("resize", () => {
+  if (returnChart) returnChart.resize();
+});
+
+runBattle();
+</script>
+</body>
+</html>

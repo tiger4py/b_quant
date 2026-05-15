@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Float, Integer, BigInteger, Date, Index
+from sqlalchemy import Column, String, Float, Integer, BigInteger, Date, Index, Text
 from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
@@ -34,6 +34,19 @@ class StockDaily(Base):
     close = Column(Float, comment="收盘价")
     volume = Column(BigInteger, comment="成交量(股)")
     amount = Column(Float, comment="成交额(元)")
+
+
+class BacktestCache(Base):
+    __tablename__ = "backtest_cache"
+
+    cache_key = Column(String(64), primary_key=True)
+    strategy_id = Column(String(64), nullable=False)
+    name = Column(String(128), nullable=False)
+    days = Column(Integer, nullable=False)
+    stock_count = Column(Integer, nullable=False)
+    latest_trade_date = Column(String(10))
+    created_at = Column(String(19), nullable=False)
+    result_json = Column(Text, nullable=False)
     turn = Column(Float, comment="换手率(%)")
     pe_ttm = Column(Float, comment="市盈率(TTM)")
 
