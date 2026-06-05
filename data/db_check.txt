@@ -1,0 +1,4 @@
+Concept table: 375 rows
+StockConcept table: 63513 rows
+ConceptDaily table: 414872 rows
+ConceptDaily latest: 2026-06-03
