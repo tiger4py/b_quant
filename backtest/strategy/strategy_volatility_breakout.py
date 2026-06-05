@@ -61,6 +61,11 @@ DRAWDOWN_EXIT = -12        # 从持仓高点回撤超过此值离场
 GATE_BREADTH_MIN = 0.25    # 涨跌比低于此值 → 禁止开仓（市场恐慌）
 GATE_LIMIT_DOWN_MAX = 50   # 跌停数超过此值 → 禁止开仓
 
+# -- 涨停过滤 & 过度拉升过滤 --
+LIMIT_UP_PCT = 9.5          # 涨停阈值（%），科创板20%涨停在这里用9.5%过滤比较安全
+LIMIT_UP_LOOKBACK = 3       # 近N天内有涨停 → 不买（已经拉起来了，不是蓄力阶段）
+V_RECOVERY_HARD_MAX = 20.0  # V反恢复超过此值 → 不买（过度拉升，追高风险大）
+
 
 # ============ V 形反转检测 ============
 
@@ -192,6 +197,15 @@ def _compute_volatility_metrics(bars):
 
 # ============ 主策略 ============
 
+def _has_recent_limit_up(daily_change, i, lookback=LIMIT_UP_LOOKBACK):
+    """检查近N天内是否有涨停（含当日），涨停股已拉起来，不追"""
+    start = max(1, i - lookback + 1)  # daily_change[0] is always 0
+    for j in range(start, i + 1):
+        if daily_change[j] * 100 >= LIMIT_UP_PCT:
+            return True
+    return False
+
+
 def generate_signals(bars):
     """
     生成买卖信号。
@@ -238,7 +252,13 @@ def generate_signals(bars):
 
             # 条件 3：V 形反转
             result = _detect_v_reversal(closes, i)
-            is_v, v_bottom_idx, v_label = result[0], result[1], result[4]
+            is_v, v_bottom_idx, decline_pct, recovery_pct, v_label = result
+
+            # 条件 3.5：V反恢复不过度（超过20%说明已经拉起来了，追高风险大）
+            not_overextended = recovery_pct <= V_RECOVERY_HARD_MAX
+
+            # 条件 3.6：近3天无涨停（涨停股已拉起来，不是蓄力阶段）
+            no_recent_limit_up = not _has_recent_limit_up(m["daily_change"], i)
 
             # 条件 4：不接飞刀（V反右侧确认，今天不是跌的）
             not_falling = daily_chg > -0.03
@@ -251,7 +271,7 @@ def generate_signals(bars):
                 left_vol = sum(m["volumes"][left_start:v_bottom_idx + 1]) / max(v_bottom_idx - left_start, 1)
                 vol_confirm = right_vol >= left_vol * 0.8  # 右侧量不低于左侧80%
 
-            if stable_history and vol_expanding and is_v and not_falling and vol_confirm:
+            if stable_history and vol_expanding and is_v and not_overextended and no_recent_limit_up and not_falling and vol_confirm:
                 in_pos = True
                 entry_price = close
                 entry_index = i

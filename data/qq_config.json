@@ -1,0 +1,11 @@
+{
+  "qq_bot": {
+    "enabled": true,
+    "app_id": "102870731",
+    "client_secret": "aGwcIyeL2jQ7oVCucK2kSAtcL4nWFzjT",
+    "sandbox": false,
+    "push_targets": [
+      {"type": "user", "id": "676DD3EDE11D60A77807EFF71844656F"}
+    ]
+  }
+}
