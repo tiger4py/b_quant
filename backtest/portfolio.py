@@ -9,6 +9,7 @@ def run_portfolio_backtest(
     signal_by_date = {}
     all_dates = set()
     bar_lookup = {}
+    market_stats = _build_market_stats(bars_by_code)
 
     for code, bars in bars_by_code.items():
         clean_bars = [b for b in bars if b.get("close") and b.get("open")]
@@ -32,6 +33,7 @@ def run_portfolio_backtest(
     trades = []
     equity_curve = []
     last_price = {}
+    gate_history = []
 
     for date in dates:
         for code, lookup in bar_lookup.items():
@@ -41,6 +43,21 @@ def run_portfolio_backtest(
         todays_signals = signal_by_date.get(date, [])
         sell_signals = [s for s in todays_signals if s["action"] == "sell"]
         buy_signals = [s for s in todays_signals if s["action"] == "buy"]
+        gate = None
+        if hasattr(strategy, "market_gate"):
+            gate = strategy.market_gate(date, market_stats)
+            gate_history.append({"date": date, **gate})
+            if not gate["allowed"]:
+                buy_signals = []
+        elif hasattr(strategy, "allow_buy"):
+            allowed = strategy.allow_buy(date, market_stats)
+            gate_history.append({
+                "date": date,
+                "allowed": bool(allowed),
+                "reasons": ["市场环境允许进攻"] if allowed else ["市场环境过滤阻止开仓"],
+            })
+            if not allowed:
+                buy_signals = []
 
         for signal in sell_signals:
             code = signal["code"]
@@ -172,6 +189,7 @@ def run_portfolio_backtest(
         "equity_curve": equity_curve,
         "trades": trades,
         "stock_summaries": stock_summaries,
+        "market_gate": _summarize_market_gate(gate_history),
     }
 
 
@@ -197,6 +215,100 @@ def _stock_summaries(trades):
         result.append(item)
     result.sort(key=lambda x: x["profit"], reverse=True)
     return result
+
+
+def _build_market_stats(bars_by_code):
+    by_date = {}
+    for code, bars in bars_by_code.items():
+        clean = [b for b in bars if b.get("close") and b.get("open")]
+        is_growth = code.startswith("sz.300") or code.startswith("sh.688")
+        for i in range(1, len(clean)):
+            prev_close = float(clean[i - 1]["close"])
+            close = float(clean[i]["close"])
+            amount = float(clean[i].get("amount") or 0)
+            change_pct = (close / prev_close - 1) * 100 if prev_close else 0
+            item = by_date.setdefault(clean[i]["trade_date"], {
+                "amount": 0.0,
+                "advancers": 0,
+                "decliners": 0,
+                "flat": 0,
+                "limit_up": 0,
+                "limit_down": 0,
+                "growth_amount": 0.0,
+                "growth_advancers": 0,
+                "growth_decliners": 0,
+            })
+            item["amount"] += amount
+            if change_pct > 0.2:
+                item["advancers"] += 1
+                if is_growth:
+                    item["growth_advancers"] += 1
+            elif change_pct < -0.2:
+                item["decliners"] += 1
+                if is_growth:
+                    item["growth_decliners"] += 1
+            else:
+                item["flat"] += 1
+            if change_pct >= 9.5:
+                item["limit_up"] += 1
+            elif change_pct <= -9.5:
+                item["limit_down"] += 1
+            if is_growth:
+                item["growth_amount"] += amount
+
+    dates = sorted(by_date)
+    trailing_amounts = []
+    for date in dates:
+        item = by_date[date]
+        trailing_amounts.append(item["amount"])
+        recent = trailing_amounts[-20:]
+        item["amount_ma20"] = sum(recent) / len(recent)
+        movers = item["advancers"] + item["decliners"]
+        item["breadth"] = item["advancers"] / movers if movers else 0.5
+        item["limit_balance"] = item["limit_up"] - item["limit_down"]
+        growth_movers = item["growth_advancers"] + item["growth_decliners"]
+        item["growth_breadth"] = item["growth_advancers"] / growth_movers if growth_movers else item["breadth"]
+        item["growth_amount_share"] = item["growth_amount"] / item["amount"] if item["amount"] else 0
+    return by_date
+
+
+def _summarize_market_gate(gate_history):
+    if not gate_history:
+        return {
+            "allowed_days": 0,
+            "blocked_days": 0,
+            "allowed_rate_pct": 0,
+            "recent": [],
+            "blocked_reasons": [],
+            "blocked_recent_days": [],
+        }
+
+    allowed_days = sum(1 for item in gate_history if item.get("allowed"))
+    blocked_days = len(gate_history) - allowed_days
+    reason_counter = {}
+    blocked_recent_days = []
+    for item in gate_history:
+        if item.get("allowed"):
+            continue
+        blocked_recent_days.append({
+            "date": item["date"],
+            "reasons": item.get("reasons", []),
+        })
+        for reason in item.get("reasons", []):
+            reason_counter[reason] = reason_counter.get(reason, 0) + 1
+
+    blocked_reasons = [
+        {"reason": reason, "count": count}
+        for reason, count in sorted(reason_counter.items(), key=lambda x: (-x[1], x[0]))
+    ]
+    return {
+        "allowed_days": allowed_days,
+        "blocked_days": blocked_days,
+        "allowed_rate_pct": round(allowed_days / len(gate_history) * 100, 2),
+        "recent": gate_history[-15:],
+        "blocked_reasons": blocked_reasons,
+        "blocked_recent_days": blocked_recent_days[-10:],
+    }
 
 
 def _max_drawdown(equity_values):

@@ -6,11 +6,45 @@ from sqlalchemy import desc, func
 from backtest import get_strategy, run_portfolio_backtest
 from models.stock import BacktestCache, StockDaily, StockInfo
 
-MACD_MARKET_CACHE_KEY = "macd_market_all_1000"
+DEFAULT_MARKET_DAYS = 1000
+DEFAULT_MARKET_INITIAL_CASH = 1000000.0
+DEFAULT_MARKET_MAX_POSITIONS = 5
+
+MACD_MARKET_CACHE_KEY = "macd_cross_market_1000_pos5"
+ACCUMULATION_MARKET_CACHE_KEY = "accumulation_probe_market_1000_pos5"
 
 
 def compute_macd_market_result(sess, days=1000, initial_cash=1000000.0, max_positions=5):
-    strategy = get_strategy("macd_cross")
+    return compute_market_result(
+        sess,
+        strategy_id="macd_cross",
+        days=days,
+        initial_cash=initial_cash,
+        max_positions=max_positions,
+        criteria="全部正常股票，剔除历史K线不足的股票",
+    )
+
+
+def compute_accumulation_market_result(sess, days=1000, initial_cash=1000000.0, max_positions=5):
+    return compute_market_result(
+        sess,
+        strategy_id="accumulation_probe",
+        days=days,
+        initial_cash=initial_cash,
+        max_positions=max_positions,
+        criteria="全部正常股票，筛选吸筹结束后温和放量试盘的量价结构",
+    )
+
+
+def compute_market_result(
+    sess,
+    strategy_id,
+    days=1000,
+    initial_cash=1000000.0,
+    max_positions=5,
+    criteria="全部正常股票，剔除历史K线不足的股票",
+):
+    strategy = get_strategy(strategy_id)
     stocks, bars_by_code, latest_date = load_market_bars(sess, days)
     if not stocks:
         raise ValueError("没有找到可用于全市场回测的股票")
@@ -34,14 +68,40 @@ def compute_macd_market_result(sess, days=1000, initial_cash=1000000.0, max_posi
             "max_positions": max_positions,
             "max_position_cash": round(initial_cash / max_positions, 2),
             "latest_trade_date": latest_date,
-            "criteria": "全部正常股票，剔除历史K线不足的股票",
+            "criteria": criteria,
             "cached": True,
         },
         "summary": result["summary"],
         "equity_curve": result["equity_curve"],
         "stock_summaries": result["stock_summaries"],
         "trades": trades,
+        "market_gate": result.get("market_gate"),
     }
+
+
+def make_market_cache_key(strategy_id, days=DEFAULT_MARKET_DAYS, max_positions=DEFAULT_MARKET_MAX_POSITIONS):
+    return f"{strategy_id}_market_{int(days)}_pos{int(max_positions)}"
+
+
+def compute_and_save_market_result(
+    sess,
+    strategy_id,
+    days=DEFAULT_MARKET_DAYS,
+    initial_cash=DEFAULT_MARKET_INITIAL_CASH,
+    max_positions=DEFAULT_MARKET_MAX_POSITIONS,
+    criteria="全部正常股票，剔除历史K线不足的股票",
+):
+    result = compute_market_result(
+        sess,
+        strategy_id=strategy_id,
+        days=days,
+        initial_cash=initial_cash,
+        max_positions=max_positions,
+        criteria=criteria,
+    )
+    cache_key = make_market_cache_key(strategy_id, days=days, max_positions=max_positions)
+    save_backtest_cache(sess, cache_key, result)
+    return cache_key, result
 
 
 def save_backtest_cache(sess, cache_key, result):
@@ -73,6 +133,16 @@ def load_backtest_cache(sess, cache_key):
         "created_at": row.created_at,
     }
     return result
+
+
+def load_market_backtest_cache(
+    sess,
+    strategy_id,
+    days=DEFAULT_MARKET_DAYS,
+    max_positions=DEFAULT_MARKET_MAX_POSITIONS,
+):
+    cache_key = make_market_cache_key(strategy_id, days=days, max_positions=max_positions)
+    return load_backtest_cache(sess, cache_key)
 
 
 def load_market_bars(sess, days):

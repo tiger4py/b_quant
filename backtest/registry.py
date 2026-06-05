@@ -1,32 +1,45 @@
 from importlib import import_module
+from pathlib import Path
 
-STRATEGY_MODULES = [
-    "backtest.strategy_ma_cross",
-    "backtest.strategy_macd_cross",
-    "backtest.strategy_rsi_reversal",
-    "backtest.strategy_bollinger_reversion",
-    "backtest.strategy_breakout_20",
-    "backtest.strategy_dual_ma_trend",
-    "backtest.strategy_volume_breakout",
-    "backtest.strategy_kdj_cross",
-    "backtest.strategy_atr_trailing",
-    "backtest.strategy_momentum_60",
-    "backtest.strategy_event_volatility",
-    "backtest.strategy_theme_phase",
-]
+STRATEGY_PACKAGE = "backtest.strategy"
+STRATEGY_DIR = Path(__file__).with_name("strategy")
+
+
+def _strategy_module_names():
+    module_names = []
+    for path in sorted(STRATEGY_DIR.glob("*.py")):
+        if path.name == "__init__.py" or path.stem.startswith("_"):
+            continue
+        if not path.stem.startswith("strategy_"):
+            continue
+        module_names.append(f"{STRATEGY_PACKAGE}.{path.stem}")
+    return module_names
+
+
+def _load_strategy_modules():
+    modules = [import_module(module_name) for module_name in _strategy_module_names()]
+    ids = set()
+    for module in modules:
+        meta = getattr(module, "META", None)
+        if not isinstance(meta, dict):
+            raise ValueError(f"{module.__name__} must define META")
+        for key in ("id", "name", "description"):
+            if not meta.get(key):
+                raise ValueError(f"{module.__name__} META missing {key}")
+        if not hasattr(module, "generate_signals"):
+            raise ValueError(f"{module.__name__} must define generate_signals")
+        if meta["id"] in ids:
+            raise ValueError(f"duplicate strategy id: {meta['id']}")
+        ids.add(meta["id"])
+    return modules
 
 
 def list_strategies():
-    items = []
-    for module_name in STRATEGY_MODULES:
-        module = import_module(module_name)
-        items.append(module.META)
-    return items
+    return [module.META for module in _load_strategy_modules()]
 
 
 def get_strategy(strategy_id):
-    for module_name in STRATEGY_MODULES:
-        module = import_module(module_name)
+    for module in _load_strategy_modules():
         if module.META["id"] == strategy_id:
             return module
     raise KeyError(f"unknown strategy: {strategy_id}")

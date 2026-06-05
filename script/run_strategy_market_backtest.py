@@ -7,9 +7,13 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from backtest import get_strategy, run_portfolio_backtest
+from backtest import get_strategy
 from config import DATABASE_URL
-from logic.backtest_cache import load_market_bars
+from logic.backtest_cache import (
+    DEFAULT_MARKET_INITIAL_CASH,
+    DEFAULT_MARKET_MAX_POSITIONS,
+    compute_and_save_market_result,
+)
 from models.stock import Base
 
 
@@ -17,8 +21,8 @@ def main():
     parser = argparse.ArgumentParser(description="Run market portfolio backtest for a strategy.")
     parser.add_argument("--strategy", required=True, help="strategy id")
     parser.add_argument("--days", type=int, default=1000, help="lookback trading days")
-    parser.add_argument("--initial-cash", type=float, default=1000000, help="initial cash")
-    parser.add_argument("--max-positions", type=int, default=5, help="max concurrent positions")
+    parser.add_argument("--initial-cash", type=float, default=DEFAULT_MARKET_INITIAL_CASH, help="initial cash")
+    parser.add_argument("--max-positions", type=int, default=DEFAULT_MARKET_MAX_POSITIONS, help="max concurrent positions")
     parser.add_argument("--top", type=int, default=10, help="top stocks to print")
     args = parser.parse_args()
 
@@ -28,25 +32,23 @@ def main():
 
     strategy = get_strategy(args.strategy)
     with Session() as sess:
-        stocks, bars_by_code, latest_date = load_market_bars(sess, args.days)
-
-    if not stocks:
-        raise ValueError("No market data available for backtest.")
-
-    stock_map = {stock["code"]: stock for stock in stocks}
-    result = run_portfolio_backtest(
-        bars_by_code,
-        stock_map,
-        strategy,
-        initial_cash=args.initial_cash,
-        max_positions=args.max_positions,
-    )
+        cache_key, result = compute_and_save_market_result(
+            sess,
+            strategy_id=args.strategy,
+            days=args.days,
+            initial_cash=args.initial_cash,
+            max_positions=args.max_positions,
+            criteria="全部正常股票，剔除历史K线不足的股票",
+        )
+    selection = result["selection"]
     summary = result["summary"]
 
+    print(f"cache_key={cache_key}")
     print(f"strategy={strategy.META['id']} name={strategy.META['name']}")
     print(
-        f"stocks={len(stocks)} days={args.days} latest={latest_date} "
-        f"initial={args.initial_cash:.2f} final={summary['final_equity']:.2f}"
+        f"stocks={selection['stock_count']} days={selection['days']} latest={selection['latest_trade_date']} "
+        f"initial={selection['initial_cash']:.2f} final={summary['final_equity']:.2f} "
+        f"max_positions={selection['max_positions']}"
     )
     print(
         f"return={summary['total_return_pct']:.2f}% drawdown={summary['max_drawdown_pct']:.2f}% "

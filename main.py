@@ -4,7 +4,7 @@ import threading
 import time
 from datetime import datetime
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 from sqlalchemy import create_engine, desc, func
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -12,7 +12,14 @@ from config import DATABASE_URL, DOWNLOAD_DAYS
 from script.update_daily import update_concepts as scheduled_update_concepts
 from script.update_daily import update_stocks as scheduled_update_stocks
 from backtest import get_strategy, list_strategies, run_backtest, run_portfolio_backtest
-from logic.backtest_cache import MACD_MARKET_CACHE_KEY, load_backtest_cache
+from logic.backtest_cache import (
+    ACCUMULATION_MARKET_CACHE_KEY,
+    DEFAULT_MARKET_DAYS,
+    DEFAULT_MARKET_MAX_POSITIONS,
+    MACD_MARKET_CACHE_KEY,
+    load_backtest_cache,
+    load_market_backtest_cache,
+)
 from logic.progress import get as get_progress
 from models.stock import Base, StockInfo, StockDaily, Concept, StockConcept, ConceptDaily
 from logic.baostock_download import BaoStockDownloader
@@ -62,7 +69,7 @@ def _scheduler_loop():
         should_run = (
             now.weekday() < 5
             and now.hour == 18
-            and now.minute == 0
+            and now.minute == 2
             and _last_scheduler_run_date != today
         )
 
@@ -101,19 +108,29 @@ def page_concepts():
     return render_template("concepts.html")
 
 
+@app.route("/strategy-backtest")
+def page_strategy_backtest():
+    return render_template("strategy_backtest.html")
+
+
 @app.route("/stock-backtest")
 def page_stock_backtest():
-    return render_template("stock_backtest.html")
+    return redirect(url_for("page_strategy_backtest"))
 
 
 @app.route("/backtest-battle")
 def page_backtest_battle():
-    return render_template("backtest_battle.html")
+    return redirect(url_for("page_strategy_backtest"))
 
 
 @app.route("/macd-market-backtest")
 def page_macd_market_backtest():
-    return render_template("macd_market_backtest.html")
+    return redirect(url_for("page_strategy_backtest"))
+
+
+@app.route("/accumulation-market-backtest")
+def page_accumulation_market_backtest():
+    return redirect(url_for("page_strategy_backtest"))
 
 
 # ── stock basic info ───────────────────────────────────────────
@@ -156,13 +173,62 @@ def api_stock_daily(code: str):
             "trade_date": r.trade_date,
             "open": r.open, "high": r.high, "low": r.low, "close": r.close,
             "volume": r.volume, "amount": r.amount,
-            "turn": r.turn, "pe_ttm": r.pe_ttm,
+            "turn": getattr(r, "turn", None), "pe_ttm": getattr(r, "pe_ttm", None),
         } for r in reversed(rows)])
 
 
 @app.route("/api/backtest/strategies")
 def api_backtest_strategies():
-    return jsonify(list_strategies())
+    return jsonify([{
+        **item,
+        "market_cache_key": f"{item['id']}_market_{DEFAULT_MARKET_DAYS}_pos{DEFAULT_MARKET_MAX_POSITIONS}",
+        "market_cache_days": DEFAULT_MARKET_DAYS,
+        "market_cache_max_positions": DEFAULT_MARKET_MAX_POSITIONS,
+    } for item in list_strategies()])
+
+
+@app.route("/api/backtest/market-overview")
+def api_backtest_market_overview():
+    days = max(120, min(int(request.args.get("days") or DEFAULT_MARKET_DAYS), 2000))
+    max_positions = max(1, min(int(request.args.get("max_positions") or DEFAULT_MARKET_MAX_POSITIONS), 5))
+    ranking = []
+    missing = []
+    with get_session() as sess:
+        for item in list_strategies():
+            result = load_market_backtest_cache(
+                sess,
+                strategy_id=item["id"],
+                days=days,
+                max_positions=max_positions,
+            )
+            if not result:
+                missing.append({
+                    "strategy_id": item["id"],
+                    "strategy_name": item["name"],
+                })
+                continue
+            summary = result["summary"]
+            ranking.append({
+                "strategy_id": item["id"],
+                "strategy_name": item["name"],
+                "description": item["description"],
+                "return_pct": summary["total_return_pct"],
+                "drawdown_pct": summary["max_drawdown_pct"],
+                "win_rate_pct": summary["win_rate_pct"],
+                "trade_count": summary["trade_count"],
+                "final_equity": summary["final_equity"],
+                "score": round(summary["total_return_pct"] - summary["max_drawdown_pct"] * 0.35 + summary["win_rate_pct"] * 0.05, 2),
+                "latest_trade_date": result["selection"]["latest_trade_date"],
+                "stock_count": result["selection"]["stock_count"],
+                "cache_created_at": result.get("cache", {}).get("created_at"),
+            })
+    ranking.sort(key=lambda x: x["score"], reverse=True)
+    return jsonify({
+        "days": days,
+        "max_positions": max_positions,
+        "ranking": ranking,
+        "missing": missing,
+    })
 
 
 @app.route("/api/backtest/stock", methods=["POST"])
@@ -203,8 +269,8 @@ def api_backtest_stock():
         "close": r.close,
         "volume": r.volume,
         "amount": r.amount,
-        "turn": r.turn,
-        "pe_ttm": r.pe_ttm,
+        "turn": getattr(r, "turn", None),
+        "pe_ttm": getattr(r, "pe_ttm", None),
     } for r in reversed(rows)]
 
     try:
@@ -507,6 +573,40 @@ def api_backtest_macd_market():
     return jsonify(result)
 
 
+@app.route("/api/backtest/accumulation-market")
+def api_backtest_accumulation_market():
+    with get_session() as sess:
+        result = load_backtest_cache(sess, ACCUMULATION_MARKET_CACHE_KEY)
+    if not result:
+        return jsonify({
+            "error": "吸筹试盘全市场1000天回测结果还没有生成，请先运行 script/run_accumulation_market_backtest.py"
+        }), 404
+    return jsonify(result)
+
+
+@app.route("/api/backtest/market/<strategy_id>")
+def api_backtest_market(strategy_id: str):
+    days = max(120, min(int(request.args.get("days") or DEFAULT_MARKET_DAYS), 2000))
+    max_positions = max(1, min(int(request.args.get("max_positions") or DEFAULT_MARKET_MAX_POSITIONS), 5))
+    try:
+        strategy = get_strategy(strategy_id)
+    except KeyError:
+        return jsonify({"error": "策略不存在"}), 404
+
+    with get_session() as sess:
+        result = load_market_backtest_cache(
+            sess,
+            strategy_id=strategy_id,
+            days=days,
+            max_positions=max_positions,
+        )
+    if not result:
+        return jsonify({
+            "error": f"{strategy.META['name']} 全市场 {days} 天回测结果还没有生成，请先运行 script/run_strategy_market_backtest.py --strategy {strategy_id} --days {days} --max-positions {max_positions}"
+        }), 404
+    return jsonify(result)
+
+
 def _pick_battle_stocks(sess: Session, stock_limit: int, days: int):
     latest_date = sess.query(func.max(StockDaily.trade_date)).scalar()
     candidates = (
@@ -615,7 +715,7 @@ def _daily_to_dict(row: StockDaily):
         "close": row.close,
         "volume": row.volume,
         "amount": row.amount,
-        "turn": row.turn,
+        # "turn": row.turn,
         "pe_ttm": row.pe_ttm,
     }
 
@@ -732,5 +832,4 @@ if __name__ == "__main__":
     # Flask debug reload starts the app twice; only start the scheduler in the serving process.
     if not debug or os.environ.get("WERKZEUG_RUN_MAIN") == "true":
         start_scheduler()
-    app.run(host="0.0.0.0", port=8000, debug=debug)
-
+    app.run(host="0.0.0.0", port=8000, debug=False)

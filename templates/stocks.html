@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
@@ -336,9 +336,7 @@
   <a href="/">首页</a>
   <a href="/stocks" class="on">个股</a>
   <a href="/concepts">概念</a>
-  <a href="/stock-backtest">个股回测</a>
-  <a href="/backtest-battle">回测大比拼</a>
-  <a href="/macd-market-backtest">MACD全市场</a>
+  <a href="/strategy-backtest">策略回测</a>
 </nav>
 
 <div class="page">
@@ -425,7 +423,7 @@ async function load(p) {
 
   let html = "";
   if (!r.items || r.items.length === 0) {
-    html = '<tr><td colspan="4" class="empty">没有匹配结果</td></tr>';
+    html = '<tr><td colspan="4" class="empty">娌℃湁鍖归厤缁撴灉</td></tr>';
   } else {
     for (const s of r.items) {
       const cls = s.code === activeCode ? " active" : "";
@@ -455,7 +453,7 @@ async function load(p) {
 
   items.push(`<button ${page >= pages ? "disabled" : ""} onclick="load(${page + 1})">下一页</button>`);
   items.push(`<button ${page >= pages ? "disabled" : ""} onclick="load(${pages})">末页</button>`);
-  items.push(`<span class="info">${page} / ${pages} 页</span>`);
+  items.push(`<span class="info">${page} / ${pages} 椤?/span>`);
   $("pager").innerHTML = items.join("");
 }
 
@@ -689,3 +687,4 @@ load(1);
 </script>
 </body>
 </html>
+

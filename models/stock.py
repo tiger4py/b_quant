@@ -34,6 +34,8 @@ class StockDaily(Base):
     close = Column(Float, comment="收盘价")
     volume = Column(BigInteger, comment="成交量(股)")
     amount = Column(Float, comment="成交额(元)")
+    turn = Column(Float, comment="换手率(%)")
+    pe_ttm = Column(Float, comment="市盈率(TTM)")
 
 
 class BacktestCache(Base):

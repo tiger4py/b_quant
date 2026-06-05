@@ -7,38 +7,57 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif;
-    background: #0f1117; color: #e1e4e8; min-height: 100vh;
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    min-height: 100vh;
   }
   .nav {
-    background: #161822; border-bottom: 1px solid #2a2d3e;
-    padding: 0 28px; display: flex; align-items: center; height: 48px;
+    background: #161822;
+    border-bottom: 1px solid #2a2d3e;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    height: 48px;
   }
-  .nav a { color: #8b92a0; text-decoration: none; font-size: 13px; padding: 0 16px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all .15s; }
+  .nav a {
+    color: #8b92a0;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: all .15s;
+  }
   .nav a:hover, .nav a.on { color: #e1e4e8; border-bottom-color: #3b82f6; }
   .nav .brand { font-weight: 600; color: #e1e4e8; margin-right: 24px; font-size: 14px; }
-  .container { max-width: 640px; margin: 0 auto; padding: 48px 24px; text-align: center; }
-  .logo {
-    width: 64px; height: 64px;
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    border-radius: 16px; margin: 0 auto 20px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 30px; font-weight: 700;
-  }
-  h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
-  .sub { color: #6b7280; font-size: 14px; margin-bottom: 36px; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 48px 24px; text-align: center; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
   .card {
-    display: block; text-decoration: none;
-    background: #161822; border: 1px solid #2a2d3e; border-radius: 14px;
-    padding: 30px 24px; transition: all .2s;
+    display: block;
+    text-decoration: none;
+    background: #161822;
+    border: 1px solid #2a2d3e;
+    border-radius: 14px;
+    padding: 30px 24px;
+    transition: all .2s;
   }
   .card:hover { border-color: #3d4158; transform: translateY(-2px); }
   .card .icon { font-size: 36px; margin-bottom: 10px; }
   .card h3 { font-size: 16px; color: #f1f5f9; margin-bottom: 4px; }
   .card p { font-size: 13px; color: #6b7280; }
-  .stats { margin-top: 36px; display: flex; gap: 24px; justify-content: center; color: #6b7280; font-size: 13px; }
-  .stats span { color: #a78bfa; font-weight: 600; }
+  .stats {
+    margin-top: 36px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  .stats span { color: #60a5fa; font-weight: 600; }
   @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -48,37 +67,25 @@
   <a href="/" class="on">首页</a>
   <a href="/stocks">个股</a>
   <a href="/concepts">概念</a>
-  <a href="/stock-backtest">个股回测</a>
-  <a href="/backtest-battle">回测大比拼</a>
-  <a href="/macd-market-backtest">MACD全市场</a>
+  <a href="/strategy-backtest">策略回测</a>
 </nav>
 
 <div class="container">
   <div class="cards">
     <a href="/stocks" class="card">
-      <div class="icon">📈</div>
+      <div class="icon">股</div>
       <h3>个股行情</h3>
-      <p>日K线 · 分页浏览</p>
+      <p>基础资料和日线数据</p>
     </a>
     <a href="/concepts" class="card">
-      <div class="icon">🧩</div>
+      <div class="icon">概</div>
       <h3>概念板块</h3>
-      <p>同花顺概念 · 成分股</p>
+      <p>板块指数和成分股</p>
     </a>
-    <a href="/stock-backtest" class="card">
-      <div class="icon">↗</div>
-      <h3>个股回测</h3>
-      <p>10个策略 · 买卖收益标注</p>
-    </a>
-    <a href="/backtest-battle" class="card">
-      <div class="icon">≋</div>
-      <h3>回测大比拼</h3>
-      <p>自动选股 · 策略排名</p>
-    </a>
-    <a href="/macd-market-backtest" class="card">
-      <div class="icon">M</div>
-      <h3>MACD全市场</h3>
-      <p>全股票池 · 最多5只</p>
+    <a href="/strategy-backtest" class="card">
+      <div class="icon">策</div>
+      <h3>策略回测</h3>
+      <p>统一查看所有策略的买卖、收益和交易详情</p>
     </a>
   </div>
 
@@ -95,7 +102,7 @@
   const r = await fetch('/api/stats').then(x => x.json());
   document.getElementById('v-stocks').textContent = r.stocks.toLocaleString();
   document.getElementById('v-concepts').textContent = r.concepts;
-  document.getElementById('v-daily').textContent = (r.daily_records||0).toLocaleString();
+  document.getElementById('v-daily').textContent = (r.daily_records || 0).toLocaleString();
   document.getElementById('v-date').textContent = r.latest_trade_date || '--';
 })();
 </script>
