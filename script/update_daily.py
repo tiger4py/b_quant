@@ -40,7 +40,6 @@ def _last_trade_date() -> str:
     
 def update_stocks():
     """增量更新最近 DAYS 个交易日的日K线"""
-    print("tmqb")
     if not _bs_login():
         return
 
@@ -52,13 +51,42 @@ def update_stocks():
         codes = [r[0] for r in sess.query(StockInfo.code)
                  .filter(StockInfo.type == "1", StockInfo.status == 1).all()]
 
-    logger.info("Updating stock daily: %d stocks, %s ~ %s", len(codes), start, end)
-    count = 0
-    end_date = _last_trade_date().replace("-", "")
+        # 批量查询已存在的日K记录，构建 {code: {已存在日期}}
+        existing_rows = sess.query(StockDaily.code, StockDaily.trade_date).filter(
+            StockDaily.trade_date >= start,
+            StockDaily.trade_date <= end,
+        ).all()
 
-    total_codes = len(codes)
+    existing_by_code = {}
+    for c, td in existing_rows:
+        existing_by_code.setdefault(c, set()).add(td)
+
+    # 预期交易日：DB中出现的日期 ∪ {最近交易日}（兜底首次运行）
+    all_dates = set()
+    for dates in existing_by_code.values():
+        all_dates.update(dates)
+    all_dates.add(ref)
+
+    # 筛选需要更新的股票
+    need_update = []
+    for code in codes:
+        missing = all_dates - existing_by_code.get(code, set())
+        if missing:
+            need_update.append(code)
+
+    skip_count = len(codes) - len(need_update)
+    logger.info("Updating stock daily: %d total, %d already updated, %d need update, %s ~ %s",
+                len(codes), skip_count, len(need_update), start, end)
+
+    if not need_update:
+        bs.logout()
+        logger.info("Stock daily all up to date, nothing to do")
+        return
+
+    count = 0
+    total_codes = len(need_update)
     consecutive_failures = 0
-    for idx, code in enumerate(codes, start=1):
+    for idx, code in enumerate(need_update, start=1):
         started_at = time.perf_counter()
         if idx == 1 or idx % 200 == 1:
             logger.info("Processing stock %d/%d: %s", idx, total_codes, code)
@@ -131,7 +159,7 @@ def update_stocks():
                 )
 
     bs.logout()
-    logger.info("Stock daily updated: %d rows", count)
+    logger.info("Stock daily updated: %d rows, %d stocks skipped (already updated)", count, skip_count)
 
 
 def _bs_login():
@@ -158,23 +186,55 @@ def _should_reconnect(error_msg):
 
 
 def update_concepts():
-    """Update recent concept daily rows."""
+    """增量更新最近 DAYS 个交易日的概念指数（跳过已更新的）"""
     import akshare as ak
     from models.stock import Concept, ConceptDaily
-
-    with Session() as sess:
-        concepts = sess.query(Concept).all()
 
     ref = _last_trade_date()
     start_date = (datetime.strptime(ref, "%Y-%m-%d") - timedelta(days=DAYS * 2)).strftime("%Y%m%d")
     end_date = ref.replace("-", "")
+    start_ymd = (datetime.strptime(ref, "%Y-%m-%d") - timedelta(days=DAYS * 2)).strftime("%Y-%m-%d")
 
-    logger.info("Updating concept daily: %d concepts, %s ~ %s", len(concepts), start_date, end_date)
+    with Session() as sess:
+        concepts = sess.query(Concept).all()
+
+        # 批量查询已存在的概念日线记录
+        existing_rows = sess.query(ConceptDaily.concept_code, ConceptDaily.trade_date).filter(
+            ConceptDaily.trade_date >= start_ymd,
+            ConceptDaily.trade_date <= ref,
+        ).all()
+
+    # 构建 {concept_code: {已存在日期}}
+    existing_by_code = {}
+    for cc, td in existing_rows:
+        existing_by_code.setdefault(cc, set()).add(td)
+
+    # 预期交易日：DB中出现的日期 ∪ {最近交易日}（兜底首次运行）
+    all_dates = set()
+    for dates in existing_by_code.values():
+        all_dates.update(dates)
+    all_dates.add(ref)
+
+    # 筛选需要更新的概念
+    need_update = []
+    for c in concepts:
+        missing = all_dates - existing_by_code.get(c.code, set())
+        if missing:
+            need_update.append(c)
+
+    skip_count = len(concepts) - len(need_update)
+    logger.info("Updating concept daily: %d total, %d already updated, %d need update, %s ~ %s",
+                len(concepts), skip_count, len(need_update), start_date, end_date)
+
+    if not need_update:
+        logger.info("Concept daily all up to date, nothing to do")
+        return
+
     count = 0
     failed = 0
-    total_concepts = len(concepts)
+    total_concepts = len(need_update)
 
-    for idx, c in enumerate(concepts, start=1):
+    for idx, c in enumerate(need_update, start=1):
         started_at = time.perf_counter()
         if idx == 1 or idx % 50 == 1:
             logger.info("Processing concept %d/%d: %s(%s)", idx, total_concepts, c.name, c.code)
@@ -235,7 +295,7 @@ def update_concepts():
                     elapsed,
                 )
 
-    logger.info("Concept daily updated: %d rows, failed concepts=%d", count, failed)
+    logger.info("Concept daily updated: %d rows, failed=%d, skipped=%d (already updated)", count, failed, skip_count)
 
 
 if __name__ == "__main__":
