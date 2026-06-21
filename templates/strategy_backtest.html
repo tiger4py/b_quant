@@ -30,11 +30,14 @@
   .metric strong { font-size: 20px; color: #f9fafb; }
   .panel { background: #171c24; border: 1px solid #2b3340; border-radius: 8px; overflow: hidden; }
   .panel + .panel { margin-top: 16px; }
-  .panel-head { padding: 13px 15px; border-bottom: 1px solid #2b3340; color: #f3f4f6; font-size: 14px; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; }
+  .panel-head { padding: 13px 15px; border-bottom: 1px solid #2b3340; color: #f3f4f6; font-size: 14px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
   .panel-head span { color: #8b95a5; font-weight: 400; font-size: 12px; }
+  .panel-head .head-left { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+  .toggle-btn { height: 28px; padding: 0 12px; border: 1px solid #343d4c; border-radius: 4px; background: #1d2430; color: #9ca3af; font-size: 12px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+  .toggle-btn:hover { color: #e5e7eb; border-color: #38bdf8; }
+  .panel-body.collapsed { display: none; }
   #overview-chart { height: 320px; }
   #equity-chart { height: 340px; display: none; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .table-wrap { max-height: 430px; overflow: auto; }
   table { width: 100%; border-collapse: collapse; }
   th, td { padding: 10px 12px; border-bottom: 1px solid #242b36; text-align: left; font-size: 13px; white-space: nowrap; }
@@ -91,15 +94,52 @@
     </div>
   </section>
 
+  <!-- 账户收益曲线 -->
   <section class="panel">
-    <div class="panel-head">账户收益曲线 <span id="curve-hint">默认先看全部策略对比</span></div>
-    <div id="detail-empty" class="empty">点击上方策略名，查看该策略的收益曲线和交易详情</div>
-    <div id="equity-chart"></div>
+    <div class="panel-head">
+      <div class="head-left">账户收益曲线 <span id="curve-hint">默认先看全部策略对比</span></div>
+      <button class="toggle-btn" id="toggle-curve" onclick="togglePanel('curve-content', this)">展开</button>
+    </div>
+    <div id="curve-content" class="panel-body collapsed">
+      <div id="detail-empty" class="empty">点击上方策略名，查看该策略的收益曲线和交易详情</div>
+      <div id="equity-chart"></div>
+    </div>
   </section>
 
-  <div class="grid" style="margin-top:16px;">
-    <section class="panel">
-      <div class="panel-head">贡献股票 <span>按累计盈亏排序</span></div>
+  <!-- 买卖流水 -->
+  <section class="panel">
+    <div class="panel-head">
+      <div class="head-left">买卖流水 <span id="trade-hint">按时间顺序</span></div>
+      <button class="toggle-btn" id="toggle-trade" onclick="togglePanel('trade-content', this)">展开</button>
+    </div>
+    <div id="trade-content" class="panel-body collapsed">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+        <input type="text" id="trade-filter-date" placeholder="日期，如 2026-06" oninput="applyTradeFilter()"
+          style="background:#161822;border:1px solid #2a2d3e;border-radius:6px;color:#e1e4e8;padding:6px 10px;font-size:12px;width:160px;">
+        <input type="text" id="trade-filter-stock" placeholder="股票代码或名称" oninput="applyTradeFilter()"
+          style="background:#161822;border:1px solid #2a2d3e;border-radius:6px;color:#e1e4e8;padding:6px 10px;font-size:12px;width:160px;">
+        <button onclick="clearTradeFilter()"
+          style="background:#2a2d3e;color:#8b92a0;border:none;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;">清除</button>
+        <span id="trade-filter-count" style="font-size:11px;color:#8b92a0;align-self:center;"></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>步骤</th><th>日期</th><th>动作</th><th>股票</th><th>价格</th><th>股数</th><th>金额</th><th>仓位%</th><th>持天</th><th>收益</th><th>账户</th><th>原因</th></tr>
+          </thead>
+          <tbody id="trade-body"><tr><td colspan="12" class="muted">请选择策略后查看</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 贡献股票 -->
+  <section class="panel">
+    <div class="panel-head">
+      <div class="head-left">贡献股票 <span>按累计盈亏排序</span></div>
+      <button class="toggle-btn" id="toggle-stock" onclick="togglePanel('stock-content', this)">展开</button>
+    </div>
+    <div id="stock-content" class="panel-body collapsed">
       <div class="table-wrap">
         <table>
           <thead>
@@ -108,20 +148,8 @@
           <tbody id="stock-body"><tr><td colspan="5" class="muted">请选择策略后查看</td></tr></tbody>
         </table>
       </div>
-    </section>
-
-    <section class="panel">
-      <div class="panel-head">买卖流水 <span id="trade-hint">按时间顺序</span></div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>日期</th><th>步骤</th><th>动作</th><th>股票</th><th>价格</th><th>股数</th><th>金额</th><th>本次收益</th><th>账户收益</th><th>原因</th></tr>
-          </thead>
-          <tbody id="trade-body"><tr><td colspan="10" class="muted">请选择策略后查看</td></tr></tbody>
-        </table>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -160,6 +188,36 @@ function stockLabel(code, name) {
   return `<span class="stock-cell" style="--stock-color:${stockColor(code)}"><span class="stock-dot"></span><span><span class="code">${code}</span> ${name}</span></span>`;
 }
 
+// ======== 面板折叠/展开 ========
+function togglePanel(bodyId, btn) {
+  const body = document.getElementById(bodyId);
+  if (!body) return;
+  const collapsed = body.classList.toggle('collapsed');
+  btn.textContent = collapsed ? '展开' : '收起';
+  // 展开收益曲线面板时，触发 ECharts resize
+  if (!collapsed && bodyId === 'curve-content' && equityChart) {
+    setTimeout(() => equityChart.resize(), 100);
+  }
+}
+
+// 展开所有详情面板（加载数据后自动展开）
+function expandAllPanels() {
+  ['curve-content', 'stock-content', 'trade-content'].forEach(id => {
+    const body = document.getElementById(id);
+    if (body && body.classList.contains('collapsed')) {
+      body.classList.remove('collapsed');
+    }
+  });
+  ['toggle-curve', 'toggle-stock', 'toggle-trade'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.textContent = '收起';
+  });
+  // 收益曲线 resize
+  if (equityChart) {
+    setTimeout(() => equityChart.resize(), 100);
+  }
+}
+
 async function init() {
   try {
     strategies = await fetch("/api/backtest/strategies").then(r => r.json());
@@ -178,6 +236,13 @@ async function loadOverview() {
   if (!res.ok) throw new Error(data.error || "全部策略对比加载失败");
   overviewRanking = data.ranking || [];
   renderOverview(data);
+
+  // 自动选中收益最高的策略
+  if (overviewRanking.length) {
+    const best = overviewRanking[0];
+    $("strategy").value = best.strategy_id;
+    await loadSelectedStrategy();
+  }
 }
 
 function renderOverview(data) {
@@ -281,19 +346,23 @@ function showDetailEmpty(msg) {
   $("equity-chart").style.display = "none";
   $("curve-hint").textContent = "暂无详情";
   $("stock-body").innerHTML = '<tr><td colspan="5" class="muted">请选择策略后查看</td></tr>';
-  $("trade-body").innerHTML = '<tr><td colspan="10" class="muted">请选择策略后查看</td></tr>';
+  $("trade-body").innerHTML = '<tr><td colspan="12" class="muted">请选择策略后查看</td></tr>';
   $("trade-hint").textContent = msg;
 }
 
 function renderDetail(strategy, data) {
+  currentDetailData = data;
   const s = data.summary;
   $("detail-empty").style.display = "none";
   $("equity-chart").style.display = "block";
   $("curve-hint").textContent = `${data.strategy.name}，${data.selection.days} 天，最多持有 ${data.selection.max_positions} 只`;
   $("note").textContent = `${strategy.description} 最新交易日 ${data.selection.latest_trade_date}，缓存时间 ${data.cache?.created_at || "--"}`;
-  renderEquity(data.equity_curve || []);
+  const posMap = buildPositionMap(data.trades || []);
+  renderEquity(data.equity_curve || [], posMap);
   renderStocks(data.stock_summaries || []);
   renderTrades(data);
+  // 加载数据后自动展开所有面板
+  expandAllPanels();
   const row = overviewRanking.find(item => item.strategy_id === strategy.id);
   if (row) {
     $("summary").innerHTML = `
@@ -306,16 +375,115 @@ function renderDetail(strategy, data) {
   }
 }
 
-function renderEquity(curve) {
+function buildPositionMap(trades) {
+  // 构建事件日 → 持仓快照，含最终盈亏
+  const snapshots = {};
+  const holdings = {};
+
+  // 先建卖出索引：code+buy_date → profit_pct
+  const sellOutcome = {}; // key: `${code}_${buy_date}`
+  for (const t of trades) {
+    const key = `${t.code}_${t.buy_date}`;
+    sellOutcome[key] = { profit_pct: t.profit_pct, sell_date: t.sell_date, sell_reason: t.sell_reason };
+  }
+
+  const events = [];
+  for (const t of trades) {
+    events.push({ date: t.sell_date, action: "sell", code: t.code, name: t.name, shares: t.shares, buy_price: t.buy_price, buy_date: t.buy_date, reason: t.sell_reason });
+    events.push({ date: t.buy_date, action: "buy", code: t.code, name: t.name, shares: t.shares, price: t.buy_price, reason: t.buy_reason });
+  }
+  events.sort((a, b) => {
+    if (a.date !== b.date) return a.date.localeCompare(b.date);
+    return a.action === "sell" ? -1 : 1;
+  });
+
+  for (const ev of events) {
+    if (ev.action === "sell") {
+      // 卖出前记录快照（含盈亏）
+      const outKey = `${ev.code}_${ev.buy_date}`;
+      const outcome = sellOutcome[outKey];
+      snapshots[ev.date] = Object.values(holdings).map(p => ({
+        ...p,
+        profit_pct: p.code === ev.code && outcome ? outcome.profit_pct : p.profit_pct
+      }));
+      delete holdings[ev.code];
+      snapshots[ev.date] = Object.values(holdings).map(p => ({...p}));
+    } else {
+      // 从 sellOutcome 查找该笔买入的最终盈亏
+      const outKey = `${ev.code}_${ev.date}`;
+      const outcome = sellOutcome[outKey];
+      holdings[ev.code] = {
+        code: ev.code, name: ev.name, buy_date: ev.date,
+        buy_price: ev.price, shares: ev.shares,
+        profit_pct: outcome ? outcome.profit_pct : null
+      };
+      snapshots[ev.date] = Object.values(holdings).map(p => ({...p}));
+    }
+  }
+
+  const sortedDates = Object.keys(snapshots).sort();
+  const result = {};
+  let lastPositions = [];
+  for (const d of sortedDates) {
+    lastPositions = snapshots[d];
+    result[d] = lastPositions;
+  }
+  result._sortedDates = sortedDates;
+  result._find = function(targetDate) {
+    let best = null;
+    for (const d of this._sortedDates) {
+      if (d <= targetDate) best = d;
+      else break;
+    }
+    return best ? this[best] : [];
+  };
+  return result;
+}
+
+function renderEquity(curve, posMap) {
   if (equityChart) equityChart.dispose();
   equityChart = echarts.init($("equity-chart"));
+  const dates = curve.map(x => x.date);
+
   equityChart.setOption({
     backgroundColor: "transparent",
-    tooltip: { trigger: "axis" },
+    tooltip: {
+      trigger: "axis",
+      formatter: function(params) {
+        const p = params[0];
+        const date = p.axisValue;
+        const equity = p.value;
+        const idx = dates.indexOf(date);
+        const posCount = idx >= 0 && curve[idx] ? (curve[idx].position_count || 0) : 0;
+        const cash = idx >= 0 && curve[idx] ? (curve[idx].cash || 0) : 0;
+        const positions = posMap && posMap._find ? posMap._find(date) : [];
+        let html = `<div style="font-weight:600;margin-bottom:6px;">${date}</div>`;
+        html += `<div style="margin-bottom:2px;">权益: <b style="color:#38bdf8;">${Number(equity).toLocaleString()}</b></div>`;
+        html += `<div style="margin-bottom:4px;color:#9ca3af;font-size:11px;">现金 ${Number(cash).toLocaleString()} | 持仓 ${posCount}/5 只</div>`;
+        if (positions.length) {
+          html += `<div style="border-top:1px solid #374151;margin-top:4px;padding-top:4px;font-size:11px;">`;
+          for (const pos of positions) {
+            const holdDays = Math.floor((new Date(date) - new Date(pos.buy_date)) / 86400000);
+            const holdStr = holdDays === 0 ? '今日买入' : `持${holdDays}天`;
+            const profitStr = pos.profit_pct != null
+              ? `<span style="color:${pos.profit_pct>=0?'#3fb950':'#f85149'};font-weight:500;">${pos.profit_pct>=0?'+':''}${pos.profit_pct}%</span>`
+              : '';
+            html += `<div style="margin:1px 0;display:flex;gap:8px;">`;
+            html += `<span style="font-family:monospace;">${pos.code}</span> <span>${pos.name}</span>`;
+            html += `<span style="color:#9ca3af;">${pos.shares}股 @${pos.buy_price.toFixed(2)}</span>`;
+            html += `<span style="color:#8b92a0;">${holdStr}</span>`;
+            if (profitStr) html += profitStr;
+            html += `</div>`;
+          }
+          html += `</div>`;
+        }
+        return html;
+      }
+    },
     grid: { left: 60, right: 24, top: 28, bottom: 42 },
     xAxis: {
       type: "category",
-      data: curve.map(x => x.date),
+      data: dates,
       axisLabel: { color: "#9ca3af" },
       axisLine: { lineStyle: { color: "#374151" } },
     },
@@ -354,26 +522,49 @@ function renderStocks(stocks) {
   `).join("");
 }
 
+let tradeEvents = [];
+let currentDetailData = null; // 当前策略回测数据
+
 function renderTrades(data) {
-  const events = buildTradeEvents(data);
-  $("trade-hint").textContent = `${events.length} 条买卖事件`;
+  tradeEvents = buildTradeEvents(data);
+  $("trade-hint").textContent = `${tradeEvents.length} 条买卖事件`;
+  applyTradeFilter();
+}
+
+function applyTradeFilter() {
+  const dateQ = ($("trade-filter-date")?.value || "").trim().toLowerCase();
+  const stockQ = ($("trade-filter-stock")?.value || "").trim().toLowerCase();
+
+  let events = tradeEvents.filter(e => {
+    if (dateQ && !e.date.includes(dateQ)) return false;
+    if (stockQ && !e.code.toLowerCase().includes(stockQ) && !e.name.toLowerCase().includes(stockQ)) return false;
+    return true;
+  });
+
+  const countEl = $("trade-filter-count");
+  if (countEl) countEl.textContent = dateQ || stockQ ? `筛选 ${events.length}/${tradeEvents.length}` : "";
+
   if (!events.length) {
-    $("trade-body").innerHTML = '<tr><td colspan="10" class="muted">没有交易</td></tr>';
+    $("trade-body").innerHTML = '<tr><td colspan="12" class="muted">无匹配交易</td></tr>';
     return;
   }
-  $("trade-body").innerHTML = events.map((e, i) => {
+  $("trade-body").innerHTML = events.map((e) => {
     const actionText = e.action === "buy" ? "买入" : "卖出";
     const actionClass = e.action === "buy" ? "action-buy" : "action-sell";
+    const pctStr = e.position_pct != null ? `${e.position_pct}%` : "-";
+    const holdStr = e.hold_days != null ? `${e.hold_days}天` : "-";
     return `
       <tr class="stock-mark" style="--stock-color:${stockColor(e.code)}">
+        <td>${e.step}</td>
         <td>${e.date}</td>
-        <td>第 ${i + 1} 步</td>
         <td><span class="action-badge ${actionClass}">${actionText}</span></td>
         <td>${stockLabel(e.code, e.name)}</td>
         <td>${e.price}</td>
         <td>${e.shares}</td>
         <td>${fmtMoney(e.amount)}</td>
-        <td class="${e.action === "sell" ? pctClass(e.profit) : "muted"}">${e.action === "sell" ? fmtMoney(e.profit) : "--"}</td>
+        <td>${pctStr}</td>
+        <td>${holdStr}</td>
+        <td class="${e.action === "sell" ? pctClass(e.profit_pct) : "muted"}">${e.action === "sell" ? (e.profit_pct>=0?'+':'')+e.profit_pct+'%' : "--"}</td>
         <td class="${pctClass(e.account_return_pct)}">${e.account_return_pct}%</td>
         <td>${e.reason}</td>
       </tr>
@@ -381,16 +572,71 @@ function renderTrades(data) {
   }).join("");
 }
 
+function clearTradeFilter() {
+  if ($("trade-filter-date")) $("trade-filter-date").value = "";
+  if ($("trade-filter-stock")) $("trade-filter-stock").value = "";
+  applyTradeFilter();
+}
+
 function buildTradeEvents(data) {
   const initialCash = Number(data.selection.initial_cash || 0);
   const equityByDate = {};
   for (const point of data.equity_curve || []) equityByDate[point.date] = point.equity;
+
+  // 先建买入索引，供卖出计算持仓天数
+  const buyMap = {}; // code → [{date, price, shares}]
+  for (const t of data.trades || []) {
+    if (!buyMap[t.code]) buyMap[t.code] = [];
+    buyMap[t.code].push({ date: t.buy_date, price: t.buy_price, shares: t.shares });
+  }
+
   const events = [];
   for (const t of data.trades || []) {
-    events.push({ action: "buy", date: t.buy_date, code: t.code, name: t.name, price: t.buy_price, shares: t.shares, amount: t.buy_amount, reason: t.buy_reason, sort: 1 });
-    events.push({ action: "sell", date: t.sell_date, code: t.code, name: t.name, price: t.sell_price, shares: t.shares, amount: t.sell_amount, profit: t.profit, reason: t.sell_reason, sort: 0 });
+    // 买
+    const eqBuy = equityByDate[t.buy_date] || initialCash;
+    const pctBuy = eqBuy > 0 ? (t.buy_amount / eqBuy * 100) : 0;
+    events.push({
+      action: "buy", date: t.buy_date, code: t.code, name: t.name,
+      price: t.buy_price, shares: t.shares, amount: t.buy_amount,
+      reason: t.buy_reason, sort: 1,
+      position_pct: Number(pctBuy.toFixed(1)),
+      hold_days: null,
+    });
+    // 卖
+    const eqSell = equityByDate[t.sell_date] || initialCash;
+    const pctSell = eqSell > 0 ? (t.sell_amount / eqSell * 100) : 0;
+    // 找到对应买入日期算持仓天数
+    const buys = buyMap[t.code] || [];
+    let holdDays = null;
+    for (let i = buys.length - 1; i >= 0; i--) {
+      if (buys[i].date <= t.sell_date) {
+        holdDays = Math.floor((new Date(t.sell_date) - new Date(buys[i].date)) / 86400000);
+        break;
+      }
+    }
+    events.push({
+      action: "sell", date: t.sell_date, code: t.code, name: t.name,
+      price: t.sell_price, shares: t.shares, amount: t.sell_amount,
+      profit: t.profit, profit_pct: t.profit_pct, reason: t.sell_reason, sort: 0,
+      position_pct: Number(pctSell.toFixed(1)),
+      hold_days: holdDays,
+    });
   }
-  events.sort((a, b) => a.date !== b.date ? a.date.localeCompare(b.date) : a.sort !== b.sort ? a.sort - b.sort : a.code.localeCompare(b.code));
+
+  // 倒序排列（最新在前）
+  events.sort((a, b) => {
+    if (a.date !== b.date) return b.date.localeCompare(a.date);
+    if (a.sort !== b.sort) return a.sort - b.sort;
+    return a.code.localeCompare(b.code);
+  });
+
+  // 重新编号步骤
+  let step = 0;
+  for (let i = events.length - 1; i >= 0; i--) {
+    step++;
+    events[i].step = step;
+  }
+
   let lastReturn = 0;
   for (const event of events) {
     if (equityByDate[event.date] !== undefined && initialCash) {

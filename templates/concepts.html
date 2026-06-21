@@ -521,7 +521,7 @@ function renderList(nextPage) {
 
   let html = "";
   if (items.length === 0) {
-    html = '<tr><td colspan="2" class="empty">娌℃湁鍖归厤缁撴灉</td></tr>';
+    html = '<tr><td colspan="2" class="empty">没有匹配结果</td></tr>';
   } else {
     for (const c of items) {
       const cls = c.code === activeConceptCode ? " active" : "";
@@ -548,7 +548,7 @@ function renderList(nextPage) {
 
   pagerItems.push(`<button ${page >= pages ? "disabled" : ""} onclick="renderList(${page + 1})">下一页</button>`);
   pagerItems.push(`<button ${page >= pages ? "disabled" : ""} onclick="renderList(${pages})">末页</button>`);
-  pagerItems.push(`<span class="info">${page} / ${pages} 椤?/span>`);
+  pagerItems.push(`<span class="info">${page} / ${pages} 页</span>`);
   $("pager").innerHTML = pagerItems.join("");
 }
 

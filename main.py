@@ -98,6 +98,44 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/trades")
+def page_trades():
+    return render_template("trades.html")
+
+
+@app.route("/api/trades")
+def api_trades():
+    """返回交易历史记录。"""
+    import json
+    from pathlib import Path
+    history_file = Path(__file__).resolve().parent / "data" / "trade_history.json"
+    if not history_file.exists():
+        return jsonify({"records": [], "summary": {}})
+    with open(history_file, "r", encoding="utf-8") as f:
+        records = json.load(f)
+
+    # 汇总统计
+    total_sells = sum(len(r.get("sells", [])) for r in records)
+    total_value = records[-1]["total_value"] if records else 0
+    first_value = records[0]["total_value"] if records else 0
+    total_return = (total_value / first_value - 1) * 100 if first_value > 0 else 0
+    total_return = round(total_return, 2)
+
+    # 按日期倒序
+    records.reverse()
+
+    return jsonify({
+        "records": records,
+        "summary": {
+            "days": len(records),
+            "total_sells": total_sells,
+            "initial_value": first_value,
+            "current_value": total_value,
+            "total_return_pct": total_return,
+        },
+    })
+
+
 @app.route("/stocks")
 def page_stocks():
     return render_template("stocks.html")

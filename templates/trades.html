@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交易记录 — 趋势跟随</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    min-height: 100vh;
+  }
+  .nav {
+    background: #161822;
+    border-bottom: 1px solid #2a2d3e;
+    padding: 0 28px;
+    display: flex; align-items: center; height: 48px;
+  }
+  .nav a {
+    color: #8b92a0; text-decoration: none; font-size: 13px;
+    padding: 0 16px; height: 100%; display: flex; align-items: center;
+    border-bottom: 2px solid transparent;
+  }
+  .nav a:hover, .nav a.active { color: #e1e4e8; border-bottom-color: #4a9eff; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+  h1 { font-size: 20px; margin-bottom: 20px; }
+  .summary { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .card {
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 8px;
+    padding: 16px 20px; min-width: 140px;
+  }
+  .card .label { font-size: 12px; color: #8b92a0; margin-bottom: 4px; }
+  .card .value { font-size: 22px; font-weight: 600; }
+  .card .value.up { color: #3fb950; }
+  .card .value.down { color: #f85149; }
+
+  .search-bar { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+  .search-bar input {
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 6px;
+    color: #e1e4e8; padding: 8px 12px; font-size: 13px; width: 200px;
+  }
+  .search-bar input:focus { outline: none; border-color: #4a9eff; }
+  .search-bar button {
+    background: #4a9eff; color: #fff; border: none; border-radius: 6px;
+    padding: 8px 16px; font-size: 13px; cursor: pointer;
+  }
+  .search-bar button.clear { background: #2a2d3e; }
+  .result-count { font-size: 12px; color: #8b92a0; margin-bottom: 12px; }
+
+  .flow-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 8px; overflow: hidden;
+  }
+  .flow-table th {
+    text-align: left; padding: 10px 12px; background: #1c1f2e;
+    color: #8b92a0; font-weight: 500; font-size: 11px; position: sticky; top: 0; z-index: 1;
+  }
+  .flow-table td { padding: 8px 12px; border-bottom: 1px solid #1c1f2e; }
+  .flow-table tr:hover td { background: #1c1f2e; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 500; }
+  .tag-sell { background: #f8514920; color: #f85149; }
+  .tag-buy { background: #3fb95020; color: #3fb950; }
+  .tag-keep { background: #4a9eff20; color: #4a9eff; }
+  .profit-up { color: #3fb950; font-weight: 500; }
+  .profit-down { color: #f85149; font-weight: 500; }
+  .empty { text-align: center; color: #8b92a0; padding: 60px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/">数据面板</a>
+  <a href="/stocks">个股</a>
+  <a href="/concepts">概念</a>
+  <a href="/strategy-backtest">回测</a>
+  <a href="/trades" class="active">交易记录</a>
+</div>
+<div class="container">
+  <h1>趋势跟随 — 买卖流水</h1>
+  <div class="summary" id="summary"></div>
+  <div class="search-bar">
+    <input type="text" id="searchDate" placeholder="日期，如 2026-06-18" oninput="render()">
+    <input type="text" id="searchStock" placeholder="股票，代码或名称" oninput="render()">
+    <select id="searchType" onchange="render()" style="background:#161822;border:1px solid #2a2d3e;border-radius:6px;color:#e1e4e8;padding:8px 12px;font-size:13px;">
+      <option value="all">全部</option>
+      <option value="buy">买入</option>
+      <option value="sell">卖出</option>
+    </select>
+    <button onclick="clearSearch()" class="clear">清除</button>
+  </div>
+  <div class="result-count" id="resultCount"></div>
+  <div style="overflow-x:auto;">
+    <table class="flow-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>类型</th>
+          <th>代码</th>
+          <th>名称</th>
+          <th style="text-align:right">价格</th>
+          <th style="text-align:right">股数</th>
+          <th style="text-align:right">金额</th>
+          <th style="text-align:right">盈亏%</th>
+          <th>原因</th>
+        </tr>
+      </thead>
+      <tbody id="flowBody"></tbody>
+    </table>
+  </div>
+  <div class="empty" id="emptyMsg" style="display:none">无匹配记录</div>
+</div>
+
+<script>
+let allFlows = [];
+let summary = {};
+
+async function load() {
+  const resp = await fetch('/api/trades');
+  const data = await resp.json();
+  summary = data.summary;
+  const records = data.records;
+
+  // 汇总卡片
+  const cls = summary.total_return_pct >= 0 ? 'up' : 'down';
+  document.getElementById('summary').innerHTML = `
+    <div class="card"><div class="label">跟踪天数</div><div class="value">${summary.days}</div></div>
+    <div class="card"><div class="label">初始净值</div><div class="value">${(summary.initial_value||0).toLocaleString()}</div></div>
+    <div class="card"><div class="label">当前净值</div><div class="value">${(summary.current_value||0).toLocaleString()}</div></div>
+    <div class="card"><div class="label">累计收益</div><div class="value ${cls}">${summary.total_return_pct>=0?'+':''}${summary.total_return_pct}%</div></div>
+  `;
+
+  // 构建统一流水
+  allFlows = [];
+  for (const r of records) {
+    for (const s of (r.sells||[])) {
+      allFlows.push({
+        date: r.date, type: 'sell', code: s.code, name: s.name,
+        price: s.sell_price, shares: s.shares,
+        amount: s.sell_price * (s.shares||0),
+        profit_pct: s.profit_pct, reason: s.reason
+      });
+    }
+    for (const b of (r.buy_signals||[])) {
+      allFlows.push({
+        date: r.date, type: 'buy', code: b.code, name: b.name,
+        price: b.close, shares: 0,
+        amount: 0, profit_pct: null,
+        reason: b.reason ? b.reason.substring(0,60) : '',
+        chg_5d: b.chg_5d, chg_20d: b.chg_20d, vol_ratio: b.vol_ratio
+      });
+    }
+  }
+  // 按日期倒序，同日期卖出在前
+  allFlows.sort((a,b) => b.date.localeCompare(a.date) || (b.type==='sell'?1:-1));
+  render();
+}
+
+function filterFlows() {
+  const dateQ = document.getElementById('searchDate').value.trim().toLowerCase();
+  const stockQ = document.getElementById('searchStock').value.trim().toLowerCase();
+  const typeQ = document.getElementById('searchType').value;
+
+  return allFlows.filter(f => {
+    if (dateQ && !f.date.includes(dateQ)) return false;
+    if (stockQ && !f.code.toLowerCase().includes(stockQ) && !f.name.toLowerCase().includes(stockQ)) return false;
+    if (typeQ !== 'all' && f.type !== typeQ) return false;
+    return true;
+  });
+}
+
+function render() {
+  const flows = filterFlows();
+  document.getElementById('resultCount').textContent = `共 ${flows.length} 条记录`;
+  const body = document.getElementById('flowBody');
+  const empty = document.getElementById('emptyMsg');
+
+  if (!flows.length) {
+    body.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  let html = '';
+  for (const f of flows) {
+    const typeTag = f.type === 'sell'
+      ? '<span class="tag tag-sell">卖出</span>'
+      : '<span class="tag tag-buy">买入</span>';
+    const pctStr = f.profit_pct != null
+      ? `<span class="${f.profit_pct>=0?'profit-up':'profit-down'}">${f.profit_pct>=0?'+':''}${f.profit_pct}%</span>`
+      : '-';
+    const amtStr = f.amount > 0 ? f.amount.toLocaleString() : '-';
+    const sharesStr = f.shares > 0 ? f.shares.toLocaleString() : '-';
+    const reasonStr = f.reason || (f.type==='buy' ? `5日${(f.chg_5d||0)>=0?'+':''}${f.chg_5d||0}% | 量比${f.vol_ratio||0}x` : '');
+
+    html += `<tr>
+      <td>${f.date}</td>
+      <td>${typeTag}</td>
+      <td style="font-family:monospace">${f.code}</td>
+      <td>${f.name}</td>
+      <td style="text-align:right">${f.price.toFixed(2)}</td>
+      <td style="text-align:right">${sharesStr}</td>
+      <td style="text-align:right">${amtStr}</td>
+      <td style="text-align:right">${pctStr}</td>
+      <td style="font-size:11px;color:#8b92a0;max-width:300px">${reasonStr}</td>
+    </tr>`;
+  }
+  body.innerHTML = html;
+}
+
+function clearSearch() {
+  document.getElementById('searchDate').value = '';
+  document.getElementById('searchStock').value = '';
+  document.getElementById('searchType').value = 'all';
+  render();
+}
+
+load();
+</script>
+</body>
+</html>
