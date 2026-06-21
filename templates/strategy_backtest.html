@@ -122,6 +122,25 @@
           style="background:#2a2d3e;color:#8b92a0;border:none;border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer;">清除</button>
         <span id="trade-filter-count" style="font-size:11px;color:#8b92a0;align-self:center;"></span>
       </div>
+
+      <!-- 持仓快照（可选日期） -->
+      <div id="open-positions" style="display:none;margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+          <span style="color:#f3f4f6;font-size:13px;font-weight:600;">持仓快照</span>
+          <input type="date" id="position-date" onchange="onPositionDateChange()"
+            style="background:#161822;border:1px solid #2a2d3e;border-radius:4px;color:#e1e4e8;padding:4px 8px;font-size:12px;width:150px;">
+          <span id="position-date-hint" style="color:#8b95a5;font-weight:400;font-size:12px;"></span>
+        </div>
+        <div class="table-wrap" style="max-height:260px;">
+          <table>
+            <thead>
+              <tr><th>股票</th><th>买入日</th><th>买入价</th><th>股数</th><th>成本</th><th>权重%</th><th>持天</th><th>浮盈</th></tr>
+            </thead>
+            <tbody id="open-positions-body"><tr><td colspan="8" class="muted">--</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
       <div class="table-wrap">
         <table>
           <thead>
@@ -344,6 +363,8 @@ async function loadSelectedStrategy() {
 function showDetailEmpty(msg) {
   $("detail-empty").style.display = "flex";
   $("equity-chart").style.display = "none";
+  $("open-positions").style.display = "none";
+  $("open-positions-body").innerHTML = '<tr><td colspan="8" class="muted">--</td></tr>';
   $("curve-hint").textContent = "暂无详情";
   $("stock-body").innerHTML = '<tr><td colspan="5" class="muted">请选择策略后查看</td></tr>';
   $("trade-body").innerHTML = '<tr><td colspan="12" class="muted">请选择策略后查看</td></tr>';
@@ -357,8 +378,10 @@ function renderDetail(strategy, data) {
   $("equity-chart").style.display = "block";
   $("curve-hint").textContent = `${data.strategy.name}，${data.selection.days} 天，最多持有 ${data.selection.max_positions} 只`;
   $("note").textContent = `${strategy.description} 最新交易日 ${data.selection.latest_trade_date}，缓存时间 ${data.cache?.created_at || "--"}`;
+  const initCash = Number(data.selection.initial_cash || 0);
   const posMap = buildPositionMap(data.trades || []);
-  renderEquity(data.equity_curve || [], posMap);
+  renderOpenPositions(data.trades || [], data.equity_curve || [], posMap, initCash);
+  renderEquity(data.equity_curve || [], posMap, initCash);
   renderStocks(data.stock_summaries || []);
   renderTrades(data);
   // 加载数据后自动展开所有面板
@@ -380,17 +403,21 @@ function buildPositionMap(trades) {
   const snapshots = {};
   const holdings = {};
 
-  // 先建卖出索引：code+buy_date → profit_pct
-  const sellOutcome = {}; // key: `${code}_${buy_date}`
+  // 先建卖出索引：code+buy_date → profit_pct（仅已平仓的，期末持仓不算）
+  const sellOutcome = {};
   for (const t of trades) {
+    if (!t.sell_date || t.sell_reason === "期末持仓") continue;
     const key = `${t.code}_${t.buy_date}`;
-    sellOutcome[key] = { profit_pct: t.profit_pct, sell_date: t.sell_date, sell_reason: t.sell_reason };
+    sellOutcome[key] = { profit_pct: t.profit_pct, sell_date: t.sell_date, sell_reason: t.sell_reason || "" };
   }
 
   const events = [];
   for (const t of trades) {
-    events.push({ date: t.sell_date, action: "sell", code: t.code, name: t.name, shares: t.shares, buy_price: t.buy_price, buy_date: t.buy_date, reason: t.sell_reason });
-    events.push({ date: t.buy_date, action: "buy", code: t.code, name: t.name, shares: t.shares, price: t.buy_price, reason: t.buy_reason });
+    // 期末持仓不是真正的卖出，不生成卖出事件
+    if (t.sell_date && t.sell_reason !== "期末持仓") {
+      events.push({ date: t.sell_date, action: "sell", code: t.code, name: t.name, shares: t.shares, buy_price: t.buy_price, buy_date: t.buy_date, reason: t.sell_reason || "" });
+    }
+    events.push({ date: t.buy_date, action: "buy", code: t.code, name: t.name, shares: t.shares, price: t.buy_price, reason: t.buy_reason || "" });
   }
   events.sort((a, b) => {
     if (a.date !== b.date) return a.date.localeCompare(b.date);
@@ -440,7 +467,127 @@ function buildPositionMap(trades) {
   return result;
 }
 
-function renderEquity(curve, posMap) {
+// ======== 持仓快照（按日期查看） ========
+let currentPosTrades = [];
+let currentPosEquityCurve = [];
+let currentPosInitCash = 0;
+let currentPosMap = null;
+
+function getPositionsOnDate(date, trades) {
+  // 筛选在指定日期持有的仓位：已买入且未卖出（或期末持仓）
+  // 注意：sell_date 可能为 null（当日买入无期末记录），要一并纳入
+  const seen = new Set();
+  const result = [];
+  for (const t of trades) {
+    if (!(t.buy_date <= date)) continue;
+    if (!(!t.sell_date || t.sell_date > date || t.sell_reason === "期末持仓")) continue;
+    // 去重：同一只股票同一天买入只保留一条（优先期末持仓记录，有 profit_pct）
+    const key = `${t.code}_${t.buy_date}`;
+    if (seen.has(key)) {
+      // 如果已有的是普通买入、新来的是期末持仓，替换
+      const existing = result.find(r => r._key === key);
+      if (existing && existing._source !== "open" && t.sell_reason === "期末持仓") {
+        Object.assign(existing, buildPosEntry(t, date, "open"));
+      }
+      continue;
+    }
+    seen.add(key);
+    result.push(buildPosEntry(t, date, t.sell_reason === "期末持仓" ? "open" : "buy"));
+  }
+  return result;
+}
+
+function buildPosEntry(t, date, source) {
+  const holdDays = Math.max(0, Math.floor((new Date(date) - new Date(t.buy_date)) / 86400000));
+  // 浮盈：期末持仓用已算好的 profit_pct，当日买入为 0%（买入价≈收盘价）
+  let profitPct = null;
+  if (t.sell_reason === "期末持仓") {
+    profitPct = t.profit_pct;
+  } else if (t.buy_date === date) {
+    profitPct = 0;
+  }
+  return {
+    _key: `${t.code}_${t.buy_date}`,
+    _source: source,
+    code: t.code, name: t.name, buy_date: t.buy_date,
+    buy_price: t.buy_price, shares: t.shares,
+    profit_pct: profitPct,
+    hold_days: holdDays,
+  };
+}
+
+function renderOpenPositions(trades, equityCurve, posMap, initialCash) {
+  currentPosTrades = trades || [];
+  currentPosEquityCurve = equityCurve || [];
+  currentPosInitCash = initialCash;
+  currentPosMap = posMap;
+
+  const lastDate = equityCurve.length ? equityCurve[equityCurve.length - 1].date : '';
+  const firstDate = equityCurve.length ? equityCurve[0].date : '';
+
+  // 设置日期选择器范围
+  const dateInput = $("position-date");
+  if (firstDate) dateInput.min = firstDate;
+  if (lastDate) {
+    dateInput.max = lastDate;
+    dateInput.value = lastDate;  // 默认最新交易日
+  }
+
+  // 默认渲染最后一天
+  refreshPositionTable(lastDate);
+}
+
+function onPositionDateChange() {
+  const date = $("position-date").value;
+  if (!date) return;
+  refreshPositionTable(date);
+}
+
+function refreshPositionTable(date) {
+  const el = $("open-positions");
+  const body = $("open-positions-body");
+  const hint = $("position-date-hint");
+
+  const positions = getPositionsOnDate(date, currentPosTrades);
+
+  if (!positions.length) {
+    el.style.display = "none";
+    return;
+  }
+
+  // 该日期的账户权益
+  let equityOnDate = currentPosInitCash;
+  for (const p of currentPosEquityCurve) {
+    if (p.date <= date) equityOnDate = p.equity;
+  }
+
+  el.style.display = "block";
+  hint.textContent = `${date}，权益 ${fmtMoney(equityOnDate)}，持仓 ${positions.length} 只`;
+
+  body.innerHTML = positions.map(p => {
+    const cost = (p.shares || 0) * (p.buy_price || 0);
+    const weightPct = equityOnDate > 0 ? (cost / equityOnDate * 100) : 0;
+    // 浮盈
+    let profitHtml = '<span class="muted">--</span>';
+    if (p.profit_pct != null) {
+      const cls = p.profit_pct >= 0 ? "red" : "green";
+      const sign = p.profit_pct >= 0 ? "+" : "";
+      profitHtml = `<span class="${cls}">${sign}${p.profit_pct}%</span>`;
+    }
+    return `<tr>
+      <td>${stockLabel(p.code, p.name)}</td>
+      <td>${p.buy_date || "-"}</td>
+      <td>${(p.buy_price || 0).toFixed(2)}</td>
+      <td>${p.shares || 0}</td>
+      <td>${fmtMoney(cost)}</td>
+      <td>${weightPct.toFixed(1)}%</td>
+      <td>${p.hold_days}天</td>
+      <td>${profitHtml}</td>
+    </tr>`;
+  }).join("");
+}
+
+function renderEquity(curve, posMap, initCash) {
   if (equityChart) equityChart.dispose();
   equityChart = echarts.init($("equity-chart"));
   const dates = curve.map(x => x.date);
@@ -457,8 +604,11 @@ function renderEquity(curve, posMap) {
         const posCount = idx >= 0 && curve[idx] ? (curve[idx].position_count || 0) : 0;
         const cash = idx >= 0 && curve[idx] ? (curve[idx].cash || 0) : 0;
         const positions = posMap && posMap._find ? posMap._find(date) : [];
+        const portReturn = initCash > 0 ? ((equity - initCash) / initCash * 100) : 0;
+        const retColor = portReturn >= 0 ? '#3fb950' : '#f85149';
         let html = `<div style="font-weight:600;margin-bottom:6px;">${date}</div>`;
-        html += `<div style="margin-bottom:2px;">权益: <b style="color:#38bdf8;">${Number(equity).toLocaleString()}</b></div>`;
+        html += `<div style="margin-bottom:2px;">权益: <b style="color:#38bdf8;">${Number(equity).toLocaleString()}</b>`;
+        html += ` | 收益: <b style="color:${retColor};">${portReturn>=0?'+':''}${portReturn.toFixed(1)}%</b></div>`;
         html += `<div style="margin-bottom:4px;color:#9ca3af;font-size:11px;">现金 ${Number(cash).toLocaleString()} | 持仓 ${posCount}/5 只</div>`;
         if (positions.length) {
           html += `<div style="border-top:1px solid #374151;margin-top:4px;padding-top:4px;font-size:11px;">`;
@@ -601,26 +751,28 @@ function buildTradeEvents(data) {
       reason: t.buy_reason, sort: 1,
       position_pct: Number(pctBuy.toFixed(1)),
       hold_days: null,
+      open: !t.sell_date,
     });
-    // 卖
-    const eqSell = equityByDate[t.sell_date] || initialCash;
-    const pctSell = eqSell > 0 ? (t.sell_amount / eqSell * 100) : 0;
-    // 找到对应买入日期算持仓天数
-    const buys = buyMap[t.code] || [];
-    let holdDays = null;
-    for (let i = buys.length - 1; i >= 0; i--) {
-      if (buys[i].date <= t.sell_date) {
-        holdDays = Math.floor((new Date(t.sell_date) - new Date(buys[i].date)) / 86400000);
-        break;
+    // 卖（已平仓才添加卖出事件，期末持仓不算卖出）
+    if (t.sell_date && t.sell_reason !== "期末持仓") {
+      const eqSell = equityByDate[t.sell_date] || initialCash;
+      const pctSell = eqSell > 0 ? (t.sell_amount / eqSell * 100) : 0;
+      const buys = buyMap[t.code] || [];
+      let holdDays = null;
+      for (let i = buys.length - 1; i >= 0; i--) {
+        if (buys[i].date <= t.sell_date) {
+          holdDays = Math.floor((new Date(t.sell_date) - new Date(buys[i].date)) / 86400000);
+          break;
+        }
       }
+      events.push({
+        action: "sell", date: t.sell_date, code: t.code, name: t.name,
+        price: t.sell_price, shares: t.shares, amount: t.sell_amount,
+        profit: t.profit, profit_pct: t.profit_pct, reason: t.sell_reason, sort: 0,
+        position_pct: Number(pctSell.toFixed(1)),
+        hold_days: holdDays,
+      });
     }
-    events.push({
-      action: "sell", date: t.sell_date, code: t.code, name: t.name,
-      price: t.sell_price, shares: t.shares, amount: t.sell_amount,
-      profit: t.profit, profit_pct: t.profit_pct, reason: t.sell_reason, sort: 0,
-      position_pct: Number(pctSell.toFixed(1)),
-      hold_days: holdDays,
-    });
   }
 
   // 倒序排列（最新在前）

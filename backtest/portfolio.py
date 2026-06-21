@@ -53,9 +53,15 @@ def run_portfolio_backtest(
             if date in lookup:
                 last_price[code] = float(lookup[date]["close"])
 
+        is_last_date = (date == dates[-1])
         todays_signals = signal_by_date.get(date, [])
         sell_signals = [s for s in todays_signals if s["action"] == "sell"]
         buy_signals = [s for s in todays_signals if s["action"] == "buy"]
+
+        # 最后一天不卖出，期末持仓自然保留
+        if is_last_date:
+            sell_signals = []
+
         gate = None
         if hasattr(strategy, "market_gate"):
             gate = strategy.market_gate(date, market_stats)
@@ -163,44 +169,39 @@ def run_portfolio_backtest(
         })
         portfolio_peak = max(portfolio_peak, equity)
 
-    last_date = dates[-1]
-    for code, pos in list(positions.items()):
-        sell_price = last_price.get(code, pos["buy_price"])
-        income = pos["shares"] * sell_price
-        cash += income
-        cost = pos["shares"] * pos["buy_price"]
-        profit = income - cost
-        profit_pct = profit / cost * 100 if cost else 0
+    # 期末不平仓，持仓自然保留。未平仓记录写入 trades（标记为 open）
+    last_date = dates[-1] if dates else None
+    for code, pos in positions.items():
         stock = stock_map.get(code, {"name": code})
-        # 期末平仓：如果买入日就是最后一天，不记录为交易（当日买入不强制卖出）
-        if pos["buy_date"] != last_date:
-            trades.append({
-                "strategy_id": strategy.META["id"],
-                "strategy_name": strategy.META["name"],
-                "code": code,
-                "name": stock["name"],
-                "buy_date": pos["buy_date"],
-                "buy_price": round(pos["buy_price"], 3),
-                "sell_date": last_date,
-                "sell_price": round(sell_price, 3),
-                "shares": pos["shares"],
-                "buy_amount": round(cost, 2),
-                "sell_amount": round(income, 2),
-                "profit": round(profit, 2),
-                "profit_pct": round(profit_pct, 2),
-                "buy_reason": pos["buy_reason"],
-                "sell_reason": "回测结束平仓",
-            })
-        del positions[code]
+        last_px = last_price.get(code, pos["buy_price"])
+        cost = pos["shares"] * pos["buy_price"]
+        cur_val = pos["shares"] * last_px
+        profit_val = cur_val - cost
+        pct = (last_px / pos["buy_price"] - 1) * 100 if pos["buy_price"] else 0
+        trades.append({
+            "strategy_id": strategy.META["id"],
+            "strategy_name": strategy.META["name"],
+            "code": code,
+            "name": stock["name"],
+            "buy_date": pos["buy_date"],
+            "buy_price": round(pos["buy_price"], 3),
+            "sell_date": last_date,
+            "sell_price": round(last_px, 3),
+            "shares": pos["shares"],
+            "buy_amount": round(cost, 2),
+            "sell_amount": round(cur_val, 2),
+            "profit": round(profit_val, 2),
+            "profit_pct": round(pct, 2),
+            "buy_reason": pos["buy_reason"],
+            "sell_reason": "期末持仓",
+        })
 
     if equity_curve:
-        equity_curve[-1]["equity"] = round(cash, 2)
-        equity_curve[-1]["cash"] = round(cash, 2)
-        equity_curve[-1]["position_count"] = 0
-
-    final_equity = cash
-    wins = [t for t in trades if t["profit"] > 0]
-    losses = [t for t in trades if t["profit"] <= 0]
+        final_equity = equity_curve[-1]["equity"]
+    else:
+        final_equity = cash
+    wins = [t for t in trades if t["profit"] is not None and t["profit"] > 0]
+    losses = [t for t in trades if t["profit"] is not None and t["profit"] <= 0]
     stock_summaries = _stock_summaries(trades)
     max_drawdown = _max_drawdown([p["equity"] for p in equity_curve])
 
@@ -212,8 +213,8 @@ def run_portfolio_backtest(
             "total_return_pct": round((final_equity - initial_cash) / initial_cash * 100, 2),
             "max_drawdown_pct": round(max_drawdown, 2),
             "trade_count": len(trades),
-            "win_rate_pct": round(len(wins) / len(trades) * 100, 2) if trades else 0,
-            "avg_profit_pct": round(sum(t["profit_pct"] for t in trades) / len(trades), 2) if trades else 0,
+            "win_rate_pct": round(len(wins) / max(1, len(wins) + len(losses)) * 100, 2),
+            "avg_profit_pct": round(sum(t["profit_pct"] for t in trades if t["profit_pct"] is not None) / max(1, sum(1 for t in trades if t["profit_pct"] is not None)), 2),
             "profit_factor": _profit_factor(wins, losses),
             "max_positions": max_positions,
             "max_position_cash": round(max_position_cash, 2),
@@ -235,6 +236,8 @@ def _stock_summaries(trades):
             "trade_count": 0,
             "wins": 0,
         })
+        if trade["profit"] is None:
+            continue  # 未平仓，不参与统计
         item["profit"] += trade["profit"]
         item["trade_count"] += 1
         if trade["profit"] > 0:
@@ -488,9 +491,14 @@ def run_multi_strategy_backtest(
             if date in lookup:
                 last_price[code] = float(lookup[date]["close"])
 
+        is_last_date = (date == dates[-1])
         todays_signals = signal_by_date.get(date, [])
         sell_signals = [s for s in todays_signals if s["action"] == "sell"]
         buy_signals = [s for s in todays_signals if s["action"] == "buy"]
+
+        # 最后一天不卖出，期末持仓自然保留
+        if is_last_date:
+            sell_signals = []
 
         # 市场广度
         today_stats = market_stats.get(date, {})
@@ -613,45 +621,40 @@ def run_multi_strategy_backtest(
         })
         portfolio_peak = max(portfolio_peak, equity)
 
-    # 期末平仓
-    last_date = dates[-1]
-    for code, pos in list(positions.items()):
-        sell_price = last_price.get(code, pos["buy_price"])
-        income = pos["shares"] * sell_price
-        cash += income
-        cost = pos["shares"] * pos["buy_price"]
-        profit = income - cost
-        profit_pct = profit / cost * 100 if cost else 0
-        strat = strategies[pos.get("strategy_index", 0)]
+    # 期末不平仓，未平仓记录写入 trades
+    last_date = dates[-1] if dates else None
+    for code, pos in positions.items():
         stock = stock_map.get(code, {"name": code})
-        if pos["buy_date"] != last_date:
-            trades.append({
-                "strategy_id": strat.META["id"],
-                "strategy_name": strat.META["name"],
-                "code": code,
-                "name": stock["name"],
-                "buy_date": pos["buy_date"],
-                "buy_price": round(pos["buy_price"], 3),
-                "sell_date": last_date,
-                "sell_price": round(sell_price, 3),
-                "shares": pos["shares"],
-                "buy_amount": round(cost, 2),
-                "sell_amount": round(income, 2),
-                "profit": round(profit, 2),
-                "profit_pct": round(profit_pct, 2),
-                "buy_reason": pos["buy_reason"],
-                "sell_reason": "回测结束平仓",
-            })
-        del positions[code]
+        strat = strategies[pos.get("strategy_index", 0)]
+        last_px = last_price.get(code, pos["buy_price"])
+        cost = pos["shares"] * pos["buy_price"]
+        cur_val = pos["shares"] * last_px
+        profit_val = cur_val - cost
+        pct = (last_px / pos["buy_price"] - 1) * 100 if pos["buy_price"] else 0
+        trades.append({
+            "strategy_id": strat.META["id"],
+            "strategy_name": strat.META["name"],
+            "code": code,
+            "name": stock["name"],
+            "buy_date": pos["buy_date"],
+            "buy_price": round(pos["buy_price"], 3),
+            "sell_date": last_date,
+            "sell_price": round(last_px, 3),
+            "shares": pos["shares"],
+            "buy_amount": round(cost, 2),
+            "sell_amount": round(cur_val, 2),
+            "profit": round(profit_val, 2),
+            "profit_pct": round(pct, 2),
+            "buy_reason": pos["buy_reason"],
+            "sell_reason": "期末持仓",
+        })
 
     if equity_curve:
-        equity_curve[-1]["equity"] = round(cash, 2)
-        equity_curve[-1]["cash"] = round(cash, 2)
-        equity_curve[-1]["position_count"] = 0
-
-    final_equity = cash
-    wins = [t for t in trades if t["profit"] > 0]
-    losses = [t for t in trades if t["profit"] <= 0]
+        final_equity = equity_curve[-1]["equity"]
+    else:
+        final_equity = cash
+    wins = [t for t in trades if t["profit"] is not None and t["profit"] > 0]
+    losses = [t for t in trades if t["profit"] is not None and t["profit"] <= 0]
     max_drawdown = _max_drawdown([p["equity"] for p in equity_curve])
 
     # 按策略分拆统计
@@ -686,8 +689,8 @@ def run_multi_strategy_backtest(
             "total_return_pct": round((final_equity - initial_cash) / initial_cash * 100, 2),
             "max_drawdown_pct": round(max_drawdown, 2),
             "trade_count": len(trades),
-            "win_rate_pct": round(len(wins) / len(trades) * 100, 2) if trades else 0,
-            "avg_profit_pct": round(sum(t["profit_pct"] for t in trades) / len(trades), 2) if trades else 0,
+            "win_rate_pct": round(len(wins) / max(1, len(wins) + len(losses)) * 100, 2),
+            "avg_profit_pct": round(sum(t["profit_pct"] for t in trades if t["profit_pct"] is not None) / max(1, sum(1 for t in trades if t["profit_pct"] is not None)), 2),
             "profit_factor": _profit_factor(wins, losses),
             "max_positions": max_positions,
             "max_position_cash": round(initial_cash / max_positions, 2),
