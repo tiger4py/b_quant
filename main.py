@@ -88,8 +88,8 @@ def _scheduler_loop():
         today = now.strftime("%Y-%m-%d")
         is_workday = now.weekday() < 5
 
-        # 收盘后 18:30 — 更新数据 → 扫描信号 → QQ推送
-        if is_workday and now.hour == 18 and now.minute == 30 and _last_scheduler_run_date != today:
+        # 收盘后 19:30 — 更新数据 → 回测 → QQ推送
+        if is_workday and now.hour == 19 and now.minute == 30 and _last_scheduler_run_date != today:
             _last_scheduler_run_date = today
             _run_daily_update_job()
             _run_push_job()
@@ -678,18 +678,12 @@ def _pick_battle_stocks(sess: Session, stock_limit: int, days: int):
 
 
 def _load_market_bars(sess: Session, days: int):
+    from logic.backtest_cache import FIXED_START_DATE
     latest_date = sess.query(func.max(StockDaily.trade_date)).scalar()
-    date_rows = (
-        sess.query(StockDaily.trade_date)
-        .distinct()
-        .order_by(desc(StockDaily.trade_date))
-        .limit(days)
-        .all()
-    )
-    if not date_rows:
+    if not latest_date:
         return [], {}, latest_date
 
-    cutoff = min(row[0] for row in date_rows)
+    cutoff = FIXED_START_DATE
     latest_rows = (
         sess.query(StockInfo, StockDaily)
         .join(StockDaily, StockInfo.code == StockDaily.code)

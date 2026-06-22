@@ -9,6 +9,7 @@ from models.stock import BacktestCache, StockDaily, StockInfo
 DEFAULT_MARKET_DAYS = 1000
 DEFAULT_MARKET_INITIAL_CASH = 1000000.0
 DEFAULT_MARKET_MAX_POSITIONS = 5
+FIXED_START_DATE = "2022-05-06"  # 固定起始日期，与 2026-06-18 基准回测 K线起始对齐
 
 MACD_MARKET_CACHE_KEY = "macd_cross_market_1000_pos5"
 ACCUMULATION_MARKET_CACHE_KEY = "accumulation_probe_market_1000_pos5"
@@ -173,19 +174,13 @@ def load_market_backtest_cache(
     return load_backtest_cache(sess, cache_key)
 
 
-def load_market_bars(sess, days):
+def load_market_bars(sess, days, start_date=None):
     latest_date = sess.query(func.max(StockDaily.trade_date)).scalar()
-    date_rows = (
-        sess.query(StockDaily.trade_date)
-        .distinct()
-        .order_by(desc(StockDaily.trade_date))
-        .limit(days)
-        .all()
-    )
-    if not date_rows:
+    if not latest_date:
         return [], {}, latest_date
 
-    cutoff = min(row[0] for row in date_rows)
+    # 固定起始日期，避免滑动窗口导致历史信号偏移
+    cutoff = start_date or FIXED_START_DATE
     latest_rows = (
         sess.query(StockInfo, StockDaily)
         .join(StockDaily, StockInfo.code == StockDaily.code)
