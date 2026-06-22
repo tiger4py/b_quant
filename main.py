@@ -215,6 +215,25 @@ def api_stock_daily(code: str):
         } for r in reversed(rows)])
 
 
+@app.route("/api/stocks/prices")
+def api_stocks_prices():
+    """批量获取股票在指定日期的收盘价。codes=逗号分隔, date=YYYY-MM-DD"""
+    codes_str = request.args.get("codes", "")
+    date = request.args.get("date", "")
+    if not codes_str or not date:
+        return jsonify({})
+    codes = [c.strip() for c in codes_str.split(",") if c.strip()]
+    if not codes:
+        return jsonify({})
+    with get_session() as sess:
+        rows = (
+            sess.query(StockDaily.code, StockDaily.close)
+            .filter(StockDaily.code.in_(codes), StockDaily.trade_date == date)
+            .all()
+        )
+    return jsonify({row.code: row.close for row in rows})
+
+
 @app.route("/api/backtest/strategies")
 def api_backtest_strategies():
     return jsonify([{

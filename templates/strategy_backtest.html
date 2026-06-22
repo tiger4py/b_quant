@@ -499,11 +499,10 @@ function getPositionsOnDate(date, trades) {
 
 function buildPosEntry(t, date, source) {
   const holdDays = Math.max(0, Math.floor((new Date(date) - new Date(t.buy_date)) / 86400000));
-  // 浮盈：期末持仓用已算好的 profit_pct，当日买入为 0%（买入价≈收盘价）
+  // 浮盈统一由 refreshPositionTable 通过 API 获取当日收盘价实时计算
+  // 只有当日买入的直接给 0%（买入价≈当日收盘价）
   let profitPct = null;
-  if (t.sell_reason === "期末持仓") {
-    profitPct = t.profit_pct;
-  } else if (t.buy_date === date) {
+  if (t.buy_date === date) {
     profitPct = 0;
   }
   return {
@@ -530,22 +529,11 @@ function renderOpenPositions(trades, equityCurve, posMap, initialCash) {
   if (firstDate) dateInput.min = firstDate;
   if (lastDate) dateInput.max = lastDate;
 
-  // 找最近一个有持仓的日期作为默认值（避免期末空仓导致面板隐藏）
-  let defaultDate = lastDate;
-  if (posMap && posMap._sortedDates && posMap._sortedDates.length) {
-    // 从后往前找第一个有持仓的日期
-    for (let i = posMap._sortedDates.length - 1; i >= 0; i--) {
-      const d = posMap._sortedDates[i];
-      if (posMap[d] && posMap[d].length > 0) {
-        defaultDate = d;
-        break;
-      }
-    }
-  }
-  dateInput.value = defaultDate || lastDate;
+  // 默认最新交易日（面板空仓也会显示，用户可自行切换）
+  dateInput.value = lastDate;
 
-  // 默认渲染有持仓的日期
-  refreshPositionTable(defaultDate || lastDate);
+  // 默认渲染最新日期
+  refreshPositionTable(lastDate);
 }
 
 function onPositionDateChange() {
@@ -554,7 +542,7 @@ function onPositionDateChange() {
   refreshPositionTable(date);
 }
 
-function refreshPositionTable(date) {
+async function refreshPositionTable(date) {
   const el = $("open-positions");
   const body = $("open-positions-body");
   const hint = $("position-date-hint");
@@ -576,12 +564,29 @@ function refreshPositionTable(date) {
     return;
   }
 
+  // 对没有 profit_pct 的持仓，批量获取当日收盘价来计算浮盈
+  const needPrice = positions.filter(p => p.profit_pct == null);
+  if (needPrice.length) {
+    const codes = needPrice.map(p => p.code).join(",");
+    try {
+      const priceRes = await fetch(`/api/stocks/prices?codes=${encodeURIComponent(codes)}&date=${date}`);
+      const priceMap = await priceRes.json();
+      for (const p of needPrice) {
+        const close = priceMap[p.code];
+        if (close != null && p.buy_price > 0) {
+          p.profit_pct = Number(((close / p.buy_price - 1) * 100).toFixed(2));
+        }
+      }
+    } catch (e) {
+      // 获取价格失败则保持 --
+    }
+  }
+
   hint.textContent = `${date}，权益 ${fmtMoney(equityOnDate)}，持仓 ${positions.length} 只`;
 
   body.innerHTML = positions.map(p => {
     const cost = (p.shares || 0) * (p.buy_price || 0);
     const weightPct = equityOnDate > 0 ? (cost / equityOnDate * 100) : 0;
-    // 浮盈
     let profitHtml = '<span class="muted">--</span>';
     if (p.profit_pct != null) {
       const cls = p.profit_pct >= 0 ? "red" : "green";
