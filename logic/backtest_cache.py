@@ -83,6 +83,33 @@ def make_market_cache_key(strategy_id, days=DEFAULT_MARKET_DAYS, max_positions=D
     return f"{strategy_id}_market_{int(days)}_pos{int(max_positions)}"
 
 
+def _save_strategy_archive(strategy_id, result):
+    """将回测结果归档到 data/strategy/{策略}/{年}-{月}/{日期}_{序号}.json"""
+    from pathlib import Path
+
+    latest_date = result.get("selection", {}).get("latest_trade_date", "")
+    year_month = latest_date[:7] if len(latest_date) >= 7 else datetime.now().strftime("%Y-%m")
+
+    archive_dir = Path(__file__).resolve().parents[1] / "data" / "strategy" / strategy_id / year_month
+    archive_dir.mkdir(parents=True, exist_ok=True)
+
+    # 找当天已有文件的最大序号，自动递增
+    prefix = f"{latest_date}_"
+    max_seq = 0
+    for f in archive_dir.glob(f"{prefix}*.json"):
+        try:
+            seq = int(f.stem[len(prefix):])
+            if seq > max_seq:
+                max_seq = seq
+        except ValueError:
+            pass
+
+    archive_path = archive_dir / f"{prefix}{max_seq + 1}.json"
+    with open(archive_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print(f"[archive] {strategy_id} → {archive_path}")
+
+
 def compute_and_save_market_result(
     sess,
     strategy_id,
@@ -101,6 +128,7 @@ def compute_and_save_market_result(
     )
     cache_key = make_market_cache_key(strategy_id, days=days, max_positions=max_positions)
     save_backtest_cache(sess, cache_key, result)
+    _save_strategy_archive(strategy_id, result)
     return cache_key, result
 
 

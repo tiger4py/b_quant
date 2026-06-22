@@ -261,6 +261,36 @@
     font-size: 13px;
   }
 
+  .pager .jump {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 12px;
+  }
+
+  .pager .jump input {
+    width: 52px;
+    height: 34px;
+    background: #0f1117;
+    border: 1px solid #313846;
+    border-radius: 8px;
+    color: #e1e4e8;
+    font-size: 13px;
+    text-align: center;
+    outline: none;
+  }
+
+  .pager .jump input:focus {
+    border-color: #3b82f6;
+  }
+
+  .pager .jump button {
+    min-width: 34px;
+    height: 34px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
   .chart-panel {
     min-height: 760px;
     display: flex;
@@ -558,8 +588,18 @@ async function loadPage(p, q) {
 
   items.push(`<button ${page >= pages ? "disabled" : ""} onclick="load(${page + 1})">下一页</button>`);
   items.push(`<button ${page >= pages ? "disabled" : ""} onclick="load(${pages})">末页</button>`);
+  items.push(`<span class="jump">到第<input id="jump-page" type="text" value="${page}" onkeydown="if(event.key==='Enter')jumpToPage(${pages})"><button onclick="jumpToPage(${pages})">跳转</button></span>`);
   items.push(`<span class="info">${page} / ${pages} 页</span>`);
   $("pager").innerHTML = items.join("");
+}
+
+function jumpToPage(maxPage) {
+  const input = document.getElementById("jump-page");
+  if (!input) return;
+  let p = parseInt(input.value, 10);
+  if (isNaN(p) || p < 1) p = 1;
+  if (p > maxPage) p = maxPage;
+  load(p);
 }
 
 // ======== 批量搜索（逗号分隔多只股票） ========

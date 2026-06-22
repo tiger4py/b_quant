@@ -59,23 +59,40 @@ def _run_daily_update_job():
     logger.info("scheduled daily update finished")
 
 
+def _run_push_job():
+    """收盘后：更新数据 → 回测 → 推送，一条龙"""
+    import subprocess
+    logger.info("scheduled full flow started")
+    try:
+        result = subprocess.run(
+            ["python", "script/daily_full_flow.py", "--days", "1000", "--max-positions", "5"],
+            cwd=os.path.dirname(os.path.abspath(__file__)),
+            capture_output=True,
+            text=True,
+            timeout=1800,
+        )
+        if result.returncode != 0:
+            logger.error(f"full flow failed: {result.stderr[:500]}")
+        else:
+            logger.info("full flow finished")
+    except Exception:
+        logger.exception("scheduled full flow failed")
+
+
 def _scheduler_loop():
     global _last_scheduler_run_date
-    logger.info("flask scheduler started: workdays 18:00 update_daily")
+    logger.info("flask scheduler started: workdays 18:02 update → push")
 
     while True:
         now = datetime.now()
         today = now.strftime("%Y-%m-%d")
-        should_run = (
-            now.weekday() < 5
-            and now.hour == 18
-            and now.minute == 2
-            and _last_scheduler_run_date != today
-        )
+        is_workday = now.weekday() < 5
 
-        if should_run:
+        # 收盘后 18:30 — 更新数据 → 扫描信号 → QQ推送
+        if is_workday and now.hour == 18 and now.minute == 30 and _last_scheduler_run_date != today:
             _last_scheduler_run_date = today
             _run_daily_update_job()
+            _run_push_job()
 
         time.sleep(30)
 
@@ -96,44 +113,6 @@ def start_scheduler():
 @app.route("/")
 def index():
     return render_template("index.html")
-
-
-@app.route("/trades")
-def page_trades():
-    return render_template("trades.html")
-
-
-@app.route("/api/trades")
-def api_trades():
-    """返回交易历史记录。"""
-    import json
-    from pathlib import Path
-    history_file = Path(__file__).resolve().parent / "data" / "trade_history.json"
-    if not history_file.exists():
-        return jsonify({"records": [], "summary": {}})
-    with open(history_file, "r", encoding="utf-8") as f:
-        records = json.load(f)
-
-    # 汇总统计
-    total_sells = sum(len(r.get("sells", [])) for r in records)
-    total_value = records[-1]["total_value"] if records else 0
-    first_value = records[0]["total_value"] if records else 0
-    total_return = (total_value / first_value - 1) * 100 if first_value > 0 else 0
-    total_return = round(total_return, 2)
-
-    # 按日期倒序
-    records.reverse()
-
-    return jsonify({
-        "records": records,
-        "summary": {
-            "days": len(records),
-            "total_sells": total_sells,
-            "initial_value": first_value,
-            "current_value": total_value,
-            "total_return_pct": total_return,
-        },
-    })
 
 
 @app.route("/stocks")

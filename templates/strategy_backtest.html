@@ -162,9 +162,9 @@
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>排名</th><th>股票</th><th>盈亏</th><th>交易次数</th><th>胜率</th></tr>
+            <tr><th>排名</th><th>股票</th><th>盈亏</th><th>交易次数</th><th>胜率</th><th>平均持天</th></tr>
           </thead>
-          <tbody id="stock-body"><tr><td colspan="5" class="muted">请选择策略后查看</td></tr></tbody>
+          <tbody id="stock-body"><tr><td colspan="6" class="muted">请选择策略后查看</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -366,7 +366,7 @@ function showDetailEmpty(msg) {
   $("open-positions").style.display = "none";
   $("open-positions-body").innerHTML = '<tr><td colspan="8" class="muted">--</td></tr>';
   $("curve-hint").textContent = "暂无详情";
-  $("stock-body").innerHTML = '<tr><td colspan="5" class="muted">请选择策略后查看</td></tr>';
+  $("stock-body").innerHTML = '<tr><td colspan="6" class="muted">请选择策略后查看</td></tr>';
   $("trade-body").innerHTML = '<tr><td colspan="12" class="muted">请选择策略后查看</td></tr>';
   $("trade-hint").textContent = msg;
 }
@@ -677,7 +677,7 @@ function renderEquity(curve, posMap, initCash) {
 function renderStocks(stocks) {
   const shown = stocks.slice(0, 120);
   if (!shown.length) {
-    $("stock-body").innerHTML = '<tr><td colspan="5" class="muted">暂无贡献股票</td></tr>';
+    $("stock-body").innerHTML = '<tr><td colspan="6" class="muted">暂无贡献股票</td></tr>';
     return;
   }
   $("stock-body").innerHTML = shown.map((x, i) => `
@@ -687,6 +687,7 @@ function renderStocks(stocks) {
       <td class="${pctClass(x.profit)}">${fmtMoney(x.profit)}</td>
       <td>${x.trade_count}</td>
       <td>${x.win_rate_pct}%</td>
+      <td>${x.avg_hold_days || 0}天</td>
     </tr>
   `).join("");
 }

@@ -142,13 +142,153 @@ def check_sells(sess, holdings, latest_date, load_bars):
     return sells, keeps
 
 
-# ============ Phase 2: 全市场买入信号 ============
+# ============ Phase 2: 全市场买入信号（无状态扫描）============
+
+# 趋势跟随策略买入条件（与 strategy_trend_following.py 保持同步）
+from backtest.strategy.strategy_trend_following import (
+    PRICE_UP_5D_MIN, PRICE_UP_20D_MIN, PRICE_DOWN_40D_MAX,
+    CLOSE_ABOVE_MA20, PRICE_NEAR_20D_HIGH, PRICE_ABOVE_MA20_MAX,
+    VOL_RATIO_BUY, VOL_RATIO_MAX, VOL_TREND_ACCEL,
+    UP_VOL_RATIO, LOOKBACK_DAYS, MIN_CONSEC_UP,
+)
+
+
+def _check_buy_today(bars):
+    """
+    无状态检测：最新一根K线是否满足趋势跟随策略的所有买入条件。
+
+    与 generate_signals 不同，此函数不做持仓跟踪，
+    纯粹判断「今天这个点位该不该买」。
+
+    返回: dict（含信号详情+评分） 或 None（不满足条件）
+    """
+    from backtest.indicators import sma
+
+    if len(bars) < 45:
+        return None
+
+    closes = [b["close"] for b in bars]
+    highs = [b["high"] for b in bars]
+    volumes = [b.get("volume") or 0 for b in bars]
+    idx = len(closes) - 1  # 最新一根
+    close = closes[idx]
+
+    ma10 = sma(closes, 10)
+    ma20 = sma(closes, 20)
+    vol_ma5 = sma(volumes, 5)
+    vol_ma20 = sma(volumes, 20)
+
+    if ma10[idx] is None or ma20[idx] is None:
+        return None
+    if vol_ma5[idx] is None or vol_ma20[idx] is None or vol_ma20[idx] == 0:
+        return None
+
+    vol_ratio = vol_ma5[idx] / vol_ma20[idx]
+
+    # ---- 趋势过滤 ----
+    if closes[idx - 5] <= 0:
+        return None
+    chg_5d = (close - closes[idx - 5]) / closes[idx - 5]
+    if chg_5d < PRICE_UP_5D_MIN:
+        return None
+
+    chg_20d = (close - closes[idx - 20]) / closes[idx - 20] if closes[idx - 20] > 0 else 0
+    if chg_20d < PRICE_UP_20D_MIN:
+        return None
+
+    # 40日最大回撤（滚动峰值法）
+    peak_40 = closes[idx - 39]
+    max_dd_40 = 0.0
+    for j in range(idx - 38, idx + 1):
+        if closes[j] > peak_40:
+            peak_40 = closes[j]
+        dd = (closes[j] - peak_40) / peak_40
+        if dd < max_dd_40:
+            max_dd_40 = dd
+    if max_dd_40 < PRICE_DOWN_40D_MAX:
+        return None
+
+    # ---- 位置过滤 ----
+    if close <= ma10[idx] or close <= ma20[idx]:
+        return None
+
+    high_20 = max(highs[idx - 19:idx + 1])
+    if (high_20 - close) / high_20 > PRICE_NEAR_20D_HIGH:
+        return None
+
+    if close > ma20[idx] * PRICE_ABOVE_MA20_MAX:
+        return None
+
+    # ---- 量能过滤 ----
+    if vol_ratio < VOL_RATIO_BUY or vol_ratio > VOL_RATIO_MAX:
+        return None
+
+    # 量能加速
+    if idx >= 6:
+        recent_3 = sum(volumes[idx - 2:idx + 1]) / 3
+        prior_3 = sum(volumes[idx - 5:idx - 2]) / 3
+        if prior_3 > 0 and recent_3 / prior_3 < VOL_TREND_ACCEL:
+            return None
+
+    # ---- 量价配合 ----
+    from backtest.strategy.strategy_trend_following import _compute_price_volume_dynamics
+    dyn = _compute_price_volume_dynamics(closes, volumes, idx)
+    if dyn["up_vol_ratio"] < UP_VOL_RATIO:
+        return None
+    if dyn["consecutive_up"] < MIN_CONSEC_UP:
+        return None
+
+    # ---- 评分（对齐趋势跟随策略核心维度） ----
+    chg_10d = (close - closes[idx - 10]) / closes[idx - 10] if idx >= 10 and closes[idx - 10] > 0 else 0
+    dist_ma20 = (close - ma20[idx]) / ma20[idx]
+
+    # 趋势强度 (30分)
+    score_trend = min(30, max(0, chg_5d * 100 * 2 + (chg_20d > 0) * 10))
+
+    # 量能质量 (25分)
+    score_vol = min(25, max(0, (vol_ratio - 1.3) / 2.7 * 25))
+
+    # 量价配合 (25分)
+    score_coord = min(25, max(0, (dyn["up_vol_ratio"] - 1.1) / 1.4 * 25))
+
+    # 位置合理性 (20分)
+    score_pos = 20
+    if dist_ma20 < 0.01: score_pos -= 5       # 贴MA20太近
+    elif dist_ma20 > 0.10: score_pos -= 10    # 离MA20太远
+    if dyn["consecutive_up"] < 2: score_pos -= 5
+
+    total_score = score_trend + score_vol + score_coord + score_pos
+
+    return {
+        "code": "", "name": "",
+        "close": close, "ma20": round(ma20[idx], 2),
+        "chg_5d": round(chg_5d * 100, 1),
+        "chg_10d": round(chg_10d * 100, 1),
+        "chg_20d": round(chg_20d * 100, 1),
+        "vol_ratio": round(vol_ratio, 1),
+        "up_vol_ratio": round(dyn["up_vol_ratio"], 1),
+        "consecutive_up": dyn["consecutive_up"],
+        "dist_ma20": round(dist_ma20 * 100, 1),
+        "daily_chg": round((closes[idx] - closes[idx - 1]) / closes[idx - 1] * 100, 1) if idx > 0 else 0,
+        "score": round(total_score, 1),
+        "scores": {
+            "trend": round(score_trend, 1),
+            "volume": round(score_vol, 1),
+            "coord": round(score_coord, 1),
+            "position": round(score_pos, 1),
+        },
+        "reason": (
+            f"趋势跟随(5日{chg_5d*100:.1f}% 20日{chg_20d*100:.1f}% | "
+            f"量比{vol_ratio:.1f}x 涨跌量比{dyn['up_vol_ratio']:.1f}x | "
+            f"连涨{dyn['consecutive_up']}天)"
+        ),
+    }
+
 
 def find_buys(sess, latest_date, held_codes, load_market_bars):
-    """全市场扫描今日买入信号，排除已持仓的。"""
-    print(f"\n[2/3] 全市场扫描买入信号...")
+    """全市场无状态扫描今日买入信号，排除已持仓的。"""
+    print(f"\n[2/3] 全市场扫描买入信号（无状态检测）...")
 
-    # 加载最近200天K线
     bars_by_code = load_market_bars(sess)
 
     buy_signals = []
@@ -157,50 +297,29 @@ def find_buys(sess, latest_date, held_codes, load_market_bars):
             continue
         if bars[-1]["trade_date"] != latest_date:
             continue
+        if code in held_codes:
+            continue
 
-        signals = generate_signals(bars)
-        for s in signals:
-            if s["date"] == latest_date and s["action"] == "buy":
-                if code in held_codes:
-                    continue  # 已持仓，不重复买
+        result = _check_buy_today(bars)
+        if result is None:
+            continue
 
-                closes = [b["close"] for b in bars]
-                volumes = [b.get("volume") or 0 for b in bars]
-                idx = len(closes) - 1
-                chg_5d = (closes[idx] - closes[idx - 5]) / closes[idx - 5] * 100 if idx >= 5 and closes[idx - 5] > 0 else 0
-                chg_20d = (closes[idx] - closes[idx - 20]) / closes[idx - 20] * 100 if idx >= 20 and closes[idx - 20] > 0 else 0
-
-                # 量比
-                from backtest.indicators import sma
-                vol_ma5 = sma(volumes, 5)[idx]
-                vol_ma20 = sma(volumes, 20)[idx]
-                vol_ratio = vol_ma5 / vol_ma20 if vol_ma20 and vol_ma20 > 0 else 0
-
-                buy_signals.append({
-                    "code": code,
-                    "close": closes[idx],
-                    "chg_5d": round(chg_5d, 1),
-                    "chg_20d": round(chg_20d, 1),
-                    "vol_ratio": round(vol_ratio, 1),
-                    "reason": s["reason"],
-                })
+        result["code"] = code
+        buy_signals.append(result)
 
     print(f"  扫描到 {len(buy_signals)} 只买入候选（已排除已持仓）")
 
-    # 按成交额排序（需要查股票信息）
-    stock_rows = sess.query(StockInfo.code, StockInfo.name).filter(
-        StockInfo.code.in_([s["code"] for s in buy_signals])
-    ).all()
-    name_map = {r.code: r.name for r in stock_rows}
+    # 查股票名称
+    if buy_signals:
+        stock_rows = sess.query(StockInfo.code, StockInfo.name).filter(
+            StockInfo.code.in_([s["code"] for s in buy_signals])
+        ).all()
+        name_map = {r.code: r.name for r in stock_rows}
+        for s in buy_signals:
+            s["name"] = name_map.get(s["code"], s["code"])
 
-    for s in buy_signals:
-        s["name"] = name_map.get(s["code"], s["code"])
-
-    # 按趋势强度+量能排序（趋势越强+量能越大 → 越优先）
-    buy_signals.sort(
-        key=lambda s: (s["chg_5d"] + max(0, s["chg_20d"])) * s["vol_ratio"],
-        reverse=True,
-    )
+    # 按评分排序
+    buy_signals.sort(key=lambda s: s["score"], reverse=True)
     return buy_signals
 
 
@@ -267,8 +386,9 @@ def generate_plan(portfolio, sells, keeps, buy_signals, latest_date):
             amount = shares * s["close"] if shares > 0 else 0
             can_buy = "✓" if shares >= 100 else "✗资金不足"
 
-            print(f"  │ [{can_buy}] {s['code']} {s['name']}")
+            print(f"  │ [{can_buy}] {s['code']} {s['name']} — 评分{s['score']:.0f}")
             print(f"  │     {s['close']:.2f}元 | 5日{s['chg_5d']:+.1f}% | 20日{s['chg_20d']:+.1f}% | 量比{s['vol_ratio']:.1f}x")
+            print(f"  │     趋势{s['scores']['trend']:.0f} 量能{s['scores']['volume']:.0f} 配合{s['scores']['coord']:.0f} 位置{s['scores']['position']:.0f}")
             if shares >= 100:
                 print(f"  │     → {shares}股 × {s['close']:.2f} = {amount:,.0f}元")
             print(f"  │     → {s['reason']}")
@@ -449,9 +569,12 @@ def _build_qq_message(portfolio, sells, keeps, buy_signals, latest_date):
                 continue
             amount = shares * s["close"]
             lines.append(
-                f"{count+1}. {s['name']}({s['code']}) "
-                f"{shares}股×{s['close']:.2f}={amount:,.0f} "
-                f"| 5日{s['chg_5d']:+.1f}% 量比{s['vol_ratio']:.1f}x"
+                f"{count+1}. {s['name']}({s['code']}) 评分{s['score']:.0f} "
+                f"{shares}股×{s['close']:.2f}={amount:,.0f}"
+            )
+            lines.append(
+                f"   5日{s['chg_5d']:+.1f}% 量比{s['vol_ratio']:.1f}x "
+                f"涨跌量比{s['up_vol_ratio']:.1f}x 连涨{s['consecutive_up']}天"
             )
             count += 1
         if count == 0:
@@ -525,6 +648,9 @@ def _save_trade_history(date, sells, keeps, buy_signals, portfolio):
                 "chg_5d": s["chg_5d"],
                 "chg_20d": s["chg_20d"],
                 "vol_ratio": s["vol_ratio"],
+                "up_vol_ratio": s.get("up_vol_ratio", 0),
+                "consecutive_up": s.get("consecutive_up", 0),
+                "score": s.get("score", 0),
                 "reason": s["reason"],
             }
             for s in buy_signals[:5]

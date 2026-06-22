@@ -58,9 +58,7 @@ def run_portfolio_backtest(
         sell_signals = [s for s in todays_signals if s["action"] == "sell"]
         buy_signals = [s for s in todays_signals if s["action"] == "buy"]
 
-        # 最后一天不卖出，期末持仓自然保留
-        if is_last_date:
-            sell_signals = []
+        # 最后一天照常处理卖出信号（止盈/止损等不因期末而跳过）
 
         gate = None
         if hasattr(strategy, "market_gate"):
@@ -227,6 +225,8 @@ def run_portfolio_backtest(
 
 
 def _stock_summaries(trades):
+    from datetime import datetime as _dt
+
     grouped = {}
     for trade in trades:
         item = grouped.setdefault(trade["code"], {
@@ -235,6 +235,7 @@ def _stock_summaries(trades):
             "profit": 0,
             "trade_count": 0,
             "wins": 0,
+            "hold_days_total": 0,
         })
         if trade["profit"] is None:
             continue  # 未平仓，不参与统计
@@ -242,11 +243,20 @@ def _stock_summaries(trades):
         item["trade_count"] += 1
         if trade["profit"] > 0:
             item["wins"] += 1
+        # 持股天数
+        try:
+            buy_d = _dt.strptime(trade["buy_date"], "%Y-%m-%d")
+            sell_d = _dt.strptime(trade["sell_date"], "%Y-%m-%d")
+            item["hold_days_total"] += (sell_d - buy_d).days
+        except (ValueError, KeyError):
+            pass
 
     result = []
     for item in grouped.values():
         item["profit"] = round(item["profit"], 2)
         item["win_rate_pct"] = round(item["wins"] / item["trade_count"] * 100, 2) if item["trade_count"] else 0
+        item["avg_hold_days"] = round(item["hold_days_total"] / item["trade_count"], 1) if item["trade_count"] else 0
+        item.pop("hold_days_total", None)
         result.append(item)
     result.sort(key=lambda x: x["profit"], reverse=True)
     return result
@@ -496,9 +506,7 @@ def run_multi_strategy_backtest(
         sell_signals = [s for s in todays_signals if s["action"] == "sell"]
         buy_signals = [s for s in todays_signals if s["action"] == "buy"]
 
-        # 最后一天不卖出，期末持仓自然保留
-        if is_last_date:
-            sell_signals = []
+        # 最后一天照常处理卖出信号（止盈/止损等不因期末而跳过）
 
         # 市场广度
         today_stats = market_stats.get(date, {})
