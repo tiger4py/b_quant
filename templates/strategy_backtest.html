@@ -528,13 +528,24 @@ function renderOpenPositions(trades, equityCurve, posMap, initialCash) {
   // 设置日期选择器范围
   const dateInput = $("position-date");
   if (firstDate) dateInput.min = firstDate;
-  if (lastDate) {
-    dateInput.max = lastDate;
-    dateInput.value = lastDate;  // 默认最新交易日
-  }
+  if (lastDate) dateInput.max = lastDate;
 
-  // 默认渲染最后一天
-  refreshPositionTable(lastDate);
+  // 找最近一个有持仓的日期作为默认值（避免期末空仓导致面板隐藏）
+  let defaultDate = lastDate;
+  if (posMap && posMap._sortedDates && posMap._sortedDates.length) {
+    // 从后往前找第一个有持仓的日期
+    for (let i = posMap._sortedDates.length - 1; i >= 0; i--) {
+      const d = posMap._sortedDates[i];
+      if (posMap[d] && posMap[d].length > 0) {
+        defaultDate = d;
+        break;
+      }
+    }
+  }
+  dateInput.value = defaultDate || lastDate;
+
+  // 默认渲染有持仓的日期
+  refreshPositionTable(defaultDate || lastDate);
 }
 
 function onPositionDateChange() {
@@ -550,18 +561,21 @@ function refreshPositionTable(date) {
 
   const positions = getPositionsOnDate(date, currentPosTrades);
 
-  if (!positions.length) {
-    el.style.display = "none";
-    return;
-  }
-
   // 该日期的账户权益
   let equityOnDate = currentPosInitCash;
   for (const p of currentPosEquityCurve) {
     if (p.date <= date) equityOnDate = p.equity;
   }
 
+  // 始终显示面板，没有持仓时给提示
   el.style.display = "block";
+
+  if (!positions.length) {
+    hint.textContent = `${date}，权益 ${fmtMoney(equityOnDate)}，暂无持仓`;
+    body.innerHTML = '<tr><td colspan="8" class="muted">该日期无持仓，请选择其他日期查看</td></tr>';
+    return;
+  }
+
   hint.textContent = `${date}，权益 ${fmtMoney(equityOnDate)}，持仓 ${positions.length} 只`;
 
   body.innerHTML = positions.map(p => {
