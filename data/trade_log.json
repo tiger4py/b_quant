@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "date": "2026-06-22",
+    "code": "sh.600596",
+    "name": "新安股份",
+    "action": "buy",
+    "price": 15.66,
+    "shares": 5000,
+    "amount": 78300.0,
+    "reason": "趋势跟随买入"
+  },
+  {
+    "id": 2,
+    "date": "2026-06-22",
+    "code": "sz.002378",
+    "name": "章源钨业",
+    "action": "buy",
+    "price": 38.2,
+    "shares": 2000,
+    "amount": 76400.0,
+    "reason": "趋势跟随买入"
+  },
+  {
+    "id": 3,
+    "date": "2026-06-22",
+    "code": "sh.600999",
+    "name": "招商证券",
+    "action": "buy",
+    "price": 19.59,
+    "shares": 3600,
+    "amount": 70524.0,
+    "reason": "趋势跟随买入,本想买华泰，今天证券都涨停，就买当前便宜点的"
+  },
+  {
+    "id": 4,
+    "date": "2026-06-22",
+    "code": "sz.002137",
+    "name": "实益达",
+    "action": "buy",
+    "price": 10.95,
+    "shares": 5000,
+    "amount": 54750.0,
+    "reason": "听老婆买的"
+
+  },
+  {
+    "id": 5,
+    "date": "2026-06-22",
+    "code": "sz.300880",
+    "name": "迦南智能",
+    "action": "buy",
+    "price": 24.89,
+    "shares": 3000,
+    "amount": 74670.0,
+    "reason": "趋势跟随买入"
+  }
+]

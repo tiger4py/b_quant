@@ -1,8 +1,9 @@
-﻿import logging
+﻿import json
+import logging
 import os
 import threading
 import time
-from datetime import datetime
+from datetime import datetime, date
 
 from flask import Flask, jsonify, redirect, render_template, request, url_for
 from sqlalchemy import create_engine, desc, func
@@ -148,6 +149,391 @@ def page_macd_market_backtest():
 @app.route("/accumulation-market-backtest")
 def page_accumulation_market_backtest():
     return redirect(url_for("page_strategy_backtest"))
+
+
+# ── 实盘跟随 ──────────────────────────────────────────────────
+
+TRADING_PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "data", "portfolio.json")
+TRADING_LOG_FILE = os.path.join(os.path.dirname(__file__), "data", "trade_log.json")
+
+
+def _load_trading_portfolio():
+    if not os.path.exists(TRADING_PORTFOLIO_FILE):
+        return {"cash": 400000, "max_positions": 5, "holdings": []}
+    with open(TRADING_PORTFOLIO_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _save_trading_portfolio(p):
+    p.pop("active_holdings", None)
+    with open(TRADING_PORTFOLIO_FILE, "w", encoding="utf-8") as f:
+        json.dump(p, f, ensure_ascii=False, indent=2)
+
+
+def _load_trade_log():
+    if not os.path.exists(TRADING_LOG_FILE):
+        return []
+    with open(TRADING_LOG_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _save_trade_log(logs):
+    with open(TRADING_LOG_FILE, "w", encoding="utf-8") as f:
+        json.dump(logs, f, ensure_ascii=False, indent=2)
+
+
+@app.route("/trading")
+def page_trading():
+    return render_template("trading.html")
+
+
+@app.route("/api/trading/state")
+def api_trading_state():
+    portfolio = _load_trading_portfolio()
+    logs = _load_trade_log()
+
+    with get_session() as sess:
+        latest_date = sess.query(func.max(StockDaily.trade_date)).scalar()
+
+        # 查持仓现价 + 平仓线
+        from backtest.indicators import sma as _sma
+        from backtest.strategy.strategy_trend_following import STOP_LOSS_PCT as _SL, HIGH_RETREAT_PCT as _HR, VOL_COLLAPSE_RATIO as _VC
+
+        holdings_with_price = []
+        holding_value = 0
+        for h in portfolio.get("holdings", []):
+            code = h["code"]
+            row = (
+                sess.query(StockDaily.close, StockDaily.trade_date)
+                .filter(StockDaily.code == code, StockDaily.trade_date == latest_date)
+                .first()
+            )
+            current_price = row.close if row else h.get("buy_price", 0)
+            shares = h.get("shares", 0)
+            mv = current_price * shares
+            pnl = mv - h["buy_price"] * shares
+            pnl_pct = (current_price / h["buy_price"] - 1) * 100 if h["buy_price"] > 0 else 0
+
+            # 持仓天数
+            buy_date = datetime.strptime(h["buy_date"], "%Y-%m-%d")
+            latest_dt = datetime.strptime(latest_date, "%Y-%m-%d") if latest_date else datetime.now()
+            hold_days = (latest_dt - buy_date).days
+
+            # 名称
+            stock_info = sess.get(StockInfo, code)
+            name = stock_info.name if stock_info else h.get("name", code)
+
+            # ── 平仓线计算 ──
+            k_rows = (
+                sess.query(StockDaily.trade_date, StockDaily.close, StockDaily.high, StockDaily.low, StockDaily.volume)
+                .filter(StockDaily.code == code)
+                .order_by(StockDaily.trade_date.desc())
+                .limit(45)
+                .all()
+            )
+            k_rows.reverse()
+            alerts = {}
+            if len(k_rows) >= 20:
+                closes_k = [r.close for r in k_rows]
+                highs_k = [r.high for r in k_rows]
+                volumes_k = [r.volume or 0 for r in k_rows]
+                nk = len(closes_k)
+                ik = nk - 1
+                ma10_k = _sma(closes_k, 10)
+                ma20_k = _sma(closes_k, 20)
+                vol_ma5_k = _sma(volumes_k, 5)
+                vol_ma20_k = _sma(volumes_k, 20)
+                vr_k = vol_ma5_k[ik] / vol_ma20_k[ik] if vol_ma20_k[ik] > 0 else 0
+
+                # 高点（从买入日算起）
+                buy_idx_k = None
+                for jk in range(nk):
+                    if k_rows[jk].trade_date >= h["buy_date"]:
+                        buy_idx_k = jk
+                        break
+                if buy_idx_k is None:
+                    buy_idx_k = max(0, nk - 5)
+                peak_since = max(highs_k[buy_idx_k:ik + 1])
+
+                stop_loss_price = round(h["buy_price"] * (1 + _SL / 100), 2)
+                retreat_price = round(peak_since * (1 + _HR / 100), 2)
+                vol_collapse_5d = round(vol_ma20_k[ik] * _VC, 0)
+
+                alerts = {
+                    "stopLoss": stop_loss_price,
+                    "stopLossDist": round((current_price - stop_loss_price) / current_price * 100, 1),
+                    "ma10": round(ma10_k[ik], 2) if ma10_k[ik] else None,
+                    "ma10Dist": round((current_price - ma10_k[ik]) / current_price * 100, 1) if ma10_k[ik] else None,
+                    "ma20": round(ma20_k[ik], 2) if ma20_k[ik] else None,
+                    "ma20Dist": round((current_price - ma20_k[ik]) / current_price * 100, 1) if ma20_k[ik] else None,
+                    "highRetreat": retreat_price,
+                    "highRetreatDist": round((current_price - retreat_price) / current_price * 100, 1),
+                    "peakSince": round(peak_since, 2),
+                    "volCollapse": round(vol_collapse_5d, -4),  # 取整万
+                    "volRatio": round(vr_k, 2),
+                    "volDiverge": vr_k < 1.0,
+                }
+
+            holdings_with_price.append({
+                **h,
+                "name": name,
+                "currentPrice": current_price,
+                "marketValue": round(mv, 2),
+                "pnl": round(pnl, 2),
+                "pnlPct": round(pnl_pct, 2),
+                "holdDays": max(0, hold_days),
+                "latestDate": latest_date,
+                "alerts": alerts,
+            })
+            holding_value += mv
+
+    # 统计
+    total_value = portfolio["cash"] + holding_value
+    total_pnl = sum(h["pnl"] for h in holdings_with_price)
+    total_pnl_pct = (total_pnl / (holding_value - total_pnl) * 100) if (holding_value - total_pnl) > 0 else 0
+
+    # 已实现盈亏
+    closed_trades = [l for l in logs if l["action"] == "sell"]
+    realized_pnl = sum(l.get("pnl", 0) for l in closed_trades)
+    wins = sum(1 for l in closed_trades if l.get("pnl", 0) > 0)
+    win_rate = (wins / len(closed_trades) * 100) if closed_trades else 0
+
+    # ── 策略信号对比 ──
+    comparison = []
+    strategy_holds = []   # 策略持仓 (keeps)
+    strategy_buys = []    # 策略买入信号 (buy_signals)
+
+    history_file = os.path.join(os.path.dirname(__file__), "data", "trade_history.json")
+    if os.path.exists(history_file):
+        with open(history_file, "r", encoding="utf-8") as f:
+            trade_history = json.load(f)
+        if trade_history:
+            latest_history = trade_history[-1]
+            strategy_date = latest_history.get("date", "")
+            bought_codes = {l["code"] for l in logs if l["action"] == "buy"}
+            sold_codes = {l["code"] for l in logs if l["action"] == "sell"}
+            held_codes = {h["code"] for h in portfolio.get("holdings", [])}
+
+            # --- 策略持仓 (keeps) ---
+            for k in latest_history.get("keeps", []):
+                code = k["code"]
+                holding = next((h for h in holdings_with_price if h["code"] == code), None)
+                strategy_holds.append({
+                    "code": code,
+                    "name": k["name"],
+                    "buyDate": k.get("buy_date", ""),
+                    "buyPrice": k.get("buy_price", 0),
+                    "strategyPrice": k.get("current_price") or k.get("buy_price", 0),
+                    "pnlPct": k.get("profit_pct"),
+                    "reason": k.get("buy_reason", "")[:40] if k.get("buy_reason") else "",
+                    "followed": code in held_codes,
+                    "yourPrice": holding["currentPrice"] if holding else None,
+                    "yourPnlPct": holding["pnlPct"] if holding else None,
+                })
+
+            # --- 策略买入信号 (buy_signals) ---
+            for i_s, s in enumerate(latest_history.get("buy_signals", [])):
+                code = s["code"]
+                buy_log = next((l for l in logs if l["code"] == code and l["action"] == "buy"), None)
+                strategy_buys.append({
+                    "rank": i_s + 1,
+                    "code": code,
+                    "name": s["name"],
+                    "score": s.get("score", 0),
+                    "close": s["close"],
+                    "chg5d": s.get("chg_5d"),
+                    "volRatio": s.get("vol_ratio"),
+                    "upVolRatio": s.get("up_vol_ratio"),
+                    "reason": s.get("reason", ""),
+                    "followed": code in bought_codes,
+                    "yourPrice": buy_log["price"] if buy_log else None,
+                })
+
+            # --- 实盘独有 (extra) ---
+            all_strategy_codes = {item["code"] for item in strategy_holds}
+            all_strategy_codes.update(item["code"] for item in strategy_buys)
+            for h in holdings_with_price:
+                if h["code"] not in all_strategy_codes:
+                    comparison.append({
+                        "type": "extra", "typeLabel": "额外",
+                        "code": h["code"], "name": h["name"],
+                        "strategyScore": None, "strategyPrice": None,
+                        "chg5d": None, "volRatio": None, "reason": "",
+                        "followed": "extra", "actualPrice": h["buy_price"],
+                        "actualDate": h["buy_date"], "currentPrice": h["currentPrice"],
+                        "pnlPct": h["pnlPct"], "holdDays": h["holdDays"],
+                    })
+        else:
+            strategy_date = ""
+    else:
+        strategy_date = ""
+
+    # 统计对比
+    followed_holds = sum(1 for s in strategy_holds if s["followed"] is True)
+    followed_buys = sum(1 for s in strategy_buys if s["followed"] is True)
+
+    return jsonify({
+        "portfolio": portfolio,
+        "holdings": holdings_with_price,
+        "logs": logs,
+        "latestDate": latest_date,
+        "strategyDate": strategy_date,
+        "strategyHolds": strategy_holds,
+        "strategyBuys": strategy_buys,
+        "comparison": comparison,
+        "stats": {
+            "totalValue": round(total_value, 2),
+            "holdingValue": round(holding_value, 2),
+            "totalPnl": round(total_pnl, 2),
+            "totalPnlPct": round(total_pnl_pct, 2),
+            "realizedPnl": round(realized_pnl, 2),
+            "closedTrades": len(closed_trades),
+            "winRate": round(win_rate, 1),
+            "strategyHoldCount": len(strategy_holds),
+            "followedHolds": followed_holds,
+            "strategyBuyCount": len(strategy_buys),
+            "followedBuys": followed_buys,
+            "extraCount": len([c for c in comparison if c["type"] == "extra"]),
+        },
+    })
+
+
+@app.route("/api/trading/buy", methods=["POST"])
+def api_trading_buy():
+    payload = request.get_json(silent=True) or {}
+    code = (payload.get("code") or "").strip()
+    price = float(payload.get("price") or 0)
+    shares = int(payload.get("shares") or 0)
+    trade_date = payload.get("date") or datetime.now().strftime("%Y-%m-%d")
+    reason = (payload.get("reason") or "").strip()
+
+    if not code or price <= 0 or shares < 100:
+        return jsonify({"error": "参数无效"}), 400
+
+    # 查名称
+    with get_session() as sess:
+        stock = sess.get(StockInfo, code)
+        name = stock.name if stock else code
+
+    # 更新 portfolio
+    portfolio = _load_trading_portfolio()
+    portfolio["holdings"].append({
+        "code": code,
+        "name": name,
+        "shares": shares,
+        "buy_price": price,
+        "buy_date": trade_date,
+    })
+    portfolio["cash"] -= price * shares
+    _save_trading_portfolio(portfolio)
+
+    # 记录日志
+    logs = _load_trade_log()
+    logs.append({
+        "id": len(logs) + 1,
+        "date": trade_date,
+        "code": code,
+        "name": name,
+        "action": "buy",
+        "price": price,
+        "shares": shares,
+        "amount": round(price * shares, 2),
+        "reason": reason,
+    })
+    _save_trade_log(logs)
+
+    return jsonify({"ok": f"买入 {name}({code}) {shares}股 @ {price:.2f}"})
+
+
+@app.route("/api/trading/sell", methods=["POST"])
+def api_trading_sell():
+    payload = request.get_json(silent=True) or {}
+    code = (payload.get("code") or "").strip()
+    price = float(payload.get("price") or 0)
+    shares = int(payload.get("shares") or 0)
+    trade_date = payload.get("date") or datetime.now().strftime("%Y-%m-%d")
+    reason = (payload.get("reason") or "").strip()
+
+    if not code or price <= 0 or shares < 100:
+        return jsonify({"error": "参数无效"}), 400
+
+    # 查名称
+    with get_session() as sess:
+        stock = sess.get(StockInfo, code)
+        name = stock.name if stock else code
+
+    # 更新 portfolio：移除持仓（支持部分卖出）
+    portfolio = _load_trading_portfolio()
+    remaining_holdings = []
+    sold_shares = 0
+    sold_buy_price = 0
+    for h in portfolio.get("holdings", []):
+        if h["code"] == code:
+            if shares >= h["shares"]:
+                sold_shares = h["shares"]
+                sold_buy_price = h["buy_price"]
+                portfolio["cash"] += price * h["shares"]
+                # 完全卖出，不保留
+            else:
+                sold_shares = shares
+                sold_buy_price = h["buy_price"]
+                portfolio["cash"] += price * shares
+                remaining_holdings.append({**h, "shares": h["shares"] - shares})
+        else:
+            remaining_holdings.append(h)
+    portfolio["holdings"] = remaining_holdings
+    _save_trading_portfolio(portfolio)
+
+    # 计算盈亏
+    pnl = round((price - sold_buy_price) * sold_shares, 2)
+    pnl_pct = round((price / sold_buy_price - 1) * 100, 2) if sold_buy_price > 0 else 0
+
+    # 记录日志
+    logs = _load_trade_log()
+    logs.append({
+        "id": len(logs) + 1,
+        "date": trade_date,
+        "code": code,
+        "name": name,
+        "action": "sell",
+        "price": price,
+        "shares": sold_shares,
+        "amount": round(price * sold_shares, 2),
+        "buyPrice": sold_buy_price,
+        "pnl": pnl,
+        "pnlPct": pnl_pct,
+        "reason": reason,
+    })
+    _save_trade_log(logs)
+
+    return jsonify({"ok": f"卖出 {name}({code}) {sold_shares}股 @ {price:.2f} | 盈亏 {pnl:+.0f}元 ({pnl_pct:+.1f}%)"})
+
+
+@app.route("/api/trading/delete", methods=["POST"])
+def api_trading_delete():
+    payload = request.get_json(silent=True) or {}
+    log_id = int(payload.get("id") or 0)
+    if not log_id:
+        return jsonify({"error": "缺少id"}), 400
+
+    logs = _load_trade_log()
+    target = next((l for l in logs if l.get("id") == log_id), None)
+    if not target:
+        return jsonify({"error": "记录不存在"}), 404
+
+    # 如果是买入，需要回退持仓
+    if target["action"] == "buy":
+        portfolio = _load_trading_portfolio()
+        portfolio["holdings"] = [
+            h for h in portfolio.get("holdings", [])
+            if not (h["code"] == target["code"] and h["buy_date"] == target["date"] and h["buy_price"] == target["price"])
+        ]
+        portfolio["cash"] += target["amount"]
+        _save_trading_portfolio(portfolio)
+
+    logs = [l for l in logs if l.get("id") != log_id]
+    _save_trade_log(logs)
+    return jsonify({"ok": f"已删除记录 #{log_id}"})
 
 
 # ── stock basic info ───────────────────────────────────────────

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>实盘跟随 — 趋势跟随</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    min-height: 100vh;
+  }
+
+  /* Nav */
+  .nav {
+    background: #161822;
+    border-bottom: 1px solid #2a2d3e;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+  .nav a { color: #8b92a0; text-decoration: none; font-size: 13px; padding: 0 16px; height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all .15s; }
+  .nav a:hover, .nav a.on { color: #e1e4e8; border-bottom-color: #3b82f6; }
+  .nav .brand { font-weight: 600; color: #e1e4e8; margin-right: 24px; font-size: 14px; }
+
+  /* Layout */
+  .main { max-width: 1000px; margin: 0 auto; padding: 20px 24px; }
+
+  /* Cards bar */
+  .cards-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+  .stat-card {
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 10px; padding: 16px 18px;
+  }
+  .stat-card .label { font-size: 12px; color: #6b7280; margin-bottom: 4px; }
+  .stat-card .value { font-size: 22px; font-weight: 700; }
+  .stat-card .value.green { color: #22c55e; }
+  .stat-card .value.red { color: #ef4444; }
+  .stat-card .value.blue { color: #60a5fa; }
+  .stat-card .sub { font-size: 11px; color: #6b7280; margin-top: 2px; }
+
+  /* Tabs */
+  .tabs { display: flex; gap: 0; margin-bottom: 18px; border-bottom: 1px solid #2a2d3e; }
+  .tab-btn {
+    background: none; border: none; color: #6b7280; font-size: 14px; padding: 10px 20px;
+    cursor: pointer; border-bottom: 2px solid transparent; transition: all .15s;
+    font-family: inherit;
+  }
+  .tab-btn:hover { color: #d1d5db; }
+  .tab-btn.active { color: #e1e4e8; border-bottom-color: #3b82f6; }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left; padding: 10px 12px; color: #6b7280; font-weight: 500;
+    border-bottom: 1px solid #2a2d3e; background: #161822;
+    position: sticky; top: 0; z-index: 1;
+  }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid #1a1c2a; }
+  tbody tr:hover { background: #161822; }
+  .g { color: #22c55e; font-weight: 600; }
+  .r { color: #ef4444; font-weight: 600; }
+
+  /* Buttons */
+  .btn {
+    background: #1e2030; color: #e1e4e8; border: 1px solid #2a2d3e; border-radius: 6px;
+    padding: 6px 14px; font-size: 12px; cursor: pointer; transition: all .15s; font-family: inherit;
+  }
+  .btn:hover { border-color: #3b82f6; background: #262a3a; }
+  .btn-danger { border-color: #7f1d1d; color: #fca5a5; }
+  .btn-danger:hover { background: #3b1515; border-color: #ef4444; }
+  .btn-primary { background: #1d4ed8; border-color: #3b82f6; color: #fff; }
+  .btn-primary:hover { background: #1e40af; }
+  .btn-sm { padding: 3px 10px; font-size: 11px; }
+
+  /* Forms */
+  .form-row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 4px; }
+  .form-group label { font-size: 12px; color: #6b7280; }
+  .form-group input, .form-group select {
+    background: #161822; color: #e1e4e8; border: 1px solid #2a2d3e; border-radius: 6px;
+    padding: 8px 12px; font-size: 13px; font-family: inherit; width: 140px;
+  }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: #3b82f6; }
+
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 100; justify-content: center; align-items: center; }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 14px; padding: 28px;
+    width: 400px; max-width: 90vw;
+  }
+  .modal h3 { font-size: 16px; margin-bottom: 16px; }
+  .modal .btn-row { display: flex; gap: 8px; margin-top: 20px; justify-content: flex-end; }
+
+  /* Toast */
+  .toast {
+    position: fixed; top: 20px; right: 20px; z-index: 200;
+    padding: 10px 20px; border-radius: 8px; font-size: 13px;
+    opacity: 0; transition: opacity .3s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+  .toast.ok { background: #14532d; color: #86efac; border: 1px solid #22c55e; }
+  .toast.err { background: #450a0a; color: #fca5a5; border: 1px solid #ef4444; }
+
+  /* Empty state */
+  .empty { text-align: center; padding: 48px; color: #6b7280; font-size: 14px; }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .cards-bar { grid-template-columns: repeat(2, 1fr); }
+    .form-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="brand">A股数据面板</span>
+  <a href="/">首页</a>
+  <a href="/stocks">个股</a>
+  <a href="/concepts">概念</a>
+  <a href="/strategy-backtest">策略回测</a>
+  <a href="/trading" class="on">实盘跟随</a>
+</nav>
+
+<div class="main">
+
+  <!-- Stats bar -->
+  <div class="cards-bar" id="statsBar"></div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tab-holdings">当前持仓</button>
+    <button class="tab-btn" data-tab="tab-operate">手动操作</button>
+    <button class="tab-btn" data-tab="tab-history">历史记录</button>
+    <button class="tab-btn" data-tab="tab-compare">策略对比</button>
+  </div>
+
+  <!-- Tab 1: 持仓 -->
+  <div class="tab-content active" id="tab-holdings">
+    <table id="holdingsTable">
+      <thead><tr><th>代码</th><th>名称</th><th>买入价</th><th>现价</th><th>股数</th><th>市值</th><th>盈亏%</th><th>持仓天</th><th>平仓预警</th><th>操作</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="emptyHoldings" style="display:none">暂无持仓，去「手动操作」页记录买入</div>
+  </div>
+
+  <!-- Tab 2: 操作 -->
+  <div class="tab-content" id="tab-operate">
+    <h3 style="font-size:15px; margin-bottom:12px;">买入记录</h3>
+    <div class="form-row" id="buyForm">
+      <div class="form-group"><label>股票代码</label><input id="buyCode" placeholder="sz.002303"></div>
+      <div class="form-group"><label>买入价</label><input id="buyPrice" type="number" step="0.01" placeholder="3.68"></div>
+      <div class="form-group"><label>股数</label><input id="buyShares" type="number" step="100" value="100"></div>
+      <div class="form-group"><label>买入日期</label><input id="buyDate" type="date"></div>
+      <div class="form-group"><label>原因</label><input id="buyReason" placeholder="如: 趋势跟随买入" style="width:200px"></div>
+      <button class="btn btn-primary" onclick="doBuy()">记录买入</button>
+    </div>
+
+    <h3 style="font-size:15px; margin:28px 0 12px;">卖出操作</h3>
+    <div class="form-row" id="sellForm">
+      <div class="form-group"><label>持仓股票</label><select id="sellCode"></select></div>
+      <div class="form-group"><label>卖出价</label><input id="sellPrice" type="number" step="0.01"></div>
+      <div class="form-group"><label>股数(0=全卖)</label><input id="sellShares" type="number" step="100" value="0"></div>
+      <div class="form-group"><label>卖出日期</label><input id="sellDate" type="date"></div>
+      <div class="form-group"><label>原因</label><input id="sellReason" placeholder="如: 止损/止盈/破MA20" style="width:200px"></div>
+      <button class="btn btn-danger" onclick="doSell()">记录卖出</button>
+    </div>
+  </div>
+
+  <!-- Tab 3: 历史 -->
+  <div class="tab-content" id="tab-history">
+    <div style="margin-bottom:14px; display:flex; gap:20px; font-size:13px; color:#6b7280;" id="historyStats"></div>
+    <table id="historyTable">
+      <thead><tr><th>日期</th><th>代码</th><th>名称</th><th>方向</th><th>价格</th><th>股数</th><th>盈亏</th><th>盈亏%</th><th>原因</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="emptyHistory" style="display:none">暂无记录</div>
+  </div>
+
+  <!-- Tab 4: 策略对比 -->
+  <div class="tab-content" id="tab-compare">
+    <div style="margin-bottom:14px; display:flex; gap:20px; font-size:13px;" id="compareSummary"></div>
+
+    <!-- 区1: 持仓对照 (策略 vs 你) -->
+    <h3 style="font-size:14px; margin-bottom:8px; color:#60a5fa;">持仓对照 (策略 vs 你)</h3>
+    <table id="compareHoldsTable">
+      <thead><tr><th>代码</th><th>名称</th><th>策略</th><th>策略买入日</th><th>策略价</th><th>策略盈亏</th><th>你</th><th>你买入价</th><th>你现价</th><th>你盈亏</th><th>持仓天</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="emptyHolds" style="display:none">暂无持仓数据</div>
+
+    <!-- 区2: 策略买入信号 -->
+    <h3 style="font-size:14px; margin:24px 0 8px; color:#ef4444;">策略买入信号 (全市场扫描)</h3>
+    <table id="compareBuyTable">
+      <thead><tr><th>排名</th><th>代码</th><th>名称</th><th>评分</th><th>收盘</th><th>5日涨</th><th>量比</th><th>涨跌量比</th><th>原因</th><th>跟了?</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="emptyBuys" style="display:none">暂无买入信号</div>
+  </div>
+
+</div>
+
+<!-- Sell Modal -->
+<div class="modal-overlay" id="sellModal">
+  <div class="modal">
+    <h3>确认卖出 <span id="sellModalName"></span></h3>
+    <div class="form-group" style="width:100%"><label>卖出价</label><input id="sellModalPrice" type="number" step="0.01" style="width:100%"></div>
+    <div class="form-group" style="width:100%;margin-top:8px"><label>原因</label><input id="sellModalReason" placeholder="如: 止损/止盈/破MA20" style="width:100%"></div>
+    <div class="btn-row">
+      <button class="btn" onclick="closeSellModal()">取消</button>
+      <button class="btn btn-danger" onclick="confirmSell()">确认卖出</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============ State ============
+let state = { portfolio: null, logs: [], stats: {} };
+
+// ============ Init ============
+document.addEventListener("DOMContentLoaded", () => {
+  // Tabs
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+      document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+  });
+
+  // Default date = today
+  const today = new Date().toISOString().slice(0,10);
+  document.getElementById("buyDate").value = today;
+  document.getElementById("sellDate").value = today;
+
+  refresh();
+});
+
+async function refresh() {
+  const r = await fetch("/api/trading/state");
+  state = await r.json();
+  renderStats();
+  renderHoldings();
+  renderSellSelect();
+  renderHistory();
+  renderCompare();
+}
+
+// ============ Stats ============
+function renderStats() {
+  const p = state.portfolio;
+  const s = state.stats;
+  document.getElementById("statsBar").innerHTML = `
+    <div class="stat-card"><div class="label">总市值</div><div class="value blue">${fmtMoney(s.totalValue)}</div><div class="sub">现金 ${fmtMoney(p.cash)}</div></div>
+    <div class="stat-card"><div class="label">持仓市值</div><div class="value">${fmtMoney(s.holdingValue)}</div><div class="sub">${p.holdings.length}/${p.max_positions} 仓</div></div>
+    <div class="stat-card"><div class="label">浮动盈亏</div><div class="value ${s.totalPnl >= 0 ? 'green' : 'red'}">${s.totalPnl >= 0 ? '+' : ''}${fmtMoney(s.totalPnl)}</div><div class="sub ${s.totalPnlPct >= 0 ? 'g' : 'r'}">${s.totalPnlPct >= 0 ? '+' : ''}${s.totalPnlPct.toFixed(2)}%</div></div>
+    <div class="stat-card"><div class="label">累计已实现</div><div class="value ${s.realizedPnl >= 0 ? 'green' : 'red'}">${s.realizedPnl >= 0 ? '+' : ''}${fmtMoney(s.realizedPnl)}</div><div class="sub">${s.closedTrades}笔 / 胜率${s.winRate.toFixed(0)}%</div></div>
+  `;
+}
+
+// ============ Holdings ============
+function renderHoldings() {
+  const h = state.holdings || [];
+  const tbody = document.querySelector("#holdingsTable tbody");
+  const empty = document.getElementById("emptyHoldings");
+
+  if (!h.length) {
+    tbody.innerHTML = "";
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+
+  tbody.innerHTML = h.map(r => {
+    const pnlCls = r.pnlPct >= 0 ? "g" : "r";
+    const pnlSign = r.pnlPct >= 0 ? "+" : "";
+    const a = r.alerts || {};
+
+    // 找最近的危险线
+    let alertHtml = "-";
+    if (a.stopLoss) {
+      // 收集所有价格线
+      const priceLines = [];
+      if (a.highRetreat) priceLines.push({label:"高位回撤", price:a.highRetreat, dist:a.highRetreatDist});
+      if (a.stopLoss) priceLines.push({label:"止损", price:a.stopLoss, dist:a.stopLossDist});
+      if (a.ma10) priceLines.push({label:"MA10", price:a.ma10, dist:a.ma10Dist});
+
+      // 按距现价从近到远排序（dist 正值=现价在上方，越小越危险）
+      priceLines.sort((a,b) => a.dist - b.dist);
+      const nearest = priceLines[0];
+
+      // 量条件
+      if (a.volDiverge) priceLines.push({label:"量价背离", price:null, dist:0});
+
+      // 高亮最近线
+      alertHtml = priceLines.map(l => {
+        if (l.label === "量价背离") {
+          return `<span style="color:#f59e0b">量价背离</span>`;
+        }
+        const distPct = (l.dist>0?"-":"") + Math.abs(l.dist).toFixed(1)+"%";
+        const isNearest = l === nearest && l.dist < 5;
+        const style = isNearest
+          ? 'color:#ef4444;font-weight:700;font-size:12px'
+          : 'color:#6b7280;font-size:11px';
+        return `<span style="${style}">${l.label} ${l.price.toFixed(2)}<br><span style="font-size:10px">(${distPct})</span></span>`;
+      }).join("<br>");
+    }
+    return `<tr>
+      <td>${r.code}</td><td>${r.name}</td>
+      <td>${fmtPrice(r.buy_price)}</td><td>${fmtPrice(r.currentPrice)}</td>
+      <td>${r.shares}</td><td>${fmtMoney(r.marketValue)}</td>
+      <td class="${pnlCls}">${pnlSign}${r.pnlPct.toFixed(2)}%</td>
+      <td>${r.holdDays}天</td>
+      <td>${alertHtml}</td>
+      <td><button class="btn btn-sm btn-danger" onclick="openSellModal('${r.code}','${r.name}',${r.currentPrice},${r.shares})">卖出</button></td>
+    </tr>`;
+  }).join("");
+}
+
+// ============ Sell modal ============
+let sellTarget = null;
+function openSellModal(code, name, price, shares) {
+  sellTarget = { code, name, price, shares };
+  document.getElementById("sellModalName").textContent = `${code} ${name}`;
+  document.getElementById("sellModalPrice").value = price;
+  document.getElementById("sellModal").classList.add("show");
+}
+function closeSellModal() {
+  document.getElementById("sellModal").classList.remove("show");
+  sellTarget = null;
+}
+async function confirmSell() {
+  if (!sellTarget) return;
+  const price = parseFloat(document.getElementById("sellModalPrice").value);
+  const reason = document.getElementById("sellModalReason").value.trim();
+  if (!price || price <= 0) { toast("请输入有效卖出价", "err"); return; }
+  const today = new Date().toISOString().slice(0,10);
+  await api("sell", { code: sellTarget.code, price, shares: sellTarget.shares, date: today, reason });
+  closeSellModal();
+  refresh();
+}
+
+// ============ Buy ============
+async function doBuy() {
+  const code = document.getElementById("buyCode").value.trim();
+  const price = parseFloat(document.getElementById("buyPrice").value);
+  const shares = parseInt(document.getElementById("buyShares").value);
+  const date = document.getElementById("buyDate").value;
+  const reason = document.getElementById("buyReason").value.trim();
+  if (!code) { toast("请输入股票代码", "err"); return; }
+  if (!price || price <= 0) { toast("请输入有效买入价", "err"); return; }
+  if (!shares || shares < 100) { toast("最少100股", "err"); return; }
+  await api("buy", { code, price, shares, date, reason });
+  document.getElementById("buyCode").value = "";
+  document.getElementById("buyPrice").value = "";
+  document.getElementById("buyShares").value = "100";
+  document.getElementById("buyReason").value = "";
+  refresh();
+}
+
+// ============ Sell (from operate tab) ============
+async function doSell() {
+  const code = document.getElementById("sellCode").value;
+  const price = parseFloat(document.getElementById("sellPrice").value);
+  let shares = parseInt(document.getElementById("sellShares").value);
+  const date = document.getElementById("sellDate").value;
+  const reason = document.getElementById("sellReason").value.trim();
+  if (!code) { toast("请选择持仓股票", "err"); return; }
+  if (!price || price <= 0) { toast("请输入有效卖出价", "err"); return; }
+  if (shares === 0) {
+    const h = (state.holdings || []).find(r => r.code === code);
+    shares = h ? h.shares : 0;
+  }
+  if (shares < 100) { toast("最少100股", "err"); return; }
+  await api("sell", { code, price, shares, date, reason });
+  document.getElementById("sellPrice").value = "";
+  document.getElementById("sellShares").value = "0";
+  document.getElementById("sellReason").value = "";
+  refresh();
+}
+
+// ============ History ============
+function renderHistory() {
+  const logs = state.logs || [];
+  const tbody = document.querySelector("#historyTable tbody");
+  const empty = document.getElementById("emptyHistory");
+  const statsDiv = document.getElementById("historyStats");
+
+  if (!logs.length) {
+    tbody.innerHTML = "";
+    empty.style.display = "block";
+    statsDiv.innerHTML = "";
+    return;
+  }
+  empty.style.display = "none";
+
+  // Stats
+  const closed = logs.filter(l => l.action === "sell");
+  const wins = closed.filter(l => l.pnl > 0).length;
+  const totalPnl = closed.reduce((s, l) => s + l.pnl, 0);
+  const winRate = closed.length ? (wins / closed.length * 100) : 0;
+  statsDiv.innerHTML = `
+    <span>总操作 <b style="color:#e1e4e8">${logs.length}</b> 次</span>
+    <span>已平仓 <b style="color:#e1e4e8">${closed.length}</b> 笔</span>
+    <span>胜率 <b style="color:#22c55e">${winRate.toFixed(0)}%</b></span>
+    <span>已实现盈亏 <b style="color:${totalPnl>=0?'#22c55e':'#ef4444'}">${totalPnl>=0?'+':''}${fmtMoney(totalPnl)}</b></span>
+  `;
+
+  // Table - newest first
+  tbody.innerHTML = [...logs].reverse().map(l => {
+    const dir = l.action === "buy" ? '<span style="color:#ef4444">买入</span>' : '<span style="color:#22c55e">卖出</span>';
+    let pnlCell = "-", pnlPctCell = "-";
+    if (l.action === "sell") {
+      const cls = l.pnl >= 0 ? "g" : "r";
+      pnlCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${fmtMoney(l.pnl)}</span>`;
+      pnlPctCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${l.pnlPct.toFixed(2)}%</span>`;
+    }
+    const reason = l.reason || "-";
+    return `<tr><td>${l.date}</td><td>${l.code}</td><td>${l.name}</td><td>${dir}</td><td>${fmtPrice(l.price)}</td><td>${l.shares}</td><td>${pnlCell}</td><td>${pnlPctCell}</td><td style="font-size:11px;color:#6b7280">${reason}</td></tr>`;
+  }).join("");
+}
+
+function renderSellSelect() {
+  const sel = document.getElementById("sellCode");
+  const h = state.holdings || [];
+  sel.innerHTML = '<option value="">-- 选择 --</option>' +
+    h.map(r => `<option value="${r.code}">${r.code} ${r.name} (${r.shares}股)</option>`).join("");
+}
+
+// ============ Strategy Comparison ============
+function renderCompare() {
+  const s = state.stats;
+  const summary = document.getElementById("compareSummary");
+  summary.innerHTML = `
+    <span>策略日期 <b style="color:#e1e4e8">${state.strategyDate || "-"}</b></span>
+    <span>持仓: 策略<b style="color:#60a5fa">${s.strategyHoldCount||0}</b>只 / 你跟<b style="color:#22c55e">${s.followedHolds||0}</b>只</span>
+    <span>买入信号: <b style="color:#ef4444">${s.strategyBuyCount||0}</b>只 / 你跟<b style="color:#22c55e">${s.followedBuys||0}</b>只</span>
+    <span>额外 <b style="color:#a78bfa">${s.extraCount||0}</b></span>
+  `;
+
+  // === 区1: 持仓对照 (策略 vs 你 合并一张表) ===
+  const stratHolds = state.strategyHolds || [];
+  const myHolds = state.holdings || [];
+
+  // 合并去重
+  const allCodes = new Set();
+  stratHolds.forEach(h => allCodes.add(h.code));
+  myHolds.forEach(h => allCodes.add(h.code));
+
+  const merged = [];
+  allCodes.forEach(code => {
+    const s = stratHolds.find(h => h.code === code);
+    const m = myHolds.find(h => h.code === code);
+    merged.push({ code, strat: s || null, mine: m || null });
+  });
+
+  // 排序：双方都有 > 仅策略 > 仅你
+  merged.sort((a, b) => {
+    const aBoth = a.strat && a.mine ? 1 : 0;
+    const bBoth = b.strat && b.mine ? 1 : 0;
+    if (aBoth !== bBoth) return bBoth - aBoth;
+    return (a.strat?.pnlPct || 0) - (b.strat?.pnlPct || 0) > 0 ? -1 : 1;
+  });
+
+  const holdsBody = document.querySelector("#compareHoldsTable tbody");
+  const holdsEmpty = document.getElementById("emptyHolds");
+  if (!merged.length) {
+    holdsBody.innerHTML = "";
+    holdsEmpty.style.display = "block";
+  } else {
+    holdsEmpty.style.display = "none";
+    holdsBody.innerHTML = merged.map(row => {
+      const s = row.strat;
+      const m = row.mine;
+
+      // 策略列
+      const sHtml = s
+        ? `<span style="color:#22c55e;font-weight:600">持有</span>`
+        : `<span style="color:#374151">-</span>`;
+      const sBuyDate = s ? (s.buyDate||"-") : "-";
+      const sPrice = s ? (s.strategyPrice||s.buyPrice||0).toFixed(2) : "-";
+      const sPnlCls = (s?.pnlPct||0) >= 0 ? "g" : "r";
+      const sSign = (s?.pnlPct||0) >= 0 ? "+" : "";
+      const sPnl = s ? `${sSign}${(s.pnlPct||0).toFixed(1)}%` : "-";
+
+      // 你的列
+      const mHtml = m
+        ? `<span style="color:#a78bfa;font-weight:600">持有</span>`
+        : `<span style="color:#374151">-</span>`;
+      const mBuy = m ? (m.buy_price||0).toFixed(2) : "-";
+      const mPrice = m ? (m.currentPrice||0).toFixed(2) : "-";
+      const mPnlCls = (m?.pnlPct||0) >= 0 ? "g" : "r";
+      const mSign = (m?.pnlPct||0) >= 0 ? "+" : "";
+      const mPnl = m ? `${mSign}${(m.pnlPct||0).toFixed(1)}%` : "-";
+      const mDays = m ? `${m.holdDays}天` : "-";
+
+      // 行颜色：双方都有=绿边，仅策略=蓝边，仅你=紫边
+      let border;
+      if (s && m) border = 'border-left:3px solid #22c55e';
+      else if (s) border = 'border-left:3px solid #60a5fa';
+      else border = 'border-left:3px solid #a78bfa';
+
+      return `<tr style="${border}">
+        <td>${row.code}</td>
+        <td>${s?.name || m?.name || row.code}</td>
+        <td>${sHtml}</td>
+        <td>${sBuyDate}</td>
+        <td>${sPrice}</td>
+        <td class="${sPnlCls}">${sPnl}</td>
+        <td>${mHtml}</td>
+        <td>${mBuy}</td>
+        <td>${mPrice}</td>
+        <td class="${mPnlCls}">${mPnl}</td>
+        <td>${mDays}</td>
+      </tr>`;
+    }).join("");
+  }
+
+  // === 区2: 策略买入信号 ===
+  const buys = state.strategyBuys || [];
+  const buysBody = document.querySelector("#compareBuyTable tbody");
+  const buysEmpty = document.getElementById("emptyBuys");
+  if (!buys.length) {
+    buysBody.innerHTML = "";
+    buysEmpty.style.display = "block";
+  } else {
+    buysEmpty.style.display = "none";
+    buysBody.innerHTML = buys.map(b => {
+      const followed = b.followed
+        ? '<span style="color:#22c55e;font-weight:600">已跟</span>'
+        : '<span style="color:#f59e0b;font-weight:600">漏了</span>';
+      const border = b.followed ? 'border-left:3px solid #22c55e' : 'border-left:3px solid #f59e0b';
+      const shortR = b.reason ? (b.reason.length>30 ? b.reason.slice(0,28)+'..' : b.reason) : '-';
+      return `<tr style="${border}">
+        <td style="color:#6b7280">#${b.rank||"-"}</td>
+        <td>${b.code}</td><td>${b.name}</td>
+        <td>${(b.score||0).toFixed(0)}</td>
+        <td>${(b.close||0).toFixed(2)}</td>
+        <td>${b.chg5d!=null ? (b.chg5d>=0?"+":"")+b.chg5d.toFixed(1)+"%" : "-"}</td>
+        <td>${b.volRatio!=null ? b.volRatio.toFixed(1)+"x" : "-"}</td>
+        <td>${b.upVolRatio!=null ? b.upVolRatio.toFixed(2) : "-"}</td>
+        <td style="font-size:11px;color:#6b7280" title="${b.reason||''}">${shortR}</td>
+        <td>${followed}</td>
+      </tr>`;
+    }).join("");
+  }
+}
+
+// ============ Helpers ============
+async function api(action, body) {
+  const r = await fetch(`/api/trading/${action}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await r.json();
+  if (data.error) toast(data.error, "err");
+  else toast(data.ok || "操作成功", "ok");
+}
+
+function toast(msg, type) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.className = `toast ${type} show`;
+  setTimeout(() => el.classList.remove("show"), 2000);
+}
+
+function fmtMoney(v) {
+  if (v === undefined || v === null) return "-";
+  const n = Math.abs(v);
+  if (n >= 1e8) return (v / 1e8).toFixed(2) + "亿";
+  if (n >= 1e4) return (v / 1e4).toFixed(1) + "万";
+  return v.toFixed(0);
+}
+function fmtPrice(v) {
+  if (v === undefined || v === null) return "-";
+  return v.toFixed(2);
+}
+</script>
+</body>
+</html>
