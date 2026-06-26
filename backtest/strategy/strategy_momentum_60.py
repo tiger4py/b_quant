@@ -15,12 +15,17 @@ META = {
 }
 
 
+# ============ 可调参数 ============
+MOMENTUM_PERIOD = 60
+MA_PERIOD = 20
+
+
 def generate_signals(bars):
     closes = [b["close"] for b in bars]
-    ma20 = sma(closes, 20)
+    ma20 = sma(closes, MA_PERIOD)
     signals = []
     for i in range(60, len(bars)):
-        momentum = closes[i] / closes[i - 60] - 1
+        momentum = closes[i] / closes[i - MOMENTUM_PERIOD] - 1
         prev_momentum = closes[i - 1] / closes[i - 61] - 1 if i > 60 else 0
         if prev_momentum <= 0 < momentum and closes[i] > ma20[i]:
             signals.append({"date": bars[i]["trade_date"], "action": "buy", "reason": "60日动量转正且站上 MA20"})

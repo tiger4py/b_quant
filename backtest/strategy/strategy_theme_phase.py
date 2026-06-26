@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""题材阶段量价 — 低位放量启动或主升回流买入"""
 from pathlib import Path
 import sys
 
@@ -11,8 +12,26 @@ from backtest.indicators import rolling_high, rolling_low, sma
 META = {
     "id": "theme_phase",
     "name": "题材阶段量价",
-    "description": "低位放量启动或主升回流买入，高位放量滞涨、量增价跌、跌破趋势或久盘不涨卖出。",
+    "description": "低位放量启动或主升回流买入，止损/止盈/暴跌/持仓到期卖出。",
 }
+
+# ============ 可调参数 ============
+
+# -- 买入 --
+RANGE_POS_MAX = 0.55          # 股价在120日区间低位上限
+LOW_120_RATIO_MIN = 1.10      # 距120日低点至少10%
+QUIET_RATIO_MAX = 0.95        # 缩量系数上限
+VOL_RATIO_BASE_MIN = 1.8      # 低位启动量比下限
+CHANGE_PCT_BASE_MIN = 2.5     # 低位启动涨幅下限(%)
+TREND_STRENGTH_MIN = 1.15     # 20日涨幅至少15%
+PULLBACK_RATIO_MAX = 0.96     # 回踩10日高点比例上限
+VOL_RATIO_REBREAK_MIN = 1.5   # 回流量比下限
+
+# -- 卖出 --
+STOP_LOSS_PCT = -8            # 硬止损(%)
+TAKE_PROFIT_PCT = 18          # 止盈(%)
+MAX_HOLD_DAYS = 18            # 最大持仓天数
+DAILY_CRASH_PCT = -8          # 单日暴跌离场(%)
 
 
 def generate_signals(bars):
@@ -35,7 +54,6 @@ def generate_signals(bars):
     in_pos = False
     entry_price = None
     entry_index = None
-    peak_close = None
 
     for i in range(120, len(bars)):
         if not _ready((ma20, ma60, vol5, vol10, vol20, high10, high20, high120, low120), i):
@@ -49,28 +67,27 @@ def generate_signals(bars):
         trend_ok = close > ma20[i] and close > ma60[i] and ma20[i] >= ma20[i - 1]
         range_pos = _range_position(close, low120[i], high120[i])
         change_pct = (close / prev_close - 1) * 100 if prev_close else 0
+        daily_chg = (close - prev_close) / prev_close if prev_close > 0 else 0
 
         if not in_pos:
             if _has_limit_down_cluster(closes, i):
                 continue
 
             base_setup = (
-                range_pos <= 0.55
-                and close >= low120[i] * 1.10
-                and quiet_ratio <= 0.95
-                and volume_ratio >= 1.8
+                range_pos <= RANGE_POS_MAX
+                and close >= low120[i] * LOW_120_RATIO_MIN
+                and quiet_ratio <= QUIET_RATIO_MAX
+                and volume_ratio >= VOL_RATIO_BASE_MIN
                 and trend_ok
                 and close >= high20[i - 1] * 0.99
-                and change_pct >= 2.5
+                and change_pct >= CHANGE_PCT_BASE_MIN
             )
 
-            trend_strength = close >= closes[i - 20] * 1.15
-            pullback_days = closes[i - 1] <= high10[i - 1] * 0.96 and vol5[i - 1] <= vol10[i - 1]
+            trend_strength = close >= closes[i - 20] * TREND_STRENGTH_MIN
+            pullback_days = closes[i - 1] <= high10[i - 1] * PULLBACK_RATIO_MAX and vol5[i - 1] <= vol10[i - 1]
             rebreak_setup = (
-                trend_strength
-                and trend_ok
-                and pullback_days
-                and volume_ratio >= 1.5
+                trend_strength and trend_ok and pullback_days
+                and volume_ratio >= VOL_RATIO_REBREAK_MIN
                 and close > highs[i - 1]
                 and close >= high10[i - 1] * 0.995
             )
@@ -79,7 +96,6 @@ def generate_signals(bars):
                 in_pos = True
                 entry_price = close
                 entry_index = i
-                peak_close = close
                 signals.append({
                     "date": bars[i]["trade_date"],
                     "action": "buy",
@@ -87,32 +103,21 @@ def generate_signals(bars):
                 })
             continue
 
-        peak_close = max(peak_close, close)
         hold_days = i - entry_index
         profit_pct = (close / entry_price - 1) * 100 if entry_price else 0
-        drawdown_from_peak = (close / peak_close - 1) * 100 if peak_close else 0
-        high_area = range_pos >= 0.78
 
-        high_volume_exit = high_area and volume_ratio >= 2.0 and change_pct <= 1.2
-        volume_down_exit = volume_ratio >= 1.4 and change_pct <= -3.0
-        trend_break_exit = close < ma20[i] and closes[i - 1] < ma20[i - 1]
-        hard_stop_exit = profit_pct <= -8 or drawdown_from_peak <= -12
-        event_take_profit = hold_days >= 7 and profit_pct >= 18 and volume_ratio >= 1.6 and change_pct < 2.0
-        time_decay_exit = hold_days >= 18 and profit_pct <= 3
+        reason = None
 
-        if hard_stop_exit:
-            reason = "跌破风控线"
-        elif volume_down_exit:
-            reason = "量增价跌转弱"
-        elif high_volume_exit:
-            reason = "高位放量滞涨"
-        elif event_take_profit:
-            reason = "题材兑现离场"
-        elif trend_break_exit:
-            reason = "跌破 MA20 趋势"
-        elif time_decay_exit:
-            reason = "久盘不涨离场"
-        else:
+        if profit_pct <= STOP_LOSS_PCT:
+            reason = f"止损({profit_pct:.1f}%)"
+        elif profit_pct >= TAKE_PROFIT_PCT:
+            reason = f"止盈({profit_pct:.1f}%)"
+        elif daily_chg <= DAILY_CRASH_PCT / 100:
+            reason = f"单日暴跌({daily_chg:.1%})"
+        elif hold_days >= MAX_HOLD_DAYS:
+            reason = f"持仓{hold_days}天到期"
+
+        if reason is None:
             continue
 
         signals.append({
@@ -123,7 +128,6 @@ def generate_signals(bars):
         in_pos = False
         entry_price = None
         entry_index = None
-        peak_close = None
 
     return signals
 

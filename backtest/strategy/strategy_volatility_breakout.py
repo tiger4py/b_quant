@@ -51,15 +51,10 @@ VOL_STABLE_MAX = 0.025     # 60日波动率上限，低于此值才算"长期平
 VOL_RATIO_BUY = 1.3        # vol_5d/vol_60d 突破比值 → 异动确认（比之前的1.5更宽松，因为有V反兜底）
 
 # -- 卖出 --
-VOL_RATIO_SELL = 1.15      # 比值回落到此以下 → 异动消退
 STOP_LOSS_PCT = -10        # 硬止损（%）
 TAKE_PROFIT_PCT = 20       # 止盈（%）
 MAX_HOLD_DAYS = 15         # 最大持仓天数
-DRAWDOWN_EXIT = -12        # 从持仓高点回撤超过此值离场
-
-# -- 大盘过滤（market_gate）--
-GATE_BREADTH_MIN = 0.25    # 涨跌比低于此值 → 禁止开仓（市场恐慌）
-GATE_LIMIT_DOWN_MAX = 50   # 跌停数超过此值 → 禁止开仓
+DAILY_CRASH_PCT = -8       # 单日暴跌离场（%）
 
 # -- 涨停过滤 & 过度拉升过滤 --
 LIMIT_UP_PCT = 9.5          # 涨停阈值（%），科创板20%涨停在这里用9.5%过滤比较安全
@@ -221,7 +216,6 @@ def generate_signals(bars):
     in_pos = False
     entry_price = None
     entry_index = None
-    peak_close = None
     v_bottom_close = None  # 入场时的V反底部价，用于后续跟踪
 
     min_idx = 65  # 60日均线 + V反回看 + buffer
@@ -275,7 +269,6 @@ def generate_signals(bars):
                 in_pos = True
                 entry_price = close
                 entry_index = i
-                peak_close = close
                 v_bottom_close = closes[v_bottom_idx]
 
                 signals.append({
@@ -286,42 +279,24 @@ def generate_signals(bars):
             continue
 
         # ==================== 卖出逻辑 ====================
-        peak_close = max(peak_close, close)
+        # 硬止损 + V反失效 + 止盈 + 单日暴跌 + 持仓到期
         hold_days = i - entry_index
         profit_pct = (close / entry_price - 1) * 100 if entry_price else 0
-        drawdown_from_peak = (close / peak_close - 1) * 100 if peak_close else 0
 
-        # 卖出条件（按优先级排列）
+        reason = None
 
-        # 1. 硬止损
         if profit_pct <= STOP_LOSS_PCT:
             reason = f"止损({profit_pct:.1f}%)"
-
-        # 2. V反失效：跌破V反底部，说明V反是假突破
         elif v_bottom_close and close < v_bottom_close:
             reason = f"V反失效(跌破底部{v_bottom_close:.2f})"
-
-        # 3. 从高点回撤过大
-        elif drawdown_from_peak <= DRAWDOWN_EXIT:
-            reason = f"回撤过大({drawdown_from_peak:.1f}%)"
-
-        # 4. 止盈
         elif profit_pct >= TAKE_PROFIT_PCT:
             reason = f"止盈({profit_pct:.1f}%)"
+        elif daily_chg <= DAILY_CRASH_PCT / 100:
+            reason = f"单日暴跌({daily_chg:.1%})"
+        elif hold_days >= MAX_HOLD_DAYS:
+            reason = f"持仓{hold_days}天到期"
 
-        # 5. 波动率回归 + 涨幅不大（说明异动消退）
-        elif vol_ratio_5_60 < VOL_RATIO_SELL and profit_pct < 8:
-            reason = f"波动率消退(v5/v60={vol_ratio_5_60:.1f})"
-
-        # 6. 持仓时间过长 + 波动率已回落
-        elif hold_days >= MAX_HOLD_DAYS and vol_ratio_5_60 < VOL_RATIO_BUY:
-            reason = f"持仓{hold_days}天波动率未维持"
-
-        # 7. 单日暴跌
-        elif daily_chg < -0.08:
-            reason = "单日暴跌>8%，紧急离场"
-
-        else:
+        if reason is None:
             continue
 
         signals.append({
@@ -332,54 +307,9 @@ def generate_signals(bars):
         in_pos = False
         entry_price = None
         entry_index = None
-        peak_close = None
         v_bottom_close = None
 
     return signals
-
-
-# ============ 大盘过滤器 ============
-
-def market_gate(trade_date, market_stats):
-    """
-    大盘环境过滤 —— 体现"结合大盘"的思路。
-
-    大盘不好的时候不买，即：
-    - 涨跌比太低（多数股票在跌）→ 恐慌，不进场
-    - 跌停数太多 → 系统性风险，不进场
-    - 成交额持续萎缩 → 市场冷清，不进场
-
-    策略层面的"大盘脱敏"概念：
-    - 当大盘涨跌比低（市场弱）时，如果股票仍能形成V反 + 波动异动，
-      说明该股票在"脱敏"——不受大盘拖累，独立走强。
-    - market_gate 过滤掉极端恐慌日，但中等偏弱的市场中允许开仓，
-      这样选出的股票本身就具备"大盘脱敏"特征。
-    """
-    today = market_stats.get(trade_date, {})
-    if not today:
-        return {"allowed": True, "reasons": []}
-
-    reasons = []
-
-    # 涨跌比
-    breadth = today.get("breadth", 0.5)
-    if breadth < GATE_BREADTH_MIN:
-        reasons.append(f"涨跌比过低({breadth:.0%}<{GATE_BREADTH_MIN:.0%})，市场恐慌")
-
-    # 跌停数量
-    limit_down = today.get("limit_down", 0)
-    if limit_down >= GATE_LIMIT_DOWN_MAX:
-        reasons.append(f"跌停过多({limit_down}≥{GATE_LIMIT_DOWN_MAX})，系统性风险")
-
-    # 成交额萎缩（比20日均值低30%以上）
-    amount = today.get("amount", 0)
-    amount_ma20 = today.get("amount_ma20", 0)
-    if amount_ma20 > 0 and amount < amount_ma20 * 0.7:
-        reasons.append(f"成交额大幅萎缩({amount:.0f}<{amount_ma20:.0f}×0.7)")
-
-    if reasons:
-        return {"allowed": False, "reasons": reasons}
-    return {"allowed": True, "reasons": ["大盘环境正常"]}
 
 
 # ============ 独立运行 ============

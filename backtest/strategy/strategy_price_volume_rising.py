@@ -56,8 +56,7 @@ MIN_CONSEC_UP = 2            # 至少连续 2 天上涨
 STOP_LOSS_PCT = -7           # 硬止损（%）
 TAKE_PROFIT_PCT = 12         # 止盈（%）
 MAX_HOLD_DAYS = 8            # 最大持仓天数
-HIGH_RETREAT_PCT = -6        # 从持仓高点回撤超过此值离场
-VOL_COLLAPSE_RATIO = 0.7     # vol_5d / vol_20d < 此值 → 量能崩塌
+DAILY_CRASH_PCT = -8         # 单日暴跌离场（%）
 
 
 # ============ 量价配合计算 ============
@@ -144,9 +143,8 @@ def generate_signals(bars):
     in_pos = False
     entry_price = None
     entry_index = None
-    peak_close = None
 
-    min_idx = 25  # 20日均线需要20根 + buffer
+    min_idx = 25
 
     for i in range(min_idx, n):
         close = closes[i]
@@ -162,6 +160,7 @@ def generate_signals(bars):
             continue
 
         vol_ratio = vol_ma5[i] / vol_ma20[i]
+        daily_chg = (closes[i] - closes[i - 1]) / closes[i - 1] if i > 0 and closes[i - 1] > 0 else 0
 
         # ==================== 买入逻辑 ====================
         if not in_pos:
@@ -200,7 +199,6 @@ def generate_signals(bars):
                 in_pos = True
                 entry_price = close
                 entry_index = i
-                peak_close = close
 
                 signals.append({
                     "date": bars[i]["trade_date"],
@@ -215,40 +213,20 @@ def generate_signals(bars):
             continue
 
         # ==================== 卖出逻辑 ====================
-        peak_close = max(peak_close, close)
+        # v2 style: 硬止损 + 止盈 + 单日暴跌 + 持仓到期
         hold_days = i - entry_index
         profit_pct = (close / entry_price - 1) * 100 if entry_price else 0
-        drawdown_from_peak = (close / peak_close - 1) * 100 if peak_close else 0
 
         reason = None
 
-        # 1. 硬止损
         if profit_pct <= STOP_LOSS_PCT:
             reason = f"止损({profit_pct:.1f}%)"
-
-        # 2. 止盈
         elif profit_pct >= TAKE_PROFIT_PCT:
             reason = f"止盈({profit_pct:.1f}%)"
-
-        # 3. 量能崩塌
-        elif vol_ratio < VOL_COLLAPSE_RATIO:
-            reason = f"量能崩塌(量比{vol_ratio:.1f}x)"
-
-        # 4. 跌破 MA10（趋势破坏）
-        elif close < ma10[i]:
-            reason = f"跌破MA10({close:.2f}<{ma10[i]:.2f})"
-
-        # 5. 高位回撤过大
-        elif drawdown_from_peak <= HIGH_RETREAT_PCT:
-            reason = f"高位回撤({drawdown_from_peak:.1f}%)"
-
-        # 6. 持仓过久
+        elif daily_chg <= DAILY_CRASH_PCT / 100:
+            reason = f"单日暴跌({daily_chg:.1%})"
         elif hold_days >= MAX_HOLD_DAYS:
             reason = f"持仓{hold_days}天到期"
-
-        # 7. 量价背离（价涨量缩 = 动能不足）
-        elif close > entry_price and vol_ratio < 1.0:
-            reason = f"量价背离(价涨但量缩至{vol_ratio:.1f}x)"
 
         if reason is None:
             continue
@@ -261,44 +239,8 @@ def generate_signals(bars):
         in_pos = False
         entry_price = None
         entry_index = None
-        peak_close = None
 
     return signals
-
-
-# ============ 大盘过滤器 ============
-
-def market_gate(trade_date, market_stats):
-    """
-    大盘环境过滤。
-
-    大盘不好的时候禁止开仓：
-    - 涨跌比太低（恐慌）
-    - 跌停数太多（系统性风险）
-    - 成交额大幅萎缩
-    """
-    today = market_stats.get(trade_date, {})
-    if not today:
-        return {"allowed": True, "reasons": []}
-
-    reasons = []
-
-    breadth = today.get("breadth", 0.5)
-    if breadth < 0.25:
-        reasons.append(f"涨跌比过低({breadth:.0%}<25%)，市场恐慌")
-
-    limit_down = today.get("limit_down", 0)
-    if limit_down >= 50:
-        reasons.append(f"跌停过多({limit_down}≥50)，系统性风险")
-
-    amount = today.get("amount", 0)
-    amount_ma20 = today.get("amount_ma20", 0)
-    if amount_ma20 > 0 and amount < amount_ma20 * 0.7:
-        reasons.append(f"成交额大幅萎缩")
-
-    if reasons:
-        return {"allowed": False, "reasons": reasons}
-    return {"allowed": True, "reasons": ["大盘环境正常"]}
 
 
 # ============ 独立运行 ============

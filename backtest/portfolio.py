@@ -1,3 +1,6 @@
+import inspect
+
+
 def run_portfolio_backtest(
     bars_by_code,
     stock_map,
@@ -29,12 +32,16 @@ def run_portfolio_backtest(
             continue
         bar_lookup[code] = {b["trade_date"]: b for b in clean_bars}
         all_dates.update(bar_lookup[code].keys())
-        for signal in strategy.generate_signals(clean_bars):
+        gen_params = inspect.signature(strategy.generate_signals).parameters
+        gen_args = (clean_bars, market_stats) if len(gen_params) > 1 else (clean_bars,)
+        for signal in strategy.generate_signals(*gen_args):
             signal_by_date.setdefault(signal["date"], []).append({
                 "code": code,
                 "action": signal["action"],
                 "reason": signal.get("reason", ""),
             })
+
+    amount_ma20 = _build_amount_ma20(bar_lookup)
 
     dates = sorted(all_dates)
     if not dates:
@@ -134,8 +141,8 @@ def run_portfolio_backtest(
             bar = bar_lookup.get(code, {}).get(date)
             if not bar:
                 continue
-            stock = stock_map.get(code, {})
-            buy_candidates.append((stock.get("latest_amount") or 0, signal, bar))
+            sort_key = amount_ma20.get(code, {}).get(date, bar.get("amount") or 0)
+            buy_candidates.append((sort_key, signal, bar))
 
         buy_candidates.sort(reverse=True, key=lambda x: x[0])
         for _, signal, bar in buy_candidates:
@@ -222,6 +229,28 @@ def run_portfolio_backtest(
         "stock_summaries": stock_summaries,
         "market_gate": _summarize_market_gate(gate_history),
     }
+
+
+def _build_amount_ma20(bar_lookup, window=20):
+    """预计算每只股票每日的前N日均成交额（无未来函数）。
+
+    返回: {code: {date: ma20_amount}}
+    """
+    result = {}
+    for code, date_bars in bar_lookup.items():
+        sorted_dates = sorted(date_bars)
+        amounts = [date_bars[d].get("amount") or 0 for d in sorted_dates]
+        ma20 = {}
+        rolling = []
+        for i, (d, amt) in enumerate(zip(sorted_dates, amounts)):
+            rolling.append(amt)
+            if len(rolling) > window:
+                rolling = rolling[-window:]
+            if len(rolling) >= window or i >= 5:
+                ma20[d] = sum(rolling) / len(rolling)
+        if ma20:
+            result[code] = ma20
+    return result
 
 
 def _stock_summaries(trades):
@@ -474,13 +503,17 @@ def run_multi_strategy_backtest(
         bar_lookup[code] = {b["trade_date"]: b for b in clean_bars}
         all_dates.update(bar_lookup[code].keys())
         for si, strat in enumerate(strategies):
-            for signal in strat.generate_signals(clean_bars):
+            gen_params = inspect.signature(strat.generate_signals).parameters
+            gen_args = (clean_bars, market_stats) if len(gen_params) > 1 else (clean_bars,)
+            for signal in strat.generate_signals(*gen_args):
                 signal_by_date.setdefault(signal["date"], []).append({
                     "code": code,
                     "action": signal["action"],
                     "reason": signal.get("reason", ""),
                     "strategy_index": si,
                 })
+
+    amount_ma20 = _build_amount_ma20(bar_lookup)
 
     dates = sorted(all_dates)
     if not dates:
@@ -518,8 +551,8 @@ def run_multi_strategy_backtest(
             si = s["strategy_index"]
             strat = strategies[si]
 
-            # 极端恐慌：趋势跟随不买
-            if si == TF_IDX and breadth < 0.30:
+            # 极端恐慌：无 market_gate 的趋势跟随不买（有 gate 的由策略自己判断）
+            if si == TF_IDX and not hasattr(strat, "market_gate") and breadth < 0.30:
                 continue
 
             # 策略自己的 market_gate
@@ -589,8 +622,8 @@ def run_multi_strategy_backtest(
             bar = bar_lookup.get(code, {}).get(date)
             if not bar:
                 continue
-            stock = stock_map.get(code, {})
-            buy_candidates.append((stock.get("latest_amount") or 0, signal, bar))
+            sort_key = amount_ma20.get(code, {}).get(date, bar.get("amount") or 0)
+            buy_candidates.append((sort_key, signal, bar))
 
         buy_candidates.sort(reverse=True, key=lambda x: x[0])
         total_positions = len(positions)

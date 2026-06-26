@@ -15,10 +15,15 @@ META = {
 }
 
 
+# ============ 可调参数 ============
+MA_FAST = 10
+MA_SLOW = 30
+
+
 def generate_signals(bars):
     closes = [b["close"] for b in bars]
-    ma10 = sma(closes, 10)
-    ma30 = sma(closes, 30)
+    ma10 = sma(closes, MA_FAST)
+    ma30 = sma(closes, MA_SLOW)
     signals = []
     for i in range(1, len(bars)):
         if ma10[i - 1] is None or ma10[i] is None or ma30[i - 1] is None or ma30[i] is None:

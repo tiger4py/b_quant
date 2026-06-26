@@ -58,6 +58,36 @@ TAKE_PROFIT_PCT = 25         # 止盈（%）
 MAX_HOLD_DAYS = 14           # 最大持仓天数
 DAILY_CRASH_PCT = -8         # 单日暴跌超过此值离场（%）
 
+# -- 市场择时门槛 --
+MARKET_FEAR_BREADTH = 0.25   # 广度 < 此值 = 恐慌底，积极买入
+MARKET_GREED_BREADTH = 0.75  # 广度 > 此值 = 过热顶，停止买入
+
+
+# ============ market_gate ============
+
+# 当日市场状态（market_gate 写入，generate_signals 读取）
+_CURRENT_GATE = {"state": "NEUTRAL", "max_hold": MAX_HOLD_DAYS}
+
+
+def market_gate(date, market_stats):
+    """市场择时：恐慌时扩大持仓窗口，过热时收紧。永远不挡买入。"""
+    global _CURRENT_GATE
+    s = market_stats.get(date, {})
+    breadth = s.get("breadth", 0.5)
+
+    if breadth < MARKET_FEAR_BREADTH:
+        _CURRENT_GATE = {"state": "FEAR", "max_hold": 30}
+        return {"allowed": True, "state": "FEAR", "max_hold": 30,
+                "reason": f"恐慌底(广度{breadth:.2f})"}
+    elif breadth > MARKET_GREED_BREADTH:
+        _CURRENT_GATE = {"state": "GREED", "max_hold": 7}
+        return {"allowed": True, "state": "GREED", "max_hold": 7,
+                "reason": f"过热顶(广度{breadth:.2f})"}
+    else:
+        _CURRENT_GATE = {"state": "NEUTRAL", "max_hold": MAX_HOLD_DAYS}
+        return {"allowed": True, "state": "NEUTRAL", "max_hold": MAX_HOLD_DAYS,
+                "reason": f"正常(广度{breadth:.2f})"}
+
 
 # ============ 辅助函数 ============
 
@@ -122,6 +152,7 @@ def generate_signals(bars):
     in_pos = False
     entry_price = None
     entry_index = None
+    position_max_hold = MAX_HOLD_DAYS  # 当前持仓的最大持有天数（买入时根据市场状态锁定）
 
     min_idx = 42  # 40日回撤需要40根 + buffer
 
@@ -212,6 +243,8 @@ def generate_signals(bars):
             in_pos = True
             entry_price = next_close
             entry_index = i + 1
+            position_max_hold = _CURRENT_GATE.get("max_hold", MAX_HOLD_DAYS)
+            position_state = _CURRENT_GATE.get("state", "NEUTRAL")
 
             signals.append({
                 "date": bars[i + 1]["trade_date"],  # 实际成交日期
@@ -219,7 +252,7 @@ def generate_signals(bars):
                 "reason": (
                     f"趋势跟随(5日{chg_5d*100:.1f}% 20日{chg_20d*100:.1f}% | "
                     f"量比{vol_ratio:.1f}x 涨跌量比{dyn['up_vol_ratio']:.1f}x | "
-                    f"连涨{dyn['consecutive_up']}天)"
+                    f"连涨{dyn['consecutive_up']}天 | 市态{position_state})"
                 ),
             })
             continue
@@ -240,8 +273,8 @@ def generate_signals(bars):
             reason = f"止盈({profit_pct:.1f}%)"
         elif daily_chg <= DAILY_CRASH_PCT / 100:
             reason = f"单日暴跌({daily_chg:.1%})"
-        elif hold_days >= MAX_HOLD_DAYS:
-            reason = f"持仓{hold_days}天到期"
+        elif hold_days >= position_max_hold:
+            reason = f"持仓{hold_days}天到期(市态{_CURRENT_GATE.get('state','?')})"
 
         if reason is None:
             continue

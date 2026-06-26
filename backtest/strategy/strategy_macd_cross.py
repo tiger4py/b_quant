@@ -15,10 +15,16 @@ META = {
 }
 
 
+# ============ 可调参数 ============
+EMA_FAST = 12
+EMA_SLOW = 26
+SIGNAL = 9
+
+
 def generate_signals(bars):
     closes = [b["close"] for b in bars]
-    dif = [a - b for a, b in zip(ema(closes, 12), ema(closes, 26))]
-    dea = ema(dif, 9)
+    dif = [a - b for a, b in zip(ema(closes, EMA_FAST), ema(closes, EMA_SLOW))]
+    dea = ema(dif, SIGNAL)
     signals = []
     for i in range(1, len(bars)):
         if dif[i - 1] <= dea[i - 1] and dif[i] > dea[i]:

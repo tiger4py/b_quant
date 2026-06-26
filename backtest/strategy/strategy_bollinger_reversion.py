@@ -15,15 +15,20 @@ META = {
 }
 
 
+# ============ 可调参数 ============
+BB_PERIOD = 20
+BB_STD = 2
+
+
 def generate_signals(bars):
     closes = [b["close"] for b in bars]
-    mid = sma(closes, 20)
+    mid = sma(closes, BB_PERIOD)
     dev = stddev(closes, 20)
     signals = []
     for i in range(1, len(bars)):
         if mid[i - 1] is None or mid[i] is None or dev[i] is None:
             continue
-        lower = mid[i] - 2 * dev[i]
+        lower = mid[i] - BB_STD * dev[i]
         if closes[i - 1] >= lower and closes[i] < lower:
             signals.append({"date": bars[i]["trade_date"], "action": "buy", "reason": "收盘跌破布林下轨"})
         elif closes[i - 1] <= mid[i - 1] and closes[i] > mid[i]:

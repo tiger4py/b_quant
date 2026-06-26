@@ -11,9 +11,9 @@ if str(ROOT_DIR) not in sys.path:
 
 from config import DATABASE_URL
 from logic.backtest_cache import (
-    DEFAULT_MARKET_DAYS,
     DEFAULT_MARKET_INITIAL_CASH,
     DEFAULT_MARKET_MAX_POSITIONS,
+    FIXED_START_DATE,
     compute_and_save_market_result,
 )
 from models.stock import Base
@@ -21,7 +21,8 @@ from models.stock import Base
 
 def run_strategy_meta(meta):
     parser = argparse.ArgumentParser(description=f"Run market backtest for strategy: {meta['id']}")
-    parser.add_argument("--days", type=int, default=DEFAULT_MARKET_DAYS, help="lookback trading days")
+    parser.add_argument("--start", default=FIXED_START_DATE, help=f"start date (default {FIXED_START_DATE})")
+    parser.add_argument("--end", default=None, help="end date YYYY-MM-DD (default: latest in DB)")
     parser.add_argument("--initial-cash", type=float, default=DEFAULT_MARKET_INITIAL_CASH, help="initial cash")
     parser.add_argument("--max-positions", type=int, default=DEFAULT_MARKET_MAX_POSITIONS, help="max concurrent positions")
     parser.add_argument("--criteria", default="全部正常股票，剔除历史K线不足的股票", help="selection criteria label")
@@ -35,7 +36,8 @@ def run_strategy_meta(meta):
         cache_key, result = compute_and_save_market_result(
             sess,
             strategy_id=meta["id"],
-            days=args.days,
+            start_date=args.start,
+            end_date=args.end,
             initial_cash=args.initial_cash,
             max_positions=args.max_positions,
             criteria=args.criteria,
@@ -46,9 +48,9 @@ def run_strategy_meta(meta):
     print(f"cache_key={cache_key}")
     print(f"strategy={meta['id']} name={meta['name']}")
     print(
-        f"stocks={selection['stock_count']} days={selection['days']} latest={selection['latest_trade_date']} "
-        f"initial={selection['initial_cash']:.2f} final={summary['final_equity']:.2f} "
-        f"max_positions={selection['max_positions']}"
+        f"stocks={selection['stock_count']} start={selection['start_date']} end={selection['end_date']} "
+        f"latest={selection['latest_trade_date']} initial={selection['initial_cash']:.2f} "
+        f"final={summary['final_equity']:.2f} max_positions={selection['max_positions']}"
     )
     print(
         f"return={summary['total_return_pct']:.2f}% drawdown={summary['max_drawdown_pct']:.2f}% "

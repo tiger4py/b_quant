@@ -15,9 +15,15 @@ META = {
 }
 
 
+# ============ 可调参数 ============
+ATR_PERIOD = 14
+ATR_MULTIPLIER = 3
+BREAKOUT_PERIOD = 20
+
+
 def generate_signals(bars):
     highs = rolling_high([b["high"] for b in bars], 20)
-    atr14 = atr(bars, 14)
+    atr14 = atr(bars, ATR_PERIOD)
     signals = []
     in_pos = False
     peak = None
@@ -31,7 +37,7 @@ def generate_signals(bars):
             signals.append({"date": bars[i]["trade_date"], "action": "buy", "reason": "ATR 趋势突破买入"})
         elif in_pos:
             peak = max(peak, bars[i]["high"])
-            stop = peak - 3 * atr14[i]
+            stop = peak - ATR_MULTIPLIER * atr14[i]
             if close < stop:
                 in_pos = False
                 peak = None

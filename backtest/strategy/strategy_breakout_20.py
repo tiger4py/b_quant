@@ -15,10 +15,15 @@ META = {
 }
 
 
+# ============ 可调参数 ============
+BREAKOUT_PERIOD = 20
+STOPLOSS_PERIOD = 10
+
+
 def generate_signals(bars):
     closes = [b["close"] for b in bars]
-    highs = rolling_high([b["high"] for b in bars], 20)
-    lows = rolling_low([b["low"] for b in bars], 10)
+    highs = rolling_high([b["high"] for b in bars], BREAKOUT_PERIOD)
+    lows = rolling_low([b["low"] for b in bars], STOPLOSS_PERIOD)
     signals = []
     for i in range(1, len(bars)):
         if highs[i - 1] is None or lows[i - 1] is None:

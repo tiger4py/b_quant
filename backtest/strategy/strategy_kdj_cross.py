@@ -15,6 +15,12 @@ META = {
 }
 
 
+# ============ 可调参数 ============
+KDJ_PERIOD = 9
+KDJ_OVERSOLD = 35
+KDJ_OVERBOUGHT = 65
+
+
 def generate_signals(bars):
     highs = rolling_high([b["high"] for b in bars], 9)
     lows = rolling_low([b["low"] for b in bars], 9)

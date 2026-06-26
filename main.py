@@ -14,12 +14,8 @@ from script.update_daily import update_concepts as scheduled_update_concepts
 from script.update_daily import update_stocks as scheduled_update_stocks
 from backtest import get_strategy, list_strategies, run_backtest, run_portfolio_backtest
 from logic.backtest_cache import (
-    ACCUMULATION_MARKET_CACHE_KEY,
-    DEFAULT_MARKET_DAYS,
     DEFAULT_MARKET_MAX_POSITIONS,
-    MACD_MARKET_CACHE_KEY,
-    load_backtest_cache,
-    load_market_backtest_cache,
+    load_latest_strategy_result,
 )
 from logic.progress import get as get_progress
 from models.stock import Base, StockInfo, StockDaily, Concept, StockConcept, ConceptDaily
@@ -603,50 +599,40 @@ def api_stocks_prices():
 def api_backtest_strategies():
     return jsonify([{
         **item,
-        "market_cache_key": f"{item['id']}_market_{DEFAULT_MARKET_DAYS}_pos{DEFAULT_MARKET_MAX_POSITIONS}",
-        "market_cache_days": DEFAULT_MARKET_DAYS,
-        "market_cache_max_positions": DEFAULT_MARKET_MAX_POSITIONS,
+        "market_cache_key": item["id"],
     } for item in list_strategies()])
 
 
 @app.route("/api/backtest/market-overview")
 def api_backtest_market_overview():
-    days = max(120, min(int(request.args.get("days") or DEFAULT_MARKET_DAYS), 2000))
     max_positions = max(1, min(int(request.args.get("max_positions") or DEFAULT_MARKET_MAX_POSITIONS), 5))
     ranking = []
     missing = []
-    with get_session() as sess:
-        for item in list_strategies():
-            result = load_market_backtest_cache(
-                sess,
-                strategy_id=item["id"],
-                days=days,
-                max_positions=max_positions,
-            )
-            if not result:
-                missing.append({
-                    "strategy_id": item["id"],
-                    "strategy_name": item["name"],
-                })
-                continue
-            summary = result["summary"]
-            ranking.append({
+    for item in list_strategies():
+        result = load_latest_strategy_result(item["id"])
+        if not result:
+            missing.append({
                 "strategy_id": item["id"],
                 "strategy_name": item["name"],
-                "description": item["description"],
-                "return_pct": summary["total_return_pct"],
-                "drawdown_pct": summary["max_drawdown_pct"],
-                "win_rate_pct": summary["win_rate_pct"],
-                "trade_count": summary["trade_count"],
-                "final_equity": summary["final_equity"],
-                "score": round(summary["total_return_pct"] - summary["max_drawdown_pct"] * 0.35 + summary["win_rate_pct"] * 0.05, 2),
-                "latest_trade_date": result["selection"]["latest_trade_date"],
-                "stock_count": result["selection"]["stock_count"],
-                "cache_created_at": result.get("cache", {}).get("created_at"),
             })
+            continue
+        summary = result["summary"]
+        ranking.append({
+            "strategy_id": item["id"],
+            "strategy_name": item["name"],
+            "description": item["description"],
+            "return_pct": summary["total_return_pct"],
+            "drawdown_pct": summary["max_drawdown_pct"],
+            "win_rate_pct": summary["win_rate_pct"],
+            "trade_count": summary["trade_count"],
+            "final_equity": summary["final_equity"],
+            "score": round(summary["total_return_pct"] - summary["max_drawdown_pct"] * 0.35 + summary["win_rate_pct"] * 0.05, 2),
+            "latest_trade_date": result["selection"]["latest_trade_date"],
+            "stock_count": result["selection"]["stock_count"],
+            "cache_created_at": result.get("cache", {}).get("created_at"),
+        })
     ranking.sort(key=lambda x: x["score"], reverse=True)
     return jsonify({
-        "days": days,
         "max_positions": max_positions,
         "ranking": ranking,
         "missing": missing,
@@ -986,45 +972,32 @@ def api_backtest_stability():
 
 @app.route("/api/backtest/macd-market")
 def api_backtest_macd_market():
-    with get_session() as sess:
-        result = load_backtest_cache(sess, MACD_MARKET_CACHE_KEY)
+    result = load_latest_strategy_result("macd_cross")
     if not result:
-        return jsonify({
-            "error": "MACD 全市场 1000 天回测结果还没有生成，请先运行 script/run_macd_market_backtest.py"
-        }), 404
+        return jsonify({"error": "MACD 全市场回测结果还没有生成"}), 404
     return jsonify(result)
 
 
 @app.route("/api/backtest/accumulation-market")
 def api_backtest_accumulation_market():
-    with get_session() as sess:
-        result = load_backtest_cache(sess, ACCUMULATION_MARKET_CACHE_KEY)
+    result = load_latest_strategy_result("accumulation_probe")
     if not result:
-        return jsonify({
-            "error": "吸筹试盘全市场1000天回测结果还没有生成，请先运行 script/run_accumulation_market_backtest.py"
-        }), 404
+        return jsonify({"error": "吸筹试盘全市场回测结果还没有生成"}), 404
     return jsonify(result)
 
 
 @app.route("/api/backtest/market/<strategy_id>")
 def api_backtest_market(strategy_id: str):
-    days = max(120, min(int(request.args.get("days") or DEFAULT_MARKET_DAYS), 2000))
     max_positions = max(1, min(int(request.args.get("max_positions") or DEFAULT_MARKET_MAX_POSITIONS), 5))
     try:
         strategy = get_strategy(strategy_id)
     except KeyError:
         return jsonify({"error": "策略不存在"}), 404
 
-    with get_session() as sess:
-        result = load_market_backtest_cache(
-            sess,
-            strategy_id=strategy_id,
-            days=days,
-            max_positions=max_positions,
-        )
+    result = load_latest_strategy_result(strategy_id)
     if not result:
         return jsonify({
-            "error": f"{strategy.META['name']} 全市场 {days} 天回测结果还没有生成，请先运行 script/run_strategy_market_backtest.py --strategy {strategy_id} --days {days} --max-positions {max_positions}"
+            "error": f"{strategy.META['name']} 全市场回测结果还没有生成，请先运行 script/run_strategy_market_backtest.py --strategy {strategy_id} --max-positions {max_positions}"
         }), 404
     return jsonify(result)
 
