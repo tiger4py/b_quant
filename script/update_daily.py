@@ -101,8 +101,38 @@ def _write_csv_by_date(rows_by_date: dict, base_dir: str):
         logger.info("  -> saved %d rows to %s", len(rows), filepath)
 
 
+def _existing_csv_dates(start: str, end: str, expected_min: int = 4000) -> set:
+    """检查日期范围内已有的 CSV 文件，跳过数据完整的日期。
+
+    CSV 文件路径: data/day_stock/YYYYMM/YYYY-MM-DD.csv
+    expected_min: CSV 最少行数才算完整（默认 4000 只）
+    返回: 已存在且完整的日期集合
+    """
+    existing = set()
+    start_dt = datetime.strptime(start, "%Y-%m-%d")
+    end_dt = datetime.strptime(end, "%Y-%m-%d")
+
+    from datetime import timedelta
+    d = start_dt
+    while d <= end_dt:
+        date_str = d.strftime("%Y-%m-%d")
+        month_dir = os.path.join(DAY_STOCK_DIR, d.strftime("%Y%m"))
+        filepath = os.path.join(month_dir, f"{date_str}.csv")
+        if os.path.isfile(filepath):
+            # 数一下行数（减去表头），够 expected_min 就算完整
+            try:
+                with open(filepath, "r", encoding="utf-8-sig") as f:
+                    line_count = sum(1 for _ in f) - 1  # 减表头
+                if line_count >= expected_min:
+                    existing.add(date_str)
+            except Exception:
+                pass
+        d += timedelta(days=1)
+    return existing
+
+
 def update_stocks(start: str, end: str):
-    """拉取指定日期范围的日K线，按日期存 CSV"""
+    """拉取指定日期范围的日K线，按日期存 CSV（已有完整数据的日期跳过）"""
     if not _bs_login():
         return
 
@@ -118,6 +148,17 @@ def update_stocks(start: str, end: str):
     with Session() as sess:
         codes = [r[0] for r in sess.query(StockInfo.code)
                  .filter(StockInfo.type == "1", StockInfo.status == 1).all()]
+
+    # 检查已有数据，跳过完整的日期
+    existing = _existing_csv_dates(start, end, expected_min=len(codes) - 20)
+    if existing:
+        logger.info("跳过已有完整数据的日期 (%d 天): %s", len(existing),
+                    ", ".join(sorted(existing)))
+    from datetime import timedelta
+    total_days = (datetime.strptime(end, "%Y-%m-%d") - datetime.strptime(start, "%Y-%m-%d")).days + 1
+    if len(existing) >= total_days:
+        logger.info("所有日期已有完整数据，跳过拉取")
+        return
 
     logger.info("Fetching stock daily: %d stocks, %s ~ %s", len(codes), start, end)
 
