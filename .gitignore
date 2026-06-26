@@ -34,6 +34,7 @@ env/
 
 # Project specific
 data/*.db
+!data/stock.db
 data/*.db-wal
 data/*.db-shm
 logs/*.log
