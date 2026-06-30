@@ -60,6 +60,8 @@ MIN_CONSEC_UP = 1            # 至少1天上涨
 # -- 卖出 --
 STOP_LOSS_PCT = -12          # 硬止损：相对买入价跌超此值离场（%）
 TAKE_PROFIT_PCT = 25         # 止盈（%）
+HIGH_RETREAT_PCT = -15       # 高位回撤：距持仓期间最高点回撤超此值离场（%）
+VOL_COLLAPSE_RATIO = 0.5     # 量能崩塌：5日均量 < 20日均量 × 此比值 → 离场
 MAX_HOLD_DAYS = 14           # 最大持仓天数
 DAILY_CRASH_PCT = -8         # 单日暴跌超过此值离场（%）
 
