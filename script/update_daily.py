@@ -132,7 +132,13 @@ def _existing_csv_dates(start: str, end: str, expected_min: int = 4000) -> set:
 
 
 def update_stocks(start: str, end: str):
-    """拉取指定日期范围的日K线，按日期存 CSV（已有完整数据的日期跳过）"""
+    """拉取指定日期范围的日K线，逐只追加到单个临时文件，最后按日期拆分。
+
+    中途断连不丢数据：已拉取的股票追加在 _tmp/{start}_{end}.csv 中，重跑时自动跳过。
+    """
+    import shutil
+    from datetime import timedelta
+
     if not _bs_login():
         return
 
@@ -149,98 +155,164 @@ def update_stocks(start: str, end: str):
         codes = [r[0] for r in sess.query(StockInfo.code)
                  .filter(StockInfo.type == "1", StockInfo.status == 1).all()]
 
-    # 检查已有数据，跳过完整的日期
+    # 检查已有最终 CSV，跳过完整的日期
     existing = _existing_csv_dates(start, end, expected_min=len(codes) - 20)
     if existing:
         logger.info("跳过已有完整数据的日期 (%d 天): %s", len(existing),
                     ", ".join(sorted(existing)))
-    from datetime import timedelta
     total_days = (datetime.strptime(end, "%Y-%m-%d") - datetime.strptime(start, "%Y-%m-%d")).days + 1
     if len(existing) >= total_days:
         logger.info("所有日期已有完整数据，跳过拉取")
         return
 
-    logger.info("Fetching stock daily: %d stocks, %s ~ %s", len(codes), start, end)
+    FIELD_NAMES = ["code", "trade_date", "open", "high", "low", "close",
+                   "volume", "amount", "turn", "pe_ttm"]
 
-    # date -> [{code, trade_date, open, ...}]
-    rows_by_date = defaultdict(list)
-    count = 0
-    total_codes = len(codes)
-    consecutive_failures = 0
+    # ★ 单个临时文件，追加写，断连不丢
+    tmp_dir = os.path.join(DAY_STOCK_DIR, "_tmp")
+    os.makedirs(tmp_dir, exist_ok=True)
+    tmp_path = os.path.join(tmp_dir, f"{start}_{end}.csv")
 
-    for idx, code in enumerate(codes, start=1):
-        started_at = time.perf_counter()
-        if idx == 1 or idx % 200 == 1:
-            logger.info("Processing stock %d/%d: %s", idx, total_codes, code)
-        try:
-            rs = bs.query_history_k_data_plus(
-                code, K_FIELDS,
-                start_date=start, end_date=end,
-                frequency=K_FREQUENCY, adjustflag="3"
-            )
-            if rs.error_code != "0":
-                logger.warning("baostock query failed for %s: %s", code, rs.error_msg)
+    # 断点续跑：读取临时文件中已完成的 code
+    done_codes = set()
+    if os.path.exists(tmp_path):
+        with open(tmp_path, "r", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                done_codes.add(row.get("code", ""))
+        if done_codes:
+            logger.info("断点续跑: 临时文件已有 %d 只股票", len(done_codes))
+
+    pending_codes = [c for c in codes if c not in done_codes]
+
+    if not pending_codes:
+        logger.info("所有股票已在临时文件中，跳过拉取，直接拆分")
+        bs.logout()
+        _split_tmp_to_dates(tmp_path, DAY_STOCK_DIR)
+        return
+
+    logger.info("Fetching stock daily: %d stocks, %s ~ %s", len(pending_codes), start, end)
+
+    # 打开临时文件（追加模式），全程只开一次
+    tmp_exists = os.path.exists(tmp_path)
+    with open(tmp_path, "a", newline="", encoding="utf-8-sig") as tmp_f:
+        writer = csv.DictWriter(tmp_f, fieldnames=FIELD_NAMES)
+        if not tmp_exists:
+            writer.writeheader()
+            tmp_f.flush()
+
+        count = 0
+        total_codes = len(pending_codes)
+        consecutive_failures = 0
+
+        for idx, code in enumerate(pending_codes, start=1):
+            started_at = time.perf_counter()
+            if idx == 1 or idx % 200 == 1:
+                logger.info("Processing stock %d/%d: %s", idx, total_codes, code)
+            try:
+                rs = bs.query_history_k_data_plus(
+                    code, K_FIELDS,
+                    start_date=start, end_date=end,
+                    frequency=K_FREQUENCY, adjustflag="3"
+                )
+                if rs.error_code != "0":
+                    logger.warning("baostock query failed for %s: %s", code, rs.error_msg)
+                    consecutive_failures += 1
+                    if _should_reconnect(rs.error_msg) or consecutive_failures >= 5:
+                        logger.warning("baostock connection looks broken, reconnecting before next stock")
+                        bs.logout()
+                        if not _bs_login():
+                            logger.info("连接失败，已拉取数据在 %s，重跑可续", tmp_path)
+                            return
+                        consecutive_failures = 0
+                    continue
+
+                stock_rows = []
+                while rs.next():
+                    stock_rows.append(rs.get_row_data())
+
+                if not stock_rows:
+                    # 无数据也记一行（code + 空日期），下次跳过
+                    writer.writerow({"code": code, "trade_date": ""})
+                    tmp_f.flush()
+                    continue
+                consecutive_failures = 0
+
+                # 逐行写入临时文件
+                for row in stock_rows:
+                    row_dict = {
+                        "code": code,
+                        "trade_date": row[0],
+                        "open": float(row[1]) if row[1] else None,
+                        "high": float(row[2]) if row[2] else None,
+                        "low": float(row[3]) if row[3] else None,
+                        "close": float(row[4]) if row[4] else None,
+                        "volume": int(float(row[5])) if row[5] else None,
+                        "amount": float(row[6]) if row[6] else None,
+                        "turn": float(row[7]) if row[7] else None,
+                        "pe_ttm": float(row[8]) if row[8] else None,
+                    }
+                    writer.writerow(row_dict)
+                    count += 1
+
+                tmp_f.flush()  # ★ 每只股票刷盘，断连不丢
+
+            except Exception:
+                logger.exception("update stock failed: %s", code)
                 consecutive_failures += 1
-                if _should_reconnect(rs.error_msg) or consecutive_failures >= 5:
-                    logger.warning("baostock connection looks broken, reconnecting before next stock")
+                if consecutive_failures >= 5:
+                    logger.warning("too many consecutive failures, reconnecting baostock")
                     bs.logout()
                     if not _bs_login():
+                        logger.info("连接失败，已拉取数据在 %s，重跑可续", tmp_path)
                         return
                     consecutive_failures = 0
                 continue
-
-            stock_rows = []
-            while rs.next():
-                stock_rows.append(rs.get_row_data())
-
-            if not stock_rows:
-                continue
-            consecutive_failures = 0
-
-            for row in stock_rows:
-                trade_date = row[0]
-                row_dict = {
-                    "code": code,
-                    "trade_date": trade_date,
-                    "open": float(row[1]) if row[1] else None,
-                    "high": float(row[2]) if row[2] else None,
-                    "low": float(row[3]) if row[3] else None,
-                    "close": float(row[4]) if row[4] else None,
-                    "volume": int(float(row[5])) if row[5] else None,
-                    "amount": float(row[6]) if row[6] else None,
-                    "turn": float(row[7]) if row[7] else None,
-                    "pe_ttm": float(row[8]) if row[8] else None,
-                }
-                rows_by_date[trade_date].append(row_dict)
-                count += 1
-
-        except Exception:
-            logger.exception("update stock failed: %s", code)
-            consecutive_failures += 1
-            if consecutive_failures >= 5:
-                logger.warning("too many consecutive failures, reconnecting baostock")
-                bs.logout()
-                if not _bs_login():
-                    return
-                consecutive_failures = 0
-            continue
-        finally:
-            elapsed = time.perf_counter() - started_at
-            if elapsed >= 10:
-                logger.warning("Stock update slow: %s took %.2fs", code, elapsed)
-            if idx % 50 == 0 or idx == total_codes:
-                logger.info(
-                    "Stock daily progress: %d/%d (%.1f%%), rows=%d, current=%s, elapsed=%.2fs",
-                    idx, total_codes,
-                    idx / total_codes * 100 if total_codes else 100,
-                    count, code, elapsed,
-                )
+            finally:
+                elapsed = time.perf_counter() - started_at
+                if elapsed >= 10:
+                    logger.warning("Stock update slow: %s took %.2fs", code, elapsed)
+                if idx % 50 == 0 or idx == total_codes:
+                    logger.info(
+                        "Stock daily progress: %d/%d (%.1f%%), rows=%d, current=%s, elapsed=%.2fs",
+                        idx, total_codes,
+                        idx / total_codes * 100 if total_codes else 100,
+                        count, code, elapsed,
+                    )
 
     bs.logout()
 
-    # 按日期写 CSV
-    _write_csv_by_date(rows_by_date, DAY_STOCK_DIR)
-    logger.info("Stock daily fetched: %d rows across %d dates", count, len(rows_by_date))
+    # 全部拉完 → 按日期拆分临时文件为最终 CSV
+    _split_tmp_to_dates(tmp_path, DAY_STOCK_DIR)
+    logger.info("Stock daily fetched: %d rows across %d stocks", count, total_codes)
+
+
+def _split_tmp_to_dates(tmp_path: str, out_dir: str):
+    """读取单个临时 CSV，按 trade_date 分组写入最终 CSV，然后删临时文件。"""
+    import shutil
+
+    rows_by_date = defaultdict(list)
+    count = 0
+    with open(tmp_path, "r", encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            td = row.get("trade_date", "")
+            if td:
+                rows_by_date[td].append(row)
+                count += 1
+
+    logger.info("拆分临时文件: %d 行 → %d 个日期", count, len(rows_by_date))
+    _write_csv_by_date(dict(rows_by_date), out_dir)
+
+    # 删临时文件
+    os.remove(tmp_path)
+    # 如果 _tmp 目录为空也删掉
+    tmp_dir = os.path.dirname(tmp_path)
+    try:
+        os.rmdir(tmp_dir)
+    except OSError:
+        pass
+    logger.info("临时文件已清理")
 
 
 def update_concepts(start: str, end: str):

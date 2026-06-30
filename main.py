@@ -137,16 +137,6 @@ def page_backtest_battle():
     return redirect(url_for("page_strategy_backtest"))
 
 
-@app.route("/macd-market-backtest")
-def page_macd_market_backtest():
-    return redirect(url_for("page_strategy_backtest"))
-
-
-@app.route("/accumulation-market-backtest")
-def page_accumulation_market_backtest():
-    return redirect(url_for("page_strategy_backtest"))
-
-
 # ── 实盘跟随 ──────────────────────────────────────────────────
 
 TRADING_PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "data", "portfolio.json")
@@ -968,22 +958,6 @@ def api_backtest_stability():
         "ranking": ranking,
         "runs": runs,
     })
-
-
-@app.route("/api/backtest/macd-market")
-def api_backtest_macd_market():
-    result = load_latest_strategy_result("macd_cross")
-    if not result:
-        return jsonify({"error": "MACD 全市场回测结果还没有生成"}), 404
-    return jsonify(result)
-
-
-@app.route("/api/backtest/accumulation-market")
-def api_backtest_accumulation_market():
-    result = load_latest_strategy_result("accumulation_probe")
-    if not result:
-        return jsonify({"error": "吸筹试盘全市场回测结果还没有生成"}), 404
-    return jsonify(result)
 
 
 @app.route("/api/backtest/market/<strategy_id>")
