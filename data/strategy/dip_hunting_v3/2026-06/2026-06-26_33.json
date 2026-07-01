@@ -1,0 +1,5184 @@
+{
+  "strategy": {
+    "id": "dip_hunting_v3",
+    "name": "大跌抄底 V3",
+    "description": "V3保守优化: 确认涨>1%(V2=0.5%)+确认放量>1.2x+8天时间止损。保留V2其余参数。预期胜率>48%回撤<16%。"
+  },
+  "selection": {
+    "stock_count": 4910,
+    "start_date": "2024-06-01",
+    "end_date": "2026-06-26",
+    "initial_cash": 1000000.0,
+    "max_positions": 5,
+    "max_position_cash": 200000.0,
+    "latest_trade_date": "2026-06-26",
+    "criteria": "全部正常股票，剔除历史K线不足的股票",
+    "cached": true
+  },
+  "summary": {
+    "initial_cash": 1000000.0,
+    "final_equity": 1183764.0,
+    "total_return_pct": 18.38,
+    "max_drawdown_pct": 15.32,
+    "trade_count": 77,
+    "win_rate_pct": 41.56,
+    "avg_profit_pct": 1.3,
+    "profit_factor": 1.26,
+    "max_positions": 5,
+    "max_position_cash": 200000.0
+  },
+  "equity_curve": [
+    {
+      "date": "2024-06-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-25",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-26",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-11",
+      "equity": 1000000.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-12",
+      "equity": 997232.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-15",
+      "equity": 997924.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-16",
+      "equity": 996021.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-17",
+      "equity": 994291.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-18",
+      "equity": 995502.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-19",
+      "equity": 994810.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-22",
+      "equity": 994464.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-23",
+      "equity": 987717.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-24",
+      "equity": 986160.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-25",
+      "equity": 990658.0,
+      "cash": 800704.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-26",
+      "equity": 996021.0,
+      "cash": 601274.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-07-29",
+      "equity": 988396.0,
+      "cash": 601274.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-07-30",
+      "equity": 986551.0,
+      "cash": 601274.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-07-31",
+      "equity": 1002882.0,
+      "cash": 400940.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-01",
+      "equity": 1002241.0,
+      "cash": 597295.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-02",
+      "equity": 1004869.0,
+      "cash": 597295.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-05",
+      "equity": 992582.0,
+      "cash": 597295.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-06",
+      "equity": 998781.0,
+      "cash": 597295.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-07",
+      "equity": 995448.0,
+      "cash": 597295.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-08",
+      "equity": 996257.0,
+      "cash": 398527.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-09",
+      "equity": 990200.0,
+      "cash": 398527.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-12",
+      "equity": 978828.0,
+      "cash": 585952.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-13",
+      "equity": 981288.0,
+      "cash": 390757.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-14",
+      "equity": 977413.0,
+      "cash": 390757.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-15",
+      "equity": 985296.0,
+      "cash": 390757.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-16",
+      "equity": 981333.0,
+      "cash": 390757.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-19",
+      "equity": 976207.0,
+      "cash": 390757.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-20",
+      "equity": 964307.0,
+      "cash": 390757.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-21",
+      "equity": 957699.0,
+      "cash": 763779.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-22",
+      "equity": 953255.0,
+      "cash": 953255.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-23",
+      "equity": 953255.0,
+      "cash": 953255.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-26",
+      "equity": 953255.0,
+      "cash": 763931.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-27",
+      "equity": 944075.0,
+      "cash": 763931.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-28",
+      "equity": 946019.0,
+      "cash": 763931.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-29",
+      "equity": 946343.0,
+      "cash": 763931.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-30",
+      "equity": 947963.0,
+      "cash": 382266.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-02",
+      "equity": 937492.0,
+      "cash": 382266.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-03",
+      "equity": 935568.0,
+      "cash": 382266.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-04",
+      "equity": 925453.0,
+      "cash": 739969.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-05",
+      "equity": 926207.0,
+      "cash": 554980.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-06",
+      "equity": 920234.0,
+      "cash": 554980.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-09",
+      "equity": 916052.0,
+      "cash": 371355.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-10",
+      "equity": 918921.0,
+      "cash": 371355.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-11",
+      "equity": 920581.0,
+      "cash": 371355.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-12",
+      "equity": 924945.0,
+      "cash": 371355.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-13",
+      "equity": 947973.0,
+      "cash": 371355.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-18",
+      "equity": 979011.0,
+      "cash": 797886.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-19",
+      "equity": 979494.0,
+      "cash": 797886.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-20",
+      "equity": 977562.0,
+      "cash": 600360.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-23",
+      "equity": 967818.0,
+      "cash": 600360.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-24",
+      "equity": 989721.0,
+      "cash": 401890.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-25",
+      "equity": 990099.0,
+      "cash": 401890.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-26",
+      "equity": 1007881.0,
+      "cash": 205668.0,
+      "position_count": 4
+    },
+    {
+      "date": "2024-09-27",
+      "equity": 1059289.0,
+      "cash": 218037.0,
+      "position_count": 4
+    },
+    {
+      "date": "2024-09-30",
+      "equity": 1169037.0,
+      "cash": 931562.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-10-08",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-09",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-10",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-11",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-14",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-15",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-16",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-17",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-18",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-21",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-22",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-23",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-24",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-25",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-28",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-29",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-30",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-31",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-01",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-04",
+      "equity": 1189967.0,
+      "cash": 1189967.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-05",
+      "equity": 1189967.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-06",
+      "equity": 1188383.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-07",
+      "equity": 1201007.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-08",
+      "equity": 1199903.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-11",
+      "equity": 1195103.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-12",
+      "equity": 1199039.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-13",
+      "equity": 1207343.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-14",
+      "equity": 1203743.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-15",
+      "equity": 1200527.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-18",
+      "equity": 1205039.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-19",
+      "equity": 1207871.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-20",
+      "equity": 1205039.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-21",
+      "equity": 1203647.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-22",
+      "equity": 1194191.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-25",
+      "equity": 1194239.0,
+      "cash": 955055.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-26",
+      "equity": 1193759.0,
+      "cash": 1193759.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-27",
+      "equity": 1193759.0,
+      "cash": 1193759.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-28",
+      "equity": 1193759.0,
+      "cash": 1193759.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-29",
+      "equity": 1193759.0,
+      "cash": 1193759.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-02",
+      "equity": 1193759.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-03",
+      "equity": 1190127.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-04",
+      "equity": 1183771.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-05",
+      "equity": 1184225.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-06",
+      "equity": 1187403.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-09",
+      "equity": 1192397.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-10",
+      "equity": 1193305.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-11",
+      "equity": 1200569.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-12",
+      "equity": 1202385.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-13",
+      "equity": 1191489.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-16",
+      "equity": 1188765.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-17",
+      "equity": 1191035.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-18",
+      "equity": 1188311.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-19",
+      "equity": 1186495.0,
+      "cash": 955409.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-20",
+      "equity": 1185587.0,
+      "cash": 717765.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-23",
+      "equity": 1163027.0,
+      "cash": 1163027.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-24",
+      "equity": 1163027.0,
+      "cash": 1163027.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-25",
+      "equity": 1163027.0,
+      "cash": 1163027.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-26",
+      "equity": 1163027.0,
+      "cash": 1163027.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-27",
+      "equity": 1163027.0,
+      "cash": 930623.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-30",
+      "equity": 1156821.0,
+      "cash": 930623.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-31",
+      "equity": 1151471.0,
+      "cash": 930623.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-01-02",
+      "equity": 1146335.0,
+      "cash": 930623.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-01-03",
+      "equity": 1136063.0,
+      "cash": 1136063.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-06",
+      "equity": 1136063.0,
+      "cash": 1136063.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-07",
+      "equity": 1136063.0,
+      "cash": 456089.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-01-08",
+      "equity": 1127501.0,
+      "cash": 456089.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-01-09",
+      "equity": 1128314.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-10",
+      "equity": 1110509.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-13",
+      "equity": 1121219.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-14",
+      "equity": 1150556.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-15",
+      "equity": 1142123.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-16",
+      "equity": 1146914.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-17",
+      "equity": 1153307.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-20",
+      "equity": 1157150.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-21",
+      "equity": 1159361.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-22",
+      "equity": 1153079.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-23",
+      "equity": 1150760.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-24",
+      "equity": 1162103.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-01-27",
+      "equity": 1159553.0,
+      "cash": 229073.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-02-05",
+      "equity": 1166828.0,
+      "cash": 937220.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-06",
+      "equity": 1170860.0,
+      "cash": 937220.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-07",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-10",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-11",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-12",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-13",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-14",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-17",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-18",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-19",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-20",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-21",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-24",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-25",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-26",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-27",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-02-28",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-03",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-04",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-05",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-06",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-07",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-10",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-11",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-12",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-13",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-14",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-17",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-18",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-19",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-20",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-21",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-24",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-25",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-26",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-27",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-28",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-31",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-01",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-02",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-03",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-07",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-08",
+      "equity": 1173452.0,
+      "cash": 1173452.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-09",
+      "equity": 1173452.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-10",
+      "equity": 1196515.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-11",
+      "equity": 1219397.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-14",
+      "equity": 1224236.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-15",
+      "equity": 1214767.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-16",
+      "equity": 1195857.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-17",
+      "equity": 1194559.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-18",
+      "equity": 1202009.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-21",
+      "equity": 1206729.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-22",
+      "equity": 1190884.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-23",
+      "equity": 1213649.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-24",
+      "equity": 1191003.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-25",
+      "equity": 1208566.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-28",
+      "equity": 1212802.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-29",
+      "equity": 1214275.0,
+      "cash": 31920.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-30",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-06",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-07",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-08",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-09",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-12",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-13",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-14",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-15",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-16",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-19",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-20",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-21",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-22",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-23",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-26",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-27",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-28",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-29",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-30",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-03",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-04",
+      "equity": 1229520.0,
+      "cash": 1229520.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-05",
+      "equity": 1229520.0,
+      "cash": 984338.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-06",
+      "equity": 1227528.0,
+      "cash": 984338.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-09",
+      "equity": 1228192.0,
+      "cash": 251687.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-06-10",
+      "equity": 1233753.0,
+      "cash": 251687.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-06-11",
+      "equity": 1230700.0,
+      "cash": 251687.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-06-12",
+      "equity": 1236556.0,
+      "cash": 170.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-13",
+      "equity": 1203299.0,
+      "cash": 170.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-16",
+      "equity": 1217242.0,
+      "cash": 170.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-17",
+      "equity": 1201344.0,
+      "cash": 170.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-18",
+      "equity": 1194131.0,
+      "cash": 236462.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-06-19",
+      "equity": 1173573.0,
+      "cash": 466704.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-06-20",
+      "equity": 1175433.0,
+      "cash": 466704.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-06-23",
+      "equity": 1176425.0,
+      "cash": 466704.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-06-24",
+      "equity": 1191414.0,
+      "cash": 466704.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-06-25",
+      "equity": 1217359.0,
+      "cash": 976156.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-26",
+      "equity": 1214497.0,
+      "cash": 976156.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-27",
+      "equity": 1214179.0,
+      "cash": 976156.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-30",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-01",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-02",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-03",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-04",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-07",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-08",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-09",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-10",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-11",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-14",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-15",
+      "equity": 1217041.0,
+      "cash": 1217041.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-16",
+      "equity": 1217041.0,
+      "cash": 973833.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-17",
+      "equity": 1216181.0,
+      "cash": 973833.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-18",
+      "equity": 1213601.0,
+      "cash": 973833.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-21",
+      "equity": 1216869.0,
+      "cash": 973833.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-22",
+      "equity": 1207237.0,
+      "cash": 973833.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-23",
+      "equity": 1211365.0,
+      "cash": 973833.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-24",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-25",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-28",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-29",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-30",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-31",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-01",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-04",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-05",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-06",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-07",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-08",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-11",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-12",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-13",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-14",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-15",
+      "equity": 1201733.0,
+      "cash": 1201733.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-18",
+      "equity": 1201733.0,
+      "cash": 961889.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-08-19",
+      "equity": 1205525.0,
+      "cash": 961889.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-08-20",
+      "equity": 1204577.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-21",
+      "equity": 1204848.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-22",
+      "equity": 1206405.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-25",
+      "equity": 1212633.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-26",
+      "equity": 1220080.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-27",
+      "equity": 1203898.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-28",
+      "equity": 1203627.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-29",
+      "equity": 1196315.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-09-01",
+      "equity": 1201935.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-09-02",
+      "equity": 1195774.0,
+      "cash": 721554.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-09-03",
+      "equity": 1183316.0,
+      "cash": 949074.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-04",
+      "equity": 1182639.0,
+      "cash": 949074.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-05",
+      "equity": 1187378.0,
+      "cash": 949074.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-08",
+      "equity": 1186701.0,
+      "cash": 949074.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-09",
+      "equity": 1181962.0,
+      "cash": 949074.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-10",
+      "equity": 1186024.0,
+      "cash": 1186024.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-11",
+      "equity": 1186024.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-12",
+      "equity": 1186235.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-15",
+      "equity": 1194042.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-16",
+      "equity": 1191510.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-17",
+      "equity": 1184547.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-18",
+      "equity": 1179272.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-19",
+      "equity": 1178006.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-22",
+      "equity": 1179483.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-23",
+      "equity": 1174208.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-24",
+      "equity": 1177795.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-25",
+      "equity": 1173153.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-26",
+      "equity": 1169566.0,
+      "cash": 949493.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-09-29",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-30",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-09",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-10",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-13",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-14",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-15",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-16",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-17",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-20",
+      "equity": 1169988.0,
+      "cash": 1169988.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-21",
+      "equity": 1169988.0,
+      "cash": 708670.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-22",
+      "equity": 1171066.0,
+      "cash": 708670.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-23",
+      "equity": 1165412.0,
+      "cash": 708670.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-24",
+      "equity": 1185586.0,
+      "cash": 473521.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-10-27",
+      "equity": 1194357.0,
+      "cash": 742878.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-28",
+      "equity": 1209677.0,
+      "cash": 742878.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-29",
+      "equity": 1207075.0,
+      "cash": 742878.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-30",
+      "equity": 1204641.0,
+      "cash": 742878.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-31",
+      "equity": 1232105.0,
+      "cash": 252357.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-11-03",
+      "equity": 1249825.0,
+      "cash": 528191.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-04",
+      "equity": 1231555.0,
+      "cash": 528191.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-05",
+      "equity": 1230017.0,
+      "cash": 264666.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-11-06",
+      "equity": 1227754.0,
+      "cash": 478902.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-07",
+      "equity": 1225435.0,
+      "cash": 478902.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-10",
+      "equity": 1225238.0,
+      "cash": 707286.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-11",
+      "equity": 1218080.0,
+      "cash": 707286.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-12",
+      "equity": 1216910.0,
+      "cash": 707286.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-13",
+      "equity": 1222617.0,
+      "cash": 471646.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-14",
+      "equity": 1222197.0,
+      "cash": 718405.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-17",
+      "equity": 1236998.0,
+      "cash": 718405.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-18",
+      "equity": 1230786.0,
+      "cash": 718405.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-19",
+      "equity": 1233864.0,
+      "cash": 996169.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-11-20",
+      "equity": 1229343.0,
+      "cash": 996169.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-11-21",
+      "equity": 1220164.0,
+      "cash": 996169.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-11-24",
+      "equity": 1229069.0,
+      "cash": 996169.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-11-25",
+      "equity": 1230713.0,
+      "cash": 747305.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-26",
+      "equity": 1229682.0,
+      "cash": 747305.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-27",
+      "equity": 1222494.0,
+      "cash": 747305.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-28",
+      "equity": 1226876.0,
+      "cash": 747305.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-01",
+      "equity": 1226945.0,
+      "cash": 747305.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-02",
+      "equity": 1223108.0,
+      "cash": 747305.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-03",
+      "equity": 1210302.0,
+      "cash": 963902.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-04",
+      "equity": 1205374.0,
+      "cash": 963902.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-05",
+      "equity": 1205990.0,
+      "cash": 723278.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-08",
+      "equity": 1233356.0,
+      "cash": 723278.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-09",
+      "equity": 1254831.0,
+      "cash": 1015878.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-10",
+      "equity": 1255945.0,
+      "cash": 1015878.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-11",
+      "equity": 1250932.0,
+      "cash": 1015878.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-12",
+      "equity": 1251489.0,
+      "cash": 1015878.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-15",
+      "equity": 1248147.0,
+      "cash": 1015878.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-16",
+      "equity": 1245362.0,
+      "cash": 1015878.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-17",
+      "equity": 1247033.0,
+      "cash": 1015878.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-18",
+      "equity": 1244805.0,
+      "cash": 762422.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-19",
+      "equity": 1256799.0,
+      "cash": 508794.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-12-22",
+      "equity": 1270658.0,
+      "cash": 11655.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-23",
+      "equity": 1257642.0,
+      "cash": 11655.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-24",
+      "equity": 1256281.0,
+      "cash": 11655.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-25",
+      "equity": 1273310.0,
+      "cash": 11655.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-26",
+      "equity": 1289604.0,
+      "cash": 537601.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-12-29",
+      "equity": 1273562.0,
+      "cash": 275297.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-12-30",
+      "equity": 1301462.0,
+      "cash": 275297.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-12-31",
+      "equity": 1280032.0,
+      "cash": 140.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-05",
+      "equity": 1303426.0,
+      "cash": 140.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-06",
+      "equity": 1290261.0,
+      "cash": 140.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-07",
+      "equity": 1281775.0,
+      "cash": 140.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-08",
+      "equity": 1290120.0,
+      "cash": 140.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-09",
+      "equity": 1292866.0,
+      "cash": 140.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-12",
+      "equity": 1292079.0,
+      "cash": 273598.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-01-13",
+      "equity": 1284388.0,
+      "cash": 759816.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-01-14",
+      "equity": 1277912.0,
+      "cash": 759816.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-01-15",
+      "equity": 1276320.0,
+      "cash": 759816.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-01-16",
+      "equity": 1284695.0,
+      "cash": 508311.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-01-19",
+      "equity": 1292996.0,
+      "cash": 508311.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-01-20",
+      "equity": 1295062.0,
+      "cash": 508311.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-01-21",
+      "equity": 1282638.0,
+      "cash": 505100.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-01-22",
+      "equity": 1305550.0,
+      "cash": 505100.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-01-23",
+      "equity": 1302029.0,
+      "cash": 782966.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 1303842.0,
+      "cash": 782966.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-01-27",
+      "equity": 1292505.0,
+      "cash": 782966.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-01-28",
+      "equity": 1294144.0,
+      "cash": 782966.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-01-29",
+      "equity": 1306044.0,
+      "cash": 1048818.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-01-30",
+      "equity": 1286694.0,
+      "cash": 787154.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-02-02",
+      "equity": 1290983.0,
+      "cash": 787154.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-02-03",
+      "equity": 1299208.0,
+      "cash": 787154.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-02-04",
+      "equity": 1328345.0,
+      "cash": 1089222.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-05",
+      "equity": 1329076.0,
+      "cash": 1089222.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-06",
+      "equity": 1326754.0,
+      "cash": 1089222.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-09",
+      "equity": 1328560.0,
+      "cash": 1089222.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-10",
+      "equity": 1326066.0,
+      "cash": 1089222.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-11",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-02-12",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-02-13",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-02-24",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-02-26",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-02-27",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-03-02",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-03-03",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-03-04",
+      "equity": 1325851.0,
+      "cash": 1325851.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-03-05",
+      "equity": 1325851.0,
+      "cash": 3263.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-06",
+      "equity": 1344753.0,
+      "cash": 3263.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-09",
+      "equity": 1339819.0,
+      "cash": 3263.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-10",
+      "equity": 1364828.0,
+      "cash": 3263.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-11",
+      "equity": 1373681.0,
+      "cash": 3263.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-12",
+      "equity": 1397949.0,
+      "cash": 324210.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-13",
+      "equity": 1378783.0,
+      "cash": 324210.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-16",
+      "equity": 1393145.0,
+      "cash": 2335.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-17",
+      "equity": 1363025.0,
+      "cash": 2335.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-18",
+      "equity": 1380519.0,
+      "cash": 2335.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-19",
+      "equity": 1353335.0,
+      "cash": 306710.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-20",
+      "equity": 1310952.0,
+      "cash": 306710.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-23",
+      "equity": 1247234.0,
+      "cash": 1247234.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-03-24",
+      "equity": 1247234.0,
+      "cash": 998024.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-03-25",
+      "equity": 1246382.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-26",
+      "equity": 1231672.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-27",
+      "equity": 1242027.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-30",
+      "equity": 1254103.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-31",
+      "equity": 1231148.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-01",
+      "equity": 1276149.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-02",
+      "equity": 1250533.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-03",
+      "equity": 1235852.0,
+      "cash": 6308.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-07",
+      "equity": 1248645.0,
+      "cash": 233700.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-08",
+      "equity": 1293985.0,
+      "cash": 233700.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-09",
+      "equity": 1283650.0,
+      "cash": 513950.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-10",
+      "equity": 1277522.0,
+      "cash": 513950.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-13",
+      "equity": 1278400.0,
+      "cash": 513950.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-14",
+      "equity": 1303690.0,
+      "cash": 513950.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-15",
+      "equity": 1294178.0,
+      "cash": 760178.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-04-16",
+      "equity": 1319144.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-17",
+      "equity": 1329701.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-20",
+      "equity": 1338422.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-21",
+      "equity": 1334393.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-22",
+      "equity": 1332914.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-23",
+      "equity": 1336229.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-24",
+      "equity": 1325060.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-27",
+      "equity": 1319654.0,
+      "cash": 1059299.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-28",
+      "equity": 1321796.0,
+      "cash": 795321.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-04-29",
+      "equity": 1316789.0,
+      "cash": 530721.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-30",
+      "equity": 1314385.0,
+      "cash": 266385.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-05-06",
+      "equity": 1318452.0,
+      "cash": 3675.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-07",
+      "equity": 1336743.0,
+      "cash": 3675.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-08",
+      "equity": 1365308.0,
+      "cash": 3675.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-11",
+      "equity": 1364411.0,
+      "cash": 3675.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-12",
+      "equity": 1345348.0,
+      "cash": 256686.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-05-13",
+      "equity": 1355385.0,
+      "cash": 553326.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-14",
+      "equity": 1335736.0,
+      "cash": 553326.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-15",
+      "equity": 1338164.0,
+      "cash": 553326.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-18",
+      "equity": 1324902.0,
+      "cash": 553326.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-19",
+      "equity": 1330228.0,
+      "cash": 277750.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-05-20",
+      "equity": 1300710.0,
+      "cash": 772570.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-21",
+      "equity": 1278770.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-05-22",
+      "equity": 1296802.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-05-25",
+      "equity": 1292490.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-05-26",
+      "equity": 1319734.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-05-27",
+      "equity": 1314246.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-05-28",
+      "equity": 1309150.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-05-29",
+      "equity": 1305622.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-01",
+      "equity": 1306210.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-02",
+      "equity": 1297586.0,
+      "cash": 1020246.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-03",
+      "equity": 1276418.0,
+      "cash": 766902.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-04",
+      "equity": 1277230.0,
+      "cash": 995382.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-05",
+      "equity": 1264098.0,
+      "cash": 748422.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-08",
+      "equity": 1229854.0,
+      "cash": 1229854.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-06-09",
+      "equity": 1229854.0,
+      "cash": 1229854.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-06-10",
+      "equity": 1229854.0,
+      "cash": 1229854.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-06-11",
+      "equity": 1229854.0,
+      "cash": 1229854.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-06-12",
+      "equity": 1229854.0,
+      "cash": 1229854.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-06-15",
+      "equity": 1229854.0,
+      "cash": 984154.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-16",
+      "equity": 1230232.0,
+      "cash": 984154.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-17",
+      "equity": 1225129.0,
+      "cash": 984154.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-18",
+      "equity": 1230610.0,
+      "cash": 984154.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-22",
+      "equity": 1225066.0,
+      "cash": 498316.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-23",
+      "equity": 1225306.0,
+      "cash": 498316.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-24",
+      "equity": 1207540.0,
+      "cash": 498316.0,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-25",
+      "equity": 1195792.0,
+      "cash": 726754.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-26",
+      "equity": 1183764.0,
+      "cash": 936606.0,
+      "position_count": 1
+    }
+  ],
+  "stock_summaries": [
+    {
+      "code": "sh.688506",
+      "name": "百利天恒",
+      "profit": 58214.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 4.0
+    },
+    {
+      "code": "sz.300531",
+      "name": "优博讯",
+      "profit": 56887.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 7.0
+    },
+    {
+      "code": "sz.300677",
+      "name": "英科医疗",
+      "profit": 50997.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 6.0
+    },
+    {
+      "code": "sh.601933",
+      "name": "永辉超市",
+      "profit": 43736.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 14.0
+    },
+    {
+      "code": "sz.002322",
+      "name": "理工能科",
+      "profit": 42504.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 11.0
+    },
+    {
+      "code": "sh.605378",
+      "name": "野马电池",
+      "profit": 41899.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 16.0
+    },
+    {
+      "code": "sz.301190",
+      "name": "善水科技",
+      "profit": 40685.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 10.0
+    },
+    {
+      "code": "sh.600115",
+      "name": "中国东航",
+      "profit": 40404.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 5.0
+    },
+    {
+      "code": "sz.002812",
+      "name": "恩捷股份",
+      "profit": 39576.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 4.0
+    },
+    {
+      "code": "sz.301489",
+      "name": "思泉新材",
+      "profit": 37939.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 6.0
+    },
+    {
+      "code": "sz.002629",
+      "name": "仁智股份",
+      "profit": 35073.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 8.0
+    },
+    {
+      "code": "sh.600673",
+      "name": "东阳光",
+      "profit": 33575.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 22.0
+    },
+    {
+      "code": "sh.603059",
+      "name": "倍加洁",
+      "profit": 32943.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 19.0
+    },
+    {
+      "code": "sh.688765",
+      "name": "禾元生物",
+      "profit": 32304.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 13.0
+    },
+    {
+      "code": "sz.002379",
+      "name": "宏桥控股",
+      "profit": 31065.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 15.0
+    },
+    {
+      "code": "sz.300567",
+      "name": "精测电子",
+      "profit": 30744.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 7.0
+    },
+    {
+      "code": "sh.601100",
+      "name": "恒立液压",
+      "profit": 30030.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 22.0
+    },
+    {
+      "code": "sh.688008",
+      "name": "澜起科技",
+      "profit": 29988.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sh.600719",
+      "name": "大连热电",
+      "profit": 27144.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 19.0
+    },
+    {
+      "code": "sh.600160",
+      "name": "巨化股份",
+      "profit": 25000.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 9.0
+    },
+    {
+      "code": "sh.600035",
+      "name": "楚天高速",
+      "profit": 24633.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 25.0
+    },
+    {
+      "code": "sh.600718",
+      "name": "东软集团",
+      "profit": 23970.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 29.0
+    },
+    {
+      "code": "sz.300723",
+      "name": "一品红",
+      "profit": 20002.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 25.0
+    },
+    {
+      "code": "sz.300274",
+      "name": "阳光电源",
+      "profit": 18204.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.300638",
+      "name": "广和通",
+      "profit": 12998.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sh.688139",
+      "name": "海尔生物",
+      "profit": 9216.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 29.0
+    },
+    {
+      "code": "sh.601881",
+      "name": "中国银河",
+      "profit": 5775.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 29.0
+    },
+    {
+      "code": "sz.301178",
+      "name": "天亿马",
+      "profit": 4752.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 4.0
+    },
+    {
+      "code": "sh.600612",
+      "name": "老凤祥",
+      "profit": 3792.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sh.600963",
+      "name": "岳阳林纸",
+      "profit": 3632.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.300670",
+      "name": "大烨智能",
+      "profit": 2709.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 23.0
+    },
+    {
+      "code": "sz.300059",
+      "name": "东方财富",
+      "profit": 798.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.002746",
+      "name": "仙坛股份",
+      "profit": -1572.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 29.0
+    },
+    {
+      "code": "sh.603815",
+      "name": "交建股份",
+      "profit": -1956.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 25.0
+    },
+    {
+      "code": "sz.002080",
+      "name": "中材科技",
+      "profit": -2941.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.002442",
+      "name": "龙星科技",
+      "profit": -2982.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 22.0
+    },
+    {
+      "code": "sz.300078",
+      "name": "思创智联",
+      "profit": -3385.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sh.601162",
+      "name": "天风证券",
+      "profit": -3899.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.300856",
+      "name": "科思股份",
+      "profit": -5088.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.300033",
+      "name": "同花顺",
+      "profit": -5920.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.300492",
+      "name": "华图山鼎",
+      "profit": -6834.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 26.0
+    },
+    {
+      "code": "sh.600057",
+      "name": "厦门象屿",
+      "profit": -8878.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sz.300389",
+      "name": "艾比森",
+      "profit": -9292.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 14.0
+    },
+    {
+      "code": "sz.300498",
+      "name": "温氏股份",
+      "profit": -9396.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 9.0
+    },
+    {
+      "code": "sh.600133",
+      "name": "东湖高新",
+      "profit": -12005.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 17.0
+    },
+    {
+      "code": "sz.002795",
+      "name": "永和智控",
+      "profit": -12324.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 16.0
+    },
+    {
+      "code": "sh.688577",
+      "name": "浙海德曼",
+      "profit": -12948.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 22.0
+    },
+    {
+      "code": "sz.301061",
+      "name": "匠心家居",
+      "profit": -13076.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 23.0
+    },
+    {
+      "code": "sz.300070",
+      "name": "碧水源",
+      "profit": -13128.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 5.0
+    },
+    {
+      "code": "sh.688327",
+      "name": "云从科技",
+      "profit": -13629.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 8.0
+    },
+    {
+      "code": "sz.300530",
+      "name": "领湃科技",
+      "profit": -13860.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 3.0
+    },
+    {
+      "code": "sz.002889",
+      "name": "东方嘉盛",
+      "profit": -14940.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 14.0
+    },
+    {
+      "code": "sh.688179",
+      "name": "阿拉丁",
+      "profit": -15225.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 6.0
+    },
+    {
+      "code": "sh.603758",
+      "name": "秦安股份",
+      "profit": -15308.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 8.0
+    },
+    {
+      "code": "sz.002223",
+      "name": "鱼跃医疗",
+      "profit": -15390.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sh.688799",
+      "name": "华纳药厂",
+      "profit": -15664.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 16.0
+    },
+    {
+      "code": "sz.301227",
+      "name": "森鹰窗业",
+      "profit": -15939.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 13.0
+    },
+    {
+      "code": "sz.300942",
+      "name": "易瑞生物",
+      "profit": -16036.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 18.0
+    },
+    {
+      "code": "sz.000798",
+      "name": "中水渔业",
+      "profit": -16302.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 23.0
+    },
+    {
+      "code": "sh.688596",
+      "name": "正帆科技",
+      "profit": -16766.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 9.0
+    },
+    {
+      "code": "sz.002931",
+      "name": "锋龙股份",
+      "profit": -17100.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 14.0
+    },
+    {
+      "code": "sz.300920",
+      "name": "润阳科技",
+      "profit": -17262.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 10.0
+    },
+    {
+      "code": "sh.688108",
+      "name": "赛诺医疗",
+      "profit": -17316.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 10.0
+    },
+    {
+      "code": "sz.002981",
+      "name": "朝阳科技",
+      "profit": -17500.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 3.0
+    },
+    {
+      "code": "sz.300377",
+      "name": "赢时胜",
+      "profit": -19043.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 20.0
+    },
+    {
+      "code": "sz.001212",
+      "name": "中旗新材",
+      "profit": -19125.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 16.0
+    },
+    {
+      "code": "sz.301153",
+      "name": "中科江南",
+      "profit": -19220.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 18.0
+    },
+    {
+      "code": "sz.300857",
+      "name": "协创数据",
+      "profit": -19778.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 13.0
+    },
+    {
+      "code": "sz.002304",
+      "name": "洋河股份",
+      "profit": -20597.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 13.0
+    },
+    {
+      "code": "sz.301106",
+      "name": "骏成科技",
+      "profit": -24864.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 1.0
+    },
+    {
+      "code": "sz.002800",
+      "name": "天顺股份",
+      "profit": -26964.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 7.0
+    },
+    {
+      "code": "sz.001376",
+      "name": "百通能源",
+      "profit": -27244.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 20.0
+    },
+    {
+      "code": "sz.002530",
+      "name": "金财互联",
+      "profit": -30747.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 18.0
+    },
+    {
+      "code": "sh.603956",
+      "name": "威派格",
+      "profit": -33187.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 18.0
+    },
+    {
+      "code": "sz.300255",
+      "name": "常山药业",
+      "profit": -33580.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 4.0
+    },
+    {
+      "code": "sh.688658",
+      "name": "悦康药业",
+      "profit": -34364.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 3.0
+    },
+    {
+      "code": "sz.300968",
+      "name": "格林精密",
+      "profit": -34850.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 18.0
+    }
+  ],
+  "trades": [
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002080",
+      "name": "中材科技",
+      "buy_date": "2024-07-11",
+      "buy_price": 11.52,
+      "sell_date": "2024-08-01",
+      "sell_price": 11.35,
+      "shares": 17300,
+      "buy_amount": 199296.0,
+      "sell_amount": 196355.0,
+      "profit": -2941.0,
+      "profit_pct": -1.48,
+      "buy_reason": "大跌抄底V3(5日跌-12.9%|距高23.0%|量2.1x→缩0.4|RSI14|确认涨3.6%|低点10.91)",
+      "sell_reason": "持仓15天到期(盈-1.5%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600133",
+      "name": "东湖高新",
+      "buy_date": "2024-07-26",
+      "buy_price": 8.14,
+      "sell_date": "2024-08-12",
+      "sell_price": 7.65,
+      "shares": 24500,
+      "buy_amount": 199430.0,
+      "sell_amount": 187425.0,
+      "profit": -12005.0,
+      "profit_pct": -6.02,
+      "buy_reason": "大跌抄底V3(5日跌-13.1%|距高24.8%|量1.6x→缩0.5|RSI25|确认涨0.7%|低点7.92)",
+      "sell_reason": "抄底失败(跌破低点缓冲7.68)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600057",
+      "name": "厦门象屿",
+      "buy_date": "2024-07-31",
+      "buy_price": 5.19,
+      "sell_date": "2024-08-21",
+      "sell_price": 4.96,
+      "shares": 38600,
+      "buy_amount": 200334.0,
+      "sell_amount": 191456.0,
+      "profit": -8878.0,
+      "profit_pct": -4.43,
+      "buy_reason": "大跌抄底V3(5日跌-16.4%|距高27.3%|量3.3x→缩0.6|RSI13|确认涨2.6%|低点4.90)",
+      "sell_reason": "持仓15天到期(盈-4.4%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300389",
+      "name": "艾比森",
+      "buy_date": "2024-08-08",
+      "buy_price": 9.84,
+      "sell_date": "2024-08-22",
+      "sell_price": 9.38,
+      "shares": 20200,
+      "buy_amount": 198768.0,
+      "sell_amount": 189476.0,
+      "profit": -9292.0,
+      "profit_pct": -4.67,
+      "buy_reason": "大跌抄底V3(5日跌-15.9%|距高20.9%|量1.9x→缩0.5|RSI32|确认涨0.5%|低点9.68)",
+      "sell_reason": "抄底失败(跌破低点缓冲9.39)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688327",
+      "name": "云从科技",
+      "buy_date": "2024-08-13",
+      "buy_price": 8.45,
+      "sell_date": "2024-08-21",
+      "sell_price": 7.86,
+      "shares": 23100,
+      "buy_amount": 195195.0,
+      "sell_amount": 181566.0,
+      "profit": -13629.0,
+      "profit_pct": -6.98,
+      "buy_reason": "大跌抄底V3(5日跌-16.7%|距高25.0%|量2.1x→缩0.3|RSI20|确认涨0.7%|低点8.26)",
+      "sell_reason": "抄底失败(跌破低点缓冲8.01)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300498",
+      "name": "温氏股份",
+      "buy_date": "2024-08-26",
+      "buy_price": 17.53,
+      "sell_date": "2024-09-04",
+      "sell_price": 16.66,
+      "shares": 10800,
+      "buy_amount": 189324.0,
+      "sell_amount": 179928.0,
+      "profit": -9396.0,
+      "profit_pct": -4.96,
+      "buy_reason": "大跌抄底V3(5日跌-10.7%|距高15.5%|量1.3x→缩0.5|RSI15|确认涨0.5%|低点17.18)",
+      "sell_reason": "抄底失败(跌破低点缓冲16.66)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600719",
+      "name": "大连热电",
+      "buy_date": "2024-08-30",
+      "buy_price": 5.06,
+      "sell_date": "2024-09-18",
+      "sell_price": 5.78,
+      "shares": 37700,
+      "buy_amount": 190762.0,
+      "sell_amount": 217906.0,
+      "profit": 27144.0,
+      "profit_pct": 14.23,
+      "buy_reason": "大跌抄底V3(5日跌-18.9%|距高35.4%|量2.0x→缩0.7|RSI9|确认涨1.4%|低点4.78)",
+      "sell_reason": "止盈(14.2%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300070",
+      "name": "碧水源",
+      "buy_date": "2024-08-30",
+      "buy_price": 3.49,
+      "sell_date": "2024-09-04",
+      "sell_price": 3.25,
+      "shares": 54700,
+      "buy_amount": 190903.0,
+      "sell_amount": 177775.0,
+      "profit": -13128.0,
+      "profit_pct": -6.88,
+      "buy_reason": "大跌抄底V3(5日跌-12.5%|距高18.1%|量2.2x→缩0.5|RSI13|确认涨1.5%|低点3.36)",
+      "sell_reason": "抄底失败(跌破低点缓冲3.26)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600035",
+      "name": "楚天高速",
+      "buy_date": "2024-09-05",
+      "buy_price": 3.83,
+      "sell_date": "2024-09-30",
+      "sell_price": 4.34,
+      "shares": 48300,
+      "buy_amount": 184989.0,
+      "sell_amount": 209622.0,
+      "profit": 24633.0,
+      "profit_pct": 13.32,
+      "buy_reason": "大跌抄底V3(5日跌-11.4%|距高15.9%|量1.5x→缩0.6|RSI10|确认涨0.8%|低点3.77)",
+      "sell_reason": "止盈(13.3%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600160",
+      "name": "巨化股份",
+      "buy_date": "2024-09-09",
+      "buy_price": 14.69,
+      "sell_date": "2024-09-18",
+      "sell_price": 16.69,
+      "shares": 12500,
+      "buy_amount": 183625.0,
+      "sell_amount": 208625.0,
+      "profit": 25000.0,
+      "profit_pct": 13.61,
+      "buy_reason": "大跌抄底V3(5日跌-12.2%|距高23.2%|量1.4x→缩0.5|RSI16|确认涨1.9%|低点14.26)",
+      "sell_reason": "止盈(13.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300567",
+      "name": "精测电子",
+      "buy_date": "2024-09-20",
+      "buy_price": 47.03,
+      "sell_date": "2024-09-27",
+      "sell_price": 54.35,
+      "shares": 4200,
+      "buy_amount": 197526.0,
+      "sell_amount": 228270.0,
+      "profit": 30744.0,
+      "profit_pct": 15.56,
+      "buy_reason": "大跌抄底V3(5日跌-10.4%|距高18.9%|量1.4x→缩0.8|RSI18|确认涨3.1%|低点44.50)",
+      "sell_reason": "止盈(15.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300677",
+      "name": "英科医疗",
+      "buy_date": "2024-09-24",
+      "buy_price": 22.3,
+      "sell_date": "2024-09-30",
+      "sell_price": 28.03,
+      "shares": 8900,
+      "buy_amount": 198470.0,
+      "sell_amount": 249467.0,
+      "profit": 50997.0,
+      "profit_pct": 25.7,
+      "buy_reason": "大跌抄底V3(5日跌-21.2%|距高23.5%|量2.6x→缩0.4|RSI21|确认涨4.2%|低点19.88)",
+      "sell_reason": "止盈(25.7%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688506",
+      "name": "百利天恒",
+      "buy_date": "2024-09-26",
+      "buy_price": 150.94,
+      "sell_date": "2024-09-30",
+      "sell_price": 195.72,
+      "shares": 1300,
+      "buy_amount": 196222.0,
+      "sell_amount": 254436.0,
+      "profit": 58214.0,
+      "profit_pct": 29.67,
+      "buy_reason": "大跌抄底V3(5日跌-12.2%|距高16.7%|量1.8x→缩0.6|RSI32|确认涨4.4%|低点134.55)",
+      "sell_reason": "止盈(29.7%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002322",
+      "name": "理工能科",
+      "buy_date": "2024-09-27",
+      "buy_price": 13.41,
+      "sell_date": "2024-10-08",
+      "sell_price": 16.05,
+      "shares": 16100,
+      "buy_amount": 215901.0,
+      "sell_amount": 258405.0,
+      "profit": 42504.0,
+      "profit_pct": 19.69,
+      "buy_reason": "大跌抄底V3(5日跌-10.0%|距高18.3%|量3.0x→缩0.8|RSI21|确认涨4.2%|低点12.41)",
+      "sell_reason": "止盈(19.7%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600612",
+      "name": "老凤祥",
+      "buy_date": "2024-11-05",
+      "buy_price": 48.94,
+      "sell_date": "2024-11-26",
+      "sell_price": 49.73,
+      "shares": 4800,
+      "buy_amount": 234912.0,
+      "sell_amount": 238704.0,
+      "profit": 3792.0,
+      "profit_pct": 1.61,
+      "buy_reason": "大跌抄底V3(5日跌-14.2%|距高30.4%|量1.5x→缩0.6|RSI26|确认涨1.8%|低点47.30)",
+      "sell_reason": "持仓15天到期(盈1.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600963",
+      "name": "岳阳林纸",
+      "buy_date": "2024-12-02",
+      "buy_price": 5.25,
+      "sell_date": "2024-12-23",
+      "sell_price": 5.33,
+      "shares": 45400,
+      "buy_amount": 238350.0,
+      "sell_amount": 241982.0,
+      "profit": 3632.0,
+      "profit_pct": 1.52,
+      "buy_reason": "大跌抄底V3(5日跌-17.8%|距高25.5%|量1.5x→缩0.7|RSI35|确认涨2.7%|低点4.96)",
+      "sell_reason": "持仓15天到期(盈1.5%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688658",
+      "name": "悦康药业",
+      "buy_date": "2024-12-20",
+      "buy_price": 19.64,
+      "sell_date": "2024-12-23",
+      "sell_price": 16.8,
+      "shares": 12100,
+      "buy_amount": 237644.0,
+      "sell_amount": 203280.0,
+      "profit": -34364.0,
+      "profit_pct": -14.46,
+      "buy_reason": "大跌抄底V3(5日跌-10.2%|距高17.0%|量1.6x→缩0.8|RSI24|确认涨6.2%|低点18.23)",
+      "sell_reason": "止损(-14.5%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002800",
+      "name": "天顺股份",
+      "buy_date": "2024-12-27",
+      "buy_price": 10.86,
+      "sell_date": "2025-01-03",
+      "sell_price": 9.6,
+      "shares": 21400,
+      "buy_amount": 232404.0,
+      "sell_amount": 205440.0,
+      "profit": -26964.0,
+      "profit_pct": -11.6,
+      "buy_reason": "大跌抄底V3(5日跌-10.0%|距高25.3%|量1.3x→缩0.7|RSI20|确认涨1.6%|低点10.05)",
+      "sell_reason": "止损(-11.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600718",
+      "name": "东软集团",
+      "buy_date": "2025-01-07",
+      "buy_price": 8.88,
+      "sell_date": "2025-02-05",
+      "sell_price": 9.82,
+      "shares": 25500,
+      "buy_amount": 226440.0,
+      "sell_amount": 250410.0,
+      "profit": 23970.0,
+      "profit_pct": 10.59,
+      "buy_reason": "大跌抄底V3(5日跌-17.0%|距高24.5%|量3.0x→缩0.6|RSI12|确认涨2.0%|低点8.65)",
+      "sell_reason": "持仓15天到期(盈10.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.601881",
+      "name": "中国银河",
+      "buy_date": "2025-01-07",
+      "buy_price": 13.72,
+      "sell_date": "2025-02-05",
+      "sell_price": 14.07,
+      "shares": 16500,
+      "buy_amount": 226380.0,
+      "sell_amount": 232155.0,
+      "profit": 5775.0,
+      "profit_pct": 2.55,
+      "buy_reason": "大跌抄底V3(5日跌-13.8%|距高18.3%|量1.4x→缩0.8|RSI26|确认涨0.9%|低点13.39)",
+      "sell_reason": "持仓15天到期(盈2.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002746",
+      "name": "仙坛股份",
+      "buy_date": "2025-01-07",
+      "buy_price": 5.78,
+      "sell_date": "2025-02-05",
+      "sell_price": 5.74,
+      "shares": 39300,
+      "buy_amount": 227154.0,
+      "sell_amount": 225582.0,
+      "profit": -1572.0,
+      "profit_pct": -0.69,
+      "buy_reason": "大跌抄底V3(5日跌-14.1%|距高20.3%|量1.5x→缩0.6|RSI32|确认涨0.9%|低点5.52)",
+      "sell_reason": "持仓15天到期(盈-0.7%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688139",
+      "name": "海尔生物",
+      "buy_date": "2025-01-09",
+      "buy_price": 31.53,
+      "sell_date": "2025-02-07",
+      "sell_price": 32.81,
+      "shares": 7200,
+      "buy_amount": 227016.0,
+      "sell_amount": 236232.0,
+      "profit": 9216.0,
+      "profit_pct": 4.06,
+      "buy_reason": "大跌抄底V3(5日跌-11.7%|距高19.3%|量2.1x→缩0.7|RSI15|确认涨1.4%|低点29.71)",
+      "sell_reason": "持仓15天到期(盈4.1%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688008",
+      "name": "澜起科技",
+      "buy_date": "2025-04-09",
+      "buy_price": 68.0,
+      "sell_date": "2025-04-30",
+      "sell_price": 76.82,
+      "shares": 3400,
+      "buy_amount": 231200.0,
+      "sell_amount": 261188.0,
+      "profit": 29988.0,
+      "profit_pct": 12.97,
+      "buy_reason": "大跌抄底V3(5日跌-15.9%|距高18.0%|量1.4x→缩0.6|RSI22|确认涨3.3%|低点62.00)",
+      "sell_reason": "止盈(13.0%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300033",
+      "name": "同花顺",
+      "buy_date": "2025-04-09",
+      "buy_price": 266.0,
+      "sell_date": "2025-04-30",
+      "sell_price": 258.6,
+      "shares": 800,
+      "buy_amount": 212800.0,
+      "sell_amount": 206880.0,
+      "profit": -5920.0,
+      "profit_pct": -2.78,
+      "buy_reason": "大跌抄底V3(5日跌-12.0%|距高24.1%|量1.3x→缩0.7|RSI16|确认涨5.8%|低点232.00)",
+      "sell_reason": "持仓15天到期(盈-2.8%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300059",
+      "name": "东方财富",
+      "buy_date": "2025-04-09",
+      "buy_price": 20.5,
+      "sell_date": "2025-04-30",
+      "sell_price": 20.57,
+      "shares": 11400,
+      "buy_amount": 233700.0,
+      "sell_amount": 234498.0,
+      "profit": 798.0,
+      "profit_pct": 0.34,
+      "buy_reason": "大跌抄底V3(5日跌-12.8%|距高21.6%|量1.5x→缩0.6|RSI12|确认涨4.1%|低点18.18)",
+      "sell_reason": "持仓15天到期(盈0.3%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300274",
+      "name": "阳光电源",
+      "buy_date": "2025-04-09",
+      "buy_price": 56.16,
+      "sell_date": "2025-04-30",
+      "sell_price": 60.6,
+      "shares": 4100,
+      "buy_amount": 230256.0,
+      "sell_amount": 248460.0,
+      "profit": 18204.0,
+      "profit_pct": 7.91,
+      "buy_reason": "大跌抄底V3(5日跌-19.7%|距高24.8%|量1.7x→缩0.6|RSI27|确认涨0.8%|低点53.76)",
+      "sell_reason": "持仓15天到期(盈7.9%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300638",
+      "name": "广和通",
+      "buy_date": "2025-04-09",
+      "buy_price": 24.08,
+      "sell_date": "2025-04-30",
+      "sell_price": 25.42,
+      "shares": 9700,
+      "buy_amount": 233576.0,
+      "sell_amount": 246574.0,
+      "profit": 12998.0,
+      "profit_pct": 5.56,
+      "buy_reason": "大跌抄底V3(5日跌-27.2%|距高36.0%|量1.3x→缩0.8|RSI18|确认涨2.2%|低点22.85)",
+      "sell_reason": "持仓15天到期(盈5.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002889",
+      "name": "东方嘉盛",
+      "buy_date": "2025-06-05",
+      "buy_price": 14.77,
+      "sell_date": "2025-06-19",
+      "sell_price": 13.87,
+      "shares": 16600,
+      "buy_amount": 245182.0,
+      "sell_amount": 230242.0,
+      "profit": -14940.0,
+      "profit_pct": -6.09,
+      "buy_reason": "大跌抄底V3(5日跌-26.9%|距高32.0%|量1.4x→缩0.8|RSI12|确认涨1.1%|低点14.41)",
+      "sell_reason": "抄底失败(跌破低点缓冲13.98)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.605378",
+      "name": "野马电池",
+      "buy_date": "2025-06-09",
+      "buy_price": 17.1,
+      "sell_date": "2025-06-25",
+      "sell_price": 20.03,
+      "shares": 14300,
+      "buy_amount": 244530.0,
+      "sell_amount": 286429.0,
+      "profit": 41899.0,
+      "profit_pct": 17.13,
+      "buy_reason": "大跌抄底V3(5日跌-29.7%|距高33.9%|量1.5x→缩0.8|RSI24|确认涨1.5%|低点16.70)",
+      "sell_reason": "止盈(17.1%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.001212",
+      "name": "中旗新材",
+      "buy_date": "2025-06-09",
+      "buy_price": 47.48,
+      "sell_date": "2025-06-25",
+      "sell_price": 43.73,
+      "shares": 5100,
+      "buy_amount": 242148.0,
+      "sell_amount": 223023.0,
+      "profit": -19125.0,
+      "profit_pct": -7.9,
+      "buy_reason": "大跌抄底V3(5日跌-11.5%|距高37.4%|量1.3x→缩0.8|RSI23|确认涨2.5%|低点44.74)",
+      "sell_reason": "时间止损(12天亏-7.9%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300856",
+      "name": "科思股份",
+      "buy_date": "2025-06-09",
+      "buy_price": 15.47,
+      "sell_date": "2025-06-30",
+      "sell_price": 15.15,
+      "shares": 15900,
+      "buy_amount": 245973.0,
+      "sell_amount": 240885.0,
+      "profit": -5088.0,
+      "profit_pct": -2.07,
+      "buy_reason": "大跌抄底V3(5日跌-28.6%|距高31.8%|量1.4x→缩0.6|RSI21|确认涨1.0%|低点15.04)",
+      "sell_reason": "持仓15天到期(盈-2.1%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688179",
+      "name": "阿拉丁",
+      "buy_date": "2025-06-12",
+      "buy_price": 12.39,
+      "sell_date": "2025-06-18",
+      "sell_price": 11.64,
+      "shares": 20300,
+      "buy_amount": 251517.0,
+      "sell_amount": 236292.0,
+      "profit": -15225.0,
+      "profit_pct": -6.05,
+      "buy_reason": "大跌抄底V3(5日跌-19.7%|距高22.6%|量1.4x→缩0.6|RSI15|确认涨1.5%|低点12.07)",
+      "sell_reason": "抄底失败(跌破低点缓冲11.71)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.603758",
+      "name": "秦安股份",
+      "buy_date": "2025-07-16",
+      "buy_price": 14.14,
+      "sell_date": "2025-07-24",
+      "sell_price": 13.25,
+      "shares": 17200,
+      "buy_amount": 243208.0,
+      "sell_amount": 227900.0,
+      "profit": -15308.0,
+      "profit_pct": -6.29,
+      "buy_reason": "大跌抄底V3(5日跌-16.3%|距高17.9%|量1.8x→缩0.7|RSI28|确认涨2.5%|低点13.66)",
+      "sell_reason": "抄底失败(跌破低点缓冲13.25)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002795",
+      "name": "永和智控",
+      "buy_date": "2025-08-18",
+      "buy_price": 5.06,
+      "sell_date": "2025-09-03",
+      "sell_price": 4.8,
+      "shares": 47400,
+      "buy_amount": 239844.0,
+      "sell_amount": 227520.0,
+      "profit": -12324.0,
+      "profit_pct": -5.14,
+      "buy_reason": "大跌抄底V3(5日跌-14.4%|距高28.4%|量1.4x→缩0.6|RSI33|确认涨2.4%|低点4.91)",
+      "sell_reason": "时间止损(12天亏-5.1%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300078",
+      "name": "思创智联",
+      "buy_date": "2025-08-20",
+      "buy_price": 3.55,
+      "sell_date": "2025-09-10",
+      "sell_price": 3.5,
+      "shares": 67700,
+      "buy_amount": 240335.0,
+      "sell_amount": 236950.0,
+      "profit": -3385.0,
+      "profit_pct": -1.41,
+      "buy_reason": "大跌抄底V3(5日跌-12.9%|距高17.6%|量1.5x→缩0.5|RSI29|确认涨0.9%|低点3.33)",
+      "sell_reason": "持仓15天到期(盈-1.4%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300942",
+      "name": "易瑞生物",
+      "buy_date": "2025-09-11",
+      "buy_price": 11.21,
+      "sell_date": "2025-09-29",
+      "sell_price": 10.45,
+      "shares": 21100,
+      "buy_amount": 236531.0,
+      "sell_amount": 220495.0,
+      "profit": -16036.0,
+      "profit_pct": -6.78,
+      "buy_reason": "大跌抄底V3(5日跌-15.6%|距高22.8%|量1.4x→缩0.7|RSI33|确认涨2.7%|低点10.69)",
+      "sell_reason": "时间止损(12天亏-6.8%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688799",
+      "name": "华纳药厂",
+      "buy_date": "2025-10-21",
+      "buy_price": 52.25,
+      "sell_date": "2025-11-06",
+      "sell_price": 48.69,
+      "shares": 4400,
+      "buy_amount": 229900.0,
+      "sell_amount": 214236.0,
+      "profit": -15664.0,
+      "profit_pct": -6.81,
+      "buy_reason": "大跌抄底V3(5日跌-14.9%|距高22.8%|量1.4x→缩0.5|RSI34|确认涨1.2%|低点50.00)",
+      "sell_reason": "时间止损(12天亏-6.8%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.301489",
+      "name": "思泉新材",
+      "buy_date": "2025-10-21",
+      "buy_price": 210.38,
+      "sell_date": "2025-10-27",
+      "sell_price": 244.87,
+      "shares": 1100,
+      "buy_amount": 231418.0,
+      "sell_amount": 269357.0,
+      "profit": 37939.0,
+      "profit_pct": 16.39,
+      "buy_reason": "大跌抄底V3(5日跌-22.9%|距高32.2%|量1.3x→缩0.6|RSI26|确认涨6.3%|低点190.38)",
+      "sell_reason": "止盈(16.4%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.301190",
+      "name": "善水科技",
+      "buy_date": "2025-10-24",
+      "buy_price": 22.83,
+      "sell_date": "2025-11-03",
+      "sell_price": 26.78,
+      "shares": 10300,
+      "buy_amount": 235149.0,
+      "sell_amount": 275834.0,
+      "profit": 40685.0,
+      "profit_pct": 17.3,
+      "buy_reason": "大跌抄底V3(5日跌-21.7%|距高28.8%|量2.0x→缩0.7|RSI21|确认涨3.4%|低点21.56)",
+      "sell_reason": "止盈(17.3%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.603059",
+      "name": "倍加洁",
+      "buy_date": "2025-10-31",
+      "buy_price": 30.99,
+      "sell_date": "2025-11-19",
+      "sell_price": 35.16,
+      "shares": 7900,
+      "buy_amount": 244821.0,
+      "sell_amount": 277764.0,
+      "profit": 32943.0,
+      "profit_pct": 13.46,
+      "buy_reason": "大跌抄底V3(5日跌-10.9%|距高16.5%|量2.0x→缩0.5|RSI29|确认涨0.6%|低点30.45)",
+      "sell_reason": "止盈(13.5%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688108",
+      "name": "赛诺医疗",
+      "buy_date": "2025-10-31",
+      "buy_price": 21.0,
+      "sell_date": "2025-11-10",
+      "sell_price": 19.52,
+      "shares": 11700,
+      "buy_amount": 245700.0,
+      "sell_amount": 228384.0,
+      "profit": -17316.0,
+      "profit_pct": -7.05,
+      "buy_reason": "大跌抄底V3(5日跌-30.4%|距高35.0%|量1.8x→缩0.5|RSI28|确认涨2.7%|低点20.15)",
+      "sell_reason": "抄底失败(跌破低点缓冲19.55)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688596",
+      "name": "正帆科技",
+      "buy_date": "2025-11-05",
+      "buy_price": 31.75,
+      "sell_date": "2025-11-14",
+      "sell_price": 29.73,
+      "shares": 8300,
+      "buy_amount": 263525.0,
+      "sell_amount": 246759.0,
+      "profit": -16766.0,
+      "profit_pct": -6.36,
+      "buy_reason": "大跌抄底V3(5日跌-20.8%|距高36.7%|量1.4x→缩0.4|RSI7|确认涨0.8%|低点31.30)",
+      "sell_reason": "抄底失败(跌破低点缓冲30.36)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300377",
+      "name": "赢时胜",
+      "buy_date": "2025-11-13",
+      "buy_price": 17.2,
+      "sell_date": "2025-12-03",
+      "sell_price": 15.81,
+      "shares": 13700,
+      "buy_amount": 235640.0,
+      "sell_amount": 216597.0,
+      "profit": -19043.0,
+      "profit_pct": -8.08,
+      "buy_reason": "大跌抄底V3(5日跌-13.3%|距高18.4%|量1.8x→缩0.6|RSI19|确认涨0.6%|低点16.64)",
+      "sell_reason": "止损(-8.1%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.601933",
+      "name": "永辉超市",
+      "buy_date": "2025-11-25",
+      "buy_price": 4.04,
+      "sell_date": "2025-12-09",
+      "sell_price": 4.75,
+      "shares": 61600,
+      "buy_amount": 248864.0,
+      "sell_amount": 292600.0,
+      "profit": 43736.0,
+      "profit_pct": 17.57,
+      "buy_reason": "大跌抄底V3(5日跌-14.1%|距高15.9%|量1.4x→缩0.7|RSI23|确认涨0.7%|低点3.95)",
+      "sell_reason": "止盈(17.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.601162",
+      "name": "天风证券",
+      "buy_date": "2025-12-05",
+      "buy_price": 4.32,
+      "sell_date": "2025-12-26",
+      "sell_price": 4.25,
+      "shares": 55700,
+      "buy_amount": 240624.0,
+      "sell_amount": 236725.0,
+      "profit": -3899.0,
+      "profit_pct": -1.62,
+      "buy_reason": "大跌抄底V3(5日跌-11.6%|距高18.3%|量1.6x→缩0.8|RSI8|确认涨1.6%|低点4.16)",
+      "sell_reason": "持仓15天到期(盈-1.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300723",
+      "name": "一品红",
+      "buy_date": "2025-12-18",
+      "buy_price": 34.72,
+      "sell_date": "2026-01-12",
+      "sell_price": 37.46,
+      "shares": 7300,
+      "buy_amount": 253456.0,
+      "sell_amount": 273458.0,
+      "profit": 20002.0,
+      "profit_pct": 7.89,
+      "buy_reason": "大跌抄底V3(5日跌-31.0%|距高40.5%|量2.7x→缩0.6|RSI9|确认涨4.1%|低点31.70)",
+      "sell_reason": "持仓15天到期(盈7.9%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.603815",
+      "name": "交建股份",
+      "buy_date": "2025-12-19",
+      "buy_price": 7.78,
+      "sell_date": "2026-01-13",
+      "sell_price": 7.72,
+      "shares": 32600,
+      "buy_amount": 253628.0,
+      "sell_amount": 251672.0,
+      "profit": -1956.0,
+      "profit_pct": -0.77,
+      "buy_reason": "大跌抄底V3(5日跌-13.2%|距高43.1%|量1.4x→缩0.6|RSI14|确认涨3.3%|低点7.40)",
+      "sell_reason": "持仓15天到期(盈-0.8%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688577",
+      "name": "浙海德曼",
+      "buy_date": "2025-12-22",
+      "buy_price": 95.19,
+      "sell_date": "2026-01-13",
+      "sell_price": 90.21,
+      "shares": 2600,
+      "buy_amount": 247494.0,
+      "sell_amount": 234546.0,
+      "profit": -12948.0,
+      "profit_pct": -5.23,
+      "buy_reason": "大跌抄底V3(5日跌-19.9%|距高25.1%|量2.3x→缩0.8|RSI35|确认涨4.2%|低点85.11)",
+      "sell_reason": "时间止损(14天亏-5.2%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002812",
+      "name": "恩捷股份",
+      "buy_date": "2025-12-22",
+      "buy_price": 48.95,
+      "sell_date": "2025-12-26",
+      "sell_price": 56.71,
+      "shares": 5100,
+      "buy_amount": 249645.0,
+      "sell_amount": 289221.0,
+      "profit": 39576.0,
+      "profit_pct": 15.85,
+      "buy_reason": "大跌抄底V3(5日跌-18.4%|距高19.7%|量1.7x→缩0.8|RSI10|确认涨8.3%|低点43.96)",
+      "sell_reason": "止盈(15.9%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.301061",
+      "name": "匠心家居",
+      "buy_date": "2025-12-29",
+      "buy_price": 93.68,
+      "sell_date": "2026-01-21",
+      "sell_price": 89.01,
+      "shares": 2800,
+      "buy_amount": 262304.0,
+      "sell_amount": 249228.0,
+      "profit": -13076.0,
+      "profit_pct": -4.99,
+      "buy_reason": "大跌抄底V3(5日跌-16.1%|距高18.9%|量2.1x→缩0.7|RSI34|确认涨0.6%|低点91.01)",
+      "sell_reason": "持仓15天到期(盈-5.0%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300670",
+      "name": "大烨智能",
+      "buy_date": "2025-12-31",
+      "buy_price": 7.11,
+      "sell_date": "2026-01-23",
+      "sell_price": 7.18,
+      "shares": 38700,
+      "buy_amount": 275157.0,
+      "sell_amount": 277866.0,
+      "profit": 2709.0,
+      "profit_pct": 0.98,
+      "buy_reason": "大跌抄底V3(5日跌-13.8%|距高22.6%|量2.5x→缩0.6|RSI35|确认涨3.8%|低点6.40)",
+      "sell_reason": "持仓15天到期(盈1.0%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.301227",
+      "name": "森鹰窗业",
+      "buy_date": "2026-01-16",
+      "buy_price": 36.45,
+      "sell_date": "2026-01-29",
+      "sell_price": 34.14,
+      "shares": 6900,
+      "buy_amount": 251505.0,
+      "sell_amount": 235566.0,
+      "profit": -15939.0,
+      "profit_pct": -6.34,
+      "buy_reason": "大跌抄底V3(5日跌-25.4%|距高33.9%|量1.9x→缩0.5|RSI25|确认涨1.3%|低点35.59)",
+      "sell_reason": "抄底失败(跌破低点缓冲34.52)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002629",
+      "name": "仁智股份",
+      "buy_date": "2026-01-21",
+      "buy_price": 5.83,
+      "sell_date": "2026-01-29",
+      "sell_price": 6.64,
+      "shares": 43300,
+      "buy_amount": 252439.0,
+      "sell_amount": 287512.0,
+      "profit": 35073.0,
+      "profit_pct": 13.89,
+      "buy_reason": "大跌抄底V3(5日跌-15.2%|距高25.1%|量1.5x→缩0.7|RSI24|确认涨1.4%|低点5.68)",
+      "sell_reason": "止盈(13.9%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002304",
+      "name": "洋河股份",
+      "buy_date": "2026-01-29",
+      "buy_price": 59.82,
+      "sell_date": "2026-02-11",
+      "sell_price": 55.03,
+      "shares": 4300,
+      "buy_amount": 257226.0,
+      "sell_amount": 236629.0,
+      "profit": -20597.0,
+      "profit_pct": -8.01,
+      "buy_reason": "大跌抄底V3(5日跌-13.9%|距高16.0%|量3.1x→缩0.7|RSI25|确认涨10.0%|低点53.90)",
+      "sell_reason": "止损(-8.0%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600115",
+      "name": "中国东航",
+      "buy_date": "2026-01-30",
+      "buy_price": 5.44,
+      "sell_date": "2026-02-04",
+      "sell_price": 6.28,
+      "shares": 48100,
+      "buy_amount": 261664.0,
+      "sell_amount": 302068.0,
+      "profit": 40404.0,
+      "profit_pct": 15.44,
+      "buy_reason": "大跌抄底V3(5日跌-11.0%|距高16.7%|量1.3x→缩0.7|RSI34|确认涨0.7%|低点5.30)",
+      "sell_reason": "止盈(15.4%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.603956",
+      "name": "威派格",
+      "buy_date": "2026-03-05",
+      "buy_price": 6.15,
+      "sell_date": "2026-03-23",
+      "sell_price": 5.38,
+      "shares": 43100,
+      "buy_amount": 265065.0,
+      "sell_amount": 231878.0,
+      "profit": -33187.0,
+      "profit_pct": -12.52,
+      "buy_reason": "大跌抄底V3(5日跌-12.5%|距高16.1%|量1.7x→缩0.8|RSI15|确认涨3.4%|低点5.87)",
+      "sell_reason": "止损(-12.5%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002530",
+      "name": "金财互联",
+      "buy_date": "2026-03-05",
+      "buy_price": 9.56,
+      "sell_date": "2026-03-23",
+      "sell_price": 8.45,
+      "shares": 27700,
+      "buy_amount": 264812.0,
+      "sell_amount": 234065.0,
+      "profit": -30747.0,
+      "profit_pct": -11.61,
+      "buy_reason": "大跌抄底V3(5日跌-11.4%|距高15.8%|量1.3x→缩0.8|RSI23|确认涨2.9%|低点9.21)",
+      "sell_reason": "止损(-11.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300531",
+      "name": "优博讯",
+      "buy_date": "2026-03-05",
+      "buy_price": 16.2,
+      "sell_date": "2026-03-12",
+      "sell_price": 19.69,
+      "shares": 16300,
+      "buy_amount": 264060.0,
+      "sell_amount": 320947.0,
+      "profit": 56887.0,
+      "profit_pct": 21.54,
+      "buy_reason": "大跌抄底V3(5日跌-10.9%|距高16.2%|量1.5x→缩0.6|RSI24|确认涨3.2%|低点15.55)",
+      "sell_reason": "止盈(21.5%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300968",
+      "name": "格林精密",
+      "buy_date": "2026-03-05",
+      "buy_price": 12.91,
+      "sell_date": "2026-03-23",
+      "sell_price": 11.21,
+      "shares": 20500,
+      "buy_amount": 264655.0,
+      "sell_amount": 229805.0,
+      "profit": -34850.0,
+      "profit_pct": -13.17,
+      "buy_reason": "大跌抄底V3(5日跌-10.9%|距高15.0%|量1.3x→缩0.6|RSI24|确认涨2.5%|低点12.47)",
+      "sell_reason": "止损(-13.2%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.301153",
+      "name": "中科江南",
+      "buy_date": "2026-03-05",
+      "buy_price": 21.29,
+      "sell_date": "2026-03-23",
+      "sell_price": 19.74,
+      "shares": 12400,
+      "buy_amount": 263996.0,
+      "sell_amount": 244776.0,
+      "profit": -19220.0,
+      "profit_pct": -7.28,
+      "buy_reason": "大跌抄底V3(5日跌-11.1%|距高15.1%|量1.3x→缩0.6|RSI30|确认涨3.0%|低点20.56)",
+      "sell_reason": "时间止损(12天亏-7.3%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002981",
+      "name": "朝阳科技",
+      "buy_date": "2026-03-16",
+      "buy_price": 25.75,
+      "sell_date": "2026-03-19",
+      "sell_price": 24.35,
+      "shares": 12500,
+      "buy_amount": 321875.0,
+      "sell_amount": 304375.0,
+      "profit": -17500.0,
+      "profit_pct": -5.44,
+      "buy_reason": "大跌抄底V3(5日跌-12.9%|距高18.7%|量1.4x→缩0.6|RSI19|确认涨1.5%|低点25.28)",
+      "sell_reason": "抄底失败(跌破低点缓冲24.52)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002442",
+      "name": "龙星科技",
+      "buy_date": "2026-03-24",
+      "buy_price": 5.85,
+      "sell_date": "2026-04-15",
+      "sell_price": 5.78,
+      "shares": 42600,
+      "buy_amount": 249210.0,
+      "sell_amount": 246228.0,
+      "profit": -2982.0,
+      "profit_pct": -1.2,
+      "buy_reason": "大跌抄底V3(5日跌-17.1%|距高19.6%|量1.4x→缩0.7|RSI31|确认涨5.0%|低点5.42)",
+      "sell_reason": "持仓15天到期(盈-1.2%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.600673",
+      "name": "东阳光",
+      "buy_date": "2026-03-25",
+      "buy_price": 31.29,
+      "sell_date": "2026-04-16",
+      "sell_price": 35.54,
+      "shares": 7900,
+      "buy_amount": 247191.0,
+      "sell_amount": 280766.0,
+      "profit": 33575.0,
+      "profit_pct": 13.58,
+      "buy_reason": "大跌抄底V3(5日跌-12.5%|距高28.5%|量1.3x→缩0.8|RSI28|确认涨5.2%|低点28.60)",
+      "sell_reason": "止盈(13.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.601100",
+      "name": "恒立液压",
+      "buy_date": "2026-03-25",
+      "buy_price": 95.45,
+      "sell_date": "2026-04-16",
+      "sell_price": 107.0,
+      "shares": 2600,
+      "buy_amount": 248170.0,
+      "sell_amount": 278200.0,
+      "profit": 30030.0,
+      "profit_pct": 12.1,
+      "buy_reason": "大跌抄底V3(5日跌-10.6%|距高20.5%|量2.2x→缩0.7|RSI33|确认涨2.6%|低点89.10)",
+      "sell_reason": "止盈(12.1%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002379",
+      "name": "宏桥控股",
+      "buy_date": "2026-03-25",
+      "buy_price": 26.23,
+      "sell_date": "2026-04-09",
+      "sell_price": 29.5,
+      "shares": 9500,
+      "buy_amount": 249185.0,
+      "sell_amount": 280250.0,
+      "profit": 31065.0,
+      "profit_pct": 12.47,
+      "buy_reason": "大跌抄底V3(5日跌-16.2%|距高23.5%|量1.4x→缩0.7|RSI33|确认涨2.5%|低点24.82)",
+      "sell_reason": "止盈(12.5%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300857",
+      "name": "协创数据",
+      "buy_date": "2026-03-25",
+      "buy_price": 224.7,
+      "sell_date": "2026-04-07",
+      "sell_price": 206.72,
+      "shares": 1100,
+      "buy_amount": 247170.0,
+      "sell_amount": 227392.0,
+      "profit": -19778.0,
+      "profit_pct": -8.0,
+      "buy_reason": "大跌抄底V3(5日跌-10.6%|距高24.1%|量1.9x→缩0.6|RSI34|确认涨8.3%|低点200.55)",
+      "sell_reason": "止损(-8.0%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300492",
+      "name": "华图山鼎",
+      "buy_date": "2026-04-16",
+      "buy_price": 50.95,
+      "sell_date": "2026-05-12",
+      "sell_price": 49.61,
+      "shares": 5100,
+      "buy_amount": 259845.0,
+      "sell_amount": 253011.0,
+      "profit": -6834.0,
+      "profit_pct": -2.63,
+      "buy_reason": "大跌抄底V3(5日跌-14.1%|距高26.5%|量2.1x→缩0.8|RSI27|确认涨1.1%|低点49.25)",
+      "sell_reason": "持仓15天到期(盈-2.6%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.000798",
+      "name": "中水渔业",
+      "buy_date": "2026-04-28",
+      "buy_price": 9.23,
+      "sell_date": "2026-05-21",
+      "sell_price": 8.66,
+      "shares": 28600,
+      "buy_amount": 263978.0,
+      "sell_amount": 247676.0,
+      "profit": -16302.0,
+      "profit_pct": -6.18,
+      "buy_reason": "大跌抄底V3(5日跌-12.1%|距高15.7%|量1.3x→缩0.6|RSI29|确认涨0.5%|低点8.92)",
+      "sell_reason": "时间止损(14天亏-6.2%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002223",
+      "name": "鱼跃医疗",
+      "buy_date": "2026-04-29",
+      "buy_price": 29.4,
+      "sell_date": "2026-05-20",
+      "sell_price": 27.69,
+      "shares": 9000,
+      "buy_amount": 264600.0,
+      "sell_amount": 249210.0,
+      "profit": -15390.0,
+      "profit_pct": -5.82,
+      "buy_reason": "大跌抄底V3(5日跌-11.2%|距高16.1%|量2.0x→缩0.4|RSI18|确认涨1.1%|低点28.90)",
+      "sell_reason": "时间止损(12天亏-5.8%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sh.688765",
+      "name": "禾元生物",
+      "buy_date": "2026-04-30",
+      "buy_price": 55.07,
+      "sell_date": "2026-05-13",
+      "sell_price": 61.8,
+      "shares": 4800,
+      "buy_amount": 264336.0,
+      "sell_amount": 296640.0,
+      "profit": 32304.0,
+      "profit_pct": 12.22,
+      "buy_reason": "大跌抄底V3(5日跌-14.7%|距高22.1%|量2.3x→缩0.4|RSI19|确认涨3.2%|低点51.88)",
+      "sell_reason": "止盈(12.2%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.002931",
+      "name": "锋龙股份",
+      "buy_date": "2026-05-06",
+      "buy_price": 58.38,
+      "sell_date": "2026-05-20",
+      "sell_price": 54.58,
+      "shares": 4500,
+      "buy_amount": 262710.0,
+      "sell_amount": 245610.0,
+      "profit": -17100.0,
+      "profit_pct": -6.51,
+      "buy_reason": "大跌抄底V3(5日跌-17.1%|距高20.3%|量1.7x→缩0.7|RSI20|确认涨1.7%|低点56.95)",
+      "sell_reason": "抄底失败(跌破低点缓冲55.24)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.001376",
+      "name": "百通能源",
+      "buy_date": "2026-05-19",
+      "buy_price": 14.06,
+      "sell_date": "2026-06-08",
+      "sell_price": 12.67,
+      "shares": 19600,
+      "buy_amount": 275576.0,
+      "sell_amount": 248332.0,
+      "profit": -27244.0,
+      "profit_pct": -9.89,
+      "buy_reason": "大跌抄底V3(5日跌-13.1%|距高16.8%|量1.7x→缩0.6|RSI24|确认涨3.1%|低点13.28)",
+      "sell_reason": "止损(-9.9%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.301106",
+      "name": "骏成科技",
+      "buy_date": "2026-06-03",
+      "buy_price": 26.39,
+      "sell_date": "2026-06-04",
+      "sell_price": 23.8,
+      "shares": 9600,
+      "buy_amount": 253344.0,
+      "sell_amount": 228480.0,
+      "profit": -24864.0,
+      "profit_pct": -9.81,
+      "buy_reason": "大跌抄底V3(5日跌-25.9%|距高32.3%|量1.8x→缩0.6|RSI27|确认涨1.4%|低点24.79)",
+      "sell_reason": "止损(-9.8%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300530",
+      "name": "领湃科技",
+      "buy_date": "2026-06-05",
+      "buy_price": 19.6,
+      "sell_date": "2026-06-08",
+      "sell_price": 18.5,
+      "shares": 12600,
+      "buy_amount": 246960.0,
+      "sell_amount": 233100.0,
+      "profit": -13860.0,
+      "profit_pct": -5.61,
+      "buy_reason": "大跌抄底V3(5日跌-13.4%|距高23.0%|量1.3x→缩0.6|RSI21|确认涨0.7%|低点19.13)",
+      "sell_reason": "抄底失败(跌破低点缓冲18.56)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300920",
+      "name": "润阳科技",
+      "buy_date": "2026-06-15",
+      "buy_price": 39.0,
+      "sell_date": "2026-06-25",
+      "sell_price": 36.26,
+      "shares": 6300,
+      "buy_amount": 245700.0,
+      "sell_amount": 228438.0,
+      "profit": -17262.0,
+      "profit_pct": -7.03,
+      "buy_reason": "大跌抄底V3(5日跌-21.4%|距高25.4%|量2.1x→缩0.7|RSI32|确认涨0.8%|低点37.60)",
+      "sell_reason": "抄底失败(跌破低点缓冲36.47)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.300255",
+      "name": "常山药业",
+      "buy_date": "2026-06-22",
+      "buy_price": 26.46,
+      "sell_date": "2026-06-26",
+      "sell_price": 22.81,
+      "shares": 9200,
+      "buy_amount": 243432.0,
+      "sell_amount": 209852.0,
+      "profit": -33580.0,
+      "profit_pct": -13.79,
+      "buy_reason": "大跌抄底V3(5日跌-26.0%|距高39.0%|量2.3x→缩0.7|RSI20|确认涨2.4%|低点24.40)",
+      "sell_reason": "止损(-13.8%)"
+    },
+    {
+      "strategy_id": "dip_hunting_v3",
+      "strategy_name": "大跌抄底 V3",
+      "code": "sz.301178",
+      "name": "天亿马",
+      "buy_date": "2026-06-22",
+      "buy_price": 44.89,
+      "sell_date": "2026-06-26",
+      "sell_price": 45.77,
+      "shares": 5400,
+      "buy_amount": 242406.0,
+      "sell_amount": 247158.0,
+      "profit": 4752.0,
+      "profit_pct": 1.96,
+      "buy_reason": "大跌抄底V3(5日跌-16.5%|距高28.3%|量2.0x→缩0.7|RSI29|确认涨1.6%|低点38.89)",
+      "sell_reason": "期末持仓"
+    }
+  ],
+  "market_gate": {
+    "allowed_days": 362,
+    "blocked_days": 139,
+    "allowed_rate_pct": 72.26,
+    "recent": [
+      {
+        "date": "2026-06-05",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度58.7%)"
+      },
+      {
+        "date": "2026-06-08",
+        "allowed": false,
+        "state": "BEAR",
+        "reason": "熊市环境(广度12.0%<30%)，不抄底"
+      },
+      {
+        "date": "2026-06-09",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度65.1%)"
+      },
+      {
+        "date": "2026-06-10",
+        "allowed": false,
+        "state": "BEAR",
+        "reason": "熊市环境(广度29.2%<30%)，不抄底"
+      },
+      {
+        "date": "2026-06-11",
+        "allowed": false,
+        "state": "BEAR",
+        "reason": "熊市环境(广度25.3%<30%)，不抄底"
+      },
+      {
+        "date": "2026-06-12",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度73.0%)"
+      },
+      {
+        "date": "2026-06-15",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度72.9%)"
+      },
+      {
+        "date": "2026-06-16",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度50.4%)"
+      },
+      {
+        "date": "2026-06-17",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度30.3%)"
+      },
+      {
+        "date": "2026-06-18",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度37.5%)"
+      },
+      {
+        "date": "2026-06-22",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度54.8%)"
+      },
+      {
+        "date": "2026-06-23",
+        "allowed": true,
+        "state": "NORMAL",
+        "reason": "正常(广度49.1%)"
+      },
+      {
+        "date": "2026-06-24",
+        "allowed": false,
+        "state": "BEAR",
+        "reason": "熊市环境(广度26.3%<30%)，不抄底"
+      },
+      {
+        "date": "2026-06-25",
+        "allowed": false,
+        "state": "BEAR",
+        "reason": "熊市环境(广度23.3%<30%)，不抄底"
+      },
+      {
+        "date": "2026-06-26",
+        "allowed": false,
+        "state": "BEAR",
+        "reason": "熊市环境(广度12.9%<30%)，不抄底"
+      }
+    ],
+    "blocked_reasons": [],
+    "blocked_recent_days": [
+      {
+        "date": "2026-05-27",
+        "reasons": []
+      },
+      {
+        "date": "2026-05-29",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-02",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-04",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-08",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-10",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-11",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-24",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-25",
+        "reasons": []
+      },
+      {
+        "date": "2026-06-26",
+        "reasons": []
+      }
+    ]
+  }
+}

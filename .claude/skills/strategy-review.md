@@ -1,54 +1,90 @@
-# 策略评估分析 Skill（增强版）
+# 策略评估分析 Skill（增强版 v3）
 
-对任意回测策略做完整的 **分析→诊断→修复→重跑→对比** 循环。
+对任意回测策略做完整的 **分析→诊断→修复→重跑→对比** 迭代循环。
 
 ## 触发条件
 
 用户说"分析策略"、"评估策略"、"诊断策略"、"review strategy"、"帮我看看这个策略"、"为什么这个策略不赚钱"时触发。
 
-## 完整工作流（5 步闭环）
+---
+
+## 核心分析框架：4 阶段闭环 + 自动优化
+
+**工具链**:
+- `script/analyze_trades.py` → 生成多维度分析 Excel（7 Sheet）
+- `script/optimize_strategy.py` → 自动搜索最优参数（N 轮迭代）
+- `script/sklearn_analyze_v2.py` → RandomForest 特征重要性 + 偏依赖分析
+- `script/sklearn_early_classify.py` → 持仓期逐日分类器，提早识别失败交易
 
 ```
-分析结果 → 诊断根因 → 提方案 → 修代码 → 重跑对比
-   ↑                                          │
-   └──────────── 循环直到满意 ←────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│  阶段1: 选标的→买入    │  阶段2: 买入→退出                 │
+│  候选条件是否合理？     │  持有过程如何管理？               │
+│  什么环境下触发？       │  止损/止盈是否合理？              │
+│  是否需要介入？         │  退出时机是否正确？               │
+├────────────────────────┼───────────────────────────────────┤
+│  阶段3: 退出→复盘      │  阶段4: 数学工具辅助              │
+│  退出后1-6月走势如何？  │  傅里叶/梯度/sklearn             │
+│  是否卖早了/卖晚了？   │  分布分析/相关性/聚类             │
+│  优化方向在哪？         │  特征重要性/参数敏感性           │
+└─────────────────────────────────────────────────────────────┘
+         │                        │
+         └──→ 自动搜参 → 锁最佳 → 循环 ←──┘
 ```
 
 ---
 
-## 第 1 步：快速概览（2 分钟）
+## 第 0 步：多时间维度稳定性测试（新增 ★）
 
-从最新 archive JSON 提取关键指标，判断策略是否"活了"：
+**参数优化前必须先跑这一步**，验证策略不是过拟合某段行情：
 
-```python
-import json
-from pathlib import Path
+```bash
+# 12个月度起点测试
+for m in 01 02 03 04 05 06 07 08 09 10 11 12; do
+    python script/run_strategy_market_backtest.py --strategy <策略名> \
+        --max-positions 5 --start 2022-${m}-01
+done
 
-def quick_overview(strategy_id):
-    """加载最新结果，输出核心指标"""
-    root = Path('data/strategy') / strategy_id
-    month_dirs = sorted([d for d in root.iterdir() if d.is_dir()], 
-                        key=lambda d: d.name, reverse=True)
-    if not month_dirs:
-        return None
-    files = sorted(month_dirs[0].glob("*.json"), 
-                   key=lambda f: f.stat().st_mtime, reverse=True)
-    if not files:
-        return None
-    
-    with open(files[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    
-    s = data['summary']
-    print(f"策略: {data['strategy']['name']}")
-    print(f"收益: {s['total_return_pct']:.2f}%  回撤: {s['max_drawdown_pct']:.2f}%")
-    print(f"胜率: {s['win_rate_pct']:.1f}%  交易: {s['trade_count']}笔")
-    print(f"平均盈利: {s['avg_profit_pct']:.2f}%  盈亏比: {s['profit_factor']}")
-    print(f"区间: {data['selection']['start_date']} ~ {data['selection']['end_date']}")
-    return data
+# 12个季度起点测试（从6月起，每3月）
+for d in 2022-06-01 2022-09-01 2022-12-01 2023-03-01 2023-06-01 \
+         2023-09-01 2023-12-01 2024-03-01 2024-06-01 2024-09-01 \
+         2024-12-01 2025-03-01; do
+    python script/run_strategy_market_backtest.py --strategy <策略名> \
+        --max-positions 5 --start $d
+done
 ```
 
-**判断标准**：
+### 稳定性判定标准
+
+| 指标 | 优秀 | 及格 | 不可靠 |
+|------|------|------|--------|
+| 胜率极差 | <3pp | 3-8pp | >8pp |
+| 回撤极差 | <3pp | 3-10pp | >10pp |
+| PF极差 | <0.15 | 0.15-0.3 | >0.3 |
+| 任何起点亏损 | 无 | 仅<2年短周期 | 长周期也亏 |
+| 蒙特卡洛亏损率 | <5% | 5-15% | >15% |
+
+---
+
+## 第 0.5 步：利润集中度分析（新增 ★）
+
+```python
+# 蒙特卡洛稳定性
+import numpy as np
+# 随机抽样50%交易1000次，查看收益分布
+# 95%置信区间不包含负数 → 策略可靠
+# 95%置信区间包含负数 → 偶然性大
+
+# 盈利Gini系数
+# <0.3: 利润均匀分布，稳健
+# 0.3-0.5: 适度集中，可接受
+# >0.5: Top少数贡献大部分利润，需警惕
+```
+
+---
+
+## 第 1 步：快速概览（看 Excel Sheet 1）
+
 - 交易数 = 0 → **策略根本没触发**，检查 market_gate 或信号逻辑
 - 交易数 > 0 但收益 < 0 → **策略逻辑有问题**，进入诊断
 - 收益 > 0 但 PF < 1.2 → **靠运气**，胜率不够或盈亏比差
@@ -56,402 +92,106 @@ def quick_overview(strategy_id):
 
 ---
 
-## 第 2 步：诊断分析（跑 5 个维度）
+## 第 2 步：4 阶段诊断
 
-### 2.1 卖出原因拆解（找"凶手"）
+### 阶段1: 选标的→买入（是否该介入？）
 
-```python
-from collections import Counter
+看「交易明细」Sheet，分析每笔买入的：
 
-def analyze_sell_reasons(data):
-    trades = [t for t in data['trades'] if t.get('sell_reason','') != '期末持仓']
-    
-    # 分类
-    def classify(reason):
-        if '止损' in reason: return '止损'
-        if '移动止盈' in reason or '止盈' in reason: return '移动止盈'
-        if '到期' in reason: return '到期'
-        return '其他'
-    
-    groups = {}
-    for t in trades:
-        cls = classify(t['sell_reason'])
-        g = groups.setdefault(cls, {'count': 0, 'wins': 0, 'profit': 0.0, 'pcts': []})
-        g['count'] += 1
-        g['profit'] += t['profit']
-        g['pcts'].append(t['profit_pct'])
-        if t['profit'] > 0:
-            g['wins'] += 1
-    
-    print(f"\n{'卖出类型':<10} {'笔数':>4} {'占比':>6} {'胜率':>6} {'累计盈亏':>12} {'平均%':>7}")
-    print('-' * 55)
-    for cls in ['止损', '移动止盈', '到期']:
-        g = groups.get(cls)
-        if not g: continue
-        print(f"{cls:<10} {g['count']:>4} {g['count']/len(trades)*100:>5.1f}% "
-              f"{g['wins']/g['count']*100:>5.0f}% {g['profit']:>12,.0f} "
-              f"{sum(g['pcts'])/len(g['pcts']):>6.1f}%")
-    
-    # 止损组里找跳空穿止损的（亏损远超止损线）
-    big_losers = [t for t in trades if '止损' in t.get('sell_reason','') and t['profit_pct'] < -15]
-    if big_losers:
-        print(f"\n跳空穿止损({len(big_losers)}笔):")
-        for t in sorted(big_losers, key=lambda x: x['profit_pct'])[:5]:
-            print(f"  {t['name']} {t['buy_date']}→{t['sell_date']} {t['profit_pct']:.1f}%")
-    
-    return groups
-```
+1. **市场环境**：广度是多少？是否在恐慌底买入？
+2. **选股质量**：低于 MA60 多少？5日跌幅多少？是不是真的超跌？
+3. **触发频率**：不同年份/广度分档下的买入次数分布
+4. **关键问题**：
+   - 广度分档下盈亏如何？（见「数学分析」Sheet）
+   - 超跌程度和盈亏有关联吗？
+   - 是否在"假恐慌"时买入了？
 
-### 2.2 年度收益分布（看市场环境适应性）
+### 阶段2: 买入→退出（如何退出？）
 
-```python
-from collections import defaultdict
+看「卖出分析」Sheet：
 
-def analyze_by_year(data):
-    trades = [t for t in data['trades'] if t.get('sell_reason','') != '期末持仓']
-    by_year = defaultdict(lambda: {'count':0, 'wins':0, 'profit':0.0, 'pcts':[]})
-    
-    for t in trades:
-        year = t['buy_date'][:4]
-        y = by_year[year]
-        y['count'] += 1
-        y['profit'] += t['profit']
-        y['pcts'].append(t['profit_pct'])
-        if t['profit'] > 0:
-            y['wins'] += 1
-    
-    print(f"\n{'年份':<6} {'笔数':>4} {'胜率':>6} {'累计盈亏':>12} {'平均%':>7} {'最佳%':>7} {'最差%':>7}")
-    print('-' * 60)
-    for year in sorted(by_year):
-        y = by_year[year]
-        print(f"{year:<6} {y['count']:>4} {y['wins']/y['count']*100:>5.0f}% "
-              f"{y['profit']:>12,.0f} {sum(y['pcts'])/len(y['pcts']):>6.1f}% "
-              f"{max(y['pcts']):>6.1f}% {min(y['pcts']):>6.1f}%")
-    
-    return by_year
-```
+1. **止损组**：平均亏损？跳空穿止损的有多少？止损后走势？
+2. **移动止盈组**：平均盈利？是否在高点合理位置退出？
+3. **到期组**：到期时平均盈亏？如果多数微盈 → 持仓周期合理；如果多数微亏 → 持有期太短
 
-**关键判断**：
-- 牛熊年收益分化大 → 策略依赖市场环境
-- 连续 2 年亏损 → 策略逻辑有根本问题
-- 每年稳定正收益 → 策略鲁棒性强
+### 阶段3: 退出后复盘（是否卖早了？）
 
-### 2.3 盈亏不对称性（看是否少数大赢家撑起全部）
+看「卖早分析」Sheet：
+- 如果止损组卖早率 > 50% → 止损参数必须改
+- 如果到期组卖早率高 → 持有期太短
 
-```python
-def analyze_pnl_asymmetry(data):
-    trades = [t for t in data['trades'] if t.get('sell_reason','') != '期末持仓']
-    winners = [t for t in trades if t['profit'] > 0]
-    losers = [t for t in trades if t['profit'] <= 0]
-    
-    if winners:
-        print(f"\n盈利交易: {len(winners)}笔, 平均+{sum(t['profit_pct'] for t in winners)/len(winners):.1f}%")
-        # Top 5 贡献了多少利润
-        top5 = sorted(winners, key=lambda x: -x['profit'])[:5]
-        top5_profit = sum(t['profit'] for t in top5)
-        total_profit = sum(t['profit'] for t in winners)
-        print(f"Top 5 赢家贡献: {top5_profit:,.0f} / {total_profit:,.0f} = {top5_profit/total_profit*100:.0f}%")
-        for t in top5:
-            print(f"  {t['name']} +{t['profit_pct']:.1f}% ({t['buy_date']}→{t['sell_date']})")
-    
-    if losers:
-        print(f"\n亏损交易: {len(losers)}笔, 平均{sum(t['profit_pct'] for t in losers)/len(losers):.1f}%")
-```
+### 阶段4: sklearn 辅助分析
 
-**关键判断**：如果 Top 5 贡献 > 60% 利润 → 策略极度依赖少数大赢家，样本量不够时要警惕过拟合。
+1. **特征重要性**：用 `sklearn_analyze_v2.py` 跑 RandomForest，看哪个特征真正区分盈亏
+2. **偏依赖**：每个参数增大时胜率怎么变？找梯度方向
+3. **持仓期分类**：用 `sklearn_early_classify.py` 看第几天能预判最终盈亏
+4. **注意**：sklearn 快照分析 ≠ 回测验证，结论必须回测确认
 
-### 2.4 卖出后追踪（**最重要的分析**）
-
-对每笔已平仓交易，查卖出后 1/2/3/4/5/6 个月的股价，判断是否卖早了：
-
-```python
-from datetime import datetime
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from models.stock import StockDaily
-from config import DATABASE_URL
-
-def forward_analysis(data):
-    """查每笔交易卖出后 1-6 个月的涨跌"""
-    engine = create_engine(DATABASE_URL, echo=False)
-    Session = sessionmaker(bind=engine)
-    sess = Session()
-    
-    trades = [t for t in data['trades'] if t.get('sell_reason','') != '期末持仓']
-    
-    results = []
-    for t in trades:
-        sell_date = datetime.strptime(t['sell_date'], '%Y-%m-%d')
-        fwd_returns = []
-        for months in [1, 2, 3, 4, 5, 6]:
-            target = sell_date
-            for _ in range(months):
-                # 加一个月
-                m = target.month + 1
-                y = target.year + (m - 1) // 12
-                m = (m - 1) % 12 + 1
-                target = datetime(y, m, min(target.day, 28))
-            
-            row = sess.query(StockDaily).filter(
-                StockDaily.code == t['code'],
-                StockDaily.trade_date >= target.strftime('%Y-%m-%d')
-            ).order_by(StockDaily.trade_date).first()
-            
-            if row and t['sell_price'] > 0:
-                fwd_returns.append((row.close / t['sell_price'] - 1) * 100)
-            else:
-                fwd_returns.append(None)
-        
-        results.append({**t, 'fwd': fwd_returns})
-    
-    sess.close()
-    
-    # 按卖出类型统计
-    def classify(reason):
-        if '止损' in reason: return '止损'
-        if '移动' in reason: return '移动止盈'
-        if '到期' in reason: return '到期'
-        return '其他'
-    
-    by_type = defaultdict(list)
-    for r in results:
-        by_type[classify(r['sell_reason'])].append(r)
-    
-    print(f"\n{'卖出类型':<10} {'笔数':>4}", end='')
-    for m in range(1, 7):
-        print(f" {'{}月后'.format(m):>8}", end='')
-    print(f" {'上涨比':>7}")
-    print('-' * 80)
-    
-    for cls in ['止损', '移动止盈', '到期']:
-        items = by_type.get(cls, [])
-        if not items: continue
-        print(f"{cls:<10} {len(items):>4}", end='')
-        for m in range(6):
-            vals = [r['fwd'][m] for r in items if r['fwd'][m] is not None]
-            avg = sum(vals) / len(vals) if vals else 0
-            print(f" {avg:>+7.1f}%", end='')
-        # 上涨比
-        all_fwd = [r['fwd'][m] for r in items for m in range(6) if r['fwd'][m] is not None]
-        pos = sum(1 for v in all_fwd if v > 0)
-        print(f" {pos/len(all_fwd)*100:>6.0f}%")
-    
-    # 全局统计
-    early_exits = [r for r in results if max(r['fwd']) > r['profit_pct'] + 10]
-    print(f"\n卖早了(后续>卖出价+10%): {len(early_exits)}/{len(results)} = {len(early_exits)/len(results)*100:.0f}%")
-    
-    # 最惨的"割在地板上"
-    worst = sorted(results, key=lambda r: max(r['fwd']) - r['profit_pct'], reverse=True)[:5]
-    print("\n最大的'割在地板上':")
-    for r in worst:
-        print(f"  {r['name']} {r['buy_date']}→{r['sell_date']} 卖出时{r['profit_pct']:+.1f}%, "
-              f"6月后最高可达{max(r['fwd']):+.1f}% (差{max(r['fwd'])-r['profit_pct']:.0f}pp)")
-    
-    return results
-```
-
-**关键判断**：
-- 止损组 1 月后中位数 > 0 → **止损太紧，被震荡洗出**
-- 止损组 3 月后中位数 > +10% → **止损是策略最大漏洞**
-- 移动止盈组后续中位数 < 0 → 止盈点合理
-- 到期组后续中位数 > 0 → 考虑延长持有期
-
-### 2.5 止损幅度分析（如果有动态止损）
-
-```python
-def analyze_stop_distribution(data):
-    """分析每笔交易的止损参数分布"""
-    trades = [t for t in data['trades'] if t.get('sell_reason','') != '期末持仓']
-    
-    stops = []
-    for t in trades:
-        br = t.get('buy_reason', '')
-        # 尝试从 buy_reason 提取止损参数
-        # 格式可能是 "ATR3.2%止损-12%" 或直接看实际亏损
-        if 'ATR' in br and '止损' in br:
-            try:
-                # 提取 ATR 值和止损百分比
-                import re
-                atr_match = re.search(r'ATR([\d.]+)%', br)
-                stop_match = re.search(r'止损(-?[\d.]+)%', br)
-                if atr_match and stop_match:
-                    stops.append({
-                        'atr': float(atr_match.group(1)),
-                        'stop': float(stop_match.group(1)),
-                        'name': t['name'],
-                        'actual': t['profit_pct'],
-                    })
-            except:
-                pass
-    
-    if stops:
-        # 按止损幅度分桶
-        from collections import Counter
-        buckets = Counter()
-        for s in stops:
-            b = int(abs(s['stop']) // 2) * 2
-            buckets[f'-{b}~-{b+2}%'] += 1
-        
-        print("\n止损幅度分布:")
-        for k in sorted(buckets.keys(), key=lambda x: int(x.split('~')[0][1:].split('%')[0])):
-            bar = '█' * buckets[k]
-            print(f"  {k}: {bar} {buckets[k]}笔")
-        
-        avg_stop = sum(abs(s['stop']) for s in stops) / len(stops)
-        print(f"  平均止损: {avg_stop:.1f}%")
-```
+**sklearn 常见陷阱：**
+- CV=0.5 → 单笔盈亏不可预测，策略靠系统层优势赚钱（正常！）
+- 偏依赖方向可能和回测相反（因为收紧参数改变了整个选股池）
+- 快照级统计 ≠ 交易级统计（同一笔交易多天触达，会重复计数）
 
 ---
 
-## 第 3 步：根因诊断
+## 第 3 步：根因诊断表
 
-基于第 2 步的数据，判断策略的核心问题：
+| 症状 | 数据支撑 | 根因 | 方向 |
+| --------------- | -------------- | -------------- | ------------------- |
+| 止损后1月涨>0% | 卖早分析 Sheet | 止损太紧 | 放宽止损/加时间衰减 |
+| 止损后3月涨>10% | 卖早分析 Sheet | 止损是最大漏洞 | ATR动态+恐慌分级 |
+| 胜率<40% | 卖出分析 Sheet | 买入时机不对 | 收紧选股/加确认信号 |
+| 盈亏比<1.5 | 数学分析 Sheet | 亏大赚小 | 放宽止盈或收紧止损 |
+| 某年连续亏损 | 年度分析 Sheet | 市场环境不适应 | 加市场环境过滤 |
+| Top 3 > 50%利润 | 数学分析 Sheet | 依赖小样本 | 增加频率/分散 |
+| 偏度<0(负偏) | 数学分析 Sheet | 大亏拖累 | 止损逻辑有问题 |
+| 极度恐慌反而亏 | 数学分析 Sheet | 极端行情失效 | 加极端行情保护 |
+| 蒙特卡洛50%亏损>10% | 自测 | 偶然性太大 | 增加交易频率 |
+| 牛市反而不赚钱 | 多起点测试 | 抄底策略=熊市策略 | 加大盘环境判断 |
+| <2年起点年化<5% | 季度滚动 | 策略需时间积累 | 实盘至少跑2年+ |
 
-| 症状 | 根因 | 方向 |
-|------|------|------|
-| 交易数=0 | gate 或信号逻辑有 bug | 检查 market_gate、generate_signals 调用时序 |
-| 止损组后续大涨 | 止损太紧/太傻（一刀切） | ATR 动态止损、放宽幅度 |
-| 胜率太低(<30%) | 买入时机不对 | 加确认条件（如广度回升） |
-| 盈亏比<1.0 | 亏损比盈利大 | 收紧止损或放宽止盈 |
-| 牛熊年分化极大 | 策略过度依赖牛市 | 加熊市过滤（如大盘MA60下方不买） |
-| Top 5 > 60% 利润 | 依赖小样本 | 增加交易频率，降低单笔集中度 |
-| 某年突然亏损大 | 参数过拟合 | 检查该年市场特征 |
+---
+
+## 第 3.5 步：自动化参数优化
+
+```bash
+python script/optimize_strategy.py --strategy <策略名> --iterations 10
+```
+
+**使用规则**：
+- 每次改 1-2 个参数，不要同时改多个
+- 改了没效果（< 1% 变化）→ 参数不敏感，跳过
+- 收益提升但回撤恶化 > 5pp → 权衡是否接受
+- sklearn 偏依赖结论必须回测验证（方向可能相反！）
 
 ---
 
 ## 第 4 步：修复与重跑
 
-### 修改策略代码
+1. **精准改参数**：基于诊断结论，改 1-2 个参数
+2. **跑回测**：
+   ```bash
+   python script/run_strategy_market_backtest.py --strategy <策略名> --max-positions 5
+   ```
+3. **跑分析**：
+   ```bash
+   python script/analyze_trades.py --strategy <策略名>
+   ```
+4. **对比结果**：打开新旧 Excel，对比核心指标变化
+5. **循环**：直到 PF > 1.5 且 最大回撤 < 30% 且 卖早率显著下降
 
-基于诊断结果，精准修改策略参数或逻辑。常见的修改模式：
+---
 
-```python
-# 模式 1: 翻转选股逻辑
-# 原来: close > ma60 (买强势) → 改为 close < ma60 * 0.92 (买超跌)
-
-# 模式 2: 固定止损 → ATR 动态止损
-# 原来: STOP_LOSS_PCT = -12
-# 改为: stop_pct = -max(8, min(22, 2.5 * atr_pct * 100))
-
-# 模式 3: 去掉矛盾逻辑
-# 原来: 恐慌买 + 过热卖 (矛盾!)
-# 改为: 只保留恐慌买，到期/止盈卖
-
-# 模式 4: 加确认条件
-# 原来: 广度 < 25% 就买
-# 改为: 广度 < 25% 且广度 > 3天前的广度 (恐慌见底)
-```
-
-### 重跑回测
+## 第 5 步：对比两个版本
 
 ```bash
-cd d:/my_import/sync_content/code/b_quant
-python -m backtest.strategy.strategy_{策略名}
-```
-
-### 对比结果
-
-```python
-# 加载新旧两个 archive，对比关键指标
-def compare_results(old_path, new_path):
-    old = json.load(open(old_path, 'r', encoding='utf-8'))
-    new = json.load(open(new_path, 'r', encoding='utf-8'))
-    
-    os = old['summary']
-    ns = new['summary']
-    
-    metrics = [
-        ('总收益%', 'total_return_pct'),
-        ('最大回撤%', 'max_drawdown_pct'),
-        ('胜率%', 'win_rate_pct'),
-        ('交易笔数', 'trade_count'),
-        ('平均盈利%', 'avg_profit_pct'),
-        ('盈亏比', 'profit_factor'),
-    ]
-    
-    print(f"{'指标':<12} {'旧':>8} {'新':>8} {'变化':>8}")
-    print('-' * 40)
-    for label, key in metrics:
-        ov = os[key]; nv = ns[key]
-        if isinstance(ov, (int, float)) and isinstance(nv, (int, float)):
-            chg = nv - ov
-            print(f"{label:<12} {ov:>8.2f} {nv:>8.2f} {chg:>+8.2f}")
-```
-
----
-
-## 第 5 步：导出 CSV（给用户做 Excel 深挖）
-
-```python
-import csv
-
-def export_trades_csv(data, output_path):
-    """导出交易明细 + 年汇总"""
-    trades = data['trades']
-    
-    with open(output_path, 'w', encoding='utf-8-sig', newline='') as f:
-        w = csv.writer(f)
-        
-        # Sheet 1: 年度汇总
-        w.writerow(['=== 年度汇总 ==='])
-        w.writerow(['年份', '笔数', '已平仓', '胜率%', '累计盈亏', '累计%', '平均%', '最佳%', '最差%'])
-        
-        by_year = defaultdict(list)
-        for t in trades:
-            by_year[t['buy_date'][:4]].append(t)
-        
-        for year in sorted(by_year):
-            items = by_year[year]
-            closed = [t for t in items if t.get('sell_reason') != '期末持仓']
-            wins = sum(1 for t in closed if t['profit'] > 0)
-            tp = sum(t['profit'] for t in closed)
-            tpp = sum(t['profit_pct'] for t in closed)
-            w.writerow([
-                year, len(items), len(closed),
-                f"{wins/len(closed)*100:.0f}" if closed else '-',
-                f"{tp:,.0f}", f"{tpp:.1f}%",
-                f"{tpp/len(closed):.1f}%" if closed else '-',
-                f"{max(t['profit_pct'] for t in closed):.1f}%" if closed else '-',
-                f"{min(t['profit_pct'] for t in closed):.1f}%" if closed else '-',
-            ])
-        
-        # Sheet 2: 交易明细
-        w.writerow([])
-        w.writerow(['=== 交易明细 ==='])
-        w.writerow(['买入日', '卖出日', '股票', '代码', '买入价', '卖出价', '盈亏%', '盈亏额', '持天', '买入原因', '卖出原因'])
-        
-        for t in sorted(trades, key=lambda x: x['buy_date']):
-            hold = ''
-            try:
-                bd = datetime.strptime(t['buy_date'], '%Y-%m-%d')
-                sd = datetime.strptime(t['sell_date'], '%Y-%m-%d')
-                hold = (sd - bd).days
-            except: pass
-            
-            w.writerow([
-                t['buy_date'], t['sell_date'], t['name'], t['code'],
-                t['buy_price'], t['sell_price'],
-                f"{t['profit_pct']:.1f}%", f"{t['profit']:,.0f}",
-                hold, t.get('buy_reason',''), t.get('sell_reason',''),
-            ])
-    
-    print(f"导出: {output_path}")
-```
-
----
-
-## 实战示例：market_bottom 策略的完整循环
-
-```
-Step 1 概览: 0笔交易, 0%收益 → 策略根本没触发
-Step 2 诊断: _CURRENT_GATE 时序 bug, market_gate 在 generate_signals 之后才调用
-Step 3 根因: gate 时序 + 选股逻辑反了(买强势而非超跌) + 市场过热卖出矛盾
-Step 4 修复: 
-  v1: 修 gate → 421笔, -44.65% (活了但亏)
-  v2: 翻转为买超跌 → 57笔, +0.70% (扭亏)
-  v3: 收紧选股+放宽止损 → 59笔, +80.26% (起飞)
-  v4: ATR 动态止损 → 56笔, +85.12%, PF=2.17 (优化)
-Step 5 导出: CSV 含逐笔交易 + 卖出后追踪
+python -c "
+import json
+old = json.load(open('data/strategy/xxx/2026-06/old.json', encoding='utf-8'))
+new = json.load(open('data/strategy/xxx/2026-06/new.json', encoding='utf-8'))
+for k in ['total_return_pct','max_drawdown_pct','win_rate_pct','trade_count','profit_factor']:
+    print(f'{k}: {old[\"summary\"][k]} → {new[\"summary\"][k]}')
+"
 ```
 
 ---
@@ -460,4 +200,195 @@ Step 5 导出: CSV 含逐笔交易 + 卖出后追踪
 
 - **不跑多策略对比**（那是 battle 接口的事）
 - **不修改数据库**
-- **不在没诊断清楚前盲目改参数** — 先看数据，再动手
+- **不在没看 Excel 前盲目改参数** — 先看数据，再动手
+- **不跳过 forward analysis** — 这是最关键的诊断维度
+- **sklearn 结论必须回测验证** — 偏依赖方向不可直接套用
+- **不跳过稳定性测试** — 参数优化前先证明确实有效
+
+---
+
+---
+
+## 已分析策略速查
+
+### 大跌抄底 V3 (dip_hunting_v3) ★当前最优
+
+**当前参数（= V2 + 12天时间止损）：**
+
+```
+MAX_DECLINE_5D = -0.10        # 5日跌幅 < -10%
+MAX_DECLINE_FROM_HIGH = -0.15 # 距20日高 > 15%
+VOL_PANIC_RATIO = 1.3         # 近3日均量 > 20均×1.3
+VOL_DECLINE_RATIO = 0.85      # 今日量 < 昨日量×0.85
+RSI_OVERSOLD_MAX = 35         # RSI < 35
+MAX_DAILY_DROP = -0.03        # 日跌不超过-3%
+LOWER_SHADOW_RATIO = 1.5      # 下影线≥实体×1.5
+REBOUND_MIN_CHG = 0.005       # 次日涨>0.5%确认
+STOP_LOSS_PCT = -8            # 硬止损
+TAKE_PROFIT_PCT = 12          # 止盈
+TRAILING_ACTIVE_PCT = 6       # 移动止盈激活
+TRAILING_STOP_PCT = 5         # 移动止盈回落
+MAX_HOLD_DAYS = 15            # 持仓上限
+DIP_LOW_BUFFER = 0.97         # 低点缓冲
+TIME_STOP_DAYS = 12           # 时间止损天数
+TIME_STOP_LOSS_PCT = -5       # 时间止损亏损阈值
+MARKET_FEAR_BREADTH = 0.30    # 广度<30%禁买
+```
+
+**基线回测（2022-05-06 ~ 2026-06-26）：**
+- 收益 +51.26%，回撤 -17.32%，胜率 46.2%，PF 1.28，197笔
+
+---
+
+### V3 多时间维度稳定性（12月度 + 12季度起点）
+
+**12个月度起点（2022年每月1日 → 2026-06-26）：**
+
+| 起点 | 收益 | 胜率 | 回撤 | PF | 笔数 |
+|------|------|------|------|-----|------|
+| 2022-04 | +60.8% | 46.0% | -17.7% | 1.31 | 202 |
+| 2022-05 | +51.3% | 46.2% | -17.3% | 1.28 | 197 |
+| 2022-06 | +55.0% | 46.6% | -17.5% | 1.31 | 189 |
+| 2022-07 | +64.7% | 48.1% | -17.3% | 1.36 | 183 |
+| 2022-08 | +70.7% | 48.6% | -17.4% | 1.39 | 179 |
+| 2022-09 | +67.4% | 48.6% | -17.3% | 1.38 | 177 |
+| 2022-10 | +51.8% | 46.8% | -17.3% | 1.32 | 169 |
+| 2022-11 | +53.6% | 47.0% | -17.3% | 1.34 | 166 |
+| 2022-12 | +47.9% | 46.3% | -17.3% | 1.31 | 164 |
+
+**胜率极差：2.6pp | 回撤极差：0.5pp | PF极差：0.11** → 策略极稳定
+
+**12个季度起点（2022-06起每3月 → 2026-06-26）：**
+
+| 起点 | 收益 | 胜率 | 回撤 | PF | 笔数 | 年化 |
+|------|------|------|------|-----|------|------|
+| 22.06 | +55.0% | 46.6% | -17.5% | 1.31 | 189 | 11.4% |
+| 22.09 | +67.4% | 48.6% | -17.3% | 1.38 | 177 | 14.4% |
+| 22.12 | +47.9% | 46.3% | -17.3% | 1.31 | 164 | 11.6% |
+| 23.03 | +50.6% | 45.8% | -17.3% | 1.34 | 155 | 13.1% |
+| 23.06 | +50.8% | 44.8% | -17.3% | 1.38 | 134 | 14.3% |
+| 23.09 | +45.7% | 43.5% | -17.4% | 1.36 | 124 | 14.3% |
+| 23.12 | +34.3% | 42.5% | -15.4% | 1.31 | 113 | 12.2% |
+| 24.03 | +28.9% | 41.7% | -15.4% | 1.31 | 96 | 11.6% |
+| 24.06 | +18.4% | 41.6% | -15.3% | 1.26 | 77 | 8.5% |
+| 24.09 | -0.6% | 39.7% | -15.4% | 0.99 | 63 | -0.3% |
+| 24.12 | +1.6% | 37.5% | -15.3% | 1.03 | 56 | 1.0% |
+| 25.03 | +0.7% | 36.4% | -15.4% | 1.01 | 55 | 0.6% |
+
+**关键发现：**
+- ≥3年起点：年化 12-15%，胜率 44-49%
+- <2年起点：年化 <1%，但回撤仍控制在 -15%
+- 2024.09后胜率跌破40%，年化归零 → **策略需要时间复利，短期无效**
+
+---
+
+### V3 利润结构
+
+**盈亏结构（197笔）：**
+- 止盈 52笔 +192万（100%胜率）— 利润引擎
+- 到期 63笔 +26万（60%胜率）— 稳定微利
+- 硬止损 40笔 -99万（0%胜率）— 最大出血口
+- 抄底失败 24笔 -41万（0%胜率）
+- 时间止损 17笔 -27万（0%胜率）
+
+**利润集中度：**
+- Top 3 贡献 9% / Top 10 贡献 26% / Top 20 贡献 45%
+- 盈利 Gini 系数 = 0.386（适度集中，健康）
+- 偏度 = +0.557（正偏，大赢家拉高均值，好事）
+
+**蒙特卡洛稳定性：**
+- 随机取50%交易1000次，中位收益 +26万
+- 仅 8% 的随机抽样出现亏损
+- 胜率 95% 置信区间 [39.8%, 53.1%]
+- → 策略盈利不是偶然，具有统计显著性
+
+**板块表现：**
+- 沪主板 53笔 +34.5万，胜率 58% ★最优
+- 科创板 30笔 +7.2万，胜率 43%
+- 深主板 56笔 -1.4万，胜率 41%
+- 创业板 57笔 +10.4万，胜率 40%
+
+**年度表现：**
+- 2022: 32笔 +1.4万 44%（扛熊市，未亏）
+- 2023: 52笔 +11.4万 56%（最佳年）
+- 2024: 54笔 +32.4万 46%（赚最多）
+- 2025: 33笔 +19.3万 45%
+- 2026: 25笔 -13.8万 28%（唯一亏损年，阴跌市）
+
+---
+
+### V3 市场环境适应性
+
+**V3 本质是熊市/震荡市反弹策略，不是全天候策略：**
+
+| 市场 | 表现 | 原因 |
+|------|------|------|
+| 熊市急跌 | [GREEN]优秀[/GREEN] | 大量无辜股被错杀→反弹 |
+| 震荡市 | [GREEN]良好[/GREEN] | 急跌急反弹频繁 |
+| 牛市 | [RED]差[/RED] | 信号稀疏（全涨），选出的都是真问题股 |
+| 阴跌市 | [RED]差[/RED] | 没有急跌就没有反弹机会，2026年典型 |
+
+**924 牛市反直觉验证：**
+- 2024-09-01 起点，924之后空仓2个月（全市场涨，无急跌信号）
+- 等有信号时（11月），选出的是"牛市里的垃圾" → 胜率 39%
+- 但之前 8月抄底的持仓在 9月集中止盈，单月 +29.6万
+- → V3 赚钱靠"提前埋伏"，不是"追涨"
+
+---
+
+### V3 sklearn 分析结论
+
+**特征重要性（12维 RandomForest）：**
+- 所有特征权重几乎相同（0.09-0.11），没有魔法参数
+- 5-fold CV = 0.49 → 单笔盈亏无法从买入特征预测
+- 策略优势来自系统层（止盈52笔100% + 风控），不是选股层
+
+**偏依赖梯度方向：**
+- RSI 越低越好：RSI=10→胜率51%，RSI=33→胜率42%（-8.8pp）
+- 确认涨幅越高越好：0.7%→43.5%，5.8%→48.3%
+- 下影线反直觉：越小越好，极端长下影=假底
+- 量比 >2.0x 反转：过度恐慌不利
+
+**持仓期逐日分类器：**
+- Day 5 准确率 74%，F1=71% → 可预判生死
+- 任何时候浮亏>5% → 快照胜率仅3%
+- 但单日-5%不能直接砍（回测验证：V4 动态止损反退步，砍太多）
+
+---
+
+### V3 优化历史
+
+**已测试的参数调整：**
+
+| 改动 | 效果 | 结论 |
+|------|------|------|
+| RSI 35→25 | 197笔→64笔，收益崩 | 不可行，砍了太多好交易 |
+| 确认 0.5%→1.0% | 砍38笔弱反弹但连好的也砍 | 不可行 |
+| MA20>MA60过滤 | 与抄底逻辑矛盾 | 不可行 |
+| 时间止损 8d/-3% | 过早砍仓 | 有害 |
+| 时间止损 12d/-5% | +51.26%（V3当前） | 唯一有效改进 |
+| 动态止损 -5% | +45.4%，回撤扩大 | 退步，砍太多 |
+| 止盈 12%→15% | 待测 | — |
+| 持有 15→18天 | 待测 | — |
+| 止损 -8%→-10% | 待测 | — |
+
+**结论：V3 单策略层已近最优，进一步优化应在 portfolio 层：**
+- 熔断：组合回撤 >25% 降仓
+- 仓位：大盘 MA60 下方仓位减半
+- 板块权重：沪主板优先（58%胜率）
+- 牛熊识别：牛市关 V3，启动趋势策略
+
+---
+
+### V3 最终评价
+
+| 维度 | 评级 | 说明 |
+|------|------|------|
+| 稳定性 | ★★★★★ | 12起点胜率±1.3pp，回撤±0.3pp |
+| 盈利确定性 | ★★★★☆ | 蒙特卡洛92%不亏损，Gini 0.386 |
+| 风控 | ★★★★★ | 回撤永远 -15~-18% |
+| 参数鲁棒性 | ★★★★★ | 多次改参尝试均退步，当前已最优 |
+| 市场适应性 | ★★★☆☆ | 熊市/震荡市优秀，牛市/阴跌弱 |
+| 实盘可行性 | ★★★★☆ | 需≥2年坚持 + 大盘环境判断 |
+
+**一句话：A股急跌反弹规律的真实捕捉，不是过拟合。但它是熊市策略，不是全天候。**

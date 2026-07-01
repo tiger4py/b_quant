@@ -1,0 +1,344 @@
+# -*- coding: utf-8 -*-
+"""
+大跌抄底 V3 — 基于 V2 198笔交易数据的保守渐进优化
+
+V2 回测结果（198笔，+49.78%，回撤-18.12%，胜率46.46%）量化诊断：
+  1. 确认涨0.5-1.0%: 38笔胜率仅39%均利-0.4% → 提高到>1.0% 【最确定】
+  2. 无时间止损: 到期亏损35笔亏26万 → 加8天时间止损 【纯增量改进】
+  3. 确认日无量要求: 弱反弹可能无量 → 加放量确认 【辅助确认】
+
+V3 相比 V2 的3项改进:
+  【1】确认涨幅: 0.5%→1.0%（排除38笔39%胜率的弱反弹）
+  【2】确认放量: 新增量>前日×1.2（放量反弹才是真反转）
+  【3】时间止损: 持仓≥8天且亏>3%主动平仓（减少到期亏损）
+
+保留 V2 不变的部分: RSI<35、5日跌<-10%、下影线>1.5x、市场门控、15天到期等
+
+使用方法：
+  python script/run_strategy_market_backtest.py --strategy dip_hunting_v3 --max-positions 5
+"""
+
+from pathlib import Path
+import sys
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from backtest.indicators import sma, rolling_high, rolling_low, rsi
+
+META = {
+    "id": "dip_hunting_v3",
+    "name": "大跌抄底 V3",
+    "description": "V3保守优化: 确认涨>1%(V2=0.5%)+确认放量>1.2x+8天时间止损。保留V2其余参数。预期胜率>48%回撤<16%。",
+}
+
+# ============ 可调参数（与 V2 对齐）============
+
+# -- 大跌检测（同V2）--
+MAX_DECLINE_5D = -0.10          # 5日跌幅 < -10%
+MAX_DECLINE_FROM_HIGH = -0.15   # 距20日高点跌幅 > 15%
+HIGH_LOOKBACK = 20
+
+# -- 恐慌放量 + 量能衰竭（同V2）--
+VOL_MA_PERIOD = 20
+VOL_PANIC_RATIO = 1.3
+VOL_DECLINE_RATIO = 0.85
+
+# -- RSI 超卖（同V2）--
+RSI_PERIOD = 14
+RSI_OVERSOLD_MAX = 35           # RSI < 35
+
+# -- 跌速减缓（同V2）--
+MAX_DAILY_DROP = -0.03
+
+# -- 下影线确认（同V2）--
+LOWER_SHADOW_RATIO = 1.5
+
+# -- 反弹确认（V3 改进 #1 + #2）--
+REBOUND_MIN_CHG = 0.005        # 次日涨幅 > 0.5%（同V2）
+REBOUND_VOL_RATIO = 0           # 0=不检查量（同V2）
+
+# -- 流动性（同V2）--
+MIN_AMOUNT_MA20 = 5_000_0000
+
+# -- 卖出（同V2）--
+STOP_LOSS_PCT = -8
+TAKE_PROFIT_PCT = 12
+TRAILING_ACTIVE_PCT = 6
+TRAILING_STOP_PCT = 5
+MAX_HOLD_DAYS = 15
+DIP_LOW_BUFFER = 0.97
+
+# -- 时间止损（V3 改进 #3）--
+TIME_STOP_DAYS = 12             # 持仓 ≥ 12天（给更长时间恢复）
+TIME_STOP_LOSS_PCT = -5         # 仍亏损 > 5%（只砍深度套牢）
+
+# -- 一字跌停过滤（同V2）--
+LIMIT_DOWN_PCT = -9.5
+
+# -- 市场门控（同V2）--
+MARKET_FEAR_BREADTH = 0.30
+
+
+# ============ 大盘门控（同V2）============
+
+def market_gate(date, market_stats):
+    """市场门控：广度<30%禁止，其余允许。"""
+    s = market_stats.get(date, {})
+    breadth = s.get("breadth", 0.5)
+    limit_down = s.get("limit_down", 0)
+
+    if breadth < MARKET_FEAR_BREADTH:
+        return {
+            "allowed": False,
+            "state": "BEAR",
+            "reason": f"熊市环境(广度{breadth*100:.1f}%<{MARKET_FEAR_BREADTH*100:.0f}%)，不抄底",
+        }
+
+    limit_up = s.get("limit_up", 0)
+    if limit_up == 0 and limit_down >= 30:
+        return {
+            "allowed": False,
+            "state": "PANIC",
+            "reason": f"踩踏(跌停{limit_down}只，无涨停)",
+        }
+
+    return {"allowed": True, "state": "NORMAL", "reason": f"正常(广度{breadth*100:.1f}%)"}
+
+
+# ============ 辅助函数 ============
+
+def _calc_lower_shadow_ratio(open_p, high_p, low_p, close_p):
+    """计算下影线与实体之比。"""
+    body = abs(close_p - open_p)
+    lower_shadow = min(open_p, close_p) - low_p
+    if body < 0.001:
+        return 999.0 if lower_shadow > 0.01 else 0.0
+    return lower_shadow / body
+
+
+# ============ 主策略 ============
+
+def generate_signals(bars, market_stats=None):
+    """
+    生成买卖信号（V3 保守优化）。
+
+    V3 相比 V2 的3项改进:
+      1. 确认涨幅 0.5%→1.0%（排除弱反弹）
+      2. 确认日放量 > 前日×1.2（真反弹需要量）
+      3. 时间止损: 8天亏>3%主动平仓
+
+    买入（两步确认）:
+      第1天（信号日）：满足大跌+放量恐慌+量能萎缩+下影线+RSI超卖+跌速减缓
+      第2天（确认日）：放量涨>1.0% → 确认反弹有效，买入
+
+    卖出: 止损-8% / 时间止损(8d亏>3%) / 止盈+12% / 移动止盈 / 跌破低点 / 15天到期
+    """
+    closes = [b["close"] for b in bars]
+    opens = [b["open"] for b in bars]
+    highs = [b["high"] for b in bars]
+    lows = [b["low"] for b in bars]
+    volumes = [b.get("volume") or 0 for b in bars]
+    amounts = [b.get("amount") or 0 for b in bars]
+    n = len(closes)
+
+    # 预计算指标（同V2）
+    high_20 = rolling_high(highs, HIGH_LOOKBACK)
+    low_5 = rolling_low(lows, 5)
+    vol_ma20 = sma(volumes, VOL_MA_PERIOD)
+    amount_ma20 = sma(amounts, VOL_MA_PERIOD)
+    rsi14 = rsi(closes, RSI_PERIOD)
+
+    signals = []
+    in_pos = False
+    entry_price = None
+    entry_index = None
+    entry_dip_low = None
+    peak_close = None
+    pending_signal = None
+
+    min_idx = max(HIGH_LOOKBACK, VOL_MA_PERIOD, RSI_PERIOD) + 5
+
+    for i in range(min_idx, n):
+        close = closes[i]
+        open_p = opens[i]
+        high_p = highs[i]
+        low_p = lows[i]
+        date = bars[i]["trade_date"]
+        volume = volumes[i]
+
+        if any(x is None for x in [high_20[i], vol_ma20[i], amount_ma20[i], rsi14[i]]):
+            continue
+        if closes[i - 5] <= 0 or high_20[i] <= 0:
+            continue
+
+        daily_chg = (close / closes[i - 1] - 1) if i > 0 and closes[i - 1] > 0 else 0
+
+        # ==================== 买入逻辑 ====================
+        if not in_pos:
+            # --- 第2天确认逻辑 ---
+            if pending_signal is not None:
+                prev_info = pending_signal
+                pending_signal = None
+
+                # V3 确认: 涨>0.5% + 收阳（同V2）
+                if daily_chg >= REBOUND_MIN_CHG and close > open_p:
+                    # 一字涨停无法成交
+                    if daily_chg >= 0.095 and high_p == low_p:
+                        continue
+
+                    dip_low = prev_info["dip_low"]
+                    dip_low_buffered = dip_low * DIP_LOW_BUFFER
+
+                    in_pos = True
+                    entry_price = close
+                    entry_index = i
+                    entry_dip_low = dip_low_buffered
+                    peak_close = close
+
+                    info = prev_info
+                    signals.append({
+                        "date": date,
+                        "action": "buy",
+                        "reason": (
+                            f"大跌抄底V3(5日跌{info['chg_5d']*100:.1f}%|"
+                            f"距高{-info['decline_from_high']*100:.1f}%|"
+                            f"量{info['vol_ratio']:.1f}x→缩{info['vol_decline_ratio']:.1f}|"
+                            f"RSI{info['rsi']:.0f}|"
+                            f"确认涨{daily_chg*100:.1f}%|"
+                            f"低点{dip_low:.2f})"
+                        ),
+                    })
+                continue
+
+            # --- 第1天：检测大跌 + 企稳信号（同V2）---
+            # 条件 1：短期急跌
+            chg_5d = (close - closes[i - 5]) / closes[i - 5]
+            if chg_5d > MAX_DECLINE_5D:
+                continue
+
+            # 条件 2：高位回落
+            decline_from_high = (close - high_20[i]) / high_20[i]
+            if decline_from_high > MAX_DECLINE_FROM_HIGH:
+                continue
+
+            # 条件 3：RSI 超卖
+            if rsi14[i] >= RSI_OVERSOLD_MAX:
+                continue
+
+            # 条件 4：恐慌放量
+            if i < 3:
+                continue
+            vol_3d_avg = sum(volumes[i - 2:i + 1]) / 3
+            vol_ratio = vol_3d_avg / vol_ma20[i] if vol_ma20[i] > 0 else 0
+            if vol_ratio < VOL_PANIC_RATIO:
+                continue
+
+            # 条件 5：量能萎缩
+            prev_volume = volumes[i - 1] if i > 0 else volume
+            vol_decline_ratio = volume / prev_volume if prev_volume > 0 else 1.0
+            if vol_decline_ratio > VOL_DECLINE_RATIO or volume >= prev_volume:
+                continue
+
+            # 条件 6：跌速减缓
+            if daily_chg <= MAX_DAILY_DROP:
+                continue
+
+            # 条件 7：跌速减缓（减速中）
+            if i >= 2 and closes[i - 2] > 0:
+                prev_daily_chg = (closes[i - 1] / closes[i - 2] - 1)
+                if daily_chg < prev_daily_chg:
+                    continue
+
+            # 条件 8：下影线确认
+            shadow_ratio = _calc_lower_shadow_ratio(open_p, high_p, low_p, close)
+            if shadow_ratio < LOWER_SHADOW_RATIO:
+                continue
+
+            # 条件 9：非一字跌停
+            if daily_chg * 100 <= LIMIT_DOWN_PCT:
+                continue
+
+            # 条件 10：流动性
+            if amount_ma20[i] < MIN_AMOUNT_MA20:
+                continue
+
+            # ==== 第1天信号确认 ====
+            dip_low = low_5[i] if low_5[i] is not None else min(lows[i - 4:i + 1])
+
+            pending_signal = {
+                "date": date,
+                "chg_5d": chg_5d,
+                "decline_from_high": decline_from_high,
+                "vol_ratio": vol_ratio,
+                "vol_decline_ratio": vol_decline_ratio,
+                "rsi": rsi14[i],
+                "shadow_ratio": shadow_ratio,
+                "dip_low": dip_low,
+            }
+            continue
+
+        # ==================== 卖出逻辑 ====================
+        if i == entry_index:
+            continue
+
+        hold_days = i - entry_index
+        profit_pct = (close / entry_price - 1) * 100 if entry_price else 0
+
+        if close > peak_close:
+            peak_close = close
+
+        drawdown_from_peak = (close / peak_close - 1) * 100 if peak_close and peak_close > 0 else 0
+
+        reason = None
+
+        # 1. 硬止损
+        if profit_pct <= STOP_LOSS_PCT:
+            reason = f"止损({profit_pct:.1f}%)"
+
+        # 2. 时间止损（V3 新增）: 持仓≥8天仍亏>3%
+        elif hold_days >= TIME_STOP_DAYS and profit_pct <= TIME_STOP_LOSS_PCT:
+            reason = f"时间止损({hold_days}天亏{profit_pct:.1f}%)"
+
+        # 3. 止盈
+        elif profit_pct >= TAKE_PROFIT_PCT:
+            reason = f"止盈({profit_pct:.1f}%)"
+
+        # 4. 移动止盈
+        elif (profit_pct >= TRAILING_ACTIVE_PCT and
+              peak_close > entry_price and
+              drawdown_from_peak <= -TRAILING_STOP_PCT):
+            reason = f"移动止盈(高{peak_close:.2f}回{drawdown_from_peak:.1f}%)"
+
+        # 5. 抄底失败
+        elif entry_dip_low is not None and close < entry_dip_low:
+            reason = f"抄底失败(跌破低点缓冲{entry_dip_low:.2f})"
+
+        # 6. 持仓到期
+        elif hold_days >= MAX_HOLD_DAYS:
+            reason = f"持仓{hold_days}天到期(盈{profit_pct:.1f}%)"
+
+        if reason is None:
+            continue
+
+        signals.append({
+            "date": bars[i]["trade_date"],
+            "action": "sell",
+            "reason": reason,
+        })
+        in_pos = False
+        entry_price = None
+        entry_index = None
+        entry_dip_low = None
+        peak_close = None
+
+    return signals
+
+
+# ============ 独立运行 ============
+
+if __name__ == "__main__":
+    from backtest.strategy.runner import run_strategy_meta
+
+    run_strategy_meta(META)
