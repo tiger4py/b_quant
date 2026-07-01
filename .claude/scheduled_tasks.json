@@ -1,3 +1,14 @@
 {
-  "tasks": []
+  "tasks": [
+    {
+      "id": "6e284fea",
+      "cron": "30 8 * * 1-5",
+      "prompt": "运行每日趋势跟随推送：先更新数据(update_daily.py)，再生成交易计划并推送到QQ(daily_trade.py)。请在 g:\\code\\b_quant 目录下执行 python script/daily_push.py，把输出发给我。",
+      "createdAt": 1782014007822,
+      "lastFiredAt": 1782435742949,
+      "recurring": true,
+      "createdBySessionId": "c70b9932-8666-43e3-b859-79eb12659d75",
+      "createdByPid": 3716
+    }
+  ]
 }

@@ -465,9 +465,9 @@ def _get_effective_max_positions(
     return effective
 
 
-# ============ 多策略轮动（已废弃，仅保留趋势跟随）============
+# ============ 多策略轮动 ============
 
-def _run_multi_strategy_backtest_removed(
+def run_multi_strategy_backtest(
     bars_by_code,
     stock_map,
     strategies,           # list of strategy modules, each must have META and generate_signals

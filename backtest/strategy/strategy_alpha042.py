@@ -34,14 +34,17 @@ META = {
 
 # ============ 可调参数 ============
 
+# -- 数据粒度 --
+BAR_PERIOD = 5               # 1=日线, 5=5日线（每个数据点代表N天）
+
 # -- 量价背离 --
-CORR_WINDOW = 10
+CORR_WINDOW = 10             # 10个数据点（日线=10天, 5日线=50天）
 CORR_BUY_MAX = -0.25
 CORR_SELL_THRESH = 0.50
 
 # -- 波动率放大器 --
 VOL_SHORT = 10
-VOL_LONG = 60
+VOL_LONG = 60               # 仍基于每日波动率计算
 VOL_AMP_MIN = 1.20
 VOL_AMP_MAX = 5.0
 
@@ -101,16 +104,42 @@ def _rolling_max(values, window):
     return result
 
 
+# ============ N日聚合 ============
+
+def _agg_bars(bars, period):
+    """将日线聚合成 N 日线。
+    返回: 聚合后的 [{close, high, volume, amount, date}]
+    """
+    result = []
+    for i in range(0, len(bars), period):
+        chunk = bars[i:i + period]
+        if len(chunk) < period:
+            # 最后不足 period 的按实际算
+            pass
+        result.append({
+            "close": chunk[-1]["close"],  # 期末收盘价
+            "high": max(b["high"] for b in chunk),
+            "volume": sum(b.get("volume") or 0 for b in chunk),
+            "amount": sum(b.get("amount") or 0 for b in chunk),
+            "date": chunk[-1]["trade_date"],
+        })
+    return result
+
+
 # ============ 指标预计算 ============
 
 def _compute_metrics(bars):
+    """只预计算必要的数组，chg_5d/vol_amp 在主循环即时算，减少内存占用。
+
+    BAR_PERIOD > 1 时，corr 基于聚合后的 N 日线计算。
+    """
     closes = [b["close"] for b in bars]
     highs = [b["high"] for b in bars]
-    lows = [b["low"] for b in bars]
     volumes = [b.get("volume") or 0 for b in bars]
     amounts = [b.get("amount") or 0 for b in bars]
     n = len(bars)
 
+    # 日涨跌幅（用于涨停检测 + 波动率）
     daily_change = [0.0]
     daily_vol = [0.0]
     for i in range(1, n):
@@ -118,28 +147,34 @@ def _compute_metrics(bars):
         daily_change.append(chg)
         daily_vol.append(abs(chg))
 
+    # 波动率均线（始终基于每日波动率）
     vol_short = sma(daily_vol, VOL_SHORT)
     vol_long = sma(daily_vol, VOL_LONG)
 
-    vol_amp = [None] * n
-    for i in range(n):
-        if vol_short[i] is not None and vol_long[i] is not None and vol_long[i] > 0.0001:
-            vol_amp[i] = vol_short[i] / vol_long[i]
+    # 核心信号：量价相关系数
+    if BAR_PERIOD > 1:
+        agg = _agg_bars(bars, BAR_PERIOD)
+        agg_highs = [b["high"] for b in agg]
+        agg_volumes = [b["volume"] for b in agg]
+        agg_corr = _rolling_corr(agg_highs, agg_volumes, CORR_WINDOW)
+        # 把聚合级别的 corr 映射回日线级别（每个聚合日对应原始日期的最后一天）
+        high_vol_corr = [None] * n
+        for agg_i, cv in enumerate(agg_corr):
+            day_i = min(agg_i * BAR_PERIOD + BAR_PERIOD - 1, n - 1)
+            high_vol_corr[day_i] = cv
+    else:
+        high_vol_corr = _rolling_corr(highs, volumes, CORR_WINDOW)
 
-    high_vol_corr = _rolling_corr(highs, volumes, CORR_WINDOW)
     high_20 = _rolling_max(highs, PRICE_NEAR_HIGH_LOOKBACK)
 
-    chg_5d = [None] * n
-    for i in range(n):
-        if i >= 5 and closes[i - 5] > 0:
-            chg_5d[i] = (closes[i] - closes[i - 5]) / closes[i - 5]
-
     return {
-        "closes": closes, "highs": highs, "lows": lows,
-        "volumes": volumes, "amounts": amounts,
-        "daily_change": daily_change, "daily_vol": daily_vol,
-        "vol_short": vol_short, "vol_long": vol_long, "vol_amp": vol_amp,
-        "high_vol_corr": high_vol_corr, "high_20": high_20, "chg_5d": chg_5d,
+        "closes": closes,
+        "amounts": amounts,
+        "daily_change": daily_change,
+        "vol_short": vol_short,
+        "vol_long": vol_long,
+        "high_vol_corr": high_vol_corr,
+        "high_20": high_20,
     }
 
 
@@ -183,14 +218,25 @@ def generate_signals(bars):
     for i in range(min_idx, n):
         close = closes[i]
         corr_val = m["high_vol_corr"][i]
-        vol_amp = m["vol_amp"][i]
         high_20 = m["high_20"][i]
-        chg_5d = m["chg_5d"][i]
 
-        if corr_val is None or vol_amp is None or high_20 is None:
+        if corr_val is None or high_20 is None:
             continue
-        if chg_5d is None:
+
+        # 即时算 vol_amp（避免预存全量数组）
+        vs = m["vol_short"][i]
+        vl = m["vol_long"][i]
+        if vs is None or vl is None or vl < 0.0001:
+            vol_amp = None
+        else:
+            vol_amp = vs / vl
+        if vol_amp is None:
             continue
+
+        # 即时算 chg_5d（避免预存全量数组）
+        if closes[i - 5] <= 0:
+            continue
+        chg_5d = (close - closes[i - 5]) / closes[i - 5]
 
         amount = m["amounts"][i]
 
