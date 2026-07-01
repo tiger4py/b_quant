@@ -27,7 +27,7 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-STRATEGY_ID = "trend_following"
+STRATEGY_ID = "market_bottom"
 
 
 def _weekday(date_str):

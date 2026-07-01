@@ -72,8 +72,8 @@ run_step "3/7: 导入stock CSV到数据库" python script/import_day_stock.py --
 run_step "4/7: 导入concept CSV到数据库" python script/import_day_stock.py --type concept
 
 # ======== Step 5: 跑策略回测 ========
-run_step "5/7: 波动率V反策略回测" python script/run_strategy_market_backtest.py \
-    --strategy volatility_breakout \
+run_step "5/7: 大底抄底策略回测" python script/run_strategy_market_backtest.py \
+    --strategy market_bottom \
     --days 1000 \
     --max-positions 5
 

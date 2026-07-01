@@ -47,10 +47,10 @@ def main():
     run_step(f"Step 1/3: 更新K线数据",
              "script/update_daily.py")
 
-    # Step 2: 趋势跟随回测
-    if not run_step(f"Step 2/3: 趋势跟随回测 ({args.days}天)",
+    # Step 2: 大底抄底回测
+    if not run_step(f"Step 2/3: 大底抄底回测 ({args.days}天)",
                     "script/run_strategy_market_backtest.py",
-                    "--strategy", "trend_following",
+                    "--strategy", "market_bottom",
                     "--days", str(args.days),
                     "--max-positions", str(args.max_positions)):
         print("[!] 回测失败，无法推送")

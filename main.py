@@ -193,7 +193,8 @@ def api_trading_state():
 
         # 查持仓现价 + 平仓线
         from backtest.indicators import sma as _sma
-        from backtest.strategy.strategy_trend_following import STOP_LOSS_PCT as _SL, HIGH_RETREAT_PCT as _HR, VOL_COLLAPSE_RATIO as _VC
+        from backtest.strategy.strategy_vegas_tunnel import STOP_LOSS_PCT as _SL, HIGH_RETREAT_PCT as _HR
+        _VC = 0.7  # 量能萎缩比例（5日均量/20日均量 低于此值触发警报）
 
         holdings_with_price = []
         holding_value = 0

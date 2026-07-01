@@ -48,21 +48,124 @@ from sqlalchemy.orm import sessionmaker
 from config import DATABASE_URL
 from models.stock import StockDaily, StockInfo
 from backtest.portfolio import _build_market_stats
-from backtest.strategy.strategy_volatility_breakout import (
-    _compute_volatility_metrics,
-    _detect_v_reversal,
-    market_gate,
-    VOL_STABLE_MAX,
-    VOL_RATIO_BUY,
-    VOL_RATIO_SELL,
-    V_DECLINE_MIN,
-    V_RECOVERY_MIN,
-    V_RECOVERY_RATIO,
-    V_LOOKBACK,
-    LIMIT_UP_PCT,
-    LIMIT_UP_LOOKBACK,
-    V_RECOVERY_HARD_MAX,
-)
+from backtest.indicators import sma, stddev
+
+# ============ 波动率V反常量和工具函数（原 strategy_volatility_breakout） ============
+
+# -- V反检测 --
+V_LOOKBACK = 8
+V_DECLINE_MIN = 3.0
+V_RECOVERY_MIN = 1.5
+V_RECOVERY_RATIO = 0.4
+V_MIN_DOWN_DAYS = 2
+V_MIN_UP_DAYS = 1
+V_MAX_DURATION = 8
+V_RECOVERY_HARD_MAX = 20.0
+
+# -- 波动率 --
+VOL_STABLE_MAX = 0.025
+VOL_RATIO_BUY = 1.3
+VOL_RATIO_SELL = 0.8
+
+# -- 涨停过滤 --
+LIMIT_UP_PCT = 9.5
+LIMIT_UP_LOOKBACK = 3
+
+
+def _compute_volatility_metrics(bars):
+    """预计算所有波动率相关指标。"""
+    closes = [b["close"] for b in bars]
+    highs = [b["high"] for b in bars]
+    lows = [b["low"] for b in bars]
+    volumes = [b.get("volume") or 0 for b in bars]
+
+    n = len(bars)
+
+    daily_vol = [0.0]
+    daily_change = [0.0]
+    for i in range(1, n):
+        chg = closes[i] / closes[i - 1] - 1 if closes[i - 1] else 0
+        daily_vol.append(abs(chg))
+        daily_change.append(chg)
+
+    daily_range = [(highs[i] - lows[i]) / closes[i] if closes[i] else 0 for i in range(n)]
+
+    return {
+        "closes": closes,
+        "highs": highs,
+        "lows": lows,
+        "volumes": volumes,
+        "daily_vol": daily_vol,
+        "daily_change": daily_change,
+        "daily_range": daily_range,
+        "vol_5d": sma(daily_vol, 5),
+        "vol_10d": sma(daily_vol, 10),
+        "vol_20d": sma(daily_vol, 20),
+        "vol_60d": sma(daily_vol, 60),
+        "vol_std_10d": stddev(daily_vol, 10),
+        "range_ma10": sma(daily_range, 10),
+        "vol_ma5": sma(volumes, 5),
+        "vol_ma20": sma(volumes, 20),
+    }
+
+
+def _detect_v_reversal(closes, i, lookback=V_LOOKBACK):
+    """在 index=i 处检测 V 形反转形态。"""
+    if i < 4:
+        return False, -1, 0, 0, ""
+
+    start = max(0, i - lookback)
+    window_for_min = closes[start:i]
+    if not window_for_min:
+        return False, -1, 0, 0, ""
+
+    min_val = min(window_for_min)
+    bottom_idx = start + window_for_min.index(min_val)
+    bottom_close = closes[bottom_idx]
+
+    left_peak_idx = bottom_idx
+    for j in range(bottom_idx - 1, start, -1):
+        if closes[j] > closes[left_peak_idx]:
+            left_peak_idx = j
+        else:
+            break
+    pre_high = closes[left_peak_idx]
+
+    decline_pct = (pre_high - bottom_close) / pre_high * 100 if pre_high > 0 else 0
+    if decline_pct < V_DECLINE_MIN:
+        return False, -1, 0, 0, ""
+
+    recovery_pct = (closes[i] - bottom_close) / bottom_close * 100 if bottom_close > 0 else 0
+    if recovery_pct < V_RECOVERY_MIN:
+        return False, -1, 0, 0, ""
+    if recovery_pct < decline_pct * V_RECOVERY_RATIO:
+        return False, -1, 0, 0, ""
+
+    down_days = 0
+    for j in range(bottom_idx, left_peak_idx, -1):
+        if closes[j] < closes[j - 1] and (closes[j - 1] / closes[j] - 1) >= 0.005:
+            down_days += 1
+    if down_days < V_MIN_DOWN_DAYS:
+        return False, -1, 0, 0, ""
+
+    up_days = 0
+    for j in range(bottom_idx + 1, i + 1):
+        if closes[j] > closes[j - 1]:
+            up_days += 1
+    if up_days < V_MIN_UP_DAYS:
+        return False, -1, 0, 0, ""
+
+    v_duration = i - left_peak_idx
+    if v_duration > V_MAX_DURATION:
+        return False, -1, 0, 0, ""
+
+    if bottom_idx > start and closes[bottom_idx - 1] < bottom_close:
+        return False, -1, 0, 0, ""
+    if bottom_idx < i - 1 and closes[bottom_idx + 1] < bottom_close:
+        return False, -1, 0, 0, ""
+
+    label = f"V反({down_days}阴-{up_days}阳|跌{decline_pct:.1f}%→涨{recovery_pct:.1f}%)"
+    return True, bottom_idx, round(decline_pct, 2), round(recovery_pct, 2), label
 from collections import defaultdict
 
 # ============ 可调参数 ============
@@ -1076,7 +1179,7 @@ def main():
         strategy = None
         try:
             from backtest.registry import get_strategy
-            strategy = get_strategy("volatility_breakout")
+            strategy = get_strategy("market_bottom")
             if hasattr(strategy, "market_gate"):
                 gate = strategy.market_gate(latest, market_stats)
                 print(f"  原始Gate: {'允许' if gate['allowed'] else '禁止'} ({' | '.join(gate['reasons'])})")
