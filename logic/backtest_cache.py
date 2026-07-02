@@ -146,6 +146,25 @@ def compute_market_result(
     )
     trades = result["trades"]
     trades.sort(key=lambda x: (x["buy_date"], x["code"]))
+
+    # 当前持仓快照（从 trades 中提取期末持仓）
+    current_positions = []
+    for t in trades:
+        if t.get("sell_reason") == "期末持仓":
+            current_positions.append({
+                "code": t["code"],
+                "name": t["name"],
+                "buy_date": t["buy_date"],
+                "buy_price": t["buy_price"],
+                "cur_price": t["sell_price"],
+                "shares": t["shares"],
+                "cost": t["buy_amount"],
+                "market_value": t["sell_amount"],
+                "profit": t["profit"],
+                "profit_pct": t["profit_pct"],
+            })
+    current_positions.sort(key=lambda x: x["profit"], reverse=True)
+
     return {
         "strategy": strategy.META,
         "selection": {
@@ -163,6 +182,7 @@ def compute_market_result(
         "equity_curve": result["equity_curve"],
         "stock_summaries": result["stock_summaries"],
         "trades": trades,
+        "current_positions": current_positions,
         "market_gate": result.get("market_gate"),
     }
 

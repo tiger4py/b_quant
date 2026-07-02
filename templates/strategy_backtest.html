@@ -135,9 +135,9 @@
         <div class="table-wrap" style="max-height:260px;">
           <table>
             <thead>
-              <tr><th>股票</th><th>买入日</th><th>买入价</th><th>股数</th><th>成本</th><th>权重%</th><th>持天</th><th>浮盈</th></tr>
+              <tr><th>股票</th><th>买入日</th><th>买入价</th><th>当前价</th><th>股数</th><th>成本</th><th>市值</th><th>权重%</th><th>持天</th><th>收益</th><th>浮盈%</th></tr>
             </thead>
-            <tbody id="open-positions-body"><tr><td colspan="8" class="muted">--</td></tr></tbody>
+            <tbody id="open-positions-body"><tr><td colspan="11" class="muted">--</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -365,7 +365,7 @@ function showDetailEmpty(msg) {
   $("detail-empty").style.display = "flex";
   $("equity-chart").style.display = "none";
   $("open-positions").style.display = "none";
-  $("open-positions-body").innerHTML = '<tr><td colspan="8" class="muted">--</td></tr>';
+  $("open-positions-body").innerHTML = '<tr><td colspan="11" class="muted">--</td></tr>';
   $("curve-hint").textContent = "暂无详情";
   $("stock-body").innerHTML = '<tr><td colspan="6" class="muted">请选择策略后查看</td></tr>';
   $("trade-body").innerHTML = '<tr><td colspan="12" class="muted">请选择策略后查看</td></tr>';
@@ -381,7 +381,7 @@ function renderDetail(strategy, data) {
   $("note").textContent = `${strategy.description} 最新交易日 ${data.selection.latest_trade_date}，缓存时间 ${data.cache?.created_at || "--"}`;
   const initCash = Number(data.selection.initial_cash || 0);
   const posMap = buildPositionMap(data.trades || []);
-  renderOpenPositions(data.trades || [], data.equity_curve || [], posMap, initCash);
+  renderOpenPositions(data.trades || [], data.equity_curve || [], posMap, initCash, data.current_positions || null);
   renderEquity(data.equity_curve || [], posMap, initCash);
   renderStocks(data.stock_summaries || []);
   renderTrades(data);
@@ -473,6 +473,7 @@ let currentPosTrades = [];
 let currentPosEquityCurve = [];
 let currentPosInitCash = 0;
 let currentPosMap = null;
+let currentPositionsCache = null;
 
 function getPositionsOnDate(date, trades) {
   // 筛选在指定日期持有的仓位：已买入且未卖出（或期末持仓）
@@ -516,11 +517,13 @@ function buildPosEntry(t, date, source) {
   };
 }
 
-function renderOpenPositions(trades, equityCurve, posMap, initialCash) {
+function renderOpenPositions(trades, equityCurve, posMap, initialCash, currentPositionsData) {
   currentPosTrades = trades || [];
   currentPosEquityCurve = equityCurve || [];
   currentPosInitCash = initialCash;
   currentPosMap = posMap;
+  // 预计算的持仓快照（含 cur_price, profit, profit_pct），优先使用
+  currentPositionsCache = currentPositionsData || null;
 
   const lastDate = equityCurve.length ? equityCurve[equityCurve.length - 1].date : '';
   const firstDate = equityCurve.length ? equityCurve[0].date : '';
@@ -548,12 +551,44 @@ async function refreshPositionTable(date) {
   const body = $("open-positions-body");
   const hint = $("position-date-hint");
 
-  const positions = getPositionsOnDate(date, currentPosTrades);
-
   // 该日期的账户权益
   let equityOnDate = currentPosInitCash;
   for (const p of currentPosEquityCurve) {
     if (p.date <= date) equityOnDate = p.equity;
+  }
+
+  // 如果是最新日期且有预计算缓存，直接使用（含 cur_price, profit, profit_pct）
+  const lastDate = currentPosEquityCurve.length ? currentPosEquityCurve[currentPosEquityCurve.length - 1].date : '';
+  let positions;
+  if (date === lastDate && currentPositionsCache && currentPositionsCache.length) {
+    positions = currentPositionsCache.map(p => ({
+      ...p,
+      hold_days: Math.max(0, Math.floor((new Date(date) - new Date(p.buy_date)) / 86400000)),
+    }));
+  } else {
+    positions = getPositionsOnDate(date, currentPosTrades);
+
+    // 对没有 profit_pct 的持仓，批量获取当日收盘价来计算浮盈和当前价
+    const needPrice = positions.filter(p => p.profit_pct == null);
+    if (needPrice.length) {
+      const codes = needPrice.map(p => p.code).join(",");
+      try {
+        const priceRes = await fetch(`/api/stocks/prices?codes=${encodeURIComponent(codes)}&date=${date}`);
+        const priceMap = await priceRes.json();
+        for (const p of needPrice) {
+          const close = priceMap[p.code];
+          if (close != null) {
+            p.cur_price = close;
+            if (p.buy_price > 0) {
+              p.profit_pct = Number(((close / p.buy_price - 1) * 100).toFixed(2));
+              p.profit = Number(((close - p.buy_price) * p.shares).toFixed(2));
+            }
+          }
+        }
+      } catch (e) {
+        // 获取价格失败则保持 --
+      }
+    }
   }
 
   // 始终显示面板，没有持仓时给提示
@@ -561,51 +596,47 @@ async function refreshPositionTable(date) {
 
   if (!positions.length) {
     hint.textContent = `${date}，权益 ${fmtMoney(equityOnDate)}，暂无持仓`;
-    body.innerHTML = '<tr><td colspan="8" class="muted">该日期无持仓，请选择其他日期查看</td></tr>';
+    body.innerHTML = '<tr><td colspan="11" class="muted">该日期无持仓，请选择其他日期查看</td></tr>';
     return;
-  }
-
-  // 对没有 profit_pct 的持仓，批量获取当日收盘价来计算浮盈
-  const needPrice = positions.filter(p => p.profit_pct == null);
-  if (needPrice.length) {
-    const codes = needPrice.map(p => p.code).join(",");
-    try {
-      const priceRes = await fetch(`/api/stocks/prices?codes=${encodeURIComponent(codes)}&date=${date}`);
-      const priceMap = await priceRes.json();
-      for (const p of needPrice) {
-        const close = priceMap[p.code];
-        if (close != null && p.buy_price > 0) {
-          p.profit_pct = Number(((close / p.buy_price - 1) * 100).toFixed(2));
-        }
-      }
-    } catch (e) {
-      // 获取价格失败则保持 --
-    }
   }
 
   hint.textContent = `${date}，权益 ${fmtMoney(equityOnDate)}，持仓 ${positions.length} 只`;
 
   body.innerHTML = positions.map(p => {
     const cost = (p.shares || 0) * (p.buy_price || 0);
+    const mktVal = p.market_value != null ? p.market_value : ((p.cur_price || 0) * (p.shares || 0));
     const weightPct = equityOnDate > 0 ? (cost / equityOnDate * 100) : 0;
-    let profitHtml = '<span class="muted">--</span>';
+    // 当前价
+    const curPrice = p.cur_price != null ? p.cur_price.toFixed(2) : '<span class="muted">--</span>';
+    // 收益金额
+    let profitAmtHtml = '<span class="muted">--</span>';
+    if (p.profit != null) {
+      const cls = p.profit >= 0 ? "red" : "green";
+      profitAmtHtml = `<span class="${cls}">${p.profit >= 0 ? '+' : ''}${fmtMoney(p.profit)}</span>`;
+    }
+    // 浮盈百分比
+    let profitPctHtml = '<span class="muted">--</span>';
     if (p.profit_pct != null) {
       const cls = p.profit_pct >= 0 ? "red" : "green";
       const sign = p.profit_pct >= 0 ? "+" : "";
-      profitHtml = `<span class="${cls}">${sign}${p.profit_pct}%</span>`;
+      profitPctHtml = `<span class="${cls}">${sign}${p.profit_pct}%</span>`;
     }
     return `<tr>
       <td>${stockLabel(p.code, p.name)}</td>
       <td>${p.buy_date || "-"}</td>
       <td>${(p.buy_price || 0).toFixed(2)}</td>
+      <td>${curPrice}</td>
       <td>${p.shares || 0}</td>
       <td>${fmtMoney(cost)}</td>
+      <td>${fmtMoney(mktVal)}</td>
       <td>${weightPct.toFixed(1)}%</td>
       <td>${p.hold_days}天</td>
-      <td>${profitHtml}</td>
+      <td>${profitAmtHtml}</td>
+      <td>${profitPctHtml}</td>
     </tr>`;
   }).join("");
 }
+
 
 function renderEquity(curve, posMap, initCash) {
   if (equityChart) equityChart.dispose();

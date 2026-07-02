@@ -1,0 +1,8082 @@
+{
+  "strategy": {
+    "id": "etf_vegas",
+    "name": "ETF维加斯隧道",
+    "description": "ETF版维加斯隧道：EMA12/EMA50/EMA100/EMA200四线隧道系统。买入=EMA12上穿隧道+隧道多头排列+EMA200趋势过滤+RSI辅助+不追高。卖出=EMA12下穿隧道/隧道倒置/高位回撤-10%/持仓50天。适配ETF强趋势特性。"
+  },
+  "selection": {
+    "stock_count": 121,
+    "start_date": "2022-05-06",
+    "end_date": "2026-07-02",
+    "initial_cash": 1000000.0,
+    "max_positions": 5,
+    "max_position_cash": 200000.0,
+    "latest_trade_date": "2026-07-02",
+    "criteria": "全部 ETF，剔除 K 线不足 120 条的品种",
+    "min_bar_count": 120,
+    "data_source": "G:\\code\\b_quant\\data\\etf"
+  },
+  "summary": {
+    "initial_cash": 1000000.0,
+    "final_equity": 1199446.3,
+    "total_return_pct": 19.94,
+    "max_drawdown_pct": 19.91,
+    "trade_count": 90,
+    "win_rate_pct": 41.11,
+    "avg_profit_pct": 1.16,
+    "profit_factor": 1.4,
+    "max_positions": 5,
+    "max_position_cash": 200000.0
+  },
+  "equity_curve": [
+    {
+      "date": "2022-05-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-25",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-26",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-05-31",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-06-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-25",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-26",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-07-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-25",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-26",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-08-31",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-26",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-09-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-25",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-26",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-10-31",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-25",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-11-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-26",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2022-12-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-31",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-31",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-13",
+      "equity": 1000000.0,
+      "cash": 800059.6,
+      "position_count": 1
+    },
+    {
+      "date": "2023-04-14",
+      "equity": 1002244.0,
+      "cash": 800059.6,
+      "position_count": 1
+    },
+    {
+      "date": "2023-04-17",
+      "equity": 1004488.0,
+      "cash": 600060.1,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-18",
+      "equity": 1000003.3,
+      "cash": 400118.5,
+      "position_count": 3
+    },
+    {
+      "date": "2023-04-19",
+      "equity": 995869.1,
+      "cash": 400118.5,
+      "position_count": 3
+    },
+    {
+      "date": "2023-04-20",
+      "equity": 992856.9,
+      "cash": 400118.5,
+      "position_count": 3
+    },
+    {
+      "date": "2023-04-21",
+      "equity": 985419.2,
+      "cash": 400118.5,
+      "position_count": 3
+    },
+    {
+      "date": "2023-04-24",
+      "equity": 984210.4,
+      "cash": 588462.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-25",
+      "equity": 987436.4,
+      "cash": 588462.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-26",
+      "equity": 989253.6,
+      "cash": 588462.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-27",
+      "equity": 989926.8,
+      "cash": 588462.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-28",
+      "equity": 991742.8,
+      "cash": 588462.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-05-04",
+      "equity": 1003388.4,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-05",
+      "equity": 1013361.3,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-08",
+      "equity": 1036819.9,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-09",
+      "equity": 1038487.2,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-10",
+      "equity": 1013215.6,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-11",
+      "equity": 1015513.9,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-12",
+      "equity": 1007614.3,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-15",
+      "equity": 1017411.0,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-16",
+      "equity": 1011294.1,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-17",
+      "equity": 1009458.9,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-18",
+      "equity": 1008533.1,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-19",
+      "equity": 993945.2,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-22",
+      "equity": 1000148.8,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-23",
+      "equity": 983173.1,
+      "cash": 183.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-24",
+      "equity": 968102.5,
+      "cash": 564361.7,
+      "position_count": 2
+    },
+    {
+      "date": "2023-05-25",
+      "equity": 970293.3,
+      "cash": 564361.7,
+      "position_count": 2
+    },
+    {
+      "date": "2023-05-26",
+      "equity": 973455.7,
+      "cash": 564361.7,
+      "position_count": 2
+    },
+    {
+      "date": "2023-05-29",
+      "equity": 980369.3,
+      "cash": 564361.7,
+      "position_count": 2
+    },
+    {
+      "date": "2023-05-30",
+      "equity": 978296.5,
+      "cash": 564361.7,
+      "position_count": 2
+    },
+    {
+      "date": "2023-05-31",
+      "equity": 975272.9,
+      "cash": 564361.7,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-01",
+      "equity": 970913.3,
+      "cash": 758855.3,
+      "position_count": 1
+    },
+    {
+      "date": "2023-06-02",
+      "equity": 971137.7,
+      "cash": 218.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-05",
+      "equity": 972351.4,
+      "cash": 218.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-06",
+      "equity": 942704.4,
+      "cash": 218.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-07",
+      "equity": 946504.5,
+      "cash": 183822.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-06-08",
+      "equity": 942262.9,
+      "cash": 183822.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-06-09",
+      "equity": 957557.6,
+      "cash": 70.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-12",
+      "equity": 959475.3,
+      "cash": 70.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-13",
+      "equity": 976016.6,
+      "cash": 70.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-14",
+      "equity": 975930.0,
+      "cash": 70.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-15",
+      "equity": 976610.9,
+      "cash": 70.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-16",
+      "equity": 997468.6,
+      "cash": 70.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-19",
+      "equity": 1017575.4,
+      "cash": 177724.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-06-20",
+      "equity": 1029309.3,
+      "cash": 177724.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-06-21",
+      "equity": 999320.8,
+      "cash": 177724.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-06-26",
+      "equity": 976346.9,
+      "cash": 370896.3,
+      "position_count": 3
+    },
+    {
+      "date": "2023-06-27",
+      "equity": 977580.1,
+      "cash": 370896.3,
+      "position_count": 3
+    },
+    {
+      "date": "2023-06-28",
+      "equity": 967650.2,
+      "cash": 556457.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-29",
+      "equity": 971320.1,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-06-30",
+      "equity": 975590.3,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-03",
+      "equity": 975978.5,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-04",
+      "equity": 979666.4,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-05",
+      "equity": 975202.1,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-06",
+      "equity": 976366.7,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-07",
+      "equity": 973843.4,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-10",
+      "equity": 972290.6,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-11",
+      "equity": 978307.7,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-12",
+      "equity": 971126.0,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-13",
+      "equity": 977337.2,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-14",
+      "equity": 980248.7,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-17",
+      "equity": 980636.9,
+      "cash": 768291.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-07-18",
+      "equity": 977531.3,
+      "cash": 576288.3,
+      "position_count": 2
+    },
+    {
+      "date": "2023-07-19",
+      "equity": 977232.7,
+      "cash": 576288.3,
+      "position_count": 2
+    },
+    {
+      "date": "2023-07-20",
+      "equity": 967645.0,
+      "cash": 576288.3,
+      "position_count": 2
+    },
+    {
+      "date": "2023-07-21",
+      "equity": 964914.8,
+      "cash": 576288.3,
+      "position_count": 2
+    },
+    {
+      "date": "2023-07-24",
+      "equity": 967657.8,
+      "cash": 576288.3,
+      "position_count": 2
+    },
+    {
+      "date": "2023-07-25",
+      "equity": 973698.4,
+      "cash": 576288.3,
+      "position_count": 2
+    },
+    {
+      "date": "2023-07-26",
+      "equity": 969596.7,
+      "cash": 136.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-27",
+      "equity": 967674.2,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-28",
+      "equity": 993416.0,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-31",
+      "equity": 997013.8,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-01",
+      "equity": 993176.5,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-02",
+      "equity": 986004.4,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-03",
+      "equity": 996421.3,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-04",
+      "equity": 996617.3,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-07",
+      "equity": 989931.1,
+      "cash": 194624.7,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-08",
+      "equity": 989409.8,
+      "cash": 0.9,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-09",
+      "equity": 985141.9,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-10",
+      "equity": 988613.9,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-11",
+      "equity": 971549.0,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-14",
+      "equity": 965748.4,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-15",
+      "equity": 973464.6,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-16",
+      "equity": 970695.7,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-17",
+      "equity": 968355.6,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-18",
+      "equity": 968232.2,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-21",
+      "equity": 955397.9,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-22",
+      "equity": 964298.3,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-23",
+      "equity": 960077.3,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-24",
+      "equity": 958873.2,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-25",
+      "equity": 961847.9,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-28",
+      "equity": 974045.1,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-29",
+      "equity": 971845.4,
+      "cash": 192330.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-30",
+      "equity": 962034.2,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-31",
+      "equity": 954930.1,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-01",
+      "equity": 964617.3,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-04",
+      "equity": 981409.4,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-05",
+      "equity": 970597.7,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-06",
+      "equity": 969408.0,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-07",
+      "equity": 963381.5,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-08",
+      "equity": 958066.2,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-11",
+      "equity": 964198.8,
+      "cash": 65.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-09-12",
+      "equity": 961210.2,
+      "cash": 187812.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-09-13",
+      "equity": 959770.4,
+      "cash": 187812.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-09-14",
+      "equity": 966065.2,
+      "cash": 187812.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-09-15",
+      "equity": 964790.1,
+      "cash": 187812.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-09-18",
+      "equity": 964800.2,
+      "cash": 187812.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-09-19",
+      "equity": 968371.5,
+      "cash": 379864.6,
+      "position_count": 3
+    },
+    {
+      "date": "2023-09-20",
+      "equity": 970808.5,
+      "cash": 379864.6,
+      "position_count": 3
+    },
+    {
+      "date": "2023-09-21",
+      "equity": 966743.5,
+      "cash": 379864.6,
+      "position_count": 3
+    },
+    {
+      "date": "2023-09-22",
+      "equity": 970729.8,
+      "cash": 379864.6,
+      "position_count": 3
+    },
+    {
+      "date": "2023-09-25",
+      "equity": 970348.8,
+      "cash": 379864.6,
+      "position_count": 3
+    },
+    {
+      "date": "2023-09-26",
+      "equity": 968593.8,
+      "cash": 577661.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-09-27",
+      "equity": 967035.8,
+      "cash": 577661.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-09-28",
+      "equity": 966266.1,
+      "cash": 577661.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-10-09",
+      "equity": 964745.3,
+      "cash": 577661.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-10-10",
+      "equity": 962903.8,
+      "cash": 577661.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-10-11",
+      "equity": 961644.7,
+      "cash": 577661.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-10-12",
+      "equity": 966218.0,
+      "cash": 966218.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-10-13",
+      "equity": 966218.0,
+      "cash": 773017.3,
+      "position_count": 1
+    },
+    {
+      "date": "2023-10-16",
+      "equity": 964393.2,
+      "cash": 579814.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-10-17",
+      "equity": 967153.0,
+      "cash": 579814.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-10-18",
+      "equity": 965143.0,
+      "cash": 579814.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-10-19",
+      "equity": 960199.3,
+      "cash": 386566.9,
+      "position_count": 3
+    },
+    {
+      "date": "2023-10-20",
+      "equity": 957836.8,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-23",
+      "equity": 954231.7,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-24",
+      "equity": 954191.6,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-25",
+      "equity": 950092.8,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-26",
+      "equity": 956080.0,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-27",
+      "equity": 957837.0,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-30",
+      "equity": 959303.2,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-31",
+      "equity": 961187.8,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-01",
+      "equity": 958506.8,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-02",
+      "equity": 960224.0,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-03",
+      "equity": 959596.8,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-06",
+      "equity": 956035.7,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-07",
+      "equity": 953187.1,
+      "cash": 191553.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-08",
+      "equity": 949922.6,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-09",
+      "equity": 944198.6,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-10",
+      "equity": 949350.9,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-13",
+      "equity": 945609.5,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-14",
+      "equity": 951251.8,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-15",
+      "equity": 954547.1,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-16",
+      "equity": 950230.1,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-17",
+      "equity": 953231.4,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-20",
+      "equity": 944573.4,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-21",
+      "equity": 942928.1,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-22",
+      "equity": 938612.0,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-23",
+      "equity": 938028.3,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-24",
+      "equity": 936700.8,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-27",
+      "equity": 942338.6,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-28",
+      "equity": 944486.9,
+      "cash": 61.2,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-29",
+      "equity": 948253.2,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-30",
+      "equity": 947834.2,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-01",
+      "equity": 947458.5,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-04",
+      "equity": 956296.1,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-05",
+      "equity": 946244.4,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-06",
+      "equity": 945117.3,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-07",
+      "equity": 946538.7,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-08",
+      "equity": 947961.3,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-11",
+      "equity": 942099.6,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-12",
+      "equity": 938751.3,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-13",
+      "equity": 937409.7,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-14",
+      "equity": 948800.6,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-15",
+      "equity": 947960.6,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-18",
+      "equity": 945657.4,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-19",
+      "equity": 947751.4,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-20",
+      "equity": 950430.7,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-21",
+      "equity": 950056.6,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-22",
+      "equity": 954365.9,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-25",
+      "equity": 955080.8,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-26",
+      "equity": 957007.8,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-27",
+      "equity": 959769.1,
+      "cash": 183142.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-12-28",
+      "equity": 960145.0,
+      "cash": 381277.8,
+      "position_count": 3
+    },
+    {
+      "date": "2023-12-29",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-02",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-03",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-04",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-05",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-08",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-09",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-10",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-11",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-12",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-15",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-16",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-17",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-18",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-19",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-22",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-23",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-24",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-25",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-26",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-29",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-30",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-01-31",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-01",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-02",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-05",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-06",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-07",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-08",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-19",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-20",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-21",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-22",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-23",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-26",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-27",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-28",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-02-29",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-01",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-04",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-05",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-06",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-07",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-08",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-11",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-12",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-13",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-14",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-15",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-18",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-19",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-20",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-21",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-22",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-25",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-26",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-27",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-28",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-29",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-01",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-02",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-03",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-08",
+      "equity": 957687.0,
+      "cash": 957687.0,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-09",
+      "equity": 957687.0,
+      "cash": 766321.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-04-10",
+      "equity": 960552.2,
+      "cash": 766321.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-04-11",
+      "equity": 963266.6,
+      "cash": 766321.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-04-12",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-15",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-16",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-17",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-18",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-19",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-22",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-23",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-24",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-25",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-26",
+      "equity": 864115.6,
+      "cash": 864115.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-29",
+      "equity": 864115.6,
+      "cash": 691327.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-04-30",
+      "equity": 862857.0,
+      "cash": 691327.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-05-06",
+      "equity": 864834.8,
+      "cash": 691327.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-05-07",
+      "equity": 863935.8,
+      "cash": 691327.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-05-08",
+      "equity": 859980.2,
+      "cash": 691327.8,
+      "position_count": 1
+    },
+    {
+      "date": "2024-05-09",
+      "equity": 861059.0,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-10",
+      "equity": 860514.6,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-13",
+      "equity": 862943.6,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-14",
+      "equity": 862763.8,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-15",
+      "equity": 863555.9,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-16",
+      "equity": 872608.8,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-17",
+      "equity": 873303.7,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-20",
+      "equity": 875539.2,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-21",
+      "equity": 876427.9,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-22",
+      "equity": 878682.4,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-23",
+      "equity": 879313.7,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-24",
+      "equity": 869192.6,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-27",
+      "equity": 875537.6,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-28",
+      "equity": 874147.8,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-29",
+      "equity": 871587.3,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-30",
+      "equity": 869667.8,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-31",
+      "equity": 868011.6,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-03",
+      "equity": 873443.6,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-04",
+      "equity": 872759.0,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-05",
+      "equity": 874522.7,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-06",
+      "equity": 883710.2,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-07",
+      "equity": 880425.5,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-11",
+      "equity": 882524.2,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-12",
+      "equity": 887961.8,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-13",
+      "equity": 898364.9,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-14",
+      "equity": 903987.0,
+      "cash": 345781.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-06-17",
+      "equity": 909604.1,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-18",
+      "equity": 922934.2,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-19",
+      "equity": 920112.2,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-20",
+      "equity": 916590.2,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-21",
+      "equity": 913481.2,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-24",
+      "equity": 901382.8,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-25",
+      "equity": 886816.4,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-26",
+      "equity": 904631.4,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-27",
+      "equity": 897587.6,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-06-28",
+      "equity": 910620.2,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-01",
+      "equity": 914126.8,
+      "cash": 172894.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-02",
+      "equity": 910627.5,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-03",
+      "equity": 913081.6,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-04",
+      "equity": 912683.5,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-05",
+      "equity": 915389.1,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-08",
+      "equity": 919106.7,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-09",
+      "equity": 942889.2,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-10",
+      "equity": 938795.7,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-11",
+      "equity": 943117.0,
+      "cash": 186.0,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-12",
+      "equity": 919517.8,
+      "cash": 355358.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-15",
+      "equity": 929423.3,
+      "cash": 177686.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-16",
+      "equity": 929992.0,
+      "cash": 177686.8,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-17",
+      "equity": 921741.8,
+      "cash": 229.8,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-18",
+      "equity": 914151.2,
+      "cash": 229.8,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-19",
+      "equity": 904974.0,
+      "cash": 386314.3,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-22",
+      "equity": 907222.6,
+      "cash": 193206.7,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-23",
+      "equity": 892728.8,
+      "cash": 382553.9,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-24",
+      "equity": 886102.9,
+      "cash": 711191.1,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-25",
+      "equity": 884406.1,
+      "cash": 711191.1,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-26",
+      "equity": 883981.9,
+      "cash": 711191.1,
+      "position_count": 1
+    },
+    {
+      "date": "2024-07-29",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-30",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-07-31",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-01",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-02",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-05",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-06",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-07",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-08",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-09",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-12",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-13",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-14",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-15",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-16",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-19",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-20",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-21",
+      "equity": 883345.6,
+      "cash": 883345.6,
+      "position_count": 0
+    },
+    {
+      "date": "2024-08-22",
+      "equity": 883345.6,
+      "cash": 706678.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-23",
+      "equity": 881664.2,
+      "cash": 353445.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-26",
+      "equity": 881963.3,
+      "cash": 176735.5,
+      "position_count": 4
+    },
+    {
+      "date": "2024-08-27",
+      "equity": 870393.5,
+      "cash": 348033.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-28",
+      "equity": 872382.7,
+      "cash": 348033.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-29",
+      "equity": 858142.9,
+      "cash": 348033.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-30",
+      "equity": 863808.9,
+      "cash": 348033.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-02",
+      "equity": 869401.4,
+      "cash": 348033.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-03",
+      "equity": 869865.0,
+      "cash": 348033.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-04",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-05",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-06",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-09",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-10",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-11",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-12",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-13",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-18",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-19",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-20",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-23",
+      "equity": 837091.1,
+      "cash": 837091.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-09-24",
+      "equity": 837091.1,
+      "cash": 335003.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-25",
+      "equity": 831688.8,
+      "cash": 210.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-09-26",
+      "equity": 853624.2,
+      "cash": 210.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-09-27",
+      "equity": 845432.1,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-09-30",
+      "equity": 867569.8,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-08",
+      "equity": 873030.4,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-09",
+      "equity": 858028.0,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-10",
+      "equity": 874571.6,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-11",
+      "equity": 863369.8,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-14",
+      "equity": 879179.4,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-15",
+      "equity": 869435.6,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-16",
+      "equity": 869093.0,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-17",
+      "equity": 868417.6,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-18",
+      "equity": 876801.3,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-21",
+      "equity": 870539.8,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-22",
+      "equity": 868611.9,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-23",
+      "equity": 876164.6,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-24",
+      "equity": 866096.1,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-25",
+      "equity": 868307.1,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-28",
+      "equity": 874144.4,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-29",
+      "equity": 875009.3,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-30",
+      "equity": 870977.2,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-10-31",
+      "equity": 863560.4,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-01",
+      "equity": 860307.8,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-04",
+      "equity": 864069.0,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-05",
+      "equity": 870428.1,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-06",
+      "equity": 879177.3,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-07",
+      "equity": 898169.1,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-08",
+      "equity": 898916.4,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-11",
+      "equity": 893880.9,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-12",
+      "equity": 882322.4,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-13",
+      "equity": 876018.3,
+      "cash": 91.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-11-14",
+      "equity": 872059.6,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-15",
+      "equity": 867022.9,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-18",
+      "equity": 867903.1,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-19",
+      "equity": 870501.8,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-20",
+      "equity": 873188.7,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-21",
+      "equity": 869758.1,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-22",
+      "equity": 867308.9,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-25",
+      "equity": 872633.7,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-26",
+      "equity": 870285.8,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-27",
+      "equity": 872863.5,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-28",
+      "equity": 870272.6,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-11-29",
+      "equity": 870146.5,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-12-02",
+      "equity": 876737.3,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-12-03",
+      "equity": 890102.2,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-12-04",
+      "equity": 890839.6,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-12-05",
+      "equity": 893080.1,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-12-06",
+      "equity": 893708.9,
+      "cash": 179655.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-12-09",
+      "equity": 899216.4,
+      "cash": 115.4,
+      "position_count": 5
+    },
+    {
+      "date": "2024-12-10",
+      "equity": 906859.5,
+      "cash": 371062.1,
+      "position_count": 3
+    },
+    {
+      "date": "2024-12-11",
+      "equity": 900622.4,
+      "cash": 559398.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-12",
+      "equity": 907086.8,
+      "cash": 559398.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-13",
+      "equity": 901174.8,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-16",
+      "equity": 901263.3,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-17",
+      "equity": 905537.6,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-18",
+      "equity": 908394.5,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-19",
+      "equity": 903551.7,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-20",
+      "equity": 899074.7,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-23",
+      "equity": 904407.8,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-24",
+      "equity": 906507.9,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-25",
+      "equity": 906539.8,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-26",
+      "equity": 908057.0,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-27",
+      "equity": 905093.6,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-30",
+      "equity": 902059.2,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-31",
+      "equity": 899770.8,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-02",
+      "equity": 901661.0,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-03",
+      "equity": 901021.5,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-06",
+      "equity": 905303.0,
+      "cash": 538549.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-07",
+      "equity": 899151.9,
+      "cash": 532771.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-08",
+      "equity": 901535.1,
+      "cash": 532771.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-09",
+      "equity": 917684.6,
+      "cash": 532771.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-10",
+      "equity": 906554.0,
+      "cash": 532771.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-13",
+      "equity": 904390.7,
+      "cash": 532771.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-14",
+      "equity": 903599.3,
+      "cash": 532771.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-01-15",
+      "equity": 912026.2,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-16",
+      "equity": 926019.1,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-17",
+      "equity": 929560.8,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-20",
+      "equity": 943051.1,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-21",
+      "equity": 969754.1,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-22",
+      "equity": 965403.9,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-23",
+      "equity": 974217.2,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-24",
+      "equity": 988565.0,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-01-27",
+      "equity": 947647.0,
+      "cash": 154.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-05",
+      "equity": 943795.9,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-06",
+      "equity": 976374.9,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-07",
+      "equity": 981535.3,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-10",
+      "equity": 989934.5,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-11",
+      "equity": 986441.3,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-12",
+      "equity": 1003355.3,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-13",
+      "equity": 990646.8,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-14",
+      "equity": 1004987.5,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-17",
+      "equity": 1019823.4,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-18",
+      "equity": 1017359.4,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-19",
+      "equity": 1047120.2,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-20",
+      "equity": 1048143.6,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-21",
+      "equity": 1078702.1,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-24",
+      "equity": 1073786.3,
+      "cash": 31.7,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-25",
+      "equity": 1062246.5,
+      "cash": 175357.1,
+      "position_count": 4
+    },
+    {
+      "date": "2025-02-26",
+      "equity": 1080403.8,
+      "cash": 175357.1,
+      "position_count": 4
+    },
+    {
+      "date": "2025-02-27",
+      "equity": 1070303.9,
+      "cash": 175357.1,
+      "position_count": 4
+    },
+    {
+      "date": "2025-02-28",
+      "equity": 1014344.6,
+      "cash": 175357.1,
+      "position_count": 4
+    },
+    {
+      "date": "2025-03-03",
+      "equity": 1011868.2,
+      "cash": 175357.1,
+      "position_count": 4
+    },
+    {
+      "date": "2025-03-04",
+      "equity": 1027213.5,
+      "cash": 175357.1,
+      "position_count": 4
+    },
+    {
+      "date": "2025-03-05",
+      "equity": 1041710.1,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-06",
+      "equity": 1072978.4,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-07",
+      "equity": 1069611.2,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-10",
+      "equity": 1069909.3,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-11",
+      "equity": 1064947.8,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-12",
+      "equity": 1059474.0,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-13",
+      "equity": 1034042.7,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-14",
+      "equity": 1059515.7,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-17",
+      "equity": 1059960.3,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-18",
+      "equity": 1074562.9,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-19",
+      "equity": 1070185.4,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-20",
+      "equity": 1054998.2,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-21",
+      "equity": 1025514.1,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-24",
+      "equity": 1028884.6,
+      "cash": 13.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-03-25",
+      "equity": 1011372.9,
+      "cash": 201697.7,
+      "position_count": 4
+    },
+    {
+      "date": "2025-03-26",
+      "equity": 1013066.3,
+      "cash": 201697.7,
+      "position_count": 4
+    },
+    {
+      "date": "2025-03-27",
+      "equity": 1011854.3,
+      "cash": 201697.7,
+      "position_count": 4
+    },
+    {
+      "date": "2025-03-28",
+      "equity": 1005758.7,
+      "cash": 402146.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-03-31",
+      "equity": 999238.2,
+      "cash": 817656.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-01",
+      "equity": 999744.0,
+      "cash": 817656.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-02",
+      "equity": 997889.4,
+      "cash": 817656.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-03",
+      "equity": 995191.8,
+      "cash": 817656.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-07",
+      "equity": 977488.8,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-08",
+      "equity": 984708.5,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-09",
+      "equity": 981642.6,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-10",
+      "equity": 978873.4,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-11",
+      "equity": 979466.8,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-14",
+      "equity": 980950.3,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-15",
+      "equity": 978477.8,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-16",
+      "equity": 975214.1,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-17",
+      "equity": 975708.6,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-18",
+      "equity": 975708.6,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-21",
+      "equity": 977389.9,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-22",
+      "equity": 977884.4,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-23",
+      "equity": 977686.6,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-24",
+      "equity": 978477.8,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-25",
+      "equity": 976499.8,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-28",
+      "equity": 973631.7,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-29",
+      "equity": 972247.1,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-04-30",
+      "equity": 971258.1,
+      "cash": 782161.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-06",
+      "equity": 971752.6,
+      "cash": 971752.6,
+      "position_count": 0
+    },
+    {
+      "date": "2025-05-07",
+      "equity": 971752.6,
+      "cash": 777429.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-08",
+      "equity": 972088.8,
+      "cash": 388813.8,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-09",
+      "equity": 958843.2,
+      "cash": 159.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-12",
+      "equity": 970221.8,
+      "cash": 22.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-13",
+      "equity": 962747.8,
+      "cash": 22.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-14",
+      "equity": 976432.3,
+      "cash": 22.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-15",
+      "equity": 965509.8,
+      "cash": 50.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-16",
+      "equity": 961061.3,
+      "cash": 50.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-19",
+      "equity": 958601.8,
+      "cash": 50.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-20",
+      "equity": 969836.0,
+      "cash": 50.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-21",
+      "equity": 972646.3,
+      "cash": 50.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-22",
+      "equity": 960131.0,
+      "cash": 50.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-23",
+      "equity": 953002.8,
+      "cash": 50.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-05-26",
+      "equity": 946395.6,
+      "cash": 370041.7,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-27",
+      "equity": 951783.4,
+      "cash": 370041.7,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-28",
+      "equity": 948442.8,
+      "cash": 370041.7,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-29",
+      "equity": 960050.3,
+      "cash": 370041.7,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-30",
+      "equity": 949619.3,
+      "cash": 370041.7,
+      "position_count": 3
+    },
+    {
+      "date": "2025-06-03",
+      "equity": 954946.9,
+      "cash": 185104.3,
+      "position_count": 4
+    },
+    {
+      "date": "2025-06-04",
+      "equity": 962012.2,
+      "cash": 185104.3,
+      "position_count": 4
+    },
+    {
+      "date": "2025-06-05",
+      "equity": 974318.4,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-06",
+      "equity": 970738.9,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-09",
+      "equity": 986958.7,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-10",
+      "equity": 985061.4,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-11",
+      "equity": 999768.5,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-12",
+      "equity": 998322.0,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-13",
+      "equity": 980778.6,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-16",
+      "equity": 1000234.1,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-17",
+      "equity": 993670.6,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-18",
+      "equity": 983816.4,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-19",
+      "equity": 964415.3,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-20",
+      "equity": 964285.5,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-23",
+      "equity": 979053.7,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-24",
+      "equity": 1004122.9,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-25",
+      "equity": 1019307.3,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-26",
+      "equity": 1010743.4,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-27",
+      "equity": 1011405.4,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-06-30",
+      "equity": 1025547.0,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-01",
+      "equity": 1026670.2,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-02",
+      "equity": 1015076.2,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-03",
+      "equity": 1012331.7,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-04",
+      "equity": 1011423.5,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-07",
+      "equity": 1009474.1,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-08",
+      "equity": 1028274.1,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-09",
+      "equity": 1022451.9,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-10",
+      "equity": 1027580.0,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-11",
+      "equity": 1041750.2,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-14",
+      "equity": 1033804.5,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-15",
+      "equity": 1043529.6,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-16",
+      "equity": 1046789.6,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-17",
+      "equity": 1052305.3,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-18",
+      "equity": 1060488.9,
+      "cash": 11.2,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-21",
+      "equity": 1070264.6,
+      "cash": 453582.7,
+      "position_count": 3
+    },
+    {
+      "date": "2025-07-22",
+      "equity": 1065988.0,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-07-23",
+      "equity": 1066140.9,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-07-24",
+      "equity": 1069954.8,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-07-25",
+      "equity": 1069558.3,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-07-28",
+      "equity": 1071435.9,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-07-29",
+      "equity": 1075248.0,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-07-30",
+      "equity": 1076128.1,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-07-31",
+      "equity": 1068205.2,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-01",
+      "equity": 1069378.7,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-04",
+      "equity": 1078418.2,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-05",
+      "equity": 1083362.9,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-06",
+      "equity": 1090153.2,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-07",
+      "equity": 1090889.3,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-08",
+      "equity": 1087790.2,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-11",
+      "equity": 1091248.5,
+      "cash": 660690.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-12",
+      "equity": 1091435.2,
+      "cash": 880900.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-08-13",
+      "equity": 1094642.8,
+      "cash": 880900.0,
+      "position_count": 1
+    },
+    {
+      "date": "2025-08-14",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-15",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-18",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-19",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-20",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-21",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-22",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-25",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-26",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-27",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-28",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-29",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-01",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-02",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-03",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-04",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-05",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-08",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-09",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-10",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-11",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-12",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-15",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-16",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-17",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-18",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-19",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-22",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-23",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-24",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-25",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-26",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-29",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-09-30",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-09",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-10",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-13",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-14",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-15",
+      "equity": 1092310.0,
+      "cash": 1092310.0,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-16",
+      "equity": 1092310.0,
+      "cash": 873859.2,
+      "position_count": 1
+    },
+    {
+      "date": "2025-10-17",
+      "equity": 1087412.0,
+      "cash": 873859.2,
+      "position_count": 1
+    },
+    {
+      "date": "2025-10-20",
+      "equity": 1088636.5,
+      "cash": 655707.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-21",
+      "equity": 1089814.8,
+      "cash": 655707.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-22",
+      "equity": 1088680.4,
+      "cash": 218653.6,
+      "position_count": 4
+    },
+    {
+      "date": "2025-10-23",
+      "equity": 1093965.4,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-10-24",
+      "equity": 1093837.4,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-10-27",
+      "equity": 1101489.3,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-10-28",
+      "equity": 1097592.8,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-10-29",
+      "equity": 1105369.5,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-10-30",
+      "equity": 1095331.3,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-10-31",
+      "equity": 1088302.0,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-03",
+      "equity": 1097395.9,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-04",
+      "equity": 1104176.5,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-05",
+      "equity": 1101223.7,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-06",
+      "equity": 1113012.9,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-07",
+      "equity": 1110376.6,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-10",
+      "equity": 1125273.6,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-11",
+      "equity": 1122180.2,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-12",
+      "equity": 1135518.7,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-13",
+      "equity": 1138121.3,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-14",
+      "equity": 1125492.6,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-17",
+      "equity": 1113485.7,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-18",
+      "equity": 1099866.3,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-19",
+      "equity": 1103887.2,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-20",
+      "equity": 1107175.1,
+      "cash": 5.8,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-21",
+      "equity": 1083068.4,
+      "cash": 208905.5,
+      "position_count": 4
+    },
+    {
+      "date": "2025-11-24",
+      "equity": 1079923.3,
+      "cash": 208905.5,
+      "position_count": 4
+    },
+    {
+      "date": "2025-11-25",
+      "equity": 1086616.4,
+      "cash": 208905.5,
+      "position_count": 4
+    },
+    {
+      "date": "2025-11-26",
+      "equity": 1085053.9,
+      "cash": 208905.5,
+      "position_count": 4
+    },
+    {
+      "date": "2025-11-27",
+      "equity": 1086327.2,
+      "cash": 32.9,
+      "position_count": 5
+    },
+    {
+      "date": "2025-11-28",
+      "equity": 1082402.5,
+      "cash": 92.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-01",
+      "equity": 1094907.3,
+      "cash": 92.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-02",
+      "equity": 1095068.1,
+      "cash": 92.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-03",
+      "equity": 1084905.8,
+      "cash": 92.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-04",
+      "equity": 1087047.4,
+      "cash": 92.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-05",
+      "equity": 1092458.5,
+      "cash": 92.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-08",
+      "equity": 1106187.0,
+      "cash": 215162.4,
+      "position_count": 4
+    },
+    {
+      "date": "2025-12-09",
+      "equity": 1110452.6,
+      "cash": 185.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-10",
+      "equity": 1109982.8,
+      "cash": 185.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-11",
+      "equity": 1090259.1,
+      "cash": 185.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-12",
+      "equity": 1105857.7,
+      "cash": 185.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-15",
+      "equity": 1084253.4,
+      "cash": 185.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-16",
+      "equity": 1061908.7,
+      "cash": 185.1,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-17",
+      "equity": 1092834.7,
+      "cash": 219209.5,
+      "position_count": 4
+    },
+    {
+      "date": "2025-12-18",
+      "equity": 1079376.4,
+      "cash": 425985.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-12-19",
+      "equity": 1080599.4,
+      "cash": 425985.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-12-22",
+      "equity": 1100680.4,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-23",
+      "equity": 1103651.9,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-24",
+      "equity": 1114624.7,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-25",
+      "equity": 1115517.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-26",
+      "equity": 1113310.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-29",
+      "equity": 1114914.8,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-30",
+      "equity": 1122949.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2025-12-31",
+      "equity": 1110667.8,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-05",
+      "equity": 1141122.6,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-06",
+      "equity": 1155271.0,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-07",
+      "equity": 1160595.6,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-08",
+      "equity": 1154131.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-09",
+      "equity": 1161841.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-12",
+      "equity": 1185138.9,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-13",
+      "equity": 1163230.6,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-14",
+      "equity": 1170612.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-15",
+      "equity": 1181155.9,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-16",
+      "equity": 1189646.1,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-19",
+      "equity": 1180432.7,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-20",
+      "equity": 1163200.6,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-21",
+      "equity": 1179639.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-22",
+      "equity": 1184311.7,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-23",
+      "equity": 1178893.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 1169924.2,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-27",
+      "equity": 1189437.3,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-28",
+      "equity": 1197304.6,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-29",
+      "equity": 1184250.3,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-30",
+      "equity": 1188001.1,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-02",
+      "equity": 1151239.5,
+      "cash": 528.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-03",
+      "equity": 1164940.9,
+      "cash": 212141.4,
+      "position_count": 4
+    },
+    {
+      "date": "2026-02-04",
+      "equity": 1148403.3,
+      "cash": 212141.4,
+      "position_count": 4
+    },
+    {
+      "date": "2026-02-05",
+      "equity": 1136748.7,
+      "cash": 212141.4,
+      "position_count": 4
+    },
+    {
+      "date": "2026-02-06",
+      "equity": 1128281.7,
+      "cash": 676950.4,
+      "position_count": 2
+    },
+    {
+      "date": "2026-02-09",
+      "equity": 1142488.2,
+      "cash": 919498.8,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-10",
+      "equity": 1142970.6,
+      "cash": 919498.8,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-11",
+      "equity": 1141885.2,
+      "cash": 919498.8,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-12",
+      "equity": 1139955.6,
+      "cash": 919498.8,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-13",
+      "equity": 1136699.4,
+      "cash": 919498.8,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-24",
+      "equity": 1136699.4,
+      "cash": 919498.8,
+      "position_count": 1
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 1136458.2,
+      "cash": 689645.1,
+      "position_count": 2
+    },
+    {
+      "date": "2026-02-26",
+      "equity": 1135223.4,
+      "cash": 459786.7,
+      "position_count": 3
+    },
+    {
+      "date": "2026-02-27",
+      "equity": 1135870.9,
+      "cash": 459786.7,
+      "position_count": 3
+    },
+    {
+      "date": "2026-03-02",
+      "equity": 1137813.7,
+      "cash": 668545.3,
+      "position_count": 2
+    },
+    {
+      "date": "2026-03-03",
+      "equity": 1131407.3,
+      "cash": 891493.4,
+      "position_count": 1
+    },
+    {
+      "date": "2026-03-04",
+      "equity": 1133156.9,
+      "cash": 891493.4,
+      "position_count": 1
+    },
+    {
+      "date": "2026-03-05",
+      "equity": 1137093.5,
+      "cash": 891493.4,
+      "position_count": 1
+    },
+    {
+      "date": "2026-03-06",
+      "equity": 1139717.9,
+      "cash": 891493.4,
+      "position_count": 1
+    },
+    {
+      "date": "2026-03-09",
+      "equity": 1142998.4,
+      "cash": 891493.4,
+      "position_count": 1
+    },
+    {
+      "date": "2026-03-10",
+      "equity": 1142779.7,
+      "cash": 891493.4,
+      "position_count": 1
+    },
+    {
+      "date": "2026-03-11",
+      "equity": 1149122.0,
+      "cash": 668819.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-03-12",
+      "equity": 1153050.5,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-13",
+      "equity": 1148013.3,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-16",
+      "equity": 1155024.9,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-17",
+      "equity": 1128090.0,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-18",
+      "equity": 1153004.9,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-19",
+      "equity": 1143737.6,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-20",
+      "equity": 1158664.8,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-23",
+      "equity": 1122620.2,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-24",
+      "equity": 1134929.2,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-25",
+      "equity": 1162410.4,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-26",
+      "equity": 1148577.1,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-27",
+      "equity": 1148440.9,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-30",
+      "equity": 1132998.3,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-31",
+      "equity": 1102909.9,
+      "cash": 136.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-01",
+      "equity": 1120598.5,
+      "cash": 216003.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-02",
+      "equity": 1100937.8,
+      "cash": 643530.8,
+      "position_count": 2
+    },
+    {
+      "date": "2026-04-03",
+      "equity": 1097489.9,
+      "cash": 876008.9,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-07",
+      "equity": 1098893.9,
+      "cash": 876008.9,
+      "position_count": 1
+    },
+    {
+      "date": "2026-04-08",
+      "equity": 1115390.9,
+      "cash": 657066.2,
+      "position_count": 2
+    },
+    {
+      "date": "2026-04-09",
+      "equity": 1110359.6,
+      "cash": 219251.8,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-10",
+      "equity": 1131371.5,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-13",
+      "equity": 1131325.4,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-14",
+      "equity": 1162255.9,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-15",
+      "equity": 1153900.7,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-16",
+      "equity": 1197058.5,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-17",
+      "equity": 1227713.8,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-20",
+      "equity": 1231743.2,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-21",
+      "equity": 1225809.2,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-22",
+      "equity": 1265787.7,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-23",
+      "equity": 1246511.5,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-24",
+      "equity": 1211717.0,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-27",
+      "equity": 1205526.3,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-28",
+      "equity": 1184510.6,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-29",
+      "equity": 1200745.3,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-30",
+      "equity": 1193121.8,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-06",
+      "equity": 1229427.6,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-07",
+      "equity": 1263499.5,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-08",
+      "equity": 1253658.5,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-11",
+      "equity": 1289279.8,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-12",
+      "equity": 1297614.4,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-13",
+      "equity": 1342966.3,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-14",
+      "equity": 1320806.0,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-15",
+      "equity": 1306127.6,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-18",
+      "equity": 1297241.0,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-19",
+      "equity": 1284443.2,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-20",
+      "equity": 1283716.4,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-21",
+      "equity": 1250130.7,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-22",
+      "equity": 1297142.2,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-25",
+      "equity": 1333899.8,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-26",
+      "equity": 1341772.1,
+      "cash": 27.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-27",
+      "equity": 1335802.4,
+      "cash": 324702.8,
+      "position_count": 4
+    },
+    {
+      "date": "2026-05-28",
+      "equity": 1360093.0,
+      "cash": 324702.8,
+      "position_count": 4
+    },
+    {
+      "date": "2026-05-29",
+      "equity": 1347086.6,
+      "cash": 107.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-01",
+      "equity": 1355863.1,
+      "cash": 107.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-02",
+      "equity": 1368706.0,
+      "cash": 107.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-03",
+      "equity": 1258699.9,
+      "cash": 141973.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-04",
+      "equity": 1262191.8,
+      "cash": 242.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-05",
+      "equity": 1236702.8,
+      "cash": 242.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-08",
+      "equity": 1208203.2,
+      "cash": 209285.2,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-09",
+      "equity": 1222853.8,
+      "cash": 209285.2,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-10",
+      "equity": 1191634.2,
+      "cash": 209285.2,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-11",
+      "equity": 1182767.2,
+      "cash": 209285.2,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-12",
+      "equity": 1186795.8,
+      "cash": 464327.6,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-15",
+      "equity": 1182995.4,
+      "cash": 782350.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-16",
+      "equity": 1184623.6,
+      "cash": 107.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-17",
+      "equity": 1191942.5,
+      "cash": 649.1,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-18",
+      "equity": 1205627.5,
+      "cash": 649.1,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-22",
+      "equity": 1223459.1,
+      "cash": 649.1,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-23",
+      "equity": 1193129.1,
+      "cash": 649.1,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-24",
+      "equity": 1208367.1,
+      "cash": 649.1,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-25",
+      "equity": 1222778.6,
+      "cash": 284059.1,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-26",
+      "equity": 1199680.0,
+      "cash": 284059.1,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-29",
+      "equity": 1200154.6,
+      "cash": 284059.1,
+      "position_count": 4
+    },
+    {
+      "date": "2026-06-30",
+      "equity": 1223441.9,
+      "cash": 284059.1,
+      "position_count": 4
+    },
+    {
+      "date": "2026-07-01",
+      "equity": 1227463.9,
+      "cash": 94.1,
+      "position_count": 5
+    },
+    {
+      "date": "2026-07-02",
+      "equity": 1199446.3,
+      "cash": 94.1,
+      "position_count": 5
+    }
+  ],
+  "stock_summaries": [
+    {
+      "code": "sz159967",
+      "name": "创业板成长ETF华夏",
+      "profit": 94879.7,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 40.5
+    },
+    {
+      "code": "sz159949",
+      "name": "创业板50ETF华安",
+      "profit": 54748.0,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 48.5
+    },
+    {
+      "code": "sh515050",
+      "name": "通信ETF华夏",
+      "profit": 54170.9,
+      "trade_count": 3,
+      "wins": 3,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 67.7
+    },
+    {
+      "code": "sh513750",
+      "name": "港股通非银ETF广发",
+      "profit": 49230.7,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 55.0
+    },
+    {
+      "code": "sz159363",
+      "name": "创业板人工智能ETF华宝",
+      "profit": 36080.1,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 64.0
+    },
+    {
+      "code": "sz159869",
+      "name": "游戏ETF华夏",
+      "profit": 35272.4,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 70.0
+    },
+    {
+      "code": "sh513770",
+      "name": "港股互联网ETF华宝",
+      "profit": 28031.7,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 54.0
+    },
+    {
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "profit": 26316.9,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 70.0
+    },
+    {
+      "code": "sz159687",
+      "name": "亚太精选ETF南方",
+      "profit": 22238.8,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 53.0
+    },
+    {
+      "code": "sh513100",
+      "name": "纳指ETF国泰",
+      "profit": 20598.1,
+      "trade_count": 4,
+      "wins": 2,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 41.2
+    },
+    {
+      "code": "sz159530",
+      "name": "机器人ETF易方达",
+      "profit": 20150.5,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 36.5
+    },
+    {
+      "code": "sz159941",
+      "name": "纳指ETF广发",
+      "profit": 20028.7,
+      "trade_count": 4,
+      "wins": 2,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 41.8
+    },
+    {
+      "code": "sh562500",
+      "name": "机器人ETF华夏",
+      "profit": 18109.0,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 37.0
+    },
+    {
+      "code": "sh513190",
+      "name": "港股通金融ETF华夏",
+      "profit": 17342.8,
+      "trade_count": 3,
+      "wins": 2,
+      "win_rate_pct": 66.67,
+      "avg_hold_days": 67.7
+    },
+    {
+      "code": "sh512480",
+      "name": "半导体ETF国联安",
+      "profit": 16517.9,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 30.0
+    },
+    {
+      "code": "sz159792",
+      "name": "港股通互联网ETF富国",
+      "profit": 16344.7,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 71.0
+    },
+    {
+      "code": "sz159636",
+      "name": "港股通科技30ETF工银",
+      "profit": 16317.5,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 73.0
+    },
+    {
+      "code": "sz159611",
+      "name": "电力ETF广发",
+      "profit": 12223.0,
+      "trade_count": 3,
+      "wins": 2,
+      "win_rate_pct": 66.67,
+      "avg_hold_days": 38.3
+    },
+    {
+      "code": "sz159732",
+      "name": "消费电子ETF华夏",
+      "profit": 9790.0,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 75.0
+    },
+    {
+      "code": "sz159819",
+      "name": "人工智能ETF易方达",
+      "profit": 9075.6,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 48.0
+    },
+    {
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "profit": 4887.5,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 70.0
+    },
+    {
+      "code": "sh515980",
+      "name": "人工智能ETF华富",
+      "profit": 3535.9,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 24.0
+    },
+    {
+      "code": "sz159937",
+      "name": "黄金ETF博时",
+      "profit": 2116.5,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 70.0
+    },
+    {
+      "code": "sz159934",
+      "name": "黄金ETF易方达",
+      "profit": 1797.4,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 70.0
+    },
+    {
+      "code": "sh518600",
+      "name": "金ETF广发",
+      "profit": 1584.6,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 70.0
+    },
+    {
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "profit": 1315.8,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 15.0
+    },
+    {
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "profit": 1260.7,
+      "trade_count": 2,
+      "wins": 1,
+      "win_rate_pct": 50.0,
+      "avg_hold_days": 58.5
+    },
+    {
+      "code": "sz159845",
+      "name": "中证1000ETF华夏",
+      "profit": 799.7,
+      "trade_count": 1,
+      "wins": 1,
+      "win_rate_pct": 100.0,
+      "avg_hold_days": 16.0
+    },
+    {
+      "code": "sh512100",
+      "name": "中证1000ETF南方",
+      "profit": 0.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 16.0
+    },
+    {
+      "code": "sh560010",
+      "name": "中证1000ETF广发",
+      "profit": -291.6,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 16.0
+    },
+    {
+      "code": "sh588220",
+      "name": "科创100ETF鹏华",
+      "profit": -3379.6,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 6.0
+    },
+    {
+      "code": "sh560780",
+      "name": "半导体设备ETF广发",
+      "profit": -3698.2,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 5.0
+    },
+    {
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "profit": -4745.3,
+      "trade_count": 2,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 22.0
+    },
+    {
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "profit": -5302.5,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 12.0
+    },
+    {
+      "code": "sh513050",
+      "name": "中概互联网ETF易方达",
+      "profit": -5555.5,
+      "trade_count": 4,
+      "wins": 1,
+      "win_rate_pct": 25.0,
+      "avg_hold_days": 23.2
+    },
+    {
+      "code": "sz159985",
+      "name": "豆粕ETF华夏",
+      "profit": -5736.2,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 29.0
+    },
+    {
+      "code": "sh513130",
+      "name": "恒生科技ETF华泰柏瑞",
+      "profit": -6136.4,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 11.0
+    },
+    {
+      "code": "sz159952",
+      "name": "创业板ETF广发",
+      "profit": -6807.6,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sh588010",
+      "name": "科创新材料ETF博时",
+      "profit": -7646.4,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 18.0
+    },
+    {
+      "code": "sz159842",
+      "name": "券商ETF银华",
+      "profit": -7679.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 20.0
+    },
+    {
+      "code": "sh588200",
+      "name": "科创芯片ETF嘉实",
+      "profit": -7778.4,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 9.0
+    },
+    {
+      "code": "sh512000",
+      "name": "券商ETF华宝",
+      "profit": -8069.7,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 20.0
+    },
+    {
+      "code": "sh513980",
+      "name": "港股科技ETF景顺",
+      "profit": -8479.8,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 9.0
+    },
+    {
+      "code": "sz159682",
+      "name": "创业板50ETF景顺",
+      "profit": -8832.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 21.0
+    },
+    {
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "profit": -9310.9,
+      "trade_count": 3,
+      "wins": 1,
+      "win_rate_pct": 33.33,
+      "avg_hold_days": 44.0
+    },
+    {
+      "code": "sh512070",
+      "name": "证券保险ETF易方达",
+      "profit": -9551.1,
+      "trade_count": 2,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 45.5
+    },
+    {
+      "code": "sz159502",
+      "name": "标普生物科技ETF嘉实",
+      "profit": -9900.3,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 61.0
+    },
+    {
+      "code": "sz159748",
+      "name": "创新药ETF富国",
+      "profit": -11655.6,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 7.0
+    },
+    {
+      "code": "sh515880",
+      "name": "通信ETF国泰",
+      "profit": -13442.0,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 37.0
+    },
+    {
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "profit": -13940.1,
+      "trade_count": 4,
+      "wins": 1,
+      "win_rate_pct": 25.0,
+      "avg_hold_days": 37.5
+    },
+    {
+      "code": "sh512400",
+      "name": "有色金属ETF南方",
+      "profit": -15511.2,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 33.0
+    },
+    {
+      "code": "sh512880",
+      "name": "证券ETF国泰",
+      "profit": -16762.8,
+      "trade_count": 2,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 20.5
+    },
+    {
+      "code": "sz159509",
+      "name": "纳指科技ETF景顺",
+      "profit": -27975.7,
+      "trade_count": 3,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 29.7
+    },
+    {
+      "code": "sz159381",
+      "name": "创业板人工智能ETF华夏",
+      "profit": -76986.7,
+      "trade_count": 1,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 55.0
+    },
+    {
+      "code": "sh515220",
+      "name": "煤炭ETF国泰",
+      "profit": -100144.2,
+      "trade_count": 2,
+      "wins": 0,
+      "win_rate_pct": 0.0,
+      "avg_hold_days": 10.0
+    }
+  ],
+  "trades": [
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159611",
+      "name": "电力ETF广发",
+      "buy_date": "2023-04-13",
+      "buy_price": 0.891,
+      "sell_date": "2023-06-29",
+      "sell_price": 0.944,
+      "shares": 224400,
+      "buy_amount": 199940.4,
+      "sell_amount": 211833.6,
+      "profit": 11893.2,
+      "profit_pct": 5.95,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.0% | 距隧道1.0% | RSI51 | 量比1.0)",
+      "sell_reason": "持仓50天到期(盈5.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159748",
+      "name": "创新药ETF富国",
+      "buy_date": "2023-04-17",
+      "buy_price": 0.755,
+      "sell_date": "2023-04-24",
+      "sell_price": 0.711,
+      "shares": 264900,
+      "buy_amount": 199999.5,
+      "sell_amount": 188343.9,
+      "profit": -11655.6,
+      "profit_pct": -5.83,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.1% | 距隧道3.9% | RSI69 | 量比1.4)",
+      "sell_reason": "EMA12下穿隧道(盈-5.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "buy_date": "2023-04-18",
+      "buy_price": 1.101,
+      "sell_date": "2023-06-01",
+      "sell_price": 1.071,
+      "shares": 181600,
+      "buy_amount": 199941.6,
+      "sell_amount": 194493.6,
+      "profit": -5448.0,
+      "profit_pct": -2.72,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.0% | 距隧道2.5% | RSI79 | 量比1.3)",
+      "sell_reason": "EMA12下穿隧道(盈-2.7%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512000",
+      "name": "券商ETF华宝",
+      "buy_date": "2023-05-04",
+      "buy_price": 0.899,
+      "sell_date": "2023-05-24",
+      "sell_price": 0.862,
+      "shares": 218100,
+      "buy_amount": 196071.9,
+      "sell_amount": 188002.2,
+      "profit": -8069.7,
+      "profit_pct": -4.12,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.8% | 距隧道0.3% | RSI46 | 量比0.9)",
+      "sell_reason": "EMA12下穿隧道(盈-4.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512880",
+      "name": "证券ETF国泰",
+      "buy_date": "2023-05-04",
+      "buy_price": 0.939,
+      "sell_date": "2023-05-24",
+      "sell_price": 0.899,
+      "shares": 208800,
+      "buy_amount": 196063.2,
+      "sell_amount": 187711.2,
+      "profit": -8352.0,
+      "profit_pct": -4.26,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.8% | 距隧道0.5% | RSI47 | 量比0.9)",
+      "sell_reason": "EMA12下穿隧道(盈-4.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159842",
+      "name": "券商ETF银华",
+      "buy_date": "2023-05-04",
+      "buy_price": 0.894,
+      "sell_date": "2023-05-24",
+      "sell_price": 0.859,
+      "shares": 219400,
+      "buy_amount": 196143.6,
+      "sell_amount": 188464.6,
+      "profit": -7679.0,
+      "profit_pct": -3.91,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.9% | 距隧道0.5% | RSI44 | 量比0.9)",
+      "sell_reason": "EMA12下穿隧道(盈-3.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh515050",
+      "name": "通信ETF华夏",
+      "buy_date": "2023-06-02",
+      "buy_price": 0.977,
+      "sell_date": "2023-07-27",
+      "sell_price": 1.002,
+      "shares": 194100,
+      "buy_amount": 189635.7,
+      "sell_amount": 194488.2,
+      "profit": 4852.5,
+      "profit_pct": 2.56,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.9% | 距隧道4.5% | RSI79 | 量比1.1)",
+      "sell_reason": "高位回撤(-10.6%,峰值1.121)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh515980",
+      "name": "人工智能ETF华富",
+      "buy_date": "2023-06-02",
+      "buy_price": 1.019,
+      "sell_date": "2023-06-26",
+      "sell_price": 1.038,
+      "shares": 186100,
+      "buy_amount": 189635.9,
+      "sell_amount": 193171.8,
+      "profit": 3535.9,
+      "profit_pct": 1.86,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.6% | 距隧道5.6% | RSI74 | 量比1.2)",
+      "sell_reason": "高位回撤(-10.1%,峰值1.155)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh562500",
+      "name": "机器人ETF华夏",
+      "buy_date": "2023-06-02",
+      "buy_price": 0.814,
+      "sell_date": "2023-06-07",
+      "sell_price": 0.788,
+      "shares": 233000,
+      "buy_amount": 189662.0,
+      "sell_amount": 183604.0,
+      "profit": -6058.0,
+      "profit_pct": -3.19,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.0% | 距隧道2.5% | RSI68 | 量比1.1)",
+      "sell_reason": "EMA12下穿隧道(盈-3.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159819",
+      "name": "人工智能ETF易方达",
+      "buy_date": "2023-06-02",
+      "buy_price": 0.916,
+      "sell_date": "2023-06-28",
+      "sell_price": 0.896,
+      "shares": 207100,
+      "buy_amount": 189703.6,
+      "sell_amount": 185561.6,
+      "profit": -4142.0,
+      "profit_pct": -2.18,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.7% | 距隧道4.6% | RSI70 | 量比1.4)",
+      "sell_reason": "高位回撤(-13.2%,峰值1.032)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "buy_date": "2023-06-09",
+      "buy_price": 1.115,
+      "sell_date": "2023-06-19",
+      "sell_price": 1.078,
+      "shares": 164800,
+      "buy_amount": 183752.0,
+      "sell_amount": 177654.4,
+      "profit": -6097.6,
+      "profit_pct": -3.32,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.9% | 距隧道2.4% | RSI51 | 量比1.1)",
+      "sell_reason": "EMA12下穿隧道(盈-3.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2023-07-18",
+      "buy_price": 0.928,
+      "sell_date": "2023-09-26",
+      "sell_price": 0.956,
+      "shares": 206900,
+      "buy_amount": 192003.2,
+      "sell_amount": 197796.4,
+      "profit": 5793.2,
+      "profit_pct": 3.02,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.3% | 距隧道0.7% | RSI72 | 量比0.9)",
+      "sell_reason": "持仓50天到期(盈3.0%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2023-07-26",
+      "buy_price": 3.025,
+      "sell_date": "2023-10-12",
+      "sell_price": 3.06,
+      "shares": 63500,
+      "buy_amount": 192087.5,
+      "sell_amount": 194310.0,
+      "profit": 2222.5,
+      "profit_pct": 1.16,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.3% | 距隧道1.3% | RSI68 | 量比0.9)",
+      "sell_reason": "持仓50天到期(盈1.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512070",
+      "name": "证券保险ETF易方达",
+      "buy_date": "2023-07-26",
+      "buy_price": 0.665,
+      "sell_date": "2023-09-19",
+      "sell_price": 0.665,
+      "shares": 288800,
+      "buy_amount": 192052.0,
+      "sell_amount": 192052.0,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.1% | 距隧道4.6% | RSI71 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈0.0%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "buy_date": "2023-07-26",
+      "buy_price": 1.117,
+      "sell_date": "2023-10-12",
+      "sell_price": 1.13,
+      "shares": 171900,
+      "buy_amount": 192012.3,
+      "sell_amount": 194247.0,
+      "profit": 2234.7,
+      "profit_pct": 1.16,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.2% | 距隧道2.9% | RSI75 | 量比1.0)",
+      "sell_reason": "持仓50天到期(盈1.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159611",
+      "name": "电力ETF广发",
+      "buy_date": "2023-08-08",
+      "buy_price": 0.933,
+      "sell_date": "2023-08-09",
+      "sell_price": 0.922,
+      "shares": 208600,
+      "buy_amount": 194623.8,
+      "sell_amount": 192329.2,
+      "profit": -2294.6,
+      "profit_pct": -1.18,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.0% | 距隧道0.7% | RSI54 | 量比0.8)",
+      "sell_reason": "EMA12下穿隧道(盈-1.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513050",
+      "name": "中概互联网ETF易方达",
+      "buy_date": "2023-08-30",
+      "buy_price": 1.064,
+      "sell_date": "2023-09-12",
+      "sell_price": 1.039,
+      "shares": 180700,
+      "buy_amount": 192264.8,
+      "sell_amount": 187747.3,
+      "profit": -4517.5,
+      "profit_pct": -2.35,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.4% | 距隧道1.4% | RSI46 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈-2.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159941",
+      "name": "纳指ETF广发",
+      "buy_date": "2023-10-13",
+      "buy_price": 0.847,
+      "sell_date": "2023-10-20",
+      "sell_price": 0.82,
+      "shares": 228100,
+      "buy_amount": 193200.7,
+      "sell_amount": 187042.0,
+      "profit": -6158.7,
+      "profit_pct": -3.19,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.5% | 距隧道1.8% | RSI48 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈-3.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513100",
+      "name": "纳指ETF国泰",
+      "buy_date": "2023-10-16",
+      "buy_price": 1.111,
+      "sell_date": "2023-10-20",
+      "sell_price": 1.086,
+      "shares": 173900,
+      "buy_amount": 193202.9,
+      "sell_amount": 188855.4,
+      "profit": -4347.5,
+      "profit_pct": -2.25,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.9% | 距隧道1.0% | RSI42 | 量比1.1)",
+      "sell_reason": "EMA12下穿隧道(盈-2.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "buy_date": "2023-10-19",
+      "buy_price": 4.547,
+      "sell_date": "2023-12-28",
+      "sell_price": 4.662,
+      "shares": 42500,
+      "buy_amount": 193247.5,
+      "sell_amount": 198135.0,
+      "profit": 4887.5,
+      "profit_pct": 2.53,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.2% | 距隧道1.3% | RSI42 | 量比0.7)",
+      "sell_reason": "持仓50天到期(盈2.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh518600",
+      "name": "金ETF广发",
+      "buy_date": "2023-10-20",
+      "buy_price": 4.562,
+      "sell_date": "2023-12-29",
+      "sell_price": 4.6,
+      "shares": 41700,
+      "buy_amount": 190235.4,
+      "sell_amount": 191820.0,
+      "profit": 1584.6,
+      "profit_pct": 0.83,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.1% | 距隧道1.7% | RSI47 | 量比1.2)",
+      "sell_reason": "持仓50天到期(盈0.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159934",
+      "name": "黄金ETF易方达",
+      "buy_date": "2023-10-20",
+      "buy_price": 4.551,
+      "sell_date": "2023-12-29",
+      "sell_price": 4.594,
+      "shares": 41800,
+      "buy_amount": 190231.8,
+      "sell_amount": 192029.2,
+      "profit": 1797.4,
+      "profit_pct": 0.94,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.2% | 距隧道1.7% | RSI47 | 量比1.1)",
+      "sell_reason": "持仓50天到期(盈0.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159937",
+      "name": "黄金ETF博时",
+      "buy_date": "2023-10-20",
+      "buy_price": 4.589,
+      "sell_date": "2023-12-29",
+      "sell_price": 4.64,
+      "shares": 41500,
+      "buy_amount": 190443.5,
+      "sell_amount": 192560.0,
+      "profit": 2116.5,
+      "profit_pct": 1.11,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.2% | 距隧道1.8% | RSI47 | 量比0.9)",
+      "sell_reason": "持仓50天到期(盈1.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512880",
+      "name": "证券ETF国泰",
+      "buy_date": "2023-11-08",
+      "buy_price": 0.979,
+      "sell_date": "2023-11-29",
+      "sell_price": 0.936,
+      "shares": 195600,
+      "buy_amount": 191492.4,
+      "sell_amount": 183081.6,
+      "profit": -8410.8,
+      "profit_pct": -4.39,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.4% | 距隧道3.5% | RSI67 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-4.4%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh515220",
+      "name": "煤炭ETF国泰",
+      "buy_date": "2024-04-09",
+      "buy_price": 2.538,
+      "sell_date": "2024-04-12",
+      "sell_price": 1.297,
+      "shares": 75400,
+      "buy_amount": 191365.2,
+      "sell_amount": 97793.8,
+      "profit": -93571.4,
+      "profit_pct": -48.9,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.6% | 距隧道1.3% | RSI52 | 量比0.8)",
+      "sell_reason": "EMA12下穿隧道(盈-48.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh515050",
+      "name": "通信ETF华夏",
+      "buy_date": "2024-04-29",
+      "buy_price": 0.961,
+      "sell_date": "2024-07-12",
+      "sell_price": 1.048,
+      "shares": 179800,
+      "buy_amount": 172787.8,
+      "sell_amount": 188430.4,
+      "profit": 15642.6,
+      "profit_pct": 9.05,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.4% | 距隧道4.3% | RSI57 | 量比1.1)",
+      "sell_reason": "持仓50天到期(盈9.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513100",
+      "name": "纳指ETF国泰",
+      "buy_date": "2024-05-09",
+      "buy_price": 1.314,
+      "sell_date": "2024-07-19",
+      "sell_price": 1.471,
+      "shares": 131500,
+      "buy_amount": 172791.0,
+      "sell_amount": 193436.5,
+      "profit": 20645.5,
+      "profit_pct": 11.95,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.5% | 距隧道1.4% | RSI47 | 量比0.7)",
+      "sell_reason": "持仓50天到期(盈11.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159941",
+      "name": "纳指ETF广发",
+      "buy_date": "2024-05-09",
+      "buy_price": 0.99,
+      "sell_date": "2024-07-19",
+      "sell_price": 1.104,
+      "shares": 174500,
+      "buy_amount": 172755.0,
+      "sell_amount": 192648.0,
+      "profit": 19893.0,
+      "profit_pct": 11.52,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.5% | 距隧道1.5% | RSI47 | 量比0.8)",
+      "sell_reason": "持仓50天到期(盈11.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh515880",
+      "name": "通信ETF国泰",
+      "buy_date": "2024-06-17",
+      "buy_price": 1.209,
+      "sell_date": "2024-07-24",
+      "sell_price": 1.115,
+      "shares": 143000,
+      "buy_amount": 172887.0,
+      "sell_amount": 159445.0,
+      "profit": -13442.0,
+      "profit_pct": -7.78,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.8% | 距隧道5.2% | RSI67 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈-7.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2024-07-02",
+      "buy_price": 3.271,
+      "sell_date": "2024-07-12",
+      "sell_price": 3.158,
+      "shares": 52800,
+      "buy_amount": 172708.8,
+      "sell_amount": 166742.4,
+      "profit": -5966.4,
+      "profit_pct": -3.45,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.3% | 距隧道2.2% | RSI61 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈-3.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513980",
+      "name": "港股科技ETF景顺",
+      "buy_date": "2024-07-15",
+      "buy_price": 0.44,
+      "sell_date": "2024-07-24",
+      "sell_price": 0.419,
+      "shares": 403800,
+      "buy_amount": 177672.0,
+      "sell_amount": 169192.2,
+      "profit": -8479.8,
+      "profit_pct": -4.77,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.2% | 距隧道3.2% | RSI61 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-4.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "buy_date": "2024-07-17",
+      "buy_price": 2.51,
+      "sell_date": "2024-07-29",
+      "sell_price": 2.435,
+      "shares": 70700,
+      "buy_amount": 177457.0,
+      "sell_amount": 172154.5,
+      "profit": -5302.5,
+      "profit_pct": -2.99,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.2% | 距隧道1.2% | RSI68 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈-3.0%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "buy_date": "2024-07-22",
+      "buy_price": 1.746,
+      "sell_date": "2024-07-23",
+      "sell_price": 1.712,
+      "shares": 110600,
+      "buy_amount": 193107.6,
+      "sell_amount": 189347.2,
+      "profit": -3760.4,
+      "profit_pct": -1.95,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.1% | 距隧道1.7% | RSI70 | 量比2.1)",
+      "sell_reason": "EMA12下穿隧道(盈-1.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513100",
+      "name": "纳指ETF国泰",
+      "buy_date": "2024-08-22",
+      "buy_price": 1.471,
+      "sell_date": "2024-09-04",
+      "sell_price": 1.356,
+      "shares": 120100,
+      "buy_amount": 176667.1,
+      "sell_amount": 162855.6,
+      "profit": -13811.5,
+      "profit_pct": -7.82,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.2% | 距隧道3.2% | RSI51 | 量比0.7)",
+      "sell_reason": "EMA12下穿隧道(盈-7.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159509",
+      "name": "纳指科技ETF景顺",
+      "buy_date": "2024-08-23",
+      "buy_price": 1.581,
+      "sell_date": "2024-09-04",
+      "sell_price": 1.445,
+      "shares": 111700,
+      "buy_amount": 176597.7,
+      "sell_amount": 161406.5,
+      "profit": -15191.2,
+      "profit_pct": -8.6,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.6% | 距隧道3.3% | RSI60 | 量比0.8)",
+      "sell_reason": "EMA12下穿隧道(盈-8.6%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159941",
+      "name": "纳指ETF广发",
+      "buy_date": "2024-08-23",
+      "buy_price": 1.089,
+      "sell_date": "2024-09-04",
+      "sell_price": 1.016,
+      "shares": 162200,
+      "buy_amount": 176635.8,
+      "sell_amount": 164795.2,
+      "profit": -11840.6,
+      "profit_pct": -6.7,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.1% | 距隧道3.0% | RSI60 | 量比0.8)",
+      "sell_reason": "EMA12下穿隧道(盈-6.7%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513050",
+      "name": "中概互联网ETF易方达",
+      "buy_date": "2024-08-26",
+      "buy_price": 1.045,
+      "sell_date": "2024-08-27",
+      "sell_price": 1.013,
+      "shares": 169100,
+      "buy_amount": 176709.5,
+      "sell_amount": 171298.3,
+      "profit": -5411.2,
+      "profit_pct": -3.06,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.9% | 距隧道1.2% | RSI71 | 量比0.7)",
+      "sell_reason": "EMA12下穿隧道(盈-3.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513100",
+      "name": "纳指ETF国泰",
+      "buy_date": "2024-09-24",
+      "buy_price": 1.441,
+      "sell_date": "2024-12-10",
+      "sell_price": 1.597,
+      "shares": 116100,
+      "buy_amount": 167300.1,
+      "sell_amount": 185411.7,
+      "profit": 18111.6,
+      "profit_pct": 10.83,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.3% | 距隧道2.1% | RSI57 | 量比0.8)",
+      "sell_reason": "持仓50天到期(盈10.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159509",
+      "name": "纳指科技ETF景顺",
+      "buy_date": "2024-09-24",
+      "buy_price": 1.56,
+      "sell_date": "2024-09-27",
+      "sell_price": 1.479,
+      "shares": 107300,
+      "buy_amount": 167388.0,
+      "sell_amount": 158696.7,
+      "profit": -8691.3,
+      "profit_pct": -5.19,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.1% | 距隧道2.6% | RSI54 | 量比0.9)",
+      "sell_reason": "EMA12下穿隧道(盈-5.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159941",
+      "name": "纳指ETF广发",
+      "buy_date": "2024-09-24",
+      "buy_price": 1.08,
+      "sell_date": "2024-12-10",
+      "sell_price": 1.197,
+      "shares": 155000,
+      "buy_amount": 167400.0,
+      "sell_amount": 185535.0,
+      "profit": 18135.0,
+      "profit_pct": 10.83,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.2% | 距隧道2.1% | RSI56 | 量比0.9)",
+      "sell_reason": "持仓50天到期(盈10.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513050",
+      "name": "中概互联网ETF易方达",
+      "buy_date": "2024-09-25",
+      "buy_price": 1.087,
+      "sell_date": "2024-11-14",
+      "sell_price": 1.166,
+      "shares": 154000,
+      "buy_amount": 167398.0,
+      "sell_amount": 179564.0,
+      "profit": 12166.0,
+      "profit_pct": 7.27,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.4% | 距隧道5.9% | RSI71 | 量比1.4)",
+      "sell_reason": "高位回撤(-10.7%,峰值1.306)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513190",
+      "name": "港股通金融ETF华夏",
+      "buy_date": "2024-09-25",
+      "buy_price": 1.183,
+      "sell_date": "2024-12-11",
+      "sell_price": 1.331,
+      "shares": 141500,
+      "buy_amount": 167394.5,
+      "sell_amount": 188336.5,
+      "profit": 20942.0,
+      "profit_pct": 12.51,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.0% | 距隧道7.3% | RSI70 | 量比1.4)",
+      "sell_reason": "持仓50天到期(盈12.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159687",
+      "name": "亚太精选ETF南方",
+      "buy_date": "2024-09-27",
+      "buy_price": 1.287,
+      "sell_date": "2024-12-13",
+      "sell_price": 1.285,
+      "shares": 123400,
+      "buy_amount": 158815.8,
+      "sell_amount": 158569.0,
+      "profit": -246.8,
+      "profit_pct": -0.16,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.6% | 距隧道2.7% | RSI79 | 量比1.2)",
+      "sell_reason": "持仓50天到期(盈-0.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513050",
+      "name": "中概互联网ETF易方达",
+      "buy_date": "2024-12-09",
+      "buy_price": 1.175,
+      "sell_date": "2025-01-07",
+      "sell_price": 1.124,
+      "shares": 152800,
+      "buy_amount": 179540.0,
+      "sell_amount": 171747.2,
+      "profit": -7792.8,
+      "profit_pct": -4.34,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.2% | 距隧道1.1% | RSI51 | 量比0.8)",
+      "sell_reason": "EMA12下穿隧道(盈-4.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159509",
+      "name": "纳指科技ETF景顺",
+      "buy_date": "2024-12-13",
+      "buy_price": 1.578,
+      "sell_date": "2025-02-25",
+      "sell_price": 1.542,
+      "shares": 113700,
+      "buy_amount": 179418.6,
+      "sell_amount": 175325.4,
+      "profit": -4093.2,
+      "profit_pct": -2.28,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.7% | 距隧道1.3% | RSI60 | 量比0.8)",
+      "sell_reason": "EMA12下穿隧道(盈-2.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159687",
+      "name": "亚太精选ETF南方",
+      "buy_date": "2025-01-07",
+      "buy_price": 1.279,
+      "sell_date": "2025-02-05",
+      "sell_price": 1.441,
+      "shares": 138800,
+      "buy_amount": 177525.2,
+      "sell_amount": 200010.8,
+      "profit": 22485.6,
+      "profit_pct": 12.67,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.7% | 距隧道0.6% | RSI49 | 量比1.0)",
+      "sell_reason": "高位回撤(-17.4%,峰值1.745)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh562500",
+      "name": "机器人ETF华夏",
+      "buy_date": "2025-01-15",
+      "buy_price": 0.808,
+      "sell_date": "2025-03-25",
+      "sell_price": 0.918,
+      "shares": 219700,
+      "buy_amount": 177517.6,
+      "sell_amount": 201684.6,
+      "profit": 24167.0,
+      "profit_pct": 13.61,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽4.7% | 距隧道5.6% | RSI51 | 量比1.3)",
+      "sell_reason": "高位回撤(-10.7%,峰值1.028)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159530",
+      "name": "机器人ETF易方达",
+      "buy_date": "2025-01-15",
+      "buy_price": 1.186,
+      "sell_date": "2025-03-28",
+      "sell_price": 1.339,
+      "shares": 149700,
+      "buy_amount": 177544.2,
+      "sell_amount": 200448.3,
+      "profit": 22904.1,
+      "profit_pct": 12.9,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽4.8% | 距隧道5.2% | RSI51 | 量比1.2)",
+      "sell_reason": "高位回撤(-10.1%,峰值1.490)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159732",
+      "name": "消费电子ETF华夏",
+      "buy_date": "2025-01-15",
+      "buy_price": 0.798,
+      "sell_date": "2025-03-31",
+      "sell_price": 0.842,
+      "shares": 222500,
+      "buy_amount": 177555.0,
+      "sell_amount": 187345.0,
+      "profit": 9790.0,
+      "profit_pct": 5.51,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.8% | 距隧道2.8% | RSI47 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈5.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513770",
+      "name": "港股互联网ETF华宝",
+      "buy_date": "2025-02-05",
+      "buy_price": 0.921,
+      "sell_date": "2025-03-31",
+      "sell_price": 1.05,
+      "shares": 217300,
+      "buy_amount": 200133.3,
+      "sell_amount": 228165.0,
+      "profit": 28031.7,
+      "profit_pct": 14.01,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.7% | 距隧道3.7% | RSI63 | 量比1.1)",
+      "sell_reason": "高位回撤(-11.6%,峰值1.188)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512400",
+      "name": "有色金属ETF南方",
+      "buy_date": "2025-03-05",
+      "buy_price": 1.04,
+      "sell_date": "2025-04-07",
+      "sell_price": 0.948,
+      "shares": 168600,
+      "buy_amount": 175344.0,
+      "sell_amount": 159832.8,
+      "profit": -15511.2,
+      "profit_pct": -8.85,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.5% | 距隧道0.5% | RSI41 | 量比1.0)",
+      "sell_reason": "高位回撤(-14.7%,峰值1.111)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159985",
+      "name": "豆粕ETF华夏",
+      "buy_date": "2025-04-07",
+      "buy_price": 1.975,
+      "sell_date": "2025-05-06",
+      "sell_price": 1.917,
+      "shares": 98900,
+      "buy_amount": 195327.5,
+      "sell_amount": 189591.3,
+      "profit": -5736.2,
+      "profit_pct": -2.94,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.3% | 距隧道1.5% | RSI50 | 量比0.9)",
+      "sell_reason": "EMA12下穿隧道(盈-2.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh560780",
+      "name": "半导体设备ETF广发",
+      "buy_date": "2025-05-07",
+      "buy_price": 1.156,
+      "sell_date": "2025-05-12",
+      "sell_price": 1.134,
+      "shares": 168100,
+      "buy_amount": 194323.6,
+      "sell_amount": 190625.4,
+      "profit": -3698.2,
+      "profit_pct": -1.9,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.3% | 距隧道2.2% | RSI56 | 量比0.7)",
+      "sell_reason": "EMA12下穿隧道(盈-1.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512480",
+      "name": "半导体ETF国联安",
+      "buy_date": "2025-05-08",
+      "buy_price": 1.068,
+      "sell_date": "2025-05-09",
+      "sell_price": 1.043,
+      "shares": 181900,
+      "buy_amount": 194269.2,
+      "sell_amount": 189721.7,
+      "profit": -4547.5,
+      "profit_pct": -2.34,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.4% | 距隧道1.7% | RSI57 | 量比0.7)",
+      "sell_reason": "EMA12下穿隧道(盈-2.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh588010",
+      "name": "科创新材料ETF博时",
+      "buy_date": "2025-05-08",
+      "buy_price": 0.61,
+      "sell_date": "2025-05-26",
+      "sell_price": 0.586,
+      "shares": 318600,
+      "buy_amount": 194346.0,
+      "sell_amount": 186699.6,
+      "profit": -7646.4,
+      "profit_pct": -3.93,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.2% | 距隧道2.5% | RSI68 | 量比0.9)",
+      "sell_reason": "EMA12下穿隧道(盈-3.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513750",
+      "name": "港股通非银ETF广发",
+      "buy_date": "2025-05-09",
+      "buy_price": 1.26,
+      "sell_date": "2025-07-21",
+      "sell_price": 1.598,
+      "shares": 153000,
+      "buy_amount": 192780.0,
+      "sell_amount": 244494.0,
+      "profit": 51714.0,
+      "profit_pct": 26.83,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.6% | 距隧道4.2% | RSI77 | 量比0.9)",
+      "sell_reason": "持仓50天到期(盈26.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh588220",
+      "name": "科创100ETF鹏华",
+      "buy_date": "2025-05-09",
+      "buy_price": 0.97,
+      "sell_date": "2025-05-15",
+      "sell_price": 0.953,
+      "shares": 198800,
+      "buy_amount": 192836.0,
+      "sell_amount": 189456.4,
+      "profit": -3379.6,
+      "profit_pct": -1.75,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.0% | 距隧道1.7% | RSI64 | 量比1.1)",
+      "sell_reason": "EMA12下穿隧道(盈-1.8%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159636",
+      "name": "港股通科技30ETF工银",
+      "buy_date": "2025-05-09",
+      "buy_price": 1.264,
+      "sell_date": "2025-07-21",
+      "sell_price": 1.371,
+      "shares": 152500,
+      "buy_amount": 192760.0,
+      "sell_amount": 209077.5,
+      "profit": 16317.5,
+      "profit_pct": 8.47,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽4.6% | 距隧道1.9% | RSI61 | 量比0.8)",
+      "sell_reason": "持仓50天到期(盈8.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159792",
+      "name": "港股通互联网ETF富国",
+      "buy_date": "2025-05-12",
+      "buy_price": 0.852,
+      "sell_date": "2025-07-22",
+      "sell_price": 0.925,
+      "shares": 223900,
+      "buy_amount": 190762.8,
+      "sell_amount": 207107.5,
+      "profit": 16344.7,
+      "profit_pct": 8.57,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.6% | 距隧道1.7% | RSI75 | 量比1.0)",
+      "sell_reason": "持仓50天到期(盈8.6%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513130",
+      "name": "恒生科技ETF华泰柏瑞",
+      "buy_date": "2025-05-15",
+      "buy_price": 0.71,
+      "sell_date": "2025-05-26",
+      "sell_price": 0.687,
+      "shares": 266800,
+      "buy_amount": 189428.0,
+      "sell_amount": 183291.6,
+      "profit": -6136.4,
+      "profit_pct": -3.24,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.1% | 距隧道2.8% | RSI72 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈-3.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159869",
+      "name": "游戏ETF华夏",
+      "buy_date": "2025-06-03",
+      "buy_price": 1.143,
+      "sell_date": "2025-08-12",
+      "sell_price": 1.361,
+      "shares": 161800,
+      "buy_amount": 184937.4,
+      "sell_amount": 220209.8,
+      "profit": 35272.4,
+      "profit_pct": 19.07,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.9% | 距隧道0.5% | RSI50 | 量比1.0)",
+      "sell_reason": "持仓50天到期(盈19.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "buy_date": "2025-06-05",
+      "buy_price": 2.539,
+      "sell_date": "2025-08-14",
+      "sell_price": 2.9,
+      "shares": 72900,
+      "buy_amount": 185093.1,
+      "sell_amount": 211410.0,
+      "profit": 26316.9,
+      "profit_pct": 14.22,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.5% | 距隧道1.1% | RSI48 | 量比0.8)",
+      "sell_reason": "持仓50天到期(盈14.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512070",
+      "name": "证券保险ETF易方达",
+      "buy_date": "2025-10-16",
+      "buy_price": 0.892,
+      "sell_date": "2025-11-21",
+      "sell_price": 0.853,
+      "shares": 244900,
+      "buy_amount": 218450.8,
+      "sell_amount": 208899.7,
+      "profit": -9551.1,
+      "profit_pct": -4.37,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.5% | 距隧道2.0% | RSI54 | 量比1.1)",
+      "sell_reason": "EMA12下穿隧道(盈-4.4%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2025-10-20",
+      "buy_price": 3.256,
+      "sell_date": "2025-12-08",
+      "sell_price": 3.21,
+      "shares": 67000,
+      "buy_amount": 218152.0,
+      "sell_amount": 215070.0,
+      "profit": -3082.0,
+      "profit_pct": -1.41,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.0% | 距隧道1.8% | RSI73 | 量比1.4)",
+      "sell_reason": "EMA12下穿隧道(盈-1.4%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513190",
+      "name": "港股通金融ETF华夏",
+      "buy_date": "2025-10-22",
+      "buy_price": 1.744,
+      "sell_date": "2025-12-17",
+      "sell_price": 1.748,
+      "shares": 125300,
+      "buy_amount": 218523.2,
+      "sell_amount": 219024.4,
+      "profit": 501.2,
+      "profit_pct": 0.23,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.0% | 距隧道3.7% | RSI68 | 量比1.4)",
+      "sell_reason": "EMA12下穿隧道(盈0.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513750",
+      "name": "港股通非银ETF广发",
+      "buy_date": "2025-10-22",
+      "buy_price": 1.672,
+      "sell_date": "2025-11-28",
+      "sell_price": 1.653,
+      "shares": 130700,
+      "buy_amount": 218530.4,
+      "sell_amount": 216047.1,
+      "profit": -2483.3,
+      "profit_pct": -1.14,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽4.3% | 距隧道3.4% | RSI68 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-1.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2025-10-23",
+      "buy_price": 1.206,
+      "sell_date": "2025-12-09",
+      "sell_price": 1.181,
+      "shares": 181300,
+      "buy_amount": 218647.8,
+      "sell_amount": 214115.3,
+      "profit": -4532.5,
+      "profit_pct": -2.07,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.4% | 距隧道1.7% | RSI74 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-2.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh515050",
+      "name": "通信ETF华夏",
+      "buy_date": "2025-11-27",
+      "buy_price": 2.022,
+      "sell_date": "2026-02-09",
+      "sell_price": 2.348,
+      "shares": 103300,
+      "buy_amount": 208872.6,
+      "sell_amount": 242548.4,
+      "profit": 33675.8,
+      "profit_pct": 16.12,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽9.4% | 距隧道2.7% | RSI39 | 量比1.2)",
+      "sell_reason": "持仓50天到期(盈16.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159819",
+      "name": "人工智能ETF易方达",
+      "buy_date": "2025-11-28",
+      "buy_price": 1.438,
+      "sell_date": "2026-02-06",
+      "sell_price": 1.526,
+      "shares": 150200,
+      "buy_amount": 215987.6,
+      "sell_amount": 229205.2,
+      "profit": 13217.6,
+      "profit_pct": 6.12,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽6.9% | 距隧道1.0% | RSI42 | 量比1.3)",
+      "sell_reason": "高位回撤(-10.4%,峰值1.704)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512480",
+      "name": "半导体ETF国联安",
+      "buy_date": "2025-12-09",
+      "buy_price": 1.436,
+      "sell_date": "2026-02-06",
+      "sell_price": 1.577,
+      "shares": 149400,
+      "buy_amount": 214538.4,
+      "sell_amount": 235603.8,
+      "profit": 21065.4,
+      "profit_pct": 9.82,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽4.9% | 距隧道2.8% | RSI55 | 量比0.8)",
+      "sell_reason": "高位回撤(-10.6%,峰值1.764)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh588200",
+      "name": "科创芯片ETF嘉实",
+      "buy_date": "2025-12-09",
+      "buy_price": 2.317,
+      "sell_date": "2025-12-18",
+      "sell_price": 2.233,
+      "shares": 92600,
+      "buy_amount": 214554.2,
+      "sell_amount": 206775.8,
+      "profit": -7778.4,
+      "profit_pct": -3.63,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽6.3% | 距隧道3.0% | RSI54 | 量比0.9)",
+      "sell_reason": "EMA12下穿隧道(盈-3.6%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "buy_date": "2025-12-22",
+      "buy_price": 4.533,
+      "sell_date": "2026-02-03",
+      "sell_price": 4.512,
+      "shares": 46900,
+      "buy_amount": 212597.7,
+      "sell_amount": 211612.8,
+      "profit": -984.9,
+      "profit_pct": -0.46,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.2% | 距隧道0.3% | RSI50 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-0.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh513190",
+      "name": "港股通金融ETF华夏",
+      "buy_date": "2025-12-22",
+      "buy_price": 1.765,
+      "sell_date": "2026-03-02",
+      "sell_price": 1.731,
+      "shares": 120600,
+      "buy_amount": 212859.0,
+      "sell_amount": 208758.6,
+      "profit": -4100.4,
+      "profit_pct": -1.93,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.9% | 距隧道0.3% | RSI50 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-1.9%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159611",
+      "name": "电力ETF广发",
+      "buy_date": "2026-02-25",
+      "buy_price": 1.051,
+      "sell_date": "2026-04-03",
+      "sell_price": 1.063,
+      "shares": 218700,
+      "buy_amount": 229853.7,
+      "sell_amount": 232478.1,
+      "profit": 2624.4,
+      "profit_pct": 1.14,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.3% | 距隧道1.1% | RSI53 | 量比0.9)",
+      "sell_reason": "高位回撤(-11.8%,峰值1.205)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159967",
+      "name": "创业板成长ETF华夏",
+      "buy_date": "2026-02-26",
+      "buy_price": 0.632,
+      "sell_date": "2026-03-03",
+      "sell_price": 0.613,
+      "shares": 363700,
+      "buy_amount": 229858.4,
+      "sell_amount": 222948.1,
+      "profit": -6910.3,
+      "profit_pct": -3.01,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.2% | 距隧道1.8% | RSI51 | 量比0.7)",
+      "sell_reason": "EMA12下穿隧道(盈-3.0%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159952",
+      "name": "创业板ETF广发",
+      "buy_date": "2026-03-11",
+      "buy_price": 2.028,
+      "sell_date": "2026-04-01",
+      "sell_price": 1.966,
+      "shares": 109800,
+      "buy_amount": 222674.4,
+      "sell_amount": 215866.8,
+      "profit": -6807.6,
+      "profit_pct": -3.06,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.4% | 距隧道1.4% | RSI48 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-3.1%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159682",
+      "name": "创业板50ETF景顺",
+      "buy_date": "2026-03-12",
+      "buy_price": 1.514,
+      "sell_date": "2026-04-02",
+      "sell_price": 1.454,
+      "shares": 147200,
+      "buy_amount": 222860.8,
+      "sell_amount": 214028.8,
+      "profit": -8832.0,
+      "profit_pct": -3.96,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.5% | 距隧道2.7% | RSI56 | 量比1.3)",
+      "sell_reason": "EMA12下穿隧道(盈-4.0%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159949",
+      "name": "创业板50ETF华安",
+      "buy_date": "2026-03-12",
+      "buy_price": 1.559,
+      "sell_date": "2026-04-02",
+      "sell_price": 1.493,
+      "shares": 143000,
+      "buy_amount": 222937.0,
+      "sell_amount": 213499.0,
+      "profit": -9438.0,
+      "profit_pct": -4.23,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.5% | 距隧道2.7% | RSI56 | 量比1.2)",
+      "sell_reason": "EMA12下穿隧道(盈-4.2%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159967",
+      "name": "创业板成长ETF华夏",
+      "buy_date": "2026-03-12",
+      "buy_price": 0.635,
+      "sell_date": "2026-05-27",
+      "sell_price": 0.925,
+      "shares": 351000,
+      "buy_amount": 222885.0,
+      "sell_amount": 324675.0,
+      "profit": 101790.0,
+      "profit_pct": 45.67,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.5% | 距隧道3.6% | RSI61 | 量比1.5)",
+      "sell_reason": "持仓50天到期(盈45.7%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159502",
+      "name": "标普生物科技ETF嘉实",
+      "buy_date": "2026-04-08",
+      "buy_price": 1.349,
+      "sell_date": "2026-06-08",
+      "sell_price": 1.288,
+      "shares": 162300,
+      "buy_amount": 218942.7,
+      "sell_amount": 209042.4,
+      "profit": -9900.3,
+      "profit_pct": -4.52,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.1% | 距隧道2.1% | RSI57 | 量比1.0)",
+      "sell_reason": "EMA12下穿隧道(盈-4.5%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159363",
+      "name": "创业板人工智能ETF华宝",
+      "buy_date": "2026-04-09",
+      "buy_price": 1.147,
+      "sell_date": "2026-06-12",
+      "sell_price": 1.336,
+      "shares": 190900,
+      "buy_amount": 218962.3,
+      "sell_amount": 255042.4,
+      "profit": 36080.1,
+      "profit_pct": 16.48,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽3.9% | 距隧道8.0% | RSI59 | 量比1.2)",
+      "sell_reason": "高位回撤(-10.0%,峰值1.485)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159381",
+      "name": "创业板人工智能ETF华夏",
+      "buy_date": "2026-04-09",
+      "buy_price": 2.169,
+      "sell_date": "2026-06-03",
+      "sell_price": 1.406,
+      "shares": 100900,
+      "buy_amount": 218852.1,
+      "sell_amount": 141865.4,
+      "profit": -76986.7,
+      "profit_pct": -35.18,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽5.4% | 距隧道7.9% | RSI59 | 量比0.9)",
+      "sell_reason": "高位回撤(-48.4%,峰值2.727)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159949",
+      "name": "创业板50ETF华安",
+      "buy_date": "2026-04-10",
+      "buy_price": 1.636,
+      "sell_date": "2026-06-25",
+      "sell_price": 2.115,
+      "shares": 134000,
+      "buy_amount": 219224.0,
+      "sell_amount": 283410.0,
+      "profit": 64186.0,
+      "profit_pct": 29.28,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.4% | 距隧道2.2% | RSI51 | 量比0.8)",
+      "sell_reason": "持仓50天到期(盈29.3%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh515220",
+      "name": "煤炭ETF国泰",
+      "buy_date": "2026-05-29",
+      "buy_price": 1.284,
+      "sell_date": "2026-06-15",
+      "sell_price": 1.258,
+      "shares": 252800,
+      "buy_amount": 324595.2,
+      "sell_amount": 318022.4,
+      "profit": -6572.8,
+      "profit_pct": -2.02,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.1% | 距隧道2.0% | RSI51 | 量比1.0)",
+      "sell_reason": "高位回撤(-12.0%,峰值1.430)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2026-06-04",
+      "buy_price": 3.327,
+      "sell_date": "2026-06-17",
+      "sell_price": 3.16,
+      "shares": 42600,
+      "buy_amount": 141730.2,
+      "sell_amount": 134616.0,
+      "profit": -7114.2,
+      "profit_pct": -5.02,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽0.2% | 距隧道2.5% | RSI68 | 量比1.4)",
+      "sell_reason": "EMA12下穿隧道(盈-5.0%)"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh512100",
+      "name": "中证1000ETF南方",
+      "buy_date": "2026-06-16",
+      "buy_price": 3.491,
+      "sell_date": "2026-07-02",
+      "sell_price": 3.491,
+      "shares": 74700,
+      "buy_amount": 260777.7,
+      "sell_amount": 260777.7,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.1% | 距隧道2.3% | RSI45 | 量比0.9)",
+      "sell_reason": "期末持仓"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh560010",
+      "name": "中证1000ETF广发",
+      "buy_date": "2026-06-16",
+      "buy_price": 3.576,
+      "sell_date": "2026-07-02",
+      "sell_price": 3.572,
+      "shares": 72900,
+      "buy_amount": 260690.4,
+      "sell_amount": 260398.8,
+      "profit": -291.6,
+      "profit_pct": -0.11,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.2% | 距隧道2.2% | RSI46 | 量比0.8)",
+      "sell_reason": "期末持仓"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159845",
+      "name": "中证1000ETF华夏",
+      "buy_date": "2026-06-16",
+      "buy_price": 3.587,
+      "sell_date": "2026-07-02",
+      "sell_price": 3.598,
+      "shares": 72700,
+      "buy_amount": 260774.9,
+      "sell_amount": 261574.6,
+      "profit": 799.7,
+      "profit_pct": 0.31,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.2% | 距隧道2.1% | RSI45 | 量比0.9)",
+      "sell_reason": "期末持仓"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "buy_date": "2026-06-17",
+      "buy_price": 8.763,
+      "sell_date": "2026-07-02",
+      "sell_price": 8.849,
+      "shares": 15300,
+      "buy_amount": 134073.9,
+      "sell_amount": 135389.7,
+      "profit": 1315.8,
+      "profit_pct": 0.98,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽2.1% | 距隧道2.8% | RSI51 | 量比0.9)",
+      "sell_reason": "期末持仓"
+    },
+    {
+      "strategy_id": "etf_vegas",
+      "strategy_name": "ETF维加斯隧道",
+      "code": "sz159530",
+      "name": "机器人ETF易方达",
+      "buy_date": "2026-07-01",
+      "buy_price": 1.65,
+      "sell_date": "2026-07-02",
+      "sell_price": 1.634,
+      "shares": 172100,
+      "buy_amount": 283965.0,
+      "sell_amount": 281211.4,
+      "profit": -2753.6,
+      "profit_pct": -0.97,
+      "buy_reason": "ETF Vegas(EMA12上穿隧道 隧道宽1.5% | 距隧道2.6% | RSI45 | 量比0.9)",
+      "sell_reason": "期末持仓"
+    }
+  ],
+  "market_gate": {
+    "allowed_days": 0,
+    "blocked_days": 0,
+    "allowed_rate_pct": 0,
+    "recent": [],
+    "blocked_reasons": [],
+    "blocked_recent_days": []
+  }
+}

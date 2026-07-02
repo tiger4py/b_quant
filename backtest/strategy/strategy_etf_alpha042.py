@@ -1,20 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-Alpha #042 量价背离策略 — 缩量新高 + 波动率放大
+ETF 量价背离策略 — 直接使用 Alpha042 核心逻辑，仅做 ETF 适配微调
 
-核心理念（国泰君安191因子库 #042）：
+核心理念（同 strategy_alpha042）：
   1. 量价背离：corr(high, volume, 10) < -0.25
-     缩量创新高（价涨量缩）→ 筹码锁定、无人追涨 → 看多
-     放量拉升（价量同步）→ 散户涌入、主力出货 → 看空
+     价涨量缩 → 筹码锁定、无人追涨 → 看多
+     放量拉升 → 散户涌入 → 看空
 
   2. 波动率放大器：vol_10d / vol_60d ∈ [1.2, 5.0]
-     高波动环境下的量价背离信号可靠，低波动僵尸股过滤
+     高波动环境下的量价背离信号可靠，低波动僵尸 ETF 过滤
 
-策略流程：
-  买入 = 量价背离 + 波动率放大 + 位置确认(近20日高点) + 不接飞刀 + 不追涨停
-  卖出 = 量价同步(corr>0.5)离场 / 30天到期。不做硬止损/止盈。
+ETF 适配调整（相对个股版）：
+  - 去掉涨停过滤（ETF 不会涨停）
+  - 放宽 MIN_AMOUNT 到 100 万（ETF 成交额小于个股）
+  - 延长 MAX_HOLD_DAYS 到 40 天（ETF 趋势更持久）
 
-V4回测 (2022~2026.6): +181.83% 收益, 28.10% 回撤, 48.88% 胜率, 1.36 PF
+用法示例:
+  python script/run_etf_backtest.py --strategy etf_alpha
 """
 
 from pathlib import Path
@@ -27,9 +29,13 @@ if str(ROOT_DIR) not in sys.path:
 from backtest.indicators import sma
 
 META = {
-    "id": "alpha042",
-    "name": "Alpha042-量价背离-个股",
-    "description": "国泰君安191#042：corr(high,vol,10)<-0.25+波动放大1.2x+近20日高点。卖出：量价同步corr>0.5或30天到期。不止损。V4:+182%/回撤28%/胜率49%。",
+    "id": "etf_alpha",
+    "name": "Alpha042-量价背离-etf",
+    "type": "etf",
+    "description": (
+        "ETF版Alpha042：corr(high,vol,10)<-0.25+波动放大1.2x+近20日高点。"
+        "卖出：量价同步corr>0.5或40天到期。不去涨停过滤，放宽流动性。"
+    ),
 }
 
 # ============ 可调参数 ============
@@ -50,21 +56,17 @@ PRICE_NEAR_HIGH_LOOKBACK = 20
 PRICE_NEAR_HIGH_PCT = 0.10
 CHG_5D_MIN = -0.05
 
-# -- 涨停过滤 --
-LIMIT_UP_PCT = 9.5
-LIMIT_UP_LOOKBACK = 3
+# -- 流动性（ETF 版放宽到 100 万） --
+MIN_AMOUNT = 1_000_000
 
-# -- 流动性 --
-MIN_AMOUNT = 5_000_000
-
-# -- 卖出 --
-MAX_HOLD_DAYS = 30
+# -- 卖出（ETF 趋势更持久，延长到 40 天） --
+MAX_HOLD_DAYS = 40
 
 # -- 市场择时 --
 MARKET_GREED_BREADTH = 0.80
 
 
-# ============ 滚动相关系数 ============
+# ============ 滚动相关系数（同 alpha042） ============
 
 def _rolling_corr(x, y, window):
     result = [None] * len(x)
@@ -101,7 +103,7 @@ def _rolling_max(values, window):
     return result
 
 
-# ============ 指标预计算 ============
+# ============ 指标预计算（同 alpha042） ============
 
 def _compute_metrics(bars):
     closes = [b["close"] for b in bars]
@@ -143,17 +145,7 @@ def _compute_metrics(bars):
     }
 
 
-# ============ 辅助函数 ============
-
-def _has_recent_limit_up(daily_change, i, lookback=LIMIT_UP_LOOKBACK):
-    start = max(1, i - lookback + 1)
-    for j in range(start, i + 1):
-        if daily_change[j] * 100 >= LIMIT_UP_PCT:
-            return True
-    return False
-
-
-# ============ market_gate ============
+# ============ market_gate（同 alpha042） ============
 
 def market_gate(date, market_stats):
     s = market_stats.get(date, {})
@@ -166,7 +158,7 @@ def market_gate(date, market_stats):
                 "reasons": [f"正常(广度{breadth:.2f})"]}
 
 
-# ============ 主策略 ============
+# ============ 主策略（同 alpha042，去涨停过滤） ============
 
 def generate_signals(bars):
     m = _compute_metrics(bars)
@@ -194,16 +186,15 @@ def generate_signals(bars):
 
         amount = m["amounts"][i]
 
-        # ========== 买入 ==========
+        # ========== 买入（同 alpha042，去掉涨停过滤） ==========
         if not in_pos:
             divergence = corr_val < CORR_BUY_MAX
             vol_amplified = VOL_AMP_MIN <= vol_amp <= VOL_AMP_MAX
             near_high = close >= high_20 * (1 - PRICE_NEAR_HIGH_PCT)
             not_falling = chg_5d > CHG_5D_MIN
-            no_limit_up = not _has_recent_limit_up(m["daily_change"], i)
             liquid = amount >= MIN_AMOUNT
 
-            if divergence and vol_amplified and near_high and not_falling and no_limit_up and liquid:
+            if divergence and vol_amplified and near_high and not_falling and liquid:
                 in_pos = True
                 entry_price = close
                 entry_index = i
@@ -212,7 +203,7 @@ def generate_signals(bars):
                     "date": bars[i]["trade_date"],
                     "action": "buy",
                     "reason": (
-                        f"Alpha042({corr_sign}新高 corr={corr_val:.2f} | "
+                        f"ETF Alpha({corr_sign}新高 corr={corr_val:.2f} | "
                         f"波动放大{vol_amp:.1f}x | "
                         f"距20日高{(close/high_20-1)*100:.1f}% | "
                         f"5日{chg_5d*100:.1f}%)"
@@ -220,7 +211,7 @@ def generate_signals(bars):
                 })
             continue
 
-        # ========== 卖出 ==========
+        # ========== 卖出（同 alpha042） ==========
         if i == entry_index:
             continue
 
@@ -244,6 +235,9 @@ def generate_signals(bars):
     return signals
 
 
+# ============ 独立运行 ============
+
 if __name__ == "__main__":
     from backtest.strategy.runner import run_strategy_meta
+
     run_strategy_meta(META)
