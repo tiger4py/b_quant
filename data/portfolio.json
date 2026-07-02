@@ -1,41 +1,5 @@
 {
-  "cash": 45356.0,
+  "cash": 1000000,
   "max_positions": 5,
-  "holdings": [
-    {
-      "code": "sh.600596",
-      "name": "新安股份",
-      "shares": 5000,
-      "buy_price": 15.66,
-      "buy_date": "2026-06-22"
-    },
-    {
-      "code": "sz.002378",
-      "name": "章源钨业",
-      "shares": 2000,
-      "buy_price": 38.2,
-      "buy_date": "2026-06-22"
-    },
-    {
-      "code": "sh.600999",
-      "name": "招商证券",
-      "shares": 3600,
-      "buy_price": 19.59,
-      "buy_date": "2026-06-22"
-    },
-    {
-      "code": "sz.002137",
-      "name": "实益达",
-      "shares": 5000,
-      "buy_price": 10.95,
-      "buy_date": "2026-06-22"
-    },
-    {
-      "code": "sz.300880",
-      "name": "迦南智能",
-      "shares": 3000,
-      "buy_price": 24.89,
-      "buy_date": "2026-06-22"
-    }
-  ]
+  "holdings": []
 }
