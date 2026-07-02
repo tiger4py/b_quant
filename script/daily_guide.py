@@ -49,123 +49,19 @@ from config import DATABASE_URL
 from models.stock import StockDaily, StockInfo
 from backtest.portfolio import _build_market_stats
 from backtest.indicators import sma, stddev
-
-# ============ 波动率V反常量和工具函数（原 strategy_volatility_breakout） ============
-
-# -- V反检测 --
-V_LOOKBACK = 8
-V_DECLINE_MIN = 3.0
-V_RECOVERY_MIN = 1.5
-V_RECOVERY_RATIO = 0.4
-V_MIN_DOWN_DAYS = 2
-V_MIN_UP_DAYS = 1
-V_MAX_DURATION = 8
-V_RECOVERY_HARD_MAX = 20.0
-
-# -- 波动率 --
-VOL_STABLE_MAX = 0.025
-VOL_RATIO_BUY = 1.3
-VOL_RATIO_SELL = 0.8
-
-# -- 涨停过滤 --
-LIMIT_UP_PCT = 9.5
-LIMIT_UP_LOOKBACK = 3
-
-
-def _compute_volatility_metrics(bars):
-    """预计算所有波动率相关指标。"""
-    closes = [b["close"] for b in bars]
-    highs = [b["high"] for b in bars]
-    lows = [b["low"] for b in bars]
-    volumes = [b.get("volume") or 0 for b in bars]
-
-    n = len(bars)
-
-    daily_vol = [0.0]
-    daily_change = [0.0]
-    for i in range(1, n):
-        chg = closes[i] / closes[i - 1] - 1 if closes[i - 1] else 0
-        daily_vol.append(abs(chg))
-        daily_change.append(chg)
-
-    daily_range = [(highs[i] - lows[i]) / closes[i] if closes[i] else 0 for i in range(n)]
-
-    return {
-        "closes": closes,
-        "highs": highs,
-        "lows": lows,
-        "volumes": volumes,
-        "daily_vol": daily_vol,
-        "daily_change": daily_change,
-        "daily_range": daily_range,
-        "vol_5d": sma(daily_vol, 5),
-        "vol_10d": sma(daily_vol, 10),
-        "vol_20d": sma(daily_vol, 20),
-        "vol_60d": sma(daily_vol, 60),
-        "vol_std_10d": stddev(daily_vol, 10),
-        "range_ma10": sma(daily_range, 10),
-        "vol_ma5": sma(volumes, 5),
-        "vol_ma20": sma(volumes, 20),
-    }
-
-
-def _detect_v_reversal(closes, i, lookback=V_LOOKBACK):
-    """在 index=i 处检测 V 形反转形态。"""
-    if i < 4:
-        return False, -1, 0, 0, ""
-
-    start = max(0, i - lookback)
-    window_for_min = closes[start:i]
-    if not window_for_min:
-        return False, -1, 0, 0, ""
-
-    min_val = min(window_for_min)
-    bottom_idx = start + window_for_min.index(min_val)
-    bottom_close = closes[bottom_idx]
-
-    left_peak_idx = bottom_idx
-    for j in range(bottom_idx - 1, start, -1):
-        if closes[j] > closes[left_peak_idx]:
-            left_peak_idx = j
-        else:
-            break
-    pre_high = closes[left_peak_idx]
-
-    decline_pct = (pre_high - bottom_close) / pre_high * 100 if pre_high > 0 else 0
-    if decline_pct < V_DECLINE_MIN:
-        return False, -1, 0, 0, ""
-
-    recovery_pct = (closes[i] - bottom_close) / bottom_close * 100 if bottom_close > 0 else 0
-    if recovery_pct < V_RECOVERY_MIN:
-        return False, -1, 0, 0, ""
-    if recovery_pct < decline_pct * V_RECOVERY_RATIO:
-        return False, -1, 0, 0, ""
-
-    down_days = 0
-    for j in range(bottom_idx, left_peak_idx, -1):
-        if closes[j] < closes[j - 1] and (closes[j - 1] / closes[j] - 1) >= 0.005:
-            down_days += 1
-    if down_days < V_MIN_DOWN_DAYS:
-        return False, -1, 0, 0, ""
-
-    up_days = 0
-    for j in range(bottom_idx + 1, i + 1):
-        if closes[j] > closes[j - 1]:
-            up_days += 1
-    if up_days < V_MIN_UP_DAYS:
-        return False, -1, 0, 0, ""
-
-    v_duration = i - left_peak_idx
-    if v_duration > V_MAX_DURATION:
-        return False, -1, 0, 0, ""
-
-    if bottom_idx > start and closes[bottom_idx - 1] < bottom_close:
-        return False, -1, 0, 0, ""
-    if bottom_idx < i - 1 and closes[bottom_idx + 1] < bottom_close:
-        return False, -1, 0, 0, ""
-
-    label = f"V反({down_days}阴-{up_days}阳|跌{decline_pct:.1f}%→涨{recovery_pct:.1f}%)"
-    return True, bottom_idx, round(decline_pct, 2), round(recovery_pct, 2), label
+from logic.v_reversal import (
+    # 常量
+    V_LOOKBACK, V_DECLINE_MIN, V_RECOVERY_MIN, V_RECOVERY_RATIO,
+    V_MIN_DOWN_DAYS, V_MIN_UP_DAYS, V_MAX_DURATION, V_RECOVERY_HARD_MAX,
+    VOL_STABLE_MAX, VOL_RATIO_BUY, VOL_RATIO_SELL,
+    LIMIT_UP_PCT, LIMIT_UP_LOOKBACK,
+    # 核心函数
+    _compute_volatility_metrics,
+    _detect_v_reversal,
+    _has_recent_limit_up,
+    _extract_volume_confirm,
+    _extract_price_context,
+)
 from collections import defaultdict
 
 # ============ 可调参数 ============
@@ -403,32 +299,7 @@ def assess_market(market_stats: dict, latest_date: str) -> dict:
 
 
 # ============ Phase 2: 候选股筛选 ============
-
-def _extract_price_context(closes: list, highs: list, lows: list, idx: int) -> dict:
-    """提取价格位置信息"""
-    close = closes[idx]
-    start_20 = max(0, idx - 19)
-    window_highs = highs[start_20:idx + 1]
-    window_lows = lows[start_20:idx + 1]
-    h20 = max(window_highs) if window_highs else close
-    l20 = min(window_lows) if window_lows else close
-
-    range_20 = h20 - l20
-    position = (close - l20) / range_20 if range_20 > 0 else 0.5
-
-    start_5 = max(0, idx - 4)
-    h5 = max(highs[start_5:idx + 1]) if highs[start_5:idx + 1:] else close
-
-    return {
-        "price_position_20d": round(position, 3),
-        "price_vs_5d_high": round(close / h5, 3) if h5 > 0 else 1.0,
-        "price_vs_20d_high": round(close / h20, 3) if h20 > 0 else 1.0,
-        "dist_from_20d_low_pct": round((close - l20) / l20 * 100, 1) if l20 > 0 else 0,
-        "close": close,
-        "high_20d": h20,
-        "low_20d": l20,
-    }
-
+# (_extract_price_context, _extract_volume_confirm, _has_recent_limit_up 从 logic/v_reversal 导入)
 
 def _extract_vol_trend(daily_vol: list, idx: int) -> dict:
     """提取波动率趋势：加速/平稳/衰减"""
@@ -448,35 +319,7 @@ def _extract_vol_trend(daily_vol: list, idx: int) -> dict:
     return {"trend": trend, "ratio": round(ratio, 2)}
 
 
-def _extract_volume_confirm(volumes: list, bottom_idx: int, current_idx: int) -> dict:
-    """计算V反右侧/左侧量比"""
-    span = current_idx - bottom_idx
-    if span < 1:
-        span = 1
-    right_vols = volumes[bottom_idx:current_idx + 1]
-    right_avg = sum(v for v in right_vols if v) / max(len(right_vols), 1)
-
-    left_start = max(0, bottom_idx - span)
-    left_vols = volumes[left_start:bottom_idx + 1]
-    left_avg = sum(v for v in left_vols if v) / max(len(left_vols), 1)
-
-    ratio = right_avg / left_avg if left_avg > 0 else 1.0
-    return {
-        "right_vol": round(right_avg, 0),
-        "left_vol": round(left_avg, 0),
-        "ratio": round(ratio, 2),
-    }
-
-
-def _has_recent_limit_up(daily_change: list, idx: int, lookback: int = LIMIT_UP_LOOKBACK) -> bool:
-    """检查近N天内是否有涨停（含当日）"""
-    start = max(1, idx - lookback + 1)  # daily_change[0] is always 0
-    for j in range(start, idx + 1):
-        if daily_change[j] * 100 >= LIMIT_UP_PCT:
-            return True
-    return False
-
-
+# (_extract_volume_confirm 和 _has_recent_limit_up 从 logic/v_reversal 导入)
 def _check_buy_conditions(metrics: dict, closes: list, volumes: list, idx: int) -> dict | None:
     """
     在 index=idx 处检查买入条件。

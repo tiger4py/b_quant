@@ -53,6 +53,18 @@ def _run_daily_update_job():
         scheduled_update_concepts()
     except Exception:
         logger.exception("scheduled concept update failed")
+
+    # CSV 导入数据库
+    import subprocess
+    try:
+        subprocess.run(
+            [sys.executable, "script/import_day_stock.py", "-q"],
+            cwd=os.path.dirname(os.path.abspath(__file__)),
+            timeout=600,
+        )
+    except Exception:
+        logger.exception("scheduled csv import failed")
+
     logger.info("scheduled daily update finished")
 
 
@@ -404,6 +416,13 @@ def api_trading_buy():
     trade_date = payload.get("date") or datetime.now().strftime("%Y-%m-%d")
     reason = (payload.get("reason") or "").strip()
 
+    # 决策复盘字段
+    strategy_source = (payload.get("strategy_source") or "").strip()
+    signal_rank = payload.get("signal_rank") or None
+    market_signal = (payload.get("market_signal") or "").strip()
+    market_score = payload.get("market_score") or None
+    decision_note = (payload.get("decision_note") or "").strip()
+
     if not code or price <= 0 or shares < 100:
         return jsonify({"error": "参数无效"}), 400
 
@@ -414,19 +433,24 @@ def api_trading_buy():
 
     # 更新 portfolio
     portfolio = _load_trading_portfolio()
-    portfolio["holdings"].append({
+    holding_entry = {
         "code": code,
         "name": name,
         "shares": shares,
         "buy_price": price,
         "buy_date": trade_date,
-    })
+    }
+    if strategy_source:
+        holding_entry["strategy_source"] = strategy_source
+    if decision_note:
+        holding_entry["decision_note"] = decision_note
+    portfolio["holdings"].append(holding_entry)
     portfolio["cash"] -= price * shares
     _save_trading_portfolio(portfolio)
 
-    # 记录日志
+    # 记录日志（含决策复盘字段）
     logs = _load_trade_log()
-    logs.append({
+    log_entry = {
         "id": len(logs) + 1,
         "date": trade_date,
         "code": code,
@@ -436,7 +460,18 @@ def api_trading_buy():
         "shares": shares,
         "amount": round(price * shares, 2),
         "reason": reason,
-    })
+    }
+    if strategy_source:
+        log_entry["strategy_source"] = strategy_source
+    if signal_rank is not None:
+        log_entry["signal_rank"] = int(signal_rank)
+    if market_signal:
+        log_entry["market_signal"] = market_signal
+    if market_score is not None:
+        log_entry["market_score"] = float(market_score)
+    if decision_note:
+        log_entry["decision_note"] = decision_note
+    logs.append(log_entry)
     _save_trade_log(logs)
 
     return jsonify({"ok": f"买入 {name}({code}) {shares}股 @ {price:.2f}"})
@@ -485,9 +520,11 @@ def api_trading_sell():
     pnl = round((price - sold_buy_price) * sold_shares, 2)
     pnl_pct = round((price / sold_buy_price - 1) * 100, 2) if sold_buy_price > 0 else 0
 
-    # 记录日志
+    # 记录日志（含决策复盘字段）
     logs = _load_trade_log()
-    logs.append({
+    sell_reason = (payload.get("sell_reason") or reason or "").strip()
+    sell_note = (payload.get("decision_note") or "").strip()
+    log_entry = {
         "id": len(logs) + 1,
         "date": trade_date,
         "code": code,
@@ -499,8 +536,11 @@ def api_trading_sell():
         "buyPrice": sold_buy_price,
         "pnl": pnl,
         "pnlPct": pnl_pct,
-        "reason": reason,
-    })
+        "reason": sell_reason or reason,
+    }
+    if sell_note:
+        log_entry["decision_note"] = sell_note
+    logs.append(log_entry)
     _save_trade_log(logs)
 
     return jsonify({"ok": f"卖出 {name}({code}) {sold_shares}股 @ {price:.2f} | 盈亏 {pnl:+.0f}元 ({pnl_pct:+.1f}%)"})

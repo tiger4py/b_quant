@@ -36,18 +36,83 @@ from config import DATABASE_URL
 from models.stock import StockDaily, StockInfo
 from backtest.indicators import sma
 from backtest.portfolio import _build_market_stats
-from backtest.strategy.strategy_price_volume_rising import (
-    _compute_price_volume_dynamics,
-    market_gate,
-    PRICE_UP_5D_MIN,
-    VOL_RATIO_BUY,
-    VOL_RATIO_MAX,
-    VOL_TREND_ACCEL,
-    UP_VOL_RATIO,
-    PRICE_ABOVE_MA10_MAX,
-    MIN_CONSEC_UP,
-    LOOKBACK_DAYS,
-)
+# ============ 价增量增策略参数（内联，避免依赖不存在的策略文件） ============
+
+PRICE_UP_5D_MIN = 0.01        # 5日涨幅最低 1%
+VOL_RATIO_BUY = 1.5           # 量比最低 1.5x（5日均量/20日均量）
+VOL_RATIO_MAX = 4.0           # 量比最高 4.0x（排除异常爆量）
+VOL_TREND_ACCEL = 1.0         # 量能加速最低 1.0x（近3日/前3日）
+UP_VOL_RATIO = 1.2            # 涨跌量比最低 1.2x（上涨日量/下跌日量）
+PRICE_ABOVE_MA10_MAX = 1.06   # 距MA10最高 6%（不追高）
+MIN_CONSEC_UP = 1             # 最少连续上涨天数
+LOOKBACK_DAYS = 10            # 量价配合统计回看天数
+
+
+def _compute_price_volume_dynamics(closes, volumes, i):
+    """
+    统计最近 LOOKBACK_DAYS 天的量价配合情况。
+
+    返回:
+        dict: up_days(上涨天数), down_days(下跌天数),
+              up_vol_ratio(上涨日均量/下跌日均量),
+              consecutive_up(连续上涨天数，从i往前数)
+    """
+    up_days = 0
+    down_days = 0
+    up_vol_sum = 0.0
+    down_vol_sum = 0.0
+
+    start = max(0, i - LOOKBACK_DAYS + 1)
+    for j in range(start, i + 1):
+        if j > 0 and closes[j] > closes[j - 1]:
+            up_days += 1
+            up_vol_sum += volumes[j] if volumes[j] else 0
+        elif j > 0 and closes[j] < closes[j - 1]:
+            down_days += 1
+            down_vol_sum += volumes[j] if volumes[j] else 0
+
+    up_vol_ratio = (up_vol_sum / up_days) / (down_vol_sum / down_days) if up_days > 0 and down_days > 0 and down_vol_sum > 0 else 1.0
+
+    # 连续上涨天数（从 i 往回数）
+    consecutive_up = 0
+    for j in range(i, 0, -1):
+        if closes[j] > closes[j - 1]:
+            consecutive_up += 1
+        else:
+            break
+
+    return {
+        "up_days": up_days,
+        "down_days": down_days,
+        "up_vol_ratio": round(up_vol_ratio, 2),
+        "consecutive_up": consecutive_up,
+    }
+
+
+def market_gate(date_str, market_stats):
+    """
+    大盘过滤器：大盘环境不佳时建议观望。
+
+    返回:
+        dict: allowed(bool), reasons(list)
+    """
+    breadth = market_stats.get("breadth", 0.5)
+    limit_down_count = market_stats.get("limit_down_count", 0)
+
+    reasons = []
+    allowed = True
+
+    # 广度太差（<30%）禁止
+    if breadth < 0.30:
+        allowed = False
+        reasons.append(f"市场广度极差({breadth:.1%})")
+
+    # 跌停过多（>50只）禁止
+    if limit_down_count > 50:
+        allowed = False
+        reasons.append(f"跌停数量过多({limit_down_count}只)")
+
+    return {"allowed": allowed, "reasons": reasons}
 
 # ============ 可调参数 ============
 

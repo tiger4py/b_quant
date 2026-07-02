@@ -159,7 +159,11 @@
       <div class="form-group"><label>买入价</label><input id="buyPrice" type="number" step="0.01" placeholder="3.68"></div>
       <div class="form-group"><label>股数</label><input id="buyShares" type="number" step="100" value="100"></div>
       <div class="form-group"><label>买入日期</label><input id="buyDate" type="date"></div>
-      <div class="form-group"><label>原因</label><input id="buyReason" placeholder="如: 趋势跟随买入" style="width:200px"></div>
+      <div class="form-group"><label>策略来源</label><select id="buyStrategySource"><option value="">手动/主观</option><option value="market_bottom">market_bottom</option><option value="vegas_tunnel">vegas_tunnel</option><option value="alpha042">alpha042</option><option value="daily_guide">V反(daily_guide)</option><option value="price_volume_rising">价增量增</option></select></div>
+      <div class="form-group"><label>信号排名</label><input id="buySignalRank" type="number" min="1" placeholder="在策略推荐中的排名" style="width:80px"></div>
+      <div class="form-group"><label>大盘信号</label><select id="buyMarketSignal"><option value="">未知</option><option value="GREEN">GREEN</option><option value="YELLOW">YELLOW</option><option value="RED">RED</option></select></div>
+      <div class="form-group"><label>原因</label><input id="buyReason" placeholder="如: market_bottom买入信号" style="width:200px"></div>
+      <div class="form-group"><label>备注</label><input id="buyDecisionNote" placeholder="决策备注（可选）" style="width:200px"></div>
       <button class="btn btn-primary" onclick="doBuy()">记录买入</button>
     </div>
 
@@ -357,14 +361,19 @@ async function doBuy() {
   const shares = parseInt(document.getElementById("buyShares").value);
   const date = document.getElementById("buyDate").value;
   const reason = document.getElementById("buyReason").value.trim();
+  const strategySource = document.getElementById("buyStrategySource").value;
+  const signalRank = parseInt(document.getElementById("buySignalRank").value) || null;
+  const marketSignal = document.getElementById("buyMarketSignal").value;
+  const decisionNote = document.getElementById("buyDecisionNote").value.trim();
   if (!code) { toast("请输入股票代码", "err"); return; }
   if (!price || price <= 0) { toast("请输入有效买入价", "err"); return; }
   if (!shares || shares < 100) { toast("最少100股", "err"); return; }
-  await api("buy", { code, price, shares, date, reason });
+  await api("buy", { code, price, shares, date, reason, strategy_source: strategySource, signal_rank: signalRank, market_signal: marketSignal, decision_note: decisionNote });
   document.getElementById("buyCode").value = "";
   document.getElementById("buyPrice").value = "";
   document.getElementById("buyShares").value = "100";
   document.getElementById("buyReason").value = "";
+  document.getElementById("buyDecisionNote").value = "";
   refresh();
 }
 

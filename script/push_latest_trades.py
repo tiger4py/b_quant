@@ -15,11 +15,12 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from sqlalchemy import create_engine, func
+from sqlalchemy import func
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 from config import DATABASE_URL
 from models.stock import StockDaily
-from logic.backtest_cache import load_market_backtest_cache
+from logic.backtest_cache import load_latest_strategy_result
 
 if sys.platform == "win32":
     try:
@@ -44,7 +45,7 @@ def main():
     sess = Session()
 
     try:
-        result = load_market_backtest_cache(sess, STRATEGY_ID)
+        result = load_latest_strategy_result(STRATEGY_ID)
         if not result:
             print(f"[!] 回测缓存不存在，请先运行回测")
             return

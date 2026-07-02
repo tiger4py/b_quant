@@ -47,6 +47,10 @@ def main():
     run_step(f"Step 1/3: 更新K线数据",
              "script/update_daily.py")
 
+    # Step 1.5: 导入CSV到数据库
+    run_step(f"Step 1.5/3: CSV导入数据库",
+             "script/import_day_stock.py", "-q")
+
     # Step 2: 大底抄底回测
     if not run_step(f"Step 2/3: 大底抄底回测 ({args.days}天)",
                     "script/run_strategy_market_backtest.py",
