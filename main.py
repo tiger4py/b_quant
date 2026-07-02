@@ -163,6 +163,7 @@ def page_accumulation_market_backtest():
 
 TRADING_PORTFOLIO_FILE = os.path.join(os.path.dirname(__file__), "data", "portfolio.json")
 TRADING_LOG_FILE = os.path.join(os.path.dirname(__file__), "data", "trade_log.json")
+TRADING_JOURNAL_FILE = os.path.join(os.path.dirname(__file__), "data", "trading_journal.json")
 
 
 def _load_trading_portfolio():
@@ -188,6 +189,20 @@ def _load_trade_log():
 def _save_trade_log(logs):
     with open(TRADING_LOG_FILE, "w", encoding="utf-8") as f:
         json.dump(logs, f, ensure_ascii=False, indent=2)
+
+
+# ── 操作心得 / 交易日志 ──
+
+def _load_journal():
+    if not os.path.exists(TRADING_JOURNAL_FILE):
+        return []
+    with open(TRADING_JOURNAL_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _save_journal(entries):
+    with open(TRADING_JOURNAL_FILE, "w", encoding="utf-8") as f:
+        json.dump(entries, f, ensure_ascii=False, indent=2)
 
 
 @app.route("/trading")
@@ -573,6 +588,73 @@ def api_trading_delete():
     return jsonify({"ok": f"已删除记录 #{log_id}"})
 
 
+# ── 操作心得 API ──
+
+@app.route("/api/trading/journal", methods=["GET"])
+def api_trading_journal_list():
+    """获取操作心得列表，可按日期筛选"""
+    date_filter = request.args.get("date", "")
+    entries = _load_journal()
+    if date_filter:
+        entries = [e for e in entries if e.get("date") == date_filter]
+    # 按日期倒序
+    entries.sort(key=lambda e: e.get("date", ""), reverse=True)
+    return jsonify(entries)
+
+
+@app.route("/api/trading/journal", methods=["POST"])
+def api_trading_journal_save():
+    """保存/更新一天的操作心得"""
+    payload = request.get_json(silent=True) or {}
+    date = (payload.get("date") or "").strip()
+    if not date:
+        return jsonify({"error": "日期不能为空"}), 400
+
+    entries = _load_journal()
+    # 同一天覆盖更新
+    existing = next((e for e in entries if e.get("date") == date), None)
+    # 个股跟踪：[{code, name, status: "持有"|"加仓"|"减仓"|"观望"}]
+    stocks = payload.get("stocks") or []
+    stocks = [{"code": s["code"].strip(), "name": s.get("name", "").strip(), "status": s.get("status", "观望")}
+              for s in stocks if s.get("code", "").strip()]
+
+    # 复盘：对上一次的操作判断对错（可为空，第二天晚上填）
+    review = payload.get("review") or {}
+    if isinstance(review, str):
+        review = {"verdict": review, "note": ""}
+
+    entry = {
+        "date": date,
+        "market_view": (payload.get("market_view") or "").strip(),
+        "sector_view": (payload.get("sector_view") or "").strip(),
+        "trade_rationale": (payload.get("trade_rationale") or "").strip(),
+        "lessons": (payload.get("lessons") or "").strip(),
+        "tomorrow_plan": (payload.get("tomorrow_plan") or "").strip(),
+        "review": {
+            "verdict": review.get("verdict") or "",      # "对" / "错" / "半对" / ""
+            "note": (review.get("note") or "").strip(),   # 复盘笔记
+        },
+        "stocks": stocks,
+        "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+    }
+    if existing:
+        existing.update(entry)
+    else:
+        entry["id"] = max((e.get("id", 0) for e in entries), default=0) + 1
+        entries.append(entry)
+
+    _save_journal(entries)
+    return jsonify({"ok": f"已保存 {date} 操作心得", "entry": entry})
+
+
+@app.route("/api/trading/journal/<int:entry_id>", methods=["DELETE"])
+def api_trading_journal_delete(entry_id):
+    entries = _load_journal()
+    entries = [e for e in entries if e.get("id") != entry_id]
+    _save_journal(entries)
+    return jsonify({"ok": f"已删除 #{entry_id}"})
+
+
 # ── stock basic info ───────────────────────────────────────────
 @app.route("/api/stocks")
 def api_stocks():
@@ -599,6 +681,16 @@ def api_stocks():
 
 
 # ── daily K-line ───────────────────────────────────────────────
+@app.route("/api/stocks/name/<code>")
+def api_stock_name(code):
+    """简单查股票名称"""
+    with get_session() as sess:
+        stock = sess.get(StockInfo, code.strip())
+        if stock:
+            return jsonify({"code": stock.code, "name": stock.name})
+        return jsonify({"code": code, "name": ""})
+
+
 @app.route("/api/stocks/<code>/daily")
 def api_stock_daily(code: str):
     with get_session() as sess:
