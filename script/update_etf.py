@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ETF_DIR = os.path.join(ROOT_DIR, "data", "etf")
-MAX_BARS = 1000
+MAX_BARS = 3500  # 约14年，覆盖2014至今
 
 # ======== 分批参数 ========
 BATCH_SIZE = 50          # 每批多少只（缩小批次减少被封风险）

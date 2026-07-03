@@ -34,6 +34,7 @@ from backtest.indicators import ema, sma, rsi
 META = {
     "id": "etf_vegas",
     "name": "ETF维加斯隧道",
+    "type": "etf",
     "description": (
         "ETF版维加斯隧道：EMA12/EMA50/EMA100/EMA200四线隧道系统。"
         "买入=EMA12上穿隧道+隧道多头排列+EMA200趋势过滤+RSI辅助+不追高。"

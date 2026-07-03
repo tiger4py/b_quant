@@ -12,11 +12,15 @@ from sqlalchemy.orm import Session, sessionmaker
 from config import DATABASE_URL, DOWNLOAD_DAYS
 from script.update_daily import update_concepts as scheduled_update_concepts
 from script.update_daily import update_stocks as scheduled_update_stocks
+from pathlib import Path
 from backtest import get_strategy, list_strategies, run_backtest, run_portfolio_backtest
 from logic.backtest_cache import (
     DEFAULT_MARKET_MAX_POSITIONS,
     load_latest_strategy_result,
 )
+
+ROOT_DIR = Path(__file__).resolve().parent
+ETF_STRATEGY_ROOT = ROOT_DIR / "data" / "strategy"
 from logic.progress import get as get_progress
 from models.stock import Base, StockInfo, StockDaily, Concept, StockConcept, ConceptDaily
 from logic.baostock_download import BaoStockDownloader
@@ -27,6 +31,40 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
+
+
+# ======== ETF 策略结果加载 ========
+
+def _load_etf_strategy_result(strategy_id: str):
+    """从 data/strategy/{id}/ 读取最新 ETF 回测 JSON 归档。"""
+    strategy_dir = ETF_STRATEGY_ROOT / strategy_id
+    if not strategy_dir.exists():
+        return None
+
+    # 按月份目录降序找最新文件
+    latest_file = None
+    latest_mtime = 0
+    for json_file in strategy_dir.rglob("*.json"):
+        mtime = json_file.stat().st_mtime
+        if mtime > latest_mtime:
+            latest_mtime = mtime
+            latest_file = json_file
+
+    if not latest_file:
+        return None
+
+    with open(latest_file, "r", encoding="utf-8") as f:
+        result = json.load(f)
+
+    # 补充 cache 元数据
+    result["cache"] = {
+        "cache_key": f"{strategy_id}_etf",
+        "created_at": datetime.fromtimestamp(latest_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    # 补充 days 字段
+    if result.get("equity_curve"):
+        result["selection"]["days"] = len(result["equity_curve"])
+    return result
 
 engine = create_engine(DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(bind=engine)
@@ -742,16 +780,23 @@ def api_backtest_market_overview():
     ranking = []
     missing = []
     for item in list_strategies():
-        result = load_latest_strategy_result(item["id"])
+        strategy_id = item["id"]
+        # ETF 策略从 JSON 归档加载（id 以 etf_ 开头 或 META.type == "etf"）
+        is_etf = item.get("type") == "etf" or strategy_id.startswith("etf_")
+        if is_etf:
+            result = _load_etf_strategy_result(strategy_id)
+        else:
+            result = load_latest_strategy_result(strategy_id)
+
         if not result:
             missing.append({
-                "strategy_id": item["id"],
+                "strategy_id": strategy_id,
                 "strategy_name": item["name"],
             })
             continue
         summary = result["summary"]
         ranking.append({
-            "strategy_id": item["id"],
+            "strategy_id": strategy_id,
             "strategy_name": item["name"],
             "description": item["description"],
             "return_pct": summary["total_return_pct"],
@@ -1127,12 +1172,165 @@ def api_backtest_market(strategy_id: str):
     except KeyError:
         return jsonify({"error": "策略不存在"}), 404
 
-    result = load_latest_strategy_result(strategy_id)
+    # ETF 策略从 JSON 归档加载
+    is_etf = strategy.META.get("type") == "etf" or strategy_id.startswith("etf_")
+    if is_etf:
+        result = _load_etf_strategy_result(strategy_id)
+    else:
+        result = load_latest_strategy_result(strategy_id)
+
     if not result:
+        hint = "script/run_etf_backtest.py" if is_etf else "script/run_strategy_market_backtest.py"
         return jsonify({
-            "error": f"{strategy.META['name']} 全市场回测结果还没有生成，请先运行 script/run_strategy_market_backtest.py --strategy {strategy_id} --max-positions {max_positions}"
+            "error": f"{strategy.META['name']} 回测结果还没有生成，请先运行 {hint} --strategy {strategy_id}"
         }), 404
     return jsonify(result)
+
+
+@app.route("/api/backtest/market/<strategy_id>/analysis")
+def api_backtest_market_analysis(strategy_id: str):
+    """返回策略深度分析数据"""
+    try:
+        strategy = get_strategy(strategy_id)
+    except KeyError:
+        return jsonify({"error": "策略不存在"}), 404
+
+    is_etf = strategy.META.get("type") == "etf" or strategy_id.startswith("etf_")
+    if is_etf:
+        result = _load_etf_strategy_result(strategy_id)
+    else:
+        result = load_latest_strategy_result(strategy_id)
+
+    if not result:
+        return jsonify({"error": "回测结果还没有生成"}), 404
+
+    trades = result.get("trades", [])
+    curve = result.get("equity_curve", [])
+    stocks = result.get("stock_summaries", [])
+
+    # 1. 交易特征
+    from collections import Counter, defaultdict
+    from datetime import datetime as _dt
+
+    win_trades = [t for t in trades if t.get("profit", 0) > 0]
+    loss_trades = [t for t in trades if t.get("profit", 0) <= 0]
+    avg_win = sum(t.get("profit_pct", 0) for t in win_trades) / max(1, len(win_trades))
+    avg_loss = sum(t.get("profit_pct", 0) for t in loss_trades) / max(1, len(loss_trades))
+    wl_ratio = abs(avg_win / avg_loss) if avg_loss else 0
+
+    sell_reasons = Counter()
+    for t in trades:
+        r = t.get("sell_reason", "")
+        if "到期" in r: sell_reasons["到期"] += 1
+        elif "量价同步" in r: sell_reasons["量价同步"] += 1
+        elif "期末持仓" in r: sell_reasons["期末持仓"] += 1
+        elif "下穿" in r or "隧道" in r: sell_reasons["隧道信号"] += 1
+        elif "回撤" in r or "止损" in r: sell_reasons["止损/回撤"] += 1
+        else: sell_reasons["其他"] += 1
+
+    hold_days = []
+    for t in trades:
+        try:
+            b = _dt.strptime(t["buy_date"], "%Y-%m-%d")
+            s = _dt.strptime(t.get("sell_date", t["buy_date"]), "%Y-%m-%d")
+            if s > b: hold_days.append((s - b).days)
+        except: pass
+
+    trade_profile = {
+        "total": len(trades), "wins": len(win_trades), "losses": len(loss_trades),
+        "avg_win_pct": round(avg_win, 2), "avg_loss_pct": round(avg_loss, 2),
+        "wl_ratio": round(wl_ratio, 2),
+        "avg_hold": round(sum(hold_days) / max(1, len(hold_days)), 0),
+        "med_hold": sorted(hold_days)[len(hold_days) // 2] if hold_days else 0,
+        "max_hold": max(hold_days) if hold_days else 0,
+        "sell_reasons": {k: v for k, v in sell_reasons.most_common()},
+    }
+
+    # 2. 年度表现
+    yearly = defaultdict(lambda: {"t": 0, "w": 0, "p": 0.0, "s": 0, "e": 0})
+    for t in trades:
+        yr = t["buy_date"][:4]
+        yearly[yr]["t"] += 1
+        if t.get("profit", 0) > 0: yearly[yr]["w"] += 1
+        yearly[yr]["p"] += t.get("profit", 0)
+    for p in curve:
+        yr = p["date"][:4]
+        if yearly[yr]["s"] == 0: yearly[yr]["s"] = p["equity"]
+        yearly[yr]["e"] = p["equity"]
+
+    yearly_list = []
+    for yr in sorted(yearly):
+        d = yearly[yr]
+        ret = ((d["e"] / d["s"] - 1) * 100) if d["s"] else 0
+        yearly_list.append({
+            "year": yr, "return_pct": round(ret, 1), "trades": d["t"],
+            "win_rate": round(d["w"] / max(1, d["t"]) * 100, 0), "profit": round(d["p"], 0),
+        })
+
+    # 3. 回撤
+    peak = 0; max_dd = 0; max_dd_start = ""; max_dd_end = ""
+    dd_periods = []; in_dd = False; dd_start = ""; dd_peak2 = 0
+    for p in curve:
+        eq = p["equity"]
+        if eq > peak: peak = eq
+        dd = (eq - peak) / peak * 100 if peak else 0
+        if dd < max_dd: max_dd = dd; max_dd_start = p["date"]; max_dd_end = p["date"]
+    for p in curve:
+        eq = p["equity"]
+        if eq > dd_peak2: dd_peak2 = eq
+        dd = (eq - dd_peak2) / dd_peak2 * 100 if dd_peak2 else 0
+        if dd <= -10 and not in_dd: in_dd = True; dd_start = p["date"]
+        elif dd > -3 and in_dd:
+            in_dd = False
+            worst = min((e["equity"] - dd_peak2) / dd_peak2 * 100
+                       for e in curve if dd_start <= e["date"] <= p["date"])
+            dd_periods.append({"start": dd_start, "end": p["date"], "worst": round(worst, 1)})
+
+    # 4. 分类
+    cats_def = [
+        ("宽基-沪深300", ["沪深300"]), ("宽基-中证500", ["中证500"]),
+        ("宽基-中证1000", ["中证1000"]), ("宽基-创业板", ["创业板"]),
+        ("宽基-科创50", ["科创50"]), ("宽基-其他", ["上证50","A500","综指","中证2000"]),
+        ("半导体", ["芯片","半导体"]), ("医药", ["医药","医疗","创新药"]),
+        ("证券", ["证券","券商"]), ("消费", ["酒","消费","食品","家电"]),
+        ("TMT", ["通信","5G","计算机","传媒","游戏","人工智能"]),
+        ("能源", ["煤炭","电力","新能源","光伏","有色"]),
+        ("红利", ["红利","低波"]), ("黄金", ["黄金"]),
+    ]
+    cat_list = []
+    for cn, kws in cats_def:
+        cs = [s for s in stocks if any(kw in s.get("name","") for kw in kws)]
+        if not cs: continue
+        tp = sum(s.get("profit",0) for s in cs); tt = sum(s.get("trade_count",0) for s in cs)
+        tw = sum(s.get("wins",0) for s in cs)
+        cat_list.append({"name":cn,"count":len(cs),"profit":round(tp,0),
+                         "trades":tt,"win_rate":round(tw/max(1,tt)*100,0)})
+
+    # 5. 集中度
+    profits = sorted([s.get("profit",0) for s in stocks], reverse=True)
+    tp = sum(p for p in profits if p > 0)
+    top3 = sum(profits[:3]); top5 = sum(profits[:5]); top10 = sum(profits[:10])
+    pos_n = sum(1 for s in stocks if s.get("profit",0) > 0)
+    neg_n = sum(1 for s in stocks if s.get("profit",0) <= 0)
+
+    return jsonify({
+        "trade_profile": trade_profile,
+        "yearly": yearly_list,
+        "drawdown": {
+            "max_dd_pct": round(max_dd, 1),
+            "max_dd_range": f"{max_dd_start} ~ {max_dd_end}",
+            "deep_periods": dd_periods[-5:],
+        },
+        "categories": cat_list,
+        "concentration": {
+            "pos_etfs": pos_n, "neg_etfs": neg_n,
+            "total_pos_profit": round(tp, 0),
+            "total_neg_profit": round(sum(p for p in profits if p < 0), 0),
+            "top3_pct": round(top3/max(1,tp)*100, 0),
+            "top5_pct": round(top5/max(1,tp)*100, 0),
+            "top10_pct": round(top10/max(1,tp)*100, 0),
+        },
+    })
 
 
 def _pick_battle_stocks(sess: Session, stock_limit: int, days: int):

@@ -170,6 +170,42 @@
       </div>
     </div>
   </section>
+
+  <!-- 分析报告 -->
+  <section class="panel" id="analysis-panel" style="display:none;">
+    <div class="panel-head">
+      <div class="head-left">分析报告 <span id="analysis-hint"></span></div>
+      <button class="toggle-btn" id="toggle-analysis" onclick="togglePanel('analysis-content', this)">展开</button>
+    </div>
+    <div id="analysis-content" class="panel-body collapsed">
+      <div class="table-wrap" style="margin-bottom:16px;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;padding:4px;" id="analysis-metrics"></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>年份</th><th>收益</th><th>交易</th><th>胜率</th><th>盈亏</th></tr></thead>
+          <tbody id="analysis-yearly"></tbody>
+        </table>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>类别</th><th>只数</th><th>盈亏</th><th>交易</th><th>胜率</th></tr></thead>
+            <tbody id="analysis-cats"></tbody>
+          </table>
+        </div>
+        <div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>卖出原因</th><th>笔数</th></tr></thead>
+              <tbody id="analysis-reasons"></tbody>
+            </table>
+          </div>
+          <div style="padding:8px;color:#9ca3af;font-size:12px;margin-top:8px;" id="analysis-conc"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -385,6 +421,7 @@ function renderDetail(strategy, data) {
   renderEquity(data.equity_curve || [], posMap, initCash);
   renderStocks(data.stock_summaries || []);
   renderTrades(data);
+  renderAnalysis(strategy.id);
   // 加载数据后自动展开所有面板
   expandAllPanels();
   const row = overviewRanking.find(item => item.strategy_id === strategy.id);
@@ -726,6 +763,68 @@ function renderStocks(stocks) {
 
 let tradeEvents = [];
 let currentDetailData = null; // 当前策略回测数据
+
+async function renderAnalysis(strategyId) {
+  const panel = $("analysis-panel");
+  try {
+    const res = await fetch(`/api/backtest/market/${strategyId}/analysis`);
+    const data = await res.json();
+    if (!res.ok) { panel.style.display = "none"; return; }
+    panel.style.display = "block";
+
+    // 指标卡
+    const tp = data.trade_profile;
+    $("analysis-hint").textContent = `${strategyId} — ${data.yearly.length} 年数据`;
+    $("analysis-metrics").innerHTML = `
+      <div class="metric"><span>交易笔数</span><strong>${tp.total}</strong></div>
+      <div class="metric"><span>盈亏比</span><strong>${tp.wl_ratio}</strong></div>
+      <div class="metric"><span>平均盈利</span><strong class="red">+${tp.avg_win_pct}%</strong></div>
+      <div class="metric"><span>平均亏损</span><strong class="green">${tp.avg_loss_pct}%</strong></div>
+      <div class="metric"><span>平均持仓</span><strong>${tp.avg_hold}天</strong></div>
+      <div class="metric"><span>最长持仓</span><strong>${tp.max_hold}天</strong></div>
+      <div class="metric"><span>最大回撤</span><strong class="green">${data.drawdown.max_dd_pct}%</strong></div>
+      <div class="metric"><span>回撤区间</span><strong style="font-size:13px;">${data.drawdown.max_dd_range||'-'}</strong></div>
+    `;
+
+    // 年度表
+    $("analysis-yearly").innerHTML = data.yearly.map(y => `
+      <tr>
+        <td>${y.year}</td>
+        <td class="${pctClass(y.return_pct)}">${y.return_pct>=0?'+':''}${y.return_pct}%</td>
+        <td>${y.trades}笔</td>
+        <td>${y.win_rate}%</td>
+        <td class="${pctClass(y.profit)}">${y.profit>=0?'+':''}${fmtMoney(y.profit)}</td>
+      </tr>
+    `).join("");
+
+    // 分类
+    const maxProfit = Math.max(...data.categories.map(c => Math.abs(c.profit)), 1);
+    $("analysis-cats").innerHTML = data.categories.map(c => {
+      const barW = Math.round(Math.abs(c.profit) / maxProfit * 120);
+      const bar = `<span style="display:inline-block;width:${barW}px;height:10px;background:${c.profit>=0?'#ef4444':'#22c55e'};border-radius:2px;margin-left:4px;vertical-align:middle;"></span>`;
+      return `<tr>
+        <td>${c.name}</td><td>${c.count}</td>
+        <td class="${pctClass(c.profit)}">${c.profit>=0?'+':''}${fmtMoney(c.profit)}</td>
+        <td>${c.trades}</td><td>${c.win_rate}%${bar}</td>
+      </tr>`;
+    }).join("");
+
+    // 卖出原因
+    const reasons = tp.sell_reasons || {};
+    $("analysis-reasons").innerHTML = Object.entries(reasons).map(([k,v]) =>
+      `<tr><td>${k}</td><td>${v}笔</td></tr>`
+    ).join("");
+
+    // 集中度
+    const cc = data.concentration;
+    $("analysis-conc").innerHTML = `
+      <b>收益集中度</b><br>
+      正收益ETF: ${cc.pos_etfs}只 (+${fmtMoney(cc.total_pos_profit)}) |
+      负收益ETF: ${cc.neg_etfs}只 (${fmtMoney(cc.total_neg_profit)})<br>
+      TOP3 贡献 ${cc.top3_pct}% | TOP5 贡献 ${cc.top5_pct}% | TOP10 贡献 ${cc.top10_pct}%
+    `;
+  } catch(e) { panel.style.display = "none"; }
+}
 
 function renderTrades(data) {
   tradeEvents = buildTradeEvents(data);
