@@ -1,17 +1,21 @@
 """将 data/day_stock/ 和 data/day_concept/ 下的 CSV 批量导入数据库
 
 用法:
-    # 导入所有（stock + concept）
+    # 导入最近7天（默认）
     python script/import_day_stock.py
 
-    # 只导入 stock
+    # 导入指定日期
+    python script/import_day_stock.py --date 2026-07-03
+
+    # 导入日期范围
+    python script/import_day_stock.py --start 2026-07-01 --end 2026-07-03
+
+    # 导入所有历史
+    python script/import_day_stock.py --all
+
+    # 只导入 stock / concept
     python script/import_day_stock.py --type stock
-
-    # 只导入 concept
-    python script/import_day_stock.py --type concept
-
-    # 指定 CSV 目录（覆盖默认）
-    python script/import_day_stock.py --path data/day_stock/202606/
+    python script/import_day_stock.py --date 2026-07-03 --type concept
 
     # 静默模式
     python script/import_day_stock.py -q
@@ -22,11 +26,12 @@ CSV 格式（由 update_daily.py 生成）:
 
 导入策略: INSERT OR REPLACE，可重复执行不报错。
 """
-import os, sys, csv, glob
+import os, sys, csv, glob, re
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import argparse
 import logging
+from datetime import datetime, date, timedelta
 from sqlalchemy import create_engine, event, text
 from sqlalchemy.orm import sessionmaker
 
@@ -64,6 +69,41 @@ def _find_csv_files(directory: str) -> list:
     files = glob.glob(os.path.join(directory, "**/*.csv"), recursive=True)
     files.sort()
     return files
+
+
+def _filter_by_date(files: list, start_date: str, end_date: str) -> list:
+    """按日期范围过滤 CSV 文件。
+
+    CSV 文件名格式: YYYY-MM-DD.csv（如 2026-07-03.csv）
+    只保留文件名日期在 [start_date, end_date] 范围内的文件。
+    """
+    if not start_date and not end_date:
+        return files
+
+    date_pattern = re.compile(r'(\d{4}-\d{2}-\d{2})\.csv$')
+    filtered = []
+    for f in files:
+        m = date_pattern.search(f)
+        if not m:
+            # 文件名不含日期，保留（可能是 _tmp 目录下的临时文件）
+            continue
+        file_date = m.group(1)
+        if start_date and file_date < start_date:
+            continue
+        if end_date and file_date > end_date:
+            continue
+        filtered.append(f)
+    return filtered
+
+
+def _today_str() -> str:
+    """返回今天的日期字符串 YYYY-MM-DD"""
+    return datetime.now().strftime("%Y-%m-%d")
+
+
+def _days_ago(n: int) -> str:
+    """返回 N 天前的日期字符串 YYYY-MM-DD"""
+    return (datetime.now() - timedelta(days=n)).strftime("%Y-%m-%d")
 
 
 def _read_csv(filepath: str) -> list:
@@ -129,14 +169,23 @@ def _parse_concept_row(row: dict) -> dict:
     }
 
 
-def import_stock(engine, directory: str = None) -> int:
-    """导入 stock_daily CSV，返回导入行数"""
+def import_stock(engine, directory: str = None, start_date: str = None, end_date: str = None) -> int:
+    """导入 stock_daily CSV，返回导入行数。
+
+    参数:
+        directory: CSV 根目录，默认 DAY_STOCK_DIR
+        start_date: 起始日期 YYYY-MM-DD（可选）
+        end_date: 截止日期 YYYY-MM-DD（可选）
+    """
     if directory is None:
         directory = DAY_STOCK_DIR
 
     files = _find_csv_files(directory)
+    if start_date or end_date:
+        files = _filter_by_date(files, start_date, end_date)
+
     if not files:
-        logger.info("No stock CSV files found in %s", directory)
+        logger.info("No stock CSV files found in %s (date filter: %s ~ %s)", directory, start_date or '-', end_date or '-')
         return 0
 
     logger.info("Importing stock daily from %d files in %s", len(files), directory)
@@ -156,14 +205,23 @@ def import_stock(engine, directory: str = None) -> int:
     return total
 
 
-def import_concept(engine, directory: str = None) -> int:
-    """导入 concept_daily CSV，返回导入行数"""
+def import_concept(engine, directory: str = None, start_date: str = None, end_date: str = None) -> int:
+    """导入 concept_daily CSV，返回导入行数。
+
+    参数:
+        directory: CSV 根目录，默认 DAY_CONCEPT_DIR
+        start_date: 起始日期 YYYY-MM-DD（可选）
+        end_date: 截止日期 YYYY-MM-DD（可选）
+    """
     if directory is None:
         directory = DAY_CONCEPT_DIR
 
     files = _find_csv_files(directory)
+    if start_date or end_date:
+        files = _filter_by_date(files, start_date, end_date)
+
     if not files:
-        logger.info("No concept CSV files found in %s", directory)
+        logger.info("No concept CSV files found in %s (date filter: %s ~ %s)", directory, start_date or '-', end_date or '-')
         return 0
 
     logger.info("Importing concept daily from %d files in %s", len(files), directory)
@@ -187,6 +245,14 @@ def main():
     parser = argparse.ArgumentParser(description="导入 day_stock / day_concept CSV 到数据库")
     parser.add_argument("--type", choices=["stock", "concept"], default=None,
                         help="只导入指定类型 (默认: 全部)")
+    parser.add_argument("--date", default=None,
+                        help="导入指定日期 YYYY-MM-DD (默认: 最近7天)")
+    parser.add_argument("--start", default=None,
+                        help="起始日期 YYYY-MM-DD (需配合 --end)")
+    parser.add_argument("--end", default=None,
+                        help="截止日期 YYYY-MM-DD (需配合 --start)")
+    parser.add_argument("--all", action="store_true",
+                        help="导入所有历史 CSV（不限制日期）")
     parser.add_argument("--path", default=None,
                         help="指定 CSV 目录 (覆盖默认路径)")
     parser.add_argument("-q", "--quiet", action="store_true",
@@ -195,6 +261,25 @@ def main():
 
     if args.quiet:
         logging.getLogger().setLevel(logging.WARNING)
+
+    # 确定日期范围
+    if args.all:
+        start_date = None
+        end_date = None
+    elif args.start or args.end:
+        start_date = args.start
+        end_date = args.end
+    elif args.date:
+        start_date = args.date
+        end_date = args.date
+    else:
+        # 默认：导入最近7天
+        today = _today_str()
+        start_date = _days_ago(6)
+        end_date = today
+
+    # --path 模式下不应用日期过滤（用户明确指定了目录）
+    use_date_filter = not args.path
 
     engine = create_engine(DATABASE_URL, echo=False)
 
@@ -205,18 +290,21 @@ def main():
     total_stock = 0
     total_concept = 0
 
+    sd = start_date if use_date_filter else None
+    ed = end_date if use_date_filter else None
+
     if args.path:
         # 指定了路径，智能判断类型
         path_lower = args.path.lower()
         if args.type == "concept" or "concept" in path_lower:
-            total_concept = import_concept(engine, args.path)
+            total_concept = import_concept(engine, args.path, sd, ed)
         else:
-            total_stock = import_stock(engine, args.path)
+            total_stock = import_stock(engine, args.path, sd, ed)
     else:
         if args.type is None or args.type == "stock":
-            total_stock = import_stock(engine)
+            total_stock = import_stock(engine, start_date=sd, end_date=ed)
         if args.type is None or args.type == "concept":
-            total_concept = import_concept(engine)
+            total_concept = import_concept(engine, start_date=sd, end_date=ed)
 
     logger.info("=== Import done: stock=%d, concept=%d ===", total_stock, total_concept)
 
