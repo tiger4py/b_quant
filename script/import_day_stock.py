@@ -273,9 +273,9 @@ def main():
         start_date = args.date
         end_date = args.date
     else:
-        # 默认：导入最近7天
+        # 默认：导入最近14天
         today = _today_str()
-        start_date = _days_ago(6)
+        start_date = _days_ago(13)
         end_date = today
 
     # --path 模式下不应用日期过滤（用户明确指定了目录）
