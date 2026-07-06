@@ -38,6 +38,7 @@ data/*.db-wal
 data/*.db-shm
 logs/*.log
 artifacts/cache/
+data/factor_lab/*.json
 nul
 
 # OS

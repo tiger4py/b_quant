@@ -1,0 +1,6 @@
+﻿factor_id,factor_name,total_return_pct,max_drawdown_pct,win_rate_pct,trade_count,avg_profit_pct,profit_factor,final_equity,open_positions
+alpha042_alpha040,Alpha042 + 上涨量下跌量比,148.23,9.78,69.01,142,3.48,5.15,2482316.7,5
+alpha042_alpha084,Alpha042 + 20日OBV强度,140.12,9.85,69.85,136,3.42,4.95,2401153.6,4
+alpha042_alpha176,Alpha042 + 区间位置-成交量背离,126.37,9.71,68.38,136,3.26,4.7,2263725.6,4
+alpha042_alpha127,Alpha042 + 12日高点回撤惩罚,130.06,11.42,68.38,136,3.33,4.45,2300615.3,5
+alpha042_alpha161,Alpha042 + 低ATR偏好,94.55,9.71,69.29,127,2.83,4.23,1945463.0,4
