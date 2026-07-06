@@ -53,7 +53,7 @@ VOL_AMP_MAX = 5.0
 
 # -- 位置确认 --
 PRICE_NEAR_HIGH_LOOKBACK = 20
-PRICE_NEAR_HIGH_PCT = 0.10
+PRICE_NEAR_HIGH_PCT = 0.08
 CHG_5D_MIN = -0.05
 
 # -- 流动性（ETF 版放宽到 100 万） --
@@ -63,7 +63,7 @@ MIN_AMOUNT = 1_000_000
 MAX_HOLD_DAYS = 40
 
 # -- 市场择时 --
-MARKET_GREED_BREADTH = 0.80
+MARKET_GREED_BREADTH = 0.75
 
 
 # ============ 滚动相关系数（同 alpha042） ============
