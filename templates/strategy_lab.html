@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>策略试验 — Alpha因子实验室</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0f1117; color: #e1e4e8; min-height: 100vh;
+  }
+  .nav {
+    background: #161822; border-bottom: 1px solid #2a2d3e;
+    padding: 0 28px; display: flex; align-items: center; height: 48px;
+  }
+  .nav a {
+    color: #8b92a0; text-decoration: none; font-size: 13px;
+    padding: 0 16px; height: 100%; display: flex; align-items: center;
+    border-bottom: 2px solid transparent; transition: all .15s;
+  }
+  .nav a:hover, .nav a.on { color: #e1e4e8; border-bottom-color: #3b82f6; }
+  .nav .brand { font-weight: 600; color: #e1e4e8; margin-right: 24px; font-size: 14px; }
+
+  .page { max-width: 1500px; margin: 0 auto; padding: 20px 24px; }
+  h2 { font-size: 20px; margin-bottom: 4px; }
+  .sub { color: #6b7280; font-size: 13px; margin-bottom: 20px; }
+
+  /* top controls bar */
+  .top-bar {
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 14px;
+    padding: 16px 20px; margin-bottom: 20px;
+    display: flex; align-items: center; align-content: center; gap: 12px; flex-wrap: wrap;
+  }
+  .top-bar label { font-size: 12px; color: #8b92a0; white-space: nowrap; }
+  .top-bar input, .top-bar select {
+    background: #0f1117; border: 1px solid #2a2d3e; border-radius: 8px;
+    color: #e1e4e8; padding: 7px 10px; font-size: 13px; outline: none;
+  }
+  .top-bar input:focus, .top-bar select:focus { border-color: #3b82f6; }
+  .top-bar input[type=date] { width: 140px; }
+  .date-range-control {
+    width: min(460px, 100%); min-width: 280px; display: flex; flex-direction: column; gap: 8px;
+    background: #0f1117; border: 1px solid #2a2d3e; border-radius: 8px; padding: 10px 12px;
+  }
+  .date-range-values { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; color: #e1e4e8; }
+  .date-range-values .sep { color: #6b7280; }
+  .range-wrap { position: relative; height: 26px; }
+  .range-track {
+    position: absolute; left: 0; right: 0; top: 11px; height: 4px;
+    background: #252938; border-radius: 999px; overflow: hidden;
+  }
+  .range-fill {
+    position: absolute; top: 0; bottom: 0; left: var(--range-left, 0%); right: var(--range-right, 0%);
+    background: #3b82f6; border-radius: 999px;
+  }
+  .range-wrap input[type=range] {
+    position: absolute; inset: 0; width: 100%; height: 26px; margin: 0; padding: 0;
+    background: transparent; border: 0; pointer-events: none; appearance: none; -webkit-appearance: none;
+  }
+  .range-wrap input[type=range]::-webkit-slider-runnable-track { height: 4px; background: transparent; }
+  .range-wrap input[type=range]::-webkit-slider-thumb {
+    appearance: none; -webkit-appearance: none; pointer-events: auto;
+    width: 16px; height: 16px; margin-top: -6px; border-radius: 50%;
+    background: #e1e4e8; border: 2px solid #3b82f6; cursor: pointer;
+  }
+  .range-wrap input[type=range]::-moz-range-track { height: 4px; background: transparent; }
+  .range-wrap input[type=range]::-moz-range-thumb {
+    pointer-events: auto; width: 14px; height: 14px; border-radius: 50%;
+    background: #e1e4e8; border: 2px solid #3b82f6; cursor: pointer;
+  }
+  @media (max-width: 720px) {
+    .date-range-control { width: 100%; min-width: 0; }
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #3b82f6; color: #fff; border: none; border-radius: 8px;
+    padding: 9px 18px; font-size: 13px; cursor: pointer; font-weight: 600;
+  }
+  .btn:hover { background: #2563eb; }
+  .btn:disabled { background: #374151; color: #6b7280; cursor: not-allowed; }
+  .btn-sm { padding: 5px 10px; font-size: 12px; border-radius: 6px; }
+  .btn-outline { background: transparent; border: 1px solid #2a2d3e; color: #c4c8d0; }
+  .btn-outline:hover { border-color: #3b82f6; color: #e1e4e8; background: #1e2030; }
+  .factor-picker {
+    position: relative; width: 200px; height: 38px; min-height: 38px; max-height: 38px;
+    flex: 0 0 200px; align-self: center;
+  }
+  .factor-picker-btn {
+    width: 100%; height: 38px !important; min-height: 38px !important; max-height: 38px !important;
+    block-size: 38px !important; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    background: #0f1117; border: 1px solid #2a2d3e; border-radius: 8px;
+    color: #e1e4e8; padding: 7px 12px; font-size: 13px; cursor: pointer;
+    line-height: 1; white-space: nowrap; overflow: hidden; flex: none; appearance: none; -webkit-appearance: none;
+  }
+  .factor-picker-btn::after { content: "⌄"; color: #8b92a0; font-size: 16px; line-height: 1; }
+  .factor-picker-btn span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .factor-picker-btn.empty { color: #f59e0b; border-color: #2a2d3e; }
+  .factor-menu {
+    display: none; position: absolute; top: 44px; left: 0; z-index: 20;
+    width: 260px; max-height: 360px; overflow: hidden;
+    background: #11131c; border: 1px solid #2a2d3e; border-radius: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  }
+  .factor-picker.open .factor-menu { display: block; }
+  .factor-actions { display: flex; gap: 6px; padding: 8px; border-bottom: 1px solid #2a2d3e; }
+  .factor-actions button {
+    background: #1e2030; border: 1px solid #2a2d3e; border-radius: 6px; color: #c4c8d0;
+    padding: 5px 10px; font-size: 12px; cursor: pointer;
+  }
+  .factor-actions button:hover { border-color: #3b82f6; color: #e1e4e8; }
+  .factor-options { max-height: 306px; overflow-y: auto; padding: 6px 0; }
+  .factor-option {
+    display: flex; align-items: center; gap: 8px; padding: 7px 12px; color: #c4c8d0; font-size: 13px; cursor: pointer;
+  }
+  .factor-option:hover { background: #1e2030; color: #e1e4e8; }
+  .factor-option input[type=checkbox] { width: auto; margin: 0; padding: 0; accent-color: #3b82f6; }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag {
+    background: #1e2030; border: 1px solid #2a2d3e; border-radius: 6px;
+    padding: 3px 8px; font-size: 11px; color: #a5b4fc; cursor: pointer;
+  }
+  .tag:hover, .tag.sel { background: #1d3368; border-color: #3b82f6; color: #e1e4e8; }
+
+  .loading-inline { display: inline-block; width: 14px; height: 14px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin .6s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* main layout */
+  .main-layout { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (max-width: 1100px) { .main-layout { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 14px; padding: 20px;
+  }
+  .panel h3 { font-size: 14px; margin-bottom: 14px; color: #a5b4fc; }
+
+  /* chart */
+  canvas { width: 100%; height: 480px; }
+  .chart-wrap { position: relative; }
+  .chart-tooltip {
+    display: none; position: absolute; z-index: 10; pointer-events: none;
+    min-width: 220px; max-width: 320px; background: rgba(15,17,23,.96);
+    border: 1px solid #2a2d3e; border-radius: 8px; padding: 10px 12px;
+    box-shadow: 0 16px 36px rgba(0,0,0,.35); font-size: 12px; color: #c4c8d0;
+  }
+  .chart-tooltip .t { color: #e1e4e8; font-weight: 700; margin-bottom: 6px; }
+  .chart-tooltip .m { color: #8b92a0; margin-bottom: 8px; }
+  .chart-tooltip .h { display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; line-height: 1.8; }
+  .chart-tooltip .rank { color: #93c5fd; }
+  .chart-tooltip .price { color: #6b7280; font-variant-numeric: tabular-nums; }
+  .legend-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #8b92a0; cursor: pointer; padding: 2px 6px; border-radius: 4px; }
+  .legend-item:hover, .legend-item.hl { background: #1e2030; color: #e1e4e8; }
+  .detail-link {
+    background: transparent; border: 1px solid #2a2d3e; color: #93c5fd; border-radius: 6px;
+    padding: 3px 8px; font-size: 12px; cursor: pointer;
+  }
+  .detail-link:hover { border-color: #3b82f6; color: #e1e4e8; background: #1d3368; }
+
+  /* factor detail */
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+  .stat-box {
+    background: #0f1117; border: 1px solid #1e2030; border-radius: 8px;
+    padding: 10px 14px; text-align: center;
+  }
+  .stat-box .v { font-size: 20px; font-weight: 700; }
+  .stat-box .l { font-size: 11px; color: #6b7280; margin-top: 2px; }
+  .v.green { color: #22c55e; } .v.red { color: #ef4444; } .v.yellow { color: #f59e0b; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #2a2d3e; color: #6b7280; font-weight: 500; }
+  td { padding: 7px 10px; border-bottom: 1px solid #1e2030; }
+  tr:hover td { background: #1a1d2e; }
+  .trade-table-wrap { overflow-x: auto; padding-bottom: 4px; }
+  .trade-table { min-width: 560px; table-layout: auto; }
+  .trade-table th, .trade-table td { white-space: nowrap; padding: 7px 8px; }
+  .trade-name { max-width: 96px; overflow: hidden; text-overflow: ellipsis; color: #a855f7; }
+  .trade-num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .empty { text-align: center; padding: 80px 40px; color: #6b7280; }
+  .empty h3 { color: #8b92a0; margin-bottom: 8px; }
+
+  .item-select-area { margin-top: 6px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .item-select-area select { flex: 1; min-width: 200px; }
+  .sel-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .sel-chip {
+    background: #1d3368; border: 1px solid #3b82f6; border-radius: 12px;
+    padding: 3px 10px; font-size: 11px; color: #e1e4e8; display: flex; align-items: center; gap: 6px;
+  }
+  .sel-chip .x { cursor: pointer; color: #6b7280; } .sel-chip .x:hover { color: #ef4444; }
+
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 100; justify-content: center; align-items: center; }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: #161822; border: 1px solid #2a2d3e; border-radius: 14px;
+    padding: 24px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;
+  }
+  .modal h3 { margin-bottom: 12px; }
+  .modal input { width: 100%; background:#0f1117; border:1px solid #2a2d3e; border-radius:8px; color:#e1e4e8; padding:8px 12px; font-size:13px; margin-bottom:12px; }
+  .modal .item-list { max-height: 300px; overflow-y: auto; }
+  .modal .item-list label { display: flex; align-items: center; gap: 8px; padding: 4px 0; font-size: 12px; color: #c4c8d0; cursor: pointer; }
+  .modal .item-list input[type=checkbox] { width: auto; accent-color: #3b82f6; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="brand">A股数据面板</span>
+  <a href="/">首页</a>
+  <a href="/stocks">个股</a>
+  <a href="/concepts">概念</a>
+  <a href="/strategy-backtest">策略回测</a>
+  <a href="/strategy-lab" class="on">策略试验</a>
+  <a href="/trading">实盘记录</a>
+</nav>
+
+<div class="page">
+  <h2>策略试验 — Alpha因子实验室</h2>
+  <p class="sub">国泰君安 GTJA Alpha191 因子库 · Phase1 先接入 Alpha001-050 中可用的 47 个因子</p>
+
+  <!-- top control bar -->
+  <div class="top-bar" id="top-bar">
+    <label>回测时间</label>
+    <div class="date-range-control">
+      <div class="date-range-values">
+        <span id="date-start-label">2022-01-15</span>
+        <span class="sep">—</span>
+        <span id="date-end-label">2026-07-07</span>
+      </div>
+      <div class="range-wrap">
+        <div class="range-track"><div class="range-fill" id="date-range-fill"></div></div>
+        <input type="range" id="range-start" min="0" value="0" aria-label="开始日期" disabled>
+        <input type="range" id="range-end" min="0" value="0" aria-label="结束日期">
+      </div>
+      <input type="hidden" id="sel-start" value="2022-01-15">
+      <input type="hidden" id="sel-end" value="2026-07-07">
+    </div>
+    <label style="margin-left:8px;">数据源</label>
+    <select id="sel-source" style="width:auto;" disabled>
+      <option value="etf">ETF (123只)</option>
+      <option value="concept" selected>概念板块 (367个)</option>
+    </select>
+    <label style="margin-left:8px;">Top K</label>
+    <select id="sel-topk" disabled>
+      <option value="3">3</option><option value="5" selected>5</option>
+      <option value="8">8</option><option value="10">10</option>
+    </select>
+    <label style="margin-left:8px;">因子选择</label>
+    <div class="factor-picker" id="factor-picker">
+      <button type="button" class="factor-picker-btn" id="factor-picker-btn" disabled><span id="factor-picker-text">全部因子</span></button>
+      <div class="factor-menu">
+        <div class="factor-actions">
+          <button type="button" onclick="setAllFactors(true)">全选</button>
+          <button type="button" onclick="setAllFactors(false)">清空</button>
+        </div>
+        <div class="factor-options" id="factor-options"></div>
+      </div>
+    </div>
+    <button class="btn" id="btn-run" onclick="runBacktest()" style="margin-left:auto;">生成/刷新结果</button>
+  </div>
+
+  <!-- main: chart -->
+  <div class="main-layout">
+    <div class="panel">
+      <h3>因子收益曲线对比 <span style="color:#6b7280;font-size:12px;font-weight:400;" id="chart-subtitle"></span></h3>
+      <div class="chart-wrap">
+        <canvas id="chart"></canvas>
+        <div class="chart-tooltip" id="chart-tooltip"></div>
+      </div>
+      <div class="legend-row" id="legend"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- state ----
+let backtestResult = null;
+let activeDetailFactor = null;
+let selectedFactors = new Set();
+let chartHoverState = null;
+const DATE_RANGE_MIN = '2014-01-01';
+const DATE_RANGE_DEFAULT_START = '2022-01-15';
+const MS_PER_DAY = 86400000;
+
+const FACTOR_COLORS = {
+  gtja_alpha001:'#3b82f6', gtja_alpha002:'#22c55e', gtja_alpha003:'#f59e0b', gtja_alpha004:'#ef4444',
+  gtja_alpha005:'#a855f7', gtja_alpha006:'#06b6d4', gtja_alpha007:'#f97316', gtja_alpha008:'#ec4899'
+};
+const GTJA_PHASE1_NUMS = [
+  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
+  21,22,23,24,25,26,28,29,31,32,33,34,35,36,37,38,39,40,
+  41,42,43,44,45,46,47,48,49
+];
+const FACTOR_NAMES = Object.fromEntries(
+  GTJA_PHASE1_NUMS.map(n => [`gtja_alpha${String(n).padStart(3, '0')}`, `GTJA Alpha${String(n).padStart(3, '0')}`])
+);
+
+// ---- init ----
+(function init() {
+  initDateRange();
+  initFactorSelect();
+  loadFixedResult();
+})();
+
+function initFactorSelect() {
+  selectedFactors = new Set(Object.keys(FACTOR_NAMES));
+  renderFactorOptions();
+  updateFactorButton();
+}
+
+function renderFactorOptions() {
+  document.getElementById('factor-options').innerHTML = Object.entries(FACTOR_NAMES)
+    .map(([key, name]) => `
+      <label class="factor-option">
+        <input type="checkbox" value="${key}" ${selectedFactors.has(key) ? 'checked' : ''} onchange="toggleFactor('${key}', this.checked)">
+        <span>${name}</span>
+      </label>
+    `).join('');
+}
+
+function toggleFactorPicker() {
+  document.getElementById('factor-picker').classList.toggle('open');
+}
+
+function toggleFactor(key, checked) {
+  if (checked) selectedFactors.add(key);
+  else selectedFactors.delete(key);
+  updateFactorButton();
+}
+
+function setAllFactors(checked) {
+  selectedFactors = checked ? new Set(Object.keys(FACTOR_NAMES)) : new Set();
+  renderFactorOptions();
+  updateFactorButton();
+}
+
+function updateFactorButton() {
+  const btn = document.getElementById('factor-picker-btn');
+  const text = document.getElementById('factor-picker-text');
+  const total = Object.keys(FACTOR_NAMES).length;
+  const count = selectedFactors.size;
+  if (count === total) text.textContent = '全部因子';
+  else if (count === 1) text.textContent = FACTOR_NAMES[[...selectedFactors][0]];
+  else if (count > 1) text.textContent = `${count}个因子`;
+  else text.textContent = '请选择因子';
+  btn.classList.toggle('empty', count === 0);
+}
+
+function getSelectedFactors() {
+  return Array.from(selectedFactors);
+}
+
+document.addEventListener('click', (e) => {
+  const picker = document.getElementById('factor-picker');
+  if (picker && !picker.contains(e.target)) picker.classList.remove('open');
+});
+
+function parseDateUTC(value) {
+  const [y, m, d] = value.split('-').map(Number);
+  return Date.UTC(y, m - 1, d);
+}
+
+function formatDateUTC(dayIndex) {
+  return new Date(parseDateUTC(DATE_RANGE_MIN) + dayIndex * MS_PER_DAY).toISOString().slice(0, 10);
+}
+
+function dateToIndex(value) {
+  return Math.round((parseDateUTC(value) - parseDateUTC(DATE_RANGE_MIN)) / MS_PER_DAY);
+}
+
+function localDateString(d = new Date()) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+function initDateRange() {
+  const today = localDateString();
+  const maxIndex = dateToIndex(today);
+  const startRange = document.getElementById('range-start');
+  const endRange = document.getElementById('range-end');
+  startRange.max = maxIndex;
+  endRange.max = maxIndex;
+  startRange.value = Math.min(dateToIndex(DATE_RANGE_DEFAULT_START), maxIndex - 30);
+  endRange.value = maxIndex;
+  endRange.addEventListener('input', () => updateDateRange('end'));
+  updateDateRange();
+}
+
+function updateDateRange(changed) {
+  const startRange = document.getElementById('range-start');
+  const endRange = document.getElementById('range-end');
+  let start = dateToIndex(DATE_RANGE_DEFAULT_START);
+  let end = parseInt(endRange.value, 10);
+  if (end <= start) end = Math.min(parseInt(endRange.max, 10), start + 1);
+  startRange.value = start;
+  endRange.value = end;
+
+  const startDate = formatDateUTC(start);
+  const endDate = formatDateUTC(end);
+  document.getElementById('sel-start').value = startDate;
+  document.getElementById('sel-end').value = endDate;
+  document.getElementById('date-start-label').textContent = startDate;
+  document.getElementById('date-end-label').textContent = endDate;
+
+  const max = parseInt(endRange.max, 10) || 1;
+  const fill = document.getElementById('date-range-fill');
+  fill.style.setProperty('--range-left', `${start / max * 100}%`);
+  fill.style.setProperty('--range-right', `${100 - end / max * 100}%`);
+}
+
+async function loadFixedResult() {
+  try {
+    const res = await fetch('/api/lab/fixed-result').then(r => r.json());
+    if (res.error) {
+      document.getElementById('chart-subtitle').textContent = `暂无固定结果，请点击“生成/刷新结果”`;
+      return;
+    }
+    applyBacktestResult(res);
+  } catch (e) {
+    document.getElementById('chart-subtitle').textContent = `固定结果加载失败`;
+  }
+}
+
+function applyBacktestResult(res) {
+  backtestResult = res;
+  activeDetailFactor = null;
+  const requestedCount = (res.requested_factors || []).length;
+  const availableCount = (res.available_factors || []).length;
+  const factorHint = requestedCount ? ` · 有效曲线 ${availableCount}/${requestedCount}` : '';
+  const resultHint = res.result?.created_at ? ` · 结果 ${res.result.created_at}` : '';
+  const cacheHint = res.cache?.hit ? ' · 缓存命中' : '';
+  document.getElementById('chart-subtitle').textContent = `${res.window} · Top${res.top_k} · ${res.item_count}标的${factorHint}${resultHint}${cacheHint}`;
+  drawChart(res);
+  renderLegend(res);
+  const best = Object.entries(res.factors)
+    .filter(([_,v])=>v)
+    .sort((a,b)=>b[1].stats.total_return - a[1].stats.total_return);
+  if (best.length) showFactorDetail(best[0][0], res);
+}
+
+// ---- run backtest ----
+async function runBacktest() {
+  const end = document.getElementById('sel-end').value;
+  if (!end || DATE_RANGE_DEFAULT_START >= end) { alert('截止日期无效'); return; }
+
+  const btn = document.getElementById('btn-run');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading-inline"></span>生成中...';
+
+  try {
+    const res = await fetch(`/api/lab/fixed-result/generate?end_date=${encodeURIComponent(end)}`, {
+      method:'POST',
+    }).then(r=>r.json());
+    if (res.error) { alert(res.error); return; }
+    applyBacktestResult(res);
+  } catch(e) { alert('失败: '+e.message); }
+  finally { btn.disabled=false; btn.innerHTML='生成/刷新结果'; }
+}
+
+// ---- chart ----
+function drawChart(data) {
+  const canvas = document.getElementById('chart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio||1;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  const W = rect.width - 40;
+  const H = 480;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.style.width = W+'px'; canvas.style.height = H+'px';
+  ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,W,H);
+
+  const margin = {top:20, bottom:40, left:60, right:20};
+  const pw = W - margin.left - margin.right;
+  const ph = H - margin.top - margin.bottom;
+
+  // find global x range
+  let allDates = [];
+  for (const [k,v] of Object.entries(data.factors)) {
+    if (!v) continue;
+    for (const p of v.equity_curve) allDates.push(p.date);
+  }
+  allDates = [...new Set(allDates)].sort();
+  if (!allDates.length) return;
+
+  // axes
+  ctx.strokeStyle='#2a2d3e'; ctx.lineWidth=1;
+  ctx.beginPath();
+  ctx.moveTo(margin.left, margin.top);
+  ctx.lineTo(margin.left, margin.top+ph);
+  ctx.lineTo(margin.left+pw, margin.top+ph);
+  ctx.stroke();
+
+  // y axis (return %)
+  let yMin=Infinity, yMax=-Infinity;
+  for (const [_,v] of Object.entries(data.factors)) {
+    if (!v) continue;
+    for (const p of v.equity_curve) {
+      if (p.return < yMin) yMin = p.return;
+      if (p.return > yMax) yMax = p.return;
+    }
+  }
+  if (!isFinite(yMin)) { yMin=-20; yMax=20; }
+  const yPad = (yMax-yMin)*0.1 || 5;
+  yMin -= yPad; yMax += yPad;
+
+  ctx.fillStyle='#6b7280'; ctx.font='10px sans-serif'; ctx.textAlign='right';
+  for (let i=0; i<=4; i++) {
+    const val = yMin + (yMax-yMin)*i/4;
+    const y = margin.top + ph - (val-yMin)/(yMax-yMin)*ph;
+    ctx.fillText(val.toFixed(0)+'%', margin.left-6, y+4);
+    ctx.strokeStyle='#1a1d2e';
+    ctx.beginPath(); ctx.moveTo(margin.left,y); ctx.lineTo(margin.left+pw,y); ctx.stroke();
+  }
+
+  // zero line
+  if (yMin < 0 && yMax > 0) {
+    const y0 = margin.top + ph - (0-yMin)/(yMax-yMin)*ph;
+    ctx.strokeStyle='#374151';
+    ctx.beginPath(); ctx.moveTo(margin.left,y0); ctx.lineTo(margin.left+pw,y0); ctx.stroke();
+  }
+
+  // x ticks
+  ctx.fillStyle='#6b7280'; ctx.font='10px sans-serif'; ctx.textAlign='center';
+  const xStep = Math.max(1, Math.floor(allDates.length/6));
+  for (let i=0; i<allDates.length; i+=xStep) {
+    const x = margin.left + pw*i/(allDates.length-1||1);
+    ctx.fillText(allDates[i].slice(0,10), x, margin.top+ph+18);
+  }
+
+  // draw factor lines
+  for (const [fn, fdata] of Object.entries(data.factors)) {
+    if (!fdata || !fdata.equity_curve.length) continue;
+    const color = FACTOR_COLORS[fn] || '#888';
+    const alpha = (activeDetailFactor && activeDetailFactor !== fn) ? 0.15 : 1;
+    ctx.strokeStyle = color;
+    ctx.globalAlpha = alpha;
+    ctx.lineWidth = (activeDetailFactor === fn) ? 2.5 : 1.2;
+    ctx.beginPath();
+    let first = true;
+    const dateMap = {};
+    fdata.equity_curve.forEach(p => dateMap[p.date] = p);
+    for (let i=0; i<allDates.length; i++) {
+      const p = dateMap[allDates[i]];
+      if (!p) continue;
+      const x = margin.left + pw*i/(allDates.length-1||1);
+      const y = margin.top + ph - (p.return-yMin)/(yMax-yMin)*ph;
+      if (first) { ctx.moveTo(x,y); first=false; }
+      else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+  chartHoverState = {data, allDates, margin, pw, ph, W, H};
+  canvas.onmousemove = onChartMouseMove;
+  canvas.onmouseleave = hideChartTooltip;
+}
+
+function getTooltipFactor(data) {
+  if (activeDetailFactor && data.factors[activeDetailFactor]) return activeDetailFactor;
+  const first = Object.entries(data.factors).find(([_, v]) => v && v.equity_curve && v.equity_curve.length);
+  return first ? first[0] : null;
+}
+
+function onChartMouseMove(e) {
+  if (!chartHoverState) return;
+  const {data, allDates, margin, pw, W} = chartHoverState;
+  const canvas = document.getElementById('chart');
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  if (x < margin.left || x > margin.left + pw || !allDates.length) {
+    hideChartTooltip();
+    return;
+  }
+  const idx = Math.max(0, Math.min(allDates.length - 1, Math.round((x - margin.left) / pw * (allDates.length - 1))));
+  const date = allDates[idx];
+  const fn = getTooltipFactor(data);
+  if (!fn) return;
+  const fdata = data.factors[fn];
+  const point = fdata.equity_curve.find(p => p.date === date);
+  if (!point) {
+    hideChartTooltip();
+    return;
+  }
+  showChartTooltip(e, fn, point, W);
+}
+
+function showChartTooltip(e, fn, point, chartWidth) {
+  const tip = document.getElementById('chart-tooltip');
+  const names = backtestResult?.item_names || {};
+  const holdings = point.holdings || [];
+  const rows = holdings.slice(0, 8).map(h => `
+    <div class="rank">#${h.rank || '-'}</div>
+    <div>${names[h.code] || h.code}</div>
+    <div class="price">${h.close ?? '-'}</div>
+  `).join('');
+  tip.innerHTML = `
+    <div class="t">${point.date} · ${FACTOR_NAMES[fn] || fn}</div>
+    <div class="m">收益 ${point.return >= 0 ? '+' : ''}${point.return}% · 持仓 ${holdings.length} 个</div>
+    <div class="h">${rows || '<div style="grid-column:1 / -1;color:#6b7280;">暂无持仓</div>'}</div>
+  `;
+  tip.style.display = 'block';
+  const wrapRect = document.querySelector('.chart-wrap').getBoundingClientRect();
+  const localX = e.clientX - wrapRect.left;
+  const localY = e.clientY - wrapRect.top;
+  const left = Math.min(localX + 14, chartWidth - 340);
+  tip.style.left = `${Math.max(8, left)}px`;
+  tip.style.top = `${Math.max(8, localY - 20)}px`;
+}
+
+function hideChartTooltip() {
+  const tip = document.getElementById('chart-tooltip');
+  if (tip) tip.style.display = 'none';
+}
+
+// ---- legend ----
+function renderLegend(data) {
+  const div = document.getElementById('legend');
+  div.innerHTML = Object.entries(data.factors).filter(([_,v])=>v).map(([fn, fdata]) => {
+    const s = fdata.stats;
+    const cls = (activeDetailFactor === fn) ? 'hl' : '';
+    return `<div class="legend-item ${cls}" onclick="showFactorDetail('${fn}', backtestResult)" style="border-left:3px solid ${FACTOR_COLORS[fn]||'#888'};">
+      <b>${FACTOR_NAMES[fn]||fn}</b> ${s.total_return>=0?'+':''}${s.total_return}% | Sharpe ${s.sharpe} | DD ${s.max_dd}% | ${s.trade_count}笔 | 胜率${s.win_rate}%
+      <button class="detail-link" onclick="openFactorDetail(event, '${fn}')">详情</button>
+    </div>`;
+  }).join('');
+}
+
+function showFactorDetail(fn, data) {
+  activeDetailFactor = fn;
+  drawChart(data);
+  renderLegend(data);
+}
+
+function openFactorDetail(event, fn) {
+  event.stopPropagation();
+  const key = backtestResult?.cache?.key;
+  if (!key) { alert('请先完成回测并生成缓存'); return; }
+  window.open(`/strategy-lab/detail?cache=${encodeURIComponent(key)}&factor=${encodeURIComponent(fn)}`, '_blank', 'noopener');
+}
+</script>
+</body>
+</html>

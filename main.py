@@ -1,6 +1,7 @@
 ﻿import json
 import logging
 import os
+import hashlib
 import threading
 import time
 from datetime import datetime, date
@@ -25,6 +26,7 @@ from logic.progress import get as get_progress
 from models.stock import Base, StockInfo, StockDaily, Concept, StockConcept, ConceptDaily
 from logic.baostock_download import BaoStockDownloader
 from logic.akshare_download import AkShareDownloader
+from logic.gtja_alpha191 import GTJA_ALPHA_PHASE1_ACTIVE, precompute_gtja_factor_series
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -1440,50 +1442,1690 @@ def _daily_to_dict(row: StockDaily):
     }
 
 
-# ── concepts ───────────────────────────────────────────────────
+# ── CSV data helpers (cached) ───────────────────────────────────
+ETF_DIR = ROOT_DIR / "data" / "etf"
+CONCEPT_DIR = ROOT_DIR / "data" / "concept"
+LAB_CACHE_DIR = ROOT_DIR / "data" / "factor_lab" / "cache"
+LAB_RESULT_DIR = ROOT_DIR / "data" / "factor_lab" / "result"
+LAB_CACHE_VERSION = 4
+LAB_FIXED_START_DATE = "2022-01-15"
+LAB_FIXED_SOURCE = "concept"
+LAB_FIXED_TOP_K = 5
+LAB_FIXED_RESULT_PREFIX = "concept_gtja_alpha191_phase1_top5_2022-01-15"
+
+# 全局缓存：一次性加载全部数据
+_ETF_CACHE = None     # {code: {"name": str, "rows": [{...}]}}
+_CONCEPT_CACHE = None
+
+
+def _lab_data_signature(source):
+    """Return a lightweight signature for CSV inputs used by factor-lab cache."""
+    dirs = []
+    if source in ("etf", "all"):
+        dirs.append(ETF_DIR)
+    if source in ("concept", "all"):
+        dirs.append(CONCEPT_DIR)
+
+    file_count = 0
+    latest_mtime_ns = 0
+    total_size = 0
+    for base_dir in dirs:
+        if not base_dir.exists():
+            continue
+        for root, _, files in os.walk(base_dir):
+            for fn in files:
+                if not fn.endswith(".csv"):
+                    continue
+                fp = Path(root) / fn
+                try:
+                    st = fp.stat()
+                except OSError:
+                    continue
+                file_count += 1
+                latest_mtime_ns = max(latest_mtime_ns, st.st_mtime_ns)
+                total_size += st.st_size
+    return {
+        "files": file_count,
+        "mtime": latest_mtime_ns,
+        "size": total_size,
+    }
+
+
+def _lab_cache_path(cache_params):
+    raw = json.dumps(cache_params, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    key = hashlib.sha256(raw.encode("utf-8")).hexdigest()
+    return LAB_CACHE_DIR / f"{key}.json", key
+
+
+def _load_lab_backtest_cache(cache_params):
+    path, key = _lab_cache_path(cache_params)
+    if not path.exists():
+        return None, key
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        data.setdefault("cache", {})
+        data["cache"].update({
+            "hit": True,
+            "key": key,
+            "created_at": datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+        })
+        logger.info("Factor lab cache hit: %s", key)
+        return data, key
+    except Exception:
+        logger.exception("Failed to read factor lab cache: %s", path)
+        return None, key
+
+
+def _load_lab_backtest_cache_by_key(cache_key):
+    if not cache_key or len(cache_key) != 64 or any(c not in "0123456789abcdef" for c in cache_key.lower()):
+        return None
+    path = LAB_CACHE_DIR / f"{cache_key}.json"
+    if not path.exists():
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        data.setdefault("cache", {})
+        data["cache"].update({
+            "hit": True,
+            "key": cache_key,
+            "created_at": datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+        })
+        return data
+    except Exception:
+        logger.exception("Failed to read factor lab cache by key: %s", path)
+        return None
+
+
+def _save_lab_backtest_cache(cache_params, data):
+    LAB_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    path, key = _lab_cache_path(cache_params)
+    payload = dict(data)
+    payload["cache"] = {
+        "hit": False,
+        "key": key,
+        "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    tmp_path = path.with_suffix(".tmp")
+    try:
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+        os.replace(tmp_path, path)
+        logger.info("Factor lab cache saved: %s", key)
+    except Exception:
+        logger.exception("Failed to write factor lab cache: %s", path)
+        try:
+            if tmp_path.exists():
+                tmp_path.unlink()
+        except OSError:
+            pass
+    return payload
+
+
+def _lab_fixed_result_path(end_date):
+    safe_end_date = (end_date or datetime.now().strftime("%Y-%m-%d")).replace("/", "-")
+    return LAB_RESULT_DIR / f"{LAB_FIXED_RESULT_PREFIX}-{safe_end_date}.json"
+
+
+def _latest_lab_fixed_result_path():
+    if not LAB_RESULT_DIR.exists():
+        return None
+    paths = sorted(
+        LAB_RESULT_DIR.glob(f"{LAB_FIXED_RESULT_PREFIX}-*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    return paths[0] if paths else None
+
+
+def _load_lab_fixed_result():
+    path = _latest_lab_fixed_result_path()
+    if not path or not path.exists():
+        return _load_lab_result_from_factor_dirs()
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        data.setdefault("result", {})
+        data["result"].update({
+            "path": str(path),
+            "created_at": datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+        })
+        return data
+    except Exception:
+        logger.exception("Failed to read factor lab fixed result: %s", path)
+        return None
+
+
+def _load_lab_result_from_factor_dirs():
+    if not LAB_RESULT_DIR.exists():
+        return None
+    factors = {}
+    factor_meta = {}
+    item_names = {}
+    top_k = None
+    window = None
+    item_count = None
+    cache = {}
+    result_paths = []
+
+    for factor_dir in sorted(LAB_RESULT_DIR.glob("gtja-alpha-*")):
+        if not factor_dir.is_dir():
+            continue
+        paths = sorted(factor_dir.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+        if not paths:
+            continue
+        path = paths[0]
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            logger.exception("Failed to read factor lab factor result: %s", path)
+            continue
+        factor = data.get("factor")
+        factor_data = data.get("factor_data")
+        if not factor or not factor_data:
+            continue
+        factors[factor] = factor_data
+        factor_meta.update(data.get("factor_meta") or {})
+        if not item_names:
+            item_names = data.get("item_names") or {}
+        top_k = top_k or data.get("top_k")
+        window = window or data.get("window")
+        item_count = item_count or data.get("item_count")
+        cache = cache or data.get("cache") or {}
+        result_paths.append(str(path))
+
+    if not factors:
+        return None
+    available = [fn for fn, value in factors.items() if value]
+    return {
+        "factors": factors,
+        "factor_meta": factor_meta,
+        "requested_factors": available,
+        "available_factors": available,
+        "top_k": top_k,
+        "item_names": item_names,
+        "item_count": item_count,
+        "window": window,
+        "cache": cache,
+        "result": {
+            "source": LAB_FIXED_SOURCE,
+            "start_date": LAB_FIXED_START_DATE,
+            "paths": result_paths,
+            "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "assembled_from_factor_dirs": True,
+        },
+    }
+
+
+def _latest_lab_factor_result(factor_name):
+    factor_no = factor_name.replace("gtja_alpha", "")
+    factor_dir = LAB_RESULT_DIR / f"gtja-alpha-{factor_no}"
+    if not factor_dir.exists():
+        return None
+    paths = sorted(factor_dir.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+    if not paths:
+        return None
+    try:
+        with open(paths[0], "r", encoding="utf-8") as f:
+            data = json.load(f)
+        data.setdefault("result", {})
+        data["result"].update({
+            "path": str(paths[0]),
+            "created_at": datetime.fromtimestamp(paths[0].stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+        })
+        return data
+    except Exception:
+        logger.exception("Failed to read factor lab single result: %s", paths[0])
+        return None
+
+
+def _save_lab_fixed_result(data, end_date):
+    LAB_RESULT_DIR.mkdir(parents=True, exist_ok=True)
+    path = _lab_fixed_result_path(end_date)
+    payload = dict(data)
+    payload["result"] = {
+        "source": LAB_FIXED_SOURCE,
+        "start_date": LAB_FIXED_START_DATE,
+        "end_date": end_date,
+        "top_k": LAB_FIXED_TOP_K,
+        "path": str(path),
+        "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    }
+    tmp_path = path.with_suffix(".tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+    os.replace(tmp_path, path)
+    _save_lab_factor_results(payload, end_date)
+    logger.info("Factor lab fixed result saved: %s", path)
+    return payload
+
+
+def _save_lab_factor_results(data, end_date):
+    factors = data.get("factors") or {}
+    meta = data.get("factor_meta") or {}
+    item_names = data.get("item_names") or {}
+    for factor_name, factor_data in factors.items():
+        if not factor_data:
+            continue
+        factor_no = factor_name.replace("gtja_alpha", "")
+        factor_dir = LAB_RESULT_DIR / f"gtja-alpha-{factor_no}"
+        factor_dir.mkdir(parents=True, exist_ok=True)
+        factor_path = factor_dir / f"gtja-alpha-{factor_no}_top{data.get('top_k', LAB_FIXED_TOP_K)}_{LAB_FIXED_START_DATE}-{end_date}.json"
+        payload = {
+            "factor": factor_name,
+            "factor_data": factor_data,
+            "factor_meta": {factor_name: meta.get(factor_name, {})},
+            "item_names": item_names,
+            "top_k": data.get("top_k"),
+            "window": data.get("window"),
+            "item_count": data.get("item_count"),
+            "cache": data.get("cache", {}),
+            "result": {
+                "source": LAB_FIXED_SOURCE,
+                "start_date": LAB_FIXED_START_DATE,
+                "end_date": end_date,
+                "path": str(factor_path),
+                "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            },
+        }
+        tmp_path = factor_path.with_suffix(".tmp")
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+        os.replace(tmp_path, factor_path)
+
+
+def _load_all_csv(base_dir, code_key="code", name_key="name"):
+    """一次性读取 base_dir 下所有 CSV，返回 {code: {name, rows}}"""
+    import csv as _csv
+    from collections import defaultdict
+    data = defaultdict(lambda: {"name": "", "rows": []})
+    years = sorted([d for d in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, d))])
+    for year in years:
+        year_dir = os.path.join(base_dir, str(year))
+        if not os.path.isdir(year_dir):
+            continue
+        for fn in sorted(os.listdir(year_dir)):
+            if not fn.endswith(".csv"):
+                continue
+            fp = os.path.join(year_dir, fn)
+            try:
+                with open(fp, "r", encoding="utf-8-sig") as f:
+                    for row in _csv.DictReader(f):
+                        code = row[code_key]
+                        name = row[name_key]
+                        if not data[code]["name"]:
+                            data[code]["name"] = name
+                        data[code]["rows"].append({
+                            "trade_date": row["trade_date"],
+                            "open": float(row["open"]) if row.get("open") else None,
+                            "high": float(row["high"]) if row.get("high") else None,
+                            "low": float(row["low"]) if row.get("low") else None,
+                            "close": float(row["close"]) if row.get("close") else None,
+                            "volume": float(row["volume"]) if row.get("volume") else None,
+                            "amount": float(row["amount"]) if row.get("amount") else None,
+                        })
+            except Exception:
+                pass
+    for code in data:
+        data[code]["rows"].sort(key=lambda r: r["trade_date"])
+    return dict(data)
+
+
+def _ensure_cache():
+    """确保缓存已加载"""
+    global _ETF_CACHE, _CONCEPT_CACHE
+    if _ETF_CACHE is None:
+        logger.info("Loading ETF cache from CSV...")
+        _ETF_CACHE = _load_all_csv(ETF_DIR, "code", "name")
+        logger.info("ETF cache: %d items", len(_ETF_CACHE))
+    if _CONCEPT_CACHE is None:
+        logger.info("Loading concept cache from CSV...")
+        _CONCEPT_CACHE = _load_all_csv(CONCEPT_DIR, "concept_code", "concept_name")
+        logger.info("Concept cache: %d items", len(_CONCEPT_CACHE))
+
+
+def _filter_rows(rows, start_date=None, end_date=None):
+    """按日期过滤，返回 rows 列表"""
+    if not start_date and not end_date:
+        return rows
+    result = []
+    for r in rows:
+        td = r["trade_date"]
+        if start_date and td < start_date:
+            continue
+        if end_date and td > end_date:
+            continue
+        result.append(r)
+    return result
+
+
+# ── concepts (CSV-based) ────────────────────────────────────────
 @app.route("/api/concepts")
 def api_concepts():
-    with get_session() as sess:
-        concepts = sess.query(Concept).all()
-        return jsonify([{"code": c.code, "name": c.name} for c in concepts])
+    _ensure_cache()
+    return jsonify([{"code": c, "name": d["name"]} for c, d in _CONCEPT_CACHE.items()])
 
 
 @app.route("/api/concepts/<concept_code>/daily")
 def api_concept_daily(concept_code: str):
-    with get_session() as sess:
-        rows = (
-            sess.query(ConceptDaily)
-            .filter(ConceptDaily.concept_code == concept_code)
-            .order_by(ConceptDaily.trade_date.desc())
-            .limit(1000)
-            .all()
-        )
-        return jsonify([{
-            "trade_date": r.trade_date,
-            "open": r.open, "high": r.high, "low": r.low, "close": r.close,
-            "volume": r.volume, "amount": r.amount,
-        } for r in reversed(rows)])
+    limit = request.args.get("limit", 1000, type=int)
+    _ensure_cache()
+    entry = _CONCEPT_CACHE.get(concept_code)
+    if not entry:
+        return jsonify([])
+    rows = entry["rows"]
+    return jsonify(rows[-limit:])
 
 
 @app.route("/api/concepts/<concept_code>/stocks")
 def api_concept_stocks(concept_code: str):
-    with get_session() as sess:
-        concept = sess.get(Concept, concept_code)
-        if not concept:
-            return jsonify({"error": "concept not found"}), 404
+    # stock_concept 关系表可能不再使用，返回空
+    return jsonify({"concept": {"code": concept_code, "name": ""}, "stocks": []})
 
-        rows = (
-            sess.query(StockConcept, StockInfo)
-            .join(StockInfo, StockConcept.stock_code == StockInfo.code)
-            .filter(StockConcept.concept_code == concept_code)
-            .all()
-        )
-        return jsonify({
-            "concept": {"code": concept.code, "name": concept.name},
-            "stocks": [{
-                "code": si.code, "name": si.name,
-            } for _, si in rows],
+
+# ── strategy lab ────────────────────────────────────────────────
+@app.route("/strategy-lab")
+def page_strategy_lab():
+    return render_template("strategy_lab.html")
+
+
+@app.route("/strategy-lab/detail")
+def page_strategy_lab_detail():
+    return render_template("strategy_lab_detail.html")
+
+
+@app.route("/api/lab/detail")
+def api_lab_detail():
+    cache_key = (request.args.get("cache") or "").strip()
+    factor = (request.args.get("factor") or "").strip()
+    data = _load_lab_backtest_cache_by_key(cache_key)
+    if not data:
+        single = _latest_lab_factor_result(factor)
+        if single:
+            return jsonify({
+                "factor": factor,
+                "factor_data": single.get("factor_data"),
+                "factor_meta": single.get("factor_meta", {}),
+                "factor_names": {factor: (single.get("factor_meta", {}).get(factor, {}).get("name") or factor)},
+                "available_factors": [factor],
+                "item_names": single.get("item_names", {}),
+                "top_k": single.get("top_k"),
+                "window": single.get("window"),
+                "item_count": single.get("item_count"),
+                "cache": single.get("cache", {}),
+                "result": single.get("result", {}),
+            })
+        return jsonify({"error": "缓存结果不存在，请先在实验室重新跑一次回测"}), 404
+    factors = data.get("factors") or {}
+    fdata = factors.get(factor)
+    if not fdata:
+        return jsonify({"error": "因子结果不存在"}), 404
+    return jsonify({
+        "factor": factor,
+        "factor_data": fdata,
+        "factor_meta": data.get("factor_meta", {}),
+        "factor_names": {k: v.get("name", k) for k, v in (data.get("factor_meta") or {}).items()},
+        "available_factors": data.get("available_factors", []),
+        "item_names": data.get("item_names", {}),
+        "top_k": data.get("top_k"),
+        "window": data.get("window"),
+        "item_count": data.get("item_count"),
+        "cache": data.get("cache", {}),
+    })
+
+
+@app.route("/api/lab/fixed-result")
+def api_lab_fixed_result():
+    data = _load_lab_fixed_result()
+    if not data:
+        return jsonify({"error": "固定结果还没有生成"}), 404
+    return jsonify(data)
+
+
+@app.route("/api/lab/fixed-result/generate", methods=["POST"])
+def api_lab_generate_fixed_result():
+    end_date = request.args.get("end_date") or datetime.now().strftime("%Y-%m-%d")
+    payload = {
+        "source": LAB_FIXED_SOURCE,
+        "start_date": LAB_FIXED_START_DATE,
+        "end_date": end_date,
+        "top_k": LAB_FIXED_TOP_K,
+        "factors": list(FACTOR_META.keys()),
+    }
+    with app.test_client() as client:
+        resp = client.post("/api/lab/backtest", json=payload)
+        data = resp.get_json()
+    if not data or data.get("error"):
+        return jsonify(data or {"error": "固定结果生成失败"}), 500
+    data = _save_lab_fixed_result(data, end_date)
+    return jsonify(data)
+
+
+def _list_etfs_from_csv():
+    _ensure_cache()
+    return [{"code": c, "name": d["name"]} for c, d in _ETF_CACHE.items()]
+
+
+def _list_concepts_from_csv():
+    _ensure_cache()
+    return [{"code": c, "name": d["name"]} for c, d in _CONCEPT_CACHE.items()]
+
+
+@app.route("/api/lab/etfs")
+def api_lab_etfs():
+    return jsonify({"items": _list_etfs_from_csv()})
+
+
+@app.route("/api/lab/concepts")
+def api_lab_concepts():
+    return jsonify({"items": _list_concepts_from_csv()})
+
+
+def _read_etf_daily(code, limit=2000, start_date=None, end_date=None):
+    """读取单个 ETF 日线（从缓存）"""
+    _ensure_cache()
+    entry = _ETF_CACHE.get(code)
+    if not entry:
+        return []
+    rows = _filter_rows(entry["rows"], start_date, end_date)
+    if start_date or end_date:
+        return rows
+    return rows[-limit:]
+
+
+def _read_concept_daily(code, limit=2000, start_date=None, end_date=None):
+    """读取单个概念日线（从缓存）"""
+    _ensure_cache()
+    entry = _CONCEPT_CACHE.get(code)
+    if not entry:
+        return []
+    rows = _filter_rows(entry["rows"], start_date, end_date)
+    if start_date or end_date:
+        return rows
+    return rows[-limit:]
+
+
+@app.route("/api/lab/etf/<code>/daily")
+def api_lab_etf_daily(code: str):
+    limit = request.args.get("limit", 2000, type=int)
+    return jsonify(_read_etf_daily(code, limit))
+
+
+@app.route("/api/lab/concept/<code>/daily")
+def api_lab_concept_daily(code: str):
+    limit = request.args.get("limit", 2000, type=int)
+    return jsonify(_read_concept_daily(code, limit))
+
+
+# ── factor engine ───────────────────────────────────────────────
+
+def _sma(values, period):
+    """简单移动平均"""
+    if len(values) < period:
+        return None
+    return sum(values[-period:]) / period
+
+
+def _std(values, period):
+    """标准差"""
+    import math
+    if len(values) < period:
+        return None
+    window = values[-period:]
+    mean = sum(window) / period
+    variance = sum((x - mean) ** 2 for x in window) / period
+    return math.sqrt(variance)
+
+
+# ── Alpha101 helpers ────────────────────────────────────────────
+
+def _rank(vals):
+    """百分位排名 [0, 1]"""
+    if not vals:
+        return []
+    n = len(vals)
+    if n == 1:
+        return [0.5]
+    sorted_idx = sorted(range(n), key=lambda i: vals[i])
+    ranks = [0.0] * n
+    for rank_pos, idx in enumerate(sorted_idx):
+        ranks[idx] = rank_pos / (n - 1)
+    return ranks
+
+
+def _ts_rank(values, window):
+    """时间序列滚动排名，返回最后一个值"""
+    if len(values) < window:
+        return None
+    seg = values[-window:]
+    r = _rank(seg)
+    return r[-1]
+
+
+def _ts_sum(values, window):
+    if len(values) < window:
+        return None
+    return sum(values[-window:])
+
+
+def _ts_min(values, window):
+    if len(values) < window:
+        return None
+    return min(values[-window:])
+
+
+def _ts_max(values, window):
+    if len(values) < window:
+        return None
+    return max(values[-window:])
+
+
+def _delta(values, lag=1):
+    """values[-1] - values[-1-lag]"""
+    if len(values) <= lag:
+        return None
+    return values[-1] - values[-1 - lag]
+
+
+def _delay(values, lag=1):
+    """前一期的值"""
+    if len(values) <= lag:
+        return None
+    return values[-1 - lag]
+
+
+def _correlation(xs, ys, window):
+    """滚动窗口内 Pearson 相关系数"""
+    if len(xs) < window or len(ys) < window:
+        return None
+    x = xs[-window:]
+    y = ys[-window:]
+    n = window
+    if n < 3:
+        return None
+    mx = sum(x) / n
+    my = sum(y) / n
+    cov = sum((x[i] - mx) * (y[i] - my) for i in range(n))
+    sx = (sum((v - mx) ** 2 for v in x) / n) ** 0.5
+    sy = (sum((v - my) ** 2 for v in y) / n) ** 0.5
+    if sx == 0 or sy == 0:
+        return 0
+    return cov / (n * sx * sy)
+
+
+def _scale(a):
+    """sum(abs(x))"""
+    return sum(abs(x) for x in [a]) if a is not None else 0
+
+
+def _signed_power(x, a):
+    """sign(x) * |x|^a"""
+    if x is None or a is None:
+        return None
+    import math
+    return math.copysign(abs(x) ** a, x)
+
+
+def _alpha_annual_return(close, window=252):
+    """252日年化收益 (close用)"""
+    if len(close) < window:
+        return None
+    r = (close[-1] / close[-window - 1]) - 1 if close[-window - 1] > 0 else None
+    return r
+
+
+def _alpha_product(values, window):
+    """滚动乘积"""
+    if len(values) < window:
+        return None
+    import math
+    p = 1.0
+    for v in values[-window:]:
+        p *= max(v, 1e-10)
+    return p
+
+
+def _ts_mean(values, window):
+    if len(values) < window:
+        return None
+    return sum(values[-window:]) / window
+
+
+def _calc_factors(rows, factors, window):
+    """对一组日线数据计算因子值。
+
+    返回: {factor_name: value_or_None}
+    """
+    if len(rows) < max(60, window):
+        return None
+
+    closes = [r["close"] for r in rows]
+    volumes = [r["volume"] or 0 for r in rows]
+    highs = [r["high"] for r in rows]
+
+    # 日收益率
+    returns = []
+    for i in range(1, len(closes)):
+        if closes[i - 1] and closes[i - 1] > 0:
+            returns.append((closes[i] - closes[i - 1]) / closes[i - 1])
+        else:
+            returns.append(0)
+
+    result = {}
+
+    for f in factors:
+        if f == "momentum":
+            # N日动量: (close[-1] - close[-N]) / close[-N]
+            n = min(20, window)
+            if len(closes) > n and closes[-n - 1] and closes[-n - 1] > 0:
+                result[f] = (closes[-1] - closes[-n - 1]) / closes[-n - 1]
+            else:
+                result[f] = None
+
+        elif f == "volatility":
+            # 年化波动率: std(returns, N) * sqrt(252)
+            n = min(20, len(returns))
+            std_r = _std(returns, n)
+            result[f] = std_r * (252 ** 0.5) if std_r is not None else None
+
+        elif f == "vol_ratio":
+            # 量比: sma(volume, 5) / sma(volume, 20)
+            vol5 = _sma(volumes, min(5, len(volumes)))
+            vol20 = _sma(volumes, min(20, len(volumes)))
+            result[f] = vol5 / vol20 if vol5 and vol20 and vol20 > 0 else None
+
+        elif f == "sharpe":
+            # 夏普比率 (60日): mean(returns) / std(returns) * sqrt(252)
+            n = min(60, len(returns))
+            if n > 5:
+                r = returns[-n:]
+                mean_r = sum(r) / n
+                std_r = _std(returns, n)
+                result[f] = (mean_r / std_r) * (252 ** 0.5) if std_r and std_r > 0 else None
+            else:
+                result[f] = None
+
+        elif f == "pv_corr":
+            # 量价相关性: correlation(close, volume) over N days
+            n = min(20, len(closes))
+            if n > 5:
+                c = closes[-n:]
+                v = volumes[-n:]
+                mean_c = sum(c) / n
+                mean_v = sum(v) / n
+                cov = sum((c[i] - mean_c) * (v[i] - mean_v) for i in range(n))
+                std_c = (sum((x - mean_c) ** 2 for x in c) / n) ** 0.5
+                std_v = (sum((x - mean_v) ** 2 for x in v) / n) ** 0.5
+                if std_c > 0 and std_v > 0:
+                    result[f] = cov / (n * std_c * std_v)
+                else:
+                    result[f] = None
+            else:
+                result[f] = None
+
+        elif f == "max_dd":
+            # 最大回撤: 窗口内从高点到最低点的最大跌幅
+            n = min(60, len(closes))
+            if n > 5:
+                c = closes[-n:]
+                peak = c[0]
+                max_dd = 0
+                for price in c:
+                    if price > peak:
+                        peak = price
+                    dd = (price - peak) / peak if peak > 0 else 0
+                    if dd < max_dd:
+                        max_dd = dd
+                result[f] = max_dd  # negative value
+            else:
+                result[f] = None
+
+        elif f == "up_ratio":
+            # 涨跌比: up_days / down_days over N
+            n = min(20, len(returns))
+            if n > 0:
+                r = returns[-n:]
+                up = sum(1 for x in r if x > 0)
+                down = sum(1 for x in r if x < 0)
+                result[f] = up / down if down > 0 else (up if up > 0 else 1.0)
+            else:
+                result[f] = None
+
+        elif f == "chg_std":
+            n = min(20, len(returns))
+            std_r = _std(returns, n)
+            result[f] = std_r if std_r is not None else None
+
+        # ── Alpha 101 因子 ──
+        elif f == "alpha006":
+            # -correlation(open, volume, 10)
+            n = min(10, len(closes))
+            c = _correlation([r["open"] for r in rows], volumes, n)
+            result[f] = -c if c is not None else None
+
+        elif f == "alpha009":
+            # if ts_min(delta(close,1),5) > 0: delta(close,1)
+            # elif ts_max(delta(close,1),5) < 0: delta(close,1)
+            # else: -delta(close,1)
+            d1 = _delta(closes, 1)
+            d1s = [_delta(closes[:i+1], 1) for i in range(len(closes))]
+            d1s_clean = [v for v in d1s if v is not None]
+            tmin = _ts_min(d1s_clean, 5) if len(d1s_clean) >= 5 else None
+            tmax = _ts_max(d1s_clean, 5) if len(d1s_clean) >= 5 else None
+            if tmin is not None and tmin > 0:
+                result[f] = d1
+            elif tmax is not None and tmax < 0:
+                result[f] = d1
+            else:
+                result[f] = -d1 if d1 is not None else None
+
+        elif f == "alpha012":
+            # sign(delta(volume,1)) * -delta(close,1)
+            import math
+            dv = _delta(volumes, 1)
+            dc = _delta(closes, 1)
+            if dv is not None and dc is not None:
+                result[f] = math.copysign(1, dv) * (-dc) if dv != 0 else 0
+            else:
+                result[f] = None
+
+        elif f == "alpha032":
+            # scale(((sum(close,7)/7 - close) + correlation(vwap, delay(close,5), 20)))
+            n = min(20, len(closes))
+            sm7 = _ts_sum(closes, 7)
+            mean_rev = (sm7 / 7.0 - closes[-1]) if sm7 else 0
+            # vwap ≈ amount / volume
+            vwaps = []
+            for r in rows:
+                if r.get("amount") and r.get("volume") and r["volume"] > 0:
+                    vwaps.append(r["amount"] / r["volume"])
+                else:
+                    vwaps.append((r["high"] + r["low"] + r["close"]) / 3)
+            d5 = _delay(closes, 5)
+            # Build delayed close series
+            delayed = [None] * 5 + closes[:-5] if len(closes) > 5 else []
+            delayed_clean = [v for v in delayed if v is not None]
+            c = _correlation(vwaps, delayed_clean, min(n, len(delayed_clean)))
+            result[f] = (mean_rev + (c if c else 0)) if mean_rev is not None else None
+
+        elif f == "alpha034":
+            # rank((1 - rank(stddev(returns,2)/stddev(returns,5))) + (1 - rank(delta(close,1))))
+            pass  # needs cross-sectional rank, stubbed for now
+            result[f] = None
+
+        elif f == "alpha038":
+            # -rank(ts_rank(close,10)) * rank(correlation(close,volume,10))
+            n = min(10, len(closes))
+            tr = _ts_rank(closes, n)
+            c = _correlation(closes, volumes, n)
+            # approximate: use percentile as rank proxy
+            result[f] = -(tr * c) if tr is not None and c is not None else None
+
+        elif f == "alpha042":
+            # rank(vwap - close) / rank(vwap + close), approximated with time-series ranks
+            n = min(20, len(closes))
+            if n > 5:
+                vwaps = []
+                for r in rows:
+                    if r.get("amount") and r.get("volume") and r["volume"] > 0:
+                        vwaps.append(r["amount"] / r["volume"])
+                    else:
+                        vwaps.append((r["high"] + r["low"] + r["close"]) / 3)
+                spread = [vwaps[i] - closes[i] for i in range(len(closes))]
+                level = [vwaps[i] + closes[i] for i in range(len(closes))]
+                spread_rank = _rank(spread[-n:])[-1]
+                level_rank = max(_rank(level[-n:])[-1], 1e-6)
+                result[f] = spread_rank / level_rank
+            else:
+                result[f] = None
+
+        elif f == "alpha046":
+            # delta(close,20)/20 > 0.05 ? -rank(stddev(close,5)) : 1
+            d20 = _delta(closes, 20)
+            if d20 is not None:
+                d20_pct = d20 / closes[-21] if len(closes) > 20 and closes[-21] > 0 else 0
+                if d20_pct > 0.05:
+                    n = min(5, len(closes))
+                    std_c = _std(closes, n)
+                    result[f] = -std_c if std_c else None
+                else:
+                    result[f] = 1.0
+            else:
+                result[f] = None
+
+        elif f == "alpha054":
+            # (-1 * (low - close) * (open^5)) / ((low - high) * (close^5))
+            r = rows[-1]
+            lo, hi, op, cl = r["low"], r["high"], r["open"], r["close"]
+            if hi != lo and cl != 0:
+                num = -1 * (lo - cl) * (op ** 5)
+                den = (lo - hi) * (cl ** 5)
+                result[f] = num / den if den != 0 else 0
+            else:
+                result[f] = None
+
+        elif f == "alpha057":
+            # RSI-style mean reversion
+            n = min(20, len(closes))
+            sm20 = _ts_sum(closes, n)
+            if sm20:
+                ma20 = sm20 / n
+                d1 = _delta(closes, 1)
+                d5_sum = _ts_sum([abs(d) for d in returns[-5:]], 5) if len(returns) >= 5 else None
+                if d1 is not None:
+                    result[f] = ma20 / closes[-1] if closes[-1] > 0 else None  # 均值偏离度
+                else:
+                    result[f] = None
+            else:
+                result[f] = None
+
+        elif f == "alpha065":
+            # rank(correlation(close,adv20,15) < correlation(close,adv20,5))
+            n15 = min(15, len(closes))
+            n5 = min(5, len(closes))
+            # adv20 ≈ sma(volume,20)
+            adv20 = []
+            for i in range(len(volumes)):
+                if i >= 19:
+                    adv20.append(sum(volumes[i-19:i+1]) / 20)
+                else:
+                    adv20.append(sum(volumes[:i+1]) / (i+1))
+            c15 = _correlation(closes, adv20, n15)
+            c5 = _correlation(closes, adv20, n5)
+            if c15 is not None and c5 is not None:
+                result[f] = 1.0 if c15 < c5 else 0.0
+            else:
+                result[f] = None
+
+        elif f == "alpha081":
+            # rank(log(product(rank(correlation(vwap, sum(adv20,20), 10)), 10)))
+            # Simplified: vwap-volume momentum
+            vwaps = []
+            for r in rows:
+                if r.get("amount") and r.get("volume") and r["volume"] > 0:
+                    vwaps.append(r["amount"] / r["volume"])
+                else:
+                    vwaps.append((r["high"] + r["low"] + r["close"]) / 3)
+            n = min(10, len(closes))
+            # adv20 sum
+            adv20_vals = []
+            for i in range(len(volumes)):
+                if i >= 19:
+                    adv20_vals.append(sum(volumes[i-19:i+1]) / 20)
+                else:
+                    adv20_vals.append(sum(volumes[:i+1]) / (i+1))
+            adv20_sum = _ts_sum(adv20_vals, min(20, len(adv20_vals)))
+            c = _correlation(vwaps, adv20_vals, n)
+            import math
+            if c is not None and c > 0:
+                result[f] = math.log(max(c, 0.0001))
+            else:
+                result[f] = None
+
+        elif f == "alpha101":
+            # (close - open) / ((high - low) + 0.001)
+            r = rows[-1]
+            result[f] = (r["close"] - r["open"]) / (r["high"] - r["low"] + 0.001)
+
+        else:
+            result[f] = None
+
+    return result
+
+
+@app.route("/api/lab/analyze", methods=["POST"])
+def api_lab_analyze():
+    payload = request.get_json(silent=True) or {}
+    items = payload.get("items", [])  # [{code, name, type: 'etf'|'concept'}]
+    factors = payload.get("factors", ["momentum", "volatility", "vol_ratio", "sharpe"])
+    start_date = payload.get("start_date", "")
+    end_date = payload.get("end_date", "")
+    sort_by = payload.get("sort_by", "composite")
+
+    if not items:
+        return jsonify({"error": "请选择至少一个标的"}), 400
+    if len(items) > 15:
+        return jsonify({"error": "最多选择15个标的"}), 400
+
+    results = []
+    for item in items:
+        code = item["code"]
+        item_type = item.get("type", "etf")
+
+        if item_type == "etf":
+            rows = _read_etf_daily(code, start_date=start_date, end_date=end_date)
+        else:
+            rows = _read_concept_daily(code, start_date=start_date, end_date=end_date)
+
+        if not rows or len(rows) < 10:
+            continue
+
+        # 估算交易日数用于因子计算
+        n_rows = len(rows)
+        window = min(n_rows, 120)
+
+        fv = _calc_factors(rows, factors, window)
+        if fv is None:
+            continue
+
+        results.append({
+            "code": code,
+            "name": item.get("name", code),
+            "type": item_type,
+            "factors": fv,
         })
+
+    if not results:
+        return jsonify({"error": "没有足够的数据"}), 400
+
+    # normalize factors and compute composite score
+    factor_vals = {f: [] for f in factors}
+    for r in results:
+        for f in factors:
+            v = r["factors"].get(f)
+            if v is not None:
+                factor_vals[f].append(v)
+
+    # min-max normalize per factor
+    norm = {}
+    for f in factors:
+        vals = factor_vals[f]
+        if not vals:
+            norm[f] = {"min": 0, "max": 1, "range": 1}
+            continue
+        mn, mx = min(vals), max(vals)
+        rng = mx - mn if mx != mn else 1
+        if f == "max_dd":
+            mn, mx = mx, mn
+            rng = abs(rng)
+        norm[f] = {"min": mn, "max": mx, "range": rng}
+
+    for r in results:
+        score = 0
+        count = 0
+        for f in factors:
+            v = r["factors"].get(f)
+            if v is None:
+                continue
+            n = norm[f]
+            nv = (v - n["min"]) / n["range"] if n["range"] != 0 else 0.5
+            score += nv
+            count += 1
+        r["score"] = score / count if count > 0 else 0
+
+    # sort
+    if sort_by == "composite":
+        results.sort(key=lambda r: r["score"], reverse=True)
+    elif sort_by in factors:
+        results.sort(
+            key=lambda r: r["factors"].get(sort_by, -9999) or -9999,
+            reverse=sort_by != "max_dd"
+        )
+
+    # 源标签
+    has_etf = any(r["type"] == "etf" for r in results)
+    has_concept = any(r["type"] == "concept" for r in results)
+    if has_etf and has_concept:
+        source_label = "ETF + 概念"
+    elif has_etf:
+        source_label = "ETF指数"
+    else:
+        source_label = "概念板块"
+
+    return jsonify({
+        "source_label": source_label,
+        "window": f"{start_date} ~ {end_date}",
+        "factors": factors,
+        "sort_by": sort_by,
+        "results": results,
+    })
+
+
+# ── factor backtest engine ──────────────────────────────────────
+
+FACTOR_META = {
+    fn: {"name": f"GTJA {fn[-3:]}", "higher_better": True, "group": "GTJA Alpha191 Phase1"}
+    for fn in GTJA_ALPHA_PHASE1_ACTIVE
+}
+
+
+def _rolling_factor(rows, factor_name, idx, window=60):
+    """在 rows 的 idx 位置，用前 window 根 bar 计算因子值"""
+    if idx < window:
+        return None
+    segment = rows[idx - window:idx + 1]
+    fv = _calc_factors(segment, [factor_name], window)
+    return fv.get(factor_name) if fv else None
+
+
+def _precompute_all_factors(rows, factor_names, lookback=60):
+    """一次遍历计算所有因子时序。
+    返回: {factor_name: [{date, value, close}]}
+    """
+    if len(rows) < lookback:
+        return {}
+    result = {f: [] for f in factor_names}
+    for idx in range(lookback, len(rows)):
+        fv = _calc_factors(rows[:idx + 1], factor_names, lookback)
+        if fv is None:
+            continue
+        dt = rows[idx]["trade_date"]
+        cl = rows[idx]["close"]
+        for fn in factor_names:
+            v = fv.get(fn)
+            if v is not None:
+                result[fn].append({"date": dt, "value": v, "close": cl})
+    return result
+
+
+def _run_factor_backtest_cached(factor_series, factor_name, start_date, end_date, top_k):
+    """使用预计算的因子时序跑回测。
+    factor_series: {code: [{date, value, close}]}
+    """
+    higher_better = FACTOR_META.get(factor_name, {}).get("higher_better", True)
+
+    # 建立 date→index 映射 + 收集交易日
+    date_index = {}
+    all_dates = set()
+    for code, fs in factor_series.items():
+        date_index[code] = {p["date"]: i for i, p in enumerate(fs)}
+        for p in fs:
+            if start_date <= p["date"] <= end_date:
+                all_dates.add(p["date"])
+    all_dates = sorted(all_dates)
+    if len(all_dates) < 30:
+        return [], []
+
+    # 逐日回测
+    equity = 1.0
+    equity_curve = []
+    prev_top_codes = set()
+    prev_close = {}
+    entry_info = {}
+    trades = []
+    day_idx = 0
+
+    for dt in all_dates:
+        scores = []
+        day_prices = {}
+        for code, fs in factor_series.items():
+            di = date_index[code].get(dt)
+            if di is None:
+                continue
+            p = fs[di]
+            scores.append((code, p["value"]))
+            day_prices[code] = p["close"]
+
+        if len(scores) < top_k:
+            continue
+
+        daily_ret = 0
+        ret_count = 0
+        for code in prev_top_codes:
+            p_close = day_prices.get(code)
+            if not p_close:
+                continue
+            pc = prev_close.get(code)
+            if pc and pc > 0:
+                daily_ret += (p_close / pc - 1)
+                ret_count += 1
+        if ret_count > 0:
+            daily_ret /= ret_count
+            equity *= (1 + daily_ret)
+
+        scores.sort(key=lambda x: x[1], reverse=higher_better)
+        top_codes = set(c for c, _ in scores[:top_k])
+        rank_map = {code: i + 1 for i, (code, _) in enumerate(scores[:top_k])}
+        score_map = {code: value for code, value in scores[:top_k]}
+
+        bought = top_codes - prev_top_codes
+        sold = prev_top_codes - top_codes
+        for code in sold:
+            h = entry_info.pop(code, None)
+            sell_price = day_prices.get(code)
+            if h and h.get("entry_price") and sell_price:
+                pnl_pct = (sell_price / h["entry_price"] - 1) * 100
+                trades.append({
+                    "code": code, "buy_date": h["entry_date"], "sell_date": dt,
+                    "buy_price": round(h["entry_price"], 2), "sell_price": round(sell_price, 2),
+                    "profit_pct": round(pnl_pct, 2), "hold_days": day_idx - h["entry_idx"],
+                })
+        for code in bought:
+            entry_info[code] = {"entry_date": dt, "entry_price": day_prices.get(code), "entry_idx": day_idx}
+
+        for code in top_codes:
+            if code in day_prices:
+                prev_close[code] = day_prices[code]
+
+        prev_top_codes = top_codes
+        day_idx += 1
+        equity_curve.append({
+            "date": dt, "equity": round(equity, 4),
+            "return": round((equity - 1) * 100, 2),
+            "holdings": [{
+                "code": code,
+                "rank": rank_map.get(code),
+                "score": round(float(score_map.get(code, 0)), 6),
+                "close": round(float(day_prices[code]), 2) if code in day_prices and day_prices[code] is not None else None,
+            } for code in sorted(top_codes, key=lambda c: rank_map.get(c, 999))],
+        })
+
+    if equity_curve and prev_top_codes:
+        last_date = equity_curve[-1]["date"]
+        for code, h in entry_info.items():
+            sell_price = prev_close.get(code)
+            if sell_price and h.get("entry_price"):
+                pnl_pct = (sell_price / h["entry_price"] - 1) * 100
+                trades.append({
+                    "code": code, "buy_date": h["entry_date"], "sell_date": last_date,
+                    "buy_price": round(h["entry_price"], 2), "sell_price": round(sell_price, 2),
+                    "profit_pct": round(pnl_pct, 2), "hold_days": day_idx - h["entry_idx"],
+                })
+
+    return equity_curve, trades
+
+
+def _precompute_factor_series_single(rows, factor_name, lookback=60):
+    """预计算单个因子的时序（兼容旧接口）"""
+    if len(rows) < lookback:
+        return []
+    series = []
+    for idx in range(lookback, len(rows)):
+        fv = _rolling_factor(rows, factor_name, idx, window=lookback)
+        if fv is not None:
+            series.append({
+                "date": rows[idx]["trade_date"],
+                "value": fv,
+                "close": rows[idx]["close"],
+            })
+    return series
+
+
+def _precompute_factors_numpy(rows, factor_names):
+    """用 numpy 向量化一次性计算所有因子时序。"""
+    import numpy as np
+    n = len(rows)
+    if n < 60:
+        return {}
+
+    closes = np.array([r["close"] for r in rows])
+    highs = np.array([r["high"] for r in rows])
+    lows = np.array([r["low"] for r in rows])
+    opens = np.array([r["open"] for r in rows])
+    volumes = np.array([r["volume"] or 0 for r in rows])
+    amounts = np.array([r["amount"] or 0 for r in rows])
+    dates = [r["trade_date"] for r in rows]
+
+    # 日收益率
+    returns = np.zeros(n)
+    returns[1:] = (closes[1:] - closes[:-1]) / np.maximum(closes[:-1], 1e-10)
+
+    def _safe_corrcoef(x, y):
+        x = np.asarray(x, dtype=float)
+        y = np.asarray(y, dtype=float)
+        mask = np.isfinite(x) & np.isfinite(y)
+        if np.count_nonzero(mask) < 3:
+            return np.nan
+        x = x[mask]
+        y = y[mask]
+        if np.std(x) <= 0 or np.std(y) <= 0:
+            return np.nan
+        return np.corrcoef(x, y)[0, 1]
+
+    def _vwap_array(amount, volume, high, low, close):
+        fallback = (high + low + close) / 3
+        return np.divide(amount, volume, out=fallback.astype(float, copy=True), where=volume > 0)
+
+    def _percent_rank(window, value):
+        window = np.asarray(window, dtype=float)
+        window = window[np.isfinite(window)]
+        if len(window) < 2 or not np.isfinite(value):
+            return 0.5
+        return float(np.searchsorted(np.sort(window), value, side="right") / len(window))
+
+    result = {f: [] for f in factor_names}
+    lookback = 60
+
+    for idx in range(lookback, n):
+        seg = slice(idx - lookback, idx)
+        c = closes[idx - lookback:idx + 1]
+        r = returns[idx - lookback + 1:idx + 1]
+        v = volumes[idx - lookback:idx + 1]
+        h = highs[idx - lookback:idx + 1]
+        lo = lows[idx - lookback:idx + 1]
+        o = opens[idx - lookback:idx + 1]
+        a = amounts[idx - lookback:idx + 1]
+
+        dt = dates[idx]
+        cl = closes[idx]
+        w = len(c)
+
+        fv = {}
+        # 基础因子 (use numpy for speed)
+        if "momentum" in factor_names:
+            n_mom = min(20, w)
+            fv["momentum"] = (c[-1] - c[-n_mom - 1]) / c[-n_mom - 1] if w > n_mom and c[-n_mom - 1] > 0 else None
+
+        if "volatility" in factor_names:
+            n_vol = min(20, len(r))
+            ret_std = np.std(r[-n_vol:]) if len(r) >= n_vol else None
+            fv["volatility"] = float(ret_std * np.sqrt(252)) if ret_std is not None else None
+
+        if "vol_ratio" in factor_names:
+            v5 = np.mean(v[-5:]) if len(v) >= 5 else None
+            v20 = np.mean(v[-min(20, w):]) if w >= 5 else None
+            fv["vol_ratio"] = float(v5 / v20) if v5 and v20 and v20 > 0 else None
+
+        if "sharpe" in factor_names:
+            n_sh = min(60, len(r))
+            if len(r) >= n_sh and np.std(r[-n_sh:]) > 0:
+                fv["sharpe"] = float(np.mean(r[-n_sh:]) / np.std(r[-n_sh:]) * np.sqrt(252))
+            else:
+                fv["sharpe"] = None
+
+        if "pv_corr" in factor_names:
+            n_c = min(20, w)
+            if n_c > 5:
+                cc = _safe_corrcoef(c[-n_c:], v[-n_c:])
+                fv["pv_corr"] = float(cc) if not np.isnan(cc) else None
+            else:
+                fv["pv_corr"] = None
+
+        if "max_dd" in factor_names:
+            n_dd = min(60, w)
+            peak = np.maximum.accumulate(c[-n_dd:])
+            dd = (c[-n_dd:] - peak) / np.maximum(peak, 1e-10)
+            fv["max_dd"] = float(np.min(dd))
+
+        if "up_ratio" in factor_names:
+            n_u = min(20, len(r))
+            up = np.sum(r[-n_u:] > 0)
+            down = np.sum(r[-n_u:] < 0)
+            fv["up_ratio"] = float(up / down) if down > 0 else (float(up) if up > 0 else 1.0)
+
+        if "chg_std" in factor_names:
+            n_cs = min(20, len(r))
+            std_r = np.std(r[-n_cs:]) if len(r) >= n_cs else None
+            fv["chg_std"] = float(std_r) if std_r is not None else None
+
+        # Alpha101 因子
+        if "alpha006" in factor_names:
+            n6 = min(10, w)
+            if n6 > 3:
+                cc = _safe_corrcoef(o[-n6:], v[-n6:])
+                fv["alpha006"] = float(-cc) if not np.isnan(cc) else None
+            else:
+                fv["alpha006"] = None
+
+        if "alpha009" in factor_names:
+            d1_vals = np.diff(c[-6:]) if len(c) >= 6 else np.array([])
+            if len(d1_vals) >= 5:
+                tmin = np.min(d1_vals[-5:])
+                tmax = np.max(d1_vals[-5:])
+                d1 = d1_vals[-1]
+                if tmin > 0: fv["alpha009"] = float(d1)
+                elif tmax < 0: fv["alpha009"] = float(d1)
+                else: fv["alpha009"] = float(-d1)
+            else:
+                fv["alpha009"] = None
+
+        if "alpha012" in factor_names:
+            if idx >= 2:
+                dv = volumes[idx] - volumes[idx - 1]
+                dc = closes[idx] - closes[idx - 1]
+                fv["alpha012"] = float(np.sign(dv) * (-dc)) if dv != 0 else 0.0
+            else:
+                fv["alpha012"] = None
+
+        if "alpha032" in factor_names:
+            n32 = min(20, w)
+            sm7 = np.sum(c[-7:]) if w >= 7 else 0
+            mean_rev = (sm7 / 7.0 - c[-1]) if sm7 else 0
+            # vwap from amount/volume
+            vwap_arr = _vwap_array(a, v, h, lo, c)
+            if w >= 6 and n32 > 5:
+                delayed = np.roll(c, 5)[-n32:]
+                cc = _safe_corrcoef(vwap_arr[-n32:], delayed)
+                fv["alpha032"] = float(mean_rev + (cc if not np.isnan(cc) else 0))
+            else:
+                fv["alpha032"] = mean_rev
+
+        if "alpha034" in factor_names:
+            if len(r) >= 20 and c[-2] > 0:
+                ratios = []
+                for j in range(5, len(r) + 1):
+                    std5 = np.std(r[j - 5:j])
+                    std2 = np.std(r[j - 2:j])
+                    ratios.append(std2 / std5 if std5 > 0 else 0.0)
+                cur_ratio = ratios[-1]
+                d1_series = r[-20:]
+                d1 = (c[-1] - c[-2]) / c[-2]
+                fv["alpha034"] = float((1 - _percent_rank(ratios[-20:], cur_ratio)) + (1 - _percent_rank(d1_series, d1)))
+            else:
+                fv["alpha034"] = None
+
+        if "alpha038" in factor_names:
+            n38 = min(10, w)
+            if n38 > 3:
+                # ts_rank: position in sorted window
+                tr = (np.searchsorted(np.sort(c[-n38:]), c[-1])) / (n38 - 1) if n38 > 1 else 0.5
+                cc = _safe_corrcoef(c[-n38:], v[-n38:])
+                fv["alpha038"] = float(-tr * cc) if not np.isnan(cc) else None
+            else:
+                fv["alpha038"] = None
+
+        if "alpha042" in factor_names:
+            n42 = min(20, w)
+            if n42 > 5:
+                vwap_arr = _vwap_array(a, v, h, lo, c)
+                spread = vwap_arr - c
+                level = vwap_arr + c
+                spread_rank = _percent_rank(spread[-n42:], spread[-1])
+                level_rank = _percent_rank(level[-n42:], level[-1])
+                fv["alpha042"] = float(spread_rank / max(level_rank, 1e-6))
+            else:
+                fv["alpha042"] = None
+
+        if "alpha046" in factor_names:
+            if w > 20:
+                d20 = c[-1] - c[-21]
+                d20_pct = d20 / c[-21] if c[-21] > 0 else 0
+                if d20_pct > 0.05:
+                    fv["alpha046"] = float(-np.std(c[-5:]))
+                else:
+                    fv["alpha046"] = 1.0
+            else:
+                fv["alpha046"] = None
+
+        if "alpha054" in factor_names:
+            if h[-1] != lo[-1] and c[-1] != 0:
+                num = -1 * (lo[-1] - c[-1]) * (o[-1] ** 5)
+                den = (lo[-1] - h[-1]) * (c[-1] ** 5)
+                fv["alpha054"] = float(num / den) if den != 0 else 0.0
+            else:
+                fv["alpha054"] = None
+
+        if "alpha057" in factor_names:
+            n57 = min(20, w)
+            ma20 = np.mean(c[-n57:])
+            fv["alpha057"] = float(ma20 / c[-1]) if c[-1] > 0 else None
+
+        if "alpha065" in factor_names:
+            n65 = min(15, w)
+            # adv20 SMA of volume
+            adv = np.convolve(v, np.ones(20)/20, mode='same')
+            if n65 > 3 and len(adv) >= n65:
+                c15 = _safe_corrcoef(c[-n65:], adv[-n65:])
+                n5 = min(5, w)
+                c5 = _safe_corrcoef(c[-n5:], adv[-n5:]) if n5 > 3 else 0
+                fv["alpha065"] = 1.0 if (not np.isnan(c15) and not np.isnan(c5) and c15 < c5) else 0.0
+            else:
+                fv["alpha065"] = None
+
+        if "alpha081" in factor_names:
+            n81 = min(10, w)
+            vwap_arr = _vwap_array(a, v, h, lo, c)
+            adv = np.convolve(v, np.ones(20)/20, mode='same')
+            if n81 > 3 and len(adv) >= n81:
+                cc = _safe_corrcoef(vwap_arr[-n81:], adv[-n81:])
+                fv["alpha081"] = float(np.log(max(abs(cc), 1e-6))) if cc and not np.isnan(cc) else None
+            else:
+                fv["alpha081"] = None
+
+        if "alpha101" in factor_names:
+            fv["alpha101"] = float((c[-1] - o[-1]) / (h[-1] - lo[-1] + 0.001))
+
+        # 去 None 的条目
+        for fn in factor_names:
+            v = fv.get(fn)
+            if v is not None and not (isinstance(v, float) and np.isnan(v)):
+                result[fn].append({"date": dt, "value": v, "close": cl})
+
+    return result
+
+    # 4. 逐日回测
+    equity = 1.0
+    equity_curve = []
+    prev_top_codes = set()
+    prev_close = {}
+    entry_info = {}
+    trades = []
+    day_idx = 0
+
+    for dt in all_dates:
+        scores = []
+        day_prices = {}
+        for code, fs in factor_series.items():
+            di = date_index[code].get(dt)
+            if di is None:
+                continue
+            p = fs[di]
+            scores.append((code, p["value"]))
+            day_prices[code] = p["close"]
+
+        if len(scores) < top_k:
+            continue
+
+        scores.sort(key=lambda x: x[1], reverse=higher_better)
+        top_codes = set(c for c, _ in scores[:top_k])
+
+        # 当日收益
+        daily_ret = 0
+        ret_count = 0
+        for code in top_codes:
+            p_close = day_prices.get(code)
+            if not p_close:
+                continue
+            pc = prev_close.get(code)
+            if pc and pc > 0:
+                daily_ret += (p_close / pc - 1)
+                ret_count += 1
+        if ret_count > 0:
+            daily_ret /= ret_count
+            equity *= (1 + daily_ret)
+
+        # 调仓
+        bought = top_codes - prev_top_codes
+        sold = prev_top_codes - top_codes
+        for code in sold:
+            h = entry_info.pop(code, None)
+            sell_price = day_prices.get(code)
+            if h and h.get("entry_price") and sell_price:
+                pnl_pct = (sell_price / h["entry_price"] - 1) * 100
+                trades.append({
+                    "code": code, "buy_date": h["entry_date"], "sell_date": dt,
+                    "buy_price": round(h["entry_price"], 2),
+                    "sell_price": round(sell_price, 2),
+                    "profit_pct": round(pnl_pct, 2),
+                    "hold_days": day_idx - h["entry_idx"],
+                })
+        for code in bought:
+            entry_info[code] = {
+                "entry_date": dt,
+                "entry_price": day_prices.get(code),
+                "entry_idx": day_idx,
+            }
+
+        for code in top_codes:
+            if code in day_prices:
+                prev_close[code] = day_prices[code]
+
+        prev_top_codes = top_codes
+        day_idx += 1
+
+        equity_curve.append({
+            "date": dt, "equity": round(equity, 4),
+            "return": round((equity - 1) * 100, 2),
+        })
+
+    # 清仓
+    if equity_curve and prev_top_codes:
+        last_date = equity_curve[-1]["date"]
+        for code, h in entry_info.items():
+            sell_price = prev_close.get(code)
+            if sell_price and h.get("entry_price"):
+                pnl_pct = (sell_price / h["entry_price"] - 1) * 100
+                trades.append({
+                    "code": code, "buy_date": h["entry_date"], "sell_date": last_date,
+                    "buy_price": round(h["entry_price"], 2),
+                    "sell_price": round(sell_price, 2),
+                    "profit_pct": round(pnl_pct, 2),
+                    "hold_days": day_idx - h["entry_idx"],
+                })
+
+    return equity_curve, trades
+
+
+@app.route("/api/lab/backtest", methods=["POST"])
+def api_lab_backtest():
+    """因子全量回测：8个因子各自生成收益曲线 + 交易详情"""
+    payload = request.get_json(silent=True) or {}
+    source = payload.get("source", "all")  # 'etf' | 'concept' | 'all'
+    start_date = payload.get("start_date", "")
+    end_date = payload.get("end_date", "")
+    top_k = min(payload.get("top_k", 5), 10)
+    selected_factors = payload.get("factors")
+    selected_factor = payload.get("factor", "all")
+
+    # 读取所有数据 + 一次性预计算全部因子时序
+    items_data = {}
+    item_names = {}
+    if isinstance(selected_factors, list):
+        if "all" in selected_factors:
+            all_factors = list(FACTOR_META.keys())
+        else:
+            all_factors = [f for f in selected_factors if f in FACTOR_META]
+            invalid_factors = [f for f in selected_factors if f not in FACTOR_META]
+            if invalid_factors:
+                return jsonify({"error": "因子不存在"}), 400
+            if not all_factors:
+                return jsonify({"error": "请选择至少一个因子"}), 400
+    elif selected_factor and selected_factor != "all":
+        if selected_factor not in FACTOR_META:
+            return jsonify({"error": "因子不存在"}), 400
+        all_factors = [selected_factor]
+    else:
+        all_factors = list(FACTOR_META.keys())
+
+    cache_params = {
+        "version": LAB_CACHE_VERSION,
+        "source": source,
+        "start_date": start_date,
+        "end_date": end_date,
+        "top_k": top_k,
+        "factors": all_factors,
+        "data": _lab_data_signature(source),
+    }
+    cached, cache_key = _load_lab_backtest_cache(cache_params)
+    if cached is not None:
+        return jsonify(cached)
+
+    # 根据 source 加载全部标的。放在缓存命中之后，避免命中缓存时读取全量 CSV。
+    items = []
+    if source in ("etf", "all"):
+        items.extend([{**i, "type": "etf"} for i in _list_etfs_from_csv()])
+    if source in ("concept", "all"):
+        items.extend([{**i, "type": "concept"} for i in _list_concepts_from_csv()])
+
+    if not items:
+        return jsonify({"error": "没有找到标的"}), 400
+    if len(items) < top_k:
+        top_k = max(1, len(items) // 2)
+
+    for item in items:
+        code = item["code"]
+        item_names[code] = item.get("name", code)
+        if item.get("type") == "etf":
+            rows = _read_etf_daily(code, start_date="2014-01-01", end_date=end_date)
+        else:
+            rows = _read_concept_daily(code, start_date="2014-01-01", end_date=end_date)
+        if rows and len(rows) >= 60:
+            items_data[code] = rows
+
+    # 如果标的太多，取成交量最大的 top 80
+    if len(items_data) > 80:
+        vol_rank = []
+        for code, rows in items_data.items():
+            recent_vol = sum(r["volume"] or 0 for r in rows[-20:]) / 20 if len(rows) >= 20 else 0
+            vol_rank.append((code, recent_vol))
+        vol_rank.sort(key=lambda x: x[1], reverse=True)
+        keep_codes = set(c for c, _ in vol_rank[:80])
+        items_data = {c: items_data[c] for c in keep_codes}
+
+    if len(items_data) < 2:
+        return jsonify({"error": "有效标的不够"}), 400
+
+    logger.info("GTJA pre-computing %d factors for %d items...", len(all_factors), len(items_data))
+    gtja_series = precompute_gtja_factor_series(items_data, all_factors, start_date=start_date, lookback=260)
+
+    factor_results = {}
+    for fn in all_factors:
+        fn_series = gtja_series.get(fn, {})
+        if len(fn_series) < top_k:
+            factor_results[fn] = None
+            continue
+        equity, trades = _run_factor_backtest_cached(fn_series, fn, start_date, end_date, top_k)
+        if not equity:
+            factor_results[fn] = None
+            continue
+
+        # stats
+        win_trades = [t for t in trades if t["profit_pct"] > 0]
+        loss_trades = [t for t in trades if t["profit_pct"] <= 0]
+        avg_win = sum(t["profit_pct"] for t in win_trades) / max(1, len(win_trades))
+        avg_loss = sum(t["profit_pct"] for t in loss_trades) / max(1, len(loss_trades))
+
+        # 日收益率序列
+        daily_rets = []
+        for i in range(1, len(equity)):
+            if equity[i - 1]["equity"] > 0:
+                daily_rets.append(equity[i]["equity"] / equity[i - 1]["equity"] - 1)
+        import math
+        avg_ret = sum(daily_rets) / max(1, len(daily_rets))
+        std_ret = (sum((r - avg_ret) ** 2 for r in daily_rets) / max(1, len(daily_rets))) ** 0.5
+        sharpe = (avg_ret / std_ret) * (252 ** 0.5) if std_ret > 0 else 0
+
+        # 最大回撤
+        peak = 0
+        max_dd = 0
+        for p in equity:
+            if p["equity"] > peak:
+                peak = p["equity"]
+            dd = (p["equity"] - peak) / peak if peak > 0 else 0
+            if dd < max_dd:
+                max_dd = dd
+
+        total_return = equity[-1]["return"] if equity else 0
+
+        factor_results[fn] = {
+            "equity_curve": equity,
+            "trades": trades,
+            "stats": {
+                "total_return": round(total_return, 2),
+                "sharpe": round(sharpe, 2),
+                "max_dd": round(max_dd * 100, 1),
+                "trade_count": len(trades),
+                "win_rate": round(len(win_trades) / max(1, len(trades)) * 100, 0),
+                "avg_win": round(avg_win, 1),
+                "avg_loss": round(avg_loss, 1),
+            },
+        }
+
+    response = {
+        "factors": factor_results,
+        "factor_meta": FACTOR_META,
+        "requested_factors": all_factors,
+        "available_factors": [fn for fn, value in factor_results.items() if value],
+        "top_k": top_k,
+        "item_names": item_names,
+        "item_count": len(items_data),
+        "window": f"{start_date} ~ {end_date}",
+    }
+    response = _save_lab_backtest_cache(cache_params, response)
+    response["cache"]["key"] = cache_key
+    return jsonify(response)
 
 
 # ── stats ──────────────────────────────────────────────────────
@@ -1492,16 +3134,18 @@ def api_stats():
     with get_session() as sess:
         stock_count = sess.query(func.count(StockInfo.code)).filter(StockInfo.type == "1", StockInfo.status == 1).scalar()
         daily_count = sess.query(func.count(StockDaily.id)).scalar()
-        concept_count = sess.query(func.count(Concept.code)).scalar()
-        rel_count = sess.query(func.count(StockConcept.id)).scalar()
         latest_date = sess.query(func.max(StockDaily.trade_date)).scalar()
-        return jsonify({
-            "stocks": stock_count,
-            "daily_records": daily_count,
-            "concepts": concept_count,
-            "stock_concept_relations": rel_count,
-            "latest_trade_date": latest_date,
-        })
+
+    # concept count from CSV
+    concept_count = len(_list_concepts_from_csv())
+
+    return jsonify({
+        "stocks": stock_count,
+        "daily_records": daily_count,
+        "concepts": concept_count,
+        "stock_concept_relations": 0,
+        "latest_trade_date": latest_date,
+    })
 
 
 # ── download progress ──────────────────────────────────────────
