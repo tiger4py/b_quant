@@ -29,6 +29,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s: %(message)s",
     datefmt="%H:%M:%S",
+    stream=sys.stdout,
 )
 logger = logging.getLogger(__name__)
 
@@ -264,6 +265,32 @@ def download_concepts(start_date, end_date, codes_filter=None):
 # ======== CLI ========
 
 
+def _resolve_date_range(args, parser=None):
+    if args.date and (args.start or args.end):
+        if parser is not None:
+            parser.error("--date 不能和 --start/--end 同时使用")
+        raise ValueError("--date 不能和 --start/--end 同时使用")
+
+    if args.mode == "init":
+        from datetime import timedelta
+        start = args.start or (datetime.now() - timedelta(days=730)).strftime("%Y-%m-%d")
+        end = args.end or datetime.now().strftime("%Y-%m-%d")
+    elif args.start or args.end:
+        start = args.start or args.end
+        end = args.end or args.start
+    else:
+        target = args.date or datetime.now().strftime("%Y-%m-%d")
+        start = end = target
+
+    datetime.strptime(start, "%Y-%m-%d")
+    datetime.strptime(end, "%Y-%m-%d")
+    if start > end:
+        if parser is not None:
+            parser.error("--start 不能晚于 --end")
+        raise ValueError("--start 不能晚于 --end")
+    return start, end
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="同花顺概念指数数据采集（AKShare 源）")
     parser.add_argument("--date", default=None,
@@ -271,9 +298,9 @@ if __name__ == "__main__":
     parser.add_argument("--mode", choices=["daily", "init"], default="daily",
                         help="daily=增量, init=历史全量")
     parser.add_argument("--start", default=None,
-                        help="init 模式的起始日期 YYYY-MM-DD")
+                        help="起始日期 YYYY-MM-DD；可配合 --end 拉取日期范围")
     parser.add_argument("--end", default=None,
-                        help="init 模式的结束日期 YYYY-MM-DD")
+                        help="结束日期 YYYY-MM-DD；可配合 --start 拉取日期范围")
     parser.add_argument("--codes", default=None,
                         help="只下载指定概念代码，逗号分隔")
     args = parser.parse_args()
@@ -282,12 +309,5 @@ if __name__ == "__main__":
     if args.codes:
         codes_filter = [c.strip() for c in args.codes.split(",") if c.strip()]
 
-    if args.mode == "init":
-        from datetime import timedelta
-        start = args.start or (datetime.now() - timedelta(days=730)).strftime("%Y-%m-%d")
-        end = args.end or datetime.now().strftime("%Y-%m-%d")
-    else:
-        target = args.date or datetime.now().strftime("%Y-%m-%d")
-        start = end = target
-
+    start, end = _resolve_date_range(args, parser)
     download_concepts(start, end, codes_filter=codes_filter)

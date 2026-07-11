@@ -630,12 +630,31 @@ def api_trading_delete():
 
 # ── 操作心得 API ──
 
+# 大盘环境数据文件
+MARKET_CONTEXT_FILE = os.path.join(os.path.dirname(__file__), "data", "market_context.json")
+
+@app.route("/api/trading/market_context", methods=["GET"])
+def api_trading_market_context():
+    """获取每日大盘环境"""
+    date_filter = request.args.get("date", "")
+    if not os.path.exists(MARKET_CONTEXT_FILE):
+        return jsonify({})
+    with open(MARKET_CONTEXT_FILE, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if date_filter and date_filter in data:
+        return jsonify(data[date_filter])
+    return jsonify(data)
+
+
 @app.route("/api/trading/journal", methods=["GET"])
 def api_trading_journal_list():
-    """获取操作心得列表，可按日期筛选"""
+    """获取操作心得列表，可按日期或 trade_id 筛选"""
     date_filter = request.args.get("date", "")
+    trade_id = request.args.get("trade_id", "")
     entries = _load_journal()
-    if date_filter:
+    if trade_id:
+        entries = [e for e in entries if str(e.get("trade_id")) == str(trade_id)]
+    elif date_filter:
         entries = [e for e in entries if e.get("date") == date_filter]
     # 按日期倒序
     entries.sort(key=lambda e: e.get("date", ""), reverse=True)
@@ -651,8 +670,12 @@ def api_trading_journal_save():
         return jsonify({"error": "日期不能为空"}), 400
 
     entries = _load_journal()
-    # 同一天覆盖更新
-    existing = next((e for e in entries if e.get("date") == date), None)
+    trade_id = payload.get("trade_id") or None
+    # 按 trade_id 去重（逐笔复盘），否则按 date 去重（按天复盘）
+    if trade_id:
+        existing = next((e for e in entries if str(e.get("trade_id")) == str(trade_id)), None)
+    else:
+        existing = next((e for e in entries if e.get("date") == date and not e.get("trade_id")), None)
     # 个股跟踪：[{code, name, status: "持有"|"加仓"|"减仓"|"观望"}]
     stocks = payload.get("stocks") or []
     stocks = [{"code": s["code"].strip(), "name": s.get("name", "").strip(), "status": s.get("status", "观望")}
@@ -665,16 +688,25 @@ def api_trading_journal_save():
 
     entry = {
         "date": date,
+        "trade_id": trade_id,
+        "emotion": (payload.get("emotion") or "").strip(),
+        "trade_type": (payload.get("trade_type") or "").strip(),
+        "plan_followed": (payload.get("plan_followed") or "").strip(),
         "market_view": (payload.get("market_view") or "").strip(),
         "sector_view": (payload.get("sector_view") or "").strip(),
         "trade_rationale": (payload.get("trade_rationale") or "").strip(),
+        "expectation": (payload.get("expectation") or "").strip(),
+        "outcome": (payload.get("outcome") or "").strip(),
         "lessons": (payload.get("lessons") or "").strip(),
         "tomorrow_plan": (payload.get("tomorrow_plan") or "").strip(),
+        "mistake_type": (payload.get("mistake_type") or "").strip(),
+        "score": payload.get("score"),
         "review": {
             "verdict": review.get("verdict") or "",      # "对" / "错" / "半对" / ""
             "note": (review.get("note") or "").strip(),   # 复盘笔记
         },
         "stocks": stocks,
+        "trades": payload.get("trades") or [],
         "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
     }
     if existing:
@@ -684,6 +716,14 @@ def api_trading_journal_save():
         entries.append(entry)
 
     _save_journal(entries)
+
+    # 复盘日志：每次保存都追加一条，方便恢复
+    journal_log_file = os.path.join(os.path.dirname(__file__), "data", "journal_save_log.jsonl")
+    log_entry = dict(entry)
+    log_entry["saved_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(journal_log_file, "a", encoding="utf-8") as lf:
+        lf.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+
     return jsonify({"ok": f"已保存 {date} 操作心得", "entry": entry})
 
 

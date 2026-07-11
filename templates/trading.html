@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>实盘跟随 — 趋势跟随</title>
+<title>交易复盘 — 操作原因统计</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -111,10 +111,34 @@
   /* Empty state */
   .empty { text-align: center; padding: 48px; color: #6b7280; font-size: 14px; }
 
+  .review-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); gap: 18px; }
+  .review-panel { background:#161822; border:1px solid #2a2d3e; border-radius:8px; padding:14px; }
+  .review-panel h3 { font-size:15px; margin-bottom:12px; }
+  .textarea {
+    width:100%; background:#10131c; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px;
+    padding:9px 11px; font-size:13px; font-family:inherit; resize:vertical; line-height:1.5;
+  }
+  .textarea:focus { outline:none; border-color:#3b82f6; }
+  .review-row { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:10px; margin-bottom:10px; }
+  .review-stat-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; margin-bottom:12px; }
+  .review-stat { background:#10131c; border:1px solid #24283a; border-radius:8px; padding:10px; }
+  .review-stat .k { color:#6b7280; font-size:11px; margin-bottom:4px; }
+  .review-stat .v { font-size:18px; font-weight:700; }
+  .trade-pill { display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border:1px solid #2a2d3e; border-radius:999px; font-size:11px; margin:3px; color:#cbd5e1; background:#11151c; }
+  .tag { display:inline-block; padding:2px 7px; border-radius:999px; font-size:10px; }
+  .emo-btn {
+    background:#11151c; color:#8b92a0; border:1px solid #2a2d3e; border-radius:6px;
+    padding:5px 12px; font-size:12px; cursor:pointer; transition:all .15s; font-family:inherit;
+  }
+  .emo-btn:hover { border-color:#6b7280; color:#d1d5db; }
+  .emo-btn.on { background:#1d3a5c; border-color:#3b82f6; color:#93c5fd; }
+
   /* Responsive */
   @media (max-width: 700px) {
     .cards-bar { grid-template-columns: repeat(2, 1fr); }
     .form-row { flex-direction: column; }
+    .review-grid, .review-row { grid-template-columns: 1fr; }
+    .review-stat-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -127,7 +151,7 @@
   <a href="/concepts">概念</a>
   <a href="/strategy-backtest">策略回测</a>
   <a href="/strategy-lab">策略试验</a>
-  <a href="/trading" class="on">实盘跟随</a>
+  <a href="/trading" class="on">交易复盘</a>
 </nav>
 
 <div class="main">
@@ -141,7 +165,7 @@
     <button class="tab-btn" data-tab="tab-operate">手动操作</button>
     <button class="tab-btn" data-tab="tab-history">历史记录</button>
     <button class="tab-btn" data-tab="tab-compare">策略对比</button>
-    <button class="tab-btn" data-tab="tab-journal">操作心得</button>
+    <button class="tab-btn" data-tab="tab-journal">原因复盘</button>
   </div>
 
   <!-- Tab 1: 持仓 -->
@@ -184,9 +208,10 @@
   <div class="tab-content" id="tab-history">
     <div style="margin-bottom:14px; display:flex; gap:20px; font-size:13px; color:#6b7280;" id="historyStats"></div>
     <table id="historyTable">
-      <thead><tr><th>日期</th><th>代码</th><th>名称</th><th>方向</th><th>价格</th><th>股数</th><th>盈亏</th><th>盈亏%</th><th>原因</th></tr></thead>
+      <thead><tr><th>日期</th><th>代码</th><th>名称</th><th>方向</th><th>价格</th><th>股数</th><th>盈亏</th><th>盈亏%</th><th>卖后3d</th><th>5d</th><th>10d</th><th>20d</th><th>至今</th><th>原因</th><th>复盘</th></tr></thead>
       <tbody></tbody>
     </table>
+    <div id="historyPager" style="display:flex;justify-content:center;align-items:center;gap:12px;margin-top:14px;font-size:13px;color:#6b7280;"></div>
     <div class="empty" id="emptyHistory" style="display:none">暂无记录</div>
   </div>
 
@@ -211,80 +236,147 @@
     <div class="empty" id="emptyBuys" style="display:none">暂无买入信号</div>
   </div>
 
-  <!-- Tab 5: 操作心得 -->
+  <!-- Tab 5: 原因复盘 -->
   <div class="tab-content" id="tab-journal">
-    <!-- 昨日复盘提醒 -->
     <div id="reviewReminder" style="display:none; background:#1e1b0a; border:1px solid #f59e0b; border-radius:8px; padding:12px 16px; margin-bottom:16px; align-items:center; gap:12px;">
-      <span style="font-size:13px;">📋 <b id="reviewReminderDate"></b> 还没复盘，操作对还是错？</span>
+      <span style="font-size:13px;"><b id="reviewReminderDate"></b> 这笔还没复盘，先把当时原因写清楚。</span>
       <button class="btn btn-sm" style="border-color:#f59e0b;color:#f59e0b;" onclick="reviewYesterday()" id="reviewReminderBtn">去复盘</button>
     </div>
 
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-      <!-- 左侧：编辑 -->
-      <div>
-        <h3 style="font-size:15px; margin-bottom:12px;">记录心得</h3>
-        <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>日期</label>
-          <input id="journalDate" type="date" style="width:100%">
-        </div>
-        <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>大盘看法</label>
-          <textarea id="journalMarket" rows="3" placeholder="今天大盘怎么样？涨跌比、量能、趋势..." style="width:100%; background:#161822; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px; padding:8px 12px; font-size:13px; font-family:inherit; resize:vertical;"></textarea>
-        </div>
-        <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>行业/板块看法</label>
-          <textarea id="journalSector" rows="3" placeholder="哪些板块强？哪些弱？轮动方向..." style="width:100%; background:#161822; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px; padding:8px 12px; font-size:13px; font-family:inherit; resize:vertical;"></textarea>
-        </div>
-        <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>操作理由</label>
-          <textarea id="journalRationale" rows="4" placeholder="今天为什么买/卖/不动？依据哪个策略信号？..." style="width:100%; background:#161822; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px; padding:8px 12px; font-size:13px; font-family:inherit; resize:vertical;"></textarea>
-        </div>
-        <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>经验教训 / 反思</label>
-          <textarea id="journalLessons" rows="3" placeholder="有什么做得好/不好的？下次怎么改进？..." style="width:100%; background:#161822; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px; padding:8px 12px; font-size:13px; font-family:inherit; resize:vertical;"></textarea>
-        </div>
-        <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>明日计划</label>
-          <textarea id="journalPlan" rows="3" placeholder="明天关注什么？什么条件买入/卖出？风险点在哪？..." style="width:100%; background:#161822; color:#e1e4e8; border:1px solid #f59e0b; border-radius:6px; padding:8px 12px; font-size:13px; font-family:inherit; resize:vertical;"></textarea>
+    <div class="review-grid">
+      <div class="review-panel">
+        <h3>交易原因</h3>
+        <div class="review-row">
+          <div class="form-group" style="width:100%;">
+            <label>日期</label>
+            <input id="journalDate" type="date" style="width:100%" onchange="renderDayTrades()">
+          </div>
+          <div class="form-group" style="width:100%;">
+            <label>当天情绪</label>
+            <div id="journalEmotion" style="display:flex;flex-wrap:wrap;gap:6px;">
+              <button class="emo-btn" data-v="冷静" onclick="toggleEmotion(this)">冷静</button>
+              <button class="emo-btn" data-v="兴奋" onclick="toggleEmotion(this)">兴奋</button>
+              <button class="emo-btn" data-v="恐惧" onclick="toggleEmotion(this)">恐惧</button>
+              <button class="emo-btn" data-v="不甘心" onclick="toggleEmotion(this)">不甘心</button>
+              <button class="emo-btn" data-v="急着回本" onclick="toggleEmotion(this)">急着回本</button>
+              <button class="emo-btn" data-v="随手单" onclick="toggleEmotion(this)">随手单</button>
+              <button class="emo-btn" data-v="贪婪" onclick="toggleEmotion(this)">贪婪</button>
+            </div>
+          </div>
         </div>
 
-        <!-- 复盘 -->
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:6px;">当天流水</label>
+          <div id="dayTradeList" style="min-height:28px;"></div>
+        </div>
+
+        <div class="review-row">
+          <div class="form-group" style="width:100%;">
+            <label>操作类型</label>
+            <select id="journalTradeType" style="width:100%">
+              <option value="">混合/未选</option>
+              <option value="计划内买入">计划内买入</option>
+              <option value="追高买入">追高买入</option>
+              <option value="低吸买入">低吸买入</option>
+              <option value="补仓">补仓</option>
+              <option value="做T">做T</option>
+              <option value="止盈">止盈</option>
+              <option value="止损">止损</option>
+              <option value="割肉">割肉</option>
+              <option value="空仓/没操作">空仓/没操作</option>
+            </select>
+          </div>
+          <div class="form-group" style="width:100%;">
+            <label>是否按计划</label>
+            <select id="journalPlanFollowed" style="width:100%">
+              <option value="">未判断</option>
+              <option value="是">是，按计划</option>
+              <option value="否">否，盘中变形</option>
+              <option value="部分">部分符合</option>
+              <option value="无计划">当时没计划</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="width:100%; margin-bottom:10px;">
+          <label>当时原因</label>
+          <textarea id="journalRationale" class="textarea" rows="4" placeholder="当时我为什么买/卖？看到什么信号？是题材、形态、消息、策略、恐惧，还是想回本？"></textarea>
+        </div>
+        <div class="form-group" style="width:100%; margin-bottom:10px;">
+          <label>当时预期</label>
+          <textarea id="journalExpectation" class="textarea" rows="2" placeholder="我当时预期它接下来怎么走？如果错了，什么条件说明我错了？"></textarea>
+        </div>
+        <div class="form-group" style="width:100%; margin-bottom:10px;">
+          <label>实际结果</label>
+          <textarea id="journalOutcome" class="textarea" rows="2" placeholder="后面走势验证了什么？亏损/盈利主要来自判断、仓位、卖点，还是市场环境？"></textarea>
+        </div>
+
         <div style="margin-bottom:14px; padding:12px; background:#11151c; border:1px solid #2a2d3e; border-radius:8px;">
-          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:6px;">复盘（第二天晚上填）</label>
-          <div style="display:flex; gap:8px; margin-bottom:8px;">
-            <button class="btn btn-sm" id="reviewBtnRight" onclick="setReview('对')" style="border-color:#22c55e;color:#22c55e;">✓ 判断对了</button>
-            <button class="btn btn-sm" id="reviewBtnWrong" onclick="setReview('错')" style="border-color:#ef4444;color:#ef4444;">✗ 判断错了</button>
-            <button class="btn btn-sm" id="reviewBtnHalf" onclick="setReview('半对')" style="border-color:#f59e0b;color:#f59e0b;">△ 半对半错</button>
+          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:6px;">判断对错</label>
+          <div style="display:flex; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
+            <button class="btn btn-sm" id="reviewBtnRight" onclick="setReview('对')" style="border-color:#22c55e;color:#22c55e;">对</button>
+            <button class="btn btn-sm" id="reviewBtnWrong" onclick="setReview('错')" style="border-color:#ef4444;color:#ef4444;">错</button>
+            <button class="btn btn-sm" id="reviewBtnHalf" onclick="setReview('半对')" style="border-color:#f59e0b;color:#f59e0b;">半对</button>
             <span id="reviewVerdict" style="font-size:13px;align-self:center;"></span>
           </div>
-          <textarea id="journalReviewNote" rows="2" placeholder="具体哪里对/错？学到了什么？" style="width:100%; background:#161822; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px; padding:8px 12px; font-size:13px; font-family:inherit; resize:vertical;"></textarea>
+          <textarea id="journalReviewNote" class="textarea" rows="2" placeholder="具体哪里对/错？不是涨跌对错，而是当时逻辑和执行是否成立。"></textarea>
         </div>
 
-        <!-- 个股跟踪 -->
-        <div style="margin-bottom:14px; padding:12px; background:#11151c; border:1px solid #2a2d3e; border-radius:8px;">
-          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:8px;">个股跟踪</label>
-          <div style="display:flex; gap:8px; margin-bottom:8px;">
-            <input id="journalStockCode" placeholder="股票代码 sz.002303" style="flex:1; background:#161822; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px; padding:6px 10px; font-size:12px; font-family:inherit;" onkeydown="if(event.key==='Enter')addJournalStock()">
-            <select id="journalStockStatus" style="width:80px; background:#161822; color:#e1e4e8; border:1px solid #2a2d3e; border-radius:6px; padding:6px 8px; font-size:12px;">
-              <option value="持有">持有</option>
-              <option value="加仓">加仓</option>
-              <option value="减仓">减仓</option>
-              <option value="观望">观望</option>
-            </select>
-            <button class="btn btn-sm" onclick="addJournalStock()">+ 添加</button>
+        <div class="review-row">
+          <div class="form-group" style="width:100%;">
+            <label>错误类型</label>
+            <div id="journalMistakeType" style="display:flex;flex-wrap:wrap;gap:6px;">
+              <button class="emo-btn" data-v="无错误" onclick="toggleMistakeBtn(this)">无错误</button>
+              <button class="emo-btn" data-v="追高" onclick="toggleMistakeBtn(this)">追高</button>
+              <button class="emo-btn" data-v="卖点拖延" onclick="toggleMistakeBtn(this)">卖点拖延</button>
+              <button class="emo-btn" data-v="止损不坚决" onclick="toggleMistakeBtn(this)">止损不坚决</button>
+              <button class="emo-btn" data-v="仓位过重" onclick="toggleMistakeBtn(this)">仓位过重</button>
+              <button class="emo-btn" data-v="逆势交易" onclick="toggleMistakeBtn(this)">逆势交易</button>
+              <button class="emo-btn" data-v="题材退潮" onclick="toggleMistakeBtn(this)">题材退潮</button>
+              <button class="emo-btn" data-v="频繁交易" onclick="toggleMistakeBtn(this)">频繁交易</button>
+              <button class="emo-btn" data-v="情绪单" onclick="toggleMistakeBtn(this)">情绪单</button>
+              <button class="emo-btn" data-v="未按策略" onclick="toggleMistakeBtn(this)">未按策略</button>
+            </div>
           </div>
-          <div id="journalStockList" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+          <div class="form-group" style="width:100%;">
+            <label>执行评分</label>
+            <select id="journalScore" style="width:100%">
+              <option value="">未评分</option>
+              <option value="5">5 很好</option>
+              <option value="4">4 基本正确</option>
+              <option value="3">3 一半一半</option>
+              <option value="2">2 明显变形</option>
+              <option value="1">1 情绪主导</option>
+            </select>
+          </div>
         </div>
 
-        <button class="btn btn-primary" onclick="saveJournal()">保存心得</button>
+        <div class="form-group" style="width:100%; margin-bottom:10px;">
+          <label>下次规则</label>
+          <textarea id="journalLessons" class="textarea" rows="3" placeholder="写成能执行的规则：例如连续亏损后半仓；涨停炸板不追回；亏损超过 -3% 必须减仓。"></textarea>
+        </div>
+        <div class="form-group" style="width:100%; margin-bottom:14px;">
+          <label>明日计划</label>
+          <textarea id="journalPlan" class="textarea" rows="2" placeholder="明天只写条件：什么情况买，什么情况卖，什么情况不做。"></textarea>
+        </div>
+
+        <button class="btn btn-primary" onclick="saveJournal()">保存复盘</button>
+        <button class="btn btn-sm" style="border-color:#a78bfa;color:#a78bfa;" onclick="goToReviewedTrade()">跳转记录</button>
+        <button class="btn" onclick="clearJournalForm()">清空表单</button>
         <span id="journalMsg" style="margin-left:12px; font-size:12px; color:#22c55e;"></span>
       </div>
 
-      <!-- 右侧：历史列表 -->
       <div>
-        <h3 style="font-size:15px; margin-bottom:12px;">历史心得 <span style="font-weight:400;font-size:12px;color:#6b7280;" id="journalCount"></span></h3>
-        <div style="max-height:600px; overflow-y:auto;" id="journalList">
-          <div class="empty">加载中...</div>
+        <div class="review-panel" style="margin-bottom:12px;">
+          <h3>统计</h3>
+          <div class="review-stat-grid" id="journalStats"></div>
+          <div id="mistakeStats" style="font-size:12px; color:#9ca3af; line-height:1.8;"></div>
+        </div>
+        <div class="review-panel">
+          <h3>历史复盘 <span style="font-weight:400;font-size:12px;color:#6b7280;" id="journalCount"></span></h3>
+          <div style="max-height:560px; overflow-y:auto;" id="journalList">
+            <div class="empty">加载中...</div>
+          </div>
         </div>
       </div>
     </div>
@@ -320,6 +412,10 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.classList.add("active");
       document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
       document.getElementById(btn.dataset.tab).classList.add("active");
+      // 切换到复盘 tab 时刷新当天流水
+      if (btn.dataset.tab === "tab-journal") {
+        renderDayTrades();
+      }
     });
   });
 
@@ -327,10 +423,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const today = new Date().toISOString().slice(0,10);
   document.getElementById("buyDate").value = today;
   document.getElementById("sellDate").value = today;
+  // 复盘日期默认用最近的交易日（有数据的那天），否则用今天
   document.getElementById("journalDate").value = today;
 
-  refresh();
-  loadJournalList().then(() => checkReviewReminder());
+  refresh().then(() => {
+    // 如果有交易数据，journalDate 跳到最近交易日
+    if (state.logs && state.logs.length > 0) {
+      const lastDate = state.logs[state.logs.length - 1].date;
+      document.getElementById("journalDate").value = lastDate;
+    }
+    renderDayTrades();
+    // 等 state.logs 就绪后再加载复盘列表
+    return loadJournalList();
+  }).then(() => {
+    // 加载完复盘数据后重绘历史，显示"已复盘"标记
+    renderHistory();
+    return checkReviewReminder();
+  });
 });
 
 async function refresh() {
@@ -482,6 +591,9 @@ async function doSell() {
 }
 
 // ============ History ============
+let _historyPage = 1;
+const _historyPageSize = 10;
+
 function renderHistory() {
   const logs = state.logs || [];
   const tbody = document.querySelector("#historyTable tbody");
@@ -492,6 +604,7 @@ function renderHistory() {
     tbody.innerHTML = "";
     empty.style.display = "block";
     statsDiv.innerHTML = "";
+    document.getElementById("historyPager").style.display = "none";
     return;
   }
   empty.style.display = "none";
@@ -501,25 +614,92 @@ function renderHistory() {
   const wins = closed.filter(l => l.pnl > 0).length;
   const totalPnl = closed.reduce((s, l) => s + l.pnl, 0);
   const winRate = closed.length ? (wins / closed.length * 100) : 0;
+  const reviewedCount = [..._reviewedTradeIds].filter(id => logs.some(l => l.id === id)).length;
   statsDiv.innerHTML = `
     <span>总操作 <b style="color:#e1e4e8">${logs.length}</b> 次</span>
     <span>已平仓 <b style="color:#e1e4e8">${closed.length}</b> 笔</span>
     <span>胜率 <b style="color:#22c55e">${winRate.toFixed(0)}%</b></span>
     <span>已实现盈亏 <b style="color:${totalPnl>=0?'#22c55e':'#ef4444'}">${totalPnl>=0?'+':''}${fmtMoney(totalPnl)}</b></span>
+    <span>已复盘 <b style="color:#a78bfa">${reviewedCount}</b> 笔</span>
   `;
 
+  // Pagination
+  const reversed = [...logs].reverse();
+  const totalPages = Math.ceil(reversed.length / _historyPageSize);
+  if (_historyPage > totalPages) _historyPage = totalPages;
+  if (_historyPage < 1) _historyPage = 1;
+  const start = (_historyPage - 1) * _historyPageSize;
+  const pageLogs = reversed.slice(start, start + _historyPageSize);
+
   // Table - newest first
-  tbody.innerHTML = [...logs].reverse().map(l => {
+  tbody.innerHTML = pageLogs.map(l => {
     const dir = l.action === "buy" ? '<span style="color:#ef4444">买入</span>' : '<span style="color:#22c55e">卖出</span>';
     let pnlCell = "-", pnlPctCell = "-";
+    let fwdCells = "";
     if (l.action === "sell") {
       const cls = l.pnl >= 0 ? "g" : "r";
       pnlCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${fmtMoney(l.pnl)}</span>`;
-      pnlPctCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${l.pnlPct.toFixed(2)}%</span>`;
+      pnlPctCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${(l.pnlPct||0).toFixed(2)}%</span>`;
+      // 前向涨跌 - 直接用预生成的 HTML，如果没有则 fallback 到对象
+      if (l.fwdHtml) {
+        fwdCells = l.fwdHtml;
+      } else {
+        const fwd = l.forward || {};
+        const d3 = fwd['fwd_3d'], d5 = fwd['fwd_5d'], d10 = fwd['fwd_10d'], d20 = fwd['fwd_20d'], now = fwd['fwd_now'];
+        fwdCells =
+          (d3 != null ? `<td class="${d3>=0?'g':'r'}" style="font-size:11px">${d3>=0?'+':''}${d3.toFixed(1)}%</td>` : '<td style="font-size:10px;color:#374151">-</td>') +
+          (d5 != null ? `<td class="${d5>=0?'g':'r'}" style="font-size:11px">${d5>=0?'+':''}${d5.toFixed(1)}%</td>` : '<td style="font-size:10px;color:#374151">-</td>') +
+          (d10 != null ? `<td class="${d10>=0?'g':'r'}" style="font-size:11px">${d10>=0?'+':''}${d10.toFixed(1)}%</td>` : '<td style="font-size:10px;color:#374151">-</td>') +
+          (d20 != null ? `<td class="${d20>=0?'g':'r'}" style="font-size:11px">${d20>=0?'+':''}${d20.toFixed(1)}%</td>` : '<td style="font-size:10px;color:#374151">-</td>') +
+          (now != null ? `<td class="${now>=0?'g':'r'}" style="font-size:11px">${now>=0?'+':''}${now.toFixed(1)}%</td>` : '<td style="font-size:10px;color:#374151">-</td>');
+      }
+    } else {
+      fwdCells = "<td></td><td></td><td></td><td></td><td></td>";
     }
     const reason = l.reason || "-";
-    return `<tr><td>${l.date}</td><td>${l.code}</td><td>${l.name}</td><td>${dir}</td><td>${fmtPrice(l.price)}</td><td>${l.shares}</td><td>${pnlCell}</td><td>${pnlPctCell}</td><td style="font-size:11px;color:#6b7280">${reason}</td></tr>`;
+    const reviewed = _reviewedTradeIds.has(l.id);
+    const reviewBtn = reviewed
+      ? `<button class="btn btn-sm" style="border-color:#22c55e;color:#22c55e" onclick="reviewTrade('${l.date}',${l.id})">已复盘</button>`
+      : `<button class="btn btn-sm" style="border-color:#3b82f6;color:#60a5fa" onclick="reviewTrade('${l.date}',${l.id})">复盘</button>`;
+    return `<tr><td>${l.date}</td><td>${l.code}</td><td>${l.name}</td><td>${dir}</td><td>${fmtPrice(l.price)}</td><td>${l.shares}</td><td>${pnlCell}</td><td>${pnlPctCell}</td>${fwdCells}<td style="font-size:11px;color:#6b7280;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${l.reason||''}">${reason}</td><td>${reviewBtn}</td></tr>`;
   }).join("");
+
+  // Render pager
+  const pager = document.getElementById("historyPager");
+  if (totalPages <= 1) {
+    pager.style.display = "none";
+  } else {
+    pager.style.display = "flex";
+    pager.innerHTML = `
+      <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage - 1})" ${_historyPage <= 1 ? 'disabled style="opacity:.3"' : ''}>上一页</button>
+      <span>第 <b style="color:#e1e4e8">${_historyPage}</b> / ${totalPages} 页 (共 ${logs.length} 条)</span>
+      <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage + 1})" ${_historyPage >= totalPages ? 'disabled style="opacity:.3"' : ''}>下一页</button>
+    `;
+  }
+}
+
+function goHistoryPage(p) {
+  _historyPage = p;
+  renderHistory();
+  document.getElementById("historyTable").scrollIntoView({ behavior: "smooth" });
+}
+
+function goToReviewedTrade() {
+  const tradeId = _reviewTargetTrade ? _reviewTargetTrade.id : _lastReviewedTradeId;
+  if (!tradeId) { toast("没有正在复盘的目标", "err"); return; }
+  const logs = state.logs || [];
+  const reversed = [...logs].reverse();
+  const idx = reversed.findIndex(l => l.id === tradeId);
+  if (idx < 0) { toast("找不到该交易", "err"); return; }
+  // 切换到对应页
+  _historyPage = Math.floor(idx / _historyPageSize) + 1;
+  // 切换 tab
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector('[data-tab="tab-history"]').classList.add("active");
+  document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+  document.getElementById("tab-history").classList.add("active");
+  renderHistory();
+  document.getElementById("historyTable").scrollIntoView({ behavior: "smooth" });
 }
 
 function renderSellSelect() {
@@ -675,83 +855,196 @@ function fmtMoney(v) {
   return v.toFixed(0);
 }
 // ============ Journal ============
-let journalStocks = [];  // 当前编辑中的个股跟踪列表
-let currentReview = {};  // 当前编辑的复盘 {verdict, note}
+let journalEntries = [];
+let currentReview = { verdict: "", note: "" };
 
-// 状态颜色映射
-const STATUS_STYLE = {
-  "持有": "background:#14532d;color:#86efac;border:1px solid #22c55e;",
-  "加仓": "background:#1e3a5f;color:#93c5fd;border:1px solid #3b82f6;",
-  "减仓": "background:#713f12;color:#fde68a;border:1px solid #f59e0b;",
-  "观望": "background:#1f2937;color:#9ca3af;border:1px solid #4b5563;",
-};
 const REVIEW_STYLE = {
-  "对": "background:#14532d;color:#86efac;",
-  "错": "background:#7f1d1d;color:#fca5a5;",
-  "半对": "background:#713f12;color:#fde68a;",
+  "对": "background:#14532d;color:#86efac;border:1px solid #22c55e;",
+  "错": "background:#7f1d1d;color:#fca5a5;border:1px solid #ef4444;",
+  "半对": "background:#713f12;color:#fde68a;border:1px solid #f59e0b;",
+  "待复盘": "background:#1f2937;color:#cbd5e1;border:1px solid #4b5563;",
 };
 
 function setReview(verdict) {
   currentReview.verdict = verdict;
-  document.getElementById("reviewVerdict").textContent = `当前: ${verdict}`;
-  // 高亮选中按钮
-  ["reviewBtnRight","reviewBtnWrong","reviewBtnHalf"].forEach(id => {
-    document.getElementById(id).style.opacity = "1";
+  document.getElementById("reviewVerdict").textContent = verdict ? `当前: ${verdict}` : "";
+  ["reviewBtnRight", "reviewBtnWrong", "reviewBtnHalf"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.boxShadow = "none";
   });
+  const activeId = verdict === "对" ? "reviewBtnRight" : verdict === "错" ? "reviewBtnWrong" : verdict === "半对" ? "reviewBtnHalf" : null;
+  if (activeId) {
+    const el = document.getElementById(activeId);
+    if (el) el.style.boxShadow = "0 0 0 1px currentColor";
+  }
 }
+
 function clearReview() {
-  currentReview = {verdict: "", note: ""};
+  currentReview = { verdict: "", note: "" };
   document.getElementById("reviewVerdict").textContent = "";
   document.getElementById("journalReviewNote").value = "";
+  ["reviewBtnRight", "reviewBtnWrong", "reviewBtnHalf"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.boxShadow = "none";
+  });
 }
 
-function renderJournalStocks() {
-  const container = document.getElementById("journalStockList");
-  if (!journalStocks.length) {
-    container.innerHTML = '<span style="font-size:11px;color:#6b7280;">暂无跟踪个股</span>';
+function renderDayTrades() {
+  const date = document.getElementById("journalDate").value;
+  const list = document.getElementById("dayTradeList");
+  if (!date) {
+    list.innerHTML = '<div class="empty" style="padding:16px;">先选日期</div>';
     return;
   }
-  container.innerHTML = journalStocks.map((s, i) => `
-    <span style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;font-size:11px;${STATUS_STYLE[s.status] || STATUS_STYLE['观望']}">
-      ${s.code} ${s.name ? s.name : ''}
-      <span style="cursor:pointer;opacity:.6;" onclick="journalStocks.splice(${i},1);renderJournalStocks();">&times;</span>
-    </span>
-  `).join("");
+  const trades = (state.logs || []).filter(l => l.date === date);
+  if (!trades.length) {
+    list.innerHTML = '<div class="empty" style="padding:16px;">这一天没有找到流水</div>';
+    return;
+  }
+  const buys = trades.filter(t => t.action === "buy").length;
+  const sells = trades.filter(t => t.action === "sell").length;
+  const realized = trades.filter(t => t.action === "sell").reduce((s, t) => s + (t.pnl || 0), 0);
+
+  // 如果只有一笔交易且没有指定目标，自动选中它
+  if (!_reviewTargetTrade && trades.length === 1) {
+    _reviewTargetTrade = trades[0];
+  }
+
+  // 同时拉取大盘环境
+  fetch(`/api/trading/market_context?date=${date}`)
+    .then(r => r.json())
+    .then(market => {
+      let mktHtml = "";
+      if (market && market.sentiment) {
+        const sColors = { GREEN: "#22c55e", YELLOW: "#f59e0b", RED: "#ef4444" };
+        const sBg = { GREEN: "#14532d44", YELLOW: "#713f1244", RED: "#7f1d1d44" };
+        const color = sColors[market.sentiment] || "#6b7280";
+        const bg = sBg[market.sentiment] || "#1f2937";
+        mktHtml = `
+          <div style="margin-bottom:8px; padding:8px 12px; background:${bg}; border:1px solid ${color}; border-radius:6px; font-size:11px;">
+            <b style="color:${color};">${market.description || ""}</b>
+          </div>`;
+      }
+      list.innerHTML = `
+        ${mktHtml}
+        <div style="margin-bottom:8px; font-size:12px; color:#9ca3af;">
+          共 ${trades.length} 笔，买入 ${buys}，卖出 ${sells}，当日已实现 ${realized >= 0 ? "+" : ""}${fmtMoney(realized)}
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${trades.map(t => {
+            const cls = t.action === "buy" ? "r" : "g";
+            const sign = t.action === "buy" ? "-" : "+";
+            const reason = t.reason ? `<div style="font-size:11px;color:#6b7280;margin-top:2px;">${t.reason}</div>` : "";
+            const isTarget = _reviewTargetTrade && t.id === _reviewTargetTrade.id;
+            const border = isTarget ? 'border:2px solid #3b82f6;box-shadow:0 0 12px rgba(59,130,246,0.35);' : 'border:1px solid #2a2d3e;';
+            const bg = isTarget ? 'background:#1a2035;' : 'background:#11151c;';
+            return `
+              <div style="${bg}${border}border-radius:8px;padding:10px 12px;">
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+                  <div>
+                    <span class="${cls}" style="font-weight:700;">${t.action === "buy" ? "买入" : "卖出"}</span>
+                    <span style="margin-left:8px;">${t.code} ${t.name}</span>
+                    ${isTarget ? '<span style="margin-left:6px;font-size:10px;color:#3b82f6;">◀ 正在复盘</span>' : ''}
+                  </div>
+                  <div style="text-align:right;font-size:12px;">
+                    <div>${fmtPrice(t.price)} x ${t.shares}</div>
+                    <div style="color:${t.action === 'buy' ? '#fca5a5' : '#86efac'}">${sign}${fmtMoney(Math.abs(t.amount || 0))}</div>
+                  </div>
+                </div>
+                ${reason}
+              </div>
+            `;
+          }).join("")}
+        </div>
+      `;
+    });
 }
 
-async function addJournalStock() {
-  const code = document.getElementById("journalStockCode").value.trim();
-  if (!code) return;
-  const status = document.getElementById("journalStockStatus").value;
-  if (journalStocks.find(s => s.code === code)) {
-    toast("该股票已在列表中", "err");
-    return;
-  }
-  let name = "";
-  try {
-    const r = await fetch(`/api/stocks/name/${encodeURIComponent(code)}`);
-    if (r.ok) { const d = await r.json(); name = d.name || ""; }
-  } catch(e) {}
-  journalStocks.push({ code, name, status });
-  document.getElementById("journalStockCode").value = "";
-  renderJournalStocks();
+function toggleEmotion(btn) {
+  btn.classList.toggle("on");
+}
+
+function getSelectedEmotions() {
+  const btns = document.querySelectorAll("#journalEmotion .emo-btn.on");
+  return Array.from(btns).map(b => b.dataset.v).join(",");
+}
+
+function setSelectedEmotions(val) {
+  const list = (val || "").split(",").map(s => s.trim()).filter(Boolean);
+  document.querySelectorAll("#journalEmotion .emo-btn").forEach(b => {
+    if (list.includes(b.dataset.v)) b.classList.add("on");
+    else b.classList.remove("on");
+  });
+}
+
+function toggleMistakeBtn(btn) {
+  btn.classList.toggle("on");
+}
+
+function getSelectedMistakes() {
+  const btns = document.querySelectorAll("#journalMistakeType .emo-btn.on");
+  return Array.from(btns).map(b => b.dataset.v).join(",");
+}
+
+function setSelectedMistakes(val) {
+  const list = (val || "").split(",").map(s => s.trim()).filter(Boolean);
+  document.querySelectorAll("#journalMistakeType .emo-btn").forEach(b => {
+    if (list.includes(b.dataset.v)) b.classList.add("on");
+    else b.classList.remove("on");
+  });
+}
+
+function clearJournalForm() {
+  document.querySelectorAll("#journalEmotion .emo-btn").forEach(b => b.classList.remove("on"));
+  document.querySelectorAll("#journalMistakeType .emo-btn").forEach(b => b.classList.remove("on"));
+  document.getElementById("journalTradeType").value = "";
+  document.getElementById("journalPlanFollowed").value = "";
+  document.getElementById("journalRationale").value = "";
+  document.getElementById("journalExpectation").value = "";
+  document.getElementById("journalOutcome").value = "";
+  document.getElementById("journalScore").value = "";
+  document.getElementById("journalLessons").value = "";
+  document.getElementById("journalPlan").value = "";
+  clearReview();
 }
 
 async function saveJournal() {
   const date = document.getElementById("journalDate").value;
   if (!date) { toast("请选择日期", "err"); return; }
+
+  // 如果有正在复盘的目标交易，用 trade_id 保存
+  const tradeId = _reviewTargetTrade ? _reviewTargetTrade.id : null;
+
+  const tradeItems = (state.logs || []).filter(l => l.date === date).map(l => ({
+    date: l.date,
+    code: l.code,
+    name: l.name,
+    action: l.action,
+    price: l.price,
+    shares: l.shares,
+    amount: l.amount,
+    reason: l.reason || "",
+    pnl: l.pnl ?? null,
+    pnlPct: l.pnlPct ?? null,
+  }));
   const payload = {
     date,
-    market_view: document.getElementById("journalMarket").value,
-    sector_view: document.getElementById("journalSector").value,
+    trade_id: tradeId,
+    emotion: getSelectedEmotions(),
+    trade_type: document.getElementById("journalTradeType").value,
+    plan_followed: document.getElementById("journalPlanFollowed").value,
     trade_rationale: document.getElementById("journalRationale").value,
+    expectation: document.getElementById("journalExpectation").value,
+    outcome: document.getElementById("journalOutcome").value,
     lessons: document.getElementById("journalLessons").value,
     tomorrow_plan: document.getElementById("journalPlan").value,
+    mistake_type: getSelectedMistakes(),
+    score: document.getElementById("journalScore").value ? parseInt(document.getElementById("journalScore").value, 10) : null,
     review: {
       verdict: currentReview.verdict,
       note: document.getElementById("journalReviewNote").value,
     },
-    stocks: journalStocks,
+    trades: tradeItems,
   };
   const r = await fetch("/api/trading/journal", {
     method: "POST",
@@ -762,92 +1055,178 @@ async function saveJournal() {
   if (data.error) { toast(data.error, "err"); return; }
   document.getElementById("journalMsg").textContent = "已保存 ✓";
   setTimeout(() => document.getElementById("journalMsg").textContent = "", 2000);
-  loadJournalList();
-  checkReviewReminder();
+  // 记录最后复盘的目标
+  if (tradeId) _lastReviewedTradeId = tradeId;
+  // 立即更新按钮状态
+  if (tradeId && currentReview.verdict) {
+    _reviewedTradeIds.add(tradeId);
+    renderHistory();
+  }
+  await loadJournalList();
+  await checkReviewReminder();
+}
+
+function renderJournalStats(entries) {
+  const reviewed = entries.filter(e => (e.review || {}).verdict);
+  const judged = reviewed.length;
+  const correct = reviewed.filter(e => (e.review || {}).verdict === "对").length;
+  const wrong = reviewed.filter(e => (e.review || {}).verdict === "错").length;
+  const half = reviewed.filter(e => (e.review || {}).verdict === "半对").length;
+  const scoreList = entries.map(e => parseFloat(e.score)).filter(v => !Number.isNaN(v));
+  const avgScore = scoreList.length ? (scoreList.reduce((s, v) => s + v, 0) / scoreList.length) : 0;
+  const planFollowed = entries.filter(e => e.plan_followed === "是").length;
+  const totalTrades = entries.reduce((s, e) => s + ((e.trades && e.trades.length) ? e.trades.length : (e.trade_count || 0)), 0);
+  const accuracy = judged ? (correct / judged * 100) : 0;
+  const planRate = entries.length ? (planFollowed / entries.length * 100) : 0;
+  document.getElementById("journalStats").innerHTML = `
+    <div class="review-stat"><div class="k">复盘天数</div><div class="v">${judged}/${entries.length || 0}</div><div class="k">当天流水 ${totalTrades} 笔</div></div>
+    <div class="review-stat"><div class="k">判对率</div><div class="v">${accuracy.toFixed(0)}%</div><div class="k">对 ${correct} / 错 ${wrong} / 半对 ${half}</div></div>
+    <div class="review-stat"><div class="k">平均评分</div><div class="v">${avgScore ? avgScore.toFixed(1) : "-"}</div><div class="k">按计划率 ${planRate.toFixed(0)}%</div></div>
+  `;
+
+  const mistakes = {};
+  entries.forEach(e => {
+    const k = e.mistake_type || "未归类";
+    if (!k || k === "无明显错误") return;
+    mistakes[k] = (mistakes[k] || 0) + 1;
+  });
+  const topMistakes = Object.entries(mistakes).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const latest = entries[0];
+  const latestVerdict = latest && latest.review ? (latest.review.verdict || "待复盘") : "待复盘";
+  document.getElementById("mistakeStats").innerHTML = `
+    <div style="margin-bottom:6px;">最近一笔: <span class="tag" style="${REVIEW_STYLE[latestVerdict] || REVIEW_STYLE['待复盘']}">${latest?.date || "-"}</span> ${latestVerdict}</div>
+    <div style="margin-bottom:6px;">按计划率: ${planRate.toFixed(1)}%</div>
+    <div>常见错误: ${
+      topMistakes.length
+        ? topMistakes.map(([k, v]) => `<span class="trade-pill">${k} ${v}</span>`).join("")
+        : '<span style="color:#6b7280;">暂无错误分类</span>'
+    }</div>
+  `;
 }
 
 async function loadJournalList() {
   const r = await fetch("/api/trading/journal");
   const entries = await r.json();
+  journalEntries = entries;
+  // 更新已复盘集合
+  _reviewedTradeIds = new Set();
+  entries.forEach(e => {
+    if (e.trade_id && (e.review || {}).verdict) {
+      _reviewedTradeIds.add(e.trade_id);
+    }
+  });
   const container = document.getElementById("journalList");
-  document.getElementById("journalCount").textContent = `(${entries.length} 篇)`;
+  document.getElementById("journalCount").textContent = `(${entries.length} 天)`;
+  renderJournalStats(entries);
 
   if (!entries.length) {
-    container.innerHTML = '<div class="empty">暂无心得记录</div>';
+    container.innerHTML = '<div class="empty">暂无复盘记录</div>';
     return;
   }
 
   container.innerHTML = entries.map(e => {
-    const stocks = e.stocks || [];
-    const stockTags = stocks.length ? stocks.map(s =>
-      `<span style="display:inline-block;padding:2px 7px;border-radius:999px;font-size:10px;margin:2px;${STATUS_STYLE[s.status] || STATUS_STYLE['观望']}">${s.code}${s.name?' '+s.name:''}</span>`
-    ).join("") : "";
-    // 复盘状态
     const rv = e.review || {};
-    const reviewBadge = rv.verdict
-      ? `<span style="display:inline-block;padding:2px 7px;border-radius:999px;font-size:10px;${REVIEW_STYLE[rv.verdict] || ''}">${rv.verdict}</span>`
-      : (e.tomorrow_plan ? '<span style="font-size:10px;color:#f59e0b;">⏳待复盘</span>' : '');
+    const verdict = rv.verdict || "";
+    const badge = verdict
+      ? `<span class="tag" style="${REVIEW_STYLE[verdict] || REVIEW_STYLE['待复盘']}">${verdict}</span>`
+      : '<span class="tag" style="' + REVIEW_STYLE['待复盘'] + '">待复盘</span>';
+    // 查找对应的交易
+    let tradeLabel = "";
+    if (e.trade_id) {
+      const trade = (state.logs || []).find(l => l.id === e.trade_id);
+      if (trade) {
+        const dir = trade.action === "buy" ? '<span style="color:#ef4444">买入</span>' : '<span style="color:#22c55e">卖出</span>';
+        tradeLabel = `<span style="font-size:12px;color:#cbd5e1;">${trade.name}(${trade.code}) ${dir}</span>`;
+      }
+    }
+    const info = [
+      e.emotion ? `${e.emotion}` : "",
+      e.trade_type ? `${e.trade_type}` : "",
+      e.plan_followed ? `按计划:${e.plan_followed}` : "",
+      e.mistake_type ? `${e.mistake_type}` : "",
+    ].filter(Boolean).join(" · ");
+    const summary = (e.trade_rationale || e.expectation || e.outcome || "").slice(0, 110);
     return `
-    <div style="background:#161822; border:1px solid #2a2d3e; border-radius:8px; padding:14px; margin-bottom:10px; cursor:pointer;"
-         onclick="loadJournalEntry('${e.date}')">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-        <span style="font-weight:600; color:#60a5fa;">${e.date}</span>
-        <div style="display:flex; gap:6px; align-items:center;">
-          ${reviewBadge}
-          <span style="font-size:11px; color:#6b7280;">${e.updated_at || ""}</span>
+      <div style="background:#161822; border:1px solid #2a2d3e; border-radius:8px; padding:14px; margin-bottom:10px; cursor:pointer;"
+           onclick="${e.trade_id ? `reviewTrade('${e.date}',${e.trade_id})` : `loadJournalEntry('${e.date}')`}">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; gap:8px;">
+          <div>
+            <span style="font-weight:600; color:#60a5fa;">${e.date}</span>
+            ${tradeLabel ? `<span style="margin-left:8px;">${tradeLabel}</span>` : ''}
+          </div>
+          <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+            ${badge}
+            <span style="font-size:11px; color:#6b7280;">${e.updated_at || ""}</span>
+          </div>
         </div>
+        ${info ? `<div style="font-size:11px;color:#9ca3af;margin-bottom:6px;">${info}</div>` : ""}
+        <div style="font-size:12px; color:#cbd5e1; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">
+          ${summary || "无摘要"}
+        </div>
+        <button class="btn btn-sm" style="margin-top:8px;" onclick="event.stopPropagation(); deleteJournal(${e.id})">删除</button>
       </div>
-      ${stockTags ? `<div style="margin-bottom:6px;">${stockTags}</div>` : ""}
-      <div style="font-size:12px; color:#9ca3af; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">
-        ${(e.trade_rationale || e.market_view || "").slice(0, 120)}
-      </div>
-      <button class="btn btn-sm" style="margin-top:8px;"
-        onclick="event.stopPropagation(); deleteJournal(${e.id})">删除</button>
-    </div>
-  `}).join("");
+    `;
+  }).join("");
 }
 
-function loadJournalEntry(date) {
+function loadJournalEntry(date, entryObj) {
+  if (entryObj) {
+    // 直接使用传入的 entry object
+    fillJournalForm(entryObj);
+    return;
+  }
   document.getElementById("journalDate").value = date;
   fetch("/api/trading/journal?date=" + encodeURIComponent(date))
     .then(r => r.json())
     .then(entries => {
       if (!entries.length) return;
-      const e = entries[0];
-      document.getElementById("journalMarket").value = e.market_view || "";
-      document.getElementById("journalSector").value = e.sector_view || "";
-      document.getElementById("journalRationale").value = e.trade_rationale || "";
-      document.getElementById("journalLessons").value = e.lessons || "";
-      document.getElementById("journalPlan").value = e.tomorrow_plan || "";
-      // 复盘
-      currentReview = e.review || {verdict: "", note: ""};
-      document.getElementById("reviewVerdict").textContent = currentReview.verdict ? `当前: ${currentReview.verdict}` : "";
-      document.getElementById("journalReviewNote").value = currentReview.note || "";
-      // 个股
-      journalStocks = (e.stocks || []).map(s => ({...s}));
-      renderJournalStocks();
-      // 切换 tab
-      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-      document.querySelector('[data-tab="tab-journal"]').classList.add("active");
-      document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-      document.getElementById("tab-journal").classList.add("active");
+      fillJournalForm(entries[0]);
     });
 }
 
+function fillJournalForm(e) {
+      setSelectedEmotions(e.emotion || "");
+      document.getElementById("journalTradeType").value = e.trade_type || "";
+      document.getElementById("journalPlanFollowed").value = e.plan_followed || "";
+      document.getElementById("journalRationale").value = e.trade_rationale || e.market_view || "";
+      document.getElementById("journalExpectation").value = e.expectation || e.sector_view || "";
+      document.getElementById("journalOutcome").value = e.outcome || "";
+      document.getElementById("journalLessons").value = e.lessons || "";
+      document.getElementById("journalPlan").value = e.tomorrow_plan || "";
+      setSelectedMistakes(e.mistake_type || "");
+      document.getElementById("journalScore").value = e.score ? String(e.score) : "";
+      currentReview = e.review || { verdict: "", note: "" };
+      document.getElementById("reviewVerdict").textContent = currentReview.verdict ? `当前: ${currentReview.verdict}` : "";
+      document.getElementById("journalReviewNote").value = currentReview.note || "";
+      ["reviewBtnRight", "reviewBtnWrong", "reviewBtnHalf"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.boxShadow = "none";
+      });
+      const activeId = currentReview.verdict === "对" ? "reviewBtnRight" : currentReview.verdict === "错" ? "reviewBtnWrong" : currentReview.verdict === "半对" ? "reviewBtnHalf" : null;
+      if (activeId) {
+        const el = document.getElementById(activeId);
+        if (el) el.style.boxShadow = "0 0 0 1px currentColor";
+      }
+      document.getElementById("journalDate").value = e.date || "";
+      renderDayTrades();
+}
+
 async function deleteJournal(id) {
-  if (!confirm("删除这篇心得？")) return;
+  if (!confirm("删除这条复盘？")) return;
   await fetch(`/api/trading/journal/${id}`, { method: "DELETE" });
   loadJournalList();
   checkReviewReminder();
 }
 
-// ── 复盘提醒：检查 2 天前是否有未复盘的记录 ──
 async function reviewYesterday() {
   const r = await fetch("/api/trading/journal");
   const all = await r.json();
-  const unreviewed = all.filter(e => e.tomorrow_plan && (!e.review || !e.review.verdict));
-  // 按日期升序排（最旧的先复盘）
-  unreviewed.sort((a, b) => a.date.localeCompare(b.date));
+  const today = new Date();
+  const unreviewed = all.filter(e => {
+    if ((e.review || {}).verdict) return false;
+    const d = new Date(e.date);
+    return Math.floor((today - d) / 86400000) >= 1;
+  }).sort((a, b) => a.date.localeCompare(b.date));
   if (!unreviewed.length) {
     toast("没有待复盘的记录", "err");
     return;
@@ -857,16 +1236,13 @@ async function reviewYesterday() {
 
 async function checkReviewReminder() {
   const reminder = document.getElementById("reviewReminder");
-  // 找到所有有明天计划但未复盘的记录
   const r = await fetch("/api/trading/journal");
   const all = await r.json();
-  const now = new Date();
+  const today = new Date();
   const unreviewed = all.filter(e => {
-    if (!e.tomorrow_plan) return false;          // 没写计划不提醒
-    if (e.review && e.review.verdict) return false; // 已复盘
-    const entryDate = new Date(e.date);
-    const daysAgo = Math.floor((now - entryDate) / 86400000);
-    return daysAgo >= 2;  // 至少是 2 天前的记录才提醒
+    if ((e.review || {}).verdict) return false;
+    const d = new Date(e.date);
+    return Math.floor((today - d) / 86400000) >= 1;
   });
 
   if (unreviewed.length) {
@@ -883,6 +1259,42 @@ async function checkReviewReminder() {
 function fmtPrice(v) {
   if (v === undefined || v === null) return "-";
   return v.toFixed(2);
+}
+
+// 当前复盘目标交易（从历史记录点进来的）
+let _reviewTargetTrade = null;
+let _lastReviewedTradeId = null;
+// 已复盘的 trade_id 集合
+let _reviewedTradeIds = new Set();
+
+function reviewTrade(date, id) {
+  // 找到这笔交易
+  const trade = (state.logs || []).find(l => l.id === id);
+  if (!trade) { alert('找不到该交易'); return; }
+  _reviewTargetTrade = trade;
+
+  // 切换到复盘 tab
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector('[data-tab="tab-journal"]').classList.add("active");
+  document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+  document.getElementById("tab-journal").classList.add("active");
+  document.getElementById("journalDate").value = date;
+
+  // 加载这笔交易的复盘（如果之前保存过）
+  fetch(`/api/trading/journal?trade_id=${id}`)
+    .then(r => r.json())
+    .then(entries => {
+      if (entries && entries.length > 0) {
+        loadJournalEntry(entries[0].date, entries[0]);
+      } else {
+        clearJournalForm();
+        document.getElementById("journalDate").value = date;
+      }
+      renderDayTrades();
+    });
+
+  // 滚动到复盘区域
+  document.getElementById("tab-journal").scrollIntoView({ behavior: "smooth" });
 }
 </script>
 </body>
