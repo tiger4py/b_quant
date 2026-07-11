@@ -920,9 +920,24 @@ function renderDayTrades() {
         const sBg = { GREEN: "#14532d44", YELLOW: "#713f1244", RED: "#7f1d1d44" };
         const color = sColors[market.sentiment] || "#6b7280";
         const bg = sBg[market.sentiment] || "#1f2937";
+        // 概念领涨/领跌
+        let conceptHtml = "";
+        const top = market.top_concepts || [];
+        const bot = market.bot_concepts || [];
+        if (top.length || bot.length) {
+          conceptHtml = '<div style="display:flex;gap:12px;flex-wrap:wrap;font-size:10px;">';
+          if (top.length) {
+            conceptHtml += '<span style="color:#22c55e;">领涨: ' + top.map(c => c.name + '<b>+' + c.pct.toFixed(1) + '%</b>').join(' / ') + '</span>';
+          }
+          if (bot.length) {
+            conceptHtml += '<span style="color:#ef4444;">领跌: ' + bot.map(c => c.name + '<b>' + c.pct.toFixed(1) + '%</b>').join(' / ') + '</span>';
+          }
+          conceptHtml += '</div>';
+        }
         mktHtml = `
           <div style="margin-bottom:8px; padding:8px 12px; background:${bg}; border:1px solid ${color}; border-radius:6px; font-size:11px;">
             <b style="color:${color};">${market.description || ""}</b>
+            ${conceptHtml}
           </div>`;
       }
       list.innerHTML = `
