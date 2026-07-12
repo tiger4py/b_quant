@@ -95,7 +95,7 @@ def run_backtest(strategy_id):
     """跑回测，返回 (success, json_path)"""
     cmd = [
         sys.executable,
-        str(ROOT_DIR / 'script/run_strategy_market_backtest.py'),
+        str(ROOT_DIR / 'script/run_backtest.py'),
         '--strategy', strategy_id,
         '--max-positions', '5',
     ]

@@ -16,7 +16,7 @@ ETF 适配调整（相对个股版）：
   - 延长 MAX_HOLD_DAYS 到 40 天（ETF 趋势更持久）
 
 用法示例:
-  python script/run_etf_backtest.py --strategy etf_alpha
+  python script/run_backtest.py --universe etf --strategy etf_alpha
 """
 
 from pathlib import Path

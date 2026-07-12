@@ -28,7 +28,7 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from script.run_etf_backtest import load_etf_bars
+from script.run_backtest import load_etf_bars
 from backtest.strategy import strategy_etf_alpha042 as ETF_ALPHA042
 from backtest.portfolio import _build_market_stats
 
@@ -342,6 +342,15 @@ def _score_alpha040(bars):
     return [_safe_div(up_sum[i], down_sum[i]) for i in range(len(bars))]
 
 
+def _score_alpha042(bars):
+    """alpha042: 量价背离 — -corr(high, volume, 10)
+    正值 = 价涨量缩（筹码锁定、看多）; 负值 = 价量同步（散户追涨、看空）
+    """
+    _, high, _, close, volume, _, _ = _bar_arrays(bars)
+    corr_high_vol = _rolling_corr(high, volume, 10)
+    return [-v if v is not None else None for v in corr_high_vol]
+
+
 def _score_alpha043(bars):
     _, _, _, close, volume, _, _ = _bar_arrays(bars)
     obv_flow = [None] * len(bars)
@@ -477,6 +486,7 @@ FACTOR_SPECS = [
     FactorSpec("alpha024", "5日均线偏离", "close - mean(close,5)", _score_alpha024),
     FactorSpec("alpha031", "12日乖离率", "close / mean(close,12) - 1", _score_alpha031),
     FactorSpec("alpha040", "上涨量下跌量比", "sum(up volume,26) / sum(down volume,26)", _score_alpha040),
+    FactorSpec("alpha042", "量价背离(042)", "-corr(high, volume, 10) 正值=价涨量缩看多", _score_alpha042),
     FactorSpec("alpha043", "6日OBV强度", "sum(signed volume,6) / sum(volume,6)", _score_alpha043),
     FactorSpec("alpha058", "20日上涨占比", "count(close > delay(close,1),20) / 20", _score_alpha058),
     FactorSpec("alpha066", "6日乖离率", "close / mean(close,6) - 1", _score_alpha066),

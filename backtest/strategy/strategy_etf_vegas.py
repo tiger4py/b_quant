@@ -19,7 +19,7 @@ ETF 维加斯隧道策略 — 类 Vegas Tunnel 风格，针对 ETF 特性优化
 ETF 适配：缩短均线周期 + 放宽隧道宽度 + 增加 RSI 辅助过滤
 
 用法示例:
-  python script/run_etf_backtest.py --strategy etf_vegas
+  python script/run_backtest.py --universe etf --strategy etf_vegas
 """
 
 from pathlib import Path

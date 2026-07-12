@@ -1,0 +1,8189 @@
+{
+  "strategy": {
+    "id": "etf_alpha",
+    "name": "Alpha042-量价背离-etf",
+    "type": "etf",
+    "description": "ETF版Alpha042：corr(high,vol,10)<-0.25+波动放大1.2x+近20日高点。卖出：量价同步corr>0.5或40天到期。不去涨停过滤，放宽流动性。"
+  },
+  "selection": {
+    "stock_count": 90,
+    "start_date": "2023-01-01",
+    "end_date": "2026-07-10",
+    "initial_cash": 1000000,
+    "max_positions": 5,
+    "max_position_cash": 200000.0,
+    "latest_trade_date": "2026-07-10"
+  },
+  "summary": {
+    "initial_cash": 1000000,
+    "final_equity": 2433791.5,
+    "total_return_pct": 143.38,
+    "max_drawdown_pct": 8.83,
+    "trade_count": 133,
+    "win_rate_pct": 66.17,
+    "avg_profit_pct": 3.53,
+    "profit_factor": 5.02,
+    "max_positions": 5,
+    "max_position_cash": 200000.0
+  },
+  "equity_curve": [
+    {
+      "date": "2023-01-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-05",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-12",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-18",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-19",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-01-31",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-02-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-01",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-02",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-08",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-09",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-13",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-14",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-15",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-16",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-17",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-20",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-21",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-22",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-23",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-24",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-27",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-28",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-29",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-30",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-03-31",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-03",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-04",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-06",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-07",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-10",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-11",
+      "equity": 1000000.0,
+      "cash": 1000000.0,
+      "position_count": 0
+    },
+    {
+      "date": "2023-04-12",
+      "equity": 1000000.0,
+      "cash": 800314.0,
+      "position_count": 1
+    },
+    {
+      "date": "2023-04-13",
+      "equity": 1000230.0,
+      "cash": 600364.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-14",
+      "equity": 1002126.5,
+      "cash": 600364.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-17",
+      "equity": 998195.0,
+      "cash": 600364.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-18",
+      "equity": 996437.5,
+      "cash": 600364.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-04-19",
+      "equity": 995930.0,
+      "cash": 400326.4,
+      "position_count": 3
+    },
+    {
+      "date": "2023-04-20",
+      "equity": 993813.1,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-04-21",
+      "equity": 980123.9,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-04-24",
+      "equity": 991305.9,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-04-25",
+      "equity": 998820.6,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-04-26",
+      "equity": 1001817.6,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-04-27",
+      "equity": 988597.4,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-04-28",
+      "equity": 1008698.8,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-04",
+      "equity": 1033161.0,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-05",
+      "equity": 1022430.4,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-08",
+      "equity": 1019023.4,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-09",
+      "equity": 1007897.2,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-10",
+      "equity": 1001565.1,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-11",
+      "equity": 1004475.1,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-12",
+      "equity": 993457.8,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-15",
+      "equity": 995532.2,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-16",
+      "equity": 991026.3,
+      "cash": 126.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-17",
+      "equity": 986434.9,
+      "cash": 200309.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-05-18",
+      "equity": 995300.5,
+      "cash": 200309.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-05-19",
+      "equity": 989171.5,
+      "cash": 200309.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-05-22",
+      "equity": 986587.0,
+      "cash": 200309.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-05-23",
+      "equity": 985196.0,
+      "cash": 200309.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-05-24",
+      "equity": 984383.3,
+      "cash": 76.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-25",
+      "equity": 975244.6,
+      "cash": 76.1,
+      "position_count": 5
+    },
+    {
+      "date": "2023-05-26",
+      "equity": 979313.9,
+      "cash": 198336.1,
+      "position_count": 4
+    },
+    {
+      "date": "2023-05-29",
+      "equity": 982087.3,
+      "cash": 390390.9,
+      "position_count": 3
+    },
+    {
+      "date": "2023-05-30",
+      "equity": 993109.8,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-05-31",
+      "equity": 987542.7,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-01",
+      "equity": 991673.4,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-02",
+      "equity": 992292.9,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-05",
+      "equity": 997257.3,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-06",
+      "equity": 997267.8,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-07",
+      "equity": 994922.1,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-08",
+      "equity": 996864.6,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-09",
+      "equity": 998506.8,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-12",
+      "equity": 999300.6,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-13",
+      "equity": 1001927.7,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-14",
+      "equity": 1001509.8,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-15",
+      "equity": 1008509.1,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-16",
+      "equity": 1013811.6,
+      "cash": 599718.9,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-19",
+      "equity": 1015861.2,
+      "cash": 610826.6,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-20",
+      "equity": 1014042.8,
+      "cash": 610826.6,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-21",
+      "equity": 1012609.4,
+      "cash": 610826.6,
+      "position_count": 2
+    },
+    {
+      "date": "2023-06-26",
+      "equity": 1015749.8,
+      "cash": 204183.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-06-27",
+      "equity": 1019227.8,
+      "cash": 204183.6,
+      "position_count": 4
+    },
+    {
+      "date": "2023-06-28",
+      "equity": 1023084.1,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-29",
+      "equity": 1023503.4,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-06-30",
+      "equity": 1034949.1,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-03",
+      "equity": 1039275.2,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-04",
+      "equity": 1042331.7,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-05",
+      "equity": 1036524.7,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-06",
+      "equity": 1031269.9,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-07",
+      "equity": 1026953.8,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-10",
+      "equity": 1097194.0,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-11",
+      "equity": 1105631.8,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-12",
+      "equity": 1094938.4,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-13",
+      "equity": 1108048.8,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-14",
+      "equity": 1106140.1,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-17",
+      "equity": 1101555.3,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-18",
+      "equity": 1100411.3,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-19",
+      "equity": 1099154.5,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-20",
+      "equity": 1087577.4,
+      "cash": 318.6,
+      "position_count": 5
+    },
+    {
+      "date": "2023-07-21",
+      "equity": 1087861.4,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-24",
+      "equity": 1086118.9,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-25",
+      "equity": 1100213.0,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-26",
+      "equity": 1097291.9,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-27",
+      "equity": 1090863.5,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-28",
+      "equity": 1100839.8,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-07-31",
+      "equity": 1106717.7,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-01",
+      "equity": 1106696.7,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-02",
+      "equity": 1104112.4,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-03",
+      "equity": 1105865.5,
+      "cash": 201250.8,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-04",
+      "equity": 1111341.3,
+      "cash": 413444.8,
+      "position_count": 3
+    },
+    {
+      "date": "2023-08-07",
+      "equity": 1108678.9,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-08",
+      "equity": 1106687.0,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-09",
+      "equity": 1107038.3,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-10",
+      "equity": 1107803.0,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-11",
+      "equity": 1090358.3,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-14",
+      "equity": 1092239.0,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-15",
+      "equity": 1082368.3,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-16",
+      "equity": 1076173.4,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-17",
+      "equity": 1083183.7,
+      "cash": 37.3,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-18",
+      "equity": 1064004.4,
+      "cash": 82.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-08-21",
+      "equity": 1051816.3,
+      "cash": 254707.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-22",
+      "equity": 1055661.2,
+      "cash": 254707.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-08-23",
+      "equity": 1039075.8,
+      "cash": 643218.5,
+      "position_count": 2
+    },
+    {
+      "date": "2023-08-24",
+      "equity": 1045181.8,
+      "cash": 643218.5,
+      "position_count": 2
+    },
+    {
+      "date": "2023-08-25",
+      "equity": 1039156.1,
+      "cash": 643218.5,
+      "position_count": 2
+    },
+    {
+      "date": "2023-08-28",
+      "equity": 1043300.0,
+      "cash": 643218.5,
+      "position_count": 2
+    },
+    {
+      "date": "2023-08-29",
+      "equity": 1056612.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-08-30",
+      "equity": 1057613.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-08-31",
+      "equity": 1056612.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-01",
+      "equity": 1055611.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-04",
+      "equity": 1058114.0,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-05",
+      "equity": 1056612.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-06",
+      "equity": 1053109.0,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-07",
+      "equity": 1049605.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-08",
+      "equity": 1050106.0,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-11",
+      "equity": 1054110.0,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-12",
+      "equity": 1054110.0,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-13",
+      "equity": 1051607.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-14",
+      "equity": 1052108.0,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-15",
+      "equity": 1056112.0,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-18",
+      "equity": 1058614.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-19",
+      "equity": 1057613.5,
+      "cash": 852408.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-20",
+      "equity": 1055611.5,
+      "cash": 639392.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-09-21",
+      "equity": 1052830.0,
+      "cash": 639392.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-09-22",
+      "equity": 1054903.0,
+      "cash": 639392.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-09-25",
+      "equity": 1057742.0,
+      "cash": 639392.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-09-26",
+      "equity": 1056601.5,
+      "cash": 639392.0,
+      "position_count": 2
+    },
+    {
+      "date": "2023-09-27",
+      "equity": 1058584.0,
+      "cash": 849101.5,
+      "position_count": 1
+    },
+    {
+      "date": "2023-09-28",
+      "equity": 1055375.5,
+      "cash": 424742.9,
+      "position_count": 3
+    },
+    {
+      "date": "2023-10-09",
+      "equity": 1052757.6,
+      "cash": 331.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-10",
+      "equity": 1037886.9,
+      "cash": 331.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-11",
+      "equity": 1046798.6,
+      "cash": 331.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-12",
+      "equity": 1057093.9,
+      "cash": 331.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-13",
+      "equity": 1059672.1,
+      "cash": 220356.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-16",
+      "equity": 1070931.9,
+      "cash": 220356.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-17",
+      "equity": 1074090.7,
+      "cash": 220356.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-18",
+      "equity": 1081791.3,
+      "cash": 220356.5,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-19",
+      "equity": 1087308.3,
+      "cash": 81.9,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-20",
+      "equity": 1097556.7,
+      "cash": 81.9,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-23",
+      "equity": 1088937.0,
+      "cash": 81.9,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-24",
+      "equity": 1090064.5,
+      "cash": 212772.9,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-25",
+      "equity": 1088790.5,
+      "cash": 60.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-26",
+      "equity": 1095988.6,
+      "cash": 60.5,
+      "position_count": 5
+    },
+    {
+      "date": "2023-10-27",
+      "equity": 1101556.2,
+      "cash": 221732.3,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-30",
+      "equity": 1099401.9,
+      "cash": 221732.3,
+      "position_count": 4
+    },
+    {
+      "date": "2023-10-31",
+      "equity": 1100087.6,
+      "cash": 218.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-01",
+      "equity": 1098561.8,
+      "cash": 218.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-02",
+      "equity": 1096772.7,
+      "cash": 218.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-03",
+      "equity": 1099510.2,
+      "cash": 218.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-06",
+      "equity": 1104132.0,
+      "cash": 218.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-07",
+      "equity": 1103187.0,
+      "cash": 218.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-08",
+      "equity": 1101612.7,
+      "cash": 218.7,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-09",
+      "equity": 1097970.1,
+      "cash": 25.4,
+      "position_count": 5
+    },
+    {
+      "date": "2023-11-10",
+      "equity": 1097522.2,
+      "cash": 216751.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-13",
+      "equity": 1093006.1,
+      "cash": 216751.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-14",
+      "equity": 1094702.6,
+      "cash": 216751.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-15",
+      "equity": 1100603.6,
+      "cash": 216751.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-16",
+      "equity": 1092939.7,
+      "cash": 216751.0,
+      "position_count": 4
+    },
+    {
+      "date": "2023-11-17",
+      "equity": 1095444.0,
+      "cash": 440384.5,
+      "position_count": 3
+    },
+    {
+      "date": "2023-11-20",
+      "equity": 1091594.8,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-21",
+      "equity": 1091504.0,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-22",
+      "equity": 1088450.6,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-23",
+      "equity": 1089145.6,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-24",
+      "equity": 1087850.0,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-27",
+      "equity": 1088606.6,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-28",
+      "equity": 1089185.2,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-29",
+      "equity": 1089471.4,
+      "cash": 656430.4,
+      "position_count": 2
+    },
+    {
+      "date": "2023-11-30",
+      "equity": 1089807.0,
+      "cash": 868725.6,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-01",
+      "equity": 1089709.8,
+      "cash": 868725.6,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-04",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-05",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-06",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-07",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-08",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-11",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-12",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-13",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-14",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-15",
+      "equity": 1091848.2,
+      "cash": 1091848.2,
+      "position_count": 0
+    },
+    {
+      "date": "2023-12-18",
+      "equity": 1091848.2,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-19",
+      "equity": 1093578.6,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-20",
+      "equity": 1086368.6,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-21",
+      "equity": 1089541.0,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-22",
+      "equity": 1084926.6,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-25",
+      "equity": 1085791.8,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-26",
+      "equity": 1081177.4,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-27",
+      "equity": 1082042.6,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-28",
+      "equity": 1086945.4,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2023-12-29",
+      "equity": 1089541.0,
+      "cash": 873529.4,
+      "position_count": 1
+    },
+    {
+      "date": "2024-01-02",
+      "equity": 1085503.4,
+      "cash": 436883.8,
+      "position_count": 3
+    },
+    {
+      "date": "2024-01-03",
+      "equity": 1076830.0,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-04",
+      "equity": 1070521.4,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-05",
+      "equity": 1062565.3,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-08",
+      "equity": 1050690.7,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-09",
+      "equity": 1050773.6,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-10",
+      "equity": 1045085.0,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-11",
+      "equity": 1052586.9,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-12",
+      "equity": 1045701.5,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-15",
+      "equity": 1044630.8,
+      "cash": 656012.6,
+      "position_count": 2
+    },
+    {
+      "date": "2024-01-16",
+      "equity": 1043560.1,
+      "cash": 854658.1,
+      "position_count": 1
+    },
+    {
+      "date": "2024-01-17",
+      "equity": 1040387.7,
+      "cash": 213754.1,
+      "position_count": 4
+    },
+    {
+      "date": "2024-01-18",
+      "equity": 1051785.3,
+      "cash": 213754.1,
+      "position_count": 4
+    },
+    {
+      "date": "2024-01-19",
+      "equity": 1047916.9,
+      "cash": 54.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-01-22",
+      "equity": 1020526.1,
+      "cash": 54.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-01-23",
+      "equity": 1038851.9,
+      "cash": 54.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-01-24",
+      "equity": 1064387.9,
+      "cash": 54.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-01-25",
+      "equity": 1082799.7,
+      "cash": 224868.5,
+      "position_count": 4
+    },
+    {
+      "date": "2024-01-26",
+      "equity": 1076965.7,
+      "cash": 224868.5,
+      "position_count": 4
+    },
+    {
+      "date": "2024-01-29",
+      "equity": 1067630.5,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-01-30",
+      "equity": 1044874.5,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-01-31",
+      "equity": 1030452.9,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-01",
+      "equity": 1030402.1,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-02",
+      "equity": 1015736.9,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-05",
+      "equity": 1013158.9,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-06",
+      "equity": 1057944.5,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-07",
+      "equity": 1066811.7,
+      "cash": 36.5,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-08",
+      "equity": 1078444.1,
+      "cash": 228996.5,
+      "position_count": 4
+    },
+    {
+      "date": "2024-02-19",
+      "equity": 1091978.1,
+      "cash": 43.7,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-20",
+      "equity": 1097864.8,
+      "cash": 43.7,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-21",
+      "equity": 1112107.3,
+      "cash": 43.7,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-22",
+      "equity": 1123554.7,
+      "cash": 43.7,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-23",
+      "equity": 1127325.9,
+      "cash": 43.7,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-26",
+      "equity": 1118646.6,
+      "cash": 43.7,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-27",
+      "equity": 1138749.3,
+      "cash": 43.7,
+      "position_count": 5
+    },
+    {
+      "date": "2024-02-28",
+      "equity": 1114734.6,
+      "cash": 438529.5,
+      "position_count": 3
+    },
+    {
+      "date": "2024-02-29",
+      "equity": 1137572.7,
+      "cash": 672503.9,
+      "position_count": 2
+    },
+    {
+      "date": "2024-03-01",
+      "equity": 1141161.5,
+      "cash": 672503.9,
+      "position_count": 2
+    },
+    {
+      "date": "2024-03-04",
+      "equity": 1141038.3,
+      "cash": 672503.9,
+      "position_count": 2
+    },
+    {
+      "date": "2024-03-05",
+      "equity": 1144219.1,
+      "cash": 1144219.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-06",
+      "equity": 1144219.1,
+      "cash": 1144219.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-07",
+      "equity": 1144219.1,
+      "cash": 1144219.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-08",
+      "equity": 1144219.1,
+      "cash": 1144219.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-11",
+      "equity": 1144219.1,
+      "cash": 1144219.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-03-12",
+      "equity": 1144219.1,
+      "cash": 915408.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-13",
+      "equity": 1143709.5,
+      "cash": 915408.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-14",
+      "equity": 1139632.7,
+      "cash": 915408.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-15",
+      "equity": 1140651.9,
+      "cash": 915408.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-18",
+      "equity": 1146767.1,
+      "cash": 915408.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-19",
+      "equity": 1143709.5,
+      "cash": 686933.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-03-20",
+      "equity": 1142560.7,
+      "cash": 686933.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-03-21",
+      "equity": 1146788.2,
+      "cash": 913705.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-22",
+      "equity": 1145743.2,
+      "cash": 913705.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-25",
+      "equity": 1146028.2,
+      "cash": 913705.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-26",
+      "equity": 1146170.7,
+      "cash": 913705.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-27",
+      "equity": 1147358.2,
+      "cash": 913705.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-28",
+      "equity": 1148925.7,
+      "cash": 913705.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-03-29",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-01",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-02",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-03",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-08",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-09",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-10",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-11",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-12",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-15",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-16",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-17",
+      "equity": 1154435.7,
+      "cash": 1154435.7,
+      "position_count": 0
+    },
+    {
+      "date": "2024-04-18",
+      "equity": 1154435.7,
+      "cash": 693191.3,
+      "position_count": 2
+    },
+    {
+      "date": "2024-04-19",
+      "equity": 1154520.1,
+      "cash": 462189.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-04-22",
+      "equity": 1149300.9,
+      "cash": 462189.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-04-23",
+      "equity": 1139252.1,
+      "cash": 462189.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-04-24",
+      "equity": 1147120.1,
+      "cash": 462189.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-04-25",
+      "equity": 1147687.4,
+      "cash": 462189.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-04-26",
+      "equity": 1158463.0,
+      "cash": 703666.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-04-29",
+      "equity": 1157047.3,
+      "cash": 703666.0,
+      "position_count": 2
+    },
+    {
+      "date": "2024-04-30",
+      "equity": 1157974.0,
+      "cash": 234675.4,
+      "position_count": 4
+    },
+    {
+      "date": "2024-05-06",
+      "equity": 1166491.9,
+      "cash": 467775.4,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-07",
+      "equity": 1167430.4,
+      "cash": 467775.4,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-08",
+      "equity": 1166067.1,
+      "cash": 467775.4,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-09",
+      "equity": 1166745.4,
+      "cash": 467775.4,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-10",
+      "equity": 1174702.6,
+      "cash": 467775.4,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-13",
+      "equity": 1174527.5,
+      "cash": 233915.6,
+      "position_count": 4
+    },
+    {
+      "date": "2024-05-14",
+      "equity": 1173791.4,
+      "cash": 233915.6,
+      "position_count": 4
+    },
+    {
+      "date": "2024-05-15",
+      "equity": 1174370.9,
+      "cash": 233915.6,
+      "position_count": 4
+    },
+    {
+      "date": "2024-05-16",
+      "equity": 1181536.2,
+      "cash": 478296.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-17",
+      "equity": 1185080.2,
+      "cash": 478296.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-20",
+      "equity": 1194279.1,
+      "cash": 713774.3,
+      "position_count": 2
+    },
+    {
+      "date": "2024-05-21",
+      "equity": 1193203.6,
+      "cash": 713774.3,
+      "position_count": 2
+    },
+    {
+      "date": "2024-05-22",
+      "equity": 1195725.8,
+      "cash": 713774.3,
+      "position_count": 2
+    },
+    {
+      "date": "2024-05-23",
+      "equity": 1189966.8,
+      "cash": 475898.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-24",
+      "equity": 1180384.3,
+      "cash": 475898.0,
+      "position_count": 3
+    },
+    {
+      "date": "2024-05-27",
+      "equity": 1189957.4,
+      "cash": 712838.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-05-28",
+      "equity": 1186082.2,
+      "cash": 712838.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-05-29",
+      "equity": 1187449.1,
+      "cash": 959084.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-05-30",
+      "equity": 1188059.7,
+      "cash": 959084.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-05-31",
+      "equity": 1186838.5,
+      "cash": 959084.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-06-03",
+      "equity": 1188975.6,
+      "cash": 959084.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-06-04",
+      "equity": 1192333.9,
+      "cash": 1192333.9,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-05",
+      "equity": 1192333.9,
+      "cash": 1192333.9,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-06",
+      "equity": 1192333.9,
+      "cash": 1192333.9,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-07",
+      "equity": 1192333.9,
+      "cash": 1192333.9,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-11",
+      "equity": 1192333.9,
+      "cash": 1192333.9,
+      "position_count": 0
+    },
+    {
+      "date": "2024-06-12",
+      "equity": 1192333.9,
+      "cash": 954219.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-06-13",
+      "equity": 1192196.5,
+      "cash": 954219.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-06-14",
+      "equity": 1192242.3,
+      "cash": 954219.7,
+      "position_count": 1
+    },
+    {
+      "date": "2024-06-17",
+      "equity": 1192608.7,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-18",
+      "equity": 1194054.7,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-19",
+      "equity": 1197599.7,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-20",
+      "equity": 1198400.5,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-21",
+      "equity": 1199087.5,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-24",
+      "equity": 1195575.3,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-25",
+      "equity": 1197324.9,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-26",
+      "equity": 1196240.1,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-27",
+      "equity": 1198196.5,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-06-28",
+      "equity": 1201337.1,
+      "cash": 715716.5,
+      "position_count": 2
+    },
+    {
+      "date": "2024-07-01",
+      "equity": 1204636.1,
+      "cash": 238772.2,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-02",
+      "equity": 1205892.8,
+      "cash": 343.8,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-03",
+      "equity": 1198932.3,
+      "cash": 343.8,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-04",
+      "equity": 1188111.8,
+      "cash": 343.8,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-05",
+      "equity": 1188883.3,
+      "cash": 222.1,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-08",
+      "equity": 1176463.1,
+      "cash": 222.1,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-09",
+      "equity": 1190707.8,
+      "cash": 222.1,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-10",
+      "equity": 1190385.6,
+      "cash": 222.1,
+      "position_count": 5
+    },
+    {
+      "date": "2024-07-11",
+      "equity": 1206351.9,
+      "cash": 249790.9,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-12",
+      "equity": 1204683.1,
+      "cash": 249790.9,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-15",
+      "equity": 1198516.5,
+      "cash": 249790.9,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-16",
+      "equity": 1201867.9,
+      "cash": 249790.9,
+      "position_count": 4
+    },
+    {
+      "date": "2024-07-17",
+      "equity": 1200646.8,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-18",
+      "equity": 1203516.8,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-19",
+      "equity": 1203873.8,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-22",
+      "equity": 1202963.0,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-23",
+      "equity": 1183742.4,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-24",
+      "equity": 1175506.1,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-25",
+      "equity": 1174855.3,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-26",
+      "equity": 1185429.7,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-29",
+      "equity": 1182203.6,
+      "cash": 501507.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-07-30",
+      "equity": 1184078.3,
+      "cash": 729273.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-07-31",
+      "equity": 1203199.0,
+      "cash": 966555.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-01",
+      "equity": 1201168.1,
+      "cash": 966555.0,
+      "position_count": 1
+    },
+    {
+      "date": "2024-08-02",
+      "equity": 1198077.6,
+      "cash": 688.1,
+      "position_count": 5
+    },
+    {
+      "date": "2024-08-05",
+      "equity": 1180729.8,
+      "cash": 317.9,
+      "position_count": 5
+    },
+    {
+      "date": "2024-08-06",
+      "equity": 1183564.3,
+      "cash": 317.9,
+      "position_count": 5
+    },
+    {
+      "date": "2024-08-07",
+      "equity": 1181704.6,
+      "cash": 239419.1,
+      "position_count": 4
+    },
+    {
+      "date": "2024-08-08",
+      "equity": 1182589.1,
+      "cash": 239419.1,
+      "position_count": 4
+    },
+    {
+      "date": "2024-08-09",
+      "equity": 1179229.5,
+      "cash": 239419.1,
+      "position_count": 4
+    },
+    {
+      "date": "2024-08-12",
+      "equity": 1178411.3,
+      "cash": 239419.1,
+      "position_count": 4
+    },
+    {
+      "date": "2024-08-13",
+      "equity": 1179507.0,
+      "cash": 703790.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-14",
+      "equity": 1176143.4,
+      "cash": 703790.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-15",
+      "equity": 1181188.8,
+      "cash": 703790.7,
+      "position_count": 2
+    },
+    {
+      "date": "2024-08-16",
+      "equity": 1181817.9,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-19",
+      "equity": 1180533.1,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-20",
+      "equity": 1182423.9,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-21",
+      "equity": 1178063.8,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-22",
+      "equity": 1175468.1,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-23",
+      "equity": 1174059.7,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-26",
+      "equity": 1171836.7,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-27",
+      "equity": 1166549.1,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-28",
+      "equity": 1168892.3,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-29",
+      "equity": 1162024.3,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-08-30",
+      "equity": 1172348.0,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-02",
+      "equity": 1160982.0,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-03",
+      "equity": 1159742.4,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-04",
+      "equity": 1143678.2,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-05",
+      "equity": 1143791.3,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-06",
+      "equity": 1139474.7,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-09",
+      "equity": 1133045.2,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-10",
+      "equity": 1132443.5,
+      "cash": 471440.2,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-11",
+      "equity": 1130377.3,
+      "cash": 676232.2,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-12",
+      "equity": 1134938.8,
+      "cash": 676232.2,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-13",
+      "equity": 1133226.9,
+      "cash": 676232.2,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-18",
+      "equity": 1133943.4,
+      "cash": 676232.2,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-19",
+      "equity": 1138822.3,
+      "cash": 909972.2,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-20",
+      "equity": 1139108.9,
+      "cash": 682548.2,
+      "position_count": 2
+    },
+    {
+      "date": "2024-09-23",
+      "equity": 1373001.0,
+      "cash": 455086.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-09-24",
+      "equity": 1414122.1,
+      "cash": 933493.9,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-25",
+      "equity": 1421000.5,
+      "cash": 933493.9,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-26",
+      "equity": 1444215.1,
+      "cash": 933493.9,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-27",
+      "equity": 1464850.3,
+      "cash": 933493.9,
+      "position_count": 1
+    },
+    {
+      "date": "2024-09-30",
+      "equity": 1518014.6,
+      "cash": 933493.9,
+      "position_count": 1
+    },
+    {
+      "date": "2024-10-08",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-09",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-10",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-11",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-14",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-15",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-16",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-17",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-18",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-21",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-22",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-23",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-24",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-25",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-28",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-29",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-30",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-10-31",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-01",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-04",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-05",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-06",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-07",
+      "equity": 1547247.8,
+      "cash": 1547247.8,
+      "position_count": 0
+    },
+    {
+      "date": "2024-11-08",
+      "equity": 1547247.8,
+      "cash": 1238192.6,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-11",
+      "equity": 1547614.6,
+      "cash": 1238192.6,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-12",
+      "equity": 1542479.4,
+      "cash": 1238192.6,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-13",
+      "equity": 1541903.0,
+      "cash": 1238192.6,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-14",
+      "equity": 1535824.6,
+      "cash": 1238192.6,
+      "position_count": 1
+    },
+    {
+      "date": "2024-11-15",
+      "equity": 1535981.8,
+      "cash": 619438.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-11-18",
+      "equity": 1544200.3,
+      "cash": 619438.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-11-19",
+      "equity": 1556186.6,
+      "cash": 619438.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-11-20",
+      "equity": 1555656.9,
+      "cash": 619438.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-11-21",
+      "equity": 1562896.4,
+      "cash": 619438.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-11-22",
+      "equity": 1565552.0,
+      "cash": 619438.7,
+      "position_count": 3
+    },
+    {
+      "date": "2024-11-25",
+      "equity": 1556848.6,
+      "cash": 929437.1,
+      "position_count": 2
+    },
+    {
+      "date": "2024-11-26",
+      "equity": 1554827.8,
+      "cash": 929437.1,
+      "position_count": 2
+    },
+    {
+      "date": "2024-11-27",
+      "equity": 1557751.2,
+      "cash": 929437.1,
+      "position_count": 2
+    },
+    {
+      "date": "2024-11-28",
+      "equity": 1555611.6,
+      "cash": 929437.1,
+      "position_count": 2
+    },
+    {
+      "date": "2024-11-29",
+      "equity": 1559076.7,
+      "cash": 929437.1,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-02",
+      "equity": 1554372.2,
+      "cash": 929437.1,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-03",
+      "equity": 1554317.8,
+      "cash": 929437.1,
+      "position_count": 2
+    },
+    {
+      "date": "2024-12-04",
+      "equity": 1548754.1,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-05",
+      "equity": 1544374.7,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-06",
+      "equity": 1543401.5,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-09",
+      "equity": 1546483.3,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-10",
+      "equity": 1545510.1,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-11",
+      "equity": 1542914.9,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-12",
+      "equity": 1542752.7,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-13",
+      "equity": 1542266.1,
+      "cash": 1251441.5,
+      "position_count": 1
+    },
+    {
+      "date": "2024-12-16",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-17",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-18",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-19",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-20",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-23",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-24",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-25",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-26",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-27",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-30",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2024-12-31",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-02",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-03",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-06",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-07",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-08",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-09",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-10",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-13",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-14",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-15",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-16",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-17",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-20",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-21",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-22",
+      "equity": 1543077.1,
+      "cash": 1543077.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-01-23",
+      "equity": 1543077.1,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-01-24",
+      "equity": 1544221.9,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-01-27",
+      "equity": 1548514.9,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-05",
+      "equity": 1542790.9,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-06",
+      "equity": 1543077.1,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-07",
+      "equity": 1543363.3,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-10",
+      "equity": 1543363.3,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-11",
+      "equity": 1546225.3,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-12",
+      "equity": 1546797.7,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-13",
+      "equity": 1547656.3,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-14",
+      "equity": 1547656.3,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-17",
+      "equity": 1547370.1,
+      "cash": 1234553.5,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-18",
+      "equity": 1547942.5,
+      "cash": 182.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-19",
+      "equity": 1581874.3,
+      "cash": 182.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-20",
+      "equity": 1576600.0,
+      "cash": 182.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-02-21",
+      "equity": 1651096.3,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-24",
+      "equity": 1650237.7,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-25",
+      "equity": 1647948.1,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-26",
+      "equity": 1650237.7,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-27",
+      "equity": 1653099.7,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-02-28",
+      "equity": 1651668.7,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-03-03",
+      "equity": 1651382.5,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-03-04",
+      "equity": 1651668.7,
+      "cash": 1341427.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-03-05",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-06",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-07",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-10",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-11",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-12",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-13",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-14",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-17",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-18",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-19",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-20",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-21",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-24",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-25",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-26",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-27",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-28",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-03-31",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-01",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-02",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-03",
+      "equity": 1653672.1,
+      "cash": 1653672.1,
+      "position_count": 0
+    },
+    {
+      "date": "2025-04-07",
+      "equity": 1653672.1,
+      "cash": 992455.9,
+      "position_count": 2
+    },
+    {
+      "date": "2025-04-08",
+      "equity": 1668443.8,
+      "cash": 661853.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-04-09",
+      "equity": 1670477.4,
+      "cash": 661853.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-04-10",
+      "equity": 1678538.1,
+      "cash": 661853.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-04-11",
+      "equity": 1676547.2,
+      "cash": 661853.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-04-14",
+      "equity": 1683190.0,
+      "cash": 661853.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-04-15",
+      "equity": 1689051.1,
+      "cash": 330982.3,
+      "position_count": 4
+    },
+    {
+      "date": "2025-04-16",
+      "equity": 1696978.3,
+      "cash": 56.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-17",
+      "equity": 1698438.5,
+      "cash": 56.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-18",
+      "equity": 1698751.4,
+      "cash": 56.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-21",
+      "equity": 1699509.9,
+      "cash": 56.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-22",
+      "equity": 1702191.9,
+      "cash": 56.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-23",
+      "equity": 1697983.0,
+      "cash": 56.4,
+      "position_count": 5
+    },
+    {
+      "date": "2025-04-24",
+      "equity": 1698916.0,
+      "cash": 328175.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-04-25",
+      "equity": 1698363.5,
+      "cash": 328175.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-04-28",
+      "equity": 1699293.6,
+      "cash": 328175.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-04-29",
+      "equity": 1696382.2,
+      "cash": 328175.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-04-30",
+      "equity": 1686452.4,
+      "cash": 666954.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-06",
+      "equity": 1690263.6,
+      "cash": 666954.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-07",
+      "equity": 1697010.3,
+      "cash": 1006523.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-05-08",
+      "equity": 1699325.1,
+      "cash": 1006523.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-05-09",
+      "equity": 1703724.0,
+      "cash": 1006523.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-05-12",
+      "equity": 1705497.3,
+      "cash": 1006523.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-05-13",
+      "equity": 1711391.1,
+      "cash": 1006523.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-05-14",
+      "equity": 1717027.5,
+      "cash": 1358985.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-15",
+      "equity": 1715784.3,
+      "cash": 1358985.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-16",
+      "equity": 1713297.9,
+      "cash": 1358985.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-19",
+      "equity": 1713919.5,
+      "cash": 1358985.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-20",
+      "equity": 1715473.5,
+      "cash": 1358985.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-21",
+      "equity": 1717959.9,
+      "cash": 1358985.9,
+      "position_count": 1
+    },
+    {
+      "date": "2025-05-22",
+      "equity": 1719203.1,
+      "cash": 1019735.9,
+      "position_count": 2
+    },
+    {
+      "date": "2025-05-23",
+      "equity": 1716543.9,
+      "cash": 679833.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-26",
+      "equity": 1713277.1,
+      "cash": 679833.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-27",
+      "equity": 1708172.3,
+      "cash": 679833.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-28",
+      "equity": 1710642.7,
+      "cash": 679833.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-29",
+      "equity": 1703197.1,
+      "cash": 679833.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-05-30",
+      "equity": 1711647.1,
+      "cash": 679833.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-06-03",
+      "equity": 1724693.5,
+      "cash": 1020830.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-06-04",
+      "equity": 1726109.5,
+      "cash": 1020830.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-06-05",
+      "equity": 1723818.3,
+      "cash": 1020830.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-06-06",
+      "equity": 1724520.7,
+      "cash": 1383844.7,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-09",
+      "equity": 1720886.7,
+      "cash": 1383844.7,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-10",
+      "equity": 1721300.7,
+      "cash": 1383844.7,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-11",
+      "equity": 1722174.7,
+      "cash": 1383844.7,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-12",
+      "equity": 1725256.7,
+      "cash": 1383844.7,
+      "position_count": 1
+    },
+    {
+      "date": "2025-06-13",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-16",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-17",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-18",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-19",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-20",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-23",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-24",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-25",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-26",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-27",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-06-30",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-01",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-02",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-03",
+      "equity": 1729304.7,
+      "cash": 1729304.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-04",
+      "equity": 1729304.7,
+      "cash": 1383502.3,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-07",
+      "equity": 1728752.3,
+      "cash": 346310.7,
+      "position_count": 4
+    },
+    {
+      "date": "2025-07-08",
+      "equity": 1753293.8,
+      "cash": 346310.7,
+      "position_count": 4
+    },
+    {
+      "date": "2025-07-09",
+      "equity": 1749368.2,
+      "cash": 100.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-10",
+      "equity": 1753715.9,
+      "cash": 100.5,
+      "position_count": 5
+    },
+    {
+      "date": "2025-07-11",
+      "equity": 1761777.7,
+      "cash": 358222.0,
+      "position_count": 4
+    },
+    {
+      "date": "2025-07-14",
+      "equity": 1762903.2,
+      "cash": 354704.5,
+      "position_count": 4
+    },
+    {
+      "date": "2025-07-15",
+      "equity": 1797594.8,
+      "cash": 723941.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-07-16",
+      "equity": 1799966.3,
+      "cash": 723941.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-07-17",
+      "equity": 1827682.3,
+      "cash": 723941.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-07-18",
+      "equity": 1834120.8,
+      "cash": 1450549.8,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-21",
+      "equity": 1831668.3,
+      "cash": 1450549.8,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-22",
+      "equity": 1831177.8,
+      "cash": 1450549.8,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-23",
+      "equity": 1830687.3,
+      "cash": 1450549.8,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-24",
+      "equity": 1836082.8,
+      "cash": 1836082.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-25",
+      "equity": 1836082.8,
+      "cash": 1836082.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-28",
+      "equity": 1836082.8,
+      "cash": 1836082.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-29",
+      "equity": 1836082.8,
+      "cash": 1836082.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-07-30",
+      "equity": 1836082.8,
+      "cash": 1468957.8,
+      "position_count": 1
+    },
+    {
+      "date": "2025-07-31",
+      "equity": 1834395.3,
+      "cash": 1102068.9,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-01",
+      "equity": 1830282.9,
+      "cash": 367658.1,
+      "position_count": 4
+    },
+    {
+      "date": "2025-08-04",
+      "equity": 1837432.2,
+      "cash": 730393.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-08-05",
+      "equity": 1842526.6,
+      "cash": 730393.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-08-06",
+      "equity": 1848913.4,
+      "cash": 730393.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-08-07",
+      "equity": 1849007.9,
+      "cash": 730393.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-08-08",
+      "equity": 1845503.0,
+      "cash": 730393.2,
+      "position_count": 3
+    },
+    {
+      "date": "2025-08-11",
+      "equity": 1847253.3,
+      "cash": 1100568.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-12",
+      "equity": 1851993.0,
+      "cash": 1100568.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-13",
+      "equity": 1864832.0,
+      "cash": 1480443.2,
+      "position_count": 1
+    },
+    {
+      "date": "2025-08-14",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-15",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-18",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-19",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-20",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-21",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-22",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-25",
+      "equity": 1860860.8,
+      "cash": 1860860.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-08-26",
+      "equity": 1860860.8,
+      "cash": 1116661.2,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-27",
+      "equity": 1859188.8,
+      "cash": 744474.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-08-28",
+      "equity": 1899423.2,
+      "cash": 1147714.8,
+      "position_count": 2
+    },
+    {
+      "date": "2025-08-29",
+      "equity": 1902516.4,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-01",
+      "equity": 1918422.3,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-02",
+      "equity": 1882357.8,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-03",
+      "equity": 1858472.0,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-04",
+      "equity": 1817754.9,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-05",
+      "equity": 1868261.3,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-08",
+      "equity": 1880257.5,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-09",
+      "equity": 1861936.9,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-10",
+      "equity": 1863057.6,
+      "cash": 261.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-11",
+      "equity": 1912905.9,
+      "cash": 384418.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-09-12",
+      "equity": 1911854.3,
+      "cash": 240.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-15",
+      "equity": 1909688.6,
+      "cash": 240.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-16",
+      "equity": 1927983.7,
+      "cash": 240.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-17",
+      "equity": 1937760.0,
+      "cash": 240.0,
+      "position_count": 5
+    },
+    {
+      "date": "2025-09-18",
+      "equity": 1916104.5,
+      "cash": 386574.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-09-19",
+      "equity": 1913386.3,
+      "cash": 386574.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-09-22",
+      "equity": 1928901.5,
+      "cash": 386574.2,
+      "position_count": 4
+    },
+    {
+      "date": "2025-09-23",
+      "equity": 1930081.5,
+      "cash": 768488.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-09-24",
+      "equity": 1950677.4,
+      "cash": 768488.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-09-25",
+      "equity": 1952288.3,
+      "cash": 1149203.0,
+      "position_count": 2
+    },
+    {
+      "date": "2025-09-26",
+      "equity": 1947062.0,
+      "cash": 766576.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-09-29",
+      "equity": 1976265.7,
+      "cash": 766576.0,
+      "position_count": 3
+    },
+    {
+      "date": "2025-09-30",
+      "equity": 1999183.7,
+      "cash": 1169349.7,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-09",
+      "equity": 2025594.7,
+      "cash": 1616365.7,
+      "position_count": 1
+    },
+    {
+      "date": "2025-10-10",
+      "equity": 2019860.7,
+      "cash": 2019860.7,
+      "position_count": 0
+    },
+    {
+      "date": "2025-10-13",
+      "equity": 2019860.7,
+      "cash": 1615892.1,
+      "position_count": 1
+    },
+    {
+      "date": "2025-10-14",
+      "equity": 2014517.2,
+      "cash": 1615892.1,
+      "position_count": 1
+    },
+    {
+      "date": "2025-10-15",
+      "equity": 2019860.7,
+      "cash": 1615892.1,
+      "position_count": 1
+    },
+    {
+      "date": "2025-10-16",
+      "equity": 2018792.0,
+      "cash": 1615892.1,
+      "position_count": 1
+    },
+    {
+      "date": "2025-10-17",
+      "equity": 2009173.7,
+      "cash": 1211957.5,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-20",
+      "equity": 2011327.3,
+      "cash": 1211957.5,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-21",
+      "equity": 2020582.3,
+      "cash": 1211957.5,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-22",
+      "equity": 2016829.7,
+      "cash": 1211957.5,
+      "position_count": 2
+    },
+    {
+      "date": "2025-10-23",
+      "equity": 2017368.1,
+      "cash": 404218.5,
+      "position_count": 4
+    },
+    {
+      "date": "2025-10-24",
+      "equity": 2019265.4,
+      "cash": 801774.9,
+      "position_count": 3
+    },
+    {
+      "date": "2025-10-27",
+      "equity": 2025778.3,
+      "cash": 801774.9,
+      "position_count": 3
+    },
+    {
+      "date": "2025-10-28",
+      "equity": 2024758.5,
+      "cash": 801774.9,
+      "position_count": 3
+    },
+    {
+      "date": "2025-10-29",
+      "equity": 2024241.0,
+      "cash": 801774.9,
+      "position_count": 3
+    },
+    {
+      "date": "2025-10-30",
+      "equity": 2020411.5,
+      "cash": 801774.9,
+      "position_count": 3
+    },
+    {
+      "date": "2025-10-31",
+      "equity": 2020102.1,
+      "cash": 801774.9,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-03",
+      "equity": 2031565.7,
+      "cash": 1206240.5,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-04",
+      "equity": 2030804.6,
+      "cash": 804177.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-05",
+      "equity": 2019836.6,
+      "cash": 804177.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-06",
+      "equity": 2037410.3,
+      "cash": 804177.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-07",
+      "equity": 2034165.2,
+      "cash": 804177.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-10",
+      "equity": 2042935.2,
+      "cash": 804177.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-11",
+      "equity": 2045315.3,
+      "cash": 804177.3,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-12",
+      "equity": 2043641.2,
+      "cash": 1207139.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-13",
+      "equity": 2048493.2,
+      "cash": 1207139.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-14",
+      "equity": 2042442.6,
+      "cash": 1207139.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-17",
+      "equity": 2039297.1,
+      "cash": 1207139.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-18",
+      "equity": 2033184.0,
+      "cash": 1207139.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-19",
+      "equity": 2030488.8,
+      "cash": 1207139.3,
+      "position_count": 2
+    },
+    {
+      "date": "2025-11-20",
+      "equity": 2031349.3,
+      "cash": 804798.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-21",
+      "equity": 1992588.8,
+      "cash": 804798.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-24",
+      "equity": 1991369.8,
+      "cash": 804798.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-25",
+      "equity": 2003462.3,
+      "cash": 804798.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-26",
+      "equity": 1999068.9,
+      "cash": 804798.6,
+      "position_count": 3
+    },
+    {
+      "date": "2025-11-27",
+      "equity": 2005035.4,
+      "cash": 402663.6,
+      "position_count": 4
+    },
+    {
+      "date": "2025-11-28",
+      "equity": 2014833.1,
+      "cash": 797602.5,
+      "position_count": 3
+    },
+    {
+      "date": "2025-12-01",
+      "equity": 2021063.9,
+      "cash": 1203166.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-02",
+      "equity": 2017927.7,
+      "cash": 1203166.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-03",
+      "equity": 2013566.7,
+      "cash": 1203166.4,
+      "position_count": 2
+    },
+    {
+      "date": "2025-12-04",
+      "equity": 2012890.4,
+      "cash": 1605052.4,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-05",
+      "equity": 2017736.0,
+      "cash": 1605052.4,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-08",
+      "equity": 2022850.8,
+      "cash": 1605052.4,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-09",
+      "equity": 2020024.2,
+      "cash": 1605052.4,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-10",
+      "equity": 2022312.4,
+      "cash": 1605052.4,
+      "position_count": 1
+    },
+    {
+      "date": "2025-12-11",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-12",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-15",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-16",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-17",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-18",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-19",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-22",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-23",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-24",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-25",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-26",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-29",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-30",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2025-12-31",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-05",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-06",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-07",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-08",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-09",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-12",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-13",
+      "equity": 2018812.8,
+      "cash": 2018812.8,
+      "position_count": 0
+    },
+    {
+      "date": "2026-01-14",
+      "equity": 2018812.8,
+      "cash": 1615209.2,
+      "position_count": 1
+    },
+    {
+      "date": "2026-01-15",
+      "equity": 2015125.8,
+      "cash": 1615209.2,
+      "position_count": 1
+    },
+    {
+      "date": "2026-01-16",
+      "equity": 2027661.6,
+      "cash": 118.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-19",
+      "equity": 2024989.3,
+      "cash": 118.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-20",
+      "equity": 2007511.3,
+      "cash": 408146.4,
+      "position_count": 4
+    },
+    {
+      "date": "2026-01-21",
+      "equity": 2056064.6,
+      "cash": 408146.4,
+      "position_count": 4
+    },
+    {
+      "date": "2026-01-22",
+      "equity": 2056049.2,
+      "cash": 409420.4,
+      "position_count": 4
+    },
+    {
+      "date": "2026-01-23",
+      "equity": 2067896.6,
+      "cash": 16.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 2039960.4,
+      "cash": 16.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-27",
+      "equity": 2065616.5,
+      "cash": 16.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-28",
+      "equity": 2078652.7,
+      "cash": 421286.6,
+      "position_count": 4
+    },
+    {
+      "date": "2026-01-29",
+      "equity": 2047881.1,
+      "cash": 77.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-01-30",
+      "equity": 2042020.0,
+      "cash": 77.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-02",
+      "equity": 1980840.4,
+      "cash": 77.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-03",
+      "equity": 2006257.3,
+      "cash": 77.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-04",
+      "equity": 2002164.1,
+      "cash": 86.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-05",
+      "equity": 1992278.5,
+      "cash": 124.3,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-06",
+      "equity": 1980585.7,
+      "cash": 124.3,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-09",
+      "equity": 2024250.3,
+      "cash": 384488.3,
+      "position_count": 4
+    },
+    {
+      "date": "2026-02-10",
+      "equity": 2029019.4,
+      "cash": 33.5,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-11",
+      "equity": 2024853.0,
+      "cash": 40.3,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-12",
+      "equity": 2035676.8,
+      "cash": 40.3,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-13",
+      "equity": 2008183.1,
+      "cash": 40.3,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-24",
+      "equity": 2037766.1,
+      "cash": 40.3,
+      "position_count": 5
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 2049242.4,
+      "cash": 413654.7,
+      "position_count": 4
+    },
+    {
+      "date": "2026-02-26",
+      "equity": 2047106.4,
+      "cash": 413654.7,
+      "position_count": 4
+    },
+    {
+      "date": "2026-02-27",
+      "equity": 2049536.3,
+      "cash": 413654.7,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-02",
+      "equity": 2057164.9,
+      "cash": 413654.7,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-03",
+      "equity": 2037857.5,
+      "cash": 413654.7,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-04",
+      "equity": 2018433.3,
+      "cash": 413654.7,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-05",
+      "equity": 2032868.1,
+      "cash": 413654.7,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-06",
+      "equity": 2037282.8,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-09",
+      "equity": 2015429.8,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-10",
+      "equity": 2049233.8,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-11",
+      "equity": 2051327.0,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-12",
+      "equity": 2040448.3,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-13",
+      "equity": 2026718.1,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-16",
+      "equity": 2028007.2,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-17",
+      "equity": 2018737.2,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-18",
+      "equity": 2026697.7,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-19",
+      "equity": 1992854.3,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-20",
+      "equity": 1974835.5,
+      "cash": 66.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-23",
+      "equity": 1902707.0,
+      "cash": 59.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-24",
+      "equity": 1938735.4,
+      "cash": 59.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-25",
+      "equity": 1959670.3,
+      "cash": 59.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-26",
+      "equity": 1938063.0,
+      "cash": 18.1,
+      "position_count": 5
+    },
+    {
+      "date": "2026-03-27",
+      "equity": 1993390.0,
+      "cash": 413037.9,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-30",
+      "equity": 2000134.7,
+      "cash": 413037.9,
+      "position_count": 4
+    },
+    {
+      "date": "2026-03-31",
+      "equity": 2001826.9,
+      "cash": 7.9,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-01",
+      "equity": 2060858.9,
+      "cash": 853375.2,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-02",
+      "equity": 2060516.9,
+      "cash": 426759.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-03",
+      "equity": 2042521.3,
+      "cash": 15.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-07",
+      "equity": 2037043.9,
+      "cash": 15.2,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-08",
+      "equity": 2083897.7,
+      "cash": 443696.2,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-09",
+      "equity": 2073878.9,
+      "cash": 443696.2,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-10",
+      "equity": 2079496.8,
+      "cash": 443696.2,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-13",
+      "equity": 2077112.2,
+      "cash": 89.4,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-14",
+      "equity": 2096174.0,
+      "cash": 387339.3,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-15",
+      "equity": 2099247.1,
+      "cash": 387339.3,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-16",
+      "equity": 2109671.9,
+      "cash": 387339.3,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-17",
+      "equity": 2095368.7,
+      "cash": 387339.3,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-20",
+      "equity": 2105287.0,
+      "cash": 387339.3,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-21",
+      "equity": 2107885.7,
+      "cash": 15.7,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-22",
+      "equity": 2113440.6,
+      "cash": 15.7,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-23",
+      "equity": 2111805.5,
+      "cash": 61.0,
+      "position_count": 5
+    },
+    {
+      "date": "2026-04-24",
+      "equity": 2120333.8,
+      "cash": 387803.6,
+      "position_count": 4
+    },
+    {
+      "date": "2026-04-27",
+      "equity": 2119710.2,
+      "cash": 775900.4,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-28",
+      "equity": 2109040.0,
+      "cash": 775900.4,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-29",
+      "equity": 2140042.2,
+      "cash": 775900.4,
+      "position_count": 3
+    },
+    {
+      "date": "2026-04-30",
+      "equity": 2130305.6,
+      "cash": 775900.4,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-06",
+      "equity": 2150425.2,
+      "cash": 775900.4,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-07",
+      "equity": 2146301.9,
+      "cash": 1268989.9,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-08",
+      "equity": 2144727.7,
+      "cash": 1268989.9,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-11",
+      "equity": 2153432.7,
+      "cash": 1268989.9,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-12",
+      "equity": 2150494.9,
+      "cash": 1268989.9,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-13",
+      "equity": 2155036.1,
+      "cash": 1268989.9,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-14",
+      "equity": 2147346.5,
+      "cash": 1268989.9,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-15",
+      "equity": 2138155.7,
+      "cash": 1268989.9,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-18",
+      "equity": 2132642.9,
+      "cash": 405.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-19",
+      "equity": 2186635.1,
+      "cash": 405.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-05-20",
+      "equity": 2237899.9,
+      "cash": 453132.8,
+      "position_count": 4
+    },
+    {
+      "date": "2026-05-21",
+      "equity": 2195043.2,
+      "cash": 453132.8,
+      "position_count": 4
+    },
+    {
+      "date": "2026-05-22",
+      "equity": 2219186.8,
+      "cash": 920765.4,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-25",
+      "equity": 2284222.4,
+      "cash": 920765.4,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-26",
+      "equity": 2272584.4,
+      "cash": 1409144.4,
+      "position_count": 2
+    },
+    {
+      "date": "2026-05-27",
+      "equity": 2257649.4,
+      "cash": 939595.6,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-28",
+      "equity": 2261969.1,
+      "cash": 939595.6,
+      "position_count": 3
+    },
+    {
+      "date": "2026-05-29",
+      "equity": 2245567.3,
+      "cash": 939595.6,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-01",
+      "equity": 2219050.4,
+      "cash": 1343870.6,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-02",
+      "equity": 2233077.9,
+      "cash": 1343870.6,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-03",
+      "equity": 2249296.2,
+      "cash": 1343870.6,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-04",
+      "equity": 2249676.0,
+      "cash": 1806551.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-05",
+      "equity": 2228676.0,
+      "cash": 1806551.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-08",
+      "equity": 2210176.0,
+      "cash": 1806551.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-09",
+      "equity": 2232551.0,
+      "cash": 1806551.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-10",
+      "equity": 2232176.0,
+      "cash": 2232176.0,
+      "position_count": 0
+    },
+    {
+      "date": "2026-06-11",
+      "equity": 2232176.0,
+      "cash": 1339592.8,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-12",
+      "equity": 2209494.1,
+      "cash": 893524.8,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-15",
+      "equity": 2262047.0,
+      "cash": 893524.8,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-16",
+      "equity": 2266341.3,
+      "cash": 893524.8,
+      "position_count": 3
+    },
+    {
+      "date": "2026-06-17",
+      "equity": 2340041.5,
+      "cash": 1387416.0,
+      "position_count": 2
+    },
+    {
+      "date": "2026-06-18",
+      "equity": 2349790.5,
+      "cash": 1849415.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-22",
+      "equity": 2365255.3,
+      "cash": 1849415.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-23",
+      "equity": 2363768.3,
+      "cash": 1849415.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-24",
+      "equity": 2393508.3,
+      "cash": 1849415.0,
+      "position_count": 1
+    },
+    {
+      "date": "2026-06-25",
+      "equity": 2411054.9,
+      "cash": 2411054.9,
+      "position_count": 0
+    },
+    {
+      "date": "2026-06-26",
+      "equity": 2411054.9,
+      "cash": 414.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-29",
+      "equity": 2452367.4,
+      "cash": 414.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-06-30",
+      "equity": 2499079.8,
+      "cash": 414.8,
+      "position_count": 5
+    },
+    {
+      "date": "2026-07-01",
+      "equity": 2520679.5,
+      "cash": 151.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-07-02",
+      "equity": 2451533.5,
+      "cash": 151.6,
+      "position_count": 5
+    },
+    {
+      "date": "2026-07-03",
+      "equity": 2457010.8,
+      "cash": 489096.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-07-06",
+      "equity": 2449297.5,
+      "cash": 489096.0,
+      "position_count": 4
+    },
+    {
+      "date": "2026-07-10",
+      "equity": 2433791.5,
+      "cash": 489096.0,
+      "position_count": 4
+    }
+  ],
+  "stock_summaries": [
+    {
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "trade_count": 4,
+      "win_rate": 75.0,
+      "total_profit": 390991.3,
+      "avg_profit_pct": 40.9
+    },
+    {
+      "code": "sh560780",
+      "name": "半导体设备ETF广发",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 115242.5,
+      "avg_profit_pct": 25.82
+    },
+    {
+      "code": "sz159755",
+      "name": "电池ETF广发",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 92816.8,
+      "avg_profit_pct": 11.34
+    },
+    {
+      "code": "sz159813",
+      "name": "半导体ETF鹏华",
+      "trade_count": 4,
+      "win_rate": 75.0,
+      "total_profit": 92061.8,
+      "avg_profit_pct": 5.04
+    },
+    {
+      "code": "sz159748",
+      "name": "创新药ETF富国",
+      "trade_count": 3,
+      "win_rate": 100.0,
+      "total_profit": 83893.5,
+      "avg_profit_pct": 8.08
+    },
+    {
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "trade_count": 5,
+      "win_rate": 80.0,
+      "total_profit": 69020.0,
+      "avg_profit_pct": 6.08
+    },
+    {
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "trade_count": 7,
+      "win_rate": 85.7,
+      "total_profit": 66466.5,
+      "avg_profit_pct": 3.21
+    },
+    {
+      "code": "sh588080",
+      "name": "科创50ETF易方达",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 55721.7,
+      "avg_profit_pct": 7.72
+    },
+    {
+      "code": "sh588010",
+      "name": "科创新材料ETF博时",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 53128.4,
+      "avg_profit_pct": 5.83
+    },
+    {
+      "code": "sh562590",
+      "name": "半导体设备ETF华夏",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 50630.4,
+      "avg_profit_pct": 5.75
+    },
+    {
+      "code": "sh518600",
+      "name": "金ETF广发",
+      "trade_count": 4,
+      "win_rate": 100.0,
+      "total_profit": 49617.9,
+      "avg_profit_pct": 5.1
+    },
+    {
+      "code": "sh588050",
+      "name": "科创50ETF工银",
+      "trade_count": 3,
+      "win_rate": 100.0,
+      "total_profit": 35806.1,
+      "avg_profit_pct": 3.89
+    },
+    {
+      "code": "sh510330",
+      "name": "沪深300ETF华夏",
+      "trade_count": 3,
+      "win_rate": 66.7,
+      "total_profit": 35234.1,
+      "avg_profit_pct": 4.25
+    },
+    {
+      "code": "sz159361",
+      "name": "A500ETF易方达",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 34300.8,
+      "avg_profit_pct": 8.04
+    },
+    {
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "trade_count": 4,
+      "win_rate": 75.0,
+      "total_profit": 32796.7,
+      "avg_profit_pct": 2.83
+    },
+    {
+      "code": "sh515050",
+      "name": "通信ETF华夏",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 31213.2,
+      "avg_profit_pct": 8.39
+    },
+    {
+      "code": "sz159992",
+      "name": "创新药ETF银华",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 30696.2,
+      "avg_profit_pct": 7.74
+    },
+    {
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "trade_count": 5,
+      "win_rate": 80.0,
+      "total_profit": 28557.9,
+      "avg_profit_pct": 1.83
+    },
+    {
+      "code": "sz159781",
+      "name": "科创创业ETF易方达",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 27236.2,
+      "avg_profit_pct": 7.88
+    },
+    {
+      "code": "sz159326",
+      "name": "电网设备ETF华夏",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 24102.4,
+      "avg_profit_pct": 6.19
+    },
+    {
+      "code": "sz159583",
+      "name": "通信ETF富国",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 23026.5,
+      "avg_profit_pct": 6.65
+    },
+    {
+      "code": "sz159937",
+      "name": "黄金ETF博时",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 20542.5,
+      "avg_profit_pct": 2.65
+    },
+    {
+      "code": "sh512480",
+      "name": "半导体ETF国联安",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 19709.8,
+      "avg_profit_pct": 9.2
+    },
+    {
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "trade_count": 3,
+      "win_rate": 66.7,
+      "total_profit": 18642.4,
+      "avg_profit_pct": 2.18
+    },
+    {
+      "code": "sh512050",
+      "name": "A500ETF华夏",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 16937.2,
+      "avg_profit_pct": 3.97
+    },
+    {
+      "code": "sz159934",
+      "name": "黄金ETF易方达",
+      "trade_count": 4,
+      "win_rate": 100.0,
+      "total_profit": 15459.9,
+      "avg_profit_pct": 1.5
+    },
+    {
+      "code": "sz159915",
+      "name": "创业板ETF易方达",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 12292.5,
+      "avg_profit_pct": 3.55
+    },
+    {
+      "code": "sz159338",
+      "name": "中证A500ETF国泰",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 12070.6,
+      "avg_profit_pct": 1.75
+    },
+    {
+      "code": "sh512880",
+      "name": "证券ETF国泰",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 11114.4,
+      "avg_profit_pct": 5.2
+    },
+    {
+      "code": "sh512070",
+      "name": "证券保险ETF易方达",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 10605.4,
+      "avg_profit_pct": 4.59
+    },
+    {
+      "code": "sz159985",
+      "name": "豆粕ETF华夏",
+      "trade_count": 3,
+      "win_rate": 66.7,
+      "total_profit": 9536.6,
+      "avg_profit_pct": 1.67
+    },
+    {
+      "code": "sz159869",
+      "name": "游戏ETF华夏",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 9256.0,
+      "avg_profit_pct": 4.63
+    },
+    {
+      "code": "sz159611",
+      "name": "电力ETF广发",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 9185.9,
+      "avg_profit_pct": 2.19
+    },
+    {
+      "code": "sz159352",
+      "name": "A500ETF南方",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 8294.9,
+      "avg_profit_pct": 0.88
+    },
+    {
+      "code": "sz159687",
+      "name": "亚太精选ETF南方",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 8025.0,
+      "avg_profit_pct": 1.72
+    },
+    {
+      "code": "sh512000",
+      "name": "券商ETF华宝",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 6158.4,
+      "avg_profit_pct": 2.87
+    },
+    {
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "trade_count": 4,
+      "win_rate": 75.0,
+      "total_profit": 6135.9,
+      "avg_profit_pct": 0.8
+    },
+    {
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "trade_count": 4,
+      "win_rate": 50.0,
+      "total_profit": 5048.2,
+      "avg_profit_pct": 0.76
+    },
+    {
+      "code": "sz159530",
+      "name": "机器人ETF易方达",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 4424.4,
+      "avg_profit_pct": 1.1
+    },
+    {
+      "code": "sh513090",
+      "name": "香港证券ETF易方达",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 3528.4,
+      "avg_profit_pct": 0.85
+    },
+    {
+      "code": "sz159919",
+      "name": "沪深300ETF嘉实",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 1948.2,
+      "avg_profit_pct": 0.06
+    },
+    {
+      "code": "sz159841",
+      "name": "证券ETF天弘",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 807.6,
+      "avg_profit_pct": 0.37
+    },
+    {
+      "code": "sz159870",
+      "name": "化工ETF鹏华",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -642.2,
+      "avg_profit_pct": -0.22
+    },
+    {
+      "code": "sh510300",
+      "name": "沪深300ETF华泰柏瑞",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -1352.4,
+      "avg_profit_pct": -0.3
+    },
+    {
+      "code": "sh588000",
+      "name": "科创50ETF华夏",
+      "trade_count": 3,
+      "win_rate": 33.3,
+      "total_profit": -1502.6,
+      "avg_profit_pct": 0.52
+    },
+    {
+      "code": "sz159801",
+      "name": "芯片ETF广发",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2038.4,
+      "avg_profit_pct": -0.89
+    },
+    {
+      "code": "sz159682",
+      "name": "创业板50ETF景顺",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -3086.5,
+      "avg_profit_pct": -0.64
+    },
+    {
+      "code": "sh512170",
+      "name": "医疗ETF华宝",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -3409.2,
+      "avg_profit_pct": -0.07
+    },
+    {
+      "code": "sh512500",
+      "name": "中证500ETF华夏",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -7505.5,
+      "avg_profit_pct": -3.2
+    },
+    {
+      "code": "sz159922",
+      "name": "中证500ETF嘉实",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -9941.5,
+      "avg_profit_pct": -4.8
+    },
+    {
+      "code": "sh563360",
+      "name": "A500ETF华泰柏瑞",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -11032.3,
+      "avg_profit_pct": -1.24
+    },
+    {
+      "code": "sz159845",
+      "name": "中证1000ETF华夏",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -11211.2,
+      "avg_profit_pct": -2.31
+    },
+    {
+      "code": "sh588290",
+      "name": "科创芯片ETF华安",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -11394.2,
+      "avg_profit_pct": -1.42
+    },
+    {
+      "code": "sh512100",
+      "name": "中证1000ETF南方",
+      "trade_count": 3,
+      "win_rate": 33.3,
+      "total_profit": -12566.6,
+      "avg_profit_pct": -2.23
+    },
+    {
+      "code": "sz159819",
+      "name": "人工智能ETF易方达",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -18746.0,
+      "avg_profit_pct": -8.59
+    },
+    {
+      "code": "sh512010",
+      "name": "医药ETF易方达",
+      "trade_count": 4,
+      "win_rate": 0.0,
+      "total_profit": -20676.3,
+      "avg_profit_pct": -2.0
+    },
+    {
+      "code": "sh510210",
+      "name": "上证指数ETF富国",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -24076.7,
+      "avg_profit_pct": -5.96
+    },
+    {
+      "code": "sh513310",
+      "name": "中韩半导体ETF华泰柏瑞",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -29894.2,
+      "avg_profit_pct": -6.42
+    }
+  ],
+  "trades": [
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "buy_date": "2023-04-12",
+      "buy_price": 4.341,
+      "sell_date": "2023-05-26",
+      "sell_price": 4.31,
+      "shares": 46000,
+      "buy_amount": 199686.0,
+      "sell_amount": 198260.0,
+      "profit": -1426.0,
+      "profit_pct": -0.71,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.45 | 波动放大1.3x | 距20日高-0.4% | 5日1.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈-0.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159934",
+      "name": "黄金ETF易方达",
+      "buy_date": "2023-04-13",
+      "buy_price": 4.3,
+      "sell_date": "2023-05-17",
+      "sell_price": 4.305,
+      "shares": 46500,
+      "buy_amount": 199950.0,
+      "sell_amount": 200182.5,
+      "profit": 232.5,
+      "profit_pct": 0.12,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.40 | 波动放大1.3x | 距20日高-0.3% | 5日0.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.61,盈0.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159985",
+      "name": "豆粕ETF华夏",
+      "buy_date": "2023-04-19",
+      "buy_price": 1.764,
+      "sell_date": "2023-06-19",
+      "sell_price": 1.893,
+      "shares": 113400,
+      "buy_amount": 200037.6,
+      "sell_amount": 214666.2,
+      "profit": 14628.6,
+      "profit_pct": 7.31,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.60 | 波动放大1.3x | 距20日高-5.4% | 5日-1.7%)",
+      "sell_reason": "持仓40天到期(盈7.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512010",
+      "name": "医药ETF易方达",
+      "buy_date": "2023-04-20",
+      "buy_price": 0.471,
+      "sell_date": "2023-05-29",
+      "sell_price": 0.452,
+      "shares": 424900,
+      "buy_amount": 200127.9,
+      "sell_amount": 192054.8,
+      "profit": -8073.1,
+      "profit_pct": -4.03,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.28 | 波动放大1.2x | 距20日高-5.4% | 5日-3.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈-4.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159869",
+      "name": "游戏ETF华夏",
+      "buy_date": "2023-04-20",
+      "buy_price": 1.405,
+      "sell_date": "2023-05-30",
+      "sell_price": 1.47,
+      "shares": 142400,
+      "buy_amount": 200072.0,
+      "sell_amount": 209328.0,
+      "profit": 9256.0,
+      "profit_pct": 4.63,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.37 | 波动放大1.7x | 距20日高-2.6% | 5日1.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈4.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "buy_date": "2023-05-24",
+      "buy_price": 2.577,
+      "sell_date": "2023-07-21",
+      "sell_price": 2.586,
+      "shares": 77700,
+      "buy_amount": 200232.9,
+      "sell_amount": 200932.2,
+      "profit": 699.3,
+      "profit_pct": 0.35,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.67 | 波动放大1.3x | 距20日高-6.4% | 5日-2.7%)",
+      "sell_reason": "持仓40天到期(盈0.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159611",
+      "name": "电力ETF广发",
+      "buy_date": "2023-06-19",
+      "buy_price": 0.919,
+      "sell_date": "2023-06-28",
+      "sell_price": 0.951,
+      "shares": 221500,
+      "buy_amount": 203558.5,
+      "sell_amount": 210646.5,
+      "profit": 7088.0,
+      "profit_pct": 3.48,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.63 | 波动放大1.2x | 距20日高-5.9% | 5日-1.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.69,盈3.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "buy_date": "2023-06-26",
+      "buy_price": 5.972,
+      "sell_date": "2023-08-04",
+      "sell_price": 6.241,
+      "shares": 34000,
+      "buy_amount": 203048.0,
+      "sell_amount": 212194.0,
+      "profit": 9146.0,
+      "profit_pct": 4.5,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.55 | 波动放大1.2x | 距20日高-4.2% | 5日-3.1%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.75,盈4.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "buy_date": "2023-06-26",
+      "buy_price": 1.939,
+      "sell_date": "2023-08-21",
+      "sell_price": 2.425,
+      "shares": 105000,
+      "buy_amount": 203595.0,
+      "sell_amount": 254625.0,
+      "profit": 51030.0,
+      "profit_pct": 25.06,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.59 | 波动放大1.2x | 距20日高-4.0% | 5日-2.4%)",
+      "sell_reason": "持仓40天到期(盈25.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512100",
+      "name": "中证1000ETF南方",
+      "buy_date": "2023-06-28",
+      "buy_price": 2.607,
+      "sell_date": "2023-08-23",
+      "sell_price": 2.405,
+      "shares": 79500,
+      "buy_amount": 207256.5,
+      "sell_amount": 191197.5,
+      "profit": -16059.0,
+      "profit_pct": -7.75,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.29 | 波动放大1.2x | 距20日高-3.3% | 5日-2.8%)",
+      "sell_reason": "持仓40天到期(盈-7.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159922",
+      "name": "中证500ETF嘉实",
+      "buy_date": "2023-06-28",
+      "buy_price": 6.15,
+      "sell_date": "2023-08-23",
+      "sell_price": 5.855,
+      "shares": 33700,
+      "buy_amount": 207255.0,
+      "sell_amount": 197313.5,
+      "profit": -9941.5,
+      "profit_pct": -4.8,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.68 | 波动放大1.2x | 距20日高-3.6% | 5日-2.9%)",
+      "sell_reason": "持仓40天到期(盈-4.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512010",
+      "name": "医药ETF易方达",
+      "buy_date": "2023-08-07",
+      "buy_price": 0.418,
+      "sell_date": "2023-08-18",
+      "sell_price": 0.416,
+      "shares": 494500,
+      "buy_amount": 206701.0,
+      "sell_amount": 205712.0,
+      "profit": -989.0,
+      "profit_pct": -0.48,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.28 | 波动放大1.4x | 距20日高-7.3% | 5日-4.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈-0.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512170",
+      "name": "医疗ETF华宝",
+      "buy_date": "2023-08-07",
+      "buy_price": 0.413,
+      "sell_date": "2023-09-27",
+      "sell_price": 0.419,
+      "shares": 500500,
+      "buy_amount": 206706.5,
+      "sell_amount": 209709.5,
+      "profit": 3003.0,
+      "profit_pct": 1.45,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.3x | 距20日高-5.5% | 5日-4.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈1.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588050",
+      "name": "科创50ETF工银",
+      "buy_date": "2023-08-18",
+      "buy_price": 0.934,
+      "sell_date": "2023-08-29",
+      "sell_price": 0.95,
+      "shares": 220200,
+      "buy_amount": 205666.8,
+      "sell_amount": 209190.0,
+      "profit": 3523.2,
+      "profit_pct": 1.71,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.46 | 波动放大1.3x | 距20日高-7.2% | 5日-3.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈1.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159937",
+      "name": "黄金ETF博时",
+      "buy_date": "2023-09-20",
+      "buy_price": 4.581,
+      "sell_date": "2023-10-24",
+      "sell_price": 4.574,
+      "shares": 46500,
+      "buy_amount": 213016.5,
+      "sell_amount": 212691.0,
+      "profit": -325.5,
+      "profit_pct": -0.15,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.27 | 波动放大1.6x | 距20日高-1.5% | 5日0.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈-0.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159748",
+      "name": "创新药ETF富国",
+      "buy_date": "2023-09-28",
+      "buy_price": 0.653,
+      "sell_date": "2023-10-13",
+      "sell_price": 0.677,
+      "shares": 325000,
+      "buy_amount": 212225.0,
+      "sell_amount": 220025.0,
+      "profit": 7800.0,
+      "profit_pct": 3.68,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.2x | 距20日高-1.1% | 5日4.1%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈3.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159934",
+      "name": "黄金ETF易方达",
+      "buy_date": "2023-09-28",
+      "buy_price": 4.392,
+      "sell_date": "2023-11-20",
+      "sell_price": 4.473,
+      "shares": 48300,
+      "buy_amount": 212133.6,
+      "sell_amount": 216045.9,
+      "profit": 3912.3,
+      "profit_pct": 1.84,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.39 | 波动放大2.0x | 距20日高-4.6% | 5日-3.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.55,盈1.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518600",
+      "name": "金ETF广发",
+      "buy_date": "2023-10-09",
+      "buy_price": 4.364,
+      "sell_date": "2023-12-04",
+      "sell_price": 4.591,
+      "shares": 48600,
+      "buy_amount": 212090.4,
+      "sell_amount": 223122.6,
+      "profit": 11032.2,
+      "profit_pct": 5.2,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.73 | 波动放大1.7x | 距20日高-5.8% | 5日-3.9%)",
+      "sell_reason": "持仓40天到期(盈5.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "buy_date": "2023-10-09",
+      "buy_price": 4.405,
+      "sell_date": "2023-10-27",
+      "sell_price": 4.599,
+      "shares": 48200,
+      "buy_amount": 212321.0,
+      "sell_amount": 221671.8,
+      "profit": 9350.8,
+      "profit_pct": 4.4,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.9x | 距20日高-5.0% | 5日-3.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈4.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2023-10-19",
+      "buy_price": 0.931,
+      "sell_date": "2023-11-10",
+      "sell_price": 0.916,
+      "shares": 236600,
+      "buy_amount": 220274.6,
+      "sell_amount": 216725.6,
+      "profit": -3549.0,
+      "profit_pct": -1.61,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.2x | 距20日高-3.2% | 5日-1.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈-1.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510300",
+      "name": "沪深300ETF华泰柏瑞",
+      "buy_date": "2023-10-25",
+      "buy_price": 3.569,
+      "sell_date": "2023-11-30",
+      "sell_price": 3.562,
+      "shares": 59600,
+      "buy_amount": 212712.4,
+      "sell_amount": 212295.2,
+      "profit": -417.2,
+      "profit_pct": -0.2,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.74 | 波动放大1.2x | 距20日高-6.5% | 5日-2.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈-0.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "buy_date": "2023-10-31",
+      "buy_price": 2.387,
+      "sell_date": "2023-11-09",
+      "sell_price": 2.441,
+      "shares": 92800,
+      "buy_amount": 221513.6,
+      "sell_amount": 226524.8,
+      "profit": 5011.2,
+      "profit_pct": 2.26,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.35 | 波动放大1.6x | 距20日高-2.5% | 5日4.5%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.66,盈2.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512010",
+      "name": "医药ETF易方达",
+      "buy_date": "2023-11-09",
+      "buy_price": 0.441,
+      "sell_date": "2023-11-17",
+      "sell_price": 0.435,
+      "shares": 514100,
+      "buy_amount": 226718.1,
+      "sell_amount": 223633.5,
+      "profit": -3084.6,
+      "profit_pct": -1.36,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.52 | 波动放大1.2x | 距20日高-2.0% | 5日1.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈-1.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159819",
+      "name": "人工智能ETF易方达",
+      "buy_date": "2023-12-18",
+      "buy_price": 0.757,
+      "sell_date": "2024-02-19",
+      "sell_price": 0.692,
+      "shares": 288400,
+      "buy_amount": 218318.8,
+      "sell_amount": 199572.8,
+      "profit": -18746.0,
+      "profit_pct": -8.59,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.38 | 波动放大1.2x | 距20日高-5.1% | 5日-4.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.57,盈-8.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159813",
+      "name": "半导体ETF鹏华",
+      "buy_date": "2024-01-02",
+      "buy_price": 0.588,
+      "sell_date": "2024-01-16",
+      "sell_price": 0.535,
+      "shares": 371300,
+      "buy_amount": 218324.4,
+      "sell_amount": 198645.5,
+      "profit": -19678.9,
+      "profit_pct": -9.01,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.68 | 波动放大1.2x | 距20日高-4.7% | 5日-0.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.57,盈-9.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159841",
+      "name": "证券ETF天弘",
+      "buy_date": "2024-01-02",
+      "buy_price": 0.811,
+      "sell_date": "2024-01-03",
+      "sell_price": 0.814,
+      "shares": 269200,
+      "buy_amount": 218321.2,
+      "sell_amount": 219128.8,
+      "profit": 807.6,
+      "profit_pct": 0.37,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.26 | 波动放大1.3x | 距20日高-5.8% | 5日0.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈0.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "buy_date": "2024-01-17",
+      "buy_price": 1.571,
+      "sell_date": "2024-03-05",
+      "sell_price": 1.737,
+      "shares": 136000,
+      "buy_amount": 213656.0,
+      "sell_amount": 236232.0,
+      "profit": 22576.0,
+      "profit_pct": 10.57,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.29 | 波动放大1.3x | 距20日高-6.3% | 5日-1.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.71,盈10.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510330",
+      "name": "沪深300ETF华夏",
+      "buy_date": "2024-01-17",
+      "buy_price": 3.297,
+      "sell_date": "2024-03-05",
+      "sell_price": 3.634,
+      "shares": 64800,
+      "buy_amount": 213645.6,
+      "sell_amount": 235483.2,
+      "profit": 21837.6,
+      "profit_pct": 10.22,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.3x | 距20日高-6.1% | 5日-1.5%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.67,盈10.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh513090",
+      "name": "香港证券ETF易方达",
+      "buy_date": "2024-01-17",
+      "buy_price": 0.957,
+      "sell_date": "2024-02-28",
+      "sell_price": 0.977,
+      "shares": 223200,
+      "buy_amount": 213602.4,
+      "sell_amount": 218066.4,
+      "profit": 4464.0,
+      "profit_pct": 2.09,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.37 | 波动放大1.2x | 距20日高-7.4% | 5日-3.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.65,盈2.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512880",
+      "name": "证券ETF国泰",
+      "buy_date": "2024-01-19",
+      "buy_price": 0.846,
+      "sell_date": "2024-01-25",
+      "sell_price": 0.89,
+      "shares": 252600,
+      "buy_amount": 213699.6,
+      "sell_amount": 224814.0,
+      "profit": 11114.4,
+      "profit_pct": 5.2,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.40 | 波动放大1.3x | 距20日高-6.6% | 5日-0.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.68,盈5.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "buy_date": "2024-01-29",
+      "buy_price": 2.342,
+      "sell_date": "2024-02-08",
+      "sell_price": 2.385,
+      "shares": 96000,
+      "buy_amount": 224832.0,
+      "sell_amount": 228960.0,
+      "profit": 4128.0,
+      "profit_pct": 1.84,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.27 | 波动放大1.6x | 距20日高-0.9% | 5日3.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.55,盈1.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512000",
+      "name": "券商ETF华宝",
+      "buy_date": "2024-02-19",
+      "buy_price": 0.835,
+      "sell_date": "2024-02-28",
+      "sell_price": 0.859,
+      "shares": 256600,
+      "buy_amount": 214261.0,
+      "sell_amount": 220419.4,
+      "profit": 6158.4,
+      "profit_pct": 2.87,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.58 | 波动放大1.8x | 距20日高-3.2% | 5日4.5%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈2.9%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512480",
+      "name": "半导体ETF国联安",
+      "buy_date": "2024-02-19",
+      "buy_price": 0.674,
+      "sell_date": "2024-02-29",
+      "sell_price": 0.736,
+      "shares": 317900,
+      "buy_amount": 214264.6,
+      "sell_amount": 233974.4,
+      "profit": 19709.8,
+      "profit_pct": 9.2,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.88 | 波动放大2.0x | 距20日高-7.5% | 5日13.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.74,盈9.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159801",
+      "name": "芯片ETF广发",
+      "buy_date": "2024-03-12",
+      "buy_price": 0.449,
+      "sell_date": "2024-03-21",
+      "sell_price": 0.445,
+      "shares": 509600,
+      "buy_amount": 228810.4,
+      "sell_amount": 226772.0,
+      "profit": -2038.4,
+      "profit_pct": -0.89,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.2x | 距20日高-2.0% | 5日0.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈-0.9%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518600",
+      "name": "金ETF广发",
+      "buy_date": "2024-03-19",
+      "buy_price": 4.81,
+      "sell_date": "2024-03-29",
+      "sell_price": 5.068,
+      "shares": 47500,
+      "buy_amount": 228475.0,
+      "sell_amount": 240730.0,
+      "profit": 12255.0,
+      "profit_pct": 5.36,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.38 | 波动放大1.5x | 距20日高-1.2% | 5日-0.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.60,盈5.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512070",
+      "name": "证券保险ETF易方达",
+      "buy_date": "2024-04-18",
+      "buy_price": 0.566,
+      "sell_date": "2024-04-26",
+      "sell_price": 0.592,
+      "shares": 407900,
+      "buy_amount": 230871.4,
+      "sell_amount": 241476.8,
+      "profit": 10605.4,
+      "profit_pct": 4.59,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.32 | 波动放大1.2x | 距20日高-7.1% | 5日2.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.53,盈4.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159934",
+      "name": "黄金ETF易方达",
+      "buy_date": "2024-04-18",
+      "buy_price": 5.37,
+      "sell_date": "2024-05-20",
+      "sell_price": 5.489,
+      "shares": 42900,
+      "buy_amount": 230373.0,
+      "sell_amount": 235478.1,
+      "profit": 5105.1,
+      "profit_pct": 2.22,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.25 | 波动放大2.0x | 距20日高-1.3% | 5日1.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.70,盈2.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159611",
+      "name": "电力ETF广发",
+      "buy_date": "2024-04-19",
+      "buy_price": 0.991,
+      "sell_date": "2024-05-06",
+      "sell_price": 1.0,
+      "shares": 233100,
+      "buy_amount": 231002.1,
+      "sell_amount": 233100.0,
+      "profit": 2097.9,
+      "profit_pct": 0.91,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.33 | 波动放大1.2x | 距20日高-2.9% | 5日-0.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.57,盈0.9%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2024-04-30",
+      "buy_price": 1.04,
+      "sell_date": "2024-05-29",
+      "sell_price": 1.092,
+      "shares": 225500,
+      "buy_amount": 234520.0,
+      "sell_amount": 246246.0,
+      "profit": 11726.0,
+      "profit_pct": 5.0,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.33 | 波动放大1.2x | 距20日高-4.9% | 5日-0.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈5.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159687",
+      "name": "亚太精选ETF南方",
+      "buy_date": "2024-04-30",
+      "buy_price": 1.183,
+      "sell_date": "2024-05-16",
+      "sell_price": 1.233,
+      "shares": 198200,
+      "buy_amount": 234470.6,
+      "sell_amount": 244380.6,
+      "profit": 9910.0,
+      "profit_pct": 4.23,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.33 | 波动放大1.4x | 距20日高-3.0% | 5日2.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.55,盈4.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159682",
+      "name": "创业板50ETF景顺",
+      "buy_date": "2024-05-13",
+      "buy_price": 0.766,
+      "sell_date": "2024-06-04",
+      "sell_price": 0.764,
+      "shares": 305300,
+      "buy_amount": 233859.8,
+      "sell_amount": 233249.2,
+      "profit": -610.6,
+      "profit_pct": -0.26,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.73 | 波动放大1.2x | 距20日高-3.6% | 5日-3.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.59,盈-0.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh513090",
+      "name": "香港证券ETF易方达",
+      "buy_date": "2024-05-23",
+      "buy_price": 1.017,
+      "sell_date": "2024-05-27",
+      "sell_price": 1.013,
+      "shares": 233900,
+      "buy_amount": 237876.3,
+      "sell_amount": 236940.7,
+      "profit": -935.6,
+      "profit_pct": -0.39,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.33 | 波动放大1.3x | 距20日高-7.4% | 5日-2.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈-0.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518600",
+      "name": "金ETF广发",
+      "buy_date": "2024-06-12",
+      "buy_price": 5.199,
+      "sell_date": "2024-07-17",
+      "sell_price": 5.496,
+      "shares": 45800,
+      "buy_amount": 238114.2,
+      "sell_amount": 251716.8,
+      "profit": 13602.6,
+      "profit_pct": 5.71,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.26 | 波动放大1.2x | 距20日高-5.7% | 5日-1.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.53,盈5.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "buy_date": "2024-06-17",
+      "buy_price": 1.207,
+      "sell_date": "2024-07-11",
+      "sell_price": 1.263,
+      "shares": 197600,
+      "buy_amount": 238503.2,
+      "sell_amount": 249568.8,
+      "profit": 11065.6,
+      "profit_pct": 4.64,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.2x | 距20日高-6.2% | 5日-2.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.57,盈4.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "buy_date": "2024-07-01",
+      "buy_price": 2.009,
+      "sell_date": "2024-07-31",
+      "sell_price": 1.999,
+      "shares": 118700,
+      "buy_amount": 238468.3,
+      "sell_amount": 237281.3,
+      "profit": -1187.0,
+      "profit_pct": -0.5,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.85 | 波动放大1.4x | 距20日高-7.3% | 5日0.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.61,盈-0.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159845",
+      "name": "中证1000ETF华夏",
+      "buy_date": "2024-07-01",
+      "buy_price": 2.004,
+      "sell_date": "2024-07-30",
+      "sell_price": 1.914,
+      "shares": 119000,
+      "buy_amount": 238476.0,
+      "sell_amount": 227766.0,
+      "profit": -10710.0,
+      "profit_pct": -4.49,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.3x | 距20日高-7.3% | 5日1.1%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈-4.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "buy_date": "2024-07-02",
+      "buy_price": 5.009,
+      "sell_date": "2024-07-05",
+      "sell_price": 4.93,
+      "shares": 47600,
+      "buy_amount": 238428.4,
+      "sell_amount": 234668.0,
+      "profit": -3760.4,
+      "profit_pct": -1.58,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.40 | 波动放大1.3x | 距20日高-6.9% | 5日0.1%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.58,盈-1.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512500",
+      "name": "中证500ETF华夏",
+      "buy_date": "2024-07-05",
+      "buy_price": 2.659,
+      "sell_date": "2024-08-05",
+      "sell_price": 2.574,
+      "shares": 88300,
+      "buy_amount": 234789.7,
+      "sell_amount": 227284.2,
+      "profit": -7505.5,
+      "profit_pct": -3.2,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.56 | 波动放大1.2x | 距20日高-7.0% | 5日-1.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈-3.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "buy_date": "2024-08-02",
+      "buy_price": 1.686,
+      "sell_date": "2024-10-08",
+      "sell_price": 4.283,
+      "shares": 143300,
+      "buy_amount": 241603.8,
+      "sell_amount": 613753.9,
+      "profit": 372150.1,
+      "profit_pct": 154.03,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.35 | 波动放大1.8x | 距20日高-4.4% | 5日-0.8%)",
+      "sell_reason": "持仓40天到期(盈154.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510330",
+      "name": "沪深300ETF华夏",
+      "buy_date": "2024-08-02",
+      "buy_price": 3.524,
+      "sell_date": "2024-08-16",
+      "sell_price": 3.487,
+      "shares": 68500,
+      "buy_amount": 241394.0,
+      "sell_amount": 238859.5,
+      "profit": -2534.5,
+      "profit_pct": -1.05,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.29 | 波动放大1.7x | 距20日高-4.4% | 5日-0.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈-1.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159682",
+      "name": "创业板50ETF景顺",
+      "buy_date": "2024-08-02",
+      "buy_price": 0.683,
+      "sell_date": "2024-08-07",
+      "sell_price": 0.676,
+      "shares": 353700,
+      "buy_amount": 241577.1,
+      "sell_amount": 239101.2,
+      "profit": -2475.9,
+      "profit_pct": -1.02,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.32 | 波动放大1.4x | 距20日高-6.1% | 5日-2.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈-1.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159919",
+      "name": "沪深300ETF嘉实",
+      "buy_date": "2024-08-02",
+      "buy_price": 3.58,
+      "sell_date": "2024-08-13",
+      "sell_price": 3.526,
+      "shares": 67400,
+      "buy_amount": 241292.0,
+      "sell_amount": 237652.4,
+      "profit": -3639.6,
+      "profit_pct": -1.51,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.37 | 波动放大1.7x | 距20日高-4.5% | 5日-0.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.65,盈-1.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510300",
+      "name": "沪深300ETF华泰柏瑞",
+      "buy_date": "2024-08-05",
+      "buy_price": 3.408,
+      "sell_date": "2024-08-13",
+      "sell_price": 3.394,
+      "shares": 66800,
+      "buy_amount": 227654.4,
+      "sell_amount": 226719.2,
+      "profit": -935.2,
+      "profit_pct": -0.41,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.38 | 波动放大1.8x | 距20日高-5.5% | 5日-1.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.58,盈-0.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh513310",
+      "name": "中韩半导体ETF华泰柏瑞",
+      "buy_date": "2024-08-16",
+      "buy_price": 1.27,
+      "sell_date": "2024-09-11",
+      "sell_price": 1.104,
+      "shares": 185500,
+      "buy_amount": 235585.0,
+      "sell_amount": 204792.0,
+      "profit": -30793.0,
+      "profit_pct": -13.07,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.50 | 波动放大1.3x | 距20日高-7.4% | 5日5.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈-13.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159687",
+      "name": "亚太精选ETF南方",
+      "buy_date": "2024-08-16",
+      "buy_price": 1.25,
+      "sell_date": "2024-09-19",
+      "sell_price": 1.24,
+      "shares": 188500,
+      "buy_amount": 235625.0,
+      "sell_amount": 233740.0,
+      "profit": -1885.0,
+      "profit_pct": -0.8,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.71 | 波动放大1.4x | 距20日高-4.6% | 5日5.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈-0.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2024-09-20",
+      "buy_price": 0.96,
+      "sell_date": "2024-09-24",
+      "sell_price": 1.015,
+      "shares": 236900,
+      "buy_amount": 227424.0,
+      "sell_amount": 240453.5,
+      "profit": 13029.5,
+      "profit_pct": 5.73,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.49 | 波动放大1.2x | 距20日高-7.6% | 5日1.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.82,盈5.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2024-09-23",
+      "buy_price": 2.905,
+      "sell_date": "2024-09-24",
+      "sell_price": 3.039,
+      "shares": 78300,
+      "buy_amount": 227461.5,
+      "sell_amount": 237953.7,
+      "profit": 10492.2,
+      "profit_pct": 4.61,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.44 | 波动放大1.3x | 距20日高-5.4% | 5日1.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.65,盈4.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "buy_date": "2024-11-08",
+      "buy_price": 5.898,
+      "sell_date": "2024-11-25",
+      "sell_price": 5.916,
+      "shares": 52400,
+      "buy_amount": 309055.2,
+      "sell_amount": 309998.4,
+      "profit": 943.2,
+      "profit_pct": 0.31,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.47 | 波动放大1.4x | 距20日高-4.0% | 5日-2.5%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.53,盈0.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518600",
+      "name": "金ETF广发",
+      "buy_date": "2024-11-15",
+      "buy_price": 5.613,
+      "sell_date": "2024-12-04",
+      "sell_price": 5.844,
+      "shares": 55100,
+      "buy_amount": 309276.3,
+      "sell_amount": 322004.4,
+      "profit": 12728.1,
+      "profit_pct": 4.12,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.34 | 波动放大1.4x | 距20日高-7.2% | 5日-3.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.59,盈4.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159985",
+      "name": "豆粕ETF华夏",
+      "buy_date": "2024-11-15",
+      "buy_price": 1.908,
+      "sell_date": "2024-12-16",
+      "sell_price": 1.798,
+      "shares": 162200,
+      "buy_amount": 309477.6,
+      "sell_amount": 291635.6,
+      "profit": -17842.0,
+      "profit_pct": -5.77,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.55 | 波动放大1.2x | 距20日高-4.1% | 5日-1.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.76,盈-5.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2025-01-23",
+      "buy_price": 1.078,
+      "sell_date": "2025-03-05",
+      "sell_price": 1.091,
+      "shares": 286200,
+      "buy_amount": 308523.6,
+      "sell_amount": 312244.2,
+      "profit": 3720.6,
+      "profit_pct": 1.21,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.79 | 波动放大1.2x | 距20日高-5.2% | 5日-0.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.50,盈1.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588000",
+      "name": "科创50ETF华夏",
+      "buy_date": "2025-02-18",
+      "buy_price": 1.066,
+      "sell_date": "2025-02-21",
+      "sell_price": 1.157,
+      "shares": 289500,
+      "buy_amount": 308607.0,
+      "sell_amount": 334951.5,
+      "profit": 26344.5,
+      "profit_pct": 8.54,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.50 | 波动放大1.3x | 距20日高-3.1% | 5日-1.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.92,盈8.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588050",
+      "name": "科创50ETF工银",
+      "buy_date": "2025-02-18",
+      "buy_price": 1.04,
+      "sell_date": "2025-02-21",
+      "sell_price": 1.127,
+      "shares": 296700,
+      "buy_amount": 308568.0,
+      "sell_amount": 334380.9,
+      "profit": 25812.9,
+      "profit_pct": 8.37,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.53 | 波动放大1.3x | 距20日高-3.0% | 5日-1.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.95,盈8.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588080",
+      "name": "科创50ETF易方达",
+      "buy_date": "2025-02-18",
+      "buy_price": 1.035,
+      "sell_date": "2025-02-21",
+      "sell_price": 1.122,
+      "shares": 298200,
+      "buy_amount": 308637.0,
+      "sell_amount": 334580.4,
+      "profit": 25943.4,
+      "profit_pct": 8.41,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.54 | 波动放大1.3x | 距20日高-3.0% | 5日-1.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.91,盈8.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159813",
+      "name": "半导体ETF鹏华",
+      "buy_date": "2025-02-18",
+      "buy_price": 0.815,
+      "sell_date": "2025-02-21",
+      "sell_price": 0.891,
+      "shares": 378600,
+      "buy_amount": 308559.0,
+      "sell_amount": 337332.6,
+      "profit": 28773.6,
+      "profit_pct": 9.33,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.46 | 波动放大1.2x | 距20日高-3.4% | 5日-0.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.84,盈9.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2025-04-07",
+      "buy_price": 2.938,
+      "sell_date": "2025-05-14",
+      "sell_price": 3.133,
+      "shares": 112500,
+      "buy_amount": 330525.0,
+      "sell_amount": 352462.5,
+      "profit": 21937.5,
+      "profit_pct": 6.64,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.81 | 波动放大1.4x | 距20日高-5.8% | 5日-4.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.60,盈6.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2025-04-07",
+      "buy_price": 1.064,
+      "sell_date": "2025-06-06",
+      "sell_price": 1.168,
+      "shares": 310800,
+      "buy_amount": 330691.2,
+      "sell_amount": 363014.4,
+      "profit": 32323.2,
+      "profit_pct": 9.77,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.45 | 波动放大1.4x | 距20日高-5.5% | 5日-4.3%)",
+      "sell_reason": "持仓40天到期(盈9.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "buy_date": "2025-04-08",
+      "buy_price": 2.628,
+      "sell_date": "2025-04-30",
+      "sell_price": 2.693,
+      "shares": 125800,
+      "buy_amount": 330602.4,
+      "sell_amount": 338779.4,
+      "profit": 8177.0,
+      "profit_pct": 2.47,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.92 | 波动放大1.5x | 距20日高-6.8% | 5日-3.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.64,盈2.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159338",
+      "name": "中证A500ETF国泰",
+      "buy_date": "2025-04-15",
+      "buy_price": 0.913,
+      "sell_date": "2025-05-07",
+      "sell_price": 0.937,
+      "shares": 362400,
+      "buy_amount": 330871.2,
+      "sell_amount": 339568.8,
+      "profit": 8697.6,
+      "profit_pct": 2.63,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.8x | 距20日高-7.8% | 5日3.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.68,盈2.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588000",
+      "name": "科创50ETF华夏",
+      "buy_date": "2025-04-16",
+      "buy_price": 1.061,
+      "sell_date": "2025-04-24",
+      "sell_price": 1.052,
+      "shares": 311900,
+      "buy_amount": 330925.9,
+      "sell_amount": 328118.8,
+      "profit": -2807.1,
+      "profit_pct": -0.85,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.57 | 波动放大1.4x | 距20日高-7.4% | 5日3.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.53,盈-0.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159934",
+      "name": "黄金ETF易方达",
+      "buy_date": "2025-05-22",
+      "buy_price": 7.375,
+      "sell_date": "2025-06-13",
+      "sell_price": 7.51,
+      "shares": 46000,
+      "buy_amount": 339250.0,
+      "sell_amount": 345460.0,
+      "profit": 6210.0,
+      "profit_pct": 1.83,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.43 | 波动放大1.2x | 距20日高-7.4% | 5日5.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.81,盈1.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "buy_date": "2025-05-23",
+      "buy_price": 7.454,
+      "sell_date": "2025-06-03",
+      "sell_price": 7.478,
+      "shares": 45600,
+      "buy_amount": 339902.4,
+      "sell_amount": 340996.8,
+      "profit": 1094.4,
+      "profit_pct": 0.32,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.35 | 波动放大1.2x | 距20日高-3.9% | 5日3.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.55,盈0.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588010",
+      "name": "科创新材料ETF博时",
+      "buy_date": "2025-07-04",
+      "buy_price": 0.626,
+      "sell_date": "2025-07-18",
+      "sell_price": 0.64,
+      "shares": 552400,
+      "buy_amount": 345802.4,
+      "sell_amount": 353536.0,
+      "profit": 7733.6,
+      "profit_pct": 2.24,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.28 | 波动放大1.2x | 距20日高-2.0% | 5日0.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.75,盈2.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159781",
+      "name": "科创创业ETF易方达",
+      "buy_date": "2025-07-07",
+      "buy_price": 0.546,
+      "sell_date": "2025-07-18",
+      "sell_price": 0.589,
+      "shares": 633400,
+      "buy_amount": 345836.4,
+      "sell_amount": 373072.6,
+      "profit": 27236.2,
+      "profit_pct": 7.88,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.26 | 波动放大1.3x | 距20日高-2.5% | 5日-2.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈7.9%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159915",
+      "name": "创业板ETF易方达",
+      "buy_date": "2025-07-07",
+      "buy_price": 2.11,
+      "sell_date": "2025-07-11",
+      "sell_price": 2.185,
+      "shares": 163900,
+      "buy_amount": 345829.0,
+      "sell_amount": 358121.5,
+      "profit": 12292.5,
+      "profit_pct": 3.55,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.3x | 距20日高-2.6% | 5日-1.1%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.61,盈3.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159919",
+      "name": "沪深300ETF嘉实",
+      "buy_date": "2025-07-07",
+      "buy_price": 4.143,
+      "sell_date": "2025-07-14",
+      "sell_price": 4.21,
+      "shares": 83400,
+      "buy_amount": 345526.2,
+      "sell_amount": 351114.0,
+      "profit": 5587.8,
+      "profit_pct": 1.62,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.46 | 波动放大1.3x | 距20日高-1.2% | 5日0.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.66,盈1.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159583",
+      "name": "通信ETF富国",
+      "buy_date": "2025-07-09",
+      "buy_price": 1.278,
+      "sell_date": "2025-07-15",
+      "sell_price": 1.363,
+      "shares": 270900,
+      "buy_amount": 346210.2,
+      "sell_amount": 369236.7,
+      "profit": 23026.5,
+      "profit_pct": 6.65,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.27 | 波动放大1.4x | 距20日高-1.2% | 5日2.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈6.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159748",
+      "name": "创新药ETF富国",
+      "buy_date": "2025-07-14",
+      "buy_price": 0.723,
+      "sell_date": "2025-07-24",
+      "sell_price": 0.786,
+      "shares": 490500,
+      "buy_amount": 354631.5,
+      "sell_amount": 385533.0,
+      "profit": 30901.5,
+      "profit_pct": 8.71,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.27 | 波动放大1.4x | 距20日高-1.2% | 5日4.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.70,盈8.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159985",
+      "name": "豆粕ETF华夏",
+      "buy_date": "2025-07-30",
+      "buy_price": 1.958,
+      "sell_date": "2025-08-13",
+      "sell_price": 2.026,
+      "shares": 187500,
+      "buy_amount": 367125.0,
+      "sell_amount": 379875.0,
+      "profit": 12750.0,
+      "profit_pct": 3.47,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.28 | 波动放大1.6x | 距20日高-2.8% | 5日-2.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.55,盈3.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "buy_date": "2025-07-31",
+      "buy_price": 4.063,
+      "sell_date": "2025-08-04",
+      "sell_price": 4.017,
+      "shares": 90300,
+      "buy_amount": 366888.9,
+      "sell_amount": 362735.1,
+      "profit": -4153.8,
+      "profit_pct": -1.13,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.3x | 距20日高-2.6% | 5日-1.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.83,盈-1.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "buy_date": "2025-08-01",
+      "buy_price": 6.287,
+      "sell_date": "2025-08-14",
+      "sell_price": 6.514,
+      "shares": 58400,
+      "buy_amount": 367160.8,
+      "sell_amount": 380417.6,
+      "profit": 13256.8,
+      "profit_pct": 3.61,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.26 | 波动放大1.2x | 距20日高-2.4% | 5日-1.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.61,盈3.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh562590",
+      "name": "半导体设备ETF华夏",
+      "buy_date": "2025-08-01",
+      "buy_price": 1.13,
+      "sell_date": "2025-08-11",
+      "sell_price": 1.139,
+      "shares": 325000,
+      "buy_amount": 367250.0,
+      "sell_amount": 370175.0,
+      "profit": 2925.0,
+      "profit_pct": 0.8,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.2x | 距20日高-4.5% | 5日-2.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈0.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh515050",
+      "name": "通信ETF华夏",
+      "buy_date": "2025-08-26",
+      "buy_price": 1.764,
+      "sell_date": "2025-08-28",
+      "sell_price": 1.912,
+      "shares": 210900,
+      "buy_amount": 372027.6,
+      "sell_amount": 403240.8,
+      "profit": 31213.2,
+      "profit_pct": 8.39,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.37 | 波动放大1.6x | 距20日高-0.8% | 5日10.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.62,盈8.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh563360",
+      "name": "A500ETF华泰柏瑞",
+      "buy_date": "2025-08-26",
+      "buy_price": 1.18,
+      "sell_date": "2025-09-11",
+      "sell_price": 1.218,
+      "shares": 315400,
+      "buy_amount": 372172.0,
+      "sell_amount": 384157.2,
+      "profit": 11985.2,
+      "profit_pct": 3.22,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.29 | 波动放大1.8x | 距20日高-0.7% | 5日5.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.71,盈3.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512100",
+      "name": "中证1000ETF南方",
+      "buy_date": "2025-08-27",
+      "buy_price": 2.968,
+      "sell_date": "2025-09-25",
+      "sell_price": 3.036,
+      "shares": 125400,
+      "buy_amount": 372187.2,
+      "sell_amount": 380714.4,
+      "profit": 8527.2,
+      "profit_pct": 2.29,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.34 | 波动放大1.5x | 距20日高-2.9% | 5日0.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.67,盈2.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159338",
+      "name": "中证A500ETF国泰",
+      "buy_date": "2025-08-29",
+      "buy_price": 1.134,
+      "sell_date": "2025-09-18",
+      "sell_price": 1.144,
+      "shares": 337300,
+      "buy_amount": 382498.2,
+      "sell_amount": 385871.2,
+      "profit": 3373.0,
+      "profit_pct": 0.88,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.35 | 波动放大2.0x | 距20日高-0.4% | 5日3.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.58,盈0.9%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "buy_date": "2025-08-29",
+      "buy_price": 3.085,
+      "sell_date": "2025-09-18",
+      "sell_price": 3.12,
+      "shares": 124000,
+      "buy_amount": 382540.0,
+      "sell_amount": 386880.0,
+      "profit": 4340.0,
+      "profit_pct": 1.13,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.35 | 波动放大1.4x | 距20日高-1.8% | 5日0.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈1.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159845",
+      "name": "中证1000ETF华夏",
+      "buy_date": "2025-08-29",
+      "buy_price": 3.052,
+      "sell_date": "2025-09-23",
+      "sell_price": 3.048,
+      "shares": 125300,
+      "buy_amount": 382415.6,
+      "sell_amount": 381914.4,
+      "profit": -501.2,
+      "profit_pct": -0.13,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.52 | 波动放大1.3x | 距20日高-1.9% | 5日0.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈-0.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh518880",
+      "name": "黄金ETF华安",
+      "buy_date": "2025-09-12",
+      "buy_price": 7.954,
+      "sell_date": "2025-09-30",
+      "sell_price": 8.339,
+      "shares": 48300,
+      "buy_amount": 384178.2,
+      "sell_amount": 402773.7,
+      "profit": 18595.5,
+      "profit_pct": 4.84,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.52 | 波动放大1.5x | 距20日高-0.4% | 5日2.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.58,盈4.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159755",
+      "name": "电池ETF广发",
+      "buy_date": "2025-09-18",
+      "buy_price": 0.982,
+      "sell_date": "2025-10-09",
+      "sell_price": 1.136,
+      "shares": 393500,
+      "buy_amount": 386417.0,
+      "sell_amount": 447016.0,
+      "profit": 60599.0,
+      "profit_pct": 15.68,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.7x | 距20日高-2.1% | 5日3.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈15.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159937",
+      "name": "黄金ETF博时",
+      "buy_date": "2025-09-26",
+      "buy_price": 8.141,
+      "sell_date": "2025-10-10",
+      "sell_price": 8.585,
+      "shares": 47000,
+      "buy_amount": 382627.0,
+      "sell_amount": 403495.0,
+      "profit": 20868.0,
+      "profit_pct": 5.45,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.34 | 波动放大1.5x | 距20日高-0.6% | 5日3.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.59,盈5.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512170",
+      "name": "医疗ETF华宝",
+      "buy_date": "2025-10-13",
+      "buy_price": 0.378,
+      "sell_date": "2025-10-24",
+      "sell_price": 0.372,
+      "shares": 1068700,
+      "buy_amount": 403968.6,
+      "sell_amount": 397556.4,
+      "profit": -6412.2,
+      "profit_pct": -1.59,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.48 | 波动放大1.2x | 距20日高-6.2% | 5日-1.0%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.57,盈-1.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159633",
+      "name": "中证1000ETF易方达",
+      "buy_date": "2025-10-17",
+      "buy_price": 3.001,
+      "sell_date": "2025-12-11",
+      "sell_price": 3.074,
+      "shares": 134600,
+      "buy_amount": 403934.6,
+      "sell_amount": 413760.4,
+      "profit": 9825.8,
+      "profit_pct": 2.43,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.52 | 波动放大1.2x | 距20日高-6.0% | 5日-4.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈2.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2025-10-23",
+      "buy_price": 3.278,
+      "sell_date": "2025-11-03",
+      "sell_price": 3.283,
+      "shares": 123200,
+      "buy_amount": 403849.6,
+      "sell_amount": 404465.6,
+      "profit": 616.0,
+      "profit_pct": 0.15,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.3x | 距20日高-0.2% | 5日1.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.59,盈0.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2025-10-23",
+      "buy_price": 1.206,
+      "sell_date": "2025-12-01",
+      "sell_price": 1.211,
+      "shares": 334900,
+      "buy_amount": 403889.4,
+      "sell_amount": 405563.9,
+      "profit": 1674.5,
+      "profit_pct": 0.41,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.32 | 波动放大1.2x | 距20日高-0.1% | 5日1.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.68,盈0.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh513310",
+      "name": "中韩半导体ETF华泰柏瑞",
+      "buy_date": "2025-11-04",
+      "buy_price": 2.684,
+      "sell_date": "2025-11-12",
+      "sell_price": 2.69,
+      "shares": 149800,
+      "buy_amount": 402063.2,
+      "sell_amount": 402962.0,
+      "profit": 898.8,
+      "profit_pct": 0.22,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.28 | 波动放大1.3x | 距20日高-5.4% | 5日2.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.50,盈0.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159870",
+      "name": "化工ETF鹏华",
+      "buy_date": "2025-11-20",
+      "buy_price": 0.761,
+      "sell_date": "2025-11-28",
+      "sell_price": 0.747,
+      "shares": 528700,
+      "buy_amount": 402340.7,
+      "sell_amount": 394938.9,
+      "profit": -7401.8,
+      "profit_pct": -1.84,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.3x | 距20日高-4.6% | 5日-4.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.56,盈-1.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510880",
+      "name": "红利ETF华泰柏瑞",
+      "buy_date": "2025-11-27",
+      "buy_price": 3.23,
+      "sell_date": "2025-12-04",
+      "sell_price": 3.228,
+      "shares": 124500,
+      "buy_amount": 402135.0,
+      "sell_amount": 401886.0,
+      "profit": -249.0,
+      "profit_pct": -0.06,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.26 | 波动放大1.2x | 距20日高-4.5% | 5日-2.1%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.75,盈-0.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159530",
+      "name": "机器人ETF易方达",
+      "buy_date": "2026-01-14",
+      "buy_price": 1.642,
+      "sell_date": "2026-01-20",
+      "sell_price": 1.66,
+      "shares": 245800,
+      "buy_amount": 403603.6,
+      "sell_amount": 408028.0,
+      "profit": 4424.4,
+      "profit_pct": 1.1,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.42 | 波动放大1.3x | 距20日高-3.8% | 5日2.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈1.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510210",
+      "name": "上证指数ETF富国",
+      "buy_date": "2026-01-16",
+      "buy_price": 1.023,
+      "sell_date": "2026-03-23",
+      "sell_price": 0.962,
+      "shares": 394700,
+      "buy_amount": 403778.1,
+      "sell_amount": 379701.4,
+      "profit": -24076.7,
+      "profit_pct": -5.96,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.3x | 距20日高-1.8% | 5日-0.5%)",
+      "sell_reason": "持仓40天到期(盈-6.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588050",
+      "name": "科创50ETF工银",
+      "buy_date": "2026-01-16",
+      "buy_price": 1.56,
+      "sell_date": "2026-01-22",
+      "sell_price": 1.585,
+      "shares": 258800,
+      "buy_amount": 403728.0,
+      "sell_amount": 410198.0,
+      "profit": 6470.0,
+      "profit_pct": 1.6,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.4x | 距20日高-1.0% | 5日2.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.67,盈1.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588290",
+      "name": "科创芯片ETF华安",
+      "buy_date": "2026-01-16",
+      "buy_price": 2.66,
+      "sell_date": "2026-02-11",
+      "sell_price": 2.566,
+      "shares": 151800,
+      "buy_amount": 403788.0,
+      "sell_amount": 389518.8,
+      "profit": -14269.2,
+      "profit_pct": -3.53,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.42 | 波动放大1.4x | 距20日高-0.9% | 5日4.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.62,盈-3.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159813",
+      "name": "半导体ETF鹏华",
+      "buy_date": "2026-01-16",
+      "buy_price": 1.271,
+      "sell_date": "2026-01-28",
+      "sell_price": 1.326,
+      "shares": 317700,
+      "buy_amount": 403796.7,
+      "sell_amount": 421270.2,
+      "profit": 17473.5,
+      "profit_pct": 4.33,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.38 | 波动放大1.4x | 距20日高-0.8% | 5日4.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.65,盈4.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512100",
+      "name": "中证1000ETF南方",
+      "buy_date": "2026-01-22",
+      "buy_price": 3.33,
+      "sell_date": "2026-02-04",
+      "sell_price": 3.289,
+      "shares": 122800,
+      "buy_amount": 408924.0,
+      "sell_amount": 403889.2,
+      "profit": -5034.8,
+      "profit_pct": -1.23,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.33 | 波动放大1.3x | 距20日高-2.6% | 5日-0.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.76,盈-1.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588000",
+      "name": "科创50ETF华夏",
+      "buy_date": "2026-01-23",
+      "buy_price": 1.635,
+      "sell_date": "2026-02-09",
+      "sell_price": 1.535,
+      "shares": 250400,
+      "buy_amount": 409404.0,
+      "sell_amount": 384364.0,
+      "profit": -25040.0,
+      "profit_pct": -6.12,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.38 | 波动放大1.2x | 距20日高-1.4% | 5日2.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.68,盈-6.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "buy_date": "2026-01-29",
+      "buy_price": 0.778,
+      "sell_date": "2026-02-05",
+      "sell_price": 0.792,
+      "shares": 541400,
+      "buy_amount": 421209.2,
+      "sell_amount": 428788.8,
+      "profit": 7579.6,
+      "profit_pct": 1.8,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.32 | 波动放大1.4x | 距20日高-6.0% | 5日0.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.58,盈1.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh563360",
+      "name": "A500ETF华泰柏瑞",
+      "buy_date": "2026-02-04",
+      "buy_price": 1.316,
+      "sell_date": "2026-03-26",
+      "sell_price": 1.241,
+      "shares": 306900,
+      "buy_amount": 403880.4,
+      "sell_amount": 380862.9,
+      "profit": -23017.5,
+      "profit_pct": -5.7,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.37 | 波动放大1.2x | 距20日高-1.8% | 5日-1.1%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.63,盈-5.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159352",
+      "name": "A500ETF南方",
+      "buy_date": "2026-02-05",
+      "buy_price": 1.281,
+      "sell_date": "2026-03-27",
+      "sell_price": 1.234,
+      "shares": 334700,
+      "buy_amount": 428750.7,
+      "sell_amount": 413019.8,
+      "profit": -15730.9,
+      "profit_pct": -3.67,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.59 | 波动放大1.3x | 距20日高-3.0% | 5日-2.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈-3.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "buy_date": "2026-02-10",
+      "buy_price": 0.794,
+      "sell_date": "2026-03-06",
+      "sell_price": 0.784,
+      "shares": 484200,
+      "buy_amount": 384454.8,
+      "sell_amount": 379612.8,
+      "profit": -4842.0,
+      "profit_pct": -1.26,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.33 | 波动放大1.2x | 距20日高-2.6% | 5日3.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.65,盈-1.3%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159326",
+      "name": "电网设备ETF华夏",
+      "buy_date": "2026-02-11",
+      "buy_price": 1.81,
+      "sell_date": "2026-02-25",
+      "sell_price": 1.922,
+      "shares": 215200,
+      "buy_amount": 389512.0,
+      "sell_amount": 413614.4,
+      "profit": 24102.4,
+      "profit_pct": 6.19,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.2x | 距20日高-1.7% | 5日-0.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.73,盈6.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512010",
+      "name": "医药ETF易方达",
+      "buy_date": "2026-03-06",
+      "buy_price": 0.372,
+      "sell_date": "2026-04-27",
+      "sell_price": 0.364,
+      "shares": 1066200,
+      "buy_amount": 396626.4,
+      "sell_amount": 388096.8,
+      "profit": -8529.6,
+      "profit_pct": -2.15,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.46 | 波动放大1.2x | 距20日高-5.1% | 5日-1.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈-2.2%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159992",
+      "name": "创新药ETF银华",
+      "buy_date": "2026-03-06",
+      "buy_price": 0.801,
+      "sell_date": "2026-04-01",
+      "sell_price": 0.863,
+      "shares": 495100,
+      "buy_amount": 396575.1,
+      "sell_amount": 427271.3,
+      "profit": 30696.2,
+      "profit_pct": 7.74,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.57 | 波动放大1.5x | 距20日高-6.9% | 5日-2.6%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.66,盈7.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512890",
+      "name": "红利低波ETF华泰柏瑞",
+      "buy_date": "2026-03-23",
+      "buy_price": 1.158,
+      "sell_date": "2026-04-14",
+      "sell_price": 1.181,
+      "shares": 327900,
+      "buy_amount": 379708.2,
+      "sell_amount": 387249.9,
+      "profit": 7541.7,
+      "profit_pct": 1.99,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.26 | 波动放大1.3x | 距20日高-4.6% | 5日-3.9%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.55,盈2.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159748",
+      "name": "创新药ETF富国",
+      "buy_date": "2026-03-26",
+      "buy_price": 0.708,
+      "sell_date": "2026-04-01",
+      "sell_price": 0.792,
+      "shares": 538000,
+      "buy_amount": 380904.0,
+      "sell_amount": 426096.0,
+      "profit": 45192.0,
+      "profit_pct": 11.86,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.50 | 波动放大1.4x | 距20日高-7.2% | 5日-2.3%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.82,盈11.9%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512800",
+      "name": "银行ETF华宝",
+      "buy_date": "2026-03-31",
+      "buy_price": 0.802,
+      "sell_date": "2026-06-01",
+      "sell_price": 0.785,
+      "shares": 515000,
+      "buy_amount": 413030.0,
+      "sell_amount": 404275.0,
+      "profit": -8755.0,
+      "profit_pct": -2.12,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.26 | 波动放大1.3x | 距20日高-0.6% | 5日1.9%)",
+      "sell_reason": "持仓40天到期(盈-2.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159361",
+      "name": "A500ETF易方达",
+      "buy_date": "2026-04-02",
+      "buy_price": 1.194,
+      "sell_date": "2026-04-23",
+      "sell_price": 1.29,
+      "shares": 357300,
+      "buy_amount": 426616.2,
+      "sell_amount": 460917.0,
+      "profit": 34300.8,
+      "profit_pct": 8.04,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.27 | 波动放大1.6x | 距20日高-6.6% | 5日-0.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.74,盈8.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512050",
+      "name": "A500ETF华夏",
+      "buy_date": "2026-04-03",
+      "buy_price": 1.159,
+      "sell_date": "2026-04-08",
+      "sell_price": 1.205,
+      "shares": 368200,
+      "buy_amount": 426743.8,
+      "sell_amount": 443681.0,
+      "profit": 16937.2,
+      "profit_pct": 3.97,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.36 | 波动放大1.5x | 距20日高-7.1% | 5日-1.5%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.58,盈4.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159352",
+      "name": "A500ETF南方",
+      "buy_date": "2026-04-13",
+      "buy_price": 1.274,
+      "sell_date": "2026-05-22",
+      "sell_price": 1.343,
+      "shares": 348200,
+      "buy_amount": 443606.8,
+      "sell_amount": 467632.6,
+      "profit": 24025.8,
+      "profit_pct": 5.42,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.3x | 距20日高-1.6% | 5日5.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.61,盈5.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510310",
+      "name": "沪深300ETF易方达",
+      "buy_date": "2026-04-21",
+      "buy_price": 4.622,
+      "sell_date": "2026-04-24",
+      "sell_price": 4.627,
+      "shares": 83800,
+      "buy_amount": 387323.6,
+      "sell_amount": 387742.6,
+      "profit": 419.0,
+      "profit_pct": 0.11,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.2x | 距20日高-0.2% | 5日1.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.74,盈0.1%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159755",
+      "name": "电池ETF广发",
+      "buy_date": "2026-04-23",
+      "buy_price": 1.173,
+      "sell_date": "2026-05-07",
+      "sell_price": 1.255,
+      "shares": 392900,
+      "buy_amount": 460871.7,
+      "sell_amount": 493089.5,
+      "profit": 32217.8,
+      "profit_pct": 6.99,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.40 | 波动放大1.3x | 距20日高-3.4% | 5日-1.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.85,盈7.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588080",
+      "name": "科创50ETF易方达",
+      "buy_date": "2026-05-18",
+      "buy_price": 1.747,
+      "sell_date": "2026-05-20",
+      "sell_price": 1.87,
+      "shares": 242100,
+      "buy_amount": 422948.7,
+      "sell_amount": 452727.0,
+      "profit": 29778.3,
+      "profit_pct": 7.04,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.31 | 波动放大1.5x | 距20日高-5.1% | 5日-0.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.54,盈7.0%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588290",
+      "name": "科创芯片ETF华安",
+      "buy_date": "2026-05-18",
+      "buy_price": 3.382,
+      "sell_date": "2026-06-10",
+      "sell_price": 3.405,
+      "shares": 125000,
+      "buy_amount": 422750.0,
+      "sell_amount": 425625.0,
+      "profit": 2875.0,
+      "profit_pct": 0.68,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.27 | 波动放大1.5x | 距20日高-4.9% | 5日0.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.64,盈0.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159813",
+      "name": "半导体ETF鹏华",
+      "buy_date": "2026-05-18",
+      "buy_price": 1.498,
+      "sell_date": "2026-05-26",
+      "sell_price": 1.73,
+      "shares": 282300,
+      "buy_amount": 422885.4,
+      "sell_amount": 488379.0,
+      "profit": 65493.6,
+      "profit_pct": 15.49,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.27 | 波动放大1.5x | 距20日高-3.6% | 5日1.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.51,盈15.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "buy_date": "2026-05-27",
+      "buy_price": 3.008,
+      "sell_date": "2026-06-04",
+      "sell_price": 2.964,
+      "shares": 156100,
+      "buy_amount": 469548.8,
+      "sell_amount": 462680.4,
+      "profit": -6868.4,
+      "profit_pct": -1.46,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.35 | 波动放大1.2x | 距20日高-4.0% | 5日-0.7%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.52,盈-1.5%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh560780",
+      "name": "半导体设备ETF广发",
+      "buy_date": "2026-06-11",
+      "buy_price": 3.002,
+      "sell_date": "2026-06-25",
+      "sell_price": 3.777,
+      "shares": 148700,
+      "buy_amount": 446397.4,
+      "sell_amount": 561639.9,
+      "profit": 115242.5,
+      "profit_pct": 25.82,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.5x | 距20日高-3.2% | 5日9.5%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.57,盈25.8%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh562590",
+      "name": "半导体设备ETF华夏",
+      "buy_date": "2026-06-11",
+      "buy_price": 2.862,
+      "sell_date": "2026-06-17",
+      "sell_price": 3.168,
+      "shares": 155900,
+      "buy_amount": 446185.8,
+      "sell_amount": 493891.2,
+      "profit": 47705.4,
+      "profit_pct": 10.69,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.5x | 距20日高-3.3% | 5日9.2%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.62,盈10.7%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510330",
+      "name": "沪深300ETF华夏",
+      "buy_date": "2026-06-12",
+      "buy_price": 5.012,
+      "sell_date": "2026-06-18",
+      "sell_price": 5.191,
+      "shares": 89000,
+      "buy_amount": 446068.0,
+      "sell_amount": 461999.0,
+      "profit": 15931.0,
+      "profit_pct": 3.57,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.3x | 距20日高-4.0% | 5日-0.5%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.78,盈3.6%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "buy_date": "2026-06-26",
+      "buy_price": 8.861,
+      "sell_date": "2026-07-10",
+      "sell_price": 8.698,
+      "shares": 54400,
+      "buy_amount": 482038.4,
+      "sell_amount": 473171.2,
+      "profit": -8867.2,
+      "profit_pct": -1.84,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.34 | 波动放大1.4x | 距20日高-2.5% | 5日0.4%)",
+      "sell_reason": "期末持仓"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh512500",
+      "name": "中证500ETF华夏",
+      "buy_date": "2026-06-26",
+      "buy_price": 4.915,
+      "sell_date": "2026-07-10",
+      "sell_price": 4.82,
+      "shares": 98100,
+      "buy_amount": 482161.5,
+      "sell_amount": 472842.0,
+      "profit": -9319.5,
+      "profit_pct": -1.93,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.50 | 波动放大1.4x | 距20日高-2.6% | 5日0.3%)",
+      "sell_reason": "期末持仓"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh588010",
+      "name": "科创新材料ETF博时",
+      "buy_date": "2026-06-26",
+      "buy_price": 1.402,
+      "sell_date": "2026-07-01",
+      "sell_price": 1.534,
+      "shares": 343900,
+      "buy_amount": 482147.8,
+      "sell_amount": 527542.6,
+      "profit": 45394.8,
+      "profit_pct": 9.42,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.58 | 波动放大1.4x | 距20日高-2.2% | 5日1.4%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.82,盈9.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159361",
+      "name": "A500ETF易方达",
+      "buy_date": "2026-06-26",
+      "buy_price": 1.334,
+      "sell_date": "2026-07-10",
+      "sell_price": 1.311,
+      "shares": 361400,
+      "buy_amount": 482107.6,
+      "sell_amount": 473795.4,
+      "profit": -8312.2,
+      "profit_pct": -1.72,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.6x | 距20日高-3.4% | 5日-1.1%)",
+      "sell_reason": "期末持仓"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sz159870",
+      "name": "化工ETF鹏华",
+      "buy_date": "2026-06-26",
+      "buy_price": 0.856,
+      "sell_date": "2026-07-03",
+      "sell_price": 0.868,
+      "shares": 563300,
+      "buy_amount": 482184.8,
+      "sell_amount": 488944.4,
+      "profit": 6759.6,
+      "profit_pct": 1.4,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.43 | 波动放大1.8x | 距20日高-5.6% | 5日1.8%)",
+      "sell_reason": "量价同步(散户涌入 corr=0.67,盈1.4%)"
+    },
+    {
+      "strategy_id": "etf_alpha",
+      "strategy_name": "Alpha042-量价背离-etf",
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "buy_date": "2026-07-01",
+      "buy_price": 3.074,
+      "sell_date": "2026-07-10",
+      "sell_price": 3.057,
+      "shares": 171700,
+      "buy_amount": 527805.8,
+      "sell_amount": 524886.9,
+      "profit": -2918.9,
+      "profit_pct": -0.55,
+      "buy_reason": "ETF Alpha(缩量新高 corr=-0.30 | 波动放大1.6x | 距20日高-1.1% | 5日1.7%)",
+      "sell_reason": "期末持仓"
+    }
+  ],
+  "current_positions": [
+    {
+      "code": "sh510050",
+      "name": "上证50ETF华夏",
+      "buy_date": "2026-07-01",
+      "buy_price": 3.074,
+      "cur_price": 3.057,
+      "shares": 171700,
+      "cost": 527805.8,
+      "market_value": 524886.9,
+      "profit": -2918.9,
+      "profit_pct": -0.55
+    },
+    {
+      "code": "sz159361",
+      "name": "A500ETF易方达",
+      "buy_date": "2026-06-26",
+      "buy_price": 1.334,
+      "cur_price": 1.311,
+      "shares": 361400,
+      "cost": 482107.6,
+      "market_value": 473795.4,
+      "profit": -8312.2,
+      "profit_pct": -1.72
+    },
+    {
+      "code": "sh510500",
+      "name": "中证500ETF南方",
+      "buy_date": "2026-06-26",
+      "buy_price": 8.861,
+      "cur_price": 8.698,
+      "shares": 54400,
+      "cost": 482038.4,
+      "market_value": 473171.2,
+      "profit": -8867.2,
+      "profit_pct": -1.84
+    },
+    {
+      "code": "sh512500",
+      "name": "中证500ETF华夏",
+      "buy_date": "2026-06-26",
+      "buy_price": 4.915,
+      "cur_price": 4.82,
+      "shares": 98100,
+      "cost": 482161.5,
+      "market_value": 472842.0,
+      "profit": -9319.5,
+      "profit_pct": -1.93
+    }
+  ],
+  "market_gate": {
+    "allowed_days": 564,
+    "blocked_days": 284,
+    "allowed_rate_pct": 66.51,
+    "recent": [
+      {
+        "date": "2026-06-16",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.76)"
+        ]
+      },
+      {
+        "date": "2026-06-17",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.83)"
+        ]
+      },
+      {
+        "date": "2026-06-18",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.78)"
+        ]
+      },
+      {
+        "date": "2026-06-22",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.90)"
+        ]
+      },
+      {
+        "date": "2026-06-23",
+        "allowed": true,
+        "state": "NORMAL",
+        "reasons": [
+          "正常(广度0.12)"
+        ]
+      },
+      {
+        "date": "2026-06-24",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.82)"
+        ]
+      },
+      {
+        "date": "2026-06-25",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.82)"
+        ]
+      },
+      {
+        "date": "2026-06-26",
+        "allowed": true,
+        "state": "NORMAL",
+        "reasons": [
+          "正常(广度0.14)"
+        ]
+      },
+      {
+        "date": "2026-06-29",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.84)"
+        ]
+      },
+      {
+        "date": "2026-06-30",
+        "allowed": false,
+        "state": "GREED",
+        "reasons": [
+          "过度狂热(广度0.77)"
+        ]
+      },
+      {
+        "date": "2026-07-01",
+        "allowed": true,
+        "state": "NORMAL",
+        "reasons": [
+          "正常(广度0.44)"
+        ]
+      },
+      {
+        "date": "2026-07-02",
+        "allowed": true,
+        "state": "NORMAL",
+        "reasons": [
+          "正常(广度0.12)"
+        ]
+      },
+      {
+        "date": "2026-07-03",
+        "allowed": true,
+        "state": "NORMAL",
+        "reasons": [
+          "正常(广度0.68)"
+        ]
+      },
+      {
+        "date": "2026-07-06",
+        "allowed": true,
+        "state": "NORMAL",
+        "reasons": [
+          "正常(广度0.36)"
+        ]
+      },
+      {
+        "date": "2026-07-10",
+        "allowed": true,
+        "state": "NORMAL",
+        "reasons": [
+          "正常(广度0.34)"
+        ]
+      }
+    ],
+    "blocked_reasons": [
+      {
+        "reason": "过度狂热(广度0.94)",
+        "count": 22
+      },
+      {
+        "reason": "过度狂热(广度0.93)",
+        "count": 20
+      },
+      {
+        "reason": "过度狂热(广度0.97)",
+        "count": 20
+      },
+      {
+        "reason": "过度狂热(广度0.91)",
+        "count": 17
+      },
+      {
+        "reason": "过度狂热(广度0.96)",
+        "count": 17
+      },
+      {
+        "reason": "过度狂热(广度0.95)",
+        "count": 16
+      },
+      {
+        "reason": "过度狂热(广度0.89)",
+        "count": 14
+      },
+      {
+        "reason": "过度狂热(广度0.92)",
+        "count": 14
+      },
+      {
+        "reason": "过度狂热(广度0.99)",
+        "count": 14
+      },
+      {
+        "reason": "过度狂热(广度0.84)",
+        "count": 12
+      },
+      {
+        "reason": "过度狂热(广度0.87)",
+        "count": 12
+      },
+      {
+        "reason": "过度狂热(广度0.78)",
+        "count": 11
+      },
+      {
+        "reason": "过度狂热(广度0.81)",
+        "count": 10
+      },
+      {
+        "reason": "过度狂热(广度0.82)",
+        "count": 10
+      },
+      {
+        "reason": "过度狂热(广度0.83)",
+        "count": 9
+      },
+      {
+        "reason": "过度狂热(广度0.88)",
+        "count": 9
+      },
+      {
+        "reason": "过度狂热(广度0.90)",
+        "count": 9
+      },
+      {
+        "reason": "过度狂热(广度0.98)",
+        "count": 9
+      },
+      {
+        "reason": "过度狂热(广度1.00)",
+        "count": 9
+      },
+      {
+        "reason": "过度狂热(广度0.86)",
+        "count": 8
+      },
+      {
+        "reason": "过度狂热(广度0.80)",
+        "count": 7
+      },
+      {
+        "reason": "过度狂热(广度0.76)",
+        "count": 6
+      },
+      {
+        "reason": "过度狂热(广度0.77)",
+        "count": 6
+      },
+      {
+        "reason": "过度狂热(广度0.79)",
+        "count": 2
+      },
+      {
+        "reason": "过度狂热(广度0.85)",
+        "count": 1
+      }
+    ],
+    "blocked_recent_days": [
+      {
+        "date": "2026-06-09",
+        "reasons": [
+          "过度狂热(广度0.92)"
+        ]
+      },
+      {
+        "date": "2026-06-15",
+        "reasons": [
+          "过度狂热(广度0.89)"
+        ]
+      },
+      {
+        "date": "2026-06-16",
+        "reasons": [
+          "过度狂热(广度0.76)"
+        ]
+      },
+      {
+        "date": "2026-06-17",
+        "reasons": [
+          "过度狂热(广度0.83)"
+        ]
+      },
+      {
+        "date": "2026-06-18",
+        "reasons": [
+          "过度狂热(广度0.78)"
+        ]
+      },
+      {
+        "date": "2026-06-22",
+        "reasons": [
+          "过度狂热(广度0.90)"
+        ]
+      },
+      {
+        "date": "2026-06-24",
+        "reasons": [
+          "过度狂热(广度0.82)"
+        ]
+      },
+      {
+        "date": "2026-06-25",
+        "reasons": [
+          "过度狂热(广度0.82)"
+        ]
+      },
+      {
+        "date": "2026-06-29",
+        "reasons": [
+          "过度狂热(广度0.84)"
+        ]
+      },
+      {
+        "date": "2026-06-30",
+        "reasons": [
+          "过度狂热(广度0.77)"
+        ]
+      }
+    ]
+  }
+}

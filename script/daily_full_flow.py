@@ -53,9 +53,9 @@ def main():
 
     # Step 2: 大底抄底回测
     if not run_step(f"Step 2/3: 大底抄底回测 ({args.days}天)",
-                    "script/run_strategy_market_backtest.py",
-                    "--strategy", "market_bottom",
-                    "--days", str(args.days),
+                    "script/run_backtest.py",
+                    "--universe", "stock", "--strategy", "market_bottom",
+                    
                     "--max-positions", str(args.max_positions)):
         print("[!] 回测失败，无法推送")
         return

@@ -1,6 +1,7 @@
 ﻿import json
 import logging
 import os
+import re
 import hashlib
 import threading
 import time
@@ -248,6 +249,160 @@ def _save_journal(entries):
 @app.route("/trading")
 def page_trading():
     return render_template("trading.html")
+
+
+@app.route("/trading-summary")
+def page_trading_summary():
+    return render_template("trading_summary.html")
+
+
+@app.route("/api/trading/summary")
+def api_trading_summary():
+    """交易总结 — 汇总盈亏、策略、月度等统计。"""
+    logs = _load_trade_log()
+    portfolio = _load_trading_portfolio()
+    journal = _load_journal()
+
+    buys = [t for t in logs if t.get("action") == "buy"]
+    sells = [t for t in logs if t.get("action") == "sell"]
+
+    # 配对计算已完成交易
+    closed = _pair_trades_for_summary(logs)
+
+    # 总盈亏
+    total_pnl = sum(t.get("pnl_pct", 0) for t in closed)
+    wins = [t for t in closed if t.get("pnl_pct", 0) > 0]
+    losses = [t for t in closed if t.get("pnl_pct", 0) <= 0]
+    win_rate = len(wins) / max(1, len(closed)) * 100
+
+    # 按策略来源
+    by_strategy = {}
+    for t in closed:
+        src = t.get("strategy_source", "手动") or "手动"
+        if src not in by_strategy:
+            by_strategy[src] = {"trades": 0, "wins": 0, "pnl_sum": 0.0}
+        by_strategy[src]["trades"] += 1
+        if t["pnl_pct"] > 0: by_strategy[src]["wins"] += 1
+        by_strategy[src]["pnl_sum"] += t["pnl_pct"]
+
+    # 月度统计
+    by_month = {}
+    for t in closed:
+        ym = t.get("buy_date", "")[:7]
+        if ym not in by_month:
+            by_month[ym] = {"trades": 0, "wins": 0, "pnl_sum": 0.0}
+        by_month[ym]["trades"] += 1
+        if t["pnl_pct"] > 0: by_month[ym]["wins"] += 1
+        by_month[ym]["pnl_sum"] += t["pnl_pct"]
+
+    monthly = [{"month": ym, **stats,
+                "win_rate": round(stats["wins"] / max(1, stats["trades"]) * 100, 1),
+                "pnl_sum": round(stats["pnl_sum"], 2)}
+               for ym, stats in sorted(by_month.items())]
+
+    # 当前持仓
+    holdings = []
+    total_mv = 0
+    for pos in portfolio.get("positions", []):
+        price, _ = _get_latest_price_for_code(pos["code"])
+        if price and pos.get("buy_price", 0) > 0:
+            pnl_pct = (price / pos["buy_price"] - 1) * 100
+            mv = price * pos["shares"]
+            total_mv += mv
+            holdings.append({
+                "code": pos["code"], "name": pos.get("name", pos["code"]),
+                "buy_price": pos["buy_price"], "cur_price": price,
+                "shares": pos["shares"], "mv": mv, "pnl_pct": round(pnl_pct, 2),
+            })
+
+    cash = portfolio.get("cash", 0)
+    total_assets = cash + total_mv
+
+    # 复盘统计
+    reviewed = sum(1 for j in journal if j.get("review", {}).get("verdict"))
+    # 错误统计
+    mistake_counter = {}
+    for j in journal:
+        mt = j.get("mistake_type", "")
+        for t in str(mt).split(","):
+            t = t.strip()
+            if t and t != "无错误":
+                mistake_counter[t] = mistake_counter.get(t, 0) + 1
+    top_mistakes = sorted(
+        [{"name": k, "count": v} for k, v in mistake_counter.items()],
+        key=lambda x: -x["count"],
+    )[:8]
+
+    return jsonify({
+        "total_trades": len(closed),
+        "total_pnl": round(total_pnl, 2),
+        "win_rate": round(win_rate, 1),
+        "avg_win": round(sum(t["pnl_pct"] for t in wins) / max(1, len(wins)), 2),
+        "avg_loss": round(sum(t["pnl_pct"] for t in losses) / max(1, len(losses)), 2),
+        "best": max(closed, key=lambda t: t["pnl_pct"]) if closed else None,
+        "worst": min(closed, key=lambda t: t["pnl_pct"]) if closed else None,
+        "by_strategy": {k: {**v, "win_rate": round(v["wins"] / max(1, v["trades"]) * 100, 1),
+                            "pnl_sum": round(v["pnl_sum"], 2)} for k, v in by_strategy.items()},
+        "monthly": monthly[-12:],
+        "holdings": holdings,
+        "cash": cash,
+        "total_assets": round(total_assets, 2),
+        "reviewed_days": reviewed,
+        "total_journal_days": len(journal),
+        "plan_rate": round(sum(1 for j in journal if j.get("plan_followed") == "是") / max(1, len(journal)) * 100, 1),
+        "top_mistakes": top_mistakes,
+        "latest_date": max(t.get("date", "") for t in logs) if logs else "",
+    })
+
+
+@app.route("/api/trading/rules")
+def api_trading_rules():
+    """返回交易铁律。"""
+    rules_path = os.path.join(ROOT_DIR, "data", "trading_rules.json")
+    if os.path.exists(rules_path):
+        with open(rules_path, "r", encoding="utf-8") as f:
+            return jsonify(json.load(f))
+    return jsonify([])
+
+
+def _pair_trades_for_summary(logs):
+    """配对买卖为完整交易。"""
+    by_code = {}
+    for t in logs:
+        by_code.setdefault(t.get("code", ""), []).append(t)
+    closed = []
+    for code, trades in by_code.items():
+        trades.sort(key=lambda x: (x.get("date", ""), 0 if x.get("action") == "buy" else 1))
+        stack = []
+        for t in trades:
+            if t.get("action") == "buy":
+                stack.append(t)
+            elif t.get("action") == "sell" and stack:
+                buy = stack.pop(0)
+                pnl = (t["price"] / buy["price"] - 1) * 100 if buy["price"] > 0 else 0
+                closed.append({
+                    "code": code, "name": t.get("name", code),
+                    "buy_date": buy.get("date", ""), "buy_price": buy["price"],
+                    "sell_date": t.get("date", ""), "sell_price": t["price"],
+                    "pnl_pct": round(pnl, 2),
+                    "strategy_source": buy.get("strategy_source", ""),
+                })
+    return closed
+
+
+def _get_latest_price_for_code(code):
+    """获取最新价格。"""
+    from sqlalchemy import create_engine, desc
+    from sqlalchemy.orm import sessionmaker
+    engine = create_engine(DATABASE_URL, echo=False)
+    Session = sessionmaker(bind=engine)
+    with Session() as sess:
+        row = sess.query(StockDaily).filter(
+            StockDaily.code == code
+        ).order_by(desc(StockDaily.trade_date)).first()
+        if row:
+            return row.close, row.trade_date
+    return None, None
 
 
 @app.route("/api/trading/state")
@@ -733,6 +888,91 @@ def api_trading_journal_delete(entry_id):
     entries = [e for e in entries if e.get("id") != entry_id]
     _save_journal(entries)
     return jsonify({"ok": f"已删除 #{entry_id}"})
+
+
+# ── 大盘预测复盘 ──────────────────────────────────────────────
+
+MACRO_PREDICTIONS_PATH = ROOT_DIR / "data" / "macro_predictions.json"
+
+
+def _load_macro_predictions():
+    if not MACRO_PREDICTIONS_PATH.exists():
+        return {}
+    with open(MACRO_PREDICTIONS_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _save_macro_predictions(data):
+    MACRO_PREDICTIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(MACRO_PREDICTIONS_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+@app.route("/api/trading/macro_prediction", methods=["GET", "POST"])
+def api_macro_prediction():
+    """大盘预测 — 自己写的预测 vs 实际复盘。
+
+    GET ?date=YYYY-MM-DD   → 读取某天的预测
+    GET ?stats=1           → 返回统计
+    POST                   → 保存预测 {date, pred_signal, pred_reason, pred_plan,
+                                         actual_signal, actual_desc, verdict, reflection}
+    """
+    all_data = _load_macro_predictions()
+
+    if request.method == "GET":
+        date = request.args.get("date", "")
+        stats_only = request.args.get("stats", "")
+
+        if stats_only:
+            # 返回统计
+            entries = list(all_data.values())
+            entries.sort(key=lambda x: x.get("date", ""), reverse=True)
+            total = len(entries)
+            correct = sum(1 for e in entries if e.get("verdict") == "对")
+            wrong = sum(1 for e in entries if e.get("verdict") == "错")
+            half = sum(1 for e in entries if e.get("verdict") == "半对")
+            accuracy = round(correct / total * 100) if total > 0 else 0
+
+            recent = entries[:5]
+            recent_correct = sum(1 for e in recent if e.get("verdict") == "对")
+            recent_acc = round(recent_correct / len(recent) * 100) if recent else 0
+
+            return jsonify({
+                "total": total, "correct": correct, "wrong": wrong, "half": half,
+                "accuracy": accuracy, "recent": f"{recent_correct}/{len(recent)}" if recent else "—",
+                "recent_accuracy": recent_acc,
+            })
+
+        if date and date in all_data:
+            return jsonify({"found": True, "data": all_data[date]})
+        else:
+            return jsonify({"found": False, "data": {"date": date}})
+
+    # POST — 保存
+    data = request.get_json()
+    if not data:
+        return jsonify({"error": "no data"}), 400
+
+    date = data.get("date", "")
+    if not date:
+        return jsonify({"error": "date required"}), 400
+
+    entry = {
+        "date": date,
+        "pred_signal": data.get("pred_signal", ""),
+        "pred_reason": data.get("pred_reason", ""),
+        "pred_plan": data.get("pred_plan", ""),
+        "actual_signal": data.get("actual_signal", ""),
+        "actual_desc": data.get("actual_desc", ""),
+        "verdict": data.get("verdict", ""),
+        "reflection": data.get("reflection", ""),
+        "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    }
+
+    all_data[date] = entry
+    _save_macro_predictions(all_data)
+
+    return jsonify({"ok": f"已保存 {date} 大盘预测", "date": date})
 
 
 # ── stock basic info ───────────────────────────────────────────
@@ -1222,7 +1462,7 @@ def api_backtest_market(strategy_id: str):
         result = load_latest_strategy_result(strategy_id)
 
     if not result:
-        hint = "script/run_etf_backtest.py" if is_etf else "script/run_strategy_market_backtest.py"
+        hint = "script/run_backtest.py --universe " + ("etf" if is_etf else "stock")
         return jsonify({
             "error": f"{strategy.META['name']} 回测结果还没有生成，请先运行 {hint} --strategy {strategy_id}"
         }), 404

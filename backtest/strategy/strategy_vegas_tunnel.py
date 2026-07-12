@@ -13,7 +13,7 @@ A股适配：仅做多，增加追高防护和多重卖出保护（高位回撤+
 
 用法示例:
   python backtest/strategy/strategy_vegas_tunnel.py                          # 默认参数回测
-  python script/run_strategy_market_backtest.py --strategy vegas_tunnel      # 全市场回测
+  python script/run_backtest.py --universe stock --strategy vegas_tunnel      # 全市场回测
 """
 from pathlib import Path
 import sys

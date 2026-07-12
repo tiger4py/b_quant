@@ -152,6 +152,7 @@
   <a href="/strategy-backtest">策略回测</a>
   <a href="/strategy-lab">策略试验</a>
   <a href="/trading" class="on">交易复盘</a>
+  <a href="/trading-summary">交易总结</a>
 </nav>
 
 <div class="main">
@@ -165,7 +166,8 @@
     <button class="tab-btn" data-tab="tab-operate">手动操作</button>
     <button class="tab-btn" data-tab="tab-history">历史记录</button>
     <button class="tab-btn" data-tab="tab-compare">策略对比</button>
-    <button class="tab-btn" data-tab="tab-journal">原因复盘</button>
+    <button class="tab-btn" data-tab="tab-journal">買賣復盤</button>
+    <button class="tab-btn" data-tab="tab-macro-review">大盘预测复盘</button>
   </div>
 
   <!-- Tab 1: 持仓 -->
@@ -236,7 +238,7 @@
     <div class="empty" id="emptyBuys" style="display:none">暂无买入信号</div>
   </div>
 
-  <!-- Tab 5: 原因复盘 -->
+  <!-- Tab 5: 買賣復盤 -->
   <div class="tab-content" id="tab-journal">
     <div id="reviewReminder" style="display:none; background:#1e1b0a; border:1px solid #f59e0b; border-radius:8px; padding:12px 16px; margin-bottom:16px; align-items:center; gap:12px;">
       <span style="font-size:13px;"><b id="reviewReminderDate"></b> 这笔还没复盘，先把当时原因写清楚。</span>
@@ -382,6 +384,102 @@
     </div>
   </div>
 
+  <!-- Tab 6: 大盘预测复盘 -->
+  <div class="tab-content" id="tab-macro-review">
+
+    <!-- 日期选择 -->
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;">
+      <label style="font-weight:600; white-space:nowrap;">📅 日期</label>
+      <input type="date" id="macroDate" style="background:#0d1117; border:1px solid #2a2d3e; color:#e1e4e8; padding:6px 12px; border-radius:6px;" onchange="loadMacroPrediction()">
+      <button class="btn btn-sm" onclick="loadMacroPrediction()" style="border-color:#3b82f6;color:#3b82f6;">查詢</button>
+      <button class="btn btn-sm" onclick="goMacroDay(-1)">⬅ 前一天</button>
+      <button class="btn btn-sm" onclick="goMacroDay(1)">後一天 ➡</button>
+      <button class="btn btn-primary btn-sm" onclick="saveMacroPrediction()" style="margin-left:auto;">💾 保存</button>
+      <span id="macroMsg" style="font-size:12px; color:#22c55e;"></span>
+    </div>
+
+    <!-- 兩欄 -->
+    <div style="display:flex; gap:16px; flex-wrap:wrap;">
+      <!-- 左栏：盘前预测 -->
+      <div style="flex:1; min-width:360px;">
+        <div class="review-panel" style="margin-bottom:12px;">
+          <h3 style="color:#f59e0b;">🔮 盤前預測</h3>
+          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">前一天晚上 / 當天開盤前寫下</div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>預測信號燈</label>
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-sm" id="predGreen" onclick="setPredSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">🟢 GREEN</button>
+              <button class="btn btn-sm" id="predYellow" onclick="setPredSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">🟡 YELLOW</button>
+              <button class="btn btn-sm" id="predRed" onclick="setPredSignal('RED')" style="border-color:#ef4444;color:#ef4444;">🔴 RED</button>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>預測理由</label>
+            <textarea id="predReason" class="textarea" rows="3" placeholder="為什麼這樣判斷？看到什麼信號？量化數據還是主觀感覺？"></textarea>
+          </div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>明天操作計劃</label>
+            <textarea id="predPlan" class="textarea" rows="3" placeholder="具體操作：開倉/減倉/觀望？什麼條件觸發什麼動作？"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右栏：盘后复盘 -->
+      <div style="flex:1; min-width:360px;">
+        <div class="review-panel" style="margin-bottom:12px;">
+          <h3 style="color:#22c55e;">📝 盤後復盤</h3>
+          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">收盤後填寫實際結果</div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>實際信號燈</label>
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-sm" id="actualGreen" onclick="setActualSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">🟢 GREEN</button>
+              <button class="btn btn-sm" id="actualYellow" onclick="setActualSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">🟡 YELLOW</button>
+              <button class="btn btn-sm" id="actualRed" onclick="setActualSignal('RED')" style="border-color:#ef4444;color:#ef4444;">🔴 RED</button>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>實際大盤走勢</label>
+            <textarea id="actualDesc" class="textarea" rows="2" placeholder="漲跌比、跌停數、成交額、主要板塊表現..."></textarea>
+          </div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>判斷對錯</label>
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-sm" id="verdictRight" onclick="setVerdict('对')" style="border-color:#22c55e;color:#22c55e;">✅ 對</button>
+              <button class="btn btn-sm" id="verdictWrong" onclick="setVerdict('错')" style="border-color:#ef4444;color:#ef4444;">❌ 錯</button>
+              <button class="btn btn-sm" id="verdictHalf" onclick="setVerdict('半对')" style="border-color:#f59e0b;color:#f59e0b;">⚠️ 半對</button>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>反思：對在哪 / 錯在哪</label>
+            <textarea id="actualReflection" class="textarea" rows="3" placeholder="預測對了是因為什麼？錯了是忽略了什麼？下次怎麼改？"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 對比欄 -->
+    <div class="review-panel" style="margin-top:16px;">
+      <h3>📊 預測 vs 實際</h3>
+      <div id="macroComparison" style="font-size:13px; line-height:2;">
+        <div class="empty">選擇日期後顯示</div>
+      </div>
+    </div>
+
+    <!-- 統計 -->
+    <div class="review-panel" style="margin-top:16px;">
+      <h3>📈 預測準確率</h3>
+      <div class="review-stat-grid" id="macroStats"></div>
+    </div>
+
+  </div>
+
 </div>
 
 <!-- Sell Modal -->
@@ -415,6 +513,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // 切换到复盘 tab 时刷新当天流水
       if (btn.dataset.tab === "tab-journal") {
         renderDayTrades();
+      }
+      // 切换到大盘预测复盘 tab 时加载数据
+      if (btn.dataset.tab === "tab-macro-review") {
+        loadMacroReview();
       }
     });
   });
@@ -1311,6 +1413,191 @@ function reviewTrade(date, id) {
   // 滚动到复盘区域
   document.getElementById("tab-journal").scrollIntoView({ behavior: "smooth" });
 }
+
+// ============ 大盘预测复盘 ============
+
+let _macroState = {}; // { pred_signal, pred_reason, pred_plan, actual_signal, actual_desc, verdict, reflection }
+
+function setPredSignal(sig) {
+  _macroState.pred_signal = sig;
+  ["GREEN","YELLOW","RED"].forEach(s => {
+    const btn = document.getElementById("pred"+s.charAt(0)+s.slice(1).toLowerCase());
+    if (btn) btn.style.background = s === sig ? ({"GREEN":"#22c55e22","YELLOW":"#f59e0b22","RED":"#ef444422"}[s]||"") : "";
+  });
+}
+
+function setActualSignal(sig) {
+  _macroState.actual_signal = sig;
+  ["GREEN","YELLOW","RED"].forEach(s => {
+    const btn = document.getElementById("actual"+s.charAt(0)+s.slice(1).toLowerCase());
+    if (btn) btn.style.background = s === sig ? ({"GREEN":"#22c55e22","YELLOW":"#f59e0b22","RED":"#ef444422"}[s]||"") : "";
+  });
+}
+
+function setVerdict(v) {
+  _macroState.verdict = v;
+  ["Right","Wrong","Half"].forEach(s => {
+    const btn = document.getElementById("verdict"+s);
+    if (btn) btn.style.background = "";
+  });
+  const map = {"对":"Right","错":"Wrong","半对":"Half"};
+  const btn = document.getElementById("verdict"+map[v]);
+  if (btn) btn.style.background = {"对":"#22c55e22","错":"#ef444422","半对":"#f59e0b22"}[v]||"";
+}
+
+async function loadMacroPrediction() {
+  const date = document.getElementById("macroDate").value;
+  if (!date) return;
+
+  // Reset
+  _macroState = {};
+  document.getElementById("predReason").value = "";
+  document.getElementById("predPlan").value = "";
+  document.getElementById("actualDesc").value = "";
+  document.getElementById("actualReflection").value = "";
+  setPredSignal(""); setActualSignal(""); setVerdict("");
+
+  try {
+    const r = await fetch(`/api/trading/macro_prediction?date=${date}`);
+    const d = await r.json();
+    if (d.found) {
+      const p = d.data;
+      _macroState = {
+        pred_signal: p.pred_signal || "",
+        pred_reason: p.pred_reason || "",
+        pred_plan: p.pred_plan || "",
+        actual_signal: p.actual_signal || "",
+        actual_desc: p.actual_desc || "",
+        verdict: p.verdict || "",
+        reflection: p.reflection || "",
+      };
+      document.getElementById("predReason").value = p.pred_reason || "";
+      document.getElementById("predPlan").value = p.pred_plan || "";
+      document.getElementById("actualDesc").value = p.actual_desc || "";
+      document.getElementById("actualReflection").value = p.reflection || "";
+      if (p.pred_signal) setPredSignal(p.pred_signal);
+      if (p.actual_signal) setActualSignal(p.actual_signal);
+      if (p.verdict) setVerdict(p.verdict);
+    }
+    _renderMacroComparison();
+  } catch (e) {
+    document.getElementById("macroMsg").textContent = "載入失敗";
+  }
+}
+
+async function saveMacroPrediction() {
+  const date = document.getElementById("macroDate").value;
+  if (!date) return;
+
+  _macroState.pred_reason = document.getElementById("predReason").value;
+  _macroState.pred_plan = document.getElementById("predPlan").value;
+  _macroState.actual_desc = document.getElementById("actualDesc").value;
+  _macroState.reflection = document.getElementById("actualReflection").value;
+
+  const payload = { date, ..._macroState };
+
+  try {
+    const r = await fetch("/api/trading/macro_prediction", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify(payload),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      document.getElementById("macroMsg").textContent = "已保存 ✓";
+      setTimeout(() => document.getElementById("macroMsg").textContent = "", 2000);
+      _renderMacroComparison();
+      loadMacroStats();
+    } else {
+      document.getElementById("macroMsg").textContent = "保存失败";
+    }
+  } catch (e) {
+    document.getElementById("macroMsg").textContent = "保存失败";
+  }
+}
+
+function _renderMacroComparison() {
+  const el = document.getElementById("macroComparison");
+  const ps = _macroState.pred_signal || "?";
+  const as = _macroState.actual_signal || "?";
+  const pv = _macroState.verdict || "";
+
+  if (!_macroState.pred_signal && !_macroState.actual_signal) {
+    el.innerHTML = '<div class="empty">尚未填寫預測或復盤</div>';
+    return;
+  }
+
+  let html = '<table style="width:100%; border-collapse:collapse;">';
+  html += '<tr><th style="width:20%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">項目</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">🔮 預測</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">📝 實際</th><th style="width:10%;padding:8px;text-align:center;border-bottom:1px solid #2a2d3e;"></th></tr>';
+
+  html += `<tr>
+    <td style="padding:8px;border-bottom:1px solid #1e2230;">信號燈</td>
+    <td style="padding:8px;border-bottom:1px solid #1e2230;font-weight:700;color:${_sigColor(ps)};">${ps}</td>
+    <td style="padding:8px;border-bottom:1px solid #1e2230;font-weight:700;color:${_sigColor(as)};">${as}</td>
+    <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${ps===as&&as!=='?'?'✅':(as!=='?'?'❌':'')}</td>
+  </tr>`;
+
+  if (_macroState.pred_reason) {
+    html += `<tr>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;">預測理由</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.pred_reason}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.actual_desc || '—'}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${pv==='对'?'✅':(pv==='错'?'❌':(pv==='半对'?'⚠️':''))}</td>
+    </tr>`;
+  }
+
+  if (_macroState.pred_plan) {
+    html += `<tr>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;">操作計劃</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.pred_plan.replace(/\n/g,'<br>')}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#6b7280;">${pv==='对'?'✅ 計劃有效':(pv==='错'?'❌ 計劃偏差':'—')}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;"></td>
+    </tr>`;
+  }
+
+  if (_macroState.reflection) {
+    html += `<tr>
+      <td style="padding:8px;">反思</td>
+      <td colspan="3" style="padding:8px;font-size:12px;color:#9ca3af;">${_macroState.reflection.replace(/\n/g,'<br>')}</td>
+    </tr>`;
+  }
+
+  html += '</table>';
+  el.innerHTML = html;
+}
+
+function _sigColor(s) {
+  return {"GREEN":"#22c55e","YELLOW":"#f59e0b","RED":"#ef4444"}[s]||"#6b7280";
+}
+
+function goMacroDay(delta) {
+  const d = document.getElementById("macroDate").value;
+  if (!d) return;
+  const dt = new Date(d);
+  dt.setDate(dt.getDate() + delta);
+  const today = new Date().toISOString().slice(0,10);
+  if (dt.toISOString().slice(0,10) > today) return;
+  document.getElementById("macroDate").value = dt.toISOString().slice(0,10);
+  loadMacroPrediction();
+}
+
+async function loadMacroStats() {
+  try {
+    const r = await fetch("/api/trading/macro_prediction?stats=1");
+    const s = await r.json();
+    document.getElementById("macroStats").innerHTML = `
+      <div class="review-stat"><div class="k">預測天數</div><div class="v">${s.total || 0}</div><div class="k">總交易日</div></div>
+      <div class="review-stat"><div class="k">準確率</div><div class="v">${s.accuracy || 0}%</div><div class="k">對${s.correct||0} / 錯${s.wrong||0} / 半對${s.half||0}</div></div>
+      <div class="review-stat"><div class="k">最近</div><div class="v">${s.recent || '—'}</div><div class="k">近5次準確率: ${s.recent_accuracy||0}%</div></div>
+    `;
+  } catch(e) {}
+}
+
+// init
+(async function initMacro() {
+  document.getElementById("macroDate").value = new Date().toISOString().slice(0,10);
+  loadMacroStats();
+})();
 </script>
 </body>
 </html>
