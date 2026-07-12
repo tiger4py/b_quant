@@ -40,6 +40,26 @@ sys.path.insert(0, str(ROOT_DIR))
 # ═══════════════════════════════════════════════════════════════
 # 数据加载 & 股性特征
 # ═══════════════════════════════════════════════════════════════
+# 策略注册（兼容 backtest registry）
+# ═══════════════════════════════════════════════════════════════
+
+META = {
+    "id": "divergent_adaptive",
+    "name": "股性突变埋伏-自适应",
+    "type": "concept",
+    "description": (
+        "12维股性指纹(10d vs 60d)+跨截面Top10排名+大盘自适应(fast/normal/slow)。"
+        "v1: +184%收益/14.5%回撤/53.7%胜率/1.69PF。365个同花顺概念。"
+    ),
+}
+
+
+def generate_signals(bars):
+    """兼容 registry，实际不使用。完整引擎见 run_adaptive_backtest()。"""
+    return []
+
+
+# ═══════════════════════════════════════════════════════════════
 
 def load_concept_bars():
     csv_dir = str(ROOT_DIR / "data" / "concept")
