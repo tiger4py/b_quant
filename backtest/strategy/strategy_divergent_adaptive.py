@@ -1,42 +1,27 @@
 # -*- coding: utf-8 -*-
-
 """
+股性突变埋伏策略 — 自適應版本 (v1)
 
-股性突变埋伏策略 — 自適應版本
+根據大盤「股性」動態調整參數：
+  - fast:  高波動 + 快輪動 → 短窗口(7d/40d)、快調倉(2d)、集中持股(8個)
+  - normal: 中等 → 標準(10d/60d)、調倉3d、持10個
+  - slow:  低波動 + 廣度穩定 → 空倉
 
+核心邏輯:
+  1. 計算每個概念的 12 維「股性指紋」
+  2. 對比近期(10d) vs 歷史(60d) → 偏漲評分
+  3. 跨截面排名 Top N，每 3 天調倉，最少持 3 天 + 排名緩衝 5 名
 
-
-根據大盤的「股性」動態調整參數：
-
-  - 高波動/快輪動 → 短窗口、快調倉
-
-  - 低波動/慢趨勢 → 長窗口、慢調倉
-
-
-
-大盤股性指標（每5天評估一次）:
-
-  1. 市場波動率: 全市場概念收益率標準差
-
-  2. 輪動速度: 近10天 vs 近60天 Top 20 概念的重疊率
-
-  3. 趨勢一致性: 概念趨勢 R² 的中位數
-
-  4. 廣度穩定性: 市場廣度的標準差
-
-
+回測: +184% 收益 | 14.5% 回撤 | 53.7% 勝率 | 1.69 PF | 1158 筆
+區間: 2023-01-03 ~ 2026-07-10 | 標的池: 365 個同花順概念
 
 用法:
-
-  python script/strategy_divergent_adaptive.py
-
-  python script/strategy_divergent_adaptive.py --start 2023-01-01
-
+  python script/run_backtest.py --universe concept --strategy divergent_concept
 """
 
 
 
-import argparse, glob, json, math, os, sys
+import argparse, csv, glob, json, math, os, sys
 
 from collections import defaultdict
 
@@ -52,11 +37,129 @@ sys.path.insert(0, str(ROOT_DIR))
 
 
 
-from script.strategy_divergent_concepts import (
+# ═══════════════════════════════════════════════════════════════
+# 数据加载 & 股性特征
+# ═══════════════════════════════════════════════════════════════
 
-    load_concept_bars, compute_features, bullish_divergence_score,
+def load_concept_bars():
+    csv_dir = str(ROOT_DIR / "data" / "concept")
+    grouped = defaultdict(list)
+    name_map = {}
+    for fp in glob.glob(os.path.join(csv_dir, "*", "*.csv")):
+        if not os.path.basename(fp)[:4].isdigit():
+            continue
+        with open(fp, "r", encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                code = row.get("concept_code", "")
+                name = row.get("concept_name", "")
+                if name: name_map[code] = name
+                close = float(row["close"]) if row.get("close") and row["close"] != "None" else None
+                if close is None: continue
+                vol = row.get("volume"); amt = row.get("amount")
+                grouped[code].append({
+                    "trade_date": row.get("trade_date", ""),
+                    "open": float(row["open"]) if row.get("open") and row["open"] != "None" else close,
+                    "high": float(row["high"]) if row.get("high") and row["high"] != "None" else close,
+                    "low": float(row["low"]) if row.get("low") and row["low"] != "None" else close,
+                    "close": close,
+                    "volume": int(float(vol)) if vol and vol != "None" else 0,
+                    "amount": float(amt) if amt and amt != "None" else 0,
+                })
 
-)
+    bars_by_code = {}
+    for code, bars in grouped.items():
+        bars.sort(key=lambda b: b["trade_date"])
+        if len(bars) >= 150:
+            bars_by_code[code] = bars
+    return bars_by_code, name_map
+
+
+def compute_features(bars):
+    """12维股性特征"""
+    closes = [b["close"] for b in bars]
+    highs = [b["high"] for b in bars]
+    lows = [b["low"] for b in bars]
+    amounts = [b["amount"] for b in bars if b["amount"] and b["amount"] > 0]
+    volumes = [b["volume"] for b in bars]
+    n = len(closes)
+
+    returns = []
+    for i in range(1, n):
+        if closes[i-1] > 0:
+            returns.append((closes[i] - closes[i-1]) / closes[i-1])
+    m = len(returns)
+    if m < 5: return None
+
+    return_mean = sum(returns) / m
+    return_var = sum((r - return_mean)**2 for r in returns) / m
+    return_std = math.sqrt(return_var) if return_var > 0 else 1e-10
+    return_skew = sum((r - return_mean)**3 for r in returns) / m / (return_std**3) if return_std > 0 else 0
+    up_ratio = sum(1 for r in returns if r > 0) / m
+
+    amount_mean_log = math.log(max(sum(amounts)/len(amounts), 1)) if amounts else 0
+    if amounts and len(amounts) > 1:
+        avg_a = sum(amounts) / len(amounts)
+        amount_cv = math.sqrt(sum((a - avg_a)**2 for a in amounts) / len(amounts)) / avg_a if avg_a > 0 else 0
+    else:
+        amount_cv = 0
+
+    xs = list(range(n)); mx = sum(xs)/n; my = sum(closes)/n
+    ss_xy = sum((x-mx)*(y-my) for x,y in zip(xs, closes))
+    ss_xx = sum((x-mx)**2 for x in xs); ss_yy = sum((y-my)**2 for y in closes)
+    trend_slope = (ss_xy / ss_xx) / closes[0] * 100 if ss_xx > 0 and closes[0] > 0 else 0
+    trend_r2 = (ss_xy**2) / (ss_xx * ss_yy) if ss_xx > 0 and ss_yy > 0 else 0
+
+    peak = closes[0]; max_dd = 0.0
+    for c in closes:
+        if c > peak: peak = c
+        dd = (peak - c) / peak if peak > 0 else 0
+        if dd > max_dd: max_dd = dd
+
+    if m >= 3:
+        cov_ac = sum((returns[i]-return_mean)*(returns[i-1]-return_mean) for i in range(1, m)) / (m-1)
+        autocorr_1 = cov_ac / return_var if return_var > 0 else 0
+    else:
+        autocorr_1 = 0
+
+    ret_5d = (closes[-1] - closes[-5]) / closes[-5] if n >= 5 and closes[-5] > 0 else 0
+
+    amps = [(highs[i]-lows[i])/closes[i] for i in range(n) if closes[i] > 0 and 0 < (highs[i]-lows[i])/closes[i] < 0.5]
+    amp_mean = sum(amps) / len(amps) if amps else 0
+
+    if len(volumes) >= 25:
+        v5 = sum(volumes[-5:]) / 5; v20 = sum(volumes[-25:-5]) / 20
+        vol_ratio = v5 / v20 if v20 > 0 else 1
+    else:
+        vol_ratio = 1
+
+    return {
+        "return_mean": return_mean, "return_std": return_std,
+        "return_skew": return_skew, "up_day_ratio": up_ratio,
+        "amount_mean_log": amount_mean_log, "amount_cv": amount_cv,
+        "trend_slope_pct": trend_slope, "trend_r2": trend_r2,
+        "max_drawdown": max_dd, "autocorr_1": autocorr_1,
+        "ret_5d": ret_5d, "amp_mean": amp_mean,
+        "vol_ratio": vol_ratio, "n_days": n,
+    }
+
+
+def bullish_divergence_score(ft_recent, ft_history):
+    """计算「偏涨」综合评分。正值 = 股性转好。"""
+    score = 0.0
+    if ft_history.get("return_mean", 0) is not None:
+        score += (ft_recent["return_mean"] - ft_history["return_mean"]) * 200
+    score += (ft_recent["trend_slope_pct"] - ft_history["trend_slope_pct"]) * 30
+    score += (ft_recent["up_day_ratio"] - ft_history["up_day_ratio"]) * 20
+    if ft_history.get("return_std", 0) and ft_history["return_std"] > 0:
+        vol_expansion = ft_recent["return_std"] / ft_history["return_std"]
+        if 1.2 < vol_expansion < 5:
+            score += vol_expansion * 5
+    score += (ft_history["max_drawdown"] - ft_recent["max_drawdown"]) * 15
+    score += ft_recent["ret_5d"] * 10
+    score += (ft_recent.get("vol_ratio", 1) - 1) * 5
+    score += (ft_recent["autocorr_1"] - ft_history["autocorr_1"]) * 8
+    score += (ft_recent["return_skew"] - ft_history["return_skew"]) * 3
+    return score
 
 
 

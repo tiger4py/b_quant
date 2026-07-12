@@ -12,8 +12,8 @@ from sqlalchemy import create_engine, desc, func
 from sqlalchemy.orm import Session, sessionmaker
 
 from config import DATABASE_URL, DOWNLOAD_DAYS
-from script.update_daily import update_concepts as scheduled_update_concepts
-from script.update_daily import update_stocks as scheduled_update_stocks
+from script.update_base_data.update_daily import update_concepts as scheduled_update_concepts
+from script.update_base_data.update_daily import update_stocks as scheduled_update_stocks
 from pathlib import Path
 from backtest import get_strategy, list_strategies, run_backtest, run_portfolio_backtest
 from logic.backtest_cache import (
@@ -99,7 +99,7 @@ def _run_daily_update_job():
     import subprocess
     try:
         subprocess.run(
-            [sys.executable, "script/import_day_stock.py", "-q"],
+            [sys.executable, "script/update_base_data/import_day_stock.py", "-q"],
             cwd=os.path.dirname(os.path.abspath(__file__)),
             timeout=600,
         )

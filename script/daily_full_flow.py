@@ -45,7 +45,7 @@ def main():
 
     # Step 1: 更新数据
     run_step(f"Step 1/3: 更新K线数据",
-             "script/update_daily.py")
+             "script/update_base_data/update_daily.py")
 
     # Step 1.5: 导入CSV到数据库
     run_step(f"Step 1.5/3: CSV导入数据库",

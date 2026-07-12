@@ -367,7 +367,7 @@ def main():
 
         # ---- 跨截面策略走独立引擎 ----
         if sid == "divergent_concept" and args.universe == "concept":
-            from script.strategy_divergent_adaptive import run_adaptive_backtest
+            from backtest.strategy.strategy_divergent_adaptive import run_adaptive_backtest
             name_map = {c: s["name"] for c, s in stock_map.items()}
             result = run_adaptive_backtest(bars_by_code, name_map,
                                            initial_cash=args.cash, start_date=args.start)
