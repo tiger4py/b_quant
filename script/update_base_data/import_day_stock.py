@@ -27,7 +27,7 @@ CSV 格式（由 update_daily.py 生成）:
 导入策略: INSERT OR REPLACE，可重复执行不报错。
 """
 import os, sys, csv, glob, re
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 import argparse
 import logging

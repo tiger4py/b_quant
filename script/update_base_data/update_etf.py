@@ -8,7 +8,7 @@
     python script/update_etf.py --mode init            # 首次：拉近2年历史(主流ETF)
 """
 import os, sys, csv, json, time
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 import argparse
 import logging
@@ -19,7 +19,7 @@ from urllib import request
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ETF_DIR = os.path.join(ROOT_DIR, "data", "etf")
 MAX_BARS = 3500  # 约14年，覆盖2014至今
 

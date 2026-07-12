@@ -12,7 +12,7 @@
 不再直接写数据库，数据库导入由 script/import_day_stock.py 负责。
 """
 import os, sys, csv
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 import argparse
 import logging
