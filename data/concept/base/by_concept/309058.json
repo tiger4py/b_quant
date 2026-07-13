@@ -3,10 +3,187 @@
   "concept_name": "ERP概念",
   "first_trade_date": "2023-03-21",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 35,
+  "constituents": [
+    {
+      "code": "bj.920030",
+      "raw_code": "920030",
+      "name": "德众汽车"
+    },
+    {
+      "code": "bj.920227",
+      "raw_code": "920227",
+      "name": "美登科技"
+    },
+    {
+      "code": "bj.920932",
+      "raw_code": "920932",
+      "name": "科达自控"
+    },
+    {
+      "code": "sh.600271",
+      "raw_code": "600271",
+      "name": "航天信息"
+    },
+    {
+      "code": "sh.600577",
+      "raw_code": "600577",
+      "name": "精达股份"
+    },
+    {
+      "code": "sh.600588",
+      "raw_code": "600588",
+      "name": "用友网络"
+    },
+    {
+      "code": "sh.600845",
+      "raw_code": "600845",
+      "name": "宝信软件"
+    },
+    {
+      "code": "sh.603390",
+      "raw_code": "603390",
+      "name": "通达电气"
+    },
+    {
+      "code": "sh.603613",
+      "raw_code": "603613",
+      "name": "国联股份"
+    },
+    {
+      "code": "sh.688038",
+      "raw_code": "688038",
+      "name": "中科通达"
+    },
+    {
+      "code": "sh.688365",
+      "raw_code": "688365",
+      "name": "光云科技"
+    },
+    {
+      "code": "sh.688369",
+      "raw_code": "688369",
+      "name": "致远互联"
+    },
+    {
+      "code": "sh.688479",
+      "raw_code": "688479",
+      "name": "友车科技"
+    },
+    {
+      "code": "sz.000158",
+      "raw_code": "000158",
+      "name": "常山北明"
+    },
+    {
+      "code": "sz.000409",
+      "raw_code": "000409",
+      "name": "云鼎科技"
+    },
+    {
+      "code": "sz.000555",
+      "raw_code": "000555",
+      "name": "神州信息"
+    },
+    {
+      "code": "sz.000906",
+      "raw_code": "000906",
+      "name": "浙商中拓"
+    },
+    {
+      "code": "sz.002063",
+      "raw_code": "002063",
+      "name": "远光软件"
+    },
+    {
+      "code": "sz.002153",
+      "raw_code": "002153",
+      "name": "石基信息"
+    },
+    {
+      "code": "sz.002232",
+      "raw_code": "002232",
+      "name": "启明信息"
+    },
+    {
+      "code": "sz.002315",
+      "raw_code": "002315",
+      "name": "焦点科技"
+    },
+    {
+      "code": "sz.002398",
+      "raw_code": "002398",
+      "name": "垒知集团"
+    },
+    {
+      "code": "sz.002620",
+      "raw_code": "002620",
+      "name": "*ST瑞和"
+    },
+    {
+      "code": "sz.300131",
+      "raw_code": "300131",
+      "name": "英唐智控"
+    },
+    {
+      "code": "sz.300170",
+      "raw_code": "300170",
+      "name": "汉得信息"
+    },
+    {
+      "code": "sz.300195",
+      "raw_code": "300195",
+      "name": "长荣股份"
+    },
+    {
+      "code": "sz.300339",
+      "raw_code": "300339",
+      "name": "润和软件"
+    },
+    {
+      "code": "sz.300378",
+      "raw_code": "300378",
+      "name": "鼎捷数智"
+    },
+    {
+      "code": "sz.300668",
+      "raw_code": "300668",
+      "name": "杰恩股份"
+    },
+    {
+      "code": "sz.300687",
+      "raw_code": "300687",
+      "name": "赛意信息"
+    },
+    {
+      "code": "sz.300807",
+      "raw_code": "300807",
+      "name": "天迈科技"
+    },
+    {
+      "code": "sz.300996",
+      "raw_code": "300996",
+      "name": "普联软件"
+    },
+    {
+      "code": "sz.301236",
+      "raw_code": "301236",
+      "name": "软通动力"
+    },
+    {
+      "code": "sz.301315",
+      "raw_code": "301315",
+      "name": "威士顿"
+    },
+    {
+      "code": "sz.301381",
+      "raw_code": "301381",
+      "name": "赛维时代"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:10",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309058/"
+  "fetched_at": "2026-07-13 17:03:22",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

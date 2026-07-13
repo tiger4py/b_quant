@@ -3,10 +3,247 @@
   "concept_name": "华为欧拉",
   "first_trade_date": "2022-03-22",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 47,
+  "constituents": [
+    {
+      "code": "bj.920799",
+      "raw_code": "920799",
+      "name": "艾融软件"
+    },
+    {
+      "code": "sh.600536",
+      "raw_code": "600536",
+      "name": "中国软件"
+    },
+    {
+      "code": "sh.600839",
+      "raw_code": "600839",
+      "name": "四川长虹"
+    },
+    {
+      "code": "sh.603189",
+      "raw_code": "603189",
+      "name": "*ST网达"
+    },
+    {
+      "code": "sh.688038",
+      "raw_code": "688038",
+      "name": "中科通达"
+    },
+    {
+      "code": "sh.688039",
+      "raw_code": "688039",
+      "name": "当虹科技"
+    },
+    {
+      "code": "sh.688058",
+      "raw_code": "688058",
+      "name": "宝兰德"
+    },
+    {
+      "code": "sh.688118",
+      "raw_code": "688118",
+      "name": "普元信息"
+    },
+    {
+      "code": "sh.688152",
+      "raw_code": "688152",
+      "name": "麒麟信安"
+    },
+    {
+      "code": "sh.688165",
+      "raw_code": "688165",
+      "name": "埃夫特"
+    },
+    {
+      "code": "sh.688227",
+      "raw_code": "688227",
+      "name": "品高股份"
+    },
+    {
+      "code": "sh.688258",
+      "raw_code": "688258",
+      "name": "卓易信息"
+    },
+    {
+      "code": "sh.688292",
+      "raw_code": "688292",
+      "name": "浩瀚深度"
+    },
+    {
+      "code": "sh.688316",
+      "raw_code": "688316",
+      "name": "青云科技"
+    },
+    {
+      "code": "sh.688327",
+      "raw_code": "688327",
+      "name": "云从科技"
+    },
+    {
+      "code": "sh.688435",
+      "raw_code": "688435",
+      "name": "英方软件"
+    },
+    {
+      "code": "sh.688509",
+      "raw_code": "688509",
+      "name": "正元地信"
+    },
+    {
+      "code": "sh.688561",
+      "raw_code": "688561",
+      "name": "奇安信"
+    },
+    {
+      "code": "sz.000547",
+      "raw_code": "000547",
+      "name": "航天发展"
+    },
+    {
+      "code": "sz.002065",
+      "raw_code": "002065",
+      "name": "东华软件"
+    },
+    {
+      "code": "sz.002261",
+      "raw_code": "002261",
+      "name": "拓维信息"
+    },
+    {
+      "code": "sz.002398",
+      "raw_code": "002398",
+      "name": "垒知集团"
+    },
+    {
+      "code": "sz.002439",
+      "raw_code": "002439",
+      "name": "启明星辰"
+    },
+    {
+      "code": "sz.300036",
+      "raw_code": "300036",
+      "name": "超图软件"
+    },
+    {
+      "code": "sz.300047",
+      "raw_code": "300047",
+      "name": "天源迪科"
+    },
+    {
+      "code": "sz.300166",
+      "raw_code": "300166",
+      "name": "东方国信"
+    },
+    {
+      "code": "sz.300275",
+      "raw_code": "300275",
+      "name": "梅安森"
+    },
+    {
+      "code": "sz.300290",
+      "raw_code": "300290",
+      "name": "ST荣科"
+    },
+    {
+      "code": "sz.300339",
+      "raw_code": "300339",
+      "name": "润和软件"
+    },
+    {
+      "code": "sz.300348",
+      "raw_code": "300348",
+      "name": "长亮科技"
+    },
+    {
+      "code": "sz.300353",
+      "raw_code": "300353",
+      "name": "东土科技"
+    },
+    {
+      "code": "sz.300366",
+      "raw_code": "300366",
+      "name": "ST创意"
+    },
+    {
+      "code": "sz.300369",
+      "raw_code": "300369",
+      "name": "绿盟科技"
+    },
+    {
+      "code": "sz.300419",
+      "raw_code": "300419",
+      "name": "ST浩丰"
+    },
+    {
+      "code": "sz.300474",
+      "raw_code": "300474",
+      "name": "景嘉微"
+    },
+    {
+      "code": "sz.300496",
+      "raw_code": "300496",
+      "name": "中科创达"
+    },
+    {
+      "code": "sz.300542",
+      "raw_code": "300542",
+      "name": "新晨科技"
+    },
+    {
+      "code": "sz.300598",
+      "raw_code": "300598",
+      "name": "诚迈科技"
+    },
+    {
+      "code": "sz.300607",
+      "raw_code": "300607",
+      "name": "拓斯达"
+    },
+    {
+      "code": "sz.300608",
+      "raw_code": "300608",
+      "name": "思特奇"
+    },
+    {
+      "code": "sz.300645",
+      "raw_code": "300645",
+      "name": "正元智慧"
+    },
+    {
+      "code": "sz.300663",
+      "raw_code": "300663",
+      "name": "科蓝软件"
+    },
+    {
+      "code": "sz.300674",
+      "raw_code": "300674",
+      "name": "宇信科技"
+    },
+    {
+      "code": "sz.300687",
+      "raw_code": "300687",
+      "name": "赛意信息"
+    },
+    {
+      "code": "sz.300872",
+      "raw_code": "300872",
+      "name": "天阳科技"
+    },
+    {
+      "code": "sz.301178",
+      "raw_code": "301178",
+      "name": "天亿马"
+    },
+    {
+      "code": "sz.301236",
+      "raw_code": "301236",
+      "name": "软通动力"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:58",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308887/"
+  "fetched_at": "2026-07-13 17:01:58",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

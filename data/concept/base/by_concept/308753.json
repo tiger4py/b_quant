@@ -3,10 +3,402 @@
   "concept_name": "抽水蓄能",
   "first_trade_date": "2021-09-09",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 78,
+  "constituents": [
+    {
+      "code": "bj.920208",
+      "raw_code": "920208",
+      "name": "青矩技术"
+    },
+    {
+      "code": "bj.920879",
+      "raw_code": "920879",
+      "name": "基康技术"
+    },
+    {
+      "code": "sh.600010",
+      "raw_code": "600010",
+      "name": "包钢股份"
+    },
+    {
+      "code": "sh.600027",
+      "raw_code": "600027",
+      "name": "华电国际"
+    },
+    {
+      "code": "sh.600032",
+      "raw_code": "600032",
+      "name": "浙江新能"
+    },
+    {
+      "code": "sh.600089",
+      "raw_code": "600089",
+      "name": "特变电工"
+    },
+    {
+      "code": "sh.600098",
+      "raw_code": "600098",
+      "name": "广州发展"
+    },
+    {
+      "code": "sh.600163",
+      "raw_code": "600163",
+      "name": "中闽能源"
+    },
+    {
+      "code": "sh.600268",
+      "raw_code": "600268",
+      "name": "国电南自"
+    },
+    {
+      "code": "sh.600310",
+      "raw_code": "600310",
+      "name": "广西能源"
+    },
+    {
+      "code": "sh.600406",
+      "raw_code": "600406",
+      "name": "国电南瑞"
+    },
+    {
+      "code": "sh.600416",
+      "raw_code": "600416",
+      "name": "湘电股份"
+    },
+    {
+      "code": "sh.600483",
+      "raw_code": "600483",
+      "name": "福能股份"
+    },
+    {
+      "code": "sh.600502",
+      "raw_code": "600502",
+      "name": "安徽建工"
+    },
+    {
+      "code": "sh.600509",
+      "raw_code": "600509",
+      "name": "天富能源"
+    },
+    {
+      "code": "sh.600528",
+      "raw_code": "600528",
+      "name": "中铁工业"
+    },
+    {
+      "code": "sh.600550",
+      "raw_code": "600550",
+      "name": "保变电气"
+    },
+    {
+      "code": "sh.600642",
+      "raw_code": "600642",
+      "name": "申能股份"
+    },
+    {
+      "code": "sh.600795",
+      "raw_code": "600795",
+      "name": "国电电力"
+    },
+    {
+      "code": "sh.600853",
+      "raw_code": "600853",
+      "name": "龙建股份"
+    },
+    {
+      "code": "sh.600875",
+      "raw_code": "600875",
+      "name": "东方电气"
+    },
+    {
+      "code": "sh.600886",
+      "raw_code": "600886",
+      "name": "国投电力"
+    },
+    {
+      "code": "sh.600905",
+      "raw_code": "600905",
+      "name": "三峡能源"
+    },
+    {
+      "code": "sh.600956",
+      "raw_code": "600956",
+      "name": "新天绿能"
+    },
+    {
+      "code": "sh.600982",
+      "raw_code": "600982",
+      "name": "宁波能源"
+    },
+    {
+      "code": "sh.600995",
+      "raw_code": "600995",
+      "name": "南网储能"
+    },
+    {
+      "code": "sh.601126",
+      "raw_code": "601126",
+      "name": "四方股份"
+    },
+    {
+      "code": "sh.601399",
+      "raw_code": "601399",
+      "name": "国机重装"
+    },
+    {
+      "code": "sh.601669",
+      "raw_code": "601669",
+      "name": "中国电建"
+    },
+    {
+      "code": "sh.603063",
+      "raw_code": "603063",
+      "name": "禾望电气"
+    },
+    {
+      "code": "sh.603315",
+      "raw_code": "603315",
+      "name": "福鞍股份"
+    },
+    {
+      "code": "sh.603530",
+      "raw_code": "603530",
+      "name": "神马电力"
+    },
+    {
+      "code": "sh.603618",
+      "raw_code": "603618",
+      "name": "杭电股份"
+    },
+    {
+      "code": "sh.603856",
+      "raw_code": "603856",
+      "name": "东宏股份"
+    },
+    {
+      "code": "sh.603916",
+      "raw_code": "603916",
+      "name": "苏博特"
+    },
+    {
+      "code": "sh.605056",
+      "raw_code": "605056",
+      "name": "咸亨国际"
+    },
+    {
+      "code": "sh.688128",
+      "raw_code": "688128",
+      "name": "中国电研"
+    },
+    {
+      "code": "sh.688425",
+      "raw_code": "688425",
+      "name": "铁建重工"
+    },
+    {
+      "code": "sh.688676",
+      "raw_code": "688676",
+      "name": "金盘科技"
+    },
+    {
+      "code": "sz.000010",
+      "raw_code": "000010",
+      "name": "*ST美丽"
+    },
+    {
+      "code": "sz.000400",
+      "raw_code": "000400",
+      "name": "许继电气"
+    },
+    {
+      "code": "sz.000533",
+      "raw_code": "000533",
+      "name": "顺钠股份"
+    },
+    {
+      "code": "sz.000543",
+      "raw_code": "000543",
+      "name": "皖能电力"
+    },
+    {
+      "code": "sz.000600",
+      "raw_code": "000600",
+      "name": "建投能源"
+    },
+    {
+      "code": "sz.000601",
+      "raw_code": "000601",
+      "name": "韶能股份"
+    },
+    {
+      "code": "sz.000777",
+      "raw_code": "000777",
+      "name": "中核科技"
+    },
+    {
+      "code": "sz.000779",
+      "raw_code": "000779",
+      "name": "甘咨询"
+    },
+    {
+      "code": "sz.000875",
+      "raw_code": "000875",
+      "name": "电投绿能"
+    },
+    {
+      "code": "sz.000883",
+      "raw_code": "000883",
+      "name": "湖北能源"
+    },
+    {
+      "code": "sz.000899",
+      "raw_code": "000899",
+      "name": "赣能股份"
+    },
+    {
+      "code": "sz.000966",
+      "raw_code": "000966",
+      "name": "长源电力"
+    },
+    {
+      "code": "sz.001289",
+      "raw_code": "001289",
+      "name": "龙源电力"
+    },
+    {
+      "code": "sz.001896",
+      "raw_code": "001896",
+      "name": "豫能控股"
+    },
+    {
+      "code": "sz.002015",
+      "raw_code": "002015",
+      "name": "协鑫能科"
+    },
+    {
+      "code": "sz.002028",
+      "raw_code": "002028",
+      "name": "思源电气"
+    },
+    {
+      "code": "sz.002060",
+      "raw_code": "002060",
+      "name": "广东建工"
+    },
+    {
+      "code": "sz.002176",
+      "raw_code": "002176",
+      "name": "江特电机"
+    },
+    {
+      "code": "sz.002202",
+      "raw_code": "002202",
+      "name": "金风科技"
+    },
+    {
+      "code": "sz.002266",
+      "raw_code": "002266",
+      "name": "浙富控股"
+    },
+    {
+      "code": "sz.002271",
+      "raw_code": "002271",
+      "name": "东方雨虹"
+    },
+    {
+      "code": "sz.002272",
+      "raw_code": "002272",
+      "name": "川润股份"
+    },
+    {
+      "code": "sz.002298",
+      "raw_code": "002298",
+      "name": "中电鑫龙"
+    },
+    {
+      "code": "sz.002342",
+      "raw_code": "002342",
+      "name": "巨力索具"
+    },
+    {
+      "code": "sz.002498",
+      "raw_code": "002498",
+      "name": "汉缆股份"
+    },
+    {
+      "code": "sz.002639",
+      "raw_code": "002639",
+      "name": "雪人集团"
+    },
+    {
+      "code": "sz.002879",
+      "raw_code": "002879",
+      "name": "长缆科技"
+    },
+    {
+      "code": "sz.300018",
+      "raw_code": "300018",
+      "name": "中元股份"
+    },
+    {
+      "code": "sz.300040",
+      "raw_code": "300040",
+      "name": "九洲集团"
+    },
+    {
+      "code": "sz.300185",
+      "raw_code": "300185",
+      "name": "通裕重工"
+    },
+    {
+      "code": "sz.300376",
+      "raw_code": "300376",
+      "name": "易事特"
+    },
+    {
+      "code": "sz.300711",
+      "raw_code": "300711",
+      "name": "广哈通信"
+    },
+    {
+      "code": "sz.300712",
+      "raw_code": "300712",
+      "name": "永福股份"
+    },
+    {
+      "code": "sz.300930",
+      "raw_code": "300930",
+      "name": "屹通新材"
+    },
+    {
+      "code": "sz.301018",
+      "raw_code": "301018",
+      "name": "申菱环境"
+    },
+    {
+      "code": "sz.301038",
+      "raw_code": "301038",
+      "name": "深水规院"
+    },
+    {
+      "code": "sz.301079",
+      "raw_code": "301079",
+      "name": "邵阳液压"
+    },
+    {
+      "code": "sz.301151",
+      "raw_code": "301151",
+      "name": "冠龙节能"
+    },
+    {
+      "code": "sz.301548",
+      "raw_code": "301548",
+      "name": "崇德科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:46",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308753/"
+  "fetched_at": "2026-07-13 17:00:31",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,627 @@
   "concept_name": "高压快充",
   "first_trade_date": "2022-07-04",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 123,
+  "constituents": [
+    {
+      "code": "bj.920168",
+      "raw_code": "920168",
+      "name": "通宝光电"
+    },
+    {
+      "code": "bj.920221",
+      "raw_code": "920221",
+      "name": "易实精密"
+    },
+    {
+      "code": "bj.920375",
+      "raw_code": "920375",
+      "name": "派诺科技"
+    },
+    {
+      "code": "bj.920509",
+      "raw_code": "920509",
+      "name": "同惠电子"
+    },
+    {
+      "code": "sh.600089",
+      "raw_code": "600089",
+      "name": "特变电工"
+    },
+    {
+      "code": "sh.600212",
+      "raw_code": "600212",
+      "name": "绿能慧充"
+    },
+    {
+      "code": "sh.600237",
+      "raw_code": "600237",
+      "name": "铜峰电子"
+    },
+    {
+      "code": "sh.600405",
+      "raw_code": "600405",
+      "name": "动力源"
+    },
+    {
+      "code": "sh.600506",
+      "raw_code": "600506",
+      "name": "统一股份"
+    },
+    {
+      "code": "sh.600563",
+      "raw_code": "600563",
+      "name": "法拉电子"
+    },
+    {
+      "code": "sh.600577",
+      "raw_code": "600577",
+      "name": "精达股份"
+    },
+    {
+      "code": "sh.600619",
+      "raw_code": "600619",
+      "name": "海立股份"
+    },
+    {
+      "code": "sh.600635",
+      "raw_code": "600635",
+      "name": "大众公用"
+    },
+    {
+      "code": "sh.600699",
+      "raw_code": "600699",
+      "name": "均胜电子"
+    },
+    {
+      "code": "sh.600733",
+      "raw_code": "600733",
+      "name": "北汽蓝谷"
+    },
+    {
+      "code": "sh.601137",
+      "raw_code": "601137",
+      "name": "博威合金"
+    },
+    {
+      "code": "sh.601609",
+      "raw_code": "601609",
+      "name": "金田股份"
+    },
+    {
+      "code": "sh.603050",
+      "raw_code": "603050",
+      "name": "科林电气"
+    },
+    {
+      "code": "sh.603212",
+      "raw_code": "603212",
+      "name": "赛伍技术"
+    },
+    {
+      "code": "sh.603290",
+      "raw_code": "603290",
+      "name": "斯达半导"
+    },
+    {
+      "code": "sh.603353",
+      "raw_code": "603353",
+      "name": "和顺石油"
+    },
+    {
+      "code": "sh.603528",
+      "raw_code": "603528",
+      "name": "多伦科技"
+    },
+    {
+      "code": "sh.603766",
+      "raw_code": "603766",
+      "name": "隆鑫通用"
+    },
+    {
+      "code": "sh.603989",
+      "raw_code": "603989",
+      "name": "艾华集团"
+    },
+    {
+      "code": "sh.688103",
+      "raw_code": "688103",
+      "name": "国力电子"
+    },
+    {
+      "code": "sh.688116",
+      "raw_code": "688116",
+      "name": "天奈科技"
+    },
+    {
+      "code": "sh.688208",
+      "raw_code": "688208",
+      "name": "道通科技"
+    },
+    {
+      "code": "sh.688252",
+      "raw_code": "688252",
+      "name": "天德钰"
+    },
+    {
+      "code": "sh.688261",
+      "raw_code": "688261",
+      "name": "东微半导"
+    },
+    {
+      "code": "sh.688508",
+      "raw_code": "688508",
+      "name": "芯朋微"
+    },
+    {
+      "code": "sh.688517",
+      "raw_code": "688517",
+      "name": "金冠电气"
+    },
+    {
+      "code": "sh.688567",
+      "raw_code": "688567",
+      "name": "孚能科技"
+    },
+    {
+      "code": "sh.688597",
+      "raw_code": "688597",
+      "name": "煜邦电力"
+    },
+    {
+      "code": "sh.688612",
+      "raw_code": "688612",
+      "name": "威迈斯"
+    },
+    {
+      "code": "sh.688629",
+      "raw_code": "688629",
+      "name": "华丰科技"
+    },
+    {
+      "code": "sh.688779",
+      "raw_code": "688779",
+      "name": "五矿新能"
+    },
+    {
+      "code": "sh.688800",
+      "raw_code": "688800",
+      "name": "瑞可达"
+    },
+    {
+      "code": "sz.000009",
+      "raw_code": "000009",
+      "name": "中国宝安"
+    },
+    {
+      "code": "sz.000400",
+      "raw_code": "000400",
+      "name": "许继电气"
+    },
+    {
+      "code": "sz.000636",
+      "raw_code": "000636",
+      "name": "风华高科"
+    },
+    {
+      "code": "sz.000988",
+      "raw_code": "000988",
+      "name": "华工科技"
+    },
+    {
+      "code": "sz.002015",
+      "raw_code": "002015",
+      "name": "协鑫能科"
+    },
+    {
+      "code": "sz.002055",
+      "raw_code": "002055",
+      "name": "ST得润"
+    },
+    {
+      "code": "sz.002074",
+      "raw_code": "002074",
+      "name": "国轩高科"
+    },
+    {
+      "code": "sz.002130",
+      "raw_code": "002130",
+      "name": "沃尔核材"
+    },
+    {
+      "code": "sz.002139",
+      "raw_code": "002139",
+      "name": "拓邦股份"
+    },
+    {
+      "code": "sz.002168",
+      "raw_code": "002168",
+      "name": "ST惠程"
+    },
+    {
+      "code": "sz.002179",
+      "raw_code": "002179",
+      "name": "中航光电"
+    },
+    {
+      "code": "sz.002227",
+      "raw_code": "002227",
+      "name": "*ST特迅"
+    },
+    {
+      "code": "sz.002276",
+      "raw_code": "002276",
+      "name": "万马股份"
+    },
+    {
+      "code": "sz.002339",
+      "raw_code": "002339",
+      "name": "积成电子"
+    },
+    {
+      "code": "sz.002350",
+      "raw_code": "002350",
+      "name": "北京科锐"
+    },
+    {
+      "code": "sz.002358",
+      "raw_code": "002358",
+      "name": "森源电气"
+    },
+    {
+      "code": "sz.002364",
+      "raw_code": "002364",
+      "name": "中恒电气"
+    },
+    {
+      "code": "sz.002384",
+      "raw_code": "002384",
+      "name": "东山精密"
+    },
+    {
+      "code": "sz.002514",
+      "raw_code": "002514",
+      "name": "*ST宝馨"
+    },
+    {
+      "code": "sz.002533",
+      "raw_code": "002533",
+      "name": "金杯电工"
+    },
+    {
+      "code": "sz.002594",
+      "raw_code": "002594",
+      "name": "比亚迪"
+    },
+    {
+      "code": "sz.002609",
+      "raw_code": "002609",
+      "name": "捷顺科技"
+    },
+    {
+      "code": "sz.002635",
+      "raw_code": "002635",
+      "name": "安洁科技"
+    },
+    {
+      "code": "sz.002686",
+      "raw_code": "002686",
+      "name": "亿利达"
+    },
+    {
+      "code": "sz.002771",
+      "raw_code": "002771",
+      "name": "真视通"
+    },
+    {
+      "code": "sz.002782",
+      "raw_code": "002782",
+      "name": "可立克"
+    },
+    {
+      "code": "sz.002806",
+      "raw_code": "002806",
+      "name": "华锋股份"
+    },
+    {
+      "code": "sz.002816",
+      "raw_code": "002816",
+      "name": "*ST和科"
+    },
+    {
+      "code": "sz.002843",
+      "raw_code": "002843",
+      "name": "泰嘉股份"
+    },
+    {
+      "code": "sz.002851",
+      "raw_code": "002851",
+      "name": "麦格米特"
+    },
+    {
+      "code": "sz.002870",
+      "raw_code": "002870",
+      "name": "香山股份"
+    },
+    {
+      "code": "sz.002885",
+      "raw_code": "002885",
+      "name": "京泉华"
+    },
+    {
+      "code": "sz.002922",
+      "raw_code": "002922",
+      "name": "伊戈尔"
+    },
+    {
+      "code": "sz.002927",
+      "raw_code": "002927",
+      "name": "泰永长征"
+    },
+    {
+      "code": "sz.002953",
+      "raw_code": "002953",
+      "name": "日丰股份"
+    },
+    {
+      "code": "sz.002963",
+      "raw_code": "002963",
+      "name": "豪尔赛"
+    },
+    {
+      "code": "sz.003039",
+      "raw_code": "003039",
+      "name": "顺控发展"
+    },
+    {
+      "code": "sz.300001",
+      "raw_code": "300001",
+      "name": "特锐德"
+    },
+    {
+      "code": "sz.300011",
+      "raw_code": "300011",
+      "name": "鼎汉技术"
+    },
+    {
+      "code": "sz.300035",
+      "raw_code": "300035",
+      "name": "中科电气"
+    },
+    {
+      "code": "sz.300040",
+      "raw_code": "300040",
+      "name": "九洲集团"
+    },
+    {
+      "code": "sz.300062",
+      "raw_code": "300062",
+      "name": "中能电气"
+    },
+    {
+      "code": "sz.300141",
+      "raw_code": "300141",
+      "name": "和顺电气"
+    },
+    {
+      "code": "sz.300207",
+      "raw_code": "300207",
+      "name": "欣旺达"
+    },
+    {
+      "code": "sz.300222",
+      "raw_code": "300222",
+      "name": "科大智能"
+    },
+    {
+      "code": "sz.300224",
+      "raw_code": "300224",
+      "name": "正海磁材"
+    },
+    {
+      "code": "sz.300351",
+      "raw_code": "300351",
+      "name": "永贵电器"
+    },
+    {
+      "code": "sz.300360",
+      "raw_code": "300360",
+      "name": "炬华科技"
+    },
+    {
+      "code": "sz.300373",
+      "raw_code": "300373",
+      "name": "扬杰科技"
+    },
+    {
+      "code": "sz.300376",
+      "raw_code": "300376",
+      "name": "易事特"
+    },
+    {
+      "code": "sz.300403",
+      "raw_code": "300403",
+      "name": "汉宇集团"
+    },
+    {
+      "code": "sz.300414",
+      "raw_code": "300414",
+      "name": "中光防雷"
+    },
+    {
+      "code": "sz.300444",
+      "raw_code": "300444",
+      "name": "双杰电气"
+    },
+    {
+      "code": "sz.300484",
+      "raw_code": "300484",
+      "name": "蓝海华腾"
+    },
+    {
+      "code": "sz.300490",
+      "raw_code": "300490",
+      "name": "华自科技"
+    },
+    {
+      "code": "sz.300491",
+      "raw_code": "300491",
+      "name": "通合科技"
+    },
+    {
+      "code": "sz.300507",
+      "raw_code": "300507",
+      "name": "苏奥传感"
+    },
+    {
+      "code": "sz.300510",
+      "raw_code": "300510",
+      "name": "金冠股份"
+    },
+    {
+      "code": "sz.300530",
+      "raw_code": "300530",
+      "name": "领湃科技"
+    },
+    {
+      "code": "sz.300623",
+      "raw_code": "300623",
+      "name": "捷捷微电"
+    },
+    {
+      "code": "sz.300648",
+      "raw_code": "300648",
+      "name": "星云股份"
+    },
+    {
+      "code": "sz.300693",
+      "raw_code": "300693",
+      "name": "盛弘股份"
+    },
+    {
+      "code": "sz.300695",
+      "raw_code": "300695",
+      "name": "兆丰股份"
+    },
+    {
+      "code": "sz.300713",
+      "raw_code": "300713",
+      "name": "英可瑞"
+    },
+    {
+      "code": "sz.300745",
+      "raw_code": "300745",
+      "name": "欣锐科技"
+    },
+    {
+      "code": "sz.300807",
+      "raw_code": "300807",
+      "name": "天迈科技"
+    },
+    {
+      "code": "sz.300843",
+      "raw_code": "300843",
+      "name": "胜蓝股份"
+    },
+    {
+      "code": "sz.300880",
+      "raw_code": "300880",
+      "name": "迦南智能"
+    },
+    {
+      "code": "sz.300933",
+      "raw_code": "300933",
+      "name": "中辰股份"
+    },
+    {
+      "code": "sz.301018",
+      "raw_code": "301018",
+      "name": "申菱环境"
+    },
+    {
+      "code": "sz.301031",
+      "raw_code": "301031",
+      "name": "中熔电气"
+    },
+    {
+      "code": "sz.301062",
+      "raw_code": "301062",
+      "name": "上海艾录"
+    },
+    {
+      "code": "sz.301082",
+      "raw_code": "301082",
+      "name": "久盛电气"
+    },
+    {
+      "code": "sz.301180",
+      "raw_code": "301180",
+      "name": "万祥科技"
+    },
+    {
+      "code": "sz.301182",
+      "raw_code": "301182",
+      "name": "凯旺科技"
+    },
+    {
+      "code": "sz.301238",
+      "raw_code": "301238",
+      "name": "瑞泰新材"
+    },
+    {
+      "code": "sz.301310",
+      "raw_code": "301310",
+      "name": "鑫宏业"
+    },
+    {
+      "code": "sz.301349",
+      "raw_code": "301349",
+      "name": "信德新材"
+    },
+    {
+      "code": "sz.301439",
+      "raw_code": "301439",
+      "name": "泓淋电力"
+    },
+    {
+      "code": "sz.301449",
+      "raw_code": "301449",
+      "name": "天溯计量"
+    },
+    {
+      "code": "sz.301458",
+      "raw_code": "301458",
+      "name": "钧崴电子"
+    },
+    {
+      "code": "sz.301499",
+      "raw_code": "301499",
+      "name": "维科精密"
+    },
+    {
+      "code": "sz.301516",
+      "raw_code": "301516",
+      "name": "中远通"
+    },
+    {
+      "code": "sz.301577",
+      "raw_code": "301577",
+      "name": "美信科技"
+    },
+    {
+      "code": "sz.301590",
+      "raw_code": "301590",
+      "name": "优优绿能"
+    },
+    {
+      "code": "sz.301607",
+      "raw_code": "301607",
+      "name": "富特科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:50",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308806/"
+  "fetched_at": "2026-07-13 17:01:18",
+  "page_count": 13,
+  "is_partial": false,
+  "page_limit_reason": null
 }

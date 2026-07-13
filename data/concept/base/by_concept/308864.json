@@ -3,10 +3,202 @@
   "concept_name": "金属铅",
   "first_trade_date": "2022-03-09",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 38,
+  "constituents": [
+    {
+      "code": "sh.600173",
+      "raw_code": "600173",
+      "name": "卧龙新能"
+    },
+    {
+      "code": "sh.600301",
+      "raw_code": "600301",
+      "name": "华锡有色"
+    },
+    {
+      "code": "sh.600338",
+      "raw_code": "600338",
+      "name": "西藏珠峰"
+    },
+    {
+      "code": "sh.600497",
+      "raw_code": "600497",
+      "name": "驰宏锌锗"
+    },
+    {
+      "code": "sh.600531",
+      "raw_code": "600531",
+      "name": "豫光金铅"
+    },
+    {
+      "code": "sh.600711",
+      "raw_code": "600711",
+      "name": "盛屯矿业"
+    },
+    {
+      "code": "sh.600961",
+      "raw_code": "600961",
+      "name": "株冶集团"
+    },
+    {
+      "code": "sh.600988",
+      "raw_code": "600988",
+      "name": "赤峰黄金"
+    },
+    {
+      "code": "sh.601020",
+      "raw_code": "601020",
+      "name": "华钰矿业"
+    },
+    {
+      "code": "sh.601121",
+      "raw_code": "601121",
+      "name": "宝地矿业"
+    },
+    {
+      "code": "sh.601168",
+      "raw_code": "601168",
+      "name": "西部矿业"
+    },
+    {
+      "code": "sh.601212",
+      "raw_code": "601212",
+      "name": "白银有色"
+    },
+    {
+      "code": "sh.601390",
+      "raw_code": "601390",
+      "name": "中国中铁"
+    },
+    {
+      "code": "sh.601899",
+      "raw_code": "601899",
+      "name": "紫金矿业"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603132",
+      "raw_code": "603132",
+      "name": "金徽股份"
+    },
+    {
+      "code": "sh.603588",
+      "raw_code": "603588",
+      "name": "高能环境"
+    },
+    {
+      "code": "sz.000060",
+      "raw_code": "000060",
+      "name": "中金岭南"
+    },
+    {
+      "code": "sz.000426",
+      "raw_code": "000426",
+      "name": "兴业银锡"
+    },
+    {
+      "code": "sz.000573",
+      "raw_code": "000573",
+      "name": "粤宏远A"
+    },
+    {
+      "code": "sz.000603",
+      "raw_code": "000603",
+      "name": "盛达资源"
+    },
+    {
+      "code": "sz.000688",
+      "raw_code": "000688",
+      "name": "国城矿业"
+    },
+    {
+      "code": "sz.000751",
+      "raw_code": "000751",
+      "name": "锌业股份"
+    },
+    {
+      "code": "sz.000758",
+      "raw_code": "000758",
+      "name": "中色股份"
+    },
+    {
+      "code": "sz.000816",
+      "raw_code": "000816",
+      "name": "智慧农业"
+    },
+    {
+      "code": "sz.000850",
+      "raw_code": "000850",
+      "name": "华茂股份"
+    },
+    {
+      "code": "sz.000960",
+      "raw_code": "000960",
+      "name": "锡业股份"
+    },
+    {
+      "code": "sz.000975",
+      "raw_code": "000975",
+      "name": "山金国际"
+    },
+    {
+      "code": "sz.001203",
+      "raw_code": "001203",
+      "name": "大中矿业"
+    },
+    {
+      "code": "sz.001257",
+      "raw_code": "001257",
+      "name": "盛龙股份"
+    },
+    {
+      "code": "sz.002114",
+      "raw_code": "002114",
+      "name": "罗平锌电"
+    },
+    {
+      "code": "sz.002155",
+      "raw_code": "002155",
+      "name": "湖南黄金"
+    },
+    {
+      "code": "sz.002237",
+      "raw_code": "002237",
+      "name": "恒邦股份"
+    },
+    {
+      "code": "sz.002266",
+      "raw_code": "002266",
+      "name": "浙富控股"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002667",
+      "raw_code": "002667",
+      "name": "*ST威领"
+    },
+    {
+      "code": "sz.002716",
+      "raw_code": "002716",
+      "name": "湖南白银"
+    },
+    {
+      "code": "sz.300774",
+      "raw_code": "300774",
+      "name": "倍杰特"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:56",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308864/"
+  "fetched_at": "2026-07-13 17:01:43",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

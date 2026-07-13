@@ -3,10 +3,367 @@
   "concept_name": "摘帽",
   "first_trade_date": "2017-03-02",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 71,
+  "constituents": [
+    {
+      "code": "sh.600130",
+      "raw_code": "600130",
+      "name": "波导股份"
+    },
+    {
+      "code": "sh.600228",
+      "raw_code": "600228",
+      "name": "返利科技"
+    },
+    {
+      "code": "sh.600287",
+      "raw_code": "600287",
+      "name": "苏豪时尚"
+    },
+    {
+      "code": "sh.600358",
+      "raw_code": "600358",
+      "name": "国旅联合"
+    },
+    {
+      "code": "sh.600360",
+      "raw_code": "600360",
+      "name": "华微电子"
+    },
+    {
+      "code": "sh.600603",
+      "raw_code": "600603",
+      "name": "广汇物流"
+    },
+    {
+      "code": "sh.600711",
+      "raw_code": "600711",
+      "name": "盛屯矿业"
+    },
+    {
+      "code": "sh.600777",
+      "raw_code": "600777",
+      "name": "新潮能源"
+    },
+    {
+      "code": "sh.600831",
+      "raw_code": "600831",
+      "name": "广电网络"
+    },
+    {
+      "code": "sh.600892",
+      "raw_code": "600892",
+      "name": "大晟文化"
+    },
+    {
+      "code": "sh.603007",
+      "raw_code": "603007",
+      "name": "顺景科技"
+    },
+    {
+      "code": "sh.603261",
+      "raw_code": "603261",
+      "name": "立航科技"
+    },
+    {
+      "code": "sh.603268",
+      "raw_code": "603268",
+      "name": "松发股份"
+    },
+    {
+      "code": "sh.603389",
+      "raw_code": "603389",
+      "name": "亚振家居"
+    },
+    {
+      "code": "sh.603559",
+      "raw_code": "603559",
+      "name": "中通国脉"
+    },
+    {
+      "code": "sh.603580",
+      "raw_code": "603580",
+      "name": "艾艾精工"
+    },
+    {
+      "code": "sh.603721",
+      "raw_code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "code": "sh.603813",
+      "raw_code": "603813",
+      "name": "原尚股份"
+    },
+    {
+      "code": "sh.688511",
+      "raw_code": "688511",
+      "name": "天微电子"
+    },
+    {
+      "code": "sz.000430",
+      "raw_code": "000430",
+      "name": "张家界"
+    },
+    {
+      "code": "sz.000504",
+      "raw_code": "000504",
+      "name": "南华生物"
+    },
+    {
+      "code": "sz.000518",
+      "raw_code": "000518",
+      "name": "四环生物"
+    },
+    {
+      "code": "sz.000595",
+      "raw_code": "000595",
+      "name": "新能股份"
+    },
+    {
+      "code": "sz.000608",
+      "raw_code": "000608",
+      "name": "阳光股份"
+    },
+    {
+      "code": "sz.000656",
+      "raw_code": "000656",
+      "name": "金科股份"
+    },
+    {
+      "code": "sz.000668",
+      "raw_code": "000668",
+      "name": "荣丰控股"
+    },
+    {
+      "code": "sz.000691",
+      "raw_code": "000691",
+      "name": "亚太实业"
+    },
+    {
+      "code": "sz.000697",
+      "raw_code": "000697",
+      "name": "炼石航空"
+    },
+    {
+      "code": "sz.000736",
+      "raw_code": "000736",
+      "name": "中交发展"
+    },
+    {
+      "code": "sz.000908",
+      "raw_code": "000908",
+      "name": "石药景峰"
+    },
+    {
+      "code": "sz.000929",
+      "raw_code": "000929",
+      "name": "兰州黄河"
+    },
+    {
+      "code": "sz.000972",
+      "raw_code": "000972",
+      "name": "中基健康"
+    },
+    {
+      "code": "sz.001270",
+      "raw_code": "001270",
+      "name": "铖昌科技"
+    },
+    {
+      "code": "sz.002047",
+      "raw_code": "002047",
+      "name": "宝鹰股份"
+    },
+    {
+      "code": "sz.002058",
+      "raw_code": "002058",
+      "name": "威尔泰"
+    },
+    {
+      "code": "sz.002076",
+      "raw_code": "002076",
+      "name": "星光股份"
+    },
+    {
+      "code": "sz.002197",
+      "raw_code": "002197",
+      "name": "证通电子"
+    },
+    {
+      "code": "sz.002200",
+      "raw_code": "002200",
+      "name": "交投生态"
+    },
+    {
+      "code": "sz.002253",
+      "raw_code": "002253",
+      "name": "川大智胜"
+    },
+    {
+      "code": "sz.002289",
+      "raw_code": "002289",
+      "name": "宇顺电子"
+    },
+    {
+      "code": "sz.002316",
+      "raw_code": "002316",
+      "name": "亚联发展"
+    },
+    {
+      "code": "sz.002388",
+      "raw_code": "002388",
+      "name": "新亚制程"
+    },
+    {
+      "code": "sz.002425",
+      "raw_code": "002425",
+      "name": "凯撒文化"
+    },
+    {
+      "code": "sz.002496",
+      "raw_code": "002496",
+      "name": "辉丰股份"
+    },
+    {
+      "code": "sz.002529",
+      "raw_code": "002529",
+      "name": "海源复材"
+    },
+    {
+      "code": "sz.002602",
+      "raw_code": "002602",
+      "name": "世纪华通"
+    },
+    {
+      "code": "sz.002647",
+      "raw_code": "002647",
+      "name": "仁东控股"
+    },
+    {
+      "code": "sz.002693",
+      "raw_code": "002693",
+      "name": "双成药业"
+    },
+    {
+      "code": "sz.002742",
+      "raw_code": "002742",
+      "name": "冀衡医药"
+    },
+    {
+      "code": "sz.002762",
+      "raw_code": "002762",
+      "name": "金发拉比"
+    },
+    {
+      "code": "sz.002848",
+      "raw_code": "002848",
+      "name": "高斯贝尔"
+    },
+    {
+      "code": "sz.002868",
+      "raw_code": "002868",
+      "name": "绿康生化"
+    },
+    {
+      "code": "sz.003004",
+      "raw_code": "003004",
+      "name": "声迅股份"
+    },
+    {
+      "code": "sz.003032",
+      "raw_code": "003032",
+      "name": "传智教育"
+    },
+    {
+      "code": "sz.300052",
+      "raw_code": "300052",
+      "name": "中青宝"
+    },
+    {
+      "code": "sz.300093",
+      "raw_code": "300093",
+      "name": "金刚光伏"
+    },
+    {
+      "code": "sz.300097",
+      "raw_code": "300097",
+      "name": "智云股份"
+    },
+    {
+      "code": "sz.300137",
+      "raw_code": "300137",
+      "name": "先河环保"
+    },
+    {
+      "code": "sz.300159",
+      "raw_code": "300159",
+      "name": "新研股份"
+    },
+    {
+      "code": "sz.300165",
+      "raw_code": "300165",
+      "name": "天瑞仪器"
+    },
+    {
+      "code": "sz.300175",
+      "raw_code": "300175",
+      "name": "朗源股份"
+    },
+    {
+      "code": "sz.300225",
+      "raw_code": "300225",
+      "name": "金力泰"
+    },
+    {
+      "code": "sz.300268",
+      "raw_code": "300268",
+      "name": "佳沃食品"
+    },
+    {
+      "code": "sz.300300",
+      "raw_code": "300300",
+      "name": "海峡创新"
+    },
+    {
+      "code": "sz.300313",
+      "raw_code": "300313",
+      "name": "天山生物"
+    },
+    {
+      "code": "sz.300343",
+      "raw_code": "300343",
+      "name": "联创股份"
+    },
+    {
+      "code": "sz.300376",
+      "raw_code": "300376",
+      "name": "易事特"
+    },
+    {
+      "code": "sz.300506",
+      "raw_code": "300506",
+      "name": "名家汇"
+    },
+    {
+      "code": "sz.300561",
+      "raw_code": "300561",
+      "name": "汇金科技"
+    },
+    {
+      "code": "sz.300899",
+      "raw_code": "300899",
+      "name": "上海凯鑫"
+    },
+    {
+      "code": "sz.301288",
+      "raw_code": "301288",
+      "name": "清研环境"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:53",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301455/"
+  "fetched_at": "2026-07-13 16:49:39",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

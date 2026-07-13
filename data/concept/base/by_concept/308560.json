@@ -3,10 +3,217 @@
   "concept_name": "烟草",
   "first_trade_date": "2019-06-17",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 41,
+  "constituents": [
+    {
+      "code": "bj.920553",
+      "raw_code": "920553",
+      "name": "凯腾精工"
+    },
+    {
+      "code": "bj.920579",
+      "raw_code": "920579",
+      "name": "机科股份"
+    },
+    {
+      "code": "sh.600235",
+      "raw_code": "600235",
+      "name": "民丰特纸"
+    },
+    {
+      "code": "sh.600356",
+      "raw_code": "600356",
+      "name": "恒丰纸业"
+    },
+    {
+      "code": "sh.600433",
+      "raw_code": "600433",
+      "name": "冠豪高新"
+    },
+    {
+      "code": "sh.600830",
+      "raw_code": "600830",
+      "name": "香溢融通"
+    },
+    {
+      "code": "sh.601515",
+      "raw_code": "601515",
+      "name": "衢州东峰"
+    },
+    {
+      "code": "sh.603020",
+      "raw_code": "603020",
+      "name": "爱普股份"
+    },
+    {
+      "code": "sh.603058",
+      "raw_code": "603058",
+      "name": "永吉股份"
+    },
+    {
+      "code": "sh.603066",
+      "raw_code": "603066",
+      "name": "音飞储存"
+    },
+    {
+      "code": "sh.603429",
+      "raw_code": "603429",
+      "name": "*ST集友"
+    },
+    {
+      "code": "sh.603499",
+      "raw_code": "603499",
+      "name": "翔港科技"
+    },
+    {
+      "code": "sh.603607",
+      "raw_code": "603607",
+      "name": "京华激光"
+    },
+    {
+      "code": "sh.603687",
+      "raw_code": "603687",
+      "name": "大胜达"
+    },
+    {
+      "code": "sh.603733",
+      "raw_code": "603733",
+      "name": "仙鹤股份"
+    },
+    {
+      "code": "sh.603867",
+      "raw_code": "603867",
+      "name": "新化股份"
+    },
+    {
+      "code": "sh.688500",
+      "raw_code": "688500",
+      "name": "慧辰股份"
+    },
+    {
+      "code": "sz.000812",
+      "raw_code": "000812",
+      "name": "陕西金叶"
+    },
+    {
+      "code": "sz.002012",
+      "raw_code": "002012",
+      "name": "凯恩股份"
+    },
+    {
+      "code": "sz.002067",
+      "raw_code": "002067",
+      "name": "景兴纸业"
+    },
+    {
+      "code": "sz.002161",
+      "raw_code": "002161",
+      "name": "远望谷"
+    },
+    {
+      "code": "sz.002191",
+      "raw_code": "002191",
+      "name": "劲嘉股份"
+    },
+    {
+      "code": "sz.002439",
+      "raw_code": "002439",
+      "name": "启明星辰"
+    },
+    {
+      "code": "sz.002812",
+      "raw_code": "002812",
+      "name": "恩捷股份"
+    },
+    {
+      "code": "sz.002836",
+      "raw_code": "002836",
+      "name": "新宏泽"
+    },
+    {
+      "code": "sz.300125",
+      "raw_code": "300125",
+      "name": "*ST聆达"
+    },
+    {
+      "code": "sz.300195",
+      "raw_code": "300195",
+      "name": "长荣股份"
+    },
+    {
+      "code": "sz.300331",
+      "raw_code": "300331",
+      "name": "苏大维格"
+    },
+    {
+      "code": "sz.300541",
+      "raw_code": "300541",
+      "name": "先进数通"
+    },
+    {
+      "code": "sz.300594",
+      "raw_code": "300594",
+      "name": "ST朗进"
+    },
+    {
+      "code": "sz.300678",
+      "raw_code": "300678",
+      "name": "中科信息"
+    },
+    {
+      "code": "sz.300741",
+      "raw_code": "300741",
+      "name": "华宝股份"
+    },
+    {
+      "code": "sz.300883",
+      "raw_code": "300883",
+      "name": "龙利得"
+    },
+    {
+      "code": "sz.300886",
+      "raw_code": "300886",
+      "name": "华业香料"
+    },
+    {
+      "code": "sz.301169",
+      "raw_code": "301169",
+      "name": "零点有数"
+    },
+    {
+      "code": "sz.301220",
+      "raw_code": "301220",
+      "name": "亚香股份"
+    },
+    {
+      "code": "sz.301223",
+      "raw_code": "301223",
+      "name": "中荣股份"
+    },
+    {
+      "code": "sz.301272",
+      "raw_code": "301272",
+      "name": "英华特"
+    },
+    {
+      "code": "sz.301311",
+      "raw_code": "301311",
+      "name": "昆船智能"
+    },
+    {
+      "code": "sz.301315",
+      "raw_code": "301315",
+      "name": "威士顿"
+    },
+    {
+      "code": "sz.301469",
+      "raw_code": "301469",
+      "name": "恒达新材"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:32",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308560/"
+  "fetched_at": "2026-07-13 16:59:09",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

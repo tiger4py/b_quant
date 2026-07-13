@@ -3,10 +3,767 @@
   "concept_name": "旅游概念",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 151,
+  "constituents": [
+    {
+      "code": "bj.920564",
+      "raw_code": "920564",
+      "name": "天润科技"
+    },
+    {
+      "code": "sh.600051",
+      "raw_code": "600051",
+      "name": "宁波联合"
+    },
+    {
+      "code": "sh.600054",
+      "raw_code": "600054",
+      "name": "黄山旅游"
+    },
+    {
+      "code": "sh.600088",
+      "raw_code": "600088",
+      "name": "中视传媒"
+    },
+    {
+      "code": "sh.600094",
+      "raw_code": "600094",
+      "name": "大名城"
+    },
+    {
+      "code": "sh.600138",
+      "raw_code": "600138",
+      "name": "中青旅"
+    },
+    {
+      "code": "sh.600156",
+      "raw_code": "600156",
+      "name": "华升股份"
+    },
+    {
+      "code": "sh.600158",
+      "raw_code": "600158",
+      "name": "中体产业"
+    },
+    {
+      "code": "sh.600172",
+      "raw_code": "600172",
+      "name": "黄河旋风"
+    },
+    {
+      "code": "sh.600197",
+      "raw_code": "600197",
+      "name": "伊力特"
+    },
+    {
+      "code": "sh.600223",
+      "raw_code": "600223",
+      "name": "福瑞达"
+    },
+    {
+      "code": "sh.600250",
+      "raw_code": "600250",
+      "name": "南京商旅"
+    },
+    {
+      "code": "sh.600258",
+      "raw_code": "600258",
+      "name": "首旅酒店"
+    },
+    {
+      "code": "sh.600266",
+      "raw_code": "600266",
+      "name": "城建发展"
+    },
+    {
+      "code": "sh.600325",
+      "raw_code": "600325",
+      "name": "华发股份"
+    },
+    {
+      "code": "sh.600358",
+      "raw_code": "600358",
+      "name": "国旅联合"
+    },
+    {
+      "code": "sh.600543",
+      "raw_code": "600543",
+      "name": "*ST莫高"
+    },
+    {
+      "code": "sh.600561",
+      "raw_code": "600561",
+      "name": "江西长运"
+    },
+    {
+      "code": "sh.600566",
+      "raw_code": "600566",
+      "name": "济川药业"
+    },
+    {
+      "code": "sh.600573",
+      "raw_code": "600573",
+      "name": "惠泉啤酒"
+    },
+    {
+      "code": "sh.600576",
+      "raw_code": "600576",
+      "name": "祥源文旅"
+    },
+    {
+      "code": "sh.600593",
+      "raw_code": "600593",
+      "name": "大连圣亚"
+    },
+    {
+      "code": "sh.600606",
+      "raw_code": "600606",
+      "name": "绿地控股"
+    },
+    {
+      "code": "sh.600611",
+      "raw_code": "600611",
+      "name": "大众交通"
+    },
+    {
+      "code": "sh.600633",
+      "raw_code": "600633",
+      "name": "浙数文化"
+    },
+    {
+      "code": "sh.600637",
+      "raw_code": "600637",
+      "name": "东方明珠"
+    },
+    {
+      "code": "sh.600640",
+      "raw_code": "600640",
+      "name": "国脉文化"
+    },
+    {
+      "code": "sh.600650",
+      "raw_code": "600650",
+      "name": "锦江在线"
+    },
+    {
+      "code": "sh.600655",
+      "raw_code": "600655",
+      "name": "豫园股份"
+    },
+    {
+      "code": "sh.600661",
+      "raw_code": "600661",
+      "name": "昂立教育"
+    },
+    {
+      "code": "sh.600676",
+      "raw_code": "600676",
+      "name": "交运股份"
+    },
+    {
+      "code": "sh.600683",
+      "raw_code": "600683",
+      "name": "京投发展"
+    },
+    {
+      "code": "sh.600693",
+      "raw_code": "600693",
+      "name": "东百集团"
+    },
+    {
+      "code": "sh.600697",
+      "raw_code": "600697",
+      "name": "欧亚集团"
+    },
+    {
+      "code": "sh.600702",
+      "raw_code": "600702",
+      "name": "舍得酒业"
+    },
+    {
+      "code": "sh.600706",
+      "raw_code": "600706",
+      "name": "曲江文旅"
+    },
+    {
+      "code": "sh.600717",
+      "raw_code": "600717",
+      "name": "天津港"
+    },
+    {
+      "code": "sh.600735",
+      "raw_code": "600735",
+      "name": "ST新华锦"
+    },
+    {
+      "code": "sh.600736",
+      "raw_code": "600736",
+      "name": "苏州高新"
+    },
+    {
+      "code": "sh.600749",
+      "raw_code": "600749",
+      "name": "西藏旅游"
+    },
+    {
+      "code": "sh.600754",
+      "raw_code": "600754",
+      "name": "锦江酒店"
+    },
+    {
+      "code": "sh.600824",
+      "raw_code": "600824",
+      "name": "益民集团"
+    },
+    {
+      "code": "sh.600853",
+      "raw_code": "600853",
+      "name": "龙建股份"
+    },
+    {
+      "code": "sh.600880",
+      "raw_code": "600880",
+      "name": "博瑞传播"
+    },
+    {
+      "code": "sh.600996",
+      "raw_code": "600996",
+      "name": "贵广网络"
+    },
+    {
+      "code": "sh.601188",
+      "raw_code": "601188",
+      "name": "龙江交通"
+    },
+    {
+      "code": "sh.601888",
+      "raw_code": "601888",
+      "name": "中国中免"
+    },
+    {
+      "code": "sh.601929",
+      "raw_code": "601929",
+      "name": "吉视传媒"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.603069",
+      "raw_code": "603069",
+      "name": "海汽集团"
+    },
+    {
+      "code": "sh.603081",
+      "raw_code": "603081",
+      "name": "大丰实业"
+    },
+    {
+      "code": "sh.603099",
+      "raw_code": "603099",
+      "name": "长白山"
+    },
+    {
+      "code": "sh.603123",
+      "raw_code": "603123",
+      "name": "翠微股份"
+    },
+    {
+      "code": "sh.603136",
+      "raw_code": "603136",
+      "name": "天目湖"
+    },
+    {
+      "code": "sh.603199",
+      "raw_code": "603199",
+      "name": "九华旅游"
+    },
+    {
+      "code": "sh.603389",
+      "raw_code": "603389",
+      "name": "亚振家居"
+    },
+    {
+      "code": "sh.603402",
+      "raw_code": "603402",
+      "name": "陕西旅游"
+    },
+    {
+      "code": "sh.603466",
+      "raw_code": "603466",
+      "name": "风语筑"
+    },
+    {
+      "code": "sh.603721",
+      "raw_code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "code": "sh.603729",
+      "raw_code": "603729",
+      "name": "ST龙韵"
+    },
+    {
+      "code": "sh.603776",
+      "raw_code": "603776",
+      "name": "永安行"
+    },
+    {
+      "code": "sh.603825",
+      "raw_code": "603825",
+      "name": "ST华扬"
+    },
+    {
+      "code": "sh.603843",
+      "raw_code": "603843",
+      "name": "*ST正平"
+    },
+    {
+      "code": "sh.603896",
+      "raw_code": "603896",
+      "name": "寿仙谷"
+    },
+    {
+      "code": "sh.603955",
+      "raw_code": "603955",
+      "name": "大千生态"
+    },
+    {
+      "code": "sh.605069",
+      "raw_code": "605069",
+      "name": "正和生态"
+    },
+    {
+      "code": "sh.605303",
+      "raw_code": "605303",
+      "name": "园林股份"
+    },
+    {
+      "code": "sh.688626",
+      "raw_code": "688626",
+      "name": "翔宇医疗"
+    },
+    {
+      "code": "sh.688787",
+      "raw_code": "688787",
+      "name": "海天瑞声"
+    },
+    {
+      "code": "sz.000069",
+      "raw_code": "000069",
+      "name": "华侨城A"
+    },
+    {
+      "code": "sz.000099",
+      "raw_code": "000099",
+      "name": "中信海直"
+    },
+    {
+      "code": "sz.000156",
+      "raw_code": "000156",
+      "name": "华数传媒"
+    },
+    {
+      "code": "sz.000419",
+      "raw_code": "000419",
+      "name": "通程控股"
+    },
+    {
+      "code": "sz.000421",
+      "raw_code": "000421",
+      "name": "南京公用"
+    },
+    {
+      "code": "sz.000423",
+      "raw_code": "000423",
+      "name": "东阿阿胶"
+    },
+    {
+      "code": "sz.000430",
+      "raw_code": "000430",
+      "name": "张家界"
+    },
+    {
+      "code": "sz.000516",
+      "raw_code": "000516",
+      "name": "国际医学"
+    },
+    {
+      "code": "sz.000524",
+      "raw_code": "000524",
+      "name": "岭南控股"
+    },
+    {
+      "code": "sz.000558",
+      "raw_code": "000558",
+      "name": "天府文旅"
+    },
+    {
+      "code": "sz.000592",
+      "raw_code": "000592",
+      "name": "平潭发展"
+    },
+    {
+      "code": "sz.000610",
+      "raw_code": "000610",
+      "name": "*ST西旅"
+    },
+    {
+      "code": "sz.000620",
+      "raw_code": "000620",
+      "name": "盈新发展"
+    },
+    {
+      "code": "sz.000632",
+      "raw_code": "000632",
+      "name": "ST三木"
+    },
+    {
+      "code": "sz.000637",
+      "raw_code": "000637",
+      "name": "茂化实华"
+    },
+    {
+      "code": "sz.000792",
+      "raw_code": "000792",
+      "name": "盐湖股份"
+    },
+    {
+      "code": "sz.000793",
+      "raw_code": "000793",
+      "name": "*ST华闻"
+    },
+    {
+      "code": "sz.000796",
+      "raw_code": "000796",
+      "name": "凯撒旅业"
+    },
+    {
+      "code": "sz.000802",
+      "raw_code": "000802",
+      "name": "北京文化"
+    },
+    {
+      "code": "sz.000863",
+      "raw_code": "000863",
+      "name": "三湘印象"
+    },
+    {
+      "code": "sz.000869",
+      "raw_code": "000869",
+      "name": "张裕A"
+    },
+    {
+      "code": "sz.000886",
+      "raw_code": "000886",
+      "name": "海南高速"
+    },
+    {
+      "code": "sz.000888",
+      "raw_code": "000888",
+      "name": "峨眉山A"
+    },
+    {
+      "code": "sz.000917",
+      "raw_code": "000917",
+      "name": "电广传媒"
+    },
+    {
+      "code": "sz.000978",
+      "raw_code": "000978",
+      "name": "桂林旅游"
+    },
+    {
+      "code": "sz.001203",
+      "raw_code": "001203",
+      "name": "大中矿业"
+    },
+    {
+      "code": "sz.001386",
+      "raw_code": "001386",
+      "name": "马可波罗"
+    },
+    {
+      "code": "sz.002004",
+      "raw_code": "002004",
+      "name": "华邦健康"
+    },
+    {
+      "code": "sz.002033",
+      "raw_code": "002033",
+      "name": "丽江股份"
+    },
+    {
+      "code": "sz.002059",
+      "raw_code": "002059",
+      "name": "云南旅游"
+    },
+    {
+      "code": "sz.002065",
+      "raw_code": "002065",
+      "name": "东华软件"
+    },
+    {
+      "code": "sz.002110",
+      "raw_code": "002110",
+      "name": "三钢闽光"
+    },
+    {
+      "code": "sz.002146",
+      "raw_code": "002146",
+      "name": "荣盛发展"
+    },
+    {
+      "code": "sz.002153",
+      "raw_code": "002153",
+      "name": "石基信息"
+    },
+    {
+      "code": "sz.002159",
+      "raw_code": "002159",
+      "name": "三特索道"
+    },
+    {
+      "code": "sz.002181",
+      "raw_code": "002181",
+      "name": "粤传媒"
+    },
+    {
+      "code": "sz.002320",
+      "raw_code": "002320",
+      "name": "海峡股份"
+    },
+    {
+      "code": "sz.002343",
+      "raw_code": "002343",
+      "name": "慈文传媒"
+    },
+    {
+      "code": "sz.002357",
+      "raw_code": "002357",
+      "name": "富临运业"
+    },
+    {
+      "code": "sz.002431",
+      "raw_code": "002431",
+      "name": "ST棕榈"
+    },
+    {
+      "code": "sz.002485",
+      "raw_code": "002485",
+      "name": "ST雪发"
+    },
+    {
+      "code": "sz.002489",
+      "raw_code": "002489",
+      "name": "浙江永强"
+    },
+    {
+      "code": "sz.002542",
+      "raw_code": "002542",
+      "name": "*ST中岩"
+    },
+    {
+      "code": "sz.002558",
+      "raw_code": "002558",
+      "name": "巨人网络"
+    },
+    {
+      "code": "sz.002582",
+      "raw_code": "002582",
+      "name": "好想你"
+    },
+    {
+      "code": "sz.002587",
+      "raw_code": "002587",
+      "name": "奥拓电子"
+    },
+    {
+      "code": "sz.002596",
+      "raw_code": "002596",
+      "name": "海南瑞泽"
+    },
+    {
+      "code": "sz.002607",
+      "raw_code": "002607",
+      "name": "中公教育"
+    },
+    {
+      "code": "sz.002627",
+      "raw_code": "002627",
+      "name": "三峡旅游"
+    },
+    {
+      "code": "sz.002678",
+      "raw_code": "002678",
+      "name": "珠江钢琴"
+    },
+    {
+      "code": "sz.002694",
+      "raw_code": "002694",
+      "name": "*ST顾地"
+    },
+    {
+      "code": "sz.002707",
+      "raw_code": "002707",
+      "name": "众信旅游"
+    },
+    {
+      "code": "sz.002712",
+      "raw_code": "002712",
+      "name": "思美传媒"
+    },
+    {
+      "code": "sz.002717",
+      "raw_code": "002717",
+      "name": "*ST岭南"
+    },
+    {
+      "code": "sz.002775",
+      "raw_code": "002775",
+      "name": "文科股份"
+    },
+    {
+      "code": "sz.002780",
+      "raw_code": "002780",
+      "name": "三夫户外"
+    },
+    {
+      "code": "sz.002887",
+      "raw_code": "002887",
+      "name": "绿茵生态"
+    },
+    {
+      "code": "sz.002963",
+      "raw_code": "002963",
+      "name": "豪尔赛"
+    },
+    {
+      "code": "sz.003039",
+      "raw_code": "003039",
+      "name": "顺控发展"
+    },
+    {
+      "code": "sz.300010",
+      "raw_code": "300010",
+      "name": "ST豆神"
+    },
+    {
+      "code": "sz.300027",
+      "raw_code": "300027",
+      "name": "ST华谊"
+    },
+    {
+      "code": "sz.300052",
+      "raw_code": "300052",
+      "name": "中青宝"
+    },
+    {
+      "code": "sz.300133",
+      "raw_code": "300133",
+      "name": "华策影视"
+    },
+    {
+      "code": "sz.300144",
+      "raw_code": "300144",
+      "name": "宋城演艺"
+    },
+    {
+      "code": "sz.300177",
+      "raw_code": "300177",
+      "name": "中海达"
+    },
+    {
+      "code": "sz.300197",
+      "raw_code": "300197",
+      "name": "节能铁汉"
+    },
+    {
+      "code": "sz.300237",
+      "raw_code": "300237",
+      "name": "ST美晨"
+    },
+    {
+      "code": "sz.300291",
+      "raw_code": "300291",
+      "name": "百纳千成"
+    },
+    {
+      "code": "sz.300296",
+      "raw_code": "300296",
+      "name": "利亚德"
+    },
+    {
+      "code": "sz.300756",
+      "raw_code": "300756",
+      "name": "金马游乐"
+    },
+    {
+      "code": "sz.300784",
+      "raw_code": "300784",
+      "name": "利安科技"
+    },
+    {
+      "code": "sz.300844",
+      "raw_code": "300844",
+      "name": "山水比德"
+    },
+    {
+      "code": "sz.300859",
+      "raw_code": "300859",
+      "name": "西域旅游"
+    },
+    {
+      "code": "sz.300860",
+      "raw_code": "300860",
+      "name": "锋尚文化"
+    },
+    {
+      "code": "sz.300947",
+      "raw_code": "300947",
+      "name": "德必集团"
+    },
+    {
+      "code": "sz.300949",
+      "raw_code": "300949",
+      "name": "奥雅股份"
+    },
+    {
+      "code": "sz.300989",
+      "raw_code": "300989",
+      "name": "蕾奥规划"
+    },
+    {
+      "code": "sz.301098",
+      "raw_code": "301098",
+      "name": "金埔园林"
+    },
+    {
+      "code": "sz.301262",
+      "raw_code": "301262",
+      "name": "海看股份"
+    },
+    {
+      "code": "sz.301313",
+      "raw_code": "301313",
+      "name": "凡拓数创"
+    },
+    {
+      "code": "sz.301339",
+      "raw_code": "301339",
+      "name": "通行宝"
+    },
+    {
+      "code": "sz.301396",
+      "raw_code": "301396",
+      "name": "宏景科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:45",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301223/"
+  "fetched_at": "2026-07-13 16:46:49",
+  "page_count": 16,
+  "is_partial": false,
+  "page_limit_reason": null
 }

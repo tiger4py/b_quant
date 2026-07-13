@@ -3,10 +3,157 @@
   "concept_name": "海南自贸区",
   "first_trade_date": "2020-06-03",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 29,
+  "constituents": [
+    {
+      "code": "sh.600221",
+      "raw_code": "600221",
+      "name": "海航控股"
+    },
+    {
+      "code": "sh.600238",
+      "raw_code": "600238",
+      "name": "*ST椰岛"
+    },
+    {
+      "code": "sh.600259",
+      "raw_code": "600259",
+      "name": "中稀有色"
+    },
+    {
+      "code": "sh.600515",
+      "raw_code": "600515",
+      "name": "海南机场"
+    },
+    {
+      "code": "sh.600759",
+      "raw_code": "600759",
+      "name": "ST洲际"
+    },
+    {
+      "code": "sh.601118",
+      "raw_code": "601118",
+      "name": "海南橡胶"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.603069",
+      "raw_code": "603069",
+      "name": "海汽集团"
+    },
+    {
+      "code": "sh.603300",
+      "raw_code": "603300",
+      "name": "海南华铁"
+    },
+    {
+      "code": "sh.605199",
+      "raw_code": "605199",
+      "name": "ST葫芦娃"
+    },
+    {
+      "code": "sh.688676",
+      "raw_code": "688676",
+      "name": "金盘科技"
+    },
+    {
+      "code": "sz.000505",
+      "raw_code": "000505",
+      "name": "京粮控股"
+    },
+    {
+      "code": "sz.000566",
+      "raw_code": "000566",
+      "name": "海南海药"
+    },
+    {
+      "code": "sz.000567",
+      "raw_code": "000567",
+      "name": "海德股份"
+    },
+    {
+      "code": "sz.000571",
+      "raw_code": "000571",
+      "name": "新大洲A"
+    },
+    {
+      "code": "sz.000572",
+      "raw_code": "000572",
+      "name": "海马汽车"
+    },
+    {
+      "code": "sz.000657",
+      "raw_code": "000657",
+      "name": "中钨高新"
+    },
+    {
+      "code": "sz.000735",
+      "raw_code": "000735",
+      "name": "罗牛山"
+    },
+    {
+      "code": "sz.000793",
+      "raw_code": "000793",
+      "name": "*ST华闻"
+    },
+    {
+      "code": "sz.000796",
+      "raw_code": "000796",
+      "name": "凯撒旅业"
+    },
+    {
+      "code": "sz.000886",
+      "raw_code": "000886",
+      "name": "海南高速"
+    },
+    {
+      "code": "sz.000955",
+      "raw_code": "000955",
+      "name": "欣龙控股"
+    },
+    {
+      "code": "sz.002163",
+      "raw_code": "002163",
+      "name": "海南发展"
+    },
+    {
+      "code": "sz.002320",
+      "raw_code": "002320",
+      "name": "海峡股份"
+    },
+    {
+      "code": "sz.002596",
+      "raw_code": "002596",
+      "name": "海南瑞泽"
+    },
+    {
+      "code": "sz.002693",
+      "raw_code": "002693",
+      "name": "双成药业"
+    },
+    {
+      "code": "sz.002865",
+      "raw_code": "002865",
+      "name": "钧达股份"
+    },
+    {
+      "code": "sz.300086",
+      "raw_code": "300086",
+      "name": "康芝药业"
+    },
+    {
+      "code": "sz.300189",
+      "raw_code": "300189",
+      "name": "神农种业"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:25",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308428/"
+  "fetched_at": "2026-07-13 16:58:33",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,122 @@
   "concept_name": "养鸡",
   "first_trade_date": "2019-02-12",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 22,
+  "constituents": [
+    {
+      "code": "sh.603477",
+      "raw_code": "603477",
+      "name": "巨星农牧"
+    },
+    {
+      "code": "sh.603609",
+      "raw_code": "603609",
+      "name": "禾丰股份"
+    },
+    {
+      "code": "sh.603668",
+      "raw_code": "603668",
+      "name": "天马科技"
+    },
+    {
+      "code": "sh.605567",
+      "raw_code": "605567",
+      "name": "春雪食品"
+    },
+    {
+      "code": "sz.000048",
+      "raw_code": "000048",
+      "name": "京基智农"
+    },
+    {
+      "code": "sz.000529",
+      "raw_code": "000529",
+      "name": "广弘控股"
+    },
+    {
+      "code": "sz.000735",
+      "raw_code": "000735",
+      "name": "罗牛山"
+    },
+    {
+      "code": "sz.000876",
+      "raw_code": "000876",
+      "name": "新希望"
+    },
+    {
+      "code": "sz.000895",
+      "raw_code": "000895",
+      "name": "双汇发展"
+    },
+    {
+      "code": "sz.002234",
+      "raw_code": "002234",
+      "name": "民和股份"
+    },
+    {
+      "code": "sz.002299",
+      "raw_code": "002299",
+      "name": "圣农发展"
+    },
+    {
+      "code": "sz.002321",
+      "raw_code": "002321",
+      "name": "华英农业"
+    },
+    {
+      "code": "sz.002458",
+      "raw_code": "002458",
+      "name": "益生股份"
+    },
+    {
+      "code": "sz.002567",
+      "raw_code": "002567",
+      "name": "唐人神"
+    },
+    {
+      "code": "sz.002746",
+      "raw_code": "002746",
+      "name": "仙坛股份"
+    },
+    {
+      "code": "sz.002840",
+      "raw_code": "002840",
+      "name": "华统股份"
+    },
+    {
+      "code": "sz.002982",
+      "raw_code": "002982",
+      "name": "湘佳股份"
+    },
+    {
+      "code": "sz.300498",
+      "raw_code": "300498",
+      "name": "温氏股份"
+    },
+    {
+      "code": "sz.300761",
+      "raw_code": "300761",
+      "name": "立华股份"
+    },
+    {
+      "code": "sz.300967",
+      "raw_code": "300967",
+      "name": "晓鸣股份"
+    },
+    {
+      "code": "sz.300999",
+      "raw_code": "300999",
+      "name": "金龙鱼"
+    },
+    {
+      "code": "sz.301116",
+      "raw_code": "301116",
+      "name": "益客食品"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:02",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301576/"
+  "fetched_at": "2026-07-13 16:53:25",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

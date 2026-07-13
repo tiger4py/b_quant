@@ -3,10 +3,237 @@
   "concept_name": "自由贸易港",
   "first_trade_date": "2017-11-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 45,
+  "constituents": [
+    {
+      "code": "sh.600018",
+      "raw_code": "600018",
+      "name": "上港集团"
+    },
+    {
+      "code": "sh.600119",
+      "raw_code": "600119",
+      "name": "*ST长投"
+    },
+    {
+      "code": "sh.600179",
+      "raw_code": "600179",
+      "name": "安通控股"
+    },
+    {
+      "code": "sh.600185",
+      "raw_code": "600185",
+      "name": "珠免集团"
+    },
+    {
+      "code": "sh.600221",
+      "raw_code": "600221",
+      "name": "海航控股"
+    },
+    {
+      "code": "sh.600278",
+      "raw_code": "600278",
+      "name": "东方创业"
+    },
+    {
+      "code": "sh.600284",
+      "raw_code": "600284",
+      "name": "浦东建设"
+    },
+    {
+      "code": "sh.600320",
+      "raw_code": "600320",
+      "name": "振华重工"
+    },
+    {
+      "code": "sh.600428",
+      "raw_code": "600428",
+      "name": "中远海特"
+    },
+    {
+      "code": "sh.600515",
+      "raw_code": "600515",
+      "name": "海南机场"
+    },
+    {
+      "code": "sh.600648",
+      "raw_code": "600648",
+      "name": "外高桥"
+    },
+    {
+      "code": "sh.600650",
+      "raw_code": "600650",
+      "name": "锦江在线"
+    },
+    {
+      "code": "sh.600676",
+      "raw_code": "600676",
+      "name": "交运股份"
+    },
+    {
+      "code": "sh.600717",
+      "raw_code": "600717",
+      "name": "天津港"
+    },
+    {
+      "code": "sh.600848",
+      "raw_code": "600848",
+      "name": "上海临港"
+    },
+    {
+      "code": "sh.601018",
+      "raw_code": "601018",
+      "name": "宁波港"
+    },
+    {
+      "code": "sh.601083",
+      "raw_code": "601083",
+      "name": "锦江航运"
+    },
+    {
+      "code": "sh.601228",
+      "raw_code": "601228",
+      "name": "广州港"
+    },
+    {
+      "code": "sh.601598",
+      "raw_code": "601598",
+      "name": "中国外运"
+    },
+    {
+      "code": "sh.601888",
+      "raw_code": "601888",
+      "name": "中国中免"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.603069",
+      "raw_code": "603069",
+      "name": "海汽集团"
+    },
+    {
+      "code": "sh.603117",
+      "raw_code": "603117",
+      "name": "万林物流"
+    },
+    {
+      "code": "sh.603128",
+      "raw_code": "603128",
+      "name": "华贸物流"
+    },
+    {
+      "code": "sh.603153",
+      "raw_code": "603153",
+      "name": "上海建科"
+    },
+    {
+      "code": "sh.603209",
+      "raw_code": "603209",
+      "name": "兴通股份"
+    },
+    {
+      "code": "sh.603300",
+      "raw_code": "603300",
+      "name": "海南华铁"
+    },
+    {
+      "code": "sh.603329",
+      "raw_code": "603329",
+      "name": "上海雅仕"
+    },
+    {
+      "code": "sh.603535",
+      "raw_code": "603535",
+      "name": "嘉诚国际"
+    },
+    {
+      "code": "sh.603648",
+      "raw_code": "603648",
+      "name": "畅联股份"
+    },
+    {
+      "code": "sh.603713",
+      "raw_code": "603713",
+      "name": "密尔克卫"
+    },
+    {
+      "code": "sh.603967",
+      "raw_code": "603967",
+      "name": "中创物流"
+    },
+    {
+      "code": "sz.000564",
+      "raw_code": "000564",
+      "name": "供销大集"
+    },
+    {
+      "code": "sz.000572",
+      "raw_code": "000572",
+      "name": "海马汽车"
+    },
+    {
+      "code": "sz.000582",
+      "raw_code": "000582",
+      "name": "北部湾港"
+    },
+    {
+      "code": "sz.000735",
+      "raw_code": "000735",
+      "name": "罗牛山"
+    },
+    {
+      "code": "sz.000886",
+      "raw_code": "000886",
+      "name": "海南高速"
+    },
+    {
+      "code": "sz.000905",
+      "raw_code": "000905",
+      "name": "厦门港务"
+    },
+    {
+      "code": "sz.000955",
+      "raw_code": "000955",
+      "name": "欣龙控股"
+    },
+    {
+      "code": "sz.002119",
+      "raw_code": "002119",
+      "name": "康强电子"
+    },
+    {
+      "code": "sz.002320",
+      "raw_code": "002320",
+      "name": "海峡股份"
+    },
+    {
+      "code": "sz.002401",
+      "raw_code": "002401",
+      "name": "中远海科"
+    },
+    {
+      "code": "sz.002596",
+      "raw_code": "002596",
+      "name": "海南瑞泽"
+    },
+    {
+      "code": "sz.002889",
+      "raw_code": "002889",
+      "name": "东方嘉盛"
+    },
+    {
+      "code": "sz.300898",
+      "raw_code": "300898",
+      "name": "熊猫乳品"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:17",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/306398/"
+  "fetched_at": "2026-07-13 16:57:14",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

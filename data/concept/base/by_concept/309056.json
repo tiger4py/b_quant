@@ -3,10 +3,172 @@
   "concept_name": "超导概念",
   "first_trade_date": "2023-03-10",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 32,
+  "constituents": [
+    {
+      "code": "bj.920300",
+      "raw_code": "920300",
+      "name": "辰光医疗"
+    },
+    {
+      "code": "sh.600055",
+      "raw_code": "600055",
+      "name": "万东医疗"
+    },
+    {
+      "code": "sh.600105",
+      "raw_code": "600105",
+      "name": "永鼎股份"
+    },
+    {
+      "code": "sh.600307",
+      "raw_code": "600307",
+      "name": "酒钢宏兴"
+    },
+    {
+      "code": "sh.600361",
+      "raw_code": "600361",
+      "name": "创新新材"
+    },
+    {
+      "code": "sh.600363",
+      "raw_code": "600363",
+      "name": "联创光电"
+    },
+    {
+      "code": "sh.600366",
+      "raw_code": "600366",
+      "name": "宁波韵升"
+    },
+    {
+      "code": "sh.600468",
+      "raw_code": "600468",
+      "name": "百利电气"
+    },
+    {
+      "code": "sh.600522",
+      "raw_code": "600522",
+      "name": "中天科技"
+    },
+    {
+      "code": "sh.600577",
+      "raw_code": "600577",
+      "name": "精达股份"
+    },
+    {
+      "code": "sh.600595",
+      "raw_code": "600595",
+      "name": "中孚实业"
+    },
+    {
+      "code": "sh.600869",
+      "raw_code": "600869",
+      "name": "远东股份"
+    },
+    {
+      "code": "sh.600973",
+      "raw_code": "600973",
+      "name": "宝胜股份"
+    },
+    {
+      "code": "sh.601061",
+      "raw_code": "601061",
+      "name": "中信金属"
+    },
+    {
+      "code": "sh.601212",
+      "raw_code": "601212",
+      "name": "白银有色"
+    },
+    {
+      "code": "sh.601727",
+      "raw_code": "601727",
+      "name": "上海电气"
+    },
+    {
+      "code": "sh.688096",
+      "raw_code": "688096",
+      "name": "京源环保"
+    },
+    {
+      "code": "sh.688122",
+      "raw_code": "688122",
+      "name": "西部超导"
+    },
+    {
+      "code": "sh.688334",
+      "raw_code": "688334",
+      "name": "西高院"
+    },
+    {
+      "code": "sh.688805",
+      "raw_code": "688805",
+      "name": "健信超导"
+    },
+    {
+      "code": "sz.000811",
+      "raw_code": "000811",
+      "name": "冰轮环境"
+    },
+    {
+      "code": "sz.000962",
+      "raw_code": "000962",
+      "name": "东方钽业"
+    },
+    {
+      "code": "sz.001255",
+      "raw_code": "001255",
+      "name": "博菲电气"
+    },
+    {
+      "code": "sz.001280",
+      "raw_code": "001280",
+      "name": "中国铀业"
+    },
+    {
+      "code": "sz.002130",
+      "raw_code": "002130",
+      "name": "沃尔核材"
+    },
+    {
+      "code": "sz.002149",
+      "raw_code": "002149",
+      "name": "西部材料"
+    },
+    {
+      "code": "sz.002430",
+      "raw_code": "002430",
+      "name": "杭氧股份"
+    },
+    {
+      "code": "sz.002533",
+      "raw_code": "002533",
+      "name": "金杯电工"
+    },
+    {
+      "code": "sz.002859",
+      "raw_code": "002859",
+      "name": "洁美科技"
+    },
+    {
+      "code": "sz.300706",
+      "raw_code": "300706",
+      "name": "阿石创"
+    },
+    {
+      "code": "sz.301266",
+      "raw_code": "301266",
+      "name": "宇邦新材"
+    },
+    {
+      "code": "sz.301289",
+      "raw_code": "301289",
+      "name": "国缆检测"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:10",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309056/"
+  "fetched_at": "2026-07-13 17:03:21",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

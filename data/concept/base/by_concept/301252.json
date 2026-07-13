@@ -3,10 +3,302 @@
   "concept_name": "眼科医疗",
   "first_trade_date": "2019-04-26",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 58,
+  "constituents": [
+    {
+      "code": "bj.920047",
+      "raw_code": "920047",
+      "name": "诺思兰德"
+    },
+    {
+      "code": "sh.600129",
+      "raw_code": "600129",
+      "name": "太极集团"
+    },
+    {
+      "code": "sh.600223",
+      "raw_code": "600223",
+      "name": "福瑞达"
+    },
+    {
+      "code": "sh.600276",
+      "raw_code": "600276",
+      "name": "恒瑞医药"
+    },
+    {
+      "code": "sh.600288",
+      "raw_code": "600288",
+      "name": "大恒科技"
+    },
+    {
+      "code": "sh.600538",
+      "raw_code": "600538",
+      "name": "国发股份"
+    },
+    {
+      "code": "sh.600568",
+      "raw_code": "600568",
+      "name": "ST中珠"
+    },
+    {
+      "code": "sh.600572",
+      "raw_code": "600572",
+      "name": "康恩贝"
+    },
+    {
+      "code": "sh.600668",
+      "raw_code": "600668",
+      "name": "尖峰集团"
+    },
+    {
+      "code": "sh.600671",
+      "raw_code": "600671",
+      "name": "天目药业"
+    },
+    {
+      "code": "sh.600763",
+      "raw_code": "600763",
+      "name": "通策医疗"
+    },
+    {
+      "code": "sh.600812",
+      "raw_code": "600812",
+      "name": "华北制药"
+    },
+    {
+      "code": "sh.600829",
+      "raw_code": "600829",
+      "name": "人民同泰"
+    },
+    {
+      "code": "sh.600993",
+      "raw_code": "600993",
+      "name": "马应龙"
+    },
+    {
+      "code": "sh.601886",
+      "raw_code": "601886",
+      "name": "江河集团"
+    },
+    {
+      "code": "sh.603087",
+      "raw_code": "603087",
+      "name": "甘李药业"
+    },
+    {
+      "code": "sh.603168",
+      "raw_code": "603168",
+      "name": "莎普爱思"
+    },
+    {
+      "code": "sh.603367",
+      "raw_code": "603367",
+      "name": "辰欣药业"
+    },
+    {
+      "code": "sh.603998",
+      "raw_code": "603998",
+      "name": "方盛制药"
+    },
+    {
+      "code": "sh.688050",
+      "raw_code": "688050",
+      "name": "爱博医疗"
+    },
+    {
+      "code": "sh.688198",
+      "raw_code": "688198",
+      "name": "佰仁医疗"
+    },
+    {
+      "code": "sh.688306",
+      "raw_code": "688306",
+      "name": "均普智能"
+    },
+    {
+      "code": "sh.688331",
+      "raw_code": "688331",
+      "name": "荣昌生物"
+    },
+    {
+      "code": "sh.688366",
+      "raw_code": "688366",
+      "name": "昊海生科"
+    },
+    {
+      "code": "sh.688502",
+      "raw_code": "688502",
+      "name": "茂莱光学"
+    },
+    {
+      "code": "sh.688566",
+      "raw_code": "688566",
+      "name": "吉贝尔"
+    },
+    {
+      "code": "sz.000153",
+      "raw_code": "000153",
+      "name": "丰原药业"
+    },
+    {
+      "code": "sz.000650",
+      "raw_code": "000650",
+      "name": "仁和药业"
+    },
+    {
+      "code": "sz.000790",
+      "raw_code": "000790",
+      "name": "华神科技"
+    },
+    {
+      "code": "sz.000810",
+      "raw_code": "000810",
+      "name": "创维数字"
+    },
+    {
+      "code": "sz.000908",
+      "raw_code": "000908",
+      "name": "石药景峰"
+    },
+    {
+      "code": "sz.002020",
+      "raw_code": "002020",
+      "name": "京新药业"
+    },
+    {
+      "code": "sz.002173",
+      "raw_code": "002173",
+      "name": "创新医疗"
+    },
+    {
+      "code": "sz.002223",
+      "raw_code": "002223",
+      "name": "鱼跃医疗"
+    },
+    {
+      "code": "sz.002230",
+      "raw_code": "002230",
+      "name": "科大讯飞"
+    },
+    {
+      "code": "sz.002317",
+      "raw_code": "002317",
+      "name": "众生药业"
+    },
+    {
+      "code": "sz.002524",
+      "raw_code": "002524",
+      "name": "光正眼科"
+    },
+    {
+      "code": "sz.002549",
+      "raw_code": "002549",
+      "name": "凯美特气"
+    },
+    {
+      "code": "sz.002773",
+      "raw_code": "002773",
+      "name": "康弘药业"
+    },
+    {
+      "code": "sz.003020",
+      "raw_code": "003020",
+      "name": "立方制药"
+    },
+    {
+      "code": "sz.300006",
+      "raw_code": "300006",
+      "name": "莱美药业"
+    },
+    {
+      "code": "sz.300015",
+      "raw_code": "300015",
+      "name": "爱尔眼科"
+    },
+    {
+      "code": "sz.300204",
+      "raw_code": "300204",
+      "name": "舒泰神"
+    },
+    {
+      "code": "sz.300233",
+      "raw_code": "300233",
+      "name": "金城医药"
+    },
+    {
+      "code": "sz.300238",
+      "raw_code": "300238",
+      "name": "冠昊生物"
+    },
+    {
+      "code": "sz.300306",
+      "raw_code": "300306",
+      "name": "远方信息"
+    },
+    {
+      "code": "sz.300558",
+      "raw_code": "300558",
+      "name": "贝达药业"
+    },
+    {
+      "code": "sz.300573",
+      "raw_code": "300573",
+      "name": "兴齐眼药"
+    },
+    {
+      "code": "sz.300595",
+      "raw_code": "300595",
+      "name": "欧普康视"
+    },
+    {
+      "code": "sz.300605",
+      "raw_code": "300605",
+      "name": "恒锋信息"
+    },
+    {
+      "code": "sz.300622",
+      "raw_code": "300622",
+      "name": "博士眼镜"
+    },
+    {
+      "code": "sz.300683",
+      "raw_code": "300683",
+      "name": "海特生物"
+    },
+    {
+      "code": "sz.301096",
+      "raw_code": "301096",
+      "name": "百诚医药"
+    },
+    {
+      "code": "sz.301103",
+      "raw_code": "301103",
+      "name": "何氏眼科"
+    },
+    {
+      "code": "sz.301111",
+      "raw_code": "301111",
+      "name": "粤万年青"
+    },
+    {
+      "code": "sz.301239",
+      "raw_code": "301239",
+      "name": "普瑞眼科"
+    },
+    {
+      "code": "sz.301263",
+      "raw_code": "301263",
+      "name": "泰恩康"
+    },
+    {
+      "code": "sz.301267",
+      "raw_code": "301267",
+      "name": "华厦眼科"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:48",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301252/"
+  "fetched_at": "2026-07-13 16:47:06",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

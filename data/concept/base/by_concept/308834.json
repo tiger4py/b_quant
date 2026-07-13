@@ -3,10 +3,137 @@
   "concept_name": "民爆概念",
   "first_trade_date": "2022-02-07",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 25,
+  "constituents": [
+    {
+      "code": "bj.920019",
+      "raw_code": "920019",
+      "name": "铜冠矿建"
+    },
+    {
+      "code": "sh.600279",
+      "raw_code": "600279",
+      "name": "重庆港"
+    },
+    {
+      "code": "sh.600985",
+      "raw_code": "600985",
+      "name": "淮北矿业"
+    },
+    {
+      "code": "sh.601868",
+      "raw_code": "601868",
+      "name": "中国能建"
+    },
+    {
+      "code": "sh.603227",
+      "raw_code": "603227",
+      "name": "雪峰科技"
+    },
+    {
+      "code": "sh.603375",
+      "raw_code": "603375",
+      "name": "盛景微"
+    },
+    {
+      "code": "sh.603505",
+      "raw_code": "603505",
+      "name": "金石资源"
+    },
+    {
+      "code": "sh.603977",
+      "raw_code": "603977",
+      "name": "国泰集团"
+    },
+    {
+      "code": "sh.688601",
+      "raw_code": "688601",
+      "name": "力芯微"
+    },
+    {
+      "code": "sz.000731",
+      "raw_code": "000731",
+      "name": "四川美丰"
+    },
+    {
+      "code": "sz.002037",
+      "raw_code": "002037",
+      "name": "保利联合"
+    },
+    {
+      "code": "sz.002096",
+      "raw_code": "002096",
+      "name": "易普力"
+    },
+    {
+      "code": "sz.002226",
+      "raw_code": "002226",
+      "name": "江南化工"
+    },
+    {
+      "code": "sz.002360",
+      "raw_code": "002360",
+      "name": "ST同德"
+    },
+    {
+      "code": "sz.002497",
+      "raw_code": "002497",
+      "name": "雅化集团"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002683",
+      "raw_code": "002683",
+      "name": "广东宏大"
+    },
+    {
+      "code": "sz.002783",
+      "raw_code": "002783",
+      "name": "凯龙股份"
+    },
+    {
+      "code": "sz.002827",
+      "raw_code": "002827",
+      "name": "高争民爆"
+    },
+    {
+      "code": "sz.002917",
+      "raw_code": "002917",
+      "name": "金奥博"
+    },
+    {
+      "code": "sz.003002",
+      "raw_code": "003002",
+      "name": "壶化股份"
+    },
+    {
+      "code": "sz.300139",
+      "raw_code": "300139",
+      "name": "晓程科技"
+    },
+    {
+      "code": "sz.300446",
+      "raw_code": "300446",
+      "name": "航天智造"
+    },
+    {
+      "code": "sz.300722",
+      "raw_code": "300722",
+      "name": "新余国科"
+    },
+    {
+      "code": "sz.300836",
+      "raw_code": "300836",
+      "name": "佰奥智能"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:54",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308834/"
+  "fetched_at": "2026-07-13 17:01:36",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

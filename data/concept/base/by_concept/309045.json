@@ -3,10 +3,227 @@
   "concept_name": "成飞概念",
   "first_trade_date": "2023-01-30",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 43,
+  "constituents": [
+    {
+      "code": "bj.920169",
+      "raw_code": "920169",
+      "name": "七丰精工"
+    },
+    {
+      "code": "bj.920247",
+      "raw_code": "920247",
+      "name": "华密新材"
+    },
+    {
+      "code": "sh.600501",
+      "raw_code": "600501",
+      "name": "航天晨光"
+    },
+    {
+      "code": "sh.600523",
+      "raw_code": "600523",
+      "name": "贵航股份"
+    },
+    {
+      "code": "sh.600765",
+      "raw_code": "600765",
+      "name": "中航重机"
+    },
+    {
+      "code": "sh.603261",
+      "raw_code": "603261",
+      "name": "立航科技"
+    },
+    {
+      "code": "sh.603809",
+      "raw_code": "603809",
+      "name": "豪能股份"
+    },
+    {
+      "code": "sh.688033",
+      "raw_code": "688033",
+      "name": "*ST天宜"
+    },
+    {
+      "code": "sh.688237",
+      "raw_code": "688237",
+      "name": "超卓航科"
+    },
+    {
+      "code": "sz.000070",
+      "raw_code": "000070",
+      "name": "特发信息"
+    },
+    {
+      "code": "sz.000571",
+      "raw_code": "000571",
+      "name": "新大洲A"
+    },
+    {
+      "code": "sz.001268",
+      "raw_code": "001268",
+      "name": "联合精密"
+    },
+    {
+      "code": "sz.002111",
+      "raw_code": "002111",
+      "name": "威海广泰"
+    },
+    {
+      "code": "sz.002179",
+      "raw_code": "002179",
+      "name": "中航光电"
+    },
+    {
+      "code": "sz.002190",
+      "raw_code": "002190",
+      "name": "成飞集成"
+    },
+    {
+      "code": "sz.002253",
+      "raw_code": "002253",
+      "name": "川大智胜"
+    },
+    {
+      "code": "sz.002297",
+      "raw_code": "002297",
+      "name": "博云新材"
+    },
+    {
+      "code": "sz.002465",
+      "raw_code": "002465",
+      "name": "海格通信"
+    },
+    {
+      "code": "sz.002520",
+      "raw_code": "002520",
+      "name": "日发精机"
+    },
+    {
+      "code": "sz.002560",
+      "raw_code": "002560",
+      "name": "通达股份"
+    },
+    {
+      "code": "sz.002651",
+      "raw_code": "002651",
+      "name": "利君股份"
+    },
+    {
+      "code": "sz.002985",
+      "raw_code": "002985",
+      "name": "北摩高科"
+    },
+    {
+      "code": "sz.300045",
+      "raw_code": "300045",
+      "name": "华力创通"
+    },
+    {
+      "code": "sz.300095",
+      "raw_code": "300095",
+      "name": "华伍股份"
+    },
+    {
+      "code": "sz.300159",
+      "raw_code": "300159",
+      "name": "新研股份"
+    },
+    {
+      "code": "sz.300227",
+      "raw_code": "300227",
+      "name": "光韵达"
+    },
+    {
+      "code": "sz.300265",
+      "raw_code": "300265",
+      "name": "通光线缆"
+    },
+    {
+      "code": "sz.300424",
+      "raw_code": "300424",
+      "name": "航新科技"
+    },
+    {
+      "code": "sz.300447",
+      "raw_code": "300447",
+      "name": "全信股份"
+    },
+    {
+      "code": "sz.300471",
+      "raw_code": "300471",
+      "name": "厚普股份"
+    },
+    {
+      "code": "sz.300547",
+      "raw_code": "300547",
+      "name": "川环科技"
+    },
+    {
+      "code": "sz.300696",
+      "raw_code": "300696",
+      "name": "爱乐达"
+    },
+    {
+      "code": "sz.300719",
+      "raw_code": "300719",
+      "name": "安达维尔"
+    },
+    {
+      "code": "sz.300733",
+      "raw_code": "300733",
+      "name": "西菱动力"
+    },
+    {
+      "code": "sz.300900",
+      "raw_code": "300900",
+      "name": "广联航空"
+    },
+    {
+      "code": "sz.301018",
+      "raw_code": "301018",
+      "name": "申菱环境"
+    },
+    {
+      "code": "sz.301233",
+      "raw_code": "301233",
+      "name": "盛帮股份"
+    },
+    {
+      "code": "sz.301286",
+      "raw_code": "301286",
+      "name": "侨源股份"
+    },
+    {
+      "code": "sz.301289",
+      "raw_code": "301289",
+      "name": "国缆检测"
+    },
+    {
+      "code": "sz.301302",
+      "raw_code": "301302",
+      "name": "华如科技"
+    },
+    {
+      "code": "sz.301311",
+      "raw_code": "301311",
+      "name": "昆船智能"
+    },
+    {
+      "code": "sz.301528",
+      "raw_code": "301528",
+      "name": "多浦乐"
+    },
+    {
+      "code": "sz.302132",
+      "raw_code": "302132",
+      "name": "中航成飞"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:08",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309045/"
+  "fetched_at": "2026-07-13 17:03:12",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

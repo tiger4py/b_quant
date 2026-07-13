@@ -3,10 +3,242 @@
   "concept_name": "盐湖提锂",
   "first_trade_date": "2021-06-02",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 46,
+  "constituents": [
+    {
+      "code": "sh.600251",
+      "raw_code": "600251",
+      "name": "冠农股份"
+    },
+    {
+      "code": "sh.600338",
+      "raw_code": "600338",
+      "name": "西藏珠峰"
+    },
+    {
+      "code": "sh.600444",
+      "raw_code": "600444",
+      "name": "国机通用"
+    },
+    {
+      "code": "sh.600499",
+      "raw_code": "600499",
+      "name": "科达制造"
+    },
+    {
+      "code": "sh.600773",
+      "raw_code": "600773",
+      "name": "西藏城投"
+    },
+    {
+      "code": "sh.601065",
+      "raw_code": "601065",
+      "name": "江盐集团"
+    },
+    {
+      "code": "sh.601068",
+      "raw_code": "601068",
+      "name": "中铝国际"
+    },
+    {
+      "code": "sh.601168",
+      "raw_code": "601168",
+      "name": "西部矿业"
+    },
+    {
+      "code": "sh.601899",
+      "raw_code": "601899",
+      "name": "紫金矿业"
+    },
+    {
+      "code": "sh.603257",
+      "raw_code": "603257",
+      "name": "中国瑞林"
+    },
+    {
+      "code": "sh.603799",
+      "raw_code": "603799",
+      "name": "华友钴业"
+    },
+    {
+      "code": "sh.603843",
+      "raw_code": "603843",
+      "name": "*ST正平"
+    },
+    {
+      "code": "sh.603867",
+      "raw_code": "603867",
+      "name": "新化股份"
+    },
+    {
+      "code": "sh.603993",
+      "raw_code": "603993",
+      "name": "洛阳钼业"
+    },
+    {
+      "code": "sh.688101",
+      "raw_code": "688101",
+      "name": "三达膜"
+    },
+    {
+      "code": "sh.688178",
+      "raw_code": "688178",
+      "name": "万德斯"
+    },
+    {
+      "code": "sh.688350",
+      "raw_code": "688350",
+      "name": "富淼科技"
+    },
+    {
+      "code": "sh.688718",
+      "raw_code": "688718",
+      "name": "唯赛勃"
+    },
+    {
+      "code": "sz.000036",
+      "raw_code": "000036",
+      "name": "华联控股"
+    },
+    {
+      "code": "sz.000155",
+      "raw_code": "000155",
+      "name": "川能动力"
+    },
+    {
+      "code": "sz.000408",
+      "raw_code": "000408",
+      "name": "藏格矿业"
+    },
+    {
+      "code": "sz.000546",
+      "raw_code": "000546",
+      "name": "金圆股份"
+    },
+    {
+      "code": "sz.000762",
+      "raw_code": "000762",
+      "name": "西藏矿业"
+    },
+    {
+      "code": "sz.000792",
+      "raw_code": "000792",
+      "name": "盐湖股份"
+    },
+    {
+      "code": "sz.000816",
+      "raw_code": "000816",
+      "name": "智慧农业"
+    },
+    {
+      "code": "sz.000920",
+      "raw_code": "000920",
+      "name": "沃顿科技"
+    },
+    {
+      "code": "sz.002140",
+      "raw_code": "002140",
+      "name": "东华科技"
+    },
+    {
+      "code": "sz.002240",
+      "raw_code": "002240",
+      "name": "盛新锂能"
+    },
+    {
+      "code": "sz.002256",
+      "raw_code": "002256",
+      "name": "兆新股份"
+    },
+    {
+      "code": "sz.002460",
+      "raw_code": "002460",
+      "name": "赣锋锂业"
+    },
+    {
+      "code": "sz.002466",
+      "raw_code": "002466",
+      "name": "天齐锂业"
+    },
+    {
+      "code": "sz.002594",
+      "raw_code": "002594",
+      "name": "比亚迪"
+    },
+    {
+      "code": "sz.002785",
+      "raw_code": "002785",
+      "name": "万里石"
+    },
+    {
+      "code": "sz.002895",
+      "raw_code": "002895",
+      "name": "川恒股份"
+    },
+    {
+      "code": "sz.300014",
+      "raw_code": "300014",
+      "name": "亿纬锂能"
+    },
+    {
+      "code": "sz.300055",
+      "raw_code": "300055",
+      "name": "万邦达"
+    },
+    {
+      "code": "sz.300070",
+      "raw_code": "300070",
+      "name": "碧水源"
+    },
+    {
+      "code": "sz.300172",
+      "raw_code": "300172",
+      "name": "中电环保"
+    },
+    {
+      "code": "sz.300207",
+      "raw_code": "300207",
+      "name": "欣旺达"
+    },
+    {
+      "code": "sz.300263",
+      "raw_code": "300263",
+      "name": "隆华科技"
+    },
+    {
+      "code": "sz.300432",
+      "raw_code": "300432",
+      "name": "富临精工"
+    },
+    {
+      "code": "sz.300487",
+      "raw_code": "300487",
+      "name": "蓝晓科技"
+    },
+    {
+      "code": "sz.300631",
+      "raw_code": "300631",
+      "name": "久吾高科"
+    },
+    {
+      "code": "sz.300774",
+      "raw_code": "300774",
+      "name": "倍杰特"
+    },
+    {
+      "code": "sz.300919",
+      "raw_code": "300919",
+      "name": "中伟新材"
+    },
+    {
+      "code": "sz.301092",
+      "raw_code": "301092",
+      "name": "争光股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:20",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307904/"
+  "fetched_at": "2026-07-13 16:57:38",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

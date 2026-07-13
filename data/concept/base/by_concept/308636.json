@@ -3,10 +3,312 @@
   "concept_name": "消毒剂",
   "first_trade_date": "2020-02-06",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 60,
+  "constituents": [
+    {
+      "code": "sh.600141",
+      "raw_code": "600141",
+      "name": "兴发集团"
+    },
+    {
+      "code": "sh.600160",
+      "raw_code": "600160",
+      "name": "巨化股份"
+    },
+    {
+      "code": "sh.600273",
+      "raw_code": "600273",
+      "name": "嘉化能源"
+    },
+    {
+      "code": "sh.600315",
+      "raw_code": "600315",
+      "name": "上海家化"
+    },
+    {
+      "code": "sh.600409",
+      "raw_code": "600409",
+      "name": "三友化工"
+    },
+    {
+      "code": "sh.600423",
+      "raw_code": "600423",
+      "name": "*ST柳化"
+    },
+    {
+      "code": "sh.600538",
+      "raw_code": "600538",
+      "name": "国发股份"
+    },
+    {
+      "code": "sh.600587",
+      "raw_code": "600587",
+      "name": "新华医疗"
+    },
+    {
+      "code": "sh.600618",
+      "raw_code": "600618",
+      "name": "氯碱化工"
+    },
+    {
+      "code": "sh.600623",
+      "raw_code": "600623",
+      "name": "华谊集团"
+    },
+    {
+      "code": "sh.600673",
+      "raw_code": "600673",
+      "name": "东阳光"
+    },
+    {
+      "code": "sh.600691",
+      "raw_code": "600691",
+      "name": "潞化科技"
+    },
+    {
+      "code": "sh.600789",
+      "raw_code": "600789",
+      "name": "鲁抗医药"
+    },
+    {
+      "code": "sh.600955",
+      "raw_code": "600955",
+      "name": "维远股份"
+    },
+    {
+      "code": "sh.601678",
+      "raw_code": "601678",
+      "name": "滨化股份"
+    },
+    {
+      "code": "sh.603200",
+      "raw_code": "603200",
+      "name": "上海洗霸"
+    },
+    {
+      "code": "sh.603205",
+      "raw_code": "603205",
+      "name": "健尔康"
+    },
+    {
+      "code": "sh.603213",
+      "raw_code": "603213",
+      "name": "镇洋发展"
+    },
+    {
+      "code": "sh.603360",
+      "raw_code": "603360",
+      "name": "百傲化学"
+    },
+    {
+      "code": "sh.603867",
+      "raw_code": "603867",
+      "name": "新化股份"
+    },
+    {
+      "code": "sz.000615",
+      "raw_code": "000615",
+      "name": "*ST美谷"
+    },
+    {
+      "code": "sz.000635",
+      "raw_code": "000635",
+      "name": "英力特"
+    },
+    {
+      "code": "sz.000650",
+      "raw_code": "000650",
+      "name": "仁和药业"
+    },
+    {
+      "code": "sz.000698",
+      "raw_code": "000698",
+      "name": "ST沈化"
+    },
+    {
+      "code": "sz.000819",
+      "raw_code": "000819",
+      "name": "岳阳兴长"
+    },
+    {
+      "code": "sz.000830",
+      "raw_code": "000830",
+      "name": "鲁西化工"
+    },
+    {
+      "code": "sz.000908",
+      "raw_code": "000908",
+      "name": "石药景峰"
+    },
+    {
+      "code": "sz.000915",
+      "raw_code": "000915",
+      "name": "华特达因"
+    },
+    {
+      "code": "sz.001218",
+      "raw_code": "001218",
+      "name": "丽臣实业"
+    },
+    {
+      "code": "sz.001316",
+      "raw_code": "001316",
+      "name": "润贝航科"
+    },
+    {
+      "code": "sz.002092",
+      "raw_code": "002092",
+      "name": "中泰化学"
+    },
+    {
+      "code": "sz.002209",
+      "raw_code": "002209",
+      "name": "达意隆"
+    },
+    {
+      "code": "sz.002223",
+      "raw_code": "002223",
+      "name": "鱼跃医疗"
+    },
+    {
+      "code": "sz.002385",
+      "raw_code": "002385",
+      "name": "大北农"
+    },
+    {
+      "code": "sz.002440",
+      "raw_code": "002440",
+      "name": "闰土股份"
+    },
+    {
+      "code": "sz.002584",
+      "raw_code": "002584",
+      "name": "西陇科学"
+    },
+    {
+      "code": "sz.002636",
+      "raw_code": "002636",
+      "name": "金安国纪"
+    },
+    {
+      "code": "sz.002637",
+      "raw_code": "002637",
+      "name": "赞宇科技"
+    },
+    {
+      "code": "sz.002644",
+      "raw_code": "002644",
+      "name": "佛慈制药"
+    },
+    {
+      "code": "sz.002734",
+      "raw_code": "002734",
+      "name": "利民股份"
+    },
+    {
+      "code": "sz.002741",
+      "raw_code": "002741",
+      "name": "光华科技"
+    },
+    {
+      "code": "sz.002748",
+      "raw_code": "002748",
+      "name": "世龙实业"
+    },
+    {
+      "code": "sz.002762",
+      "raw_code": "002762",
+      "name": "金发拉比"
+    },
+    {
+      "code": "sz.002864",
+      "raw_code": "002864",
+      "name": "盘龙药业"
+    },
+    {
+      "code": "sz.002900",
+      "raw_code": "002900",
+      "name": "哈三联"
+    },
+    {
+      "code": "sz.003023",
+      "raw_code": "003023",
+      "name": "彩虹集团"
+    },
+    {
+      "code": "sz.300086",
+      "raw_code": "300086",
+      "name": "康芝药业"
+    },
+    {
+      "code": "sz.300109",
+      "raw_code": "300109",
+      "name": "新开源"
+    },
+    {
+      "code": "sz.300119",
+      "raw_code": "300119",
+      "name": "瑞普生物"
+    },
+    {
+      "code": "sz.300132",
+      "raw_code": "300132",
+      "name": "青松股份"
+    },
+    {
+      "code": "sz.300267",
+      "raw_code": "300267",
+      "name": "尔康制药"
+    },
+    {
+      "code": "sz.300343",
+      "raw_code": "300343",
+      "name": "联创股份"
+    },
+    {
+      "code": "sz.300422",
+      "raw_code": "300422",
+      "name": "博世科"
+    },
+    {
+      "code": "sz.300430",
+      "raw_code": "300430",
+      "name": "*ST益通"
+    },
+    {
+      "code": "sz.300437",
+      "raw_code": "300437",
+      "name": "清水源"
+    },
+    {
+      "code": "sz.300586",
+      "raw_code": "300586",
+      "name": "美联新材"
+    },
+    {
+      "code": "sz.300632",
+      "raw_code": "300632",
+      "name": "光莆股份"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.301212",
+      "raw_code": "301212",
+      "name": "联盛化学"
+    },
+    {
+      "code": "sz.301256",
+      "raw_code": "301256",
+      "name": "华融化学"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:37",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308636/"
+  "fetched_at": "2026-07-13 16:59:25",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

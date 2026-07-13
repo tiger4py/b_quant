@@ -3,10 +3,242 @@
   "concept_name": "铜缆高速连接",
   "first_trade_date": "2024-03-20",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 46,
+  "constituents": [
+    {
+      "code": "bj.920640",
+      "raw_code": "920640",
+      "name": "富士达"
+    },
+    {
+      "code": "sh.600143",
+      "raw_code": "600143",
+      "name": "金发科技"
+    },
+    {
+      "code": "sh.600255",
+      "raw_code": "600255",
+      "name": "鑫科材料"
+    },
+    {
+      "code": "sh.600337",
+      "raw_code": "600337",
+      "name": "ST美克"
+    },
+    {
+      "code": "sh.600522",
+      "raw_code": "600522",
+      "name": "中天科技"
+    },
+    {
+      "code": "sh.600577",
+      "raw_code": "600577",
+      "name": "精达股份"
+    },
+    {
+      "code": "sh.600869",
+      "raw_code": "600869",
+      "name": "远东股份"
+    },
+    {
+      "code": "sh.600973",
+      "raw_code": "600973",
+      "name": "宝胜股份"
+    },
+    {
+      "code": "sh.601137",
+      "raw_code": "601137",
+      "name": "博威合金"
+    },
+    {
+      "code": "sh.601609",
+      "raw_code": "601609",
+      "name": "金田股份"
+    },
+    {
+      "code": "sh.601869",
+      "raw_code": "601869",
+      "name": "长飞光纤"
+    },
+    {
+      "code": "sh.603042",
+      "raw_code": "603042",
+      "name": "华脉科技"
+    },
+    {
+      "code": "sh.603703",
+      "raw_code": "603703",
+      "name": "盛洋科技"
+    },
+    {
+      "code": "sh.605277",
+      "raw_code": "605277",
+      "name": "新亚电子"
+    },
+    {
+      "code": "sh.688515",
+      "raw_code": "688515",
+      "name": "裕太微"
+    },
+    {
+      "code": "sh.688629",
+      "raw_code": "688629",
+      "name": "华丰科技"
+    },
+    {
+      "code": "sh.688668",
+      "raw_code": "688668",
+      "name": "鼎通科技"
+    },
+    {
+      "code": "sh.688800",
+      "raw_code": "688800",
+      "name": "瑞可达"
+    },
+    {
+      "code": "sz.000818",
+      "raw_code": "000818",
+      "name": "航锦科技"
+    },
+    {
+      "code": "sz.000988",
+      "raw_code": "000988",
+      "name": "华工科技"
+    },
+    {
+      "code": "sz.001267",
+      "raw_code": "001267",
+      "name": "汇绿生态"
+    },
+    {
+      "code": "sz.002025",
+      "raw_code": "002025",
+      "name": "航天电器"
+    },
+    {
+      "code": "sz.002055",
+      "raw_code": "002055",
+      "name": "ST得润"
+    },
+    {
+      "code": "sz.002130",
+      "raw_code": "002130",
+      "name": "沃尔核材"
+    },
+    {
+      "code": "sz.002179",
+      "raw_code": "002179",
+      "name": "中航光电"
+    },
+    {
+      "code": "sz.002475",
+      "raw_code": "002475",
+      "name": "立讯精密"
+    },
+    {
+      "code": "sz.002792",
+      "raw_code": "002792",
+      "name": "通宇通讯"
+    },
+    {
+      "code": "sz.002897",
+      "raw_code": "002897",
+      "name": "意华股份"
+    },
+    {
+      "code": "sz.002902",
+      "raw_code": "002902",
+      "name": "铭普光磁"
+    },
+    {
+      "code": "sz.300115",
+      "raw_code": "300115",
+      "name": "长盈精密"
+    },
+    {
+      "code": "sz.300252",
+      "raw_code": "300252",
+      "name": "金信诺"
+    },
+    {
+      "code": "sz.300548",
+      "raw_code": "300548",
+      "name": "长芯博创"
+    },
+    {
+      "code": "sz.300563",
+      "raw_code": "300563",
+      "name": "神宇股份"
+    },
+    {
+      "code": "sz.300570",
+      "raw_code": "300570",
+      "name": "太辰光"
+    },
+    {
+      "code": "sz.300814",
+      "raw_code": "300814",
+      "name": "中富电路"
+    },
+    {
+      "code": "sz.300843",
+      "raw_code": "300843",
+      "name": "胜蓝股份"
+    },
+    {
+      "code": "sz.300863",
+      "raw_code": "300863",
+      "name": "卡倍亿"
+    },
+    {
+      "code": "sz.300913",
+      "raw_code": "300913",
+      "name": "兆龙互连"
+    },
+    {
+      "code": "sz.300991",
+      "raw_code": "300991",
+      "name": "创益通"
+    },
+    {
+      "code": "sz.301067",
+      "raw_code": "301067",
+      "name": "显盈科技"
+    },
+    {
+      "code": "sz.301123",
+      "raw_code": "301123",
+      "name": "奕东电子"
+    },
+    {
+      "code": "sz.301182",
+      "raw_code": "301182",
+      "name": "凯旺科技"
+    },
+    {
+      "code": "sz.301310",
+      "raw_code": "301310",
+      "name": "鑫宏业"
+    },
+    {
+      "code": "sz.301328",
+      "raw_code": "301328",
+      "name": "维峰电子"
+    },
+    {
+      "code": "sz.301439",
+      "raw_code": "301439",
+      "name": "泓淋电力"
+    },
+    {
+      "code": "sz.301517",
+      "raw_code": "301517",
+      "name": "陕西华达"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:21",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309125/"
+  "fetched_at": "2026-07-13 17:04:28",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

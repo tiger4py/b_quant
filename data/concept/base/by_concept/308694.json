@@ -3,10 +3,132 @@
   "concept_name": "汽车拆解概念",
   "first_trade_date": "2020-08-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 24,
+  "constituents": [
+    {
+      "code": "bj.920030",
+      "raw_code": "920030",
+      "name": "德众汽车"
+    },
+    {
+      "code": "bj.920242",
+      "raw_code": "920242",
+      "name": "建邦科技"
+    },
+    {
+      "code": "sh.600126",
+      "raw_code": "600126",
+      "name": "杭钢股份"
+    },
+    {
+      "code": "sh.600386",
+      "raw_code": "600386",
+      "name": "北巴传媒"
+    },
+    {
+      "code": "sh.600548",
+      "raw_code": "600548",
+      "name": "深高速"
+    },
+    {
+      "code": "sh.600676",
+      "raw_code": "600676",
+      "name": "交运股份"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.601388",
+      "raw_code": "601388",
+      "name": "怡球资源"
+    },
+    {
+      "code": "sh.603190",
+      "raw_code": "603190",
+      "name": "亚通精工"
+    },
+    {
+      "code": "sh.603194",
+      "raw_code": "603194",
+      "name": "中力股份"
+    },
+    {
+      "code": "sz.000981",
+      "raw_code": "000981",
+      "name": "山子高科"
+    },
+    {
+      "code": "sz.002009",
+      "raw_code": "002009",
+      "name": "天奇股份"
+    },
+    {
+      "code": "sz.002037",
+      "raw_code": "002037",
+      "name": "保利联合"
+    },
+    {
+      "code": "sz.002266",
+      "raw_code": "002266",
+      "name": "浙富控股"
+    },
+    {
+      "code": "sz.002310",
+      "raw_code": "002310",
+      "name": "东方新能"
+    },
+    {
+      "code": "sz.002340",
+      "raw_code": "002340",
+      "name": "格林美"
+    },
+    {
+      "code": "sz.002594",
+      "raw_code": "002594",
+      "name": "比亚迪"
+    },
+    {
+      "code": "sz.002645",
+      "raw_code": "002645",
+      "name": "华宏科技"
+    },
+    {
+      "code": "sz.002672",
+      "raw_code": "002672",
+      "name": "东江环保"
+    },
+    {
+      "code": "sz.300428",
+      "raw_code": "300428",
+      "name": "立中集团"
+    },
+    {
+      "code": "sz.300938",
+      "raw_code": "300938",
+      "name": "信测标准"
+    },
+    {
+      "code": "sz.301049",
+      "raw_code": "301049",
+      "name": "超越科技"
+    },
+    {
+      "code": "sz.301265",
+      "raw_code": "301265",
+      "name": "华新科技"
+    },
+    {
+      "code": "sz.301500",
+      "raw_code": "301500",
+      "name": "飞南资源"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:38",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308694/"
+  "fetched_at": "2026-07-13 16:59:29",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

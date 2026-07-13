@@ -3,10 +3,157 @@
   "concept_name": "啤酒概念",
   "first_trade_date": "2018-01-08",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 29,
+  "constituents": [
+    {
+      "code": "sh.600108",
+      "raw_code": "600108",
+      "name": "亚盛集团"
+    },
+    {
+      "code": "sh.600132",
+      "raw_code": "600132",
+      "name": "重庆啤酒"
+    },
+    {
+      "code": "sh.600199",
+      "raw_code": "600199",
+      "name": "金种子酒"
+    },
+    {
+      "code": "sh.600573",
+      "raw_code": "600573",
+      "name": "惠泉啤酒"
+    },
+    {
+      "code": "sh.600600",
+      "raw_code": "600600",
+      "name": "青岛啤酒"
+    },
+    {
+      "code": "sh.601952",
+      "raw_code": "601952",
+      "name": "苏垦农发"
+    },
+    {
+      "code": "sh.603076",
+      "raw_code": "603076",
+      "name": "乐惠国际"
+    },
+    {
+      "code": "sh.603919",
+      "raw_code": "603919",
+      "name": "金徽酒"
+    },
+    {
+      "code": "sh.605337",
+      "raw_code": "605337",
+      "name": "李子园"
+    },
+    {
+      "code": "sz.000417",
+      "raw_code": "000417",
+      "name": "合百集团"
+    },
+    {
+      "code": "sz.000523",
+      "raw_code": "000523",
+      "name": "红棉股份"
+    },
+    {
+      "code": "sz.000568",
+      "raw_code": "000568",
+      "name": "泸州老窖"
+    },
+    {
+      "code": "sz.000659",
+      "raw_code": "000659",
+      "name": "珠海中富"
+    },
+    {
+      "code": "sz.000729",
+      "raw_code": "000729",
+      "name": "燕京啤酒"
+    },
+    {
+      "code": "sz.000752",
+      "raw_code": "000752",
+      "name": "*ST西发"
+    },
+    {
+      "code": "sz.000888",
+      "raw_code": "000888",
+      "name": "峨眉山A"
+    },
+    {
+      "code": "sz.000929",
+      "raw_code": "000929",
+      "name": "兰州黄河"
+    },
+    {
+      "code": "sz.000950",
+      "raw_code": "000950",
+      "name": "重药控股"
+    },
+    {
+      "code": "sz.001338",
+      "raw_code": "001338",
+      "name": "永顺泰"
+    },
+    {
+      "code": "sz.002116",
+      "raw_code": "002116",
+      "name": "中国海诚"
+    },
+    {
+      "code": "sz.002166",
+      "raw_code": "002166",
+      "name": "莱茵生物"
+    },
+    {
+      "code": "sz.002419",
+      "raw_code": "002419",
+      "name": "天虹股份"
+    },
+    {
+      "code": "sz.002461",
+      "raw_code": "002461",
+      "name": "珠江啤酒"
+    },
+    {
+      "code": "sz.002549",
+      "raw_code": "002549",
+      "name": "凯美特气"
+    },
+    {
+      "code": "sz.002582",
+      "raw_code": "002582",
+      "name": "好想你"
+    },
+    {
+      "code": "sz.002701",
+      "raw_code": "002701",
+      "name": "奥瑞金"
+    },
+    {
+      "code": "sz.002969",
+      "raw_code": "002969",
+      "name": "嘉美包装"
+    },
+    {
+      "code": "sz.300412",
+      "raw_code": "300412",
+      "name": "迦南科技"
+    },
+    {
+      "code": "sz.300892",
+      "raw_code": "300892",
+      "name": "品渥食品"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:57",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301497/"
+  "fetched_at": "2026-07-13 16:51:51",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

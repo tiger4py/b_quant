@@ -3,10 +3,427 @@
   "concept_name": "可降解塑料",
   "first_trade_date": "2020-08-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 83,
+  "constituents": [
+    {
+      "code": "bj.920099",
+      "raw_code": "920099",
+      "name": "瑞华技术"
+    },
+    {
+      "code": "bj.920163",
+      "raw_code": "920163",
+      "name": "方大新材"
+    },
+    {
+      "code": "bj.920218",
+      "raw_code": "920218",
+      "name": "新天力"
+    },
+    {
+      "code": "bj.920471",
+      "raw_code": "920471",
+      "name": "美邦科技"
+    },
+    {
+      "code": "bj.920489",
+      "raw_code": "920489",
+      "name": "佳先股份"
+    },
+    {
+      "code": "bj.920834",
+      "raw_code": "920834",
+      "name": "三维装备"
+    },
+    {
+      "code": "sh.600075",
+      "raw_code": "600075",
+      "name": "新疆天业"
+    },
+    {
+      "code": "sh.600143",
+      "raw_code": "600143",
+      "name": "金发科技"
+    },
+    {
+      "code": "sh.600210",
+      "raw_code": "600210",
+      "name": "紫江企业"
+    },
+    {
+      "code": "sh.600281",
+      "raw_code": "600281",
+      "name": "华阳新材"
+    },
+    {
+      "code": "sh.600309",
+      "raw_code": "600309",
+      "name": "万华化学"
+    },
+    {
+      "code": "sh.600346",
+      "raw_code": "600346",
+      "name": "恒力石化"
+    },
+    {
+      "code": "sh.600433",
+      "raw_code": "600433",
+      "name": "冠豪高新"
+    },
+    {
+      "code": "sh.600543",
+      "raw_code": "600543",
+      "name": "*ST莫高"
+    },
+    {
+      "code": "sh.600710",
+      "raw_code": "600710",
+      "name": "苏美达"
+    },
+    {
+      "code": "sh.600844",
+      "raw_code": "600844",
+      "name": "金煤科技"
+    },
+    {
+      "code": "sh.600935",
+      "raw_code": "600935",
+      "name": "华塑股份"
+    },
+    {
+      "code": "sh.601118",
+      "raw_code": "601118",
+      "name": "海南橡胶"
+    },
+    {
+      "code": "sh.601216",
+      "raw_code": "601216",
+      "name": "君正集团"
+    },
+    {
+      "code": "sh.603033",
+      "raw_code": "603033",
+      "name": "三维股份"
+    },
+    {
+      "code": "sh.603091",
+      "raw_code": "603091",
+      "name": "众鑫股份"
+    },
+    {
+      "code": "sh.603150",
+      "raw_code": "603150",
+      "name": "万朗磁塑"
+    },
+    {
+      "code": "sh.603217",
+      "raw_code": "603217",
+      "name": "元利科技"
+    },
+    {
+      "code": "sh.603600",
+      "raw_code": "603600",
+      "name": "永艺股份"
+    },
+    {
+      "code": "sh.603615",
+      "raw_code": "603615",
+      "name": "茶花股份"
+    },
+    {
+      "code": "sh.603650",
+      "raw_code": "603650",
+      "name": "彤程新材"
+    },
+    {
+      "code": "sh.603681",
+      "raw_code": "603681",
+      "name": "永冠新材"
+    },
+    {
+      "code": "sh.605008",
+      "raw_code": "605008",
+      "name": "长鸿高科"
+    },
+    {
+      "code": "sh.688065",
+      "raw_code": "688065",
+      "name": "凯赛生物"
+    },
+    {
+      "code": "sh.688087",
+      "raw_code": "688087",
+      "name": "英科再生"
+    },
+    {
+      "code": "sh.688196",
+      "raw_code": "688196",
+      "name": "卓越新能"
+    },
+    {
+      "code": "sh.688203",
+      "raw_code": "688203",
+      "name": "海正生材"
+    },
+    {
+      "code": "sh.688219",
+      "raw_code": "688219",
+      "name": "会通股份"
+    },
+    {
+      "code": "sh.688585",
+      "raw_code": "688585",
+      "name": "上纬新材"
+    },
+    {
+      "code": "sh.688639",
+      "raw_code": "688639",
+      "name": "华恒生物"
+    },
+    {
+      "code": "sh.688669",
+      "raw_code": "688669",
+      "name": "聚石化学"
+    },
+    {
+      "code": "sz.000422",
+      "raw_code": "000422",
+      "name": "湖北宜化"
+    },
+    {
+      "code": "sz.000703",
+      "raw_code": "000703",
+      "name": "恒逸石化"
+    },
+    {
+      "code": "sz.000759",
+      "raw_code": "000759",
+      "name": "中百集团"
+    },
+    {
+      "code": "sz.000881",
+      "raw_code": "000881",
+      "name": "中广核技"
+    },
+    {
+      "code": "sz.000930",
+      "raw_code": "000930",
+      "name": "中粮科技"
+    },
+    {
+      "code": "sz.001223",
+      "raw_code": "001223",
+      "name": "欧克科技"
+    },
+    {
+      "code": "sz.001356",
+      "raw_code": "001356",
+      "name": "富岭股份"
+    },
+    {
+      "code": "sz.002019",
+      "raw_code": "002019",
+      "name": "亿帆医药"
+    },
+    {
+      "code": "sz.002064",
+      "raw_code": "002064",
+      "name": "华峰化学"
+    },
+    {
+      "code": "sz.002092",
+      "raw_code": "002092",
+      "name": "中泰化学"
+    },
+    {
+      "code": "sz.002140",
+      "raw_code": "002140",
+      "name": "东华科技"
+    },
+    {
+      "code": "sz.002243",
+      "raw_code": "002243",
+      "name": "力合科创"
+    },
+    {
+      "code": "sz.002360",
+      "raw_code": "002360",
+      "name": "ST同德"
+    },
+    {
+      "code": "sz.002408",
+      "raw_code": "002408",
+      "name": "齐翔腾达"
+    },
+    {
+      "code": "sz.002521",
+      "raw_code": "002521",
+      "name": "齐峰新材"
+    },
+    {
+      "code": "sz.002526",
+      "raw_code": "002526",
+      "name": "山东矿机"
+    },
+    {
+      "code": "sz.002585",
+      "raw_code": "002585",
+      "name": "双星新材"
+    },
+    {
+      "code": "sz.002735",
+      "raw_code": "002735",
+      "name": "王子新材"
+    },
+    {
+      "code": "sz.002768",
+      "raw_code": "002768",
+      "name": "国恩股份"
+    },
+    {
+      "code": "sz.002831",
+      "raw_code": "002831",
+      "name": "裕同科技"
+    },
+    {
+      "code": "sz.002838",
+      "raw_code": "002838",
+      "name": "道恩股份"
+    },
+    {
+      "code": "sz.002986",
+      "raw_code": "002986",
+      "name": "宇新股份"
+    },
+    {
+      "code": "sz.003003",
+      "raw_code": "003003",
+      "name": "天元股份"
+    },
+    {
+      "code": "sz.003022",
+      "raw_code": "003022",
+      "name": "联泓新科"
+    },
+    {
+      "code": "sz.300092",
+      "raw_code": "300092",
+      "name": "科新机电"
+    },
+    {
+      "code": "sz.300221",
+      "raw_code": "300221",
+      "name": "银禧科技"
+    },
+    {
+      "code": "sz.300243",
+      "raw_code": "300243",
+      "name": "瑞丰高材"
+    },
+    {
+      "code": "sz.300281",
+      "raw_code": "300281",
+      "name": "金明精机"
+    },
+    {
+      "code": "sz.300381",
+      "raw_code": "300381",
+      "name": "溢多利"
+    },
+    {
+      "code": "sz.300384",
+      "raw_code": "300384",
+      "name": "三联虹普"
+    },
+    {
+      "code": "sz.300586",
+      "raw_code": "300586",
+      "name": "美联新材"
+    },
+    {
+      "code": "sz.300644",
+      "raw_code": "300644",
+      "name": "南京聚隆"
+    },
+    {
+      "code": "sz.300716",
+      "raw_code": "300716",
+      "name": "*ST泉为"
+    },
+    {
+      "code": "sz.300717",
+      "raw_code": "300717",
+      "name": "华信新材"
+    },
+    {
+      "code": "sz.300829",
+      "raw_code": "300829",
+      "name": "金丹科技"
+    },
+    {
+      "code": "sz.300848",
+      "raw_code": "300848",
+      "name": "美瑞新材"
+    },
+    {
+      "code": "sz.300849",
+      "raw_code": "300849",
+      "name": "锦盛新材"
+    },
+    {
+      "code": "sz.301100",
+      "raw_code": "301100",
+      "name": "风光股份"
+    },
+    {
+      "code": "sz.301131",
+      "raw_code": "301131",
+      "name": "聚赛龙"
+    },
+    {
+      "code": "sz.301193",
+      "raw_code": "301193",
+      "name": "家联科技"
+    },
+    {
+      "code": "sz.301212",
+      "raw_code": "301212",
+      "name": "联盛化学"
+    },
+    {
+      "code": "sz.301305",
+      "raw_code": "301305",
+      "name": "朗坤科技"
+    },
+    {
+      "code": "sz.301387",
+      "raw_code": "301387",
+      "name": "光大同创"
+    },
+    {
+      "code": "sz.301501",
+      "raw_code": "301501",
+      "name": "恒鑫生活"
+    },
+    {
+      "code": "sz.301565",
+      "raw_code": "301565",
+      "name": "中仑新材"
+    },
+    {
+      "code": "sz.301601",
+      "raw_code": "301601",
+      "name": "惠通科技"
+    },
+    {
+      "code": "sz.301616",
+      "raw_code": "301616",
+      "name": "浙江华业"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:38",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/4/code/301117/"
+  "fetched_at": "2026-07-13 16:45:40",
+  "page_count": 9,
+  "is_partial": false,
+  "page_limit_reason": null
 }

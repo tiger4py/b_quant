@@ -3,10 +3,382 @@
   "concept_name": "民营医院",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 74,
+  "constituents": [
+    {
+      "code": "sh.600079",
+      "raw_code": "600079",
+      "name": "ST人福"
+    },
+    {
+      "code": "sh.600162",
+      "raw_code": "600162",
+      "name": "香江控股"
+    },
+    {
+      "code": "sh.600196",
+      "raw_code": "600196",
+      "name": "复星医药"
+    },
+    {
+      "code": "sh.600227",
+      "raw_code": "600227",
+      "name": "赤天化"
+    },
+    {
+      "code": "sh.600257",
+      "raw_code": "600257",
+      "name": "大湖股份"
+    },
+    {
+      "code": "sh.600272",
+      "raw_code": "600272",
+      "name": "开开实业"
+    },
+    {
+      "code": "sh.600327",
+      "raw_code": "600327",
+      "name": "大东方"
+    },
+    {
+      "code": "sh.600518",
+      "raw_code": "600518",
+      "name": "康美药业"
+    },
+    {
+      "code": "sh.600568",
+      "raw_code": "600568",
+      "name": "ST中珠"
+    },
+    {
+      "code": "sh.600587",
+      "raw_code": "600587",
+      "name": "新华医疗"
+    },
+    {
+      "code": "sh.600594",
+      "raw_code": "600594",
+      "name": "益佰制药"
+    },
+    {
+      "code": "sh.600620",
+      "raw_code": "600620",
+      "name": "天宸股份"
+    },
+    {
+      "code": "sh.600682",
+      "raw_code": "600682",
+      "name": "南京新百"
+    },
+    {
+      "code": "sh.600763",
+      "raw_code": "600763",
+      "name": "通策医疗"
+    },
+    {
+      "code": "sh.600774",
+      "raw_code": "600774",
+      "name": "汉商集团"
+    },
+    {
+      "code": "sh.600829",
+      "raw_code": "600829",
+      "name": "人民同泰"
+    },
+    {
+      "code": "sh.600993",
+      "raw_code": "600993",
+      "name": "马应龙"
+    },
+    {
+      "code": "sh.601567",
+      "raw_code": "601567",
+      "name": "三星电气"
+    },
+    {
+      "code": "sh.601886",
+      "raw_code": "601886",
+      "name": "江河集团"
+    },
+    {
+      "code": "sh.603168",
+      "raw_code": "603168",
+      "name": "莎普爱思"
+    },
+    {
+      "code": "sh.603222",
+      "raw_code": "603222",
+      "name": "济民健康"
+    },
+    {
+      "code": "sh.603669",
+      "raw_code": "603669",
+      "name": "灵康药业"
+    },
+    {
+      "code": "sh.603990",
+      "raw_code": "603990",
+      "name": "麦迪科技"
+    },
+    {
+      "code": "sh.603998",
+      "raw_code": "603998",
+      "name": "方盛制药"
+    },
+    {
+      "code": "sz.000516",
+      "raw_code": "000516",
+      "name": "国际医学"
+    },
+    {
+      "code": "sz.000526",
+      "raw_code": "000526",
+      "name": "学大教育"
+    },
+    {
+      "code": "sz.000566",
+      "raw_code": "000566",
+      "name": "海南海药"
+    },
+    {
+      "code": "sz.000592",
+      "raw_code": "000592",
+      "name": "平潭发展"
+    },
+    {
+      "code": "sz.000615",
+      "raw_code": "000615",
+      "name": "*ST美谷"
+    },
+    {
+      "code": "sz.000700",
+      "raw_code": "000700",
+      "name": "模塑科技"
+    },
+    {
+      "code": "sz.000705",
+      "raw_code": "000705",
+      "name": "浙江震元"
+    },
+    {
+      "code": "sz.000718",
+      "raw_code": "000718",
+      "name": "苏宁环球"
+    },
+    {
+      "code": "sz.000725",
+      "raw_code": "000725",
+      "name": "京东方A"
+    },
+    {
+      "code": "sz.000766",
+      "raw_code": "000766",
+      "name": "通化金马"
+    },
+    {
+      "code": "sz.000788",
+      "raw_code": "000788",
+      "name": "北大医药"
+    },
+    {
+      "code": "sz.000812",
+      "raw_code": "000812",
+      "name": "陕西金叶"
+    },
+    {
+      "code": "sz.000813",
+      "raw_code": "000813",
+      "name": "德展健康"
+    },
+    {
+      "code": "sz.000919",
+      "raw_code": "000919",
+      "name": "金陵药业"
+    },
+    {
+      "code": "sz.000955",
+      "raw_code": "000955",
+      "name": "欣龙控股"
+    },
+    {
+      "code": "sz.000990",
+      "raw_code": "000990",
+      "name": "诚志股份"
+    },
+    {
+      "code": "sz.002004",
+      "raw_code": "002004",
+      "name": "华邦健康"
+    },
+    {
+      "code": "sz.002038",
+      "raw_code": "002038",
+      "name": "双鹭药业"
+    },
+    {
+      "code": "sz.002162",
+      "raw_code": "002162",
+      "name": "悦心健康"
+    },
+    {
+      "code": "sz.002172",
+      "raw_code": "002172",
+      "name": "澳洋健康"
+    },
+    {
+      "code": "sz.002173",
+      "raw_code": "002173",
+      "name": "创新医疗"
+    },
+    {
+      "code": "sz.002219",
+      "raw_code": "002219",
+      "name": "新里程"
+    },
+    {
+      "code": "sz.002344",
+      "raw_code": "002344",
+      "name": "海宁皮城"
+    },
+    {
+      "code": "sz.002390",
+      "raw_code": "002390",
+      "name": "信邦制药"
+    },
+    {
+      "code": "sz.002424",
+      "raw_code": "002424",
+      "name": "ST百灵"
+    },
+    {
+      "code": "sz.002437",
+      "raw_code": "002437",
+      "name": "誉衡药业"
+    },
+    {
+      "code": "sz.002462",
+      "raw_code": "002462",
+      "name": "嘉事堂"
+    },
+    {
+      "code": "sz.002524",
+      "raw_code": "002524",
+      "name": "光正眼科"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002570",
+      "raw_code": "002570",
+      "name": "贝因美"
+    },
+    {
+      "code": "sz.002612",
+      "raw_code": "002612",
+      "name": "朗姿股份"
+    },
+    {
+      "code": "sz.002622",
+      "raw_code": "002622",
+      "name": "皓宸医疗"
+    },
+    {
+      "code": "sz.002793",
+      "raw_code": "002793",
+      "name": "罗欣药业"
+    },
+    {
+      "code": "sz.002795",
+      "raw_code": "002795",
+      "name": "永和智控"
+    },
+    {
+      "code": "sz.300003",
+      "raw_code": "300003",
+      "name": "乐普医疗"
+    },
+    {
+      "code": "sz.300009",
+      "raw_code": "300009",
+      "name": "安科生物"
+    },
+    {
+      "code": "sz.300015",
+      "raw_code": "300015",
+      "name": "爱尔眼科"
+    },
+    {
+      "code": "sz.300143",
+      "raw_code": "300143",
+      "name": "盈康生命"
+    },
+    {
+      "code": "sz.300246",
+      "raw_code": "300246",
+      "name": "宝莱特"
+    },
+    {
+      "code": "sz.300288",
+      "raw_code": "300288",
+      "name": "朗玛信息"
+    },
+    {
+      "code": "sz.300298",
+      "raw_code": "300298",
+      "name": "三诺生物"
+    },
+    {
+      "code": "sz.300573",
+      "raw_code": "300573",
+      "name": "兴齐眼药"
+    },
+    {
+      "code": "sz.300639",
+      "raw_code": "300639",
+      "name": "凯普生物"
+    },
+    {
+      "code": "sz.300878",
+      "raw_code": "300878",
+      "name": "维康药业"
+    },
+    {
+      "code": "sz.300937",
+      "raw_code": "300937",
+      "name": "药易购"
+    },
+    {
+      "code": "sz.301103",
+      "raw_code": "301103",
+      "name": "何氏眼科"
+    },
+    {
+      "code": "sz.301126",
+      "raw_code": "301126",
+      "name": "达嘉维康"
+    },
+    {
+      "code": "sz.301239",
+      "raw_code": "301239",
+      "name": "普瑞眼科"
+    },
+    {
+      "code": "sz.301267",
+      "raw_code": "301267",
+      "name": "华厦眼科"
+    },
+    {
+      "code": "sz.301293",
+      "raw_code": "301293",
+      "name": "三博脑科"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:51",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301346/"
+  "fetched_at": "2026-07-13 16:48:20",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

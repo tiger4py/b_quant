@@ -3,10 +3,67 @@
   "concept_name": "高压氧舱",
   "first_trade_date": "2022-11-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 11,
+  "constituents": [
+    {
+      "code": "bj.920199",
+      "raw_code": "920199",
+      "name": "倍益康"
+    },
+    {
+      "code": "sh.600257",
+      "raw_code": "600257",
+      "name": "大湖股份"
+    },
+    {
+      "code": "sh.601567",
+      "raw_code": "601567",
+      "name": "三星电气"
+    },
+    {
+      "code": "sh.605001",
+      "raw_code": "605001",
+      "name": "威奥股份"
+    },
+    {
+      "code": "sh.688425",
+      "raw_code": "688425",
+      "name": "铁建重工"
+    },
+    {
+      "code": "sz.000516",
+      "raw_code": "000516",
+      "name": "国际医学"
+    },
+    {
+      "code": "sz.000919",
+      "raw_code": "000919",
+      "name": "金陵药业"
+    },
+    {
+      "code": "sz.002172",
+      "raw_code": "002172",
+      "name": "澳洋健康"
+    },
+    {
+      "code": "sz.002173",
+      "raw_code": "002173",
+      "name": "创新医疗"
+    },
+    {
+      "code": "sz.002430",
+      "raw_code": "002430",
+      "name": "杭氧股份"
+    },
+    {
+      "code": "sz.300143",
+      "raw_code": "300143",
+      "name": "盈康生命"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:06",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309023/"
+  "fetched_at": "2026-07-13 17:02:38",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

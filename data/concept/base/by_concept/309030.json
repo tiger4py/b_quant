@@ -3,10 +3,262 @@
   "concept_name": "PET铜箔",
   "first_trade_date": "2022-11-22",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 50,
+  "constituents": [
+    {
+      "code": "bj.920204",
+      "raw_code": "920204",
+      "name": "沪江材料"
+    },
+    {
+      "code": "bj.920522",
+      "raw_code": "920522",
+      "name": "纳科诺尔"
+    },
+    {
+      "code": "sh.600110",
+      "raw_code": "600110",
+      "name": "诺德股份"
+    },
+    {
+      "code": "sh.600226",
+      "raw_code": "600226",
+      "name": "亨通股份"
+    },
+    {
+      "code": "sh.600237",
+      "raw_code": "600237",
+      "name": "铜峰电子"
+    },
+    {
+      "code": "sh.600346",
+      "raw_code": "600346",
+      "name": "恒力石化"
+    },
+    {
+      "code": "sh.600522",
+      "raw_code": "600522",
+      "name": "中天科技"
+    },
+    {
+      "code": "sh.600869",
+      "raw_code": "600869",
+      "name": "远东股份"
+    },
+    {
+      "code": "sh.601208",
+      "raw_code": "601208",
+      "name": "东材科技"
+    },
+    {
+      "code": "sh.601515",
+      "raw_code": "601515",
+      "name": "衢州东峰"
+    },
+    {
+      "code": "sh.603124",
+      "raw_code": "603124",
+      "name": "江南新材"
+    },
+    {
+      "code": "sh.603435",
+      "raw_code": "603435",
+      "name": "嘉德利"
+    },
+    {
+      "code": "sh.603618",
+      "raw_code": "603618",
+      "name": "杭电股份"
+    },
+    {
+      "code": "sh.603659",
+      "raw_code": "603659",
+      "name": "璞泰来"
+    },
+    {
+      "code": "sh.603773",
+      "raw_code": "603773",
+      "name": "沃格光电"
+    },
+    {
+      "code": "sh.603800",
+      "raw_code": "603800",
+      "name": "洪田股份"
+    },
+    {
+      "code": "sh.688020",
+      "raw_code": "688020",
+      "name": "方邦股份"
+    },
+    {
+      "code": "sh.688170",
+      "raw_code": "688170",
+      "name": "德龙激光"
+    },
+    {
+      "code": "sh.688359",
+      "raw_code": "688359",
+      "name": "三孚新科"
+    },
+    {
+      "code": "sh.688388",
+      "raw_code": "688388",
+      "name": "嘉元科技"
+    },
+    {
+      "code": "sh.688392",
+      "raw_code": "688392",
+      "name": "骄成超声"
+    },
+    {
+      "code": "sh.688499",
+      "raw_code": "688499",
+      "name": "利元亨"
+    },
+    {
+      "code": "sh.688530",
+      "raw_code": "688530",
+      "name": "欧莱新材"
+    },
+    {
+      "code": "sh.688659",
+      "raw_code": "688659",
+      "name": "元琛科技"
+    },
+    {
+      "code": "sh.688700",
+      "raw_code": "688700",
+      "name": "东威科技"
+    },
+    {
+      "code": "sh.688813",
+      "raw_code": "688813",
+      "name": "泰金新能"
+    },
+    {
+      "code": "sz.001223",
+      "raw_code": "001223",
+      "name": "欧克科技"
+    },
+    {
+      "code": "sz.002191",
+      "raw_code": "002191",
+      "name": "劲嘉股份"
+    },
+    {
+      "code": "sz.002203",
+      "raw_code": "002203",
+      "name": "海亮股份"
+    },
+    {
+      "code": "sz.002263",
+      "raw_code": "002263",
+      "name": "大东南"
+    },
+    {
+      "code": "sz.002426",
+      "raw_code": "002426",
+      "name": "胜利精密"
+    },
+    {
+      "code": "sz.002585",
+      "raw_code": "002585",
+      "name": "双星新材"
+    },
+    {
+      "code": "sz.002741",
+      "raw_code": "002741",
+      "name": "光华科技"
+    },
+    {
+      "code": "sz.002846",
+      "raw_code": "002846",
+      "name": "英联股份"
+    },
+    {
+      "code": "sz.002859",
+      "raw_code": "002859",
+      "name": "洁美科技"
+    },
+    {
+      "code": "sz.002992",
+      "raw_code": "002992",
+      "name": "宝明科技"
+    },
+    {
+      "code": "sz.003015",
+      "raw_code": "003015",
+      "name": "日久光电"
+    },
+    {
+      "code": "sz.300057",
+      "raw_code": "300057",
+      "name": "万顺新材"
+    },
+    {
+      "code": "sz.300120",
+      "raw_code": "300120",
+      "name": "经纬辉开"
+    },
+    {
+      "code": "sz.300305",
+      "raw_code": "300305",
+      "name": "裕兴股份"
+    },
+    {
+      "code": "sz.300450",
+      "raw_code": "300450",
+      "name": "先导智能"
+    },
+    {
+      "code": "sz.300538",
+      "raw_code": "300538",
+      "name": "同益股份"
+    },
+    {
+      "code": "sz.300632",
+      "raw_code": "300632",
+      "name": "光莆股份"
+    },
+    {
+      "code": "sz.300706",
+      "raw_code": "300706",
+      "name": "阿石创"
+    },
+    {
+      "code": "sz.300724",
+      "raw_code": "300724",
+      "name": "捷佳伟创"
+    },
+    {
+      "code": "sz.301150",
+      "raw_code": "301150",
+      "name": "中一科技"
+    },
+    {
+      "code": "sz.301217",
+      "raw_code": "301217",
+      "name": "铜冠铜箔"
+    },
+    {
+      "code": "sz.301389",
+      "raw_code": "301389",
+      "name": "隆扬电子"
+    },
+    {
+      "code": "sz.301392",
+      "raw_code": "301392",
+      "name": "汇成真空"
+    },
+    {
+      "code": "sz.301511",
+      "raw_code": "301511",
+      "name": "德福科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:06",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309030/"
+  "fetched_at": "2026-07-13 17:02:40",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

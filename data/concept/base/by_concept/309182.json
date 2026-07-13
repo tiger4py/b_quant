@@ -3,10 +3,282 @@
   "concept_name": "小红书概念",
   "first_trade_date": "2025-01-15",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 54,
+  "constituents": [
+    {
+      "code": "bj.920227",
+      "raw_code": "920227",
+      "name": "美登科技"
+    },
+    {
+      "code": "sh.600228",
+      "raw_code": "600228",
+      "name": "返利科技"
+    },
+    {
+      "code": "sh.600358",
+      "raw_code": "600358",
+      "name": "国旅联合"
+    },
+    {
+      "code": "sh.600539",
+      "raw_code": "600539",
+      "name": "狮头股份"
+    },
+    {
+      "code": "sh.600556",
+      "raw_code": "600556",
+      "name": "天下秀"
+    },
+    {
+      "code": "sh.600880",
+      "raw_code": "600880",
+      "name": "博瑞传播"
+    },
+    {
+      "code": "sh.600986",
+      "raw_code": "600986",
+      "name": "浙文互联"
+    },
+    {
+      "code": "sh.603598",
+      "raw_code": "603598",
+      "name": "引力传媒"
+    },
+    {
+      "code": "sh.603602",
+      "raw_code": "603602",
+      "name": "纵横通信"
+    },
+    {
+      "code": "sh.603682",
+      "raw_code": "603682",
+      "name": "锦和商管"
+    },
+    {
+      "code": "sh.603721",
+      "raw_code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "code": "sh.603729",
+      "raw_code": "603729",
+      "name": "ST龙韵"
+    },
+    {
+      "code": "sh.603825",
+      "raw_code": "603825",
+      "name": "ST华扬"
+    },
+    {
+      "code": "sh.605168",
+      "raw_code": "605168",
+      "name": "三人行"
+    },
+    {
+      "code": "sh.688365",
+      "raw_code": "688365",
+      "name": "光云科技"
+    },
+    {
+      "code": "sh.688500",
+      "raw_code": "688500",
+      "name": "慧辰股份"
+    },
+    {
+      "code": "sz.000676",
+      "raw_code": "000676",
+      "name": "智度股份"
+    },
+    {
+      "code": "sz.002115",
+      "raw_code": "002115",
+      "name": "三维通信"
+    },
+    {
+      "code": "sz.002122",
+      "raw_code": "002122",
+      "name": "ST汇洲"
+    },
+    {
+      "code": "sz.002131",
+      "raw_code": "002131",
+      "name": "利欧股份"
+    },
+    {
+      "code": "sz.002264",
+      "raw_code": "002264",
+      "name": "新华都"
+    },
+    {
+      "code": "sz.002279",
+      "raw_code": "002279",
+      "name": "久其软件"
+    },
+    {
+      "code": "sz.002291",
+      "raw_code": "002291",
+      "name": "遥望科技"
+    },
+    {
+      "code": "sz.002335",
+      "raw_code": "002335",
+      "name": "科华数据"
+    },
+    {
+      "code": "sz.002344",
+      "raw_code": "002344",
+      "name": "海宁皮城"
+    },
+    {
+      "code": "sz.002354",
+      "raw_code": "002354",
+      "name": "天娱数科"
+    },
+    {
+      "code": "sz.002400",
+      "raw_code": "002400",
+      "name": "省广集团"
+    },
+    {
+      "code": "sz.002605",
+      "raw_code": "002605",
+      "name": "姚记科技"
+    },
+    {
+      "code": "sz.002649",
+      "raw_code": "002649",
+      "name": "博彦科技"
+    },
+    {
+      "code": "sz.002654",
+      "raw_code": "002654",
+      "name": "万润科技"
+    },
+    {
+      "code": "sz.002712",
+      "raw_code": "002712",
+      "name": "思美传媒"
+    },
+    {
+      "code": "sz.002739",
+      "raw_code": "002739",
+      "name": "儒意电影"
+    },
+    {
+      "code": "sz.002878",
+      "raw_code": "002878",
+      "name": "元隆雅图"
+    },
+    {
+      "code": "sz.002995",
+      "raw_code": "002995",
+      "name": "天地在线"
+    },
+    {
+      "code": "sz.300058",
+      "raw_code": "300058",
+      "name": "蓝色光标"
+    },
+    {
+      "code": "sz.300063",
+      "raw_code": "300063",
+      "name": "天龙集团"
+    },
+    {
+      "code": "sz.300071",
+      "raw_code": "300071",
+      "name": "福石控股"
+    },
+    {
+      "code": "sz.300269",
+      "raw_code": "300269",
+      "name": "联建光电"
+    },
+    {
+      "code": "sz.300612",
+      "raw_code": "300612",
+      "name": "宣亚国际"
+    },
+    {
+      "code": "sz.300616",
+      "raw_code": "300616",
+      "name": "尚品宅配"
+    },
+    {
+      "code": "sz.300766",
+      "raw_code": "300766",
+      "name": "每日互动"
+    },
+    {
+      "code": "sz.300781",
+      "raw_code": "300781",
+      "name": "因赛集团"
+    },
+    {
+      "code": "sz.300792",
+      "raw_code": "300792",
+      "name": "壹网壹创"
+    },
+    {
+      "code": "sz.300846",
+      "raw_code": "300846",
+      "name": "首都在线"
+    },
+    {
+      "code": "sz.300925",
+      "raw_code": "300925",
+      "name": "法本信息"
+    },
+    {
+      "code": "sz.300959",
+      "raw_code": "300959",
+      "name": "线上线下"
+    },
+    {
+      "code": "sz.301001",
+      "raw_code": "301001",
+      "name": "凯淳股份"
+    },
+    {
+      "code": "sz.301085",
+      "raw_code": "301085",
+      "name": "亚康股份"
+    },
+    {
+      "code": "sz.301102",
+      "raw_code": "301102",
+      "name": "兆讯传媒"
+    },
+    {
+      "code": "sz.301110",
+      "raw_code": "301110",
+      "name": "青木科技"
+    },
+    {
+      "code": "sz.301171",
+      "raw_code": "301171",
+      "name": "易点天下"
+    },
+    {
+      "code": "sz.301316",
+      "raw_code": "301316",
+      "name": "慧博云通"
+    },
+    {
+      "code": "sz.301380",
+      "raw_code": "301380",
+      "name": "挖金客"
+    },
+    {
+      "code": "sz.301666",
+      "raw_code": "301666",
+      "name": "大普微"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:29",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309182/"
+  "fetched_at": "2026-07-13 17:05:11",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

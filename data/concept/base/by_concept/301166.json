@@ -3,10 +3,557 @@
   "concept_name": "人脸识别",
   "first_trade_date": "2017-08-25",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 109,
+  "constituents": [
+    {
+      "code": "bj.920249",
+      "raw_code": "920249",
+      "name": "利尔达"
+    },
+    {
+      "code": "bj.920407",
+      "raw_code": "920407",
+      "name": "驰诚股份"
+    },
+    {
+      "code": "bj.920953",
+      "raw_code": "920953",
+      "name": "国子软件"
+    },
+    {
+      "code": "bj.920976",
+      "raw_code": "920976",
+      "name": "视声智能"
+    },
+    {
+      "code": "sh.600130",
+      "raw_code": "600130",
+      "name": "波导股份"
+    },
+    {
+      "code": "sh.600271",
+      "raw_code": "600271",
+      "name": "航天信息"
+    },
+    {
+      "code": "sh.600302",
+      "raw_code": "600302",
+      "name": "ST标准"
+    },
+    {
+      "code": "sh.600728",
+      "raw_code": "600728",
+      "name": "佳都科技"
+    },
+    {
+      "code": "sh.600850",
+      "raw_code": "600850",
+      "name": "电科数字"
+    },
+    {
+      "code": "sh.603106",
+      "raw_code": "603106",
+      "name": "恒银科技"
+    },
+    {
+      "code": "sh.603160",
+      "raw_code": "603160",
+      "name": "汇顶科技"
+    },
+    {
+      "code": "sh.603189",
+      "raw_code": "603189",
+      "name": "*ST网达"
+    },
+    {
+      "code": "sh.603636",
+      "raw_code": "603636",
+      "name": "南威软件"
+    },
+    {
+      "code": "sh.603660",
+      "raw_code": "603660",
+      "name": "苏州科达"
+    },
+    {
+      "code": "sh.605268",
+      "raw_code": "605268",
+      "name": "王力安防"
+    },
+    {
+      "code": "sh.688038",
+      "raw_code": "688038",
+      "name": "中科通达"
+    },
+    {
+      "code": "sh.688039",
+      "raw_code": "688039",
+      "name": "当虹科技"
+    },
+    {
+      "code": "sh.688058",
+      "raw_code": "688058",
+      "name": "宝兰德"
+    },
+    {
+      "code": "sh.688088",
+      "raw_code": "688088",
+      "name": "虹软科技"
+    },
+    {
+      "code": "sh.688207",
+      "raw_code": "688207",
+      "name": "格灵深瞳"
+    },
+    {
+      "code": "sh.688322",
+      "raw_code": "688322",
+      "name": "奥比中光"
+    },
+    {
+      "code": "sh.688327",
+      "raw_code": "688327",
+      "name": "云从科技"
+    },
+    {
+      "code": "sh.688343",
+      "raw_code": "688343",
+      "name": "云天励飞"
+    },
+    {
+      "code": "sh.688609",
+      "raw_code": "688609",
+      "name": "九联科技"
+    },
+    {
+      "code": "sh.688619",
+      "raw_code": "688619",
+      "name": "罗普特"
+    },
+    {
+      "code": "sh.688620",
+      "raw_code": "688620",
+      "name": "安凯微"
+    },
+    {
+      "code": "sh.688787",
+      "raw_code": "688787",
+      "name": "海天瑞声"
+    },
+    {
+      "code": "sz.000682",
+      "raw_code": "000682",
+      "name": "东方电子"
+    },
+    {
+      "code": "sz.000903",
+      "raw_code": "000903",
+      "name": "ST云动"
+    },
+    {
+      "code": "sz.000948",
+      "raw_code": "000948",
+      "name": "南天信息"
+    },
+    {
+      "code": "sz.000997",
+      "raw_code": "000997",
+      "name": "新大陆"
+    },
+    {
+      "code": "sz.001339",
+      "raw_code": "001339",
+      "name": "智微智能"
+    },
+    {
+      "code": "sz.002065",
+      "raw_code": "002065",
+      "name": "东华软件"
+    },
+    {
+      "code": "sz.002117",
+      "raw_code": "002117",
+      "name": "东港股份"
+    },
+    {
+      "code": "sz.002152",
+      "raw_code": "002152",
+      "name": "广电运通"
+    },
+    {
+      "code": "sz.002177",
+      "raw_code": "002177",
+      "name": "御银股份"
+    },
+    {
+      "code": "sz.002230",
+      "raw_code": "002230",
+      "name": "科大讯飞"
+    },
+    {
+      "code": "sz.002236",
+      "raw_code": "002236",
+      "name": "大华股份"
+    },
+    {
+      "code": "sz.002253",
+      "raw_code": "002253",
+      "name": "川大智胜"
+    },
+    {
+      "code": "sz.002298",
+      "raw_code": "002298",
+      "name": "中电鑫龙"
+    },
+    {
+      "code": "sz.002355",
+      "raw_code": "002355",
+      "name": "兴民智通"
+    },
+    {
+      "code": "sz.002362",
+      "raw_code": "002362",
+      "name": "汉王科技"
+    },
+    {
+      "code": "sz.002373",
+      "raw_code": "002373",
+      "name": "千方科技"
+    },
+    {
+      "code": "sz.002387",
+      "raw_code": "002387",
+      "name": "维信诺"
+    },
+    {
+      "code": "sz.002415",
+      "raw_code": "002415",
+      "name": "海康威视"
+    },
+    {
+      "code": "sz.002421",
+      "raw_code": "002421",
+      "name": "达实智能"
+    },
+    {
+      "code": "sz.002449",
+      "raw_code": "002449",
+      "name": "国星光电"
+    },
+    {
+      "code": "sz.002456",
+      "raw_code": "002456",
+      "name": "欧菲光"
+    },
+    {
+      "code": "sz.002528",
+      "raw_code": "002528",
+      "name": "*ST英飞"
+    },
+    {
+      "code": "sz.002587",
+      "raw_code": "002587",
+      "name": "奥拓电子"
+    },
+    {
+      "code": "sz.002599",
+      "raw_code": "002599",
+      "name": "盛通股份"
+    },
+    {
+      "code": "sz.002771",
+      "raw_code": "002771",
+      "name": "真视通"
+    },
+    {
+      "code": "sz.002777",
+      "raw_code": "002777",
+      "name": "久远银海"
+    },
+    {
+      "code": "sz.002819",
+      "raw_code": "002819",
+      "name": "东方中科"
+    },
+    {
+      "code": "sz.002835",
+      "raw_code": "002835",
+      "name": "同为股份"
+    },
+    {
+      "code": "sz.002970",
+      "raw_code": "002970",
+      "name": "锐明技术"
+    },
+    {
+      "code": "sz.002990",
+      "raw_code": "002990",
+      "name": "盛视科技"
+    },
+    {
+      "code": "sz.003004",
+      "raw_code": "003004",
+      "name": "声迅股份"
+    },
+    {
+      "code": "sz.300002",
+      "raw_code": "300002",
+      "name": "神州泰岳"
+    },
+    {
+      "code": "sz.300044",
+      "raw_code": "300044",
+      "name": "*ST赛为"
+    },
+    {
+      "code": "sz.300053",
+      "raw_code": "300053",
+      "name": "航宇微"
+    },
+    {
+      "code": "sz.300077",
+      "raw_code": "300077",
+      "name": "国民技术"
+    },
+    {
+      "code": "sz.300096",
+      "raw_code": "300096",
+      "name": "ST易联众"
+    },
+    {
+      "code": "sz.300098",
+      "raw_code": "300098",
+      "name": "高新兴"
+    },
+    {
+      "code": "sz.300102",
+      "raw_code": "300102",
+      "name": "乾照光电"
+    },
+    {
+      "code": "sz.300130",
+      "raw_code": "300130",
+      "name": "新国都"
+    },
+    {
+      "code": "sz.300155",
+      "raw_code": "300155",
+      "name": "安居宝"
+    },
+    {
+      "code": "sz.300188",
+      "raw_code": "300188",
+      "name": "国投智能"
+    },
+    {
+      "code": "sz.300223",
+      "raw_code": "300223",
+      "name": "北京君正"
+    },
+    {
+      "code": "sz.300245",
+      "raw_code": "300245",
+      "name": "ST天玑"
+    },
+    {
+      "code": "sz.300248",
+      "raw_code": "300248",
+      "name": "新开普"
+    },
+    {
+      "code": "sz.300270",
+      "raw_code": "300270",
+      "name": "中威电子"
+    },
+    {
+      "code": "sz.300306",
+      "raw_code": "300306",
+      "name": "远方信息"
+    },
+    {
+      "code": "sz.300311",
+      "raw_code": "300311",
+      "name": "ST任子行"
+    },
+    {
+      "code": "sz.300386",
+      "raw_code": "300386",
+      "name": "飞天诚信"
+    },
+    {
+      "code": "sz.300448",
+      "raw_code": "300448",
+      "name": "浩云科技"
+    },
+    {
+      "code": "sz.300449",
+      "raw_code": "300449",
+      "name": "汉邦高科"
+    },
+    {
+      "code": "sz.300462",
+      "raw_code": "300462",
+      "name": "ST华铭"
+    },
+    {
+      "code": "sz.300479",
+      "raw_code": "300479",
+      "name": "神思电子"
+    },
+    {
+      "code": "sz.300531",
+      "raw_code": "300531",
+      "name": "优博讯"
+    },
+    {
+      "code": "sz.300546",
+      "raw_code": "300546",
+      "name": "雄帝科技"
+    },
+    {
+      "code": "sz.300561",
+      "raw_code": "300561",
+      "name": "汇金科技"
+    },
+    {
+      "code": "sz.300588",
+      "raw_code": "300588",
+      "name": "熙菱信息"
+    },
+    {
+      "code": "sz.300605",
+      "raw_code": "300605",
+      "name": "恒锋信息"
+    },
+    {
+      "code": "sz.300608",
+      "raw_code": "300608",
+      "name": "思特奇"
+    },
+    {
+      "code": "sz.300613",
+      "raw_code": "300613",
+      "name": "富瀚微"
+    },
+    {
+      "code": "sz.300645",
+      "raw_code": "300645",
+      "name": "正元智慧"
+    },
+    {
+      "code": "sz.300678",
+      "raw_code": "300678",
+      "name": "中科信息"
+    },
+    {
+      "code": "sz.300711",
+      "raw_code": "300711",
+      "name": "广哈通信"
+    },
+    {
+      "code": "sz.300771",
+      "raw_code": "300771",
+      "name": "智莱科技"
+    },
+    {
+      "code": "sz.300807",
+      "raw_code": "300807",
+      "name": "天迈科技"
+    },
+    {
+      "code": "sz.300822",
+      "raw_code": "300822",
+      "name": "贝仕达克"
+    },
+    {
+      "code": "sz.300830",
+      "raw_code": "300830",
+      "name": "金现代"
+    },
+    {
+      "code": "sz.300857",
+      "raw_code": "300857",
+      "name": "协创数据"
+    },
+    {
+      "code": "sz.300884",
+      "raw_code": "300884",
+      "name": "狄耐克"
+    },
+    {
+      "code": "sz.301042",
+      "raw_code": "301042",
+      "name": "安联锐视"
+    },
+    {
+      "code": "sz.301056",
+      "raw_code": "301056",
+      "name": "森赫股份"
+    },
+    {
+      "code": "sz.301083",
+      "raw_code": "301083",
+      "name": "百胜智能"
+    },
+    {
+      "code": "sz.301135",
+      "raw_code": "301135",
+      "name": "瑞德智能"
+    },
+    {
+      "code": "sz.301178",
+      "raw_code": "301178",
+      "name": "天亿马"
+    },
+    {
+      "code": "sz.301189",
+      "raw_code": "301189",
+      "name": "奥尼电子"
+    },
+    {
+      "code": "sz.301215",
+      "raw_code": "301215",
+      "name": "中汽股份"
+    },
+    {
+      "code": "sz.301218",
+      "raw_code": "301218",
+      "name": "华是科技"
+    },
+    {
+      "code": "sz.301248",
+      "raw_code": "301248",
+      "name": "杰创智能"
+    },
+    {
+      "code": "sz.301262",
+      "raw_code": "301262",
+      "name": "海看股份"
+    },
+    {
+      "code": "sz.301318",
+      "raw_code": "301318",
+      "name": "维海德"
+    },
+    {
+      "code": "sz.301330",
+      "raw_code": "301330",
+      "name": "熵基科技"
+    },
+    {
+      "code": "sz.301536",
+      "raw_code": "301536",
+      "name": "星宸科技"
+    },
+    {
+      "code": "sz.301578",
+      "raw_code": "301578",
+      "name": "辰奕智能"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:43",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301166/"
+  "fetched_at": "2026-07-13 16:46:02",
+  "page_count": 11,
+  "is_partial": false,
+  "page_limit_reason": null
 }

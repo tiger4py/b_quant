@@ -3,10 +3,337 @@
   "concept_name": "柔性直流输电",
   "first_trade_date": "2021-12-16",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 65,
+  "constituents": [
+    {
+      "code": "bj.920018",
+      "raw_code": "920018",
+      "name": "宏远股份"
+    },
+    {
+      "code": "bj.920118",
+      "raw_code": "920118",
+      "name": "太湖远大"
+    },
+    {
+      "code": "bj.920128",
+      "raw_code": "920128",
+      "name": "胜业电气"
+    },
+    {
+      "code": "sh.600089",
+      "raw_code": "600089",
+      "name": "特变电工"
+    },
+    {
+      "code": "sh.600237",
+      "raw_code": "600237",
+      "name": "铜峰电子"
+    },
+    {
+      "code": "sh.600312",
+      "raw_code": "600312",
+      "name": "平高电气"
+    },
+    {
+      "code": "sh.600353",
+      "raw_code": "600353",
+      "name": "旭光电子"
+    },
+    {
+      "code": "sh.600406",
+      "raw_code": "600406",
+      "name": "国电南瑞"
+    },
+    {
+      "code": "sh.600468",
+      "raw_code": "600468",
+      "name": "百利电气"
+    },
+    {
+      "code": "sh.600487",
+      "raw_code": "600487",
+      "name": "亨通光电"
+    },
+    {
+      "code": "sh.600522",
+      "raw_code": "600522",
+      "name": "中天科技"
+    },
+    {
+      "code": "sh.600550",
+      "raw_code": "600550",
+      "name": "保变电气"
+    },
+    {
+      "code": "sh.600563",
+      "raw_code": "600563",
+      "name": "法拉电子"
+    },
+    {
+      "code": "sh.600869",
+      "raw_code": "600869",
+      "name": "远东股份"
+    },
+    {
+      "code": "sh.601126",
+      "raw_code": "601126",
+      "name": "四方股份"
+    },
+    {
+      "code": "sh.601179",
+      "raw_code": "601179",
+      "name": "中国西电"
+    },
+    {
+      "code": "sh.601700",
+      "raw_code": "601700",
+      "name": "风范股份"
+    },
+    {
+      "code": "sh.601868",
+      "raw_code": "601868",
+      "name": "中国能建"
+    },
+    {
+      "code": "sh.603435",
+      "raw_code": "603435",
+      "name": "嘉德利"
+    },
+    {
+      "code": "sh.603530",
+      "raw_code": "603530",
+      "name": "神马电力"
+    },
+    {
+      "code": "sh.603606",
+      "raw_code": "603606",
+      "name": "东方电缆"
+    },
+    {
+      "code": "sh.603861",
+      "raw_code": "603861",
+      "name": "白云电器"
+    },
+    {
+      "code": "sh.605222",
+      "raw_code": "605222",
+      "name": "起帆电缆"
+    },
+    {
+      "code": "sh.688103",
+      "raw_code": "688103",
+      "name": "国力电子"
+    },
+    {
+      "code": "sh.688187",
+      "raw_code": "688187",
+      "name": "时代电气"
+    },
+    {
+      "code": "sh.688248",
+      "raw_code": "688248",
+      "name": "南网科技"
+    },
+    {
+      "code": "sh.688334",
+      "raw_code": "688334",
+      "name": "西高院"
+    },
+    {
+      "code": "sh.688450",
+      "raw_code": "688450",
+      "name": "光格科技"
+    },
+    {
+      "code": "sh.688517",
+      "raw_code": "688517",
+      "name": "金冠电气"
+    },
+    {
+      "code": "sh.688681",
+      "raw_code": "688681",
+      "name": "科汇股份"
+    },
+    {
+      "code": "sz.000400",
+      "raw_code": "000400",
+      "name": "许继电气"
+    },
+    {
+      "code": "sz.001216",
+      "raw_code": "001216",
+      "name": "华瓷股份"
+    },
+    {
+      "code": "sz.002202",
+      "raw_code": "002202",
+      "name": "金风科技"
+    },
+    {
+      "code": "sz.002227",
+      "raw_code": "002227",
+      "name": "*ST特迅"
+    },
+    {
+      "code": "sz.002263",
+      "raw_code": "002263",
+      "name": "大东南"
+    },
+    {
+      "code": "sz.002276",
+      "raw_code": "002276",
+      "name": "万马股份"
+    },
+    {
+      "code": "sz.002358",
+      "raw_code": "002358",
+      "name": "森源电气"
+    },
+    {
+      "code": "sz.002452",
+      "raw_code": "002452",
+      "name": "长高电气"
+    },
+    {
+      "code": "sz.002471",
+      "raw_code": "002471",
+      "name": "中超控股"
+    },
+    {
+      "code": "sz.002498",
+      "raw_code": "002498",
+      "name": "汉缆股份"
+    },
+    {
+      "code": "sz.002533",
+      "raw_code": "002533",
+      "name": "金杯电工"
+    },
+    {
+      "code": "sz.002560",
+      "raw_code": "002560",
+      "name": "通达股份"
+    },
+    {
+      "code": "sz.002879",
+      "raw_code": "002879",
+      "name": "长缆科技"
+    },
+    {
+      "code": "sz.003008",
+      "raw_code": "003008",
+      "name": "开普检测"
+    },
+    {
+      "code": "sz.300018",
+      "raw_code": "300018",
+      "name": "中元股份"
+    },
+    {
+      "code": "sz.300046",
+      "raw_code": "300046",
+      "name": "台基股份"
+    },
+    {
+      "code": "sz.300120",
+      "raw_code": "300120",
+      "name": "经纬辉开"
+    },
+    {
+      "code": "sz.300215",
+      "raw_code": "300215",
+      "name": "电科院"
+    },
+    {
+      "code": "sz.300265",
+      "raw_code": "300265",
+      "name": "通光线缆"
+    },
+    {
+      "code": "sz.300365",
+      "raw_code": "300365",
+      "name": "恒华科技"
+    },
+    {
+      "code": "sz.300376",
+      "raw_code": "300376",
+      "name": "易事特"
+    },
+    {
+      "code": "sz.300444",
+      "raw_code": "300444",
+      "name": "双杰电气"
+    },
+    {
+      "code": "sz.300499",
+      "raw_code": "300499",
+      "name": "高澜股份"
+    },
+    {
+      "code": "sz.300510",
+      "raw_code": "300510",
+      "name": "金冠股份"
+    },
+    {
+      "code": "sz.300623",
+      "raw_code": "300623",
+      "name": "捷捷微电"
+    },
+    {
+      "code": "sz.300712",
+      "raw_code": "300712",
+      "name": "永福股份"
+    },
+    {
+      "code": "sz.300713",
+      "raw_code": "300713",
+      "name": "英可瑞"
+    },
+    {
+      "code": "sz.300831",
+      "raw_code": "300831",
+      "name": "ST派瑞"
+    },
+    {
+      "code": "sz.301018",
+      "raw_code": "301018",
+      "name": "申菱环境"
+    },
+    {
+      "code": "sz.301041",
+      "raw_code": "301041",
+      "name": "金百泽"
+    },
+    {
+      "code": "sz.301120",
+      "raw_code": "301120",
+      "name": "新特电气"
+    },
+    {
+      "code": "sz.301179",
+      "raw_code": "301179",
+      "name": "泽宇智能"
+    },
+    {
+      "code": "sz.301609",
+      "raw_code": "301609",
+      "name": "山大电力"
+    },
+    {
+      "code": "sz.301680",
+      "raw_code": "301680",
+      "name": "固德电材"
+    },
+    {
+      "code": "sz.301682",
+      "raw_code": "301682",
+      "name": "宏明电子"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:51",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308810/"
+  "fetched_at": "2026-07-13 17:01:19",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,62 @@
   "concept_name": "青蒿素",
   "first_trade_date": "2019-06-18",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 10,
+  "constituents": [
+    {
+      "code": "sh.600062",
+      "raw_code": "600062",
+      "name": "华润双鹤"
+    },
+    {
+      "code": "sh.600196",
+      "raw_code": "600196",
+      "name": "复星医药"
+    },
+    {
+      "code": "sh.600216",
+      "raw_code": "600216",
+      "name": "浙江医药"
+    },
+    {
+      "code": "sh.600267",
+      "raw_code": "600267",
+      "name": "海正药业"
+    },
+    {
+      "code": "sh.600332",
+      "raw_code": "600332",
+      "name": "白云山"
+    },
+    {
+      "code": "sh.600422",
+      "raw_code": "600422",
+      "name": "昆药集团"
+    },
+    {
+      "code": "sh.600721",
+      "raw_code": "600721",
+      "name": "百花医药"
+    },
+    {
+      "code": "sz.000593",
+      "raw_code": "000593",
+      "name": "德龙汇能"
+    },
+    {
+      "code": "sz.002001",
+      "raw_code": "002001",
+      "name": "新和成"
+    },
+    {
+      "code": "sz.002923",
+      "raw_code": "002923",
+      "name": "润都股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:09",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301794/"
+  "fetched_at": "2026-07-13 16:55:22",
+  "page_count": 1,
+  "is_partial": false,
+  "page_limit_reason": null
 }

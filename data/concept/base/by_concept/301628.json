@@ -3,10 +3,117 @@
   "concept_name": "互联网保险",
   "first_trade_date": "2017-11-17",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 21,
+  "constituents": [
+    {
+      "code": "bj.920171",
+      "raw_code": "920171",
+      "name": "志晟信息"
+    },
+    {
+      "code": "bj.920184",
+      "raw_code": "920184",
+      "name": "国源科技"
+    },
+    {
+      "code": "sh.600100",
+      "raw_code": "600100",
+      "name": "同方股份"
+    },
+    {
+      "code": "sh.600446",
+      "raw_code": "600446",
+      "name": "金证股份"
+    },
+    {
+      "code": "sh.601318",
+      "raw_code": "601318",
+      "name": "中国平安"
+    },
+    {
+      "code": "sh.601336",
+      "raw_code": "601336",
+      "name": "新华保险"
+    },
+    {
+      "code": "sh.601601",
+      "raw_code": "601601",
+      "name": "中国太保"
+    },
+    {
+      "code": "sh.601628",
+      "raw_code": "601628",
+      "name": "中国人寿"
+    },
+    {
+      "code": "sh.603927",
+      "raw_code": "603927",
+      "name": "中科软"
+    },
+    {
+      "code": "sh.688590",
+      "raw_code": "688590",
+      "name": "新致软件"
+    },
+    {
+      "code": "sz.002029",
+      "raw_code": "002029",
+      "name": "七匹狼"
+    },
+    {
+      "code": "sz.002230",
+      "raw_code": "002230",
+      "name": "科大讯飞"
+    },
+    {
+      "code": "sz.002315",
+      "raw_code": "002315",
+      "name": "焦点科技"
+    },
+    {
+      "code": "sz.002403",
+      "raw_code": "002403",
+      "name": "爱仕达"
+    },
+    {
+      "code": "sz.300059",
+      "raw_code": "300059",
+      "name": "东方财富"
+    },
+    {
+      "code": "sz.300061",
+      "raw_code": "300061",
+      "name": "旗天科技"
+    },
+    {
+      "code": "sz.300166",
+      "raw_code": "300166",
+      "name": "东方国信"
+    },
+    {
+      "code": "sz.300168",
+      "raw_code": "300168",
+      "name": "万达信息"
+    },
+    {
+      "code": "sz.300242",
+      "raw_code": "300242",
+      "name": "佳云科技"
+    },
+    {
+      "code": "sz.300253",
+      "raw_code": "300253",
+      "name": "卫宁健康"
+    },
+    {
+      "code": "sz.300399",
+      "raw_code": "300399",
+      "name": "天利科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:05",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301628/"
+  "fetched_at": "2026-07-13 16:54:02",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

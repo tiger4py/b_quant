@@ -3,10 +3,142 @@
   "concept_name": "电子纸",
   "first_trade_date": "2022-01-10",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 26,
+  "constituents": [
+    {
+      "code": "sh.600793",
+      "raw_code": "600793",
+      "name": "宜宾纸业"
+    },
+    {
+      "code": "sh.603160",
+      "raw_code": "603160",
+      "name": "汇顶科技"
+    },
+    {
+      "code": "sh.603533",
+      "raw_code": "603533",
+      "name": "掌阅科技"
+    },
+    {
+      "code": "sh.688055",
+      "raw_code": "688055",
+      "name": "龙腾光电"
+    },
+    {
+      "code": "sh.688252",
+      "raw_code": "688252",
+      "name": "天德钰"
+    },
+    {
+      "code": "sh.688328",
+      "raw_code": "688328",
+      "name": "深科达"
+    },
+    {
+      "code": "sh.688496",
+      "raw_code": "688496",
+      "name": "*ST清越"
+    },
+    {
+      "code": "sh.688559",
+      "raw_code": "688559",
+      "name": "海目星"
+    },
+    {
+      "code": "sh.688593",
+      "raw_code": "688593",
+      "name": "新相微"
+    },
+    {
+      "code": "sz.000050",
+      "raw_code": "000050",
+      "name": "深天马A"
+    },
+    {
+      "code": "sz.000725",
+      "raw_code": "000725",
+      "name": "京东方A"
+    },
+    {
+      "code": "sz.000727",
+      "raw_code": "000727",
+      "name": "冠捷科技"
+    },
+    {
+      "code": "sz.001399",
+      "raw_code": "001399",
+      "name": "惠科股份"
+    },
+    {
+      "code": "sz.002106",
+      "raw_code": "002106",
+      "name": "莱宝高科"
+    },
+    {
+      "code": "sz.002217",
+      "raw_code": "002217",
+      "name": "ST合力泰"
+    },
+    {
+      "code": "sz.002362",
+      "raw_code": "002362",
+      "name": "汉王科技"
+    },
+    {
+      "code": "sz.002952",
+      "raw_code": "002952",
+      "name": "亚世光电"
+    },
+    {
+      "code": "sz.300078",
+      "raw_code": "300078",
+      "name": "思创智联"
+    },
+    {
+      "code": "sz.300088",
+      "raw_code": "300088",
+      "name": "长信科技"
+    },
+    {
+      "code": "sz.300241",
+      "raw_code": "300241",
+      "name": "瑞丰光电"
+    },
+    {
+      "code": "sz.300331",
+      "raw_code": "300331",
+      "name": "苏大维格"
+    },
+    {
+      "code": "sz.300398",
+      "raw_code": "300398",
+      "name": "飞凯材料"
+    },
+    {
+      "code": "sz.300923",
+      "raw_code": "300923",
+      "name": "研奥股份"
+    },
+    {
+      "code": "sz.300939",
+      "raw_code": "300939",
+      "name": "秋田微"
+    },
+    {
+      "code": "sz.300940",
+      "raw_code": "300940",
+      "name": "南极光"
+    },
+    {
+      "code": "sz.301275",
+      "raw_code": "301275",
+      "name": "汉朔科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:41",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301135/"
+  "fetched_at": "2026-07-13 16:45:53",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

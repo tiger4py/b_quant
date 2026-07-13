@@ -3,10 +3,237 @@
   "concept_name": "阿尔茨海默概念",
   "first_trade_date": "2023-09-19",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 45,
+  "constituents": [
+    {
+      "code": "bj.920017",
+      "raw_code": "920017",
+      "name": "星昊医药"
+    },
+    {
+      "code": "sh.600196",
+      "raw_code": "600196",
+      "name": "复星医药"
+    },
+    {
+      "code": "sh.600227",
+      "raw_code": "600227",
+      "name": "赤天化"
+    },
+    {
+      "code": "sh.600267",
+      "raw_code": "600267",
+      "name": "海正药业"
+    },
+    {
+      "code": "sh.600521",
+      "raw_code": "600521",
+      "name": "华海药业"
+    },
+    {
+      "code": "sh.600557",
+      "raw_code": "600557",
+      "name": "康缘药业"
+    },
+    {
+      "code": "sh.600572",
+      "raw_code": "600572",
+      "name": "康恩贝"
+    },
+    {
+      "code": "sh.600771",
+      "raw_code": "600771",
+      "name": "广誉远"
+    },
+    {
+      "code": "sh.600789",
+      "raw_code": "600789",
+      "name": "鲁抗医药"
+    },
+    {
+      "code": "sh.601607",
+      "raw_code": "601607",
+      "name": "上海医药"
+    },
+    {
+      "code": "sh.603439",
+      "raw_code": "603439",
+      "name": "三力制药"
+    },
+    {
+      "code": "sh.603669",
+      "raw_code": "603669",
+      "name": "灵康药业"
+    },
+    {
+      "code": "sh.603980",
+      "raw_code": "603980",
+      "name": "吉华集团"
+    },
+    {
+      "code": "sh.605177",
+      "raw_code": "605177",
+      "name": "东亚药业"
+    },
+    {
+      "code": "sh.688068",
+      "raw_code": "688068",
+      "name": "热景生物"
+    },
+    {
+      "code": "sh.688105",
+      "raw_code": "688105",
+      "name": "诺唯赞"
+    },
+    {
+      "code": "sh.688253",
+      "raw_code": "688253",
+      "name": "英诺特"
+    },
+    {
+      "code": "sh.688271",
+      "raw_code": "688271",
+      "name": "联影医疗"
+    },
+    {
+      "code": "sh.688276",
+      "raw_code": "688276",
+      "name": "百克生物"
+    },
+    {
+      "code": "sh.688336",
+      "raw_code": "688336",
+      "name": "三生国健"
+    },
+    {
+      "code": "sh.688468",
+      "raw_code": "688468",
+      "name": "科美诊断"
+    },
+    {
+      "code": "sz.000661",
+      "raw_code": "000661",
+      "name": "长春高新"
+    },
+    {
+      "code": "sz.000705",
+      "raw_code": "000705",
+      "name": "浙江震元"
+    },
+    {
+      "code": "sz.000756",
+      "raw_code": "000756",
+      "name": "新华制药"
+    },
+    {
+      "code": "sz.000766",
+      "raw_code": "000766",
+      "name": "通化金马"
+    },
+    {
+      "code": "sz.002020",
+      "raw_code": "002020",
+      "name": "京新药业"
+    },
+    {
+      "code": "sz.002044",
+      "raw_code": "002044",
+      "name": "美年健康"
+    },
+    {
+      "code": "sz.002082",
+      "raw_code": "002082",
+      "name": "ST万邦"
+    },
+    {
+      "code": "sz.002107",
+      "raw_code": "002107",
+      "name": "沃华医药"
+    },
+    {
+      "code": "sz.002262",
+      "raw_code": "002262",
+      "name": "恩华药业"
+    },
+    {
+      "code": "sz.002287",
+      "raw_code": "002287",
+      "name": "奇正藏药"
+    },
+    {
+      "code": "sz.002393",
+      "raw_code": "002393",
+      "name": "力生制药"
+    },
+    {
+      "code": "sz.002603",
+      "raw_code": "002603",
+      "name": "以岭药业"
+    },
+    {
+      "code": "sz.002675",
+      "raw_code": "002675",
+      "name": "东诚药业"
+    },
+    {
+      "code": "sz.002693",
+      "raw_code": "002693",
+      "name": "双成药业"
+    },
+    {
+      "code": "sz.002773",
+      "raw_code": "002773",
+      "name": "康弘药业"
+    },
+    {
+      "code": "sz.300016",
+      "raw_code": "300016",
+      "name": "北陆药业"
+    },
+    {
+      "code": "sz.300017",
+      "raw_code": "300017",
+      "name": "网宿科技"
+    },
+    {
+      "code": "sz.300244",
+      "raw_code": "300244",
+      "name": "迪安诊断"
+    },
+    {
+      "code": "sz.300404",
+      "raw_code": "300404",
+      "name": "博济医药"
+    },
+    {
+      "code": "sz.300676",
+      "raw_code": "300676",
+      "name": "华大基因"
+    },
+    {
+      "code": "sz.301015",
+      "raw_code": "301015",
+      "name": "百洋医药"
+    },
+    {
+      "code": "sz.301130",
+      "raw_code": "301130",
+      "name": "西点药业"
+    },
+    {
+      "code": "sz.301258",
+      "raw_code": "301258",
+      "name": "富士莱"
+    },
+    {
+      "code": "sz.301509",
+      "raw_code": "301509",
+      "name": "金凯生科"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:35",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308614/"
+  "fetched_at": "2026-07-13 16:59:20",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

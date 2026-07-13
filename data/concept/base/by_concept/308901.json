@@ -3,10 +3,607 @@
   "concept_name": "统一大市场",
   "first_trade_date": "2022-04-12",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 119,
+  "constituents": [
+    {
+      "code": "bj.920351",
+      "raw_code": "920351",
+      "name": "华光源海"
+    },
+    {
+      "code": "sh.600057",
+      "raw_code": "600057",
+      "name": "厦门象屿"
+    },
+    {
+      "code": "sh.600058",
+      "raw_code": "600058",
+      "name": "五矿发展"
+    },
+    {
+      "code": "sh.600113",
+      "raw_code": "600113",
+      "name": "浙江东日"
+    },
+    {
+      "code": "sh.600119",
+      "raw_code": "600119",
+      "name": "*ST长投"
+    },
+    {
+      "code": "sh.600125",
+      "raw_code": "600125",
+      "name": "铁龙物流"
+    },
+    {
+      "code": "sh.600179",
+      "raw_code": "600179",
+      "name": "安通控股"
+    },
+    {
+      "code": "sh.600180",
+      "raw_code": "600180",
+      "name": "*ST瑞茂"
+    },
+    {
+      "code": "sh.600233",
+      "raw_code": "600233",
+      "name": "圆通速递"
+    },
+    {
+      "code": "sh.600278",
+      "raw_code": "600278",
+      "name": "东方创业"
+    },
+    {
+      "code": "sh.600279",
+      "raw_code": "600279",
+      "name": "重庆港"
+    },
+    {
+      "code": "sh.600368",
+      "raw_code": "600368",
+      "name": "五洲交通"
+    },
+    {
+      "code": "sh.600415",
+      "raw_code": "600415",
+      "name": "小商品城"
+    },
+    {
+      "code": "sh.600449",
+      "raw_code": "600449",
+      "name": "宁夏建材"
+    },
+    {
+      "code": "sh.600540",
+      "raw_code": "600540",
+      "name": "新赛股份"
+    },
+    {
+      "code": "sh.600603",
+      "raw_code": "600603",
+      "name": "广汇物流"
+    },
+    {
+      "code": "sh.600622",
+      "raw_code": "600622",
+      "name": "光大嘉宝"
+    },
+    {
+      "code": "sh.600662",
+      "raw_code": "600662",
+      "name": "外服控股"
+    },
+    {
+      "code": "sh.600676",
+      "raw_code": "600676",
+      "name": "交运股份"
+    },
+    {
+      "code": "sh.600693",
+      "raw_code": "600693",
+      "name": "东百集团"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.600708",
+      "raw_code": "600708",
+      "name": "光明地产"
+    },
+    {
+      "code": "sh.600717",
+      "raw_code": "600717",
+      "name": "天津港"
+    },
+    {
+      "code": "sh.600755",
+      "raw_code": "600755",
+      "name": "厦门国贸"
+    },
+    {
+      "code": "sh.600785",
+      "raw_code": "600785",
+      "name": "新华百货"
+    },
+    {
+      "code": "sh.600787",
+      "raw_code": "600787",
+      "name": "中储股份"
+    },
+    {
+      "code": "sh.600794",
+      "raw_code": "600794",
+      "name": "保税科技"
+    },
+    {
+      "code": "sh.600805",
+      "raw_code": "600805",
+      "name": "悦达投资"
+    },
+    {
+      "code": "sh.600822",
+      "raw_code": "600822",
+      "name": "上海物贸"
+    },
+    {
+      "code": "sh.600981",
+      "raw_code": "600981",
+      "name": "苏豪汇鸿"
+    },
+    {
+      "code": "sh.600982",
+      "raw_code": "600982",
+      "name": "宁波能源"
+    },
+    {
+      "code": "sh.601022",
+      "raw_code": "601022",
+      "name": "宁波远洋"
+    },
+    {
+      "code": "sh.601083",
+      "raw_code": "601083",
+      "name": "锦江航运"
+    },
+    {
+      "code": "sh.601156",
+      "raw_code": "601156",
+      "name": "东航物流"
+    },
+    {
+      "code": "sh.601216",
+      "raw_code": "601216",
+      "name": "君正集团"
+    },
+    {
+      "code": "sh.601366",
+      "raw_code": "601366",
+      "name": "利群股份"
+    },
+    {
+      "code": "sh.601598",
+      "raw_code": "601598",
+      "name": "中国外运"
+    },
+    {
+      "code": "sh.601880",
+      "raw_code": "601880",
+      "name": "辽港股份"
+    },
+    {
+      "code": "sh.601933",
+      "raw_code": "601933",
+      "name": "永辉超市"
+    },
+    {
+      "code": "sh.603066",
+      "raw_code": "603066",
+      "name": "音飞储存"
+    },
+    {
+      "code": "sh.603071",
+      "raw_code": "603071",
+      "name": "物产环能"
+    },
+    {
+      "code": "sh.603117",
+      "raw_code": "603117",
+      "name": "万林物流"
+    },
+    {
+      "code": "sh.603128",
+      "raw_code": "603128",
+      "name": "华贸物流"
+    },
+    {
+      "code": "sh.603162",
+      "raw_code": "603162",
+      "name": "海通发展"
+    },
+    {
+      "code": "sh.603209",
+      "raw_code": "603209",
+      "name": "兴通股份"
+    },
+    {
+      "code": "sh.603329",
+      "raw_code": "603329",
+      "name": "上海雅仕"
+    },
+    {
+      "code": "sh.603535",
+      "raw_code": "603535",
+      "name": "嘉诚国际"
+    },
+    {
+      "code": "sh.603565",
+      "raw_code": "603565",
+      "name": "中谷物流"
+    },
+    {
+      "code": "sh.603569",
+      "raw_code": "603569",
+      "name": "长久物流"
+    },
+    {
+      "code": "sh.603611",
+      "raw_code": "603611",
+      "name": "诺力股份"
+    },
+    {
+      "code": "sh.603613",
+      "raw_code": "603613",
+      "name": "国联股份"
+    },
+    {
+      "code": "sh.603648",
+      "raw_code": "603648",
+      "name": "畅联股份"
+    },
+    {
+      "code": "sh.603713",
+      "raw_code": "603713",
+      "name": "密尔克卫"
+    },
+    {
+      "code": "sh.603813",
+      "raw_code": "603813",
+      "name": "原尚股份"
+    },
+    {
+      "code": "sh.603836",
+      "raw_code": "603836",
+      "name": "海程邦达"
+    },
+    {
+      "code": "sh.603871",
+      "raw_code": "603871",
+      "name": "嘉友国际"
+    },
+    {
+      "code": "sh.603967",
+      "raw_code": "603967",
+      "name": "中创物流"
+    },
+    {
+      "code": "sh.605050",
+      "raw_code": "605050",
+      "name": "福然德"
+    },
+    {
+      "code": "sh.605151",
+      "raw_code": "605151",
+      "name": "西上海"
+    },
+    {
+      "code": "sh.688211",
+      "raw_code": "688211",
+      "name": "中科微至"
+    },
+    {
+      "code": "sh.688360",
+      "raw_code": "688360",
+      "name": "德马科技"
+    },
+    {
+      "code": "sh.688557",
+      "raw_code": "688557",
+      "name": "兰剑智能"
+    },
+    {
+      "code": "sh.688648",
+      "raw_code": "688648",
+      "name": "中邮科技"
+    },
+    {
+      "code": "sz.000039",
+      "raw_code": "000039",
+      "name": "中集集团"
+    },
+    {
+      "code": "sz.000061",
+      "raw_code": "000061",
+      "name": "农产品"
+    },
+    {
+      "code": "sz.000088",
+      "raw_code": "000088",
+      "name": "盐田港"
+    },
+    {
+      "code": "sz.000417",
+      "raw_code": "000417",
+      "name": "合百集团"
+    },
+    {
+      "code": "sz.000507",
+      "raw_code": "000507",
+      "name": "珠海港"
+    },
+    {
+      "code": "sz.000520",
+      "raw_code": "000520",
+      "name": "凤凰航运"
+    },
+    {
+      "code": "sz.000530",
+      "raw_code": "000530",
+      "name": "冰山冷热"
+    },
+    {
+      "code": "sz.000557",
+      "raw_code": "000557",
+      "name": "西部创业"
+    },
+    {
+      "code": "sz.000564",
+      "raw_code": "000564",
+      "name": "供销大集"
+    },
+    {
+      "code": "sz.000582",
+      "raw_code": "000582",
+      "name": "北部湾港"
+    },
+    {
+      "code": "sz.000626",
+      "raw_code": "000626",
+      "name": "远大控股"
+    },
+    {
+      "code": "sz.000701",
+      "raw_code": "000701",
+      "name": "厦门信达"
+    },
+    {
+      "code": "sz.000735",
+      "raw_code": "000735",
+      "name": "罗牛山"
+    },
+    {
+      "code": "sz.000759",
+      "raw_code": "000759",
+      "name": "中百集团"
+    },
+    {
+      "code": "sz.000895",
+      "raw_code": "000895",
+      "name": "双汇发展"
+    },
+    {
+      "code": "sz.000905",
+      "raw_code": "000905",
+      "name": "厦门港务"
+    },
+    {
+      "code": "sz.000906",
+      "raw_code": "000906",
+      "name": "浙商中拓"
+    },
+    {
+      "code": "sz.000927",
+      "raw_code": "000927",
+      "name": "中国铁物"
+    },
+    {
+      "code": "sz.000950",
+      "raw_code": "000950",
+      "name": "重药控股"
+    },
+    {
+      "code": "sz.001202",
+      "raw_code": "001202",
+      "name": "炬申股份"
+    },
+    {
+      "code": "sz.001213",
+      "raw_code": "001213",
+      "name": "中铁特货"
+    },
+    {
+      "code": "sz.001228",
+      "raw_code": "001228",
+      "name": "永泰运"
+    },
+    {
+      "code": "sz.001317",
+      "raw_code": "001317",
+      "name": "三羊马"
+    },
+    {
+      "code": "sz.001391",
+      "raw_code": "001391",
+      "name": "国货航"
+    },
+    {
+      "code": "sz.002010",
+      "raw_code": "002010",
+      "name": "传化智联"
+    },
+    {
+      "code": "sz.002040",
+      "raw_code": "002040",
+      "name": "南京港"
+    },
+    {
+      "code": "sz.002095",
+      "raw_code": "002095",
+      "name": "生意宝"
+    },
+    {
+      "code": "sz.002120",
+      "raw_code": "002120",
+      "name": "韵达股份"
+    },
+    {
+      "code": "sz.002183",
+      "raw_code": "002183",
+      "name": "怡亚通"
+    },
+    {
+      "code": "sz.002210",
+      "raw_code": "002210",
+      "name": "飞马国际"
+    },
+    {
+      "code": "sz.002251",
+      "raw_code": "002251",
+      "name": "步步高"
+    },
+    {
+      "code": "sz.002264",
+      "raw_code": "002264",
+      "name": "新华都"
+    },
+    {
+      "code": "sz.002314",
+      "raw_code": "002314",
+      "name": "南山控股"
+    },
+    {
+      "code": "sz.002352",
+      "raw_code": "002352",
+      "name": "顺丰控股"
+    },
+    {
+      "code": "sz.002401",
+      "raw_code": "002401",
+      "name": "中远海科"
+    },
+    {
+      "code": "sz.002419",
+      "raw_code": "002419",
+      "name": "天虹股份"
+    },
+    {
+      "code": "sz.002468",
+      "raw_code": "002468",
+      "name": "申通快递"
+    },
+    {
+      "code": "sz.002492",
+      "raw_code": "002492",
+      "name": "恒基达鑫"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002589",
+      "raw_code": "002589",
+      "name": "瑞康医药"
+    },
+    {
+      "code": "sz.002627",
+      "raw_code": "002627",
+      "name": "三峡旅游"
+    },
+    {
+      "code": "sz.002682",
+      "raw_code": "002682",
+      "name": "龙洲股份"
+    },
+    {
+      "code": "sz.002732",
+      "raw_code": "002732",
+      "name": "燕塘乳业"
+    },
+    {
+      "code": "sz.002800",
+      "raw_code": "002800",
+      "name": "天顺股份"
+    },
+    {
+      "code": "sz.002889",
+      "raw_code": "002889",
+      "name": "东方嘉盛"
+    },
+    {
+      "code": "sz.002930",
+      "raw_code": "002930",
+      "name": "宏川智慧"
+    },
+    {
+      "code": "sz.300013",
+      "raw_code": "300013",
+      "name": "新宁物流"
+    },
+    {
+      "code": "sz.300240",
+      "raw_code": "300240",
+      "name": "飞力达"
+    },
+    {
+      "code": "sz.300350",
+      "raw_code": "300350",
+      "name": "华鹏飞"
+    },
+    {
+      "code": "sz.300486",
+      "raw_code": "300486",
+      "name": "东杰智能"
+    },
+    {
+      "code": "sz.300532",
+      "raw_code": "300532",
+      "name": "今天国际"
+    },
+    {
+      "code": "sz.300873",
+      "raw_code": "300873",
+      "name": "海晨股份"
+    },
+    {
+      "code": "sz.300975",
+      "raw_code": "300975",
+      "name": "商络电子"
+    },
+    {
+      "code": "sz.301039",
+      "raw_code": "301039",
+      "name": "中集车辆"
+    },
+    {
+      "code": "sz.301311",
+      "raw_code": "301311",
+      "name": "昆船智能"
+    },
+    {
+      "code": "sz.301339",
+      "raw_code": "301339",
+      "name": "通行宝"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:59",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308901/"
+  "fetched_at": "2026-07-13 17:02:00",
+  "page_count": 12,
+  "is_partial": false,
+  "page_limit_reason": null
 }

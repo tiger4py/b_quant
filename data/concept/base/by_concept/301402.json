@@ -3,10 +3,282 @@
   "concept_name": "上海国企改革",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 54,
+  "constituents": [
+    {
+      "code": "sh.600009",
+      "raw_code": "600009",
+      "name": "上海机场"
+    },
+    {
+      "code": "sh.600018",
+      "raw_code": "600018",
+      "name": "上港集团"
+    },
+    {
+      "code": "sh.600073",
+      "raw_code": "600073",
+      "name": "光明肉业"
+    },
+    {
+      "code": "sh.600097",
+      "raw_code": "600097",
+      "name": "开创国际"
+    },
+    {
+      "code": "sh.600104",
+      "raw_code": "600104",
+      "name": "上汽集团"
+    },
+    {
+      "code": "sh.600119",
+      "raw_code": "600119",
+      "name": "*ST长投"
+    },
+    {
+      "code": "sh.600170",
+      "raw_code": "600170",
+      "name": "上海建工"
+    },
+    {
+      "code": "sh.600278",
+      "raw_code": "600278",
+      "name": "东方创业"
+    },
+    {
+      "code": "sh.600597",
+      "raw_code": "600597",
+      "name": "光明乳业"
+    },
+    {
+      "code": "sh.600602",
+      "raw_code": "600602",
+      "name": "云赛智联"
+    },
+    {
+      "code": "sh.600616",
+      "raw_code": "600616",
+      "name": "金枫酒业"
+    },
+    {
+      "code": "sh.600618",
+      "raw_code": "600618",
+      "name": "氯碱化工"
+    },
+    {
+      "code": "sh.600619",
+      "raw_code": "600619",
+      "name": "海立股份"
+    },
+    {
+      "code": "sh.600621",
+      "raw_code": "600621",
+      "name": "华鑫股份"
+    },
+    {
+      "code": "sh.600623",
+      "raw_code": "600623",
+      "name": "华谊集团"
+    },
+    {
+      "code": "sh.600626",
+      "raw_code": "600626",
+      "name": "申达股份"
+    },
+    {
+      "code": "sh.600629",
+      "raw_code": "600629",
+      "name": "华建集团"
+    },
+    {
+      "code": "sh.600630",
+      "raw_code": "600630",
+      "name": "龙头股份"
+    },
+    {
+      "code": "sh.600637",
+      "raw_code": "600637",
+      "name": "东方明珠"
+    },
+    {
+      "code": "sh.600642",
+      "raw_code": "600642",
+      "name": "申能股份"
+    },
+    {
+      "code": "sh.600649",
+      "raw_code": "600649",
+      "name": "城投控股"
+    },
+    {
+      "code": "sh.600650",
+      "raw_code": "600650",
+      "name": "锦江在线"
+    },
+    {
+      "code": "sh.600651",
+      "raw_code": "600651",
+      "name": "飞乐音响"
+    },
+    {
+      "code": "sh.600662",
+      "raw_code": "600662",
+      "name": "外服控股"
+    },
+    {
+      "code": "sh.600675",
+      "raw_code": "600675",
+      "name": "中华企业"
+    },
+    {
+      "code": "sh.600676",
+      "raw_code": "600676",
+      "name": "交运股份"
+    },
+    {
+      "code": "sh.600708",
+      "raw_code": "600708",
+      "name": "光明地产"
+    },
+    {
+      "code": "sh.600741",
+      "raw_code": "600741",
+      "name": "华域汽车"
+    },
+    {
+      "code": "sh.600748",
+      "raw_code": "600748",
+      "name": "上实发展"
+    },
+    {
+      "code": "sh.600754",
+      "raw_code": "600754",
+      "name": "锦江酒店"
+    },
+    {
+      "code": "sh.600819",
+      "raw_code": "600819",
+      "name": "耀皮玻璃"
+    },
+    {
+      "code": "sh.600820",
+      "raw_code": "600820",
+      "name": "隧道股份"
+    },
+    {
+      "code": "sh.600822",
+      "raw_code": "600822",
+      "name": "上海物贸"
+    },
+    {
+      "code": "sh.600825",
+      "raw_code": "600825",
+      "name": "新华传媒"
+    },
+    {
+      "code": "sh.600826",
+      "raw_code": "600826",
+      "name": "兰生股份"
+    },
+    {
+      "code": "sh.600827",
+      "raw_code": "600827",
+      "name": "百联股份"
+    },
+    {
+      "code": "sh.600833",
+      "raw_code": "600833",
+      "name": "第一医药"
+    },
+    {
+      "code": "sh.600834",
+      "raw_code": "600834",
+      "name": "申通地铁"
+    },
+    {
+      "code": "sh.600835",
+      "raw_code": "600835",
+      "name": "上海机电"
+    },
+    {
+      "code": "sh.600841",
+      "raw_code": "600841",
+      "name": "动力新科"
+    },
+    {
+      "code": "sh.600848",
+      "raw_code": "600848",
+      "name": "上海临港"
+    },
+    {
+      "code": "sh.601083",
+      "raw_code": "601083",
+      "name": "锦江航运"
+    },
+    {
+      "code": "sh.601200",
+      "raw_code": "601200",
+      "name": "上海环境"
+    },
+    {
+      "code": "sh.601595",
+      "raw_code": "601595",
+      "name": "上海电影"
+    },
+    {
+      "code": "sh.601607",
+      "raw_code": "601607",
+      "name": "上海医药"
+    },
+    {
+      "code": "sh.601727",
+      "raw_code": "601727",
+      "name": "上海电气"
+    },
+    {
+      "code": "sh.603153",
+      "raw_code": "603153",
+      "name": "上海建科"
+    },
+    {
+      "code": "sh.688247",
+      "raw_code": "688247",
+      "name": "宣泰医药"
+    },
+    {
+      "code": "sh.688347",
+      "raw_code": "688347",
+      "name": "华虹宏力"
+    },
+    {
+      "code": "sh.688538",
+      "raw_code": "688538",
+      "name": "和辉光电"
+    },
+    {
+      "code": "sh.688660",
+      "raw_code": "688660",
+      "name": "电气风电"
+    },
+    {
+      "code": "sz.002564",
+      "raw_code": "002564",
+      "name": "天沃科技"
+    },
+    {
+      "code": "sz.300457",
+      "raw_code": "300457",
+      "name": "赢合科技"
+    },
+    {
+      "code": "sz.301289",
+      "raw_code": "301289",
+      "name": "国缆检测"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:53",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301402/"
+  "fetched_at": "2026-07-13 16:49:34",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,162 @@
   "concept_name": "数字水印",
   "first_trade_date": "2023-02-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 30,
+  "constituents": [
+    {
+      "code": "sh.600571",
+      "raw_code": "600571",
+      "name": "信雅达"
+    },
+    {
+      "code": "sh.603636",
+      "raw_code": "603636",
+      "name": "南威软件"
+    },
+    {
+      "code": "sh.603687",
+      "raw_code": "603687",
+      "name": "大胜达"
+    },
+    {
+      "code": "sh.688031",
+      "raw_code": "688031",
+      "name": "星环科技"
+    },
+    {
+      "code": "sh.688225",
+      "raw_code": "688225",
+      "name": "亚信安全"
+    },
+    {
+      "code": "sh.688787",
+      "raw_code": "688787",
+      "name": "海天瑞声"
+    },
+    {
+      "code": "sz.000681",
+      "raw_code": "000681",
+      "name": "视觉中国"
+    },
+    {
+      "code": "sz.000925",
+      "raw_code": "000925",
+      "name": "众合科技"
+    },
+    {
+      "code": "sz.002197",
+      "raw_code": "002197",
+      "name": "证通电子"
+    },
+    {
+      "code": "sz.002212",
+      "raw_code": "002212",
+      "name": "天融信"
+    },
+    {
+      "code": "sz.002228",
+      "raw_code": "002228",
+      "name": "合兴包装"
+    },
+    {
+      "code": "sz.002229",
+      "raw_code": "002229",
+      "name": "鸿博股份"
+    },
+    {
+      "code": "sz.002268",
+      "raw_code": "002268",
+      "name": "电科网安"
+    },
+    {
+      "code": "sz.002491",
+      "raw_code": "002491",
+      "name": "通鼎互联"
+    },
+    {
+      "code": "sz.002717",
+      "raw_code": "002717",
+      "name": "*ST岭南"
+    },
+    {
+      "code": "sz.002819",
+      "raw_code": "002819",
+      "name": "东方中科"
+    },
+    {
+      "code": "sz.003029",
+      "raw_code": "003029",
+      "name": "吉大正元"
+    },
+    {
+      "code": "sz.300079",
+      "raw_code": "300079",
+      "name": "数码视讯"
+    },
+    {
+      "code": "sz.300081",
+      "raw_code": "300081",
+      "name": "ST恒信"
+    },
+    {
+      "code": "sz.300096",
+      "raw_code": "300096",
+      "name": "ST易联众"
+    },
+    {
+      "code": "sz.300166",
+      "raw_code": "300166",
+      "name": "东方国信"
+    },
+    {
+      "code": "sz.300352",
+      "raw_code": "300352",
+      "name": "ST信源"
+    },
+    {
+      "code": "sz.300369",
+      "raw_code": "300369",
+      "name": "绿盟科技"
+    },
+    {
+      "code": "sz.300449",
+      "raw_code": "300449",
+      "name": "汉邦高科"
+    },
+    {
+      "code": "sz.300571",
+      "raw_code": "300571",
+      "name": "平治信息"
+    },
+    {
+      "code": "sz.300747",
+      "raw_code": "300747",
+      "name": "锐科激光"
+    },
+    {
+      "code": "sz.300768",
+      "raw_code": "300768",
+      "name": "迪普科技"
+    },
+    {
+      "code": "sz.301185",
+      "raw_code": "301185",
+      "name": "鸥玛软件"
+    },
+    {
+      "code": "sz.301223",
+      "raw_code": "301223",
+      "name": "中荣股份"
+    },
+    {
+      "code": "sz.301270",
+      "raw_code": "301270",
+      "name": "汉仪股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:09",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309050/"
+  "fetched_at": "2026-07-13 17:03:15",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

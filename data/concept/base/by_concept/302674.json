@@ -3,10 +3,212 @@
   "concept_name": "特色小镇",
   "first_trade_date": "2017-06-23",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 40,
+  "constituents": [
+    {
+      "code": "sh.600239",
+      "raw_code": "600239",
+      "name": "ST云城"
+    },
+    {
+      "code": "sh.600340",
+      "raw_code": "600340",
+      "name": "*ST华幸"
+    },
+    {
+      "code": "sh.600359",
+      "raw_code": "600359",
+      "name": "新农开发"
+    },
+    {
+      "code": "sh.600606",
+      "raw_code": "600606",
+      "name": "绿地控股"
+    },
+    {
+      "code": "sh.600683",
+      "raw_code": "600683",
+      "name": "京投发展"
+    },
+    {
+      "code": "sh.600708",
+      "raw_code": "600708",
+      "name": "光明地产"
+    },
+    {
+      "code": "sh.600736",
+      "raw_code": "600736",
+      "name": "苏州高新"
+    },
+    {
+      "code": "sh.601186",
+      "raw_code": "601186",
+      "name": "中国铁建"
+    },
+    {
+      "code": "sh.603099",
+      "raw_code": "603099",
+      "name": "长白山"
+    },
+    {
+      "code": "sh.603316",
+      "raw_code": "603316",
+      "name": "诚邦股份"
+    },
+    {
+      "code": "sh.603717",
+      "raw_code": "603717",
+      "name": "天域生物"
+    },
+    {
+      "code": "sh.603843",
+      "raw_code": "603843",
+      "name": "*ST正平"
+    },
+    {
+      "code": "sh.603955",
+      "raw_code": "603955",
+      "name": "大千生态"
+    },
+    {
+      "code": "sz.000069",
+      "raw_code": "000069",
+      "name": "华侨城A"
+    },
+    {
+      "code": "sz.000402",
+      "raw_code": "000402",
+      "name": "金融街"
+    },
+    {
+      "code": "sz.000632",
+      "raw_code": "000632",
+      "name": "ST三木"
+    },
+    {
+      "code": "sz.000792",
+      "raw_code": "000792",
+      "name": "盐湖股份"
+    },
+    {
+      "code": "sz.000967",
+      "raw_code": "000967",
+      "name": "盈峰环境"
+    },
+    {
+      "code": "sz.002116",
+      "raw_code": "002116",
+      "name": "中国海诚"
+    },
+    {
+      "code": "sz.002146",
+      "raw_code": "002146",
+      "name": "荣盛发展"
+    },
+    {
+      "code": "sz.002159",
+      "raw_code": "002159",
+      "name": "三特索道"
+    },
+    {
+      "code": "sz.002200",
+      "raw_code": "002200",
+      "name": "交投生态"
+    },
+    {
+      "code": "sz.002244",
+      "raw_code": "002244",
+      "name": "滨江集团"
+    },
+    {
+      "code": "sz.002285",
+      "raw_code": "002285",
+      "name": "世联行"
+    },
+    {
+      "code": "sz.002305",
+      "raw_code": "002305",
+      "name": "*ST南置"
+    },
+    {
+      "code": "sz.002344",
+      "raw_code": "002344",
+      "name": "海宁皮城"
+    },
+    {
+      "code": "sz.002431",
+      "raw_code": "002431",
+      "name": "ST棕榈"
+    },
+    {
+      "code": "sz.002485",
+      "raw_code": "002485",
+      "name": "ST雪发"
+    },
+    {
+      "code": "sz.002494",
+      "raw_code": "002494",
+      "name": "华斯股份"
+    },
+    {
+      "code": "sz.002542",
+      "raw_code": "002542",
+      "name": "*ST中岩"
+    },
+    {
+      "code": "sz.002582",
+      "raw_code": "002582",
+      "name": "好想你"
+    },
+    {
+      "code": "sz.002596",
+      "raw_code": "002596",
+      "name": "海南瑞泽"
+    },
+    {
+      "code": "sz.002627",
+      "raw_code": "002627",
+      "name": "三峡旅游"
+    },
+    {
+      "code": "sz.002678",
+      "raw_code": "002678",
+      "name": "珠江钢琴"
+    },
+    {
+      "code": "sz.002679",
+      "raw_code": "002679",
+      "name": "福建金森"
+    },
+    {
+      "code": "sz.002717",
+      "raw_code": "002717",
+      "name": "*ST岭南"
+    },
+    {
+      "code": "sz.300027",
+      "raw_code": "300027",
+      "name": "ST华谊"
+    },
+    {
+      "code": "sz.300237",
+      "raw_code": "300237",
+      "name": "ST美晨"
+    },
+    {
+      "code": "sz.301098",
+      "raw_code": "301098",
+      "name": "金埔园林"
+    },
+    {
+      "code": "sz.301498",
+      "raw_code": "301498",
+      "name": "乖宝宠物"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:15",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302674/"
+  "fetched_at": "2026-07-13 16:56:46",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

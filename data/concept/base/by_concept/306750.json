@@ -3,10 +3,252 @@
   "concept_name": "超级品牌",
   "first_trade_date": "2017-10-31",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 48,
+  "constituents": [
+    {
+      "code": "bj.920726",
+      "raw_code": "920726",
+      "name": "朱老六"
+    },
+    {
+      "code": "sh.600059",
+      "raw_code": "600059",
+      "name": "古越龙山"
+    },
+    {
+      "code": "sh.600085",
+      "raw_code": "600085",
+      "name": "同仁堂"
+    },
+    {
+      "code": "sh.600104",
+      "raw_code": "600104",
+      "name": "上汽集团"
+    },
+    {
+      "code": "sh.600129",
+      "raw_code": "600129",
+      "name": "太极集团"
+    },
+    {
+      "code": "sh.600186",
+      "raw_code": "600186",
+      "name": "莲花控股"
+    },
+    {
+      "code": "sh.600305",
+      "raw_code": "600305",
+      "name": "恒顺醋业"
+    },
+    {
+      "code": "sh.600336",
+      "raw_code": "600336",
+      "name": "澳柯玛"
+    },
+    {
+      "code": "sh.600415",
+      "raw_code": "600415",
+      "name": "小商品城"
+    },
+    {
+      "code": "sh.600436",
+      "raw_code": "600436",
+      "name": "片仔癀"
+    },
+    {
+      "code": "sh.600519",
+      "raw_code": "600519",
+      "name": "贵州茅台"
+    },
+    {
+      "code": "sh.600597",
+      "raw_code": "600597",
+      "name": "光明乳业"
+    },
+    {
+      "code": "sh.600600",
+      "raw_code": "600600",
+      "name": "青岛啤酒"
+    },
+    {
+      "code": "sh.600623",
+      "raw_code": "600623",
+      "name": "华谊集团"
+    },
+    {
+      "code": "sh.600690",
+      "raw_code": "600690",
+      "name": "海尔智家"
+    },
+    {
+      "code": "sh.600887",
+      "raw_code": "600887",
+      "name": "伊利股份"
+    },
+    {
+      "code": "sh.600941",
+      "raw_code": "600941",
+      "name": "中国移动"
+    },
+    {
+      "code": "sh.603031",
+      "raw_code": "603031",
+      "name": "安孚科技"
+    },
+    {
+      "code": "sh.603043",
+      "raw_code": "603043",
+      "name": "广州酒家"
+    },
+    {
+      "code": "sh.603156",
+      "raw_code": "603156",
+      "name": "养元饮品"
+    },
+    {
+      "code": "sh.603195",
+      "raw_code": "603195",
+      "name": "公牛集团"
+    },
+    {
+      "code": "sh.603288",
+      "raw_code": "603288",
+      "name": "海天味业"
+    },
+    {
+      "code": "sh.603515",
+      "raw_code": "603515",
+      "name": "欧普照明"
+    },
+    {
+      "code": "sh.603899",
+      "raw_code": "603899",
+      "name": "晨光股份"
+    },
+    {
+      "code": "sz.000002",
+      "raw_code": "000002",
+      "name": "万科A"
+    },
+    {
+      "code": "sz.000100",
+      "raw_code": "000100",
+      "name": "TCL科技"
+    },
+    {
+      "code": "sz.000333",
+      "raw_code": "000333",
+      "name": "美的集团"
+    },
+    {
+      "code": "sz.000423",
+      "raw_code": "000423",
+      "name": "东阿阿胶"
+    },
+    {
+      "code": "sz.000538",
+      "raw_code": "000538",
+      "name": "云南白药"
+    },
+    {
+      "code": "sz.000568",
+      "raw_code": "000568",
+      "name": "泸州老窖"
+    },
+    {
+      "code": "sz.000599",
+      "raw_code": "000599",
+      "name": "青岛双星"
+    },
+    {
+      "code": "sz.000651",
+      "raw_code": "000651",
+      "name": "格力电器"
+    },
+    {
+      "code": "sz.000858",
+      "raw_code": "000858",
+      "name": "五粮液"
+    },
+    {
+      "code": "sz.000869",
+      "raw_code": "000869",
+      "name": "张裕A"
+    },
+    {
+      "code": "sz.000895",
+      "raw_code": "000895",
+      "name": "双汇发展"
+    },
+    {
+      "code": "sz.001328",
+      "raw_code": "001328",
+      "name": "登康口腔"
+    },
+    {
+      "code": "sz.002024",
+      "raw_code": "002024",
+      "name": "ST易购"
+    },
+    {
+      "code": "sz.002186",
+      "raw_code": "002186",
+      "name": "全聚德"
+    },
+    {
+      "code": "sz.002216",
+      "raw_code": "002216",
+      "name": "三全食品"
+    },
+    {
+      "code": "sz.002304",
+      "raw_code": "002304",
+      "name": "洋河股份"
+    },
+    {
+      "code": "sz.002352",
+      "raw_code": "002352",
+      "name": "顺丰控股"
+    },
+    {
+      "code": "sz.002507",
+      "raw_code": "002507",
+      "name": "涪陵榨菜"
+    },
+    {
+      "code": "sz.002568",
+      "raw_code": "002568",
+      "name": "百润股份"
+    },
+    {
+      "code": "sz.002594",
+      "raw_code": "002594",
+      "name": "比亚迪"
+    },
+    {
+      "code": "sz.002607",
+      "raw_code": "002607",
+      "name": "中公教育"
+    },
+    {
+      "code": "sz.002820",
+      "raw_code": "002820",
+      "name": "桂发祥"
+    },
+    {
+      "code": "sz.300999",
+      "raw_code": "300999",
+      "name": "金龙鱼"
+    },
+    {
+      "code": "sz.301055",
+      "raw_code": "301055",
+      "name": "张小泉"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:18",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/306750/"
+  "fetched_at": "2026-07-13 16:57:17",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

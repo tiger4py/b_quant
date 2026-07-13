@@ -3,10 +3,167 @@
   "concept_name": "工业大麻",
   "first_trade_date": "2019-03-07",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 31,
+  "constituents": [
+    {
+      "code": "sh.600232",
+      "raw_code": "600232",
+      "name": "金鹰股份"
+    },
+    {
+      "code": "sh.600239",
+      "raw_code": "600239",
+      "name": "ST云城"
+    },
+    {
+      "code": "sh.600422",
+      "raw_code": "600422",
+      "name": "昆药集团"
+    },
+    {
+      "code": "sh.600448",
+      "raw_code": "600448",
+      "name": "华纺股份"
+    },
+    {
+      "code": "sh.600535",
+      "raw_code": "600535",
+      "name": "天士力"
+    },
+    {
+      "code": "sh.600572",
+      "raw_code": "600572",
+      "name": "康恩贝"
+    },
+    {
+      "code": "sh.603058",
+      "raw_code": "603058",
+      "name": "永吉股份"
+    },
+    {
+      "code": "sh.603896",
+      "raw_code": "603896",
+      "name": "寿仙谷"
+    },
+    {
+      "code": "sh.603998",
+      "raw_code": "603998",
+      "name": "方盛制药"
+    },
+    {
+      "code": "sz.000538",
+      "raw_code": "000538",
+      "name": "云南白药"
+    },
+    {
+      "code": "sz.000766",
+      "raw_code": "000766",
+      "name": "通化金马"
+    },
+    {
+      "code": "sz.000813",
+      "raw_code": "000813",
+      "name": "德展健康"
+    },
+    {
+      "code": "sz.000990",
+      "raw_code": "000990",
+      "name": "诚志股份"
+    },
+    {
+      "code": "sz.002038",
+      "raw_code": "002038",
+      "name": "双鹭药业"
+    },
+    {
+      "code": "sz.002166",
+      "raw_code": "002166",
+      "name": "莱茵生物"
+    },
+    {
+      "code": "sz.002224",
+      "raw_code": "002224",
+      "name": "三力士"
+    },
+    {
+      "code": "sz.002303",
+      "raw_code": "002303",
+      "name": "美盈森"
+    },
+    {
+      "code": "sz.002565",
+      "raw_code": "002565",
+      "name": "顺灏股份"
+    },
+    {
+      "code": "sz.002701",
+      "raw_code": "002701",
+      "name": "奥瑞金"
+    },
+    {
+      "code": "sz.300022",
+      "raw_code": "300022",
+      "name": "吉峰科技"
+    },
+    {
+      "code": "sz.300125",
+      "raw_code": "300125",
+      "name": "*ST聆达"
+    },
+    {
+      "code": "sz.300138",
+      "raw_code": "300138",
+      "name": "晨光生物"
+    },
+    {
+      "code": "sz.300165",
+      "raw_code": "300165",
+      "name": "天瑞仪器"
+    },
+    {
+      "code": "sz.300175",
+      "raw_code": "300175",
+      "name": "朗源股份"
+    },
+    {
+      "code": "sz.300199",
+      "raw_code": "300199",
+      "name": "翰宇药业"
+    },
+    {
+      "code": "sz.300233",
+      "raw_code": "300233",
+      "name": "金城医药"
+    },
+    {
+      "code": "sz.300261",
+      "raw_code": "300261",
+      "name": "雅本化学"
+    },
+    {
+      "code": "sz.300430",
+      "raw_code": "300430",
+      "name": "*ST益通"
+    },
+    {
+      "code": "sz.300469",
+      "raw_code": "300469",
+      "name": "信息发展"
+    },
+    {
+      "code": "sz.300482",
+      "raw_code": "300482",
+      "name": "万孚生物"
+    },
+    {
+      "code": "sz.300487",
+      "raw_code": "300487",
+      "name": "蓝晓科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:54",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301477/"
+  "fetched_at": "2026-07-13 16:50:40",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

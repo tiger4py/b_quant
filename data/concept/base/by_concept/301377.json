@@ -3,10 +3,127 @@
   "concept_name": "信托概念",
   "first_trade_date": "2019-02-28",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 23,
+  "constituents": [
+    {
+      "code": "sh.600000",
+      "raw_code": "600000",
+      "name": "浦发银行"
+    },
+    {
+      "code": "sh.600020",
+      "raw_code": "600020",
+      "name": "中原高速"
+    },
+    {
+      "code": "sh.600061",
+      "raw_code": "600061",
+      "name": "国投资本"
+    },
+    {
+      "code": "sh.600120",
+      "raw_code": "600120",
+      "name": "浙江东方"
+    },
+    {
+      "code": "sh.600327",
+      "raw_code": "600327",
+      "name": "大东方"
+    },
+    {
+      "code": "sh.600331",
+      "raw_code": "600331",
+      "name": "宏达股份"
+    },
+    {
+      "code": "sh.600390",
+      "raw_code": "600390",
+      "name": "五矿资本"
+    },
+    {
+      "code": "sh.600475",
+      "raw_code": "600475",
+      "name": "华光环能"
+    },
+    {
+      "code": "sh.600517",
+      "raw_code": "600517",
+      "name": "国网英大"
+    },
+    {
+      "code": "sh.600638",
+      "raw_code": "600638",
+      "name": "新黄浦"
+    },
+    {
+      "code": "sh.600643",
+      "raw_code": "600643",
+      "name": "爱建集团"
+    },
+    {
+      "code": "sh.600816",
+      "raw_code": "600816",
+      "name": "建元信托"
+    },
+    {
+      "code": "sh.600828",
+      "raw_code": "600828",
+      "name": "茂业商业"
+    },
+    {
+      "code": "sh.600865",
+      "raw_code": "600865",
+      "name": "百大集团"
+    },
+    {
+      "code": "sz.000563",
+      "raw_code": "000563",
+      "name": "陕国投A"
+    },
+    {
+      "code": "sz.000593",
+      "raw_code": "000593",
+      "name": "德龙汇能"
+    },
+    {
+      "code": "sz.000617",
+      "raw_code": "000617",
+      "name": "中油资本"
+    },
+    {
+      "code": "sz.000652",
+      "raw_code": "000652",
+      "name": "泰达股份"
+    },
+    {
+      "code": "sz.000812",
+      "raw_code": "000812",
+      "name": "陕西金叶"
+    },
+    {
+      "code": "sz.000948",
+      "raw_code": "000948",
+      "name": "南天信息"
+    },
+    {
+      "code": "sz.000958",
+      "raw_code": "000958",
+      "name": "电投产融"
+    },
+    {
+      "code": "sz.002423",
+      "raw_code": "002423",
+      "name": "中粮资本"
+    },
+    {
+      "code": "sz.002608",
+      "raw_code": "002608",
+      "name": "江苏国信"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:52",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301377/"
+  "fetched_at": "2026-07-13 16:49:31",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

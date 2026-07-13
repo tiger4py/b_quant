@@ -3,10 +3,282 @@
   "concept_name": "国资云",
   "first_trade_date": "2022-03-17",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 54,
+  "constituents": [
+    {
+      "code": "sh.600037",
+      "raw_code": "600037",
+      "name": "歌华有线"
+    },
+    {
+      "code": "sh.600050",
+      "raw_code": "600050",
+      "name": "中国联通"
+    },
+    {
+      "code": "sh.600100",
+      "raw_code": "600100",
+      "name": "同方股份"
+    },
+    {
+      "code": "sh.600126",
+      "raw_code": "600126",
+      "name": "杭钢股份"
+    },
+    {
+      "code": "sh.600131",
+      "raw_code": "600131",
+      "name": "国网信通"
+    },
+    {
+      "code": "sh.600449",
+      "raw_code": "600449",
+      "name": "宁夏建材"
+    },
+    {
+      "code": "sh.600476",
+      "raw_code": "600476",
+      "name": "*ST湘邮"
+    },
+    {
+      "code": "sh.600498",
+      "raw_code": "600498",
+      "name": "烽火通信"
+    },
+    {
+      "code": "sh.600602",
+      "raw_code": "600602",
+      "name": "云赛智联"
+    },
+    {
+      "code": "sh.600734",
+      "raw_code": "600734",
+      "name": "*ST实达"
+    },
+    {
+      "code": "sh.600756",
+      "raw_code": "600756",
+      "name": "浪潮软件"
+    },
+    {
+      "code": "sh.600831",
+      "raw_code": "600831",
+      "name": "广电网络"
+    },
+    {
+      "code": "sh.600850",
+      "raw_code": "600850",
+      "name": "电科数字"
+    },
+    {
+      "code": "sh.600941",
+      "raw_code": "600941",
+      "name": "中国移动"
+    },
+    {
+      "code": "sh.600959",
+      "raw_code": "600959",
+      "name": "江苏有线"
+    },
+    {
+      "code": "sh.601728",
+      "raw_code": "601728",
+      "name": "中国电信"
+    },
+    {
+      "code": "sh.601789",
+      "raw_code": "601789",
+      "name": "宁波建工"
+    },
+    {
+      "code": "sh.601858",
+      "raw_code": "601858",
+      "name": "中国科传"
+    },
+    {
+      "code": "sh.601921",
+      "raw_code": "601921",
+      "name": "浙版传媒"
+    },
+    {
+      "code": "sh.603000",
+      "raw_code": "603000",
+      "name": "人民网"
+    },
+    {
+      "code": "sh.603300",
+      "raw_code": "603300",
+      "name": "海南华铁"
+    },
+    {
+      "code": "sh.603860",
+      "raw_code": "603860",
+      "name": "中公高科"
+    },
+    {
+      "code": "sh.603881",
+      "raw_code": "603881",
+      "name": "数据港"
+    },
+    {
+      "code": "sh.603927",
+      "raw_code": "603927",
+      "name": "中科软"
+    },
+    {
+      "code": "sh.688561",
+      "raw_code": "688561",
+      "name": "奇安信"
+    },
+    {
+      "code": "sz.000032",
+      "raw_code": "000032",
+      "name": "深桑达A"
+    },
+    {
+      "code": "sz.000070",
+      "raw_code": "000070",
+      "name": "特发信息"
+    },
+    {
+      "code": "sz.000096",
+      "raw_code": "000096",
+      "name": "广聚能源"
+    },
+    {
+      "code": "sz.000158",
+      "raw_code": "000158",
+      "name": "常山北明"
+    },
+    {
+      "code": "sz.000539",
+      "raw_code": "000539",
+      "name": "粤电力A"
+    },
+    {
+      "code": "sz.000665",
+      "raw_code": "000665",
+      "name": "湖北广电"
+    },
+    {
+      "code": "sz.000779",
+      "raw_code": "000779",
+      "name": "甘咨询"
+    },
+    {
+      "code": "sz.000815",
+      "raw_code": "000815",
+      "name": "美利云"
+    },
+    {
+      "code": "sz.000938",
+      "raw_code": "000938",
+      "name": "紫光股份"
+    },
+    {
+      "code": "sz.000948",
+      "raw_code": "000948",
+      "name": "南天信息"
+    },
+    {
+      "code": "sz.000977",
+      "raw_code": "000977",
+      "name": "浪潮信息"
+    },
+    {
+      "code": "sz.002063",
+      "raw_code": "002063",
+      "name": "远光软件"
+    },
+    {
+      "code": "sz.002152",
+      "raw_code": "002152",
+      "name": "广电运通"
+    },
+    {
+      "code": "sz.002232",
+      "raw_code": "002232",
+      "name": "启明信息"
+    },
+    {
+      "code": "sz.002238",
+      "raw_code": "002238",
+      "name": "天威视讯"
+    },
+    {
+      "code": "sz.002268",
+      "raw_code": "002268",
+      "name": "电科网安"
+    },
+    {
+      "code": "sz.002368",
+      "raw_code": "002368",
+      "name": "太极股份"
+    },
+    {
+      "code": "sz.002400",
+      "raw_code": "002400",
+      "name": "省广集团"
+    },
+    {
+      "code": "sz.002401",
+      "raw_code": "002401",
+      "name": "中远海科"
+    },
+    {
+      "code": "sz.002528",
+      "raw_code": "002528",
+      "name": "*ST英飞"
+    },
+    {
+      "code": "sz.002642",
+      "raw_code": "002642",
+      "name": "荣联科技"
+    },
+    {
+      "code": "sz.300188",
+      "raw_code": "300188",
+      "name": "国投智能"
+    },
+    {
+      "code": "sz.300212",
+      "raw_code": "300212",
+      "name": "*ST易录"
+    },
+    {
+      "code": "sz.300523",
+      "raw_code": "300523",
+      "name": "辰安科技"
+    },
+    {
+      "code": "sz.300895",
+      "raw_code": "300895",
+      "name": "铜牛信息"
+    },
+    {
+      "code": "sz.300987",
+      "raw_code": "300987",
+      "name": "川网传媒"
+    },
+    {
+      "code": "sz.301091",
+      "raw_code": "301091",
+      "name": "深城交"
+    },
+    {
+      "code": "sz.301165",
+      "raw_code": "301165",
+      "name": "锐捷网络"
+    },
+    {
+      "code": "sz.301339",
+      "raw_code": "301339",
+      "name": "通行宝"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:57",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308874/"
+  "fetched_at": "2026-07-13 17:01:52",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

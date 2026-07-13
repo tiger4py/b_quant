@@ -34,6 +34,11 @@ BASE_DIR = CONCEPT_DIR / "base"
 BY_CONCEPT_DIR = BASE_DIR / "by_concept"
 DB_PATH = ROOT_DIR / "data" / "stock.db"
 THS_URL = "http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/{page}/code/{code}/"
+EXCLUDED_CONCEPT_CODES = {
+    "300900",  # 融资融券，成分过多
+    "301490",  # 沪股通，成分过多
+    "301636",  # 深股通，成分过多
+}
 
 
 def _stock_code_with_prefix(code):
@@ -97,6 +102,7 @@ def make_session():
 
 def parse_page(html):
     soup = BeautifulSoup(html, "lxml")
+    login_required = "upass.10jqka.com.cn/login" in html
     stocks = []
     for tr in soup.select("table.m-table tr"):
         tds = tr.find_all("td")
@@ -119,7 +125,7 @@ def parse_page(html):
         match = re.search(r"\d+/(\d+)", page_info.get_text(strip=True))
         if match:
             total_pages = int(match.group(1))
-    return stocks, total_pages
+    return stocks, total_pages, login_required
 
 
 def fetch_page(session, concept_code, page, retries=2):
@@ -141,11 +147,16 @@ def fetch_page(session, concept_code, page, retries=2):
 def fetch_constituents(concept, max_pages=None):
     session = make_session()
     code = concept["concept_code"]
-    stocks, total_pages = fetch_page(session, code, 1)
+    stocks, total_pages, _ = fetch_page(session, code, 1)
+    page_limit_reason = None
     if max_pages:
         total_pages = min(total_pages, max_pages)
+        page_limit_reason = page_limit_reason or "max_pages"
     for page in range(2, total_pages + 1):
-        page_stocks, _ = fetch_page(session, code, page)
+        page_stocks, _, _ = fetch_page(session, code, page)
+        if not page_stocks:
+            page_limit_reason = "ths_empty_page_or_login_limit"
+            break
         stocks.extend(page_stocks)
 
     deduped = {}
@@ -159,6 +170,8 @@ def fetch_constituents(concept, max_pages=None):
         "source": "ths_q_10jqka",
         "fetched_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "page_count": total_pages,
+        "is_partial": page_limit_reason is not None,
+        "page_limit_reason": page_limit_reason,
     }
     return result
 
@@ -248,7 +261,11 @@ def make_failure_result(concept, error):
 
 
 def build(max_workers=8, max_pages=None, refresh=False):
-    concepts = load_concepts_from_csv()
+    concepts = [
+        concept
+        for concept in load_concepts_from_csv()
+        if concept["concept_code"] not in EXCLUDED_CONCEPT_CODES
+    ]
     BASE_DIR.mkdir(parents=True, exist_ok=True)
     if refresh and BY_CONCEPT_DIR.exists():
         shutil.rmtree(BY_CONCEPT_DIR)
@@ -262,8 +279,9 @@ def build(max_workers=8, max_pages=None, refresh=False):
         if path.exists() and not refresh:
             try:
                 cached = json.loads(path.read_text(encoding="utf-8"))
-                results[concept["concept_code"]] = cached
-                continue
+                if not cached.get("fetch_error"):
+                    results[concept["concept_code"]] = cached
+                    continue
             except Exception:
                 pass
         pending.append(concept)

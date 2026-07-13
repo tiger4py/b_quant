@@ -3,10 +3,112 @@
   "concept_name": "人造肉",
   "first_trade_date": "2019-05-08",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 20,
+  "constituents": [
+    {
+      "code": "bj.920284",
+      "raw_code": "920284",
+      "name": "灵鸽科技"
+    },
+    {
+      "code": "sh.600298",
+      "raw_code": "600298",
+      "name": "安琪酵母"
+    },
+    {
+      "code": "sh.603182",
+      "raw_code": "603182",
+      "name": "嘉华股份"
+    },
+    {
+      "code": "sh.603231",
+      "raw_code": "603231",
+      "name": "索宝蛋白"
+    },
+    {
+      "code": "sh.605567",
+      "raw_code": "605567",
+      "name": "春雪食品"
+    },
+    {
+      "code": "sz.000895",
+      "raw_code": "000895",
+      "name": "双汇发展"
+    },
+    {
+      "code": "sz.000990",
+      "raw_code": "000990",
+      "name": "诚志股份"
+    },
+    {
+      "code": "sz.002303",
+      "raw_code": "002303",
+      "name": "美盈森"
+    },
+    {
+      "code": "sz.002481",
+      "raw_code": "002481",
+      "name": "双塔食品"
+    },
+    {
+      "code": "sz.002515",
+      "raw_code": "002515",
+      "name": "金字火腿"
+    },
+    {
+      "code": "sz.002567",
+      "raw_code": "002567",
+      "name": "唐人神"
+    },
+    {
+      "code": "sz.002582",
+      "raw_code": "002582",
+      "name": "好想你"
+    },
+    {
+      "code": "sz.002702",
+      "raw_code": "002702",
+      "name": "海欣食品"
+    },
+    {
+      "code": "sz.002768",
+      "raw_code": "002768",
+      "name": "国恩股份"
+    },
+    {
+      "code": "sz.003000",
+      "raw_code": "003000",
+      "name": "劲仔食品"
+    },
+    {
+      "code": "sz.003030",
+      "raw_code": "003030",
+      "name": "祖名股份"
+    },
+    {
+      "code": "sz.300239",
+      "raw_code": "300239",
+      "name": "东宝生物"
+    },
+    {
+      "code": "sz.300497",
+      "raw_code": "300497",
+      "name": "富祥股份"
+    },
+    {
+      "code": "sz.300511",
+      "raw_code": "300511",
+      "name": "雪榕生物"
+    },
+    {
+      "code": "sz.300741",
+      "raw_code": "300741",
+      "name": "华宝股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:28",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308517/"
+  "fetched_at": "2026-07-13 16:58:59",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

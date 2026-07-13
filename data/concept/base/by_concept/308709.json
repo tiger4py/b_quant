@@ -3,10 +3,212 @@
   "concept_name": "拼多多概念",
   "first_trade_date": "2020-10-26",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 40,
+  "constituents": [
+    {
+      "code": "bj.920227",
+      "raw_code": "920227",
+      "name": "美登科技"
+    },
+    {
+      "code": "bj.920415",
+      "raw_code": "920415",
+      "name": "恒拓开源"
+    },
+    {
+      "code": "sh.600228",
+      "raw_code": "600228",
+      "name": "返利科技"
+    },
+    {
+      "code": "sh.601156",
+      "raw_code": "601156",
+      "name": "东航物流"
+    },
+    {
+      "code": "sh.601956",
+      "raw_code": "601956",
+      "name": "东贝集团"
+    },
+    {
+      "code": "sh.603214",
+      "raw_code": "603214",
+      "name": "爱婴室"
+    },
+    {
+      "code": "sh.603535",
+      "raw_code": "603535",
+      "name": "嘉诚国际"
+    },
+    {
+      "code": "sh.603598",
+      "raw_code": "603598",
+      "name": "引力传媒"
+    },
+    {
+      "code": "sh.603836",
+      "raw_code": "603836",
+      "name": "海程邦达"
+    },
+    {
+      "code": "sh.605136",
+      "raw_code": "605136",
+      "name": "丽人丽妆"
+    },
+    {
+      "code": "sh.688360",
+      "raw_code": "688360",
+      "name": "德马科技"
+    },
+    {
+      "code": "sh.688365",
+      "raw_code": "688365",
+      "name": "光云科技"
+    },
+    {
+      "code": "sh.688648",
+      "raw_code": "688648",
+      "name": "中邮科技"
+    },
+    {
+      "code": "sz.000676",
+      "raw_code": "000676",
+      "name": "智度股份"
+    },
+    {
+      "code": "sz.000829",
+      "raw_code": "000829",
+      "name": "天音控股"
+    },
+    {
+      "code": "sz.001317",
+      "raw_code": "001317",
+      "name": "三羊马"
+    },
+    {
+      "code": "sz.002117",
+      "raw_code": "002117",
+      "name": "东港股份"
+    },
+    {
+      "code": "sz.002122",
+      "raw_code": "002122",
+      "name": "ST汇洲"
+    },
+    {
+      "code": "sz.002264",
+      "raw_code": "002264",
+      "name": "新华都"
+    },
+    {
+      "code": "sz.002364",
+      "raw_code": "002364",
+      "name": "中恒电气"
+    },
+    {
+      "code": "sz.002429",
+      "raw_code": "002429",
+      "name": "兆驰股份"
+    },
+    {
+      "code": "sz.002571",
+      "raw_code": "002571",
+      "name": "德力股份"
+    },
+    {
+      "code": "sz.002591",
+      "raw_code": "002591",
+      "name": "恒大高新"
+    },
+    {
+      "code": "sz.002640",
+      "raw_code": "002640",
+      "name": "跨境通"
+    },
+    {
+      "code": "sz.002878",
+      "raw_code": "002878",
+      "name": "元隆雅图"
+    },
+    {
+      "code": "sz.002959",
+      "raw_code": "002959",
+      "name": "小熊电器"
+    },
+    {
+      "code": "sz.002995",
+      "raw_code": "002995",
+      "name": "天地在线"
+    },
+    {
+      "code": "sz.003010",
+      "raw_code": "003010",
+      "name": "若羽臣"
+    },
+    {
+      "code": "sz.300531",
+      "raw_code": "300531",
+      "name": "优博讯"
+    },
+    {
+      "code": "sz.300612",
+      "raw_code": "300612",
+      "name": "宣亚国际"
+    },
+    {
+      "code": "sz.300710",
+      "raw_code": "300710",
+      "name": "万隆光电"
+    },
+    {
+      "code": "sz.300740",
+      "raw_code": "300740",
+      "name": "水羊股份"
+    },
+    {
+      "code": "sz.300766",
+      "raw_code": "300766",
+      "name": "每日互动"
+    },
+    {
+      "code": "sz.300785",
+      "raw_code": "300785",
+      "name": "值得买"
+    },
+    {
+      "code": "sz.300792",
+      "raw_code": "300792",
+      "name": "壹网壹创"
+    },
+    {
+      "code": "sz.300805",
+      "raw_code": "300805",
+      "name": "电声股份"
+    },
+    {
+      "code": "sz.300959",
+      "raw_code": "300959",
+      "name": "线上线下"
+    },
+    {
+      "code": "sz.300997",
+      "raw_code": "300997",
+      "name": "欢乐家"
+    },
+    {
+      "code": "sz.301001",
+      "raw_code": "301001",
+      "name": "凯淳股份"
+    },
+    {
+      "code": "sz.301171",
+      "raw_code": "301171",
+      "name": "易点天下"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:41",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308709/"
+  "fetched_at": "2026-07-13 16:59:36",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

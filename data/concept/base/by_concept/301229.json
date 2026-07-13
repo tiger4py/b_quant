@@ -3,10 +3,92 @@
   "concept_name": "天津自贸区",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 16,
+  "constituents": [
+    {
+      "code": "sh.600082",
+      "raw_code": "600082",
+      "name": "ST海泰"
+    },
+    {
+      "code": "sh.600322",
+      "raw_code": "600322",
+      "name": "津投城开"
+    },
+    {
+      "code": "sh.600717",
+      "raw_code": "600717",
+      "name": "天津港"
+    },
+    {
+      "code": "sh.600751",
+      "raw_code": "600751",
+      "name": "海航科技"
+    },
+    {
+      "code": "sh.600800",
+      "raw_code": "600800",
+      "name": "渤海化学"
+    },
+    {
+      "code": "sh.600821",
+      "raw_code": "600821",
+      "name": "金开新能"
+    },
+    {
+      "code": "sh.601686",
+      "raw_code": "601686",
+      "name": "友发集团"
+    },
+    {
+      "code": "sh.603106",
+      "raw_code": "603106",
+      "name": "恒银科技"
+    },
+    {
+      "code": "sz.000897",
+      "raw_code": "000897",
+      "name": "津滨发展"
+    },
+    {
+      "code": "sz.000965",
+      "raw_code": "000965",
+      "name": "天保基建"
+    },
+    {
+      "code": "sz.002134",
+      "raw_code": "002134",
+      "name": "天津普林"
+    },
+    {
+      "code": "sz.002337",
+      "raw_code": "002337",
+      "name": "赛象科技"
+    },
+    {
+      "code": "sz.002432",
+      "raw_code": "002432",
+      "name": "九安医疗"
+    },
+    {
+      "code": "sz.002510",
+      "raw_code": "002510",
+      "name": "天汽模"
+    },
+    {
+      "code": "sz.002820",
+      "raw_code": "002820",
+      "name": "桂发祥"
+    },
+    {
+      "code": "sz.300119",
+      "raw_code": "300119",
+      "name": "瑞普生物"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:46",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301229/"
+  "fetched_at": "2026-07-13 16:46:56",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

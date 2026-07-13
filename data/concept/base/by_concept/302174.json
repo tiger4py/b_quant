@@ -3,10 +3,167 @@
   "concept_name": "金属钴",
   "first_trade_date": "2019-08-08",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 31,
+  "constituents": [
+    {
+      "code": "sh.600490",
+      "raw_code": "600490",
+      "name": "鹏欣资源"
+    },
+    {
+      "code": "sh.600549",
+      "raw_code": "600549",
+      "name": "厦门钨业"
+    },
+    {
+      "code": "sh.600711",
+      "raw_code": "600711",
+      "name": "盛屯矿业"
+    },
+    {
+      "code": "sh.600980",
+      "raw_code": "600980",
+      "name": "北矿科技"
+    },
+    {
+      "code": "sh.601390",
+      "raw_code": "601390",
+      "name": "中国中铁"
+    },
+    {
+      "code": "sh.601669",
+      "raw_code": "601669",
+      "name": "中国电建"
+    },
+    {
+      "code": "sh.601899",
+      "raw_code": "601899",
+      "name": "紫金矿业"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.603257",
+      "raw_code": "603257",
+      "name": "中国瑞林"
+    },
+    {
+      "code": "sh.603799",
+      "raw_code": "603799",
+      "name": "华友钴业"
+    },
+    {
+      "code": "sh.603993",
+      "raw_code": "603993",
+      "name": "洛阳钼业"
+    },
+    {
+      "code": "sh.688005",
+      "raw_code": "688005",
+      "name": "容百科技"
+    },
+    {
+      "code": "sh.688077",
+      "raw_code": "688077",
+      "name": "大地熊"
+    },
+    {
+      "code": "sz.000009",
+      "raw_code": "000009",
+      "name": "中国宝安"
+    },
+    {
+      "code": "sz.000060",
+      "raw_code": "000060",
+      "name": "中金岭南"
+    },
+    {
+      "code": "sz.000426",
+      "raw_code": "000426",
+      "name": "兴业银锡"
+    },
+    {
+      "code": "sz.000657",
+      "raw_code": "000657",
+      "name": "中钨高新"
+    },
+    {
+      "code": "sz.000758",
+      "raw_code": "000758",
+      "name": "中色股份"
+    },
+    {
+      "code": "sz.002009",
+      "raw_code": "002009",
+      "name": "天奇股份"
+    },
+    {
+      "code": "sz.002266",
+      "raw_code": "002266",
+      "name": "浙富控股"
+    },
+    {
+      "code": "sz.002340",
+      "raw_code": "002340",
+      "name": "格林美"
+    },
+    {
+      "code": "sz.002460",
+      "raw_code": "002460",
+      "name": "赣锋锂业"
+    },
+    {
+      "code": "sz.002601",
+      "raw_code": "002601",
+      "name": "龙佰集团"
+    },
+    {
+      "code": "sz.002645",
+      "raw_code": "002645",
+      "name": "华宏科技"
+    },
+    {
+      "code": "sz.300073",
+      "raw_code": "300073",
+      "name": "当升科技"
+    },
+    {
+      "code": "sz.300409",
+      "raw_code": "300409",
+      "name": "道氏技术"
+    },
+    {
+      "code": "sz.300487",
+      "raw_code": "300487",
+      "name": "蓝晓科技"
+    },
+    {
+      "code": "sz.300618",
+      "raw_code": "300618",
+      "name": "寒锐钴业"
+    },
+    {
+      "code": "sz.300919",
+      "raw_code": "300919",
+      "name": "中伟新材"
+    },
+    {
+      "code": "sz.301219",
+      "raw_code": "301219",
+      "name": "腾远钴业"
+    },
+    {
+      "code": "sz.301265",
+      "raw_code": "301265",
+      "name": "华新科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:14",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302174/"
+  "fetched_at": "2026-07-13 16:56:39",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

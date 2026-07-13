@@ -3,10 +3,112 @@
   "concept_name": "同花顺果指数",
   "first_trade_date": "2026-07-07",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 20,
+  "constituents": [
+    {
+      "code": "sh.600584",
+      "raw_code": "600584",
+      "name": "长电科技"
+    },
+    {
+      "code": "sh.600745",
+      "raw_code": "600745",
+      "name": "*ST闻泰"
+    },
+    {
+      "code": "sh.601138",
+      "raw_code": "601138",
+      "name": "工业富联"
+    },
+    {
+      "code": "sh.601231",
+      "raw_code": "601231",
+      "name": "环旭电子"
+    },
+    {
+      "code": "sh.603283",
+      "raw_code": "603283",
+      "name": "赛腾股份"
+    },
+    {
+      "code": "sh.688127",
+      "raw_code": "688127",
+      "name": "蓝特光学"
+    },
+    {
+      "code": "sh.688772",
+      "raw_code": "688772",
+      "name": "珠海冠宇"
+    },
+    {
+      "code": "sz.000049",
+      "raw_code": "000049",
+      "name": "德赛电池"
+    },
+    {
+      "code": "sz.000725",
+      "raw_code": "000725",
+      "name": "京东方A"
+    },
+    {
+      "code": "sz.002241",
+      "raw_code": "002241",
+      "name": "歌尔股份"
+    },
+    {
+      "code": "sz.002273",
+      "raw_code": "002273",
+      "name": "水晶光电"
+    },
+    {
+      "code": "sz.002384",
+      "raw_code": "002384",
+      "name": "东山精密"
+    },
+    {
+      "code": "sz.002475",
+      "raw_code": "002475",
+      "name": "立讯精密"
+    },
+    {
+      "code": "sz.002600",
+      "raw_code": "002600",
+      "name": "领益智造"
+    },
+    {
+      "code": "sz.002635",
+      "raw_code": "002635",
+      "name": "安洁科技"
+    },
+    {
+      "code": "sz.002938",
+      "raw_code": "002938",
+      "name": "鹏鼎控股"
+    },
+    {
+      "code": "sz.300115",
+      "raw_code": "300115",
+      "name": "长盈精密"
+    },
+    {
+      "code": "sz.300136",
+      "raw_code": "300136",
+      "name": "信维通信"
+    },
+    {
+      "code": "sz.300433",
+      "raw_code": "300433",
+      "name": "蓝思科技"
+    },
+    {
+      "code": "sz.300684",
+      "raw_code": "300684",
+      "name": "中石科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:24",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309136/"
+  "fetched_at": "2026-07-13 17:04:50",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

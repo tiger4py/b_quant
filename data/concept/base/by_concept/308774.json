@@ -3,10 +3,112 @@
   "concept_name": "培育钻石",
   "first_trade_date": "2021-10-18",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 20,
+  "constituents": [
+    {
+      "code": "bj.920527",
+      "raw_code": "920527",
+      "name": "夜光明"
+    },
+    {
+      "code": "bj.920725",
+      "raw_code": "920725",
+      "name": "惠丰钻石"
+    },
+    {
+      "code": "bj.920807",
+      "raw_code": "920807",
+      "name": "奔朗新材"
+    },
+    {
+      "code": "sh.600172",
+      "raw_code": "600172",
+      "name": "黄河旋风"
+    },
+    {
+      "code": "sh.600655",
+      "raw_code": "600655",
+      "name": "豫园股份"
+    },
+    {
+      "code": "sh.600916",
+      "raw_code": "600916",
+      "name": "中国黄金"
+    },
+    {
+      "code": "sh.603389",
+      "raw_code": "603389",
+      "name": "亚振家居"
+    },
+    {
+      "code": "sh.603661",
+      "raw_code": "603661",
+      "name": "恒林股份"
+    },
+    {
+      "code": "sh.605580",
+      "raw_code": "605580",
+      "name": "恒盛能源"
+    },
+    {
+      "code": "sh.688028",
+      "raw_code": "688028",
+      "name": "沃尔德"
+    },
+    {
+      "code": "sh.688103",
+      "raw_code": "688103",
+      "name": "国力电子"
+    },
+    {
+      "code": "sz.000519",
+      "raw_code": "000519",
+      "name": "中兵红箭"
+    },
+    {
+      "code": "sz.002046",
+      "raw_code": "002046",
+      "name": "国机精工"
+    },
+    {
+      "code": "sz.002171",
+      "raw_code": "002171",
+      "name": "楚江新材"
+    },
+    {
+      "code": "sz.002297",
+      "raw_code": "002297",
+      "name": "博云新材"
+    },
+    {
+      "code": "sz.002345",
+      "raw_code": "002345",
+      "name": "潮宏基"
+    },
+    {
+      "code": "sz.300179",
+      "raw_code": "300179",
+      "name": "四方达"
+    },
+    {
+      "code": "sz.300316",
+      "raw_code": "300316",
+      "name": "晶盛机电"
+    },
+    {
+      "code": "sz.301021",
+      "raw_code": "301021",
+      "name": "英诺激光"
+    },
+    {
+      "code": "sz.301071",
+      "raw_code": "301071",
+      "name": "力量钻石"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:48",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308774/"
+  "fetched_at": "2026-07-13 17:01:02",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

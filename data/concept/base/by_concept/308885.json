@@ -3,10 +3,142 @@
   "concept_name": "家庭医生",
   "first_trade_date": "2022-03-21",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 26,
+  "constituents": [
+    {
+      "code": "sh.600196",
+      "raw_code": "600196",
+      "name": "复星医药"
+    },
+    {
+      "code": "sh.600566",
+      "raw_code": "600566",
+      "name": "济川药业"
+    },
+    {
+      "code": "sh.600684",
+      "raw_code": "600684",
+      "name": "珠江股份"
+    },
+    {
+      "code": "sh.601318",
+      "raw_code": "601318",
+      "name": "中国平安"
+    },
+    {
+      "code": "sh.603939",
+      "raw_code": "603939",
+      "name": "益丰药房"
+    },
+    {
+      "code": "sh.605266",
+      "raw_code": "605266",
+      "name": "健之佳"
+    },
+    {
+      "code": "sz.000503",
+      "raw_code": "000503",
+      "name": "国新健康"
+    },
+    {
+      "code": "sz.002044",
+      "raw_code": "002044",
+      "name": "美年健康"
+    },
+    {
+      "code": "sz.002178",
+      "raw_code": "002178",
+      "name": "延华智能"
+    },
+    {
+      "code": "sz.002230",
+      "raw_code": "002230",
+      "name": "科大讯飞"
+    },
+    {
+      "code": "sz.002315",
+      "raw_code": "002315",
+      "name": "焦点科技"
+    },
+    {
+      "code": "sz.002777",
+      "raw_code": "002777",
+      "name": "久远银海"
+    },
+    {
+      "code": "sz.300018",
+      "raw_code": "300018",
+      "name": "中元股份"
+    },
+    {
+      "code": "sz.300020",
+      "raw_code": "300020",
+      "name": "ST银江"
+    },
+    {
+      "code": "sz.300030",
+      "raw_code": "300030",
+      "name": "阳普医疗"
+    },
+    {
+      "code": "sz.300049",
+      "raw_code": "300049",
+      "name": "福瑞医科"
+    },
+    {
+      "code": "sz.300074",
+      "raw_code": "300074",
+      "name": "华平股份"
+    },
+    {
+      "code": "sz.300096",
+      "raw_code": "300096",
+      "name": "ST易联众"
+    },
+    {
+      "code": "sz.300168",
+      "raw_code": "300168",
+      "name": "万达信息"
+    },
+    {
+      "code": "sz.300253",
+      "raw_code": "300253",
+      "name": "卫宁健康"
+    },
+    {
+      "code": "sz.300288",
+      "raw_code": "300288",
+      "name": "朗玛信息"
+    },
+    {
+      "code": "sz.300300",
+      "raw_code": "300300",
+      "name": "海峡创新"
+    },
+    {
+      "code": "sz.300451",
+      "raw_code": "300451",
+      "name": "创业慧康"
+    },
+    {
+      "code": "sz.300550",
+      "raw_code": "300550",
+      "name": "和仁科技"
+    },
+    {
+      "code": "sz.300730",
+      "raw_code": "300730",
+      "name": "科创信息"
+    },
+    {
+      "code": "sz.301017",
+      "raw_code": "301017",
+      "name": "漱玉平民"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:58",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308885/"
+  "fetched_at": "2026-07-13 17:01:57",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

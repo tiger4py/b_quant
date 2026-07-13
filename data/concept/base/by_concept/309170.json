@@ -3,10 +3,157 @@
   "concept_name": "华为盘古",
   "first_trade_date": "2024-11-19",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 29,
+  "constituents": [
+    {
+      "code": "bj.920092",
+      "raw_code": "920092",
+      "name": "汉鑫科技"
+    },
+    {
+      "code": "bj.920932",
+      "raw_code": "920932",
+      "name": "科达自控"
+    },
+    {
+      "code": "sh.600850",
+      "raw_code": "600850",
+      "name": "电科数字"
+    },
+    {
+      "code": "sh.603039",
+      "raw_code": "603039",
+      "name": "泛微网络"
+    },
+    {
+      "code": "sh.603108",
+      "raw_code": "603108",
+      "name": "润达医疗"
+    },
+    {
+      "code": "sh.603636",
+      "raw_code": "603636",
+      "name": "南威软件"
+    },
+    {
+      "code": "sh.688609",
+      "raw_code": "688609",
+      "name": "九联科技"
+    },
+    {
+      "code": "sh.688621",
+      "raw_code": "688621",
+      "name": "阳光诺和"
+    },
+    {
+      "code": "sz.000158",
+      "raw_code": "000158",
+      "name": "常山北明"
+    },
+    {
+      "code": "sz.000409",
+      "raw_code": "000409",
+      "name": "云鼎科技"
+    },
+    {
+      "code": "sz.002261",
+      "raw_code": "002261",
+      "name": "拓维信息"
+    },
+    {
+      "code": "sz.002649",
+      "raw_code": "002649",
+      "name": "博彦科技"
+    },
+    {
+      "code": "sz.002803",
+      "raw_code": "002803",
+      "name": "吉宏股份"
+    },
+    {
+      "code": "sz.300168",
+      "raw_code": "300168",
+      "name": "万达信息"
+    },
+    {
+      "code": "sz.300182",
+      "raw_code": "300182",
+      "name": "捷成股份"
+    },
+    {
+      "code": "sz.300229",
+      "raw_code": "300229",
+      "name": "拓尔思"
+    },
+    {
+      "code": "sz.300248",
+      "raw_code": "300248",
+      "name": "新开普"
+    },
+    {
+      "code": "sz.300275",
+      "raw_code": "300275",
+      "name": "梅安森"
+    },
+    {
+      "code": "sz.300352",
+      "raw_code": "300352",
+      "name": "ST信源"
+    },
+    {
+      "code": "sz.300366",
+      "raw_code": "300366",
+      "name": "ST创意"
+    },
+    {
+      "code": "sz.300541",
+      "raw_code": "300541",
+      "name": "先进数通"
+    },
+    {
+      "code": "sz.300592",
+      "raw_code": "300592",
+      "name": "华凯易佰"
+    },
+    {
+      "code": "sz.300663",
+      "raw_code": "300663",
+      "name": "科蓝软件"
+    },
+    {
+      "code": "sz.300687",
+      "raw_code": "300687",
+      "name": "赛意信息"
+    },
+    {
+      "code": "sz.300840",
+      "raw_code": "300840",
+      "name": "酷特智能"
+    },
+    {
+      "code": "sz.300925",
+      "raw_code": "300925",
+      "name": "法本信息"
+    },
+    {
+      "code": "sz.301157",
+      "raw_code": "301157",
+      "name": "华塑科技"
+    },
+    {
+      "code": "sz.301171",
+      "raw_code": "301171",
+      "name": "易点天下"
+    },
+    {
+      "code": "sz.301236",
+      "raw_code": "301236",
+      "name": "软通动力"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:27",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309170/"
+  "fetched_at": "2026-07-13 17:05:07",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

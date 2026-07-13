@@ -3,10 +3,157 @@
   "concept_name": "深圳国企改革",
   "first_trade_date": "2015-09-11",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 29,
+  "constituents": [
+    {
+      "code": "sh.600548",
+      "raw_code": "600548",
+      "name": "深高速"
+    },
+    {
+      "code": "sh.601139",
+      "raw_code": "601139",
+      "name": "深圳燃气"
+    },
+    {
+      "code": "sz.000006",
+      "raw_code": "000006",
+      "name": "深振业A"
+    },
+    {
+      "code": "sz.000011",
+      "raw_code": "000011",
+      "name": "深物业A"
+    },
+    {
+      "code": "sz.000014",
+      "raw_code": "000014",
+      "name": "沙河股份"
+    },
+    {
+      "code": "sz.000019",
+      "raw_code": "000019",
+      "name": "深粮控股"
+    },
+    {
+      "code": "sz.000025",
+      "raw_code": "000025",
+      "name": "特力A"
+    },
+    {
+      "code": "sz.000027",
+      "raw_code": "000027",
+      "name": "深圳能源"
+    },
+    {
+      "code": "sz.000029",
+      "raw_code": "000029",
+      "name": "深深房A"
+    },
+    {
+      "code": "sz.000045",
+      "raw_code": "000045",
+      "name": "深纺织A"
+    },
+    {
+      "code": "sz.000058",
+      "raw_code": "000058",
+      "name": "深赛格"
+    },
+    {
+      "code": "sz.000061",
+      "raw_code": "000061",
+      "name": "农产品"
+    },
+    {
+      "code": "sz.000070",
+      "raw_code": "000070",
+      "name": "特发信息"
+    },
+    {
+      "code": "sz.000088",
+      "raw_code": "000088",
+      "name": "盐田港"
+    },
+    {
+      "code": "sz.000089",
+      "raw_code": "000089",
+      "name": "深圳机场"
+    },
+    {
+      "code": "sz.000090",
+      "raw_code": "000090",
+      "name": "天健集团"
+    },
+    {
+      "code": "sz.000829",
+      "raw_code": "000829",
+      "name": "天音控股"
+    },
+    {
+      "code": "sz.002183",
+      "raw_code": "002183",
+      "name": "怡亚通"
+    },
+    {
+      "code": "sz.002243",
+      "raw_code": "002243",
+      "name": "力合科创"
+    },
+    {
+      "code": "sz.002429",
+      "raw_code": "002429",
+      "name": "兆驰股份"
+    },
+    {
+      "code": "sz.002482",
+      "raw_code": "002482",
+      "name": "广田集团"
+    },
+    {
+      "code": "sz.002528",
+      "raw_code": "002528",
+      "name": "*ST英飞"
+    },
+    {
+      "code": "sz.002736",
+      "raw_code": "002736",
+      "name": "国信证券"
+    },
+    {
+      "code": "sz.002912",
+      "raw_code": "002912",
+      "name": "中新赛克"
+    },
+    {
+      "code": "sz.300319",
+      "raw_code": "300319",
+      "name": "麦捷科技"
+    },
+    {
+      "code": "sz.300675",
+      "raw_code": "300675",
+      "name": "建科院"
+    },
+    {
+      "code": "sz.300917",
+      "raw_code": "300917",
+      "name": "特发服务"
+    },
+    {
+      "code": "sz.301038",
+      "raw_code": "301038",
+      "name": "深水规院"
+    },
+    {
+      "code": "sz.301091",
+      "raw_code": "301091",
+      "name": "深城交"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:43",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301171/"
+  "fetched_at": "2026-07-13 16:46:02",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

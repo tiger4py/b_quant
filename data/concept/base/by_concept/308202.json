@@ -3,10 +3,142 @@
   "concept_name": "环氧丙烷",
   "first_trade_date": "2020-08-13",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 26,
+  "constituents": [
+    {
+      "code": "bj.920099",
+      "raw_code": "920099",
+      "name": "瑞华技术"
+    },
+    {
+      "code": "bj.920261",
+      "raw_code": "920261",
+      "name": "一诺威"
+    },
+    {
+      "code": "bj.920471",
+      "raw_code": "920471",
+      "name": "美邦科技"
+    },
+    {
+      "code": "bj.920832",
+      "raw_code": "920832",
+      "name": "齐鲁华信"
+    },
+    {
+      "code": "sh.600308",
+      "raw_code": "600308",
+      "name": "华泰股份"
+    },
+    {
+      "code": "sh.600309",
+      "raw_code": "600309",
+      "name": "万华化学"
+    },
+    {
+      "code": "sh.600500",
+      "raw_code": "600500",
+      "name": "中化国际"
+    },
+    {
+      "code": "sh.600618",
+      "raw_code": "600618",
+      "name": "氯碱化工"
+    },
+    {
+      "code": "sh.600800",
+      "raw_code": "600800",
+      "name": "渤海化学"
+    },
+    {
+      "code": "sh.600955",
+      "raw_code": "600955",
+      "name": "维远股份"
+    },
+    {
+      "code": "sh.601117",
+      "raw_code": "601117",
+      "name": "中国化学"
+    },
+    {
+      "code": "sh.601678",
+      "raw_code": "601678",
+      "name": "滨化股份"
+    },
+    {
+      "code": "sh.603026",
+      "raw_code": "603026",
+      "name": "石大胜华"
+    },
+    {
+      "code": "sh.603120",
+      "raw_code": "603120",
+      "name": "肯特催化"
+    },
+    {
+      "code": "sh.605020",
+      "raw_code": "605020",
+      "name": "永和股份"
+    },
+    {
+      "code": "sh.688267",
+      "raw_code": "688267",
+      "name": "中触媒"
+    },
+    {
+      "code": "sz.000301",
+      "raw_code": "000301",
+      "name": "东方盛虹"
+    },
+    {
+      "code": "sz.000818",
+      "raw_code": "000818",
+      "name": "航锦科技"
+    },
+    {
+      "code": "sz.002165",
+      "raw_code": "002165",
+      "name": "红宝丽"
+    },
+    {
+      "code": "sz.002408",
+      "raw_code": "002408",
+      "name": "齐翔腾达"
+    },
+    {
+      "code": "sz.002648",
+      "raw_code": "002648",
+      "name": "卫星化学"
+    },
+    {
+      "code": "sz.002768",
+      "raw_code": "002768",
+      "name": "国恩股份"
+    },
+    {
+      "code": "sz.002809",
+      "raw_code": "002809",
+      "name": "红墙股份"
+    },
+    {
+      "code": "sz.003022",
+      "raw_code": "003022",
+      "name": "联泓新科"
+    },
+    {
+      "code": "sz.300721",
+      "raw_code": "300721",
+      "name": "怡达股份"
+    },
+    {
+      "code": "sz.301601",
+      "raw_code": "301601",
+      "name": "惠通科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:24",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308202/"
+  "fetched_at": "2026-07-13 16:58:03",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

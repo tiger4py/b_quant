@@ -3,10 +3,267 @@
   "concept_name": "知识产权保护",
   "first_trade_date": "2018-04-10",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 51,
+  "constituents": [
+    {
+      "code": "bj.920021",
+      "raw_code": "920021",
+      "name": "流金科技"
+    },
+    {
+      "code": "bj.920932",
+      "raw_code": "920932",
+      "name": "科达自控"
+    },
+    {
+      "code": "sh.600128",
+      "raw_code": "600128",
+      "name": "苏豪弘业"
+    },
+    {
+      "code": "sh.600208",
+      "raw_code": "600208",
+      "name": "衢州发展"
+    },
+    {
+      "code": "sh.600556",
+      "raw_code": "600556",
+      "name": "天下秀"
+    },
+    {
+      "code": "sh.600757",
+      "raw_code": "600757",
+      "name": "长江传媒"
+    },
+    {
+      "code": "sh.600818",
+      "raw_code": "600818",
+      "name": "ST中路"
+    },
+    {
+      "code": "sh.600831",
+      "raw_code": "600831",
+      "name": "广电网络"
+    },
+    {
+      "code": "sh.600880",
+      "raw_code": "600880",
+      "name": "博瑞传播"
+    },
+    {
+      "code": "sh.601811",
+      "raw_code": "601811",
+      "name": "新华文轩"
+    },
+    {
+      "code": "sh.601858",
+      "raw_code": "601858",
+      "name": "中国科传"
+    },
+    {
+      "code": "sh.601949",
+      "raw_code": "601949",
+      "name": "中国出版"
+    },
+    {
+      "code": "sh.601999",
+      "raw_code": "601999",
+      "name": "出版传媒"
+    },
+    {
+      "code": "sh.603000",
+      "raw_code": "603000",
+      "name": "人民网"
+    },
+    {
+      "code": "sh.603096",
+      "raw_code": "603096",
+      "name": "新经典"
+    },
+    {
+      "code": "sh.603533",
+      "raw_code": "603533",
+      "name": "掌阅科技"
+    },
+    {
+      "code": "sh.603590",
+      "raw_code": "603590",
+      "name": "康辰药业"
+    },
+    {
+      "code": "sh.603607",
+      "raw_code": "603607",
+      "name": "京华激光"
+    },
+    {
+      "code": "sh.603721",
+      "raw_code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "code": "sh.603888",
+      "raw_code": "603888",
+      "name": "新华网"
+    },
+    {
+      "code": "sh.603999",
+      "raw_code": "603999",
+      "name": "读者传媒"
+    },
+    {
+      "code": "sh.688228",
+      "raw_code": "688228",
+      "name": "开普云"
+    },
+    {
+      "code": "sz.000607",
+      "raw_code": "000607",
+      "name": "华媒控股"
+    },
+    {
+      "code": "sz.000681",
+      "raw_code": "000681",
+      "name": "视觉中国"
+    },
+    {
+      "code": "sz.000719",
+      "raw_code": "000719",
+      "name": "中原传媒"
+    },
+    {
+      "code": "sz.000948",
+      "raw_code": "000948",
+      "name": "南天信息"
+    },
+    {
+      "code": "sz.002073",
+      "raw_code": "002073",
+      "name": "软控股份"
+    },
+    {
+      "code": "sz.002117",
+      "raw_code": "002117",
+      "name": "东港股份"
+    },
+    {
+      "code": "sz.002235",
+      "raw_code": "002235",
+      "name": "安妮股份"
+    },
+    {
+      "code": "sz.002660",
+      "raw_code": "002660",
+      "name": "茂硕电源"
+    },
+    {
+      "code": "sz.002712",
+      "raw_code": "002712",
+      "name": "思美传媒"
+    },
+    {
+      "code": "sz.002987",
+      "raw_code": "002987",
+      "name": "京北方"
+    },
+    {
+      "code": "sz.300006",
+      "raw_code": "300006",
+      "name": "莱美药业"
+    },
+    {
+      "code": "sz.300042",
+      "raw_code": "300042",
+      "name": "朗科科技"
+    },
+    {
+      "code": "sz.300077",
+      "raw_code": "300077",
+      "name": "国民技术"
+    },
+    {
+      "code": "sz.300079",
+      "raw_code": "300079",
+      "name": "数码视讯"
+    },
+    {
+      "code": "sz.300133",
+      "raw_code": "300133",
+      "name": "华策影视"
+    },
+    {
+      "code": "sz.300183",
+      "raw_code": "300183",
+      "name": "东软载波"
+    },
+    {
+      "code": "sz.300188",
+      "raw_code": "300188",
+      "name": "国投智能"
+    },
+    {
+      "code": "sz.300229",
+      "raw_code": "300229",
+      "name": "拓尔思"
+    },
+    {
+      "code": "sz.300364",
+      "raw_code": "300364",
+      "name": "中文在线"
+    },
+    {
+      "code": "sz.300386",
+      "raw_code": "300386",
+      "name": "飞天诚信"
+    },
+    {
+      "code": "sz.300449",
+      "raw_code": "300449",
+      "name": "汉邦高科"
+    },
+    {
+      "code": "sz.300459",
+      "raw_code": "300459",
+      "name": "汤姆猫"
+    },
+    {
+      "code": "sz.300579",
+      "raw_code": "300579",
+      "name": "数字认证"
+    },
+    {
+      "code": "sz.300688",
+      "raw_code": "300688",
+      "name": "创业黑马"
+    },
+    {
+      "code": "sz.300770",
+      "raw_code": "300770",
+      "name": "新媒股份"
+    },
+    {
+      "code": "sz.300788",
+      "raw_code": "300788",
+      "name": "中信出版"
+    },
+    {
+      "code": "sz.301025",
+      "raw_code": "301025",
+      "name": "读客文化"
+    },
+    {
+      "code": "sz.301270",
+      "raw_code": "301270",
+      "name": "汉仪股份"
+    },
+    {
+      "code": "sz.301558",
+      "raw_code": "301558",
+      "name": "三态股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:23",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308172/"
+  "fetched_at": "2026-07-13 16:58:03",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

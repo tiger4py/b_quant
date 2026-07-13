@@ -3,10 +3,62 @@
   "concept_name": "中船系",
   "first_trade_date": "2019-07-03",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 10,
+  "constituents": [
+    {
+      "code": "sh.600072",
+      "raw_code": "600072",
+      "name": "中船科技"
+    },
+    {
+      "code": "sh.600150",
+      "raw_code": "600150",
+      "name": "中国船舶"
+    },
+    {
+      "code": "sh.600482",
+      "raw_code": "600482",
+      "name": "中国动力"
+    },
+    {
+      "code": "sh.600685",
+      "raw_code": "600685",
+      "name": "中船防务"
+    },
+    {
+      "code": "sh.600764",
+      "raw_code": "600764",
+      "name": "中国海防"
+    },
+    {
+      "code": "sh.688146",
+      "raw_code": "688146",
+      "name": "中船特气"
+    },
+    {
+      "code": "sz.300516",
+      "raw_code": "300516",
+      "name": "久之洋"
+    },
+    {
+      "code": "sz.300527",
+      "raw_code": "300527",
+      "name": "ST应急"
+    },
+    {
+      "code": "sz.300847",
+      "raw_code": "300847",
+      "name": "中船汉光"
+    },
+    {
+      "code": "sz.301311",
+      "raw_code": "301311",
+      "name": "昆船智能"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:07",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301713/"
+  "fetched_at": "2026-07-13 16:54:54",
+  "page_count": 1,
+  "is_partial": false,
+  "page_limit_reason": null
 }

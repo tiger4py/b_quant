@@ -3,10 +3,192 @@
   "concept_name": "F5G概念",
   "first_trade_date": "2022-06-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 36,
+  "constituents": [
+    {
+      "code": "sh.600018",
+      "raw_code": "600018",
+      "name": "上港集团"
+    },
+    {
+      "code": "sh.600487",
+      "raw_code": "600487",
+      "name": "亨通光电"
+    },
+    {
+      "code": "sh.600498",
+      "raw_code": "600498",
+      "name": "烽火通信"
+    },
+    {
+      "code": "sh.600582",
+      "raw_code": "600582",
+      "name": "天地科技"
+    },
+    {
+      "code": "sh.601608",
+      "raw_code": "601608",
+      "name": "中信重工"
+    },
+    {
+      "code": "sh.603042",
+      "raw_code": "603042",
+      "name": "华脉科技"
+    },
+    {
+      "code": "sh.603083",
+      "raw_code": "603083",
+      "name": "剑桥科技"
+    },
+    {
+      "code": "sh.603118",
+      "raw_code": "603118",
+      "name": "共进股份"
+    },
+    {
+      "code": "sh.603220",
+      "raw_code": "603220",
+      "name": "中贝通信"
+    },
+    {
+      "code": "sh.603803",
+      "raw_code": "603803",
+      "name": "瑞斯康达"
+    },
+    {
+      "code": "sh.603890",
+      "raw_code": "603890",
+      "name": "春秋电子"
+    },
+    {
+      "code": "sh.605277",
+      "raw_code": "605277",
+      "name": "新亚电子"
+    },
+    {
+      "code": "sh.688107",
+      "raw_code": "688107",
+      "name": "安路科技"
+    },
+    {
+      "code": "sh.688205",
+      "raw_code": "688205",
+      "name": "德科立"
+    },
+    {
+      "code": "sh.688313",
+      "raw_code": "688313",
+      "name": "仕佳光子"
+    },
+    {
+      "code": "sh.688418",
+      "raw_code": "688418",
+      "name": "震有科技"
+    },
+    {
+      "code": "sz.000070",
+      "raw_code": "000070",
+      "name": "特发信息"
+    },
+    {
+      "code": "sz.000810",
+      "raw_code": "000810",
+      "name": "创维数字"
+    },
+    {
+      "code": "sz.000988",
+      "raw_code": "000988",
+      "name": "华工科技"
+    },
+    {
+      "code": "sz.002281",
+      "raw_code": "002281",
+      "name": "光迅科技"
+    },
+    {
+      "code": "sz.002396",
+      "raw_code": "002396",
+      "name": "星网锐捷"
+    },
+    {
+      "code": "sz.002429",
+      "raw_code": "002429",
+      "name": "兆驰股份"
+    },
+    {
+      "code": "sz.002792",
+      "raw_code": "002792",
+      "name": "通宇通讯"
+    },
+    {
+      "code": "sz.002897",
+      "raw_code": "002897",
+      "name": "意华股份"
+    },
+    {
+      "code": "sz.002902",
+      "raw_code": "002902",
+      "name": "铭普光磁"
+    },
+    {
+      "code": "sz.300250",
+      "raw_code": "300250",
+      "name": "初灵信息"
+    },
+    {
+      "code": "sz.300252",
+      "raw_code": "300252",
+      "name": "金信诺"
+    },
+    {
+      "code": "sz.300275",
+      "raw_code": "300275",
+      "name": "梅安森"
+    },
+    {
+      "code": "sz.300308",
+      "raw_code": "300308",
+      "name": "中际旭创"
+    },
+    {
+      "code": "sz.300504",
+      "raw_code": "300504",
+      "name": "天邑股份"
+    },
+    {
+      "code": "sz.300548",
+      "raw_code": "300548",
+      "name": "长芯博创"
+    },
+    {
+      "code": "sz.300570",
+      "raw_code": "300570",
+      "name": "太辰光"
+    },
+    {
+      "code": "sz.300571",
+      "raw_code": "300571",
+      "name": "平治信息"
+    },
+    {
+      "code": "sz.301183",
+      "raw_code": "301183",
+      "name": "东田微"
+    },
+    {
+      "code": "sz.301191",
+      "raw_code": "301191",
+      "name": "菲菱科思"
+    },
+    {
+      "code": "sz.301314",
+      "raw_code": "301314",
+      "name": "科瑞思"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:02",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308977/"
+  "fetched_at": "2026-07-13 17:02:21",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,132 @@
   "concept_name": "血氧仪",
   "first_trade_date": "2022-12-27",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 24,
+  "constituents": [
+    {
+      "code": "sh.600839",
+      "raw_code": "600839",
+      "name": "四川长虹"
+    },
+    {
+      "code": "sh.688130",
+      "raw_code": "688130",
+      "name": "晶华微"
+    },
+    {
+      "code": "sz.000521",
+      "raw_code": "000521",
+      "name": "长虹美菱"
+    },
+    {
+      "code": "sz.002223",
+      "raw_code": "002223",
+      "name": "鱼跃医疗"
+    },
+    {
+      "code": "sz.002432",
+      "raw_code": "002432",
+      "name": "九安医疗"
+    },
+    {
+      "code": "sz.002449",
+      "raw_code": "002449",
+      "name": "国星光电"
+    },
+    {
+      "code": "sz.002614",
+      "raw_code": "002614",
+      "name": "奥佳华"
+    },
+    {
+      "code": "sz.002681",
+      "raw_code": "002681",
+      "name": "奋达科技"
+    },
+    {
+      "code": "sz.002980",
+      "raw_code": "002980",
+      "name": "华盛昌"
+    },
+    {
+      "code": "sz.300003",
+      "raw_code": "300003",
+      "name": "乐普医疗"
+    },
+    {
+      "code": "sz.300018",
+      "raw_code": "300018",
+      "name": "中元股份"
+    },
+    {
+      "code": "sz.300026",
+      "raw_code": "300026",
+      "name": "红日药业"
+    },
+    {
+      "code": "sz.300206",
+      "raw_code": "300206",
+      "name": "理邦仪器"
+    },
+    {
+      "code": "sz.300211",
+      "raw_code": "300211",
+      "name": "*ST亿通"
+    },
+    {
+      "code": "sz.300246",
+      "raw_code": "300246",
+      "name": "宝莱特"
+    },
+    {
+      "code": "sz.300314",
+      "raw_code": "300314",
+      "name": "戴维医疗"
+    },
+    {
+      "code": "sz.300562",
+      "raw_code": "300562",
+      "name": "乐心医疗"
+    },
+    {
+      "code": "sz.300753",
+      "raw_code": "300753",
+      "name": "爱朋医疗"
+    },
+    {
+      "code": "sz.300793",
+      "raw_code": "300793",
+      "name": "佳禾智能"
+    },
+    {
+      "code": "sz.300869",
+      "raw_code": "300869",
+      "name": "康泰医学"
+    },
+    {
+      "code": "sz.300903",
+      "raw_code": "300903",
+      "name": "科翔股份"
+    },
+    {
+      "code": "sz.301087",
+      "raw_code": "301087",
+      "name": "可孚医疗"
+    },
+    {
+      "code": "sz.301290",
+      "raw_code": "301290",
+      "name": "东星医疗"
+    },
+    {
+      "code": "sz.301552",
+      "raw_code": "301552",
+      "name": "科力装备"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:07",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309042/"
+  "fetched_at": "2026-07-13 17:03:11",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

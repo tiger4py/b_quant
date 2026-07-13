@@ -3,10 +3,242 @@
   "concept_name": "华为数字能源",
   "first_trade_date": "2024-11-19",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 46,
+  "constituents": [
+    {
+      "code": "bj.920556",
+      "raw_code": "920556",
+      "name": "雅达股份"
+    },
+    {
+      "code": "sh.600237",
+      "raw_code": "600237",
+      "name": "铜峰电子"
+    },
+    {
+      "code": "sh.600523",
+      "raw_code": "600523",
+      "name": "贵航股份"
+    },
+    {
+      "code": "sh.600710",
+      "raw_code": "600710",
+      "name": "苏美达"
+    },
+    {
+      "code": "sh.600736",
+      "raw_code": "600736",
+      "name": "苏州高新"
+    },
+    {
+      "code": "sh.600755",
+      "raw_code": "600755",
+      "name": "厦门国贸"
+    },
+    {
+      "code": "sh.600821",
+      "raw_code": "600821",
+      "name": "金开新能"
+    },
+    {
+      "code": "sh.600839",
+      "raw_code": "600839",
+      "name": "四川长虹"
+    },
+    {
+      "code": "sh.600982",
+      "raw_code": "600982",
+      "name": "宁波能源"
+    },
+    {
+      "code": "sh.601139",
+      "raw_code": "601139",
+      "name": "深圳燃气"
+    },
+    {
+      "code": "sh.601222",
+      "raw_code": "601222",
+      "name": "林洋能源"
+    },
+    {
+      "code": "sh.603066",
+      "raw_code": "603066",
+      "name": "音飞储存"
+    },
+    {
+      "code": "sh.603228",
+      "raw_code": "603228",
+      "name": "景旺电子"
+    },
+    {
+      "code": "sh.603353",
+      "raw_code": "603353",
+      "name": "和顺石油"
+    },
+    {
+      "code": "sh.603679",
+      "raw_code": "603679",
+      "name": "华体科技"
+    },
+    {
+      "code": "sh.603861",
+      "raw_code": "603861",
+      "name": "白云电器"
+    },
+    {
+      "code": "sh.688100",
+      "raw_code": "688100",
+      "name": "威胜信息"
+    },
+    {
+      "code": "sh.688411",
+      "raw_code": "688411",
+      "name": "海博思创"
+    },
+    {
+      "code": "sh.688418",
+      "raw_code": "688418",
+      "name": "震有科技"
+    },
+    {
+      "code": "sh.688499",
+      "raw_code": "688499",
+      "name": "利元亨"
+    },
+    {
+      "code": "sh.688663",
+      "raw_code": "688663",
+      "name": "新风光"
+    },
+    {
+      "code": "sz.002015",
+      "raw_code": "002015",
+      "name": "协鑫能科"
+    },
+    {
+      "code": "sz.002056",
+      "raw_code": "002056",
+      "name": "横店东磁"
+    },
+    {
+      "code": "sz.002065",
+      "raw_code": "002065",
+      "name": "东华软件"
+    },
+    {
+      "code": "sz.002506",
+      "raw_code": "002506",
+      "name": "协鑫集成"
+    },
+    {
+      "code": "sz.002514",
+      "raw_code": "002514",
+      "name": "*ST宝馨"
+    },
+    {
+      "code": "sz.002642",
+      "raw_code": "002642",
+      "name": "荣联科技"
+    },
+    {
+      "code": "sz.002913",
+      "raw_code": "002913",
+      "name": "奥士康"
+    },
+    {
+      "code": "sz.002922",
+      "raw_code": "002922",
+      "name": "伊戈尔"
+    },
+    {
+      "code": "sz.002929",
+      "raw_code": "002929",
+      "name": "润建股份"
+    },
+    {
+      "code": "sz.002965",
+      "raw_code": "002965",
+      "name": "祥鑫科技"
+    },
+    {
+      "code": "sz.003035",
+      "raw_code": "003035",
+      "name": "南网能源"
+    },
+    {
+      "code": "sz.300068",
+      "raw_code": "300068",
+      "name": "ST南都"
+    },
+    {
+      "code": "sz.300212",
+      "raw_code": "300212",
+      "name": "*ST易录"
+    },
+    {
+      "code": "sz.300249",
+      "raw_code": "300249",
+      "name": "依米康"
+    },
+    {
+      "code": "sz.300339",
+      "raw_code": "300339",
+      "name": "润和软件"
+    },
+    {
+      "code": "sz.300365",
+      "raw_code": "300365",
+      "name": "恒华科技"
+    },
+    {
+      "code": "sz.300366",
+      "raw_code": "300366",
+      "name": "ST创意"
+    },
+    {
+      "code": "sz.300444",
+      "raw_code": "300444",
+      "name": "双杰电气"
+    },
+    {
+      "code": "sz.300513",
+      "raw_code": "300513",
+      "name": "恒实科技"
+    },
+    {
+      "code": "sz.300814",
+      "raw_code": "300814",
+      "name": "中富电路"
+    },
+    {
+      "code": "sz.301013",
+      "raw_code": "301013",
+      "name": "利和兴"
+    },
+    {
+      "code": "sz.301086",
+      "raw_code": "301086",
+      "name": "鸿富瀚"
+    },
+    {
+      "code": "sz.301128",
+      "raw_code": "301128",
+      "name": "强瑞技术"
+    },
+    {
+      "code": "sz.301248",
+      "raw_code": "301248",
+      "name": "杰创智能"
+    },
+    {
+      "code": "sz.301511",
+      "raw_code": "301511",
+      "name": "德福科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:27",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309169/"
+  "fetched_at": "2026-07-13 17:05:06",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

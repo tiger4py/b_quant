@@ -3,10 +3,127 @@
   "concept_name": "代糖概念",
   "first_trade_date": "2020-08-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 23,
+  "constituents": [
+    {
+      "code": "sh.600108",
+      "raw_code": "600108",
+      "name": "亚盛集团"
+    },
+    {
+      "code": "sh.600191",
+      "raw_code": "600191",
+      "name": "华资实业"
+    },
+    {
+      "code": "sh.600500",
+      "raw_code": "600500",
+      "name": "中化国际"
+    },
+    {
+      "code": "sh.600783",
+      "raw_code": "600783",
+      "name": "鲁信创投"
+    },
+    {
+      "code": "sh.600866",
+      "raw_code": "600866",
+      "name": "星湖科技"
+    },
+    {
+      "code": "sh.600873",
+      "raw_code": "600873",
+      "name": "梅花生物"
+    },
+    {
+      "code": "sh.603739",
+      "raw_code": "603739",
+      "name": "蔚蓝生物"
+    },
+    {
+      "code": "sh.603968",
+      "raw_code": "603968",
+      "name": "醋化股份"
+    },
+    {
+      "code": "sh.605016",
+      "raw_code": "605016",
+      "name": "百龙创园"
+    },
+    {
+      "code": "sh.605077",
+      "raw_code": "605077",
+      "name": "华康股份"
+    },
+    {
+      "code": "sh.605300",
+      "raw_code": "605300",
+      "name": "佳禾食品"
+    },
+    {
+      "code": "sh.605589",
+      "raw_code": "605589",
+      "name": "圣泉集团"
+    },
+    {
+      "code": "sh.688101",
+      "raw_code": "688101",
+      "name": "三达膜"
+    },
+    {
+      "code": "sz.000153",
+      "raw_code": "000153",
+      "name": "丰原药业"
+    },
+    {
+      "code": "sz.000523",
+      "raw_code": "000523",
+      "name": "红棉股份"
+    },
+    {
+      "code": "sz.000930",
+      "raw_code": "000930",
+      "name": "中粮科技"
+    },
+    {
+      "code": "sz.002078",
+      "raw_code": "002078",
+      "name": "太阳纸业"
+    },
+    {
+      "code": "sz.002166",
+      "raw_code": "002166",
+      "name": "莱茵生物"
+    },
+    {
+      "code": "sz.002286",
+      "raw_code": "002286",
+      "name": "保龄宝"
+    },
+    {
+      "code": "sz.002597",
+      "raw_code": "002597",
+      "name": "金禾实业"
+    },
+    {
+      "code": "sz.002688",
+      "raw_code": "002688",
+      "name": "金河生物"
+    },
+    {
+      "code": "sz.300138",
+      "raw_code": "300138",
+      "name": "晨光生物"
+    },
+    {
+      "code": "sz.301206",
+      "raw_code": "301206",
+      "name": "三元生物"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:39",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308696/"
+  "fetched_at": "2026-07-13 16:59:29",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

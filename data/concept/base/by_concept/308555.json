@@ -3,10 +3,222 @@
   "concept_name": "ETC",
   "first_trade_date": "2019-07-08",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 42,
+  "constituents": [
+    {
+      "code": "bj.920806",
+      "raw_code": "920806",
+      "name": "云星宇"
+    },
+    {
+      "code": "sh.600035",
+      "raw_code": "600035",
+      "name": "楚天高速"
+    },
+    {
+      "code": "sh.600106",
+      "raw_code": "600106",
+      "name": "重庆路桥"
+    },
+    {
+      "code": "sh.600271",
+      "raw_code": "600271",
+      "name": "航天信息"
+    },
+    {
+      "code": "sh.600855",
+      "raw_code": "600855",
+      "name": "航天长峰"
+    },
+    {
+      "code": "sh.601801",
+      "raw_code": "601801",
+      "name": "皖新传媒"
+    },
+    {
+      "code": "sh.603068",
+      "raw_code": "603068",
+      "name": "博通集成"
+    },
+    {
+      "code": "sh.603458",
+      "raw_code": "603458",
+      "name": "勘设股份"
+    },
+    {
+      "code": "sh.603869",
+      "raw_code": "603869",
+      "name": "ST智知"
+    },
+    {
+      "code": "sz.000948",
+      "raw_code": "000948",
+      "name": "南天信息"
+    },
+    {
+      "code": "sz.000997",
+      "raw_code": "000997",
+      "name": "新大陆"
+    },
+    {
+      "code": "sz.001339",
+      "raw_code": "001339",
+      "name": "智微智能"
+    },
+    {
+      "code": "sz.002049",
+      "raw_code": "002049",
+      "name": "紫光国微"
+    },
+    {
+      "code": "sz.002104",
+      "raw_code": "002104",
+      "name": "恒宝股份"
+    },
+    {
+      "code": "sz.002161",
+      "raw_code": "002161",
+      "name": "远望谷"
+    },
+    {
+      "code": "sz.002217",
+      "raw_code": "002217",
+      "name": "ST合力泰"
+    },
+    {
+      "code": "sz.002316",
+      "raw_code": "002316",
+      "name": "亚联发展"
+    },
+    {
+      "code": "sz.002331",
+      "raw_code": "002331",
+      "name": "皖通科技"
+    },
+    {
+      "code": "sz.002373",
+      "raw_code": "002373",
+      "name": "千方科技"
+    },
+    {
+      "code": "sz.002401",
+      "raw_code": "002401",
+      "name": "中远海科"
+    },
+    {
+      "code": "sz.002654",
+      "raw_code": "002654",
+      "name": "万润科技"
+    },
+    {
+      "code": "sz.002682",
+      "raw_code": "002682",
+      "name": "龙洲股份"
+    },
+    {
+      "code": "sz.002860",
+      "raw_code": "002860",
+      "name": "星帅尔"
+    },
+    {
+      "code": "sz.002869",
+      "raw_code": "002869",
+      "name": "金溢科技"
+    },
+    {
+      "code": "sz.002941",
+      "raw_code": "002941",
+      "name": "新疆交建"
+    },
+    {
+      "code": "sz.003040",
+      "raw_code": "003040",
+      "name": "楚天龙"
+    },
+    {
+      "code": "sz.300020",
+      "raw_code": "300020",
+      "name": "ST银江"
+    },
+    {
+      "code": "sz.300075",
+      "raw_code": "300075",
+      "name": "数字政通"
+    },
+    {
+      "code": "sz.300079",
+      "raw_code": "300079",
+      "name": "数码视讯"
+    },
+    {
+      "code": "sz.300184",
+      "raw_code": "300184",
+      "name": "力源信息"
+    },
+    {
+      "code": "sz.300205",
+      "raw_code": "300205",
+      "name": "*ST天喻"
+    },
+    {
+      "code": "sz.300376",
+      "raw_code": "300376",
+      "name": "易事特"
+    },
+    {
+      "code": "sz.300448",
+      "raw_code": "300448",
+      "name": "浩云科技"
+    },
+    {
+      "code": "sz.300462",
+      "raw_code": "300462",
+      "name": "ST华铭"
+    },
+    {
+      "code": "sz.300520",
+      "raw_code": "300520",
+      "name": "科大国创"
+    },
+    {
+      "code": "sz.300541",
+      "raw_code": "300541",
+      "name": "先进数通"
+    },
+    {
+      "code": "sz.300552",
+      "raw_code": "300552",
+      "name": "万集科技"
+    },
+    {
+      "code": "sz.300603",
+      "raw_code": "300603",
+      "name": "立昂技术"
+    },
+    {
+      "code": "sz.300717",
+      "raw_code": "300717",
+      "name": "华信新材"
+    },
+    {
+      "code": "sz.300768",
+      "raw_code": "300768",
+      "name": "迪普科技"
+    },
+    {
+      "code": "sz.301339",
+      "raw_code": "301339",
+      "name": "通行宝"
+    },
+    {
+      "code": "sz.301428",
+      "raw_code": "301428",
+      "name": "世纪恒通"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:32",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308555/"
+  "fetched_at": "2026-07-13 16:59:09",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

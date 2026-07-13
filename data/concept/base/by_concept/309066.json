@@ -3,10 +3,327 @@
   "concept_name": "空间计算",
   "first_trade_date": "2023-06-09",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 63,
+  "constituents": [
+    {
+      "code": "bj.920184",
+      "raw_code": "920184",
+      "name": "国源科技"
+    },
+    {
+      "code": "bj.920207",
+      "raw_code": "920207",
+      "name": "众诚科技"
+    },
+    {
+      "code": "bj.920564",
+      "raw_code": "920564",
+      "name": "天润科技"
+    },
+    {
+      "code": "sh.600640",
+      "raw_code": "600640",
+      "name": "国脉文化"
+    },
+    {
+      "code": "sh.600728",
+      "raw_code": "600728",
+      "name": "佳都科技"
+    },
+    {
+      "code": "sh.603017",
+      "raw_code": "603017",
+      "name": "中衡设计"
+    },
+    {
+      "code": "sh.603018",
+      "raw_code": "603018",
+      "name": "华设集团"
+    },
+    {
+      "code": "sh.603189",
+      "raw_code": "603189",
+      "name": "*ST网达"
+    },
+    {
+      "code": "sh.603341",
+      "raw_code": "603341",
+      "name": "龙旗科技"
+    },
+    {
+      "code": "sh.603357",
+      "raw_code": "603357",
+      "name": "设计总院"
+    },
+    {
+      "code": "sh.603466",
+      "raw_code": "603466",
+      "name": "风语筑"
+    },
+    {
+      "code": "sh.603956",
+      "raw_code": "603956",
+      "name": "威派格"
+    },
+    {
+      "code": "sh.605178",
+      "raw_code": "605178",
+      "name": "时空科技"
+    },
+    {
+      "code": "sh.605289",
+      "raw_code": "605289",
+      "name": "罗曼股份"
+    },
+    {
+      "code": "sh.688066",
+      "raw_code": "688066",
+      "name": "*ST航图"
+    },
+    {
+      "code": "sh.688088",
+      "raw_code": "688088",
+      "name": "虹软科技"
+    },
+    {
+      "code": "sh.688207",
+      "raw_code": "688207",
+      "name": "格灵深瞳"
+    },
+    {
+      "code": "sh.688225",
+      "raw_code": "688225",
+      "name": "亚信安全"
+    },
+    {
+      "code": "sh.688322",
+      "raw_code": "688322",
+      "name": "奥比中光"
+    },
+    {
+      "code": "sh.688400",
+      "raw_code": "688400",
+      "name": "凌云光"
+    },
+    {
+      "code": "sh.688509",
+      "raw_code": "688509",
+      "name": "正元地信"
+    },
+    {
+      "code": "sh.688568",
+      "raw_code": "688568",
+      "name": "中科星图"
+    },
+    {
+      "code": "sh.688583",
+      "raw_code": "688583",
+      "name": "思看科技"
+    },
+    {
+      "code": "sh.688597",
+      "raw_code": "688597",
+      "name": "煜邦电力"
+    },
+    {
+      "code": "sh.688651",
+      "raw_code": "688651",
+      "name": "盛邦安全"
+    },
+    {
+      "code": "sz.000002",
+      "raw_code": "000002",
+      "name": "万科A"
+    },
+    {
+      "code": "sz.000409",
+      "raw_code": "000409",
+      "name": "云鼎科技"
+    },
+    {
+      "code": "sz.000785",
+      "raw_code": "000785",
+      "name": "居然智家"
+    },
+    {
+      "code": "sz.000810",
+      "raw_code": "000810",
+      "name": "创维数字"
+    },
+    {
+      "code": "sz.000925",
+      "raw_code": "000925",
+      "name": "众合科技"
+    },
+    {
+      "code": "sz.001308",
+      "raw_code": "001308",
+      "name": "康冠科技"
+    },
+    {
+      "code": "sz.001314",
+      "raw_code": "001314",
+      "name": "亿道信息"
+    },
+    {
+      "code": "sz.002929",
+      "raw_code": "002929",
+      "name": "润建股份"
+    },
+    {
+      "code": "sz.300036",
+      "raw_code": "300036",
+      "name": "超图软件"
+    },
+    {
+      "code": "sz.300081",
+      "raw_code": "300081",
+      "name": "ST恒信"
+    },
+    {
+      "code": "sz.300134",
+      "raw_code": "300134",
+      "name": "大富科技"
+    },
+    {
+      "code": "sz.300232",
+      "raw_code": "300232",
+      "name": "洲明科技"
+    },
+    {
+      "code": "sz.300248",
+      "raw_code": "300248",
+      "name": "新开普"
+    },
+    {
+      "code": "sz.300264",
+      "raw_code": "300264",
+      "name": "佳创视讯"
+    },
+    {
+      "code": "sz.300284",
+      "raw_code": "300284",
+      "name": "苏交科"
+    },
+    {
+      "code": "sz.300296",
+      "raw_code": "300296",
+      "name": "利亚德"
+    },
+    {
+      "code": "sz.300365",
+      "raw_code": "300365",
+      "name": "恒华科技"
+    },
+    {
+      "code": "sz.300556",
+      "raw_code": "300556",
+      "name": "丝路视觉"
+    },
+    {
+      "code": "sz.300578",
+      "raw_code": "300578",
+      "name": "会畅科技"
+    },
+    {
+      "code": "sz.300616",
+      "raw_code": "300616",
+      "name": "尚品宅配"
+    },
+    {
+      "code": "sz.300766",
+      "raw_code": "300766",
+      "name": "每日互动"
+    },
+    {
+      "code": "sz.300793",
+      "raw_code": "300793",
+      "name": "佳禾智能"
+    },
+    {
+      "code": "sz.300826",
+      "raw_code": "300826",
+      "name": "测绘股份"
+    },
+    {
+      "code": "sz.300935",
+      "raw_code": "300935",
+      "name": "盈建科"
+    },
+    {
+      "code": "sz.300947",
+      "raw_code": "300947",
+      "name": "德必集团"
+    },
+    {
+      "code": "sz.300989",
+      "raw_code": "300989",
+      "name": "蕾奥规划"
+    },
+    {
+      "code": "sz.301027",
+      "raw_code": "301027",
+      "name": "华蓝集团"
+    },
+    {
+      "code": "sz.301172",
+      "raw_code": "301172",
+      "name": "君逸数码"
+    },
+    {
+      "code": "sz.301178",
+      "raw_code": "301178",
+      "name": "天亿马"
+    },
+    {
+      "code": "sz.301218",
+      "raw_code": "301218",
+      "name": "华是科技"
+    },
+    {
+      "code": "sz.301302",
+      "raw_code": "301302",
+      "name": "华如科技"
+    },
+    {
+      "code": "sz.301312",
+      "raw_code": "301312",
+      "name": "智立方"
+    },
+    {
+      "code": "sz.301313",
+      "raw_code": "301313",
+      "name": "凡拓数创"
+    },
+    {
+      "code": "sz.301330",
+      "raw_code": "301330",
+      "name": "熵基科技"
+    },
+    {
+      "code": "sz.301390",
+      "raw_code": "301390",
+      "name": "经纬股份"
+    },
+    {
+      "code": "sz.301396",
+      "raw_code": "301396",
+      "name": "宏景科技"
+    },
+    {
+      "code": "sz.301505",
+      "raw_code": "301505",
+      "name": "苏州规划"
+    },
+    {
+      "code": "sz.301512",
+      "raw_code": "301512",
+      "name": "智信精密"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:12",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309066/"
+  "fetched_at": "2026-07-13 17:03:36",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

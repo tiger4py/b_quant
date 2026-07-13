@@ -3,10 +3,162 @@
   "concept_name": "牙科医疗",
   "first_trade_date": "2021-06-22",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 30,
+  "constituents": [
+    {
+      "code": "sh.600206",
+      "raw_code": "600206",
+      "name": "有研新材"
+    },
+    {
+      "code": "sh.600645",
+      "raw_code": "600645",
+      "name": "中源协和"
+    },
+    {
+      "code": "sh.600763",
+      "raw_code": "600763",
+      "name": "通策医疗"
+    },
+    {
+      "code": "sh.603090",
+      "raw_code": "603090",
+      "name": "宏盛股份"
+    },
+    {
+      "code": "sh.603139",
+      "raw_code": "603139",
+      "name": "康惠股份"
+    },
+    {
+      "code": "sh.603407",
+      "raw_code": "603407",
+      "name": "长裕集团"
+    },
+    {
+      "code": "sh.603718",
+      "raw_code": "603718",
+      "name": "*ST海利"
+    },
+    {
+      "code": "sh.688236",
+      "raw_code": "688236",
+      "name": "春立医疗"
+    },
+    {
+      "code": "sh.688301",
+      "raw_code": "688301",
+      "name": "奕瑞科技"
+    },
+    {
+      "code": "sh.688314",
+      "raw_code": "688314",
+      "name": "康拓医疗"
+    },
+    {
+      "code": "sz.000718",
+      "raw_code": "000718",
+      "name": "苏宁环球"
+    },
+    {
+      "code": "sz.001216",
+      "raw_code": "001216",
+      "name": "华瓷股份"
+    },
+    {
+      "code": "sz.002044",
+      "raw_code": "002044",
+      "name": "美年健康"
+    },
+    {
+      "code": "sz.002162",
+      "raw_code": "002162",
+      "name": "悦心健康"
+    },
+    {
+      "code": "sz.002167",
+      "raw_code": "002167",
+      "name": "东方锆业"
+    },
+    {
+      "code": "sz.002390",
+      "raw_code": "002390",
+      "name": "信邦制药"
+    },
+    {
+      "code": "sz.002589",
+      "raw_code": "002589",
+      "name": "瑞康医药"
+    },
+    {
+      "code": "sz.002611",
+      "raw_code": "002611",
+      "name": "东方精工"
+    },
+    {
+      "code": "sz.002612",
+      "raw_code": "002612",
+      "name": "朗姿股份"
+    },
+    {
+      "code": "sz.002622",
+      "raw_code": "002622",
+      "name": "皓宸医疗"
+    },
+    {
+      "code": "sz.002690",
+      "raw_code": "002690",
+      "name": "美亚光电"
+    },
+    {
+      "code": "sz.002901",
+      "raw_code": "002901",
+      "name": "大博医疗"
+    },
+    {
+      "code": "sz.300003",
+      "raw_code": "300003",
+      "name": "乐普医疗"
+    },
+    {
+      "code": "sz.300285",
+      "raw_code": "300285",
+      "name": "国瓷材料"
+    },
+    {
+      "code": "sz.300337",
+      "raw_code": "300337",
+      "name": "银邦股份"
+    },
+    {
+      "code": "sz.300508",
+      "raw_code": "300508",
+      "name": "维宏股份"
+    },
+    {
+      "code": "sz.300653",
+      "raw_code": "300653",
+      "name": "正海生物"
+    },
+    {
+      "code": "sz.300963",
+      "raw_code": "300963",
+      "name": "中洲特材"
+    },
+    {
+      "code": "sz.301033",
+      "raw_code": "301033",
+      "name": "迈普医学"
+    },
+    {
+      "code": "sz.301580",
+      "raw_code": "301580",
+      "name": "爱迪特"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:45",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308733/"
+  "fetched_at": "2026-07-13 16:59:52",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

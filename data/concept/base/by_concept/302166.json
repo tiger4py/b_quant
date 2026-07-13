@@ -3,10 +3,77 @@
   "concept_name": "共享单车",
   "first_trade_date": "2017-06-23",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 13,
+  "constituents": [
+    {
+      "code": "sh.600478",
+      "raw_code": "600478",
+      "name": "科力远"
+    },
+    {
+      "code": "sh.600679",
+      "raw_code": "600679",
+      "name": "上海凤凰"
+    },
+    {
+      "code": "sh.600818",
+      "raw_code": "600818",
+      "name": "ST中路"
+    },
+    {
+      "code": "sh.603220",
+      "raw_code": "603220",
+      "name": "中贝通信"
+    },
+    {
+      "code": "sh.603489",
+      "raw_code": "603489",
+      "name": "八方股份"
+    },
+    {
+      "code": "sh.603529",
+      "raw_code": "603529",
+      "name": "爱玛科技"
+    },
+    {
+      "code": "sh.603776",
+      "raw_code": "603776",
+      "name": "永安行"
+    },
+    {
+      "code": "sh.603787",
+      "raw_code": "603787",
+      "name": "新日股份"
+    },
+    {
+      "code": "sz.002105",
+      "raw_code": "002105",
+      "name": "信隆健康"
+    },
+    {
+      "code": "sz.002356",
+      "raw_code": "002356",
+      "name": "鹏飞绿能"
+    },
+    {
+      "code": "sz.002405",
+      "raw_code": "002405",
+      "name": "四维图新"
+    },
+    {
+      "code": "sz.300471",
+      "raw_code": "300471",
+      "name": "厚普股份"
+    },
+    {
+      "code": "sz.301608",
+      "raw_code": "301608",
+      "name": "博实结"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:14",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302166/"
+  "fetched_at": "2026-07-13 16:56:38",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

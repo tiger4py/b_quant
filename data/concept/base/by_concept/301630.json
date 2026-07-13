@@ -3,10 +3,147 @@
   "concept_name": "广东自贸区",
   "first_trade_date": "2016-03-10",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 27,
+  "constituents": [
+    {
+      "code": "sh.600098",
+      "raw_code": "600098",
+      "name": "广州发展"
+    },
+    {
+      "code": "sh.600185",
+      "raw_code": "600185",
+      "name": "珠免集团"
+    },
+    {
+      "code": "sh.600325",
+      "raw_code": "600325",
+      "name": "华发股份"
+    },
+    {
+      "code": "sh.601228",
+      "raw_code": "601228",
+      "name": "广州港"
+    },
+    {
+      "code": "sz.000507",
+      "raw_code": "000507",
+      "name": "珠海港"
+    },
+    {
+      "code": "sz.000523",
+      "raw_code": "000523",
+      "name": "红棉股份"
+    },
+    {
+      "code": "sz.000524",
+      "raw_code": "000524",
+      "name": "岭南控股"
+    },
+    {
+      "code": "sz.000529",
+      "raw_code": "000529",
+      "name": "广弘控股"
+    },
+    {
+      "code": "sz.000573",
+      "raw_code": "000573",
+      "name": "粤宏远A"
+    },
+    {
+      "code": "sz.002016",
+      "raw_code": "002016",
+      "name": "世荣兆业"
+    },
+    {
+      "code": "sz.002141",
+      "raw_code": "002141",
+      "name": "贤丰控股"
+    },
+    {
+      "code": "sz.002181",
+      "raw_code": "002181",
+      "name": "粤传媒"
+    },
+    {
+      "code": "sz.002187",
+      "raw_code": "002187",
+      "name": "广百股份"
+    },
+    {
+      "code": "sz.002291",
+      "raw_code": "002291",
+      "name": "遥望科技"
+    },
+    {
+      "code": "sz.002420",
+      "raw_code": "002420",
+      "name": "毅昌科技"
+    },
+    {
+      "code": "sz.002579",
+      "raw_code": "002579",
+      "name": "中京电子"
+    },
+    {
+      "code": "sz.002587",
+      "raw_code": "002587",
+      "name": "奥拓电子"
+    },
+    {
+      "code": "sz.002672",
+      "raw_code": "002672",
+      "name": "东江环保"
+    },
+    {
+      "code": "sz.002676",
+      "raw_code": "002676",
+      "name": "顺威股份"
+    },
+    {
+      "code": "sz.002845",
+      "raw_code": "002845",
+      "name": "同兴达"
+    },
+    {
+      "code": "sz.002875",
+      "raw_code": "002875",
+      "name": "安奈儿"
+    },
+    {
+      "code": "sz.002889",
+      "raw_code": "002889",
+      "name": "东方嘉盛"
+    },
+    {
+      "code": "sz.002993",
+      "raw_code": "002993",
+      "name": "奥海科技"
+    },
+    {
+      "code": "sz.300350",
+      "raw_code": "300350",
+      "name": "华鹏飞"
+    },
+    {
+      "code": "sz.300997",
+      "raw_code": "300997",
+      "name": "欢乐家"
+    },
+    {
+      "code": "sz.301177",
+      "raw_code": "301177",
+      "name": "迪阿股份"
+    },
+    {
+      "code": "sz.301500",
+      "raw_code": "301500",
+      "name": "飞南资源"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:05",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301630/"
+  "fetched_at": "2026-07-13 16:54:05",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

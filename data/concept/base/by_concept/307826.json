@@ -3,10 +3,242 @@
   "concept_name": "水泥概念",
   "first_trade_date": "2018-01-09",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 46,
+  "constituents": [
+    {
+      "code": "bj.920263",
+      "raw_code": "920263",
+      "name": "中航泰达"
+    },
+    {
+      "code": "sh.600063",
+      "raw_code": "600063",
+      "name": "皖维高新"
+    },
+    {
+      "code": "sh.600075",
+      "raw_code": "600075",
+      "name": "新疆天业"
+    },
+    {
+      "code": "sh.600170",
+      "raw_code": "600170",
+      "name": "上海建工"
+    },
+    {
+      "code": "sh.600295",
+      "raw_code": "600295",
+      "name": "鄂尔多斯"
+    },
+    {
+      "code": "sh.600326",
+      "raw_code": "600326",
+      "name": "西藏天路"
+    },
+    {
+      "code": "sh.600328",
+      "raw_code": "600328",
+      "name": "中盐化工"
+    },
+    {
+      "code": "sh.600425",
+      "raw_code": "600425",
+      "name": "青松建化"
+    },
+    {
+      "code": "sh.600449",
+      "raw_code": "600449",
+      "name": "宁夏建材"
+    },
+    {
+      "code": "sh.600452",
+      "raw_code": "600452",
+      "name": "涪陵电力"
+    },
+    {
+      "code": "sh.600585",
+      "raw_code": "600585",
+      "name": "海螺水泥"
+    },
+    {
+      "code": "sh.600668",
+      "raw_code": "600668",
+      "name": "尖峰集团"
+    },
+    {
+      "code": "sh.600724",
+      "raw_code": "600724",
+      "name": "宁波富达"
+    },
+    {
+      "code": "sh.600727",
+      "raw_code": "600727",
+      "name": "鲁北化工"
+    },
+    {
+      "code": "sh.600801",
+      "raw_code": "600801",
+      "name": "华新建材"
+    },
+    {
+      "code": "sh.600802",
+      "raw_code": "600802",
+      "name": "福建水泥"
+    },
+    {
+      "code": "sh.600868",
+      "raw_code": "600868",
+      "name": "梅雁吉祥"
+    },
+    {
+      "code": "sh.600881",
+      "raw_code": "600881",
+      "name": "亚泰集团"
+    },
+    {
+      "code": "sh.600935",
+      "raw_code": "600935",
+      "name": "华塑股份"
+    },
+    {
+      "code": "sh.600970",
+      "raw_code": "600970",
+      "name": "中材国际"
+    },
+    {
+      "code": "sh.601216",
+      "raw_code": "601216",
+      "name": "君正集团"
+    },
+    {
+      "code": "sh.601568",
+      "raw_code": "601568",
+      "name": "北元化工"
+    },
+    {
+      "code": "sh.601868",
+      "raw_code": "601868",
+      "name": "中国能建"
+    },
+    {
+      "code": "sh.601992",
+      "raw_code": "601992",
+      "name": "金隅集团"
+    },
+    {
+      "code": "sh.603273",
+      "raw_code": "603273",
+      "name": "天元智能"
+    },
+    {
+      "code": "sh.603916",
+      "raw_code": "603916",
+      "name": "苏博特"
+    },
+    {
+      "code": "sh.603969",
+      "raw_code": "603969",
+      "name": "银龙股份"
+    },
+    {
+      "code": "sh.605122",
+      "raw_code": "605122",
+      "name": "四方新材"
+    },
+    {
+      "code": "sz.000401",
+      "raw_code": "000401",
+      "name": "金隅冀东"
+    },
+    {
+      "code": "sz.000672",
+      "raw_code": "000672",
+      "name": "上峰材料"
+    },
+    {
+      "code": "sz.000789",
+      "raw_code": "000789",
+      "name": "万年青"
+    },
+    {
+      "code": "sz.000856",
+      "raw_code": "000856",
+      "name": "冀东装备"
+    },
+    {
+      "code": "sz.000877",
+      "raw_code": "000877",
+      "name": "天山股份"
+    },
+    {
+      "code": "sz.000927",
+      "raw_code": "000927",
+      "name": "中国铁物"
+    },
+    {
+      "code": "sz.000935",
+      "raw_code": "000935",
+      "name": "四川双马"
+    },
+    {
+      "code": "sz.001225",
+      "raw_code": "001225",
+      "name": "和泰机电"
+    },
+    {
+      "code": "sz.002092",
+      "raw_code": "002092",
+      "name": "中泰化学"
+    },
+    {
+      "code": "sz.002165",
+      "raw_code": "002165",
+      "name": "红宝丽"
+    },
+    {
+      "code": "sz.002233",
+      "raw_code": "002233",
+      "name": "塔牌集团"
+    },
+    {
+      "code": "sz.002302",
+      "raw_code": "002302",
+      "name": "西部建设"
+    },
+    {
+      "code": "sz.002386",
+      "raw_code": "002386",
+      "name": "天原股份"
+    },
+    {
+      "code": "sz.002398",
+      "raw_code": "002398",
+      "name": "垒知集团"
+    },
+    {
+      "code": "sz.002470",
+      "raw_code": "002470",
+      "name": "金正大"
+    },
+    {
+      "code": "sz.002596",
+      "raw_code": "002596",
+      "name": "海南瑞泽"
+    },
+    {
+      "code": "sz.002742",
+      "raw_code": "002742",
+      "name": "冀衡医药"
+    },
+    {
+      "code": "sz.003037",
+      "raw_code": "003037",
+      "name": "三和管桩"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:20",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307826/"
+  "fetched_at": "2026-07-13 16:57:37",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,287 @@
   "concept_name": "露营经济",
   "first_trade_date": "2022-05-09",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 55,
+  "constituents": [
+    {
+      "code": "bj.920132",
+      "raw_code": "920132",
+      "name": "泰鹏智能"
+    },
+    {
+      "code": "sh.600066",
+      "raw_code": "600066",
+      "name": "宇通客车"
+    },
+    {
+      "code": "sh.600138",
+      "raw_code": "600138",
+      "name": "中青旅"
+    },
+    {
+      "code": "sh.600358",
+      "raw_code": "600358",
+      "name": "国旅联合"
+    },
+    {
+      "code": "sh.600576",
+      "raw_code": "600576",
+      "name": "祥源文旅"
+    },
+    {
+      "code": "sh.600593",
+      "raw_code": "600593",
+      "name": "大连圣亚"
+    },
+    {
+      "code": "sh.600706",
+      "raw_code": "600706",
+      "name": "曲江文旅"
+    },
+    {
+      "code": "sh.600749",
+      "raw_code": "600749",
+      "name": "西藏旅游"
+    },
+    {
+      "code": "sh.601718",
+      "raw_code": "601718",
+      "name": "ST际华"
+    },
+    {
+      "code": "sh.603195",
+      "raw_code": "603195",
+      "name": "公牛集团"
+    },
+    {
+      "code": "sh.603307",
+      "raw_code": "603307",
+      "name": "扬州金泉"
+    },
+    {
+      "code": "sh.603518",
+      "raw_code": "603518",
+      "name": "锦泓集团"
+    },
+    {
+      "code": "sh.603908",
+      "raw_code": "603908",
+      "name": "牧高笛"
+    },
+    {
+      "code": "sh.605080",
+      "raw_code": "605080",
+      "name": "浙江自然"
+    },
+    {
+      "code": "sh.605180",
+      "raw_code": "605180",
+      "name": "华生科技"
+    },
+    {
+      "code": "sz.000501",
+      "raw_code": "000501",
+      "name": "武商集团"
+    },
+    {
+      "code": "sz.000524",
+      "raw_code": "000524",
+      "name": "岭南控股"
+    },
+    {
+      "code": "sz.000632",
+      "raw_code": "000632",
+      "name": "ST三木"
+    },
+    {
+      "code": "sz.000796",
+      "raw_code": "000796",
+      "name": "凯撒旅业"
+    },
+    {
+      "code": "sz.000917",
+      "raw_code": "000917",
+      "name": "电广传媒"
+    },
+    {
+      "code": "sz.001211",
+      "raw_code": "001211",
+      "name": "双枪科技"
+    },
+    {
+      "code": "sz.001238",
+      "raw_code": "001238",
+      "name": "浙江正特"
+    },
+    {
+      "code": "sz.001259",
+      "raw_code": "001259",
+      "name": "利仁科技"
+    },
+    {
+      "code": "sz.001368",
+      "raw_code": "001368",
+      "name": "通达创智"
+    },
+    {
+      "code": "sz.002127",
+      "raw_code": "002127",
+      "name": "南极电商"
+    },
+    {
+      "code": "sz.002159",
+      "raw_code": "002159",
+      "name": "三特索道"
+    },
+    {
+      "code": "sz.002444",
+      "raw_code": "002444",
+      "name": "巨星科技"
+    },
+    {
+      "code": "sz.002486",
+      "raw_code": "002486",
+      "name": "嘉麟杰"
+    },
+    {
+      "code": "sz.002489",
+      "raw_code": "002489",
+      "name": "浙江永强"
+    },
+    {
+      "code": "sz.002615",
+      "raw_code": "002615",
+      "name": "哈尔斯"
+    },
+    {
+      "code": "sz.002707",
+      "raw_code": "002707",
+      "name": "众信旅游"
+    },
+    {
+      "code": "sz.002723",
+      "raw_code": "002723",
+      "name": "小崧股份"
+    },
+    {
+      "code": "sz.002780",
+      "raw_code": "002780",
+      "name": "三夫户外"
+    },
+    {
+      "code": "sz.002887",
+      "raw_code": "002887",
+      "name": "绿茵生态"
+    },
+    {
+      "code": "sz.002902",
+      "raw_code": "002902",
+      "name": "铭普光磁"
+    },
+    {
+      "code": "sz.002959",
+      "raw_code": "002959",
+      "name": "小熊电器"
+    },
+    {
+      "code": "sz.002993",
+      "raw_code": "002993",
+      "name": "奥海科技"
+    },
+    {
+      "code": "sz.003023",
+      "raw_code": "003023",
+      "name": "彩虹集团"
+    },
+    {
+      "code": "sz.300005",
+      "raw_code": "300005",
+      "name": "探路者"
+    },
+    {
+      "code": "sz.300169",
+      "raw_code": "300169",
+      "name": "天晟新材"
+    },
+    {
+      "code": "sz.300464",
+      "raw_code": "300464",
+      "name": "星徽股份"
+    },
+    {
+      "code": "sz.300591",
+      "raw_code": "300591",
+      "name": "万里马"
+    },
+    {
+      "code": "sz.300808",
+      "raw_code": "300808",
+      "name": "久量股份"
+    },
+    {
+      "code": "sz.300824",
+      "raw_code": "300824",
+      "name": "北鼎股份"
+    },
+    {
+      "code": "sz.300848",
+      "raw_code": "300848",
+      "name": "美瑞新材"
+    },
+    {
+      "code": "sz.300889",
+      "raw_code": "300889",
+      "name": "爱克股份"
+    },
+    {
+      "code": "sz.300916",
+      "raw_code": "300916",
+      "name": "朗特智能"
+    },
+    {
+      "code": "sz.300949",
+      "raw_code": "300949",
+      "name": "奥雅股份"
+    },
+    {
+      "code": "sz.300993",
+      "raw_code": "300993",
+      "name": "玉马科技"
+    },
+    {
+      "code": "sz.301055",
+      "raw_code": "301055",
+      "name": "张小泉"
+    },
+    {
+      "code": "sz.301113",
+      "raw_code": "301113",
+      "name": "雅艺科技"
+    },
+    {
+      "code": "sz.301327",
+      "raw_code": "301327",
+      "name": "华宝新能"
+    },
+    {
+      "code": "sz.301336",
+      "raw_code": "301336",
+      "name": "趣睡科技"
+    },
+    {
+      "code": "sz.301376",
+      "raw_code": "301376",
+      "name": "致欧科技"
+    },
+    {
+      "code": "sz.301595",
+      "raw_code": "301595",
+      "name": "太力科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:59",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308926/"
+  "fetched_at": "2026-07-13 17:02:05",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

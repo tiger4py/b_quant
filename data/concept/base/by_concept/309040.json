@@ -3,10 +3,157 @@
   "concept_name": "POE胶膜",
   "first_trade_date": "2022-12-12",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 29,
+  "constituents": [
+    {
+      "code": "bj.920056",
+      "raw_code": "920056",
+      "name": "能之光"
+    },
+    {
+      "code": "sh.600309",
+      "raw_code": "600309",
+      "name": "万华化学"
+    },
+    {
+      "code": "sh.600989",
+      "raw_code": "600989",
+      "name": "宝丰能源"
+    },
+    {
+      "code": "sh.601139",
+      "raw_code": "601139",
+      "name": "深圳燃气"
+    },
+    {
+      "code": "sh.603051",
+      "raw_code": "603051",
+      "name": "鹿山新材"
+    },
+    {
+      "code": "sh.603212",
+      "raw_code": "603212",
+      "name": "赛伍技术"
+    },
+    {
+      "code": "sh.603255",
+      "raw_code": "603255",
+      "name": "鼎际得"
+    },
+    {
+      "code": "sh.603330",
+      "raw_code": "603330",
+      "name": "天洋新材"
+    },
+    {
+      "code": "sh.603806",
+      "raw_code": "603806",
+      "name": "福斯特"
+    },
+    {
+      "code": "sh.605566",
+      "raw_code": "605566",
+      "name": "福莱蒽特"
+    },
+    {
+      "code": "sh.688299",
+      "raw_code": "688299",
+      "name": "长阳科技"
+    },
+    {
+      "code": "sh.688560",
+      "raw_code": "688560",
+      "name": "明冠新材"
+    },
+    {
+      "code": "sh.688680",
+      "raw_code": "688680",
+      "name": "海优新材"
+    },
+    {
+      "code": "sz.000301",
+      "raw_code": "000301",
+      "name": "东方盛虹"
+    },
+    {
+      "code": "sz.000698",
+      "raw_code": "000698",
+      "name": "ST沈化"
+    },
+    {
+      "code": "sz.000819",
+      "raw_code": "000819",
+      "name": "岳阳兴长"
+    },
+    {
+      "code": "sz.000990",
+      "raw_code": "000990",
+      "name": "诚志股份"
+    },
+    {
+      "code": "sz.002140",
+      "raw_code": "002140",
+      "name": "东华科技"
+    },
+    {
+      "code": "sz.002218",
+      "raw_code": "002218",
+      "name": "拓日新能"
+    },
+    {
+      "code": "sz.002493",
+      "raw_code": "002493",
+      "name": "荣盛石化"
+    },
+    {
+      "code": "sz.002623",
+      "raw_code": "002623",
+      "name": "亚玛顿"
+    },
+    {
+      "code": "sz.002648",
+      "raw_code": "002648",
+      "name": "卫星化学"
+    },
+    {
+      "code": "sz.002868",
+      "raw_code": "002868",
+      "name": "绿康生化"
+    },
+    {
+      "code": "sz.003022",
+      "raw_code": "003022",
+      "name": "联泓新科"
+    },
+    {
+      "code": "sz.300566",
+      "raw_code": "300566",
+      "name": "激智科技"
+    },
+    {
+      "code": "sz.301019",
+      "raw_code": "301019",
+      "name": "宁波色母"
+    },
+    {
+      "code": "sz.301100",
+      "raw_code": "301100",
+      "name": "风光股份"
+    },
+    {
+      "code": "sz.301131",
+      "raw_code": "301131",
+      "name": "聚赛龙"
+    },
+    {
+      "code": "sz.301687",
+      "raw_code": "301687",
+      "name": "新广益"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:07",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309040/"
+  "fetched_at": "2026-07-13 17:03:09",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

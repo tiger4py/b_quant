@@ -3,10 +3,602 @@
   "concept_name": "网红经济",
   "first_trade_date": "2019-12-27",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 118,
+  "constituents": [
+    {
+      "code": "bj.920262",
+      "raw_code": "920262",
+      "name": "太湖雪"
+    },
+    {
+      "code": "bj.920429",
+      "raw_code": "920429",
+      "name": "康比特"
+    },
+    {
+      "code": "sh.600223",
+      "raw_code": "600223",
+      "name": "福瑞达"
+    },
+    {
+      "code": "sh.600358",
+      "raw_code": "600358",
+      "name": "国旅联合"
+    },
+    {
+      "code": "sh.600415",
+      "raw_code": "600415",
+      "name": "小商品城"
+    },
+    {
+      "code": "sh.600439",
+      "raw_code": "600439",
+      "name": "瑞贝卡"
+    },
+    {
+      "code": "sh.600556",
+      "raw_code": "600556",
+      "name": "天下秀"
+    },
+    {
+      "code": "sh.600616",
+      "raw_code": "600616",
+      "name": "金枫酒业"
+    },
+    {
+      "code": "sh.600628",
+      "raw_code": "600628",
+      "name": "新世界"
+    },
+    {
+      "code": "sh.600630",
+      "raw_code": "600630",
+      "name": "龙头股份"
+    },
+    {
+      "code": "sh.600679",
+      "raw_code": "600679",
+      "name": "上海凤凰"
+    },
+    {
+      "code": "sh.600818",
+      "raw_code": "600818",
+      "name": "ST中路"
+    },
+    {
+      "code": "sh.600986",
+      "raw_code": "600986",
+      "name": "浙文互联"
+    },
+    {
+      "code": "sh.601007",
+      "raw_code": "601007",
+      "name": "金陵饭店"
+    },
+    {
+      "code": "sh.601566",
+      "raw_code": "601566",
+      "name": "九牧王"
+    },
+    {
+      "code": "sh.603043",
+      "raw_code": "603043",
+      "name": "广州酒家"
+    },
+    {
+      "code": "sh.603215",
+      "raw_code": "603215",
+      "name": "比依股份"
+    },
+    {
+      "code": "sh.603238",
+      "raw_code": "603238",
+      "name": "诺邦股份"
+    },
+    {
+      "code": "sh.603365",
+      "raw_code": "603365",
+      "name": "水星家纺"
+    },
+    {
+      "code": "sh.603466",
+      "raw_code": "603466",
+      "name": "风语筑"
+    },
+    {
+      "code": "sh.603518",
+      "raw_code": "603518",
+      "name": "锦泓集团"
+    },
+    {
+      "code": "sh.603536",
+      "raw_code": "603536",
+      "name": "惠发食品"
+    },
+    {
+      "code": "sh.603598",
+      "raw_code": "603598",
+      "name": "引力传媒"
+    },
+    {
+      "code": "sh.603608",
+      "raw_code": "603608",
+      "name": "天创时尚"
+    },
+    {
+      "code": "sh.603630",
+      "raw_code": "603630",
+      "name": "拉芳家化"
+    },
+    {
+      "code": "sh.603719",
+      "raw_code": "603719",
+      "name": "良品铺子"
+    },
+    {
+      "code": "sh.603721",
+      "raw_code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "code": "sh.603729",
+      "raw_code": "603729",
+      "name": "ST龙韵"
+    },
+    {
+      "code": "sh.603808",
+      "raw_code": "603808",
+      "name": "歌力思"
+    },
+    {
+      "code": "sh.603825",
+      "raw_code": "603825",
+      "name": "ST华扬"
+    },
+    {
+      "code": "sh.603839",
+      "raw_code": "603839",
+      "name": "安正时尚"
+    },
+    {
+      "code": "sh.605108",
+      "raw_code": "605108",
+      "name": "同庆楼"
+    },
+    {
+      "code": "sh.605136",
+      "raw_code": "605136",
+      "name": "丽人丽妆"
+    },
+    {
+      "code": "sz.000501",
+      "raw_code": "000501",
+      "name": "武商集团"
+    },
+    {
+      "code": "sz.000505",
+      "raw_code": "000505",
+      "name": "京粮控股"
+    },
+    {
+      "code": "sz.000564",
+      "raw_code": "000564",
+      "name": "供销大集"
+    },
+    {
+      "code": "sz.000623",
+      "raw_code": "000623",
+      "name": "吉林敖东"
+    },
+    {
+      "code": "sz.000639",
+      "raw_code": "000639",
+      "name": "ST西王"
+    },
+    {
+      "code": "sz.000676",
+      "raw_code": "000676",
+      "name": "智度股份"
+    },
+    {
+      "code": "sz.000716",
+      "raw_code": "000716",
+      "name": "黑芝麻"
+    },
+    {
+      "code": "sz.000793",
+      "raw_code": "000793",
+      "name": "*ST华闻"
+    },
+    {
+      "code": "sz.000848",
+      "raw_code": "000848",
+      "name": "承德露露"
+    },
+    {
+      "code": "sz.001219",
+      "raw_code": "001219",
+      "name": "青岛食品"
+    },
+    {
+      "code": "sz.001328",
+      "raw_code": "001328",
+      "name": "登康口腔"
+    },
+    {
+      "code": "sz.002094",
+      "raw_code": "002094",
+      "name": "青岛金王"
+    },
+    {
+      "code": "sz.002098",
+      "raw_code": "002098",
+      "name": "浔兴股份"
+    },
+    {
+      "code": "sz.002115",
+      "raw_code": "002115",
+      "name": "三维通信"
+    },
+    {
+      "code": "sz.002127",
+      "raw_code": "002127",
+      "name": "南极电商"
+    },
+    {
+      "code": "sz.002137",
+      "raw_code": "002137",
+      "name": "实益达"
+    },
+    {
+      "code": "sz.002181",
+      "raw_code": "002181",
+      "name": "粤传媒"
+    },
+    {
+      "code": "sz.002186",
+      "raw_code": "002186",
+      "name": "全聚德"
+    },
+    {
+      "code": "sz.002187",
+      "raw_code": "002187",
+      "name": "广百股份"
+    },
+    {
+      "code": "sz.002216",
+      "raw_code": "002216",
+      "name": "三全食品"
+    },
+    {
+      "code": "sz.002264",
+      "raw_code": "002264",
+      "name": "新华都"
+    },
+    {
+      "code": "sz.002279",
+      "raw_code": "002279",
+      "name": "久其软件"
+    },
+    {
+      "code": "sz.002291",
+      "raw_code": "002291",
+      "name": "遥望科技"
+    },
+    {
+      "code": "sz.002293",
+      "raw_code": "002293",
+      "name": "罗莱生活"
+    },
+    {
+      "code": "sz.002330",
+      "raw_code": "002330",
+      "name": "得利斯"
+    },
+    {
+      "code": "sz.002344",
+      "raw_code": "002344",
+      "name": "海宁皮城"
+    },
+    {
+      "code": "sz.002397",
+      "raw_code": "002397",
+      "name": "梦洁股份"
+    },
+    {
+      "code": "sz.002467",
+      "raw_code": "002467",
+      "name": "二六三"
+    },
+    {
+      "code": "sz.002481",
+      "raw_code": "002481",
+      "name": "双塔食品"
+    },
+    {
+      "code": "sz.002494",
+      "raw_code": "002494",
+      "name": "华斯股份"
+    },
+    {
+      "code": "sz.002515",
+      "raw_code": "002515",
+      "name": "金字火腿"
+    },
+    {
+      "code": "sz.002563",
+      "raw_code": "002563",
+      "name": "森马服饰"
+    },
+    {
+      "code": "sz.002570",
+      "raw_code": "002570",
+      "name": "贝因美"
+    },
+    {
+      "code": "sz.002582",
+      "raw_code": "002582",
+      "name": "好想你"
+    },
+    {
+      "code": "sz.002605",
+      "raw_code": "002605",
+      "name": "姚记科技"
+    },
+    {
+      "code": "sz.002612",
+      "raw_code": "002612",
+      "name": "朗姿股份"
+    },
+    {
+      "code": "sz.002614",
+      "raw_code": "002614",
+      "name": "奥佳华"
+    },
+    {
+      "code": "sz.002615",
+      "raw_code": "002615",
+      "name": "哈尔斯"
+    },
+    {
+      "code": "sz.002640",
+      "raw_code": "002640",
+      "name": "跨境通"
+    },
+    {
+      "code": "sz.002663",
+      "raw_code": "002663",
+      "name": "普邦股份"
+    },
+    {
+      "code": "sz.002702",
+      "raw_code": "002702",
+      "name": "海欣食品"
+    },
+    {
+      "code": "sz.002712",
+      "raw_code": "002712",
+      "name": "思美传媒"
+    },
+    {
+      "code": "sz.002717",
+      "raw_code": "002717",
+      "name": "*ST岭南"
+    },
+    {
+      "code": "sz.002718",
+      "raw_code": "002718",
+      "name": "友邦吊顶"
+    },
+    {
+      "code": "sz.002762",
+      "raw_code": "002762",
+      "name": "金发拉比"
+    },
+    {
+      "code": "sz.002818",
+      "raw_code": "002818",
+      "name": "富森美"
+    },
+    {
+      "code": "sz.002832",
+      "raw_code": "002832",
+      "name": "比音勒芬"
+    },
+    {
+      "code": "sz.002853",
+      "raw_code": "002853",
+      "name": "皮阿诺"
+    },
+    {
+      "code": "sz.002878",
+      "raw_code": "002878",
+      "name": "元隆雅图"
+    },
+    {
+      "code": "sz.002910",
+      "raw_code": "002910",
+      "name": "庄园牧场"
+    },
+    {
+      "code": "sz.002959",
+      "raw_code": "002959",
+      "name": "小熊电器"
+    },
+    {
+      "code": "sz.002993",
+      "raw_code": "002993",
+      "name": "奥海科技"
+    },
+    {
+      "code": "sz.003000",
+      "raw_code": "003000",
+      "name": "劲仔食品"
+    },
+    {
+      "code": "sz.003016",
+      "raw_code": "003016",
+      "name": "欣贺股份"
+    },
+    {
+      "code": "sz.003030",
+      "raw_code": "003030",
+      "name": "祖名股份"
+    },
+    {
+      "code": "sz.300027",
+      "raw_code": "300027",
+      "name": "ST华谊"
+    },
+    {
+      "code": "sz.300058",
+      "raw_code": "300058",
+      "name": "蓝色光标"
+    },
+    {
+      "code": "sz.300063",
+      "raw_code": "300063",
+      "name": "天龙集团"
+    },
+    {
+      "code": "sz.300094",
+      "raw_code": "300094",
+      "name": "国联水产"
+    },
+    {
+      "code": "sz.300133",
+      "raw_code": "300133",
+      "name": "华策影视"
+    },
+    {
+      "code": "sz.300144",
+      "raw_code": "300144",
+      "name": "宋城演艺"
+    },
+    {
+      "code": "sz.300291",
+      "raw_code": "300291",
+      "name": "百纳千成"
+    },
+    {
+      "code": "sz.300413",
+      "raw_code": "300413",
+      "name": "芒果超媒"
+    },
+    {
+      "code": "sz.300418",
+      "raw_code": "300418",
+      "name": "昆仑万维"
+    },
+    {
+      "code": "sz.300459",
+      "raw_code": "300459",
+      "name": "汤姆猫"
+    },
+    {
+      "code": "sz.300518",
+      "raw_code": "300518",
+      "name": "新迅达"
+    },
+    {
+      "code": "sz.300591",
+      "raw_code": "300591",
+      "name": "万里马"
+    },
+    {
+      "code": "sz.300603",
+      "raw_code": "300603",
+      "name": "立昂技术"
+    },
+    {
+      "code": "sz.300612",
+      "raw_code": "300612",
+      "name": "宣亚国际"
+    },
+    {
+      "code": "sz.300624",
+      "raw_code": "300624",
+      "name": "万兴科技"
+    },
+    {
+      "code": "sz.300740",
+      "raw_code": "300740",
+      "name": "水羊股份"
+    },
+    {
+      "code": "sz.300781",
+      "raw_code": "300781",
+      "name": "因赛集团"
+    },
+    {
+      "code": "sz.300783",
+      "raw_code": "300783",
+      "name": "三只松鼠"
+    },
+    {
+      "code": "sz.300792",
+      "raw_code": "300792",
+      "name": "壹网壹创"
+    },
+    {
+      "code": "sz.300824",
+      "raw_code": "300824",
+      "name": "北鼎股份"
+    },
+    {
+      "code": "sz.300840",
+      "raw_code": "300840",
+      "name": "酷特智能"
+    },
+    {
+      "code": "sz.300892",
+      "raw_code": "300892",
+      "name": "品渥食品"
+    },
+    {
+      "code": "sz.300898",
+      "raw_code": "300898",
+      "name": "熊猫乳品"
+    },
+    {
+      "code": "sz.300997",
+      "raw_code": "300997",
+      "name": "欢乐家"
+    },
+    {
+      "code": "sz.301001",
+      "raw_code": "301001",
+      "name": "凯淳股份"
+    },
+    {
+      "code": "sz.301052",
+      "raw_code": "301052",
+      "name": "果麦文化"
+    },
+    {
+      "code": "sz.301327",
+      "raw_code": "301327",
+      "name": "华宝新能"
+    },
+    {
+      "code": "sz.301332",
+      "raw_code": "301332",
+      "name": "德尔玛"
+    },
+    {
+      "code": "sz.301371",
+      "raw_code": "301371",
+      "name": "敷尔佳"
+    },
+    {
+      "code": "sz.301376",
+      "raw_code": "301376",
+      "name": "致欧科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:36",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308630/"
+  "fetched_at": "2026-07-13 16:59:24",
+  "page_count": 12,
+  "is_partial": false,
+  "page_limit_reason": null
 }

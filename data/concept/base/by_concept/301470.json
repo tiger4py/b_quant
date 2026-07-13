@@ -3,10 +3,497 @@
   "concept_name": "航空发动机",
   "first_trade_date": "2020-02-19",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 97,
+  "constituents": [
+    {
+      "code": "bj.920006",
+      "raw_code": "920006",
+      "name": "晟楠科技"
+    },
+    {
+      "code": "bj.920223",
+      "raw_code": "920223",
+      "name": "荣亿精密"
+    },
+    {
+      "code": "bj.920247",
+      "raw_code": "920247",
+      "name": "华密新材"
+    },
+    {
+      "code": "bj.920943",
+      "raw_code": "920943",
+      "name": "优机股份"
+    },
+    {
+      "code": "sh.600353",
+      "raw_code": "600353",
+      "name": "旭光电子"
+    },
+    {
+      "code": "sh.600391",
+      "raw_code": "600391",
+      "name": "航发科技"
+    },
+    {
+      "code": "sh.600399",
+      "raw_code": "600399",
+      "name": "抚顺特钢"
+    },
+    {
+      "code": "sh.600456",
+      "raw_code": "600456",
+      "name": "宝钛股份"
+    },
+    {
+      "code": "sh.600478",
+      "raw_code": "600478",
+      "name": "科力远"
+    },
+    {
+      "code": "sh.600523",
+      "raw_code": "600523",
+      "name": "贵航股份"
+    },
+    {
+      "code": "sh.600562",
+      "raw_code": "600562",
+      "name": "国睿科技"
+    },
+    {
+      "code": "sh.600580",
+      "raw_code": "600580",
+      "name": "卧龙电驱"
+    },
+    {
+      "code": "sh.600736",
+      "raw_code": "600736",
+      "name": "苏州高新"
+    },
+    {
+      "code": "sh.600765",
+      "raw_code": "600765",
+      "name": "中航重机"
+    },
+    {
+      "code": "sh.600839",
+      "raw_code": "600839",
+      "name": "四川长虹"
+    },
+    {
+      "code": "sh.600862",
+      "raw_code": "600862",
+      "name": "中航高科"
+    },
+    {
+      "code": "sh.600893",
+      "raw_code": "600893",
+      "name": "航发动力"
+    },
+    {
+      "code": "sh.601727",
+      "raw_code": "601727",
+      "name": "上海电气"
+    },
+    {
+      "code": "sh.603011",
+      "raw_code": "603011",
+      "name": "合锻智能"
+    },
+    {
+      "code": "sh.603169",
+      "raw_code": "603169",
+      "name": "兰石重装"
+    },
+    {
+      "code": "sh.603308",
+      "raw_code": "603308",
+      "name": "应流股份"
+    },
+    {
+      "code": "sh.603809",
+      "raw_code": "603809",
+      "name": "豪能股份"
+    },
+    {
+      "code": "sh.603859",
+      "raw_code": "603859",
+      "name": "能科科技"
+    },
+    {
+      "code": "sh.605123",
+      "raw_code": "605123",
+      "name": "派克新材"
+    },
+    {
+      "code": "sh.688102",
+      "raw_code": "688102",
+      "name": "斯瑞新材"
+    },
+    {
+      "code": "sh.688113",
+      "raw_code": "688113",
+      "name": "联测科技"
+    },
+    {
+      "code": "sh.688122",
+      "raw_code": "688122",
+      "name": "西部超导"
+    },
+    {
+      "code": "sh.688186",
+      "raw_code": "688186",
+      "name": "广大特材"
+    },
+    {
+      "code": "sh.688231",
+      "raw_code": "688231",
+      "name": "隆达股份"
+    },
+    {
+      "code": "sh.688239",
+      "raw_code": "688239",
+      "name": "航宇科技"
+    },
+    {
+      "code": "sh.688281",
+      "raw_code": "688281",
+      "name": "华秦科技"
+    },
+    {
+      "code": "sh.688305",
+      "raw_code": "688305",
+      "name": "科德数控"
+    },
+    {
+      "code": "sh.688308",
+      "raw_code": "688308",
+      "name": "欧科亿"
+    },
+    {
+      "code": "sh.688333",
+      "raw_code": "688333",
+      "name": "铂力特"
+    },
+    {
+      "code": "sh.688456",
+      "raw_code": "688456",
+      "name": "有研粉材"
+    },
+    {
+      "code": "sh.688510",
+      "raw_code": "688510",
+      "name": "航亚科技"
+    },
+    {
+      "code": "sh.688523",
+      "raw_code": "688523",
+      "name": "航天环宇"
+    },
+    {
+      "code": "sh.688558",
+      "raw_code": "688558",
+      "name": "国盛智科"
+    },
+    {
+      "code": "sh.688563",
+      "raw_code": "688563",
+      "name": "航材股份"
+    },
+    {
+      "code": "sh.688685",
+      "raw_code": "688685",
+      "name": "迈信林"
+    },
+    {
+      "code": "sh.688750",
+      "raw_code": "688750",
+      "name": "金天钛业"
+    },
+    {
+      "code": "sh.688777",
+      "raw_code": "688777",
+      "name": "中控技术"
+    },
+    {
+      "code": "sz.000534",
+      "raw_code": "000534",
+      "name": "万泽股份"
+    },
+    {
+      "code": "sz.000571",
+      "raw_code": "000571",
+      "name": "新大洲A"
+    },
+    {
+      "code": "sz.000677",
+      "raw_code": "000677",
+      "name": "ST海龙"
+    },
+    {
+      "code": "sz.000697",
+      "raw_code": "000697",
+      "name": "炼石航空"
+    },
+    {
+      "code": "sz.000708",
+      "raw_code": "000708",
+      "name": "中信特钢"
+    },
+    {
+      "code": "sz.000738",
+      "raw_code": "000738",
+      "name": "航发控制"
+    },
+    {
+      "code": "sz.000837",
+      "raw_code": "000837",
+      "name": "秦川机床"
+    },
+    {
+      "code": "sz.000962",
+      "raw_code": "000962",
+      "name": "东方钽业"
+    },
+    {
+      "code": "sz.000969",
+      "raw_code": "000969",
+      "name": "安泰科技"
+    },
+    {
+      "code": "sz.000988",
+      "raw_code": "000988",
+      "name": "华工科技"
+    },
+    {
+      "code": "sz.001316",
+      "raw_code": "001316",
+      "name": "润贝航科"
+    },
+    {
+      "code": "sz.001696",
+      "raw_code": "001696",
+      "name": "宗申动力"
+    },
+    {
+      "code": "sz.002023",
+      "raw_code": "002023",
+      "name": "海特高新"
+    },
+    {
+      "code": "sz.002031",
+      "raw_code": "002031",
+      "name": "巨轮智能"
+    },
+    {
+      "code": "sz.002085",
+      "raw_code": "002085",
+      "name": "万丰奥威"
+    },
+    {
+      "code": "sz.002097",
+      "raw_code": "002097",
+      "name": "山河智能"
+    },
+    {
+      "code": "sz.002149",
+      "raw_code": "002149",
+      "name": "西部材料"
+    },
+    {
+      "code": "sz.002190",
+      "raw_code": "002190",
+      "name": "成飞集成"
+    },
+    {
+      "code": "sz.002196",
+      "raw_code": "002196",
+      "name": "方正电机"
+    },
+    {
+      "code": "sz.002297",
+      "raw_code": "002297",
+      "name": "博云新材"
+    },
+    {
+      "code": "sz.002361",
+      "raw_code": "002361",
+      "name": "神剑股份"
+    },
+    {
+      "code": "sz.002438",
+      "raw_code": "002438",
+      "name": "江苏神通"
+    },
+    {
+      "code": "sz.002465",
+      "raw_code": "002465",
+      "name": "海格通信"
+    },
+    {
+      "code": "sz.002471",
+      "raw_code": "002471",
+      "name": "中超控股"
+    },
+    {
+      "code": "sz.002520",
+      "raw_code": "002520",
+      "name": "日发精机"
+    },
+    {
+      "code": "sz.002658",
+      "raw_code": "002658",
+      "name": "雪迪龙"
+    },
+    {
+      "code": "sz.002689",
+      "raw_code": "002689",
+      "name": "ST远智"
+    },
+    {
+      "code": "sz.300034",
+      "raw_code": "300034",
+      "name": "钢研高纳"
+    },
+    {
+      "code": "sz.300095",
+      "raw_code": "300095",
+      "name": "华伍股份"
+    },
+    {
+      "code": "sz.300159",
+      "raw_code": "300159",
+      "name": "新研股份"
+    },
+    {
+      "code": "sz.300161",
+      "raw_code": "300161",
+      "name": "华中数控"
+    },
+    {
+      "code": "sz.300337",
+      "raw_code": "300337",
+      "name": "银邦股份"
+    },
+    {
+      "code": "sz.300354",
+      "raw_code": "300354",
+      "name": "东华测试"
+    },
+    {
+      "code": "sz.300402",
+      "raw_code": "300402",
+      "name": "宝色股份"
+    },
+    {
+      "code": "sz.300424",
+      "raw_code": "300424",
+      "name": "航新科技"
+    },
+    {
+      "code": "sz.300428",
+      "raw_code": "300428",
+      "name": "立中集团"
+    },
+    {
+      "code": "sz.300488",
+      "raw_code": "300488",
+      "name": "恒锋工具"
+    },
+    {
+      "code": "sz.300490",
+      "raw_code": "300490",
+      "name": "华自科技"
+    },
+    {
+      "code": "sz.300553",
+      "raw_code": "300553",
+      "name": "集智股份"
+    },
+    {
+      "code": "sz.300581",
+      "raw_code": "300581",
+      "name": "晨曦航空"
+    },
+    {
+      "code": "sz.300611",
+      "raw_code": "300611",
+      "name": "美力科技"
+    },
+    {
+      "code": "sz.300696",
+      "raw_code": "300696",
+      "name": "爱乐达"
+    },
+    {
+      "code": "sz.300719",
+      "raw_code": "300719",
+      "name": "安达维尔"
+    },
+    {
+      "code": "sz.300733",
+      "raw_code": "300733",
+      "name": "西菱动力"
+    },
+    {
+      "code": "sz.300747",
+      "raw_code": "300747",
+      "name": "锐科激光"
+    },
+    {
+      "code": "sz.300775",
+      "raw_code": "300775",
+      "name": "三角防务"
+    },
+    {
+      "code": "sz.300845",
+      "raw_code": "300845",
+      "name": "捷安高科"
+    },
+    {
+      "code": "sz.300855",
+      "raw_code": "300855",
+      "name": "图南股份"
+    },
+    {
+      "code": "sz.300900",
+      "raw_code": "300900",
+      "name": "广联航空"
+    },
+    {
+      "code": "sz.301005",
+      "raw_code": "301005",
+      "name": "超捷股份"
+    },
+    {
+      "code": "sz.301112",
+      "raw_code": "301112",
+      "name": "信邦智能"
+    },
+    {
+      "code": "sz.301213",
+      "raw_code": "301213",
+      "name": "观想科技"
+    },
+    {
+      "code": "sz.301232",
+      "raw_code": "301232",
+      "name": "飞沃科技"
+    },
+    {
+      "code": "sz.301233",
+      "raw_code": "301233",
+      "name": "盛帮股份"
+    },
+    {
+      "code": "sz.301522",
+      "raw_code": "301522",
+      "name": "上大股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:54",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301470/"
+  "fetched_at": "2026-07-13 16:50:07",
+  "page_count": 10,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,157 @@
   "concept_name": "网约车",
   "first_trade_date": "2017-06-23",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 29,
+  "constituents": [
+    {
+      "code": "bj.920130",
+      "raw_code": "920130",
+      "name": "立方控股"
+    },
+    {
+      "code": "sh.600104",
+      "raw_code": "600104",
+      "name": "上汽集团"
+    },
+    {
+      "code": "sh.600561",
+      "raw_code": "600561",
+      "name": "江西长运"
+    },
+    {
+      "code": "sh.600611",
+      "raw_code": "600611",
+      "name": "大众交通"
+    },
+    {
+      "code": "sh.600650",
+      "raw_code": "600650",
+      "name": "锦江在线"
+    },
+    {
+      "code": "sh.600733",
+      "raw_code": "600733",
+      "name": "北汽蓝谷"
+    },
+    {
+      "code": "sh.601238",
+      "raw_code": "601238",
+      "name": "广汽集团"
+    },
+    {
+      "code": "sh.603069",
+      "raw_code": "603069",
+      "name": "海汽集团"
+    },
+    {
+      "code": "sh.603099",
+      "raw_code": "603099",
+      "name": "长白山"
+    },
+    {
+      "code": "sh.603390",
+      "raw_code": "603390",
+      "name": "通达电气"
+    },
+    {
+      "code": "sh.605178",
+      "raw_code": "605178",
+      "name": "时空科技"
+    },
+    {
+      "code": "sz.000016",
+      "raw_code": "000016",
+      "name": "*ST康佳A"
+    },
+    {
+      "code": "sz.000421",
+      "raw_code": "000421",
+      "name": "南京公用"
+    },
+    {
+      "code": "sz.000572",
+      "raw_code": "000572",
+      "name": "海马汽车"
+    },
+    {
+      "code": "sz.000625",
+      "raw_code": "000625",
+      "name": "长安汽车"
+    },
+    {
+      "code": "sz.002059",
+      "raw_code": "002059",
+      "name": "云南旅游"
+    },
+    {
+      "code": "sz.002236",
+      "raw_code": "002236",
+      "name": "大华股份"
+    },
+    {
+      "code": "sz.002355",
+      "raw_code": "002355",
+      "name": "兴民智通"
+    },
+    {
+      "code": "sz.002357",
+      "raw_code": "002357",
+      "name": "富临运业"
+    },
+    {
+      "code": "sz.002682",
+      "raw_code": "002682",
+      "name": "龙洲股份"
+    },
+    {
+      "code": "sz.300221",
+      "raw_code": "300221",
+      "name": "银禧科技"
+    },
+    {
+      "code": "sz.300240",
+      "raw_code": "300240",
+      "name": "飞力达"
+    },
+    {
+      "code": "sz.300284",
+      "raw_code": "300284",
+      "name": "苏交科"
+    },
+    {
+      "code": "sz.300546",
+      "raw_code": "300546",
+      "name": "雄帝科技"
+    },
+    {
+      "code": "sz.300698",
+      "raw_code": "300698",
+      "name": "万马科技"
+    },
+    {
+      "code": "sz.300805",
+      "raw_code": "300805",
+      "name": "电声股份"
+    },
+    {
+      "code": "sz.300807",
+      "raw_code": "300807",
+      "name": "天迈科技"
+    },
+    {
+      "code": "sz.301428",
+      "raw_code": "301428",
+      "name": "世纪恒通"
+    },
+    {
+      "code": "sz.301608",
+      "raw_code": "301608",
+      "name": "博实结"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:13",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302142/"
+  "fetched_at": "2026-07-13 16:56:22",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

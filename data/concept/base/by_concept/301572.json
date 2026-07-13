@@ -3,10 +3,172 @@
   "concept_name": "玉米",
   "first_trade_date": "2019-02-20",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 32,
+  "constituents": [
+    {
+      "code": "bj.920087",
+      "raw_code": "920087",
+      "name": "秋乐种业"
+    },
+    {
+      "code": "bj.920403",
+      "raw_code": "920403",
+      "name": "康农种业"
+    },
+    {
+      "code": "bj.920786",
+      "raw_code": "920786",
+      "name": "骑士乳业"
+    },
+    {
+      "code": "bj.920866",
+      "raw_code": "920866",
+      "name": "绿亨科技"
+    },
+    {
+      "code": "sh.600057",
+      "raw_code": "600057",
+      "name": "厦门象屿"
+    },
+    {
+      "code": "sh.600108",
+      "raw_code": "600108",
+      "name": "亚盛集团"
+    },
+    {
+      "code": "sh.600127",
+      "raw_code": "600127",
+      "name": "金健米业"
+    },
+    {
+      "code": "sh.600313",
+      "raw_code": "600313",
+      "name": "农发种业"
+    },
+    {
+      "code": "sh.600354",
+      "raw_code": "600354",
+      "name": "敦煌种业"
+    },
+    {
+      "code": "sh.600371",
+      "raw_code": "600371",
+      "name": "万向德农"
+    },
+    {
+      "code": "sh.600596",
+      "raw_code": "600596",
+      "name": "新安股份"
+    },
+    {
+      "code": "sh.600598",
+      "raw_code": "600598",
+      "name": "北大荒"
+    },
+    {
+      "code": "sh.600866",
+      "raw_code": "600866",
+      "name": "星湖科技"
+    },
+    {
+      "code": "sh.600965",
+      "raw_code": "600965",
+      "name": "*ST福成"
+    },
+    {
+      "code": "sh.601952",
+      "raw_code": "601952",
+      "name": "苏垦农发"
+    },
+    {
+      "code": "sh.605077",
+      "raw_code": "605077",
+      "name": "华康股份"
+    },
+    {
+      "code": "sz.000713",
+      "raw_code": "000713",
+      "name": "国投丰乐"
+    },
+    {
+      "code": "sz.000930",
+      "raw_code": "000930",
+      "name": "中粮科技"
+    },
+    {
+      "code": "sz.000998",
+      "raw_code": "000998",
+      "name": "隆平高科"
+    },
+    {
+      "code": "sz.002041",
+      "raw_code": "002041",
+      "name": "登海种业"
+    },
+    {
+      "code": "sz.002100",
+      "raw_code": "002100",
+      "name": "天康生物"
+    },
+    {
+      "code": "sz.002133",
+      "raw_code": "002133",
+      "name": "广宇集团"
+    },
+    {
+      "code": "sz.002385",
+      "raw_code": "002385",
+      "name": "大北农"
+    },
+    {
+      "code": "sz.002539",
+      "raw_code": "002539",
+      "name": "云图控股"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002588",
+      "raw_code": "002588",
+      "name": "史丹利"
+    },
+    {
+      "code": "sz.002688",
+      "raw_code": "002688",
+      "name": "金河生物"
+    },
+    {
+      "code": "sz.002732",
+      "raw_code": "002732",
+      "name": "燕塘乳业"
+    },
+    {
+      "code": "sz.300087",
+      "raw_code": "300087",
+      "name": "ST荃银"
+    },
+    {
+      "code": "sz.300189",
+      "raw_code": "300189",
+      "name": "神农种业"
+    },
+    {
+      "code": "sz.300829",
+      "raw_code": "300829",
+      "name": "金丹科技"
+    },
+    {
+      "code": "sz.301301",
+      "raw_code": "301301",
+      "name": "川宁生物"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:01",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301572/"
+  "fetched_at": "2026-07-13 16:53:23",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

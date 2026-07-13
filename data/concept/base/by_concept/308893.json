@@ -3,10 +3,142 @@
   "concept_name": "毛发医疗",
   "first_trade_date": "2022-03-25",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 26,
+  "constituents": [
+    {
+      "code": "sh.600420",
+      "raw_code": "600420",
+      "name": "国药现代"
+    },
+    {
+      "code": "sh.600557",
+      "raw_code": "600557",
+      "name": "康缘药业"
+    },
+    {
+      "code": "sh.600572",
+      "raw_code": "600572",
+      "name": "康恩贝"
+    },
+    {
+      "code": "sh.600789",
+      "raw_code": "600789",
+      "name": "鲁抗医药"
+    },
+    {
+      "code": "sh.603139",
+      "raw_code": "603139",
+      "name": "康惠股份"
+    },
+    {
+      "code": "sh.603207",
+      "raw_code": "603207",
+      "name": "小方制药"
+    },
+    {
+      "code": "sz.000516",
+      "raw_code": "000516",
+      "name": "国际医学"
+    },
+    {
+      "code": "sz.000615",
+      "raw_code": "000615",
+      "name": "*ST美谷"
+    },
+    {
+      "code": "sz.000756",
+      "raw_code": "000756",
+      "name": "新华制药"
+    },
+    {
+      "code": "sz.000989",
+      "raw_code": "000989",
+      "name": "九芝堂"
+    },
+    {
+      "code": "sz.002004",
+      "raw_code": "002004",
+      "name": "华邦健康"
+    },
+    {
+      "code": "sz.002102",
+      "raw_code": "002102",
+      "name": "ST能特"
+    },
+    {
+      "code": "sz.002172",
+      "raw_code": "002172",
+      "name": "澳洋健康"
+    },
+    {
+      "code": "sz.002332",
+      "raw_code": "002332",
+      "name": "仙琚制药"
+    },
+    {
+      "code": "sz.002422",
+      "raw_code": "002422",
+      "name": "科伦药业"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002566",
+      "raw_code": "002566",
+      "name": "益盛药业"
+    },
+    {
+      "code": "sz.002612",
+      "raw_code": "002612",
+      "name": "朗姿股份"
+    },
+    {
+      "code": "sz.002762",
+      "raw_code": "002762",
+      "name": "金发拉比"
+    },
+    {
+      "code": "sz.300158",
+      "raw_code": "300158",
+      "name": "振东制药"
+    },
+    {
+      "code": "sz.300740",
+      "raw_code": "300740",
+      "name": "水羊股份"
+    },
+    {
+      "code": "sz.300896",
+      "raw_code": "300896",
+      "name": "爱美客"
+    },
+    {
+      "code": "sz.301078",
+      "raw_code": "301078",
+      "name": "孩子王"
+    },
+    {
+      "code": "sz.301096",
+      "raw_code": "301096",
+      "name": "百诚医药"
+    },
+    {
+      "code": "sz.301263",
+      "raw_code": "301263",
+      "name": "泰恩康"
+    },
+    {
+      "code": "sz.301507",
+      "raw_code": "301507",
+      "name": "民生健康"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:58",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308893/"
+  "fetched_at": "2026-07-13 17:01:58",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

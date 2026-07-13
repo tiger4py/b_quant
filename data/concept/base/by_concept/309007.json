@@ -3,10 +3,292 @@
   "concept_name": "空气能热泵",
   "first_trade_date": "2022-08-11",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 56,
+  "constituents": [
+    {
+      "code": "bj.920081",
+      "raw_code": "920081",
+      "name": "欧伦电气"
+    },
+    {
+      "code": "bj.920088",
+      "raw_code": "920088",
+      "name": "科力股份"
+    },
+    {
+      "code": "sh.600187",
+      "raw_code": "600187",
+      "name": "*ST国中"
+    },
+    {
+      "code": "sh.600336",
+      "raw_code": "600336",
+      "name": "澳柯玛"
+    },
+    {
+      "code": "sh.600619",
+      "raw_code": "600619",
+      "name": "海立股份"
+    },
+    {
+      "code": "sh.600690",
+      "raw_code": "600690",
+      "name": "海尔智家"
+    },
+    {
+      "code": "sh.603088",
+      "raw_code": "603088",
+      "name": "宁波精达"
+    },
+    {
+      "code": "sh.603158",
+      "raw_code": "603158",
+      "name": "腾龙股份"
+    },
+    {
+      "code": "sh.603320",
+      "raw_code": "603320",
+      "name": "迪贝电气"
+    },
+    {
+      "code": "sh.603366",
+      "raw_code": "603366",
+      "name": "日出东方"
+    },
+    {
+      "code": "sh.603677",
+      "raw_code": "603677",
+      "name": "奇精机械"
+    },
+    {
+      "code": "sh.603726",
+      "raw_code": "603726",
+      "name": "朗迪集团"
+    },
+    {
+      "code": "sh.603757",
+      "raw_code": "603757",
+      "name": "大元泵业"
+    },
+    {
+      "code": "sh.688355",
+      "raw_code": "688355",
+      "name": "明志科技"
+    },
+    {
+      "code": "sz.000333",
+      "raw_code": "000333",
+      "name": "美的集团"
+    },
+    {
+      "code": "sz.000521",
+      "raw_code": "000521",
+      "name": "长虹美菱"
+    },
+    {
+      "code": "sz.000530",
+      "raw_code": "000530",
+      "name": "冰山冷热"
+    },
+    {
+      "code": "sz.000551",
+      "raw_code": "000551",
+      "name": "创元科技"
+    },
+    {
+      "code": "sz.000651",
+      "raw_code": "000651",
+      "name": "格力电器"
+    },
+    {
+      "code": "sz.000811",
+      "raw_code": "000811",
+      "name": "冰轮环境"
+    },
+    {
+      "code": "sz.000921",
+      "raw_code": "000921",
+      "name": "海信家电"
+    },
+    {
+      "code": "sz.002011",
+      "raw_code": "002011",
+      "name": "盾安环境"
+    },
+    {
+      "code": "sz.002035",
+      "raw_code": "002035",
+      "name": "华帝股份"
+    },
+    {
+      "code": "sz.002050",
+      "raw_code": "002050",
+      "name": "三花智控"
+    },
+    {
+      "code": "sz.002084",
+      "raw_code": "002084",
+      "name": "海鸥住工"
+    },
+    {
+      "code": "sz.002139",
+      "raw_code": "002139",
+      "name": "拓邦股份"
+    },
+    {
+      "code": "sz.002158",
+      "raw_code": "002158",
+      "name": "汉钟精机"
+    },
+    {
+      "code": "sz.002418",
+      "raw_code": "002418",
+      "name": "康盛股份"
+    },
+    {
+      "code": "sz.002506",
+      "raw_code": "002506",
+      "name": "协鑫集成"
+    },
+    {
+      "code": "sz.002527",
+      "raw_code": "002527",
+      "name": "新时达"
+    },
+    {
+      "code": "sz.002543",
+      "raw_code": "002543",
+      "name": "万和电气"
+    },
+    {
+      "code": "sz.002639",
+      "raw_code": "002639",
+      "name": "雪人集团"
+    },
+    {
+      "code": "sz.002694",
+      "raw_code": "002694",
+      "name": "*ST顾地"
+    },
+    {
+      "code": "sz.002723",
+      "raw_code": "002723",
+      "name": "小崧股份"
+    },
+    {
+      "code": "sz.002884",
+      "raw_code": "002884",
+      "name": "凌霄泵业"
+    },
+    {
+      "code": "sz.002893",
+      "raw_code": "002893",
+      "name": "京能热力"
+    },
+    {
+      "code": "sz.002917",
+      "raw_code": "002917",
+      "name": "金奥博"
+    },
+    {
+      "code": "sz.003028",
+      "raw_code": "003028",
+      "name": "振邦智能"
+    },
+    {
+      "code": "sz.300011",
+      "raw_code": "300011",
+      "name": "鼎汉技术"
+    },
+    {
+      "code": "sz.300140",
+      "raw_code": "300140",
+      "name": "节能环境"
+    },
+    {
+      "code": "sz.300145",
+      "raw_code": "300145",
+      "name": "南方泵业"
+    },
+    {
+      "code": "sz.300335",
+      "raw_code": "300335",
+      "name": "迪森股份"
+    },
+    {
+      "code": "sz.300376",
+      "raw_code": "300376",
+      "name": "易事特"
+    },
+    {
+      "code": "sz.300441",
+      "raw_code": "300441",
+      "name": "鲍斯股份"
+    },
+    {
+      "code": "sz.300594",
+      "raw_code": "300594",
+      "name": "ST朗进"
+    },
+    {
+      "code": "sz.300786",
+      "raw_code": "300786",
+      "name": "国林科技"
+    },
+    {
+      "code": "sz.300992",
+      "raw_code": "300992",
+      "name": "泰福泵业"
+    },
+    {
+      "code": "sz.301018",
+      "raw_code": "301018",
+      "name": "申菱环境"
+    },
+    {
+      "code": "sz.301129",
+      "raw_code": "301129",
+      "name": "瑞纳智能"
+    },
+    {
+      "code": "sz.301135",
+      "raw_code": "301135",
+      "name": "瑞德智能"
+    },
+    {
+      "code": "sz.301252",
+      "raw_code": "301252",
+      "name": "同星科技"
+    },
+    {
+      "code": "sz.301272",
+      "raw_code": "301272",
+      "name": "英华特"
+    },
+    {
+      "code": "sz.301317",
+      "raw_code": "301317",
+      "name": "鑫磊股份"
+    },
+    {
+      "code": "sz.301399",
+      "raw_code": "301399",
+      "name": "英特科技"
+    },
+    {
+      "code": "sz.301525",
+      "raw_code": "301525",
+      "name": "儒竞科技"
+    },
+    {
+      "code": "sz.301560",
+      "raw_code": "301560",
+      "name": "众捷汽车"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:04",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309007/"
+  "fetched_at": "2026-07-13 17:02:34",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

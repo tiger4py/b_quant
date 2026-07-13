@@ -3,10 +3,157 @@
   "concept_name": "租售同权",
   "first_trade_date": "2017-08-03",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 29,
+  "constituents": [
+    {
+      "code": "sh.600048",
+      "raw_code": "600048",
+      "name": "保利发展"
+    },
+    {
+      "code": "sh.600119",
+      "raw_code": "600119",
+      "name": "*ST长投"
+    },
+    {
+      "code": "sh.600325",
+      "raw_code": "600325",
+      "name": "华发股份"
+    },
+    {
+      "code": "sh.600376",
+      "raw_code": "600376",
+      "name": "首开股份"
+    },
+    {
+      "code": "sh.600527",
+      "raw_code": "600527",
+      "name": "江南高纤"
+    },
+    {
+      "code": "sh.600604",
+      "raw_code": "600604",
+      "name": "市北高新"
+    },
+    {
+      "code": "sh.600605",
+      "raw_code": "600605",
+      "name": "汇通能源"
+    },
+    {
+      "code": "sh.600638",
+      "raw_code": "600638",
+      "name": "新黄浦"
+    },
+    {
+      "code": "sh.600649",
+      "raw_code": "600649",
+      "name": "城投控股"
+    },
+    {
+      "code": "sh.600708",
+      "raw_code": "600708",
+      "name": "光明地产"
+    },
+    {
+      "code": "sh.600895",
+      "raw_code": "600895",
+      "name": "张江高科"
+    },
+    {
+      "code": "sh.603682",
+      "raw_code": "603682",
+      "name": "锦和商管"
+    },
+    {
+      "code": "sz.000002",
+      "raw_code": "000002",
+      "name": "万科A"
+    },
+    {
+      "code": "sz.000056",
+      "raw_code": "000056",
+      "name": "*ST皇庭"
+    },
+    {
+      "code": "sz.000090",
+      "raw_code": "000090",
+      "name": "天健集团"
+    },
+    {
+      "code": "sz.000558",
+      "raw_code": "000558",
+      "name": "天府文旅"
+    },
+    {
+      "code": "sz.000560",
+      "raw_code": "000560",
+      "name": "我爱我家"
+    },
+    {
+      "code": "sz.000608",
+      "raw_code": "000608",
+      "name": "阳光股份"
+    },
+    {
+      "code": "sz.000838",
+      "raw_code": "000838",
+      "name": "*ST发展"
+    },
+    {
+      "code": "sz.000863",
+      "raw_code": "000863",
+      "name": "三湘印象"
+    },
+    {
+      "code": "sz.001979",
+      "raw_code": "001979",
+      "name": "招商蛇口"
+    },
+    {
+      "code": "sz.002162",
+      "raw_code": "002162",
+      "name": "悦心健康"
+    },
+    {
+      "code": "sz.002208",
+      "raw_code": "002208",
+      "name": "合肥城建"
+    },
+    {
+      "code": "sz.002244",
+      "raw_code": "002244",
+      "name": "滨江集团"
+    },
+    {
+      "code": "sz.002285",
+      "raw_code": "002285",
+      "name": "世联行"
+    },
+    {
+      "code": "sz.002305",
+      "raw_code": "002305",
+      "name": "*ST南置"
+    },
+    {
+      "code": "sz.002574",
+      "raw_code": "002574",
+      "name": "明牌珠宝"
+    },
+    {
+      "code": "sz.300295",
+      "raw_code": "300295",
+      "name": "*ST三六五"
+    },
+    {
+      "code": "sz.300947",
+      "raw_code": "300947",
+      "name": "德必集团"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:11",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302034/"
+  "fetched_at": "2026-07-13 16:55:41",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

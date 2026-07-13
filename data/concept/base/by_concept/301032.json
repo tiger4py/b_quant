@@ -3,10 +3,397 @@
   "concept_name": "净水概念",
   "first_trade_date": "2022-02-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 77,
+  "constituents": [
+    {
+      "code": "bj.920088",
+      "raw_code": "920088",
+      "name": "科力股份"
+    },
+    {
+      "code": "bj.920346",
+      "raw_code": "920346",
+      "name": "威贸电子"
+    },
+    {
+      "code": "bj.920873",
+      "raw_code": "920873",
+      "name": "中设咨询"
+    },
+    {
+      "code": "sh.600008",
+      "raw_code": "600008",
+      "name": "首创环保"
+    },
+    {
+      "code": "sh.600257",
+      "raw_code": "600257",
+      "name": "大湖股份"
+    },
+    {
+      "code": "sh.600283",
+      "raw_code": "600283",
+      "name": "钱江水利"
+    },
+    {
+      "code": "sh.600336",
+      "raw_code": "600336",
+      "name": "澳柯玛"
+    },
+    {
+      "code": "sh.600539",
+      "raw_code": "600539",
+      "name": "狮头股份"
+    },
+    {
+      "code": "sh.600690",
+      "raw_code": "600690",
+      "name": "海尔智家"
+    },
+    {
+      "code": "sh.600736",
+      "raw_code": "600736",
+      "name": "苏州高新"
+    },
+    {
+      "code": "sh.600796",
+      "raw_code": "600796",
+      "name": "钱江生化"
+    },
+    {
+      "code": "sh.601158",
+      "raw_code": "601158",
+      "name": "重庆水务"
+    },
+    {
+      "code": "sh.603038",
+      "raw_code": "603038",
+      "name": "华立股份"
+    },
+    {
+      "code": "sh.603291",
+      "raw_code": "603291",
+      "name": "联合水务"
+    },
+    {
+      "code": "sh.603355",
+      "raw_code": "603355",
+      "name": "莱克电气"
+    },
+    {
+      "code": "sh.603408",
+      "raw_code": "603408",
+      "name": "建霖家居"
+    },
+    {
+      "code": "sh.603956",
+      "raw_code": "603956",
+      "name": "威派格"
+    },
+    {
+      "code": "sh.688101",
+      "raw_code": "688101",
+      "name": "三达膜"
+    },
+    {
+      "code": "sh.688296",
+      "raw_code": "688296",
+      "name": "和达科技"
+    },
+    {
+      "code": "sh.688357",
+      "raw_code": "688357",
+      "name": "建龙微纳"
+    },
+    {
+      "code": "sh.688466",
+      "raw_code": "688466",
+      "name": "金科环境"
+    },
+    {
+      "code": "sh.688480",
+      "raw_code": "688480",
+      "name": "赛恩斯"
+    },
+    {
+      "code": "sh.688679",
+      "raw_code": "688679",
+      "name": "通源环境"
+    },
+    {
+      "code": "sz.000333",
+      "raw_code": "000333",
+      "name": "美的集团"
+    },
+    {
+      "code": "sz.000521",
+      "raw_code": "000521",
+      "name": "长虹美菱"
+    },
+    {
+      "code": "sz.000651",
+      "raw_code": "000651",
+      "name": "格力电器"
+    },
+    {
+      "code": "sz.000890",
+      "raw_code": "000890",
+      "name": "法尔胜"
+    },
+    {
+      "code": "sz.000920",
+      "raw_code": "000920",
+      "name": "沃顿科技"
+    },
+    {
+      "code": "sz.001259",
+      "raw_code": "001259",
+      "name": "利仁科技"
+    },
+    {
+      "code": "sz.001358",
+      "raw_code": "001358",
+      "name": "兴欣新材"
+    },
+    {
+      "code": "sz.002035",
+      "raw_code": "002035",
+      "name": "华帝股份"
+    },
+    {
+      "code": "sz.002242",
+      "raw_code": "002242",
+      "name": "九阳股份"
+    },
+    {
+      "code": "sz.002372",
+      "raw_code": "002372",
+      "name": "伟星新材"
+    },
+    {
+      "code": "sz.002543",
+      "raw_code": "002543",
+      "name": "万和电气"
+    },
+    {
+      "code": "sz.002677",
+      "raw_code": "002677",
+      "name": "浙江美大"
+    },
+    {
+      "code": "sz.002778",
+      "raw_code": "002778",
+      "name": "中晟高科"
+    },
+    {
+      "code": "sz.002959",
+      "raw_code": "002959",
+      "name": "小熊电器"
+    },
+    {
+      "code": "sz.003039",
+      "raw_code": "003039",
+      "name": "顺控发展"
+    },
+    {
+      "code": "sz.300066",
+      "raw_code": "300066",
+      "name": "三川智慧"
+    },
+    {
+      "code": "sz.300070",
+      "raw_code": "300070",
+      "name": "碧水源"
+    },
+    {
+      "code": "sz.300145",
+      "raw_code": "300145",
+      "name": "南方泵业"
+    },
+    {
+      "code": "sz.300152",
+      "raw_code": "300152",
+      "name": "*ST动力"
+    },
+    {
+      "code": "sz.300172",
+      "raw_code": "300172",
+      "name": "中电环保"
+    },
+    {
+      "code": "sz.300272",
+      "raw_code": "300272",
+      "name": "开能健康"
+    },
+    {
+      "code": "sz.300332",
+      "raw_code": "300332",
+      "name": "天壕能源"
+    },
+    {
+      "code": "sz.300334",
+      "raw_code": "300334",
+      "name": "津膜科技"
+    },
+    {
+      "code": "sz.300335",
+      "raw_code": "300335",
+      "name": "迪森股份"
+    },
+    {
+      "code": "sz.300358",
+      "raw_code": "300358",
+      "name": "楚天科技"
+    },
+    {
+      "code": "sz.300370",
+      "raw_code": "300370",
+      "name": "安控科技"
+    },
+    {
+      "code": "sz.300422",
+      "raw_code": "300422",
+      "name": "博世科"
+    },
+    {
+      "code": "sz.300425",
+      "raw_code": "300425",
+      "name": "中建环能"
+    },
+    {
+      "code": "sz.300437",
+      "raw_code": "300437",
+      "name": "清水源"
+    },
+    {
+      "code": "sz.300487",
+      "raw_code": "300487",
+      "name": "蓝晓科技"
+    },
+    {
+      "code": "sz.300490",
+      "raw_code": "300490",
+      "name": "华自科技"
+    },
+    {
+      "code": "sz.300631",
+      "raw_code": "300631",
+      "name": "久吾高科"
+    },
+    {
+      "code": "sz.300664",
+      "raw_code": "300664",
+      "name": "鹏鹞环保"
+    },
+    {
+      "code": "sz.300732",
+      "raw_code": "300732",
+      "name": "设研院"
+    },
+    {
+      "code": "sz.300774",
+      "raw_code": "300774",
+      "name": "倍杰特"
+    },
+    {
+      "code": "sz.300786",
+      "raw_code": "300786",
+      "name": "国林科技"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.300857",
+      "raw_code": "300857",
+      "name": "协创数据"
+    },
+    {
+      "code": "sz.300864",
+      "raw_code": "300864",
+      "name": "南大环境"
+    },
+    {
+      "code": "sz.300897",
+      "raw_code": "300897",
+      "name": "山科智能"
+    },
+    {
+      "code": "sz.300899",
+      "raw_code": "300899",
+      "name": "上海凯鑫"
+    },
+    {
+      "code": "sz.300916",
+      "raw_code": "300916",
+      "name": "朗特智能"
+    },
+    {
+      "code": "sz.300929",
+      "raw_code": "300929",
+      "name": "华骐环保"
+    },
+    {
+      "code": "sz.300958",
+      "raw_code": "300958",
+      "name": "建工修复"
+    },
+    {
+      "code": "sz.300961",
+      "raw_code": "300961",
+      "name": "深水海纳"
+    },
+    {
+      "code": "sz.300962",
+      "raw_code": "300962",
+      "name": "中金辐照"
+    },
+    {
+      "code": "sz.301030",
+      "raw_code": "301030",
+      "name": "*ST仕净"
+    },
+    {
+      "code": "sz.301092",
+      "raw_code": "301092",
+      "name": "争光股份"
+    },
+    {
+      "code": "sz.301118",
+      "raw_code": "301118",
+      "name": "恒光股份"
+    },
+    {
+      "code": "sz.301127",
+      "raw_code": "301127",
+      "name": "武汉天源"
+    },
+    {
+      "code": "sz.301256",
+      "raw_code": "301256",
+      "name": "华融化学"
+    },
+    {
+      "code": "sz.301332",
+      "raw_code": "301332",
+      "name": "德尔玛"
+    },
+    {
+      "code": "sz.301372",
+      "raw_code": "301372",
+      "name": "科净源"
+    },
+    {
+      "code": "sz.301519",
+      "raw_code": "301519",
+      "name": "舜禹股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:32",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/6/code/301032/"
+  "fetched_at": "2026-07-13 16:44:26",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

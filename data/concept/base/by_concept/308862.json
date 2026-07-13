@@ -3,10 +3,92 @@
   "concept_name": "托育服务",
   "first_trade_date": "2022-03-07",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 16,
+  "constituents": [
+    {
+      "code": "sh.600551",
+      "raw_code": "600551",
+      "name": "时代出版"
+    },
+    {
+      "code": "sh.600757",
+      "raw_code": "600757",
+      "name": "长江传媒"
+    },
+    {
+      "code": "sh.603214",
+      "raw_code": "603214",
+      "name": "爱婴室"
+    },
+    {
+      "code": "sz.000607",
+      "raw_code": "000607",
+      "name": "华媒控股"
+    },
+    {
+      "code": "sz.000656",
+      "raw_code": "000656",
+      "name": "金科股份"
+    },
+    {
+      "code": "sz.000719",
+      "raw_code": "000719",
+      "name": "中原传媒"
+    },
+    {
+      "code": "sz.002067",
+      "raw_code": "002067",
+      "name": "景兴纸业"
+    },
+    {
+      "code": "sz.002083",
+      "raw_code": "002083",
+      "name": "孚日股份"
+    },
+    {
+      "code": "sz.002261",
+      "raw_code": "002261",
+      "name": "拓维信息"
+    },
+    {
+      "code": "sz.002762",
+      "raw_code": "002762",
+      "name": "金发拉比"
+    },
+    {
+      "code": "sz.002955",
+      "raw_code": "002955",
+      "name": "鸿合科技"
+    },
+    {
+      "code": "sz.300010",
+      "raw_code": "300010",
+      "name": "ST豆神"
+    },
+    {
+      "code": "sz.300096",
+      "raw_code": "300096",
+      "name": "ST易联众"
+    },
+    {
+      "code": "sz.300279",
+      "raw_code": "300279",
+      "name": "和晶科技"
+    },
+    {
+      "code": "sz.300329",
+      "raw_code": "300329",
+      "name": "海伦钢琴"
+    },
+    {
+      "code": "sz.300703",
+      "raw_code": "300703",
+      "name": "创源股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:55",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308862/"
+  "fetched_at": "2026-07-13 17:01:43",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

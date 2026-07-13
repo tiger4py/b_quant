@@ -3,10 +3,367 @@
   "concept_name": "脑机接口",
   "first_trade_date": "2023-05-29",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 71,
+  "constituents": [
+    {
+      "code": "bj.920199",
+      "raw_code": "920199",
+      "name": "倍益康"
+    },
+    {
+      "code": "sh.600056",
+      "raw_code": "600056",
+      "name": "中国医药"
+    },
+    {
+      "code": "sh.600459",
+      "raw_code": "600459",
+      "name": "贵研铂业"
+    },
+    {
+      "code": "sh.600587",
+      "raw_code": "600587",
+      "name": "新华医疗"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.600775",
+      "raw_code": "600775",
+      "name": "南京熊猫"
+    },
+    {
+      "code": "sh.600998",
+      "raw_code": "600998",
+      "name": "九州通"
+    },
+    {
+      "code": "sh.601567",
+      "raw_code": "601567",
+      "name": "三星电气"
+    },
+    {
+      "code": "sh.603008",
+      "raw_code": "603008",
+      "name": "ST喜临门"
+    },
+    {
+      "code": "sh.603579",
+      "raw_code": "603579",
+      "name": "荣泰健康"
+    },
+    {
+      "code": "sh.603610",
+      "raw_code": "603610",
+      "name": "麒盛科技"
+    },
+    {
+      "code": "sh.603666",
+      "raw_code": "603666",
+      "name": "亿嘉和"
+    },
+    {
+      "code": "sh.603716",
+      "raw_code": "603716",
+      "name": "塞力医疗"
+    },
+    {
+      "code": "sh.603920",
+      "raw_code": "603920",
+      "name": "世运电路"
+    },
+    {
+      "code": "sh.688039",
+      "raw_code": "688039",
+      "name": "当虹科技"
+    },
+    {
+      "code": "sh.688114",
+      "raw_code": "688114",
+      "name": "华大智造"
+    },
+    {
+      "code": "sh.688158",
+      "raw_code": "688158",
+      "name": "优刻得"
+    },
+    {
+      "code": "sh.688209",
+      "raw_code": "688209",
+      "name": "英集芯"
+    },
+    {
+      "code": "sh.688273",
+      "raw_code": "688273",
+      "name": "麦澜德"
+    },
+    {
+      "code": "sh.688306",
+      "raw_code": "688306",
+      "name": "均普智能"
+    },
+    {
+      "code": "sh.688371",
+      "raw_code": "688371",
+      "name": "菲沃泰"
+    },
+    {
+      "code": "sh.688575",
+      "raw_code": "688575",
+      "name": "亚辉龙"
+    },
+    {
+      "code": "sh.688580",
+      "raw_code": "688580",
+      "name": "伟思医疗"
+    },
+    {
+      "code": "sh.688626",
+      "raw_code": "688626",
+      "name": "翔宇医疗"
+    },
+    {
+      "code": "sh.688709",
+      "raw_code": "688709",
+      "name": "成都华微"
+    },
+    {
+      "code": "sh.688767",
+      "raw_code": "688767",
+      "name": "博拓生物"
+    },
+    {
+      "code": "sh.688793",
+      "raw_code": "688793",
+      "name": "倍轻松"
+    },
+    {
+      "code": "sz.000516",
+      "raw_code": "000516",
+      "name": "国际医学"
+    },
+    {
+      "code": "sz.000566",
+      "raw_code": "000566",
+      "name": "海南海药"
+    },
+    {
+      "code": "sz.000650",
+      "raw_code": "000650",
+      "name": "仁和药业"
+    },
+    {
+      "code": "sz.002009",
+      "raw_code": "002009",
+      "name": "天奇股份"
+    },
+    {
+      "code": "sz.002172",
+      "raw_code": "002172",
+      "name": "澳洋健康"
+    },
+    {
+      "code": "sz.002173",
+      "raw_code": "002173",
+      "name": "创新医疗"
+    },
+    {
+      "code": "sz.002195",
+      "raw_code": "002195",
+      "name": "岩山科技"
+    },
+    {
+      "code": "sz.002230",
+      "raw_code": "002230",
+      "name": "科大讯飞"
+    },
+    {
+      "code": "sz.002243",
+      "raw_code": "002243",
+      "name": "力合科创"
+    },
+    {
+      "code": "sz.002324",
+      "raw_code": "002324",
+      "name": "普利特"
+    },
+    {
+      "code": "sz.002396",
+      "raw_code": "002396",
+      "name": "星网锐捷"
+    },
+    {
+      "code": "sz.002465",
+      "raw_code": "002465",
+      "name": "海格通信"
+    },
+    {
+      "code": "sz.002555",
+      "raw_code": "002555",
+      "name": "三七互娱"
+    },
+    {
+      "code": "sz.002602",
+      "raw_code": "002602",
+      "name": "世纪华通"
+    },
+    {
+      "code": "sz.002819",
+      "raw_code": "002819",
+      "name": "东方中科"
+    },
+    {
+      "code": "sz.002925",
+      "raw_code": "002925",
+      "name": "盈趣科技"
+    },
+    {
+      "code": "sz.003020",
+      "raw_code": "003020",
+      "name": "立方制药"
+    },
+    {
+      "code": "sz.300003",
+      "raw_code": "300003",
+      "name": "乐普医疗"
+    },
+    {
+      "code": "sz.300007",
+      "raw_code": "300007",
+      "name": "汉威科技"
+    },
+    {
+      "code": "sz.300014",
+      "raw_code": "300014",
+      "name": "亿纬锂能"
+    },
+    {
+      "code": "sz.300016",
+      "raw_code": "300016",
+      "name": "北陆药业"
+    },
+    {
+      "code": "sz.300143",
+      "raw_code": "300143",
+      "name": "盈康生命"
+    },
+    {
+      "code": "sz.300352",
+      "raw_code": "300352",
+      "name": "ST信源"
+    },
+    {
+      "code": "sz.300409",
+      "raw_code": "300409",
+      "name": "道氏技术"
+    },
+    {
+      "code": "sz.300430",
+      "raw_code": "300430",
+      "name": "*ST益通"
+    },
+    {
+      "code": "sz.300459",
+      "raw_code": "300459",
+      "name": "汤姆猫"
+    },
+    {
+      "code": "sz.300632",
+      "raw_code": "300632",
+      "name": "光莆股份"
+    },
+    {
+      "code": "sz.300652",
+      "raw_code": "300652",
+      "name": "雷迪克"
+    },
+    {
+      "code": "sz.300663",
+      "raw_code": "300663",
+      "name": "科蓝软件"
+    },
+    {
+      "code": "sz.300678",
+      "raw_code": "300678",
+      "name": "中科信息"
+    },
+    {
+      "code": "sz.300753",
+      "raw_code": "300753",
+      "name": "爱朋医疗"
+    },
+    {
+      "code": "sz.300793",
+      "raw_code": "300793",
+      "name": "佳禾智能"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.300884",
+      "raw_code": "300884",
+      "name": "狄耐克"
+    },
+    {
+      "code": "sz.300887",
+      "raw_code": "300887",
+      "name": "谱尼测试"
+    },
+    {
+      "code": "sz.300976",
+      "raw_code": "300976",
+      "name": "达瑞电子"
+    },
+    {
+      "code": "sz.301087",
+      "raw_code": "301087",
+      "name": "可孚医疗"
+    },
+    {
+      "code": "sz.301099",
+      "raw_code": "301099",
+      "name": "雅创电子"
+    },
+    {
+      "code": "sz.301293",
+      "raw_code": "301293",
+      "name": "三博脑科"
+    },
+    {
+      "code": "sz.301330",
+      "raw_code": "301330",
+      "name": "熵基科技"
+    },
+    {
+      "code": "sz.301337",
+      "raw_code": "301337",
+      "name": "亚华电子"
+    },
+    {
+      "code": "sz.301363",
+      "raw_code": "301363",
+      "name": "美好医疗"
+    },
+    {
+      "code": "sz.301366",
+      "raw_code": "301366",
+      "name": "一博科技"
+    },
+    {
+      "code": "sz.301515",
+      "raw_code": "301515",
+      "name": "港通医疗"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:30",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308535/"
+  "fetched_at": "2026-07-13 16:59:07",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

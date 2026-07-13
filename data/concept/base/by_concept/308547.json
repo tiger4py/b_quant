@@ -3,10 +3,192 @@
   "concept_name": "黑龙江自贸区",
   "first_trade_date": "2019-06-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 36,
+  "constituents": [
+    {
+      "code": "sh.600038",
+      "raw_code": "600038",
+      "name": "中直股份"
+    },
+    {
+      "code": "sh.600095",
+      "raw_code": "600095",
+      "name": "湘财股份"
+    },
+    {
+      "code": "sh.600178",
+      "raw_code": "600178",
+      "name": "东安动力"
+    },
+    {
+      "code": "sh.600182",
+      "raw_code": "600182",
+      "name": "S佳通"
+    },
+    {
+      "code": "sh.600187",
+      "raw_code": "600187",
+      "name": "*ST国中"
+    },
+    {
+      "code": "sh.600202",
+      "raw_code": "600202",
+      "name": "哈空调"
+    },
+    {
+      "code": "sh.600289",
+      "raw_code": "600289",
+      "name": "ST信通"
+    },
+    {
+      "code": "sh.600356",
+      "raw_code": "600356",
+      "name": "恒丰纸业"
+    },
+    {
+      "code": "sh.600371",
+      "raw_code": "600371",
+      "name": "万向德农"
+    },
+    {
+      "code": "sh.600598",
+      "raw_code": "600598",
+      "name": "北大荒"
+    },
+    {
+      "code": "sh.600664",
+      "raw_code": "600664",
+      "name": "哈药股份"
+    },
+    {
+      "code": "sh.600666",
+      "raw_code": "600666",
+      "name": "奥瑞德"
+    },
+    {
+      "code": "sh.600726",
+      "raw_code": "600726",
+      "name": "华电能源"
+    },
+    {
+      "code": "sh.600829",
+      "raw_code": "600829",
+      "name": "人民同泰"
+    },
+    {
+      "code": "sh.600853",
+      "raw_code": "600853",
+      "name": "龙建股份"
+    },
+    {
+      "code": "sh.600864",
+      "raw_code": "600864",
+      "name": "哈投股份"
+    },
+    {
+      "code": "sh.601011",
+      "raw_code": "601011",
+      "name": "宝泰隆"
+    },
+    {
+      "code": "sh.601106",
+      "raw_code": "601106",
+      "name": "中国一重"
+    },
+    {
+      "code": "sh.601188",
+      "raw_code": "601188",
+      "name": "龙江交通"
+    },
+    {
+      "code": "sh.603023",
+      "raw_code": "603023",
+      "name": "威帝股份"
+    },
+    {
+      "code": "sh.603567",
+      "raw_code": "603567",
+      "name": "珍宝岛"
+    },
+    {
+      "code": "sh.605577",
+      "raw_code": "605577",
+      "name": "龙版传媒"
+    },
+    {
+      "code": "sh.688011",
+      "raw_code": "688011",
+      "name": "新光光电"
+    },
+    {
+      "code": "sh.688459",
+      "raw_code": "688459",
+      "name": "哈铁科技"
+    },
+    {
+      "code": "sz.000711",
+      "raw_code": "000711",
+      "name": "ST京蓝"
+    },
+    {
+      "code": "sz.000901",
+      "raw_code": "000901",
+      "name": "航天科技"
+    },
+    {
+      "code": "sz.000922",
+      "raw_code": "000922",
+      "name": "佳电股份"
+    },
+    {
+      "code": "sz.000985",
+      "raw_code": "000985",
+      "name": "大庆华科"
+    },
+    {
+      "code": "sz.002437",
+      "raw_code": "002437",
+      "name": "誉衡药业"
+    },
+    {
+      "code": "sz.002698",
+      "raw_code": "002698",
+      "name": "博实股份"
+    },
+    {
+      "code": "sz.002737",
+      "raw_code": "002737",
+      "name": "葵花药业"
+    },
+    {
+      "code": "sz.002900",
+      "raw_code": "002900",
+      "name": "哈三联"
+    },
+    {
+      "code": "sz.300040",
+      "raw_code": "300040",
+      "name": "九洲集团"
+    },
+    {
+      "code": "sz.300900",
+      "raw_code": "300900",
+      "name": "广联航空"
+    },
+    {
+      "code": "sz.301227",
+      "raw_code": "301227",
+      "name": "森鹰窗业"
+    },
+    {
+      "code": "sz.301371",
+      "raw_code": "301371",
+      "name": "敷尔佳"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:31",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308547/"
+  "fetched_at": "2026-07-13 16:59:08",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

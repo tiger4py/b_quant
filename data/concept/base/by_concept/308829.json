@@ -3,10 +3,327 @@
   "concept_name": "硅能源",
   "first_trade_date": "2022-01-27",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 63,
+  "constituents": [
+    {
+      "code": "bj.920368",
+      "raw_code": "920368",
+      "name": "连城数控"
+    },
+    {
+      "code": "bj.920402",
+      "raw_code": "920402",
+      "name": "硅烷科技"
+    },
+    {
+      "code": "bj.920570",
+      "raw_code": "920570",
+      "name": "坤博精工"
+    },
+    {
+      "code": "bj.920580",
+      "raw_code": "920580",
+      "name": "科创新材"
+    },
+    {
+      "code": "sh.600089",
+      "raw_code": "600089",
+      "name": "特变电工"
+    },
+    {
+      "code": "sh.600141",
+      "raw_code": "600141",
+      "name": "兴发集团"
+    },
+    {
+      "code": "sh.600293",
+      "raw_code": "600293",
+      "name": "三峡新材"
+    },
+    {
+      "code": "sh.600295",
+      "raw_code": "600295",
+      "name": "鄂尔多斯"
+    },
+    {
+      "code": "sh.600438",
+      "raw_code": "600438",
+      "name": "通威股份"
+    },
+    {
+      "code": "sh.600475",
+      "raw_code": "600475",
+      "name": "华光环能"
+    },
+    {
+      "code": "sh.600481",
+      "raw_code": "600481",
+      "name": "双良节能"
+    },
+    {
+      "code": "sh.600537",
+      "raw_code": "600537",
+      "name": "*ST亿晶"
+    },
+    {
+      "code": "sh.600596",
+      "raw_code": "600596",
+      "name": "新安股份"
+    },
+    {
+      "code": "sh.600935",
+      "raw_code": "600935",
+      "name": "华塑股份"
+    },
+    {
+      "code": "sh.601012",
+      "raw_code": "601012",
+      "name": "隆基绿能"
+    },
+    {
+      "code": "sh.601636",
+      "raw_code": "601636",
+      "name": "旗滨集团"
+    },
+    {
+      "code": "sh.601700",
+      "raw_code": "601700",
+      "name": "风范股份"
+    },
+    {
+      "code": "sh.601908",
+      "raw_code": "601908",
+      "name": "京运通"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603185",
+      "raw_code": "603185",
+      "name": "弘元绿能"
+    },
+    {
+      "code": "sh.603260",
+      "raw_code": "603260",
+      "name": "合盛硅业"
+    },
+    {
+      "code": "sh.603281",
+      "raw_code": "603281",
+      "name": "江瀚新材"
+    },
+    {
+      "code": "sh.603398",
+      "raw_code": "603398",
+      "name": "*ST沐邦"
+    },
+    {
+      "code": "sh.603778",
+      "raw_code": "603778",
+      "name": "国晟科技"
+    },
+    {
+      "code": "sh.603938",
+      "raw_code": "603938",
+      "name": "三孚股份"
+    },
+    {
+      "code": "sh.605358",
+      "raw_code": "605358",
+      "name": "立昂微"
+    },
+    {
+      "code": "sh.605366",
+      "raw_code": "605366",
+      "name": "宏柏新材"
+    },
+    {
+      "code": "sh.605376",
+      "raw_code": "605376",
+      "name": "博迁新材"
+    },
+    {
+      "code": "sh.605399",
+      "raw_code": "605399",
+      "name": "晨光新材"
+    },
+    {
+      "code": "sh.605589",
+      "raw_code": "605589",
+      "name": "圣泉集团"
+    },
+    {
+      "code": "sh.688303",
+      "raw_code": "688303",
+      "name": "大全能源"
+    },
+    {
+      "code": "sh.688432",
+      "raw_code": "688432",
+      "name": "有研硅"
+    },
+    {
+      "code": "sz.000009",
+      "raw_code": "000009",
+      "name": "中国宝安"
+    },
+    {
+      "code": "sz.000012",
+      "raw_code": "000012",
+      "name": "南玻A"
+    },
+    {
+      "code": "sz.000100",
+      "raw_code": "000100",
+      "name": "TCL科技"
+    },
+    {
+      "code": "sz.000561",
+      "raw_code": "000561",
+      "name": "烽火电子"
+    },
+    {
+      "code": "sz.001269",
+      "raw_code": "001269",
+      "name": "欧晶科技"
+    },
+    {
+      "code": "sz.002083",
+      "raw_code": "002083",
+      "name": "孚日股份"
+    },
+    {
+      "code": "sz.002129",
+      "raw_code": "002129",
+      "name": "TCL中环"
+    },
+    {
+      "code": "sz.002132",
+      "raw_code": "002132",
+      "name": "恒星科技"
+    },
+    {
+      "code": "sz.002213",
+      "raw_code": "002213",
+      "name": "大为股份"
+    },
+    {
+      "code": "sz.002218",
+      "raw_code": "002218",
+      "name": "拓日新能"
+    },
+    {
+      "code": "sz.002407",
+      "raw_code": "002407",
+      "name": "多氟多"
+    },
+    {
+      "code": "sz.002459",
+      "raw_code": "002459",
+      "name": "晶澳科技"
+    },
+    {
+      "code": "sz.002539",
+      "raw_code": "002539",
+      "name": "云图控股"
+    },
+    {
+      "code": "sz.002909",
+      "raw_code": "002909",
+      "name": "集泰股份"
+    },
+    {
+      "code": "sz.003026",
+      "raw_code": "003026",
+      "name": "中晶科技"
+    },
+    {
+      "code": "sz.300019",
+      "raw_code": "300019",
+      "name": "硅宝科技"
+    },
+    {
+      "code": "sz.300035",
+      "raw_code": "300035",
+      "name": "中科电气"
+    },
+    {
+      "code": "sz.300092",
+      "raw_code": "300092",
+      "name": "科新机电"
+    },
+    {
+      "code": "sz.300118",
+      "raw_code": "300118",
+      "name": "东方日升"
+    },
+    {
+      "code": "sz.300121",
+      "raw_code": "300121",
+      "name": "阳谷华泰"
+    },
+    {
+      "code": "sz.300345",
+      "raw_code": "300345",
+      "name": "华民股份"
+    },
+    {
+      "code": "sz.300402",
+      "raw_code": "300402",
+      "name": "宝色股份"
+    },
+    {
+      "code": "sz.300409",
+      "raw_code": "300409",
+      "name": "道氏技术"
+    },
+    {
+      "code": "sz.300472",
+      "raw_code": "300472",
+      "name": "*ST新元"
+    },
+    {
+      "code": "sz.300619",
+      "raw_code": "300619",
+      "name": "金银河"
+    },
+    {
+      "code": "sz.300724",
+      "raw_code": "300724",
+      "name": "捷佳伟创"
+    },
+    {
+      "code": "sz.300727",
+      "raw_code": "300727",
+      "name": "润禾材料"
+    },
+    {
+      "code": "sz.300821",
+      "raw_code": "300821",
+      "name": "东岳硅材"
+    },
+    {
+      "code": "sz.300890",
+      "raw_code": "300890",
+      "name": "翔丰华"
+    },
+    {
+      "code": "sz.301266",
+      "raw_code": "301266",
+      "name": "宇邦新材"
+    },
+    {
+      "code": "sz.301300",
+      "raw_code": "301300",
+      "name": "远翔新材"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:53",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308829/"
+  "fetched_at": "2026-07-13 17:01:33",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

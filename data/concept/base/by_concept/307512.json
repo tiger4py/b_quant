@@ -3,10 +3,142 @@
   "concept_name": "石墨电极",
   "first_trade_date": "2018-01-08",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 26,
+  "constituents": [
+    {
+      "code": "bj.920175",
+      "raw_code": "920175",
+      "name": "东方碳素"
+    },
+    {
+      "code": "bj.920185",
+      "raw_code": "920185",
+      "name": "贝特瑞"
+    },
+    {
+      "code": "bj.920719",
+      "raw_code": "920719",
+      "name": "宁新新材"
+    },
+    {
+      "code": "bj.920985",
+      "raw_code": "920985",
+      "name": "海泰新能"
+    },
+    {
+      "code": "sh.600019",
+      "raw_code": "600019",
+      "name": "宝钢股份"
+    },
+    {
+      "code": "sh.600516",
+      "raw_code": "600516",
+      "name": "方大炭素"
+    },
+    {
+      "code": "sh.600884",
+      "raw_code": "600884",
+      "name": "杉杉股份"
+    },
+    {
+      "code": "sh.601011",
+      "raw_code": "601011",
+      "name": "宝泰隆"
+    },
+    {
+      "code": "sh.601188",
+      "raw_code": "601188",
+      "name": "龙江交通"
+    },
+    {
+      "code": "sh.603260",
+      "raw_code": "603260",
+      "name": "合盛硅业"
+    },
+    {
+      "code": "sh.603315",
+      "raw_code": "603315",
+      "name": "福鞍股份"
+    },
+    {
+      "code": "sh.603612",
+      "raw_code": "603612",
+      "name": "索通发展"
+    },
+    {
+      "code": "sh.603659",
+      "raw_code": "603659",
+      "name": "璞泰来"
+    },
+    {
+      "code": "sz.000009",
+      "raw_code": "000009",
+      "name": "中国宝安"
+    },
+    {
+      "code": "sz.000059",
+      "raw_code": "000059",
+      "name": "华锦股份"
+    },
+    {
+      "code": "sz.000519",
+      "raw_code": "000519",
+      "name": "中兵红箭"
+    },
+    {
+      "code": "sz.000695",
+      "raw_code": "000695",
+      "name": "滨海能源"
+    },
+    {
+      "code": "sz.001301",
+      "raw_code": "001301",
+      "name": "尚太科技"
+    },
+    {
+      "code": "sz.002455",
+      "raw_code": "002455",
+      "name": "百川股份"
+    },
+    {
+      "code": "sz.002601",
+      "raw_code": "002601",
+      "name": "龙佰集团"
+    },
+    {
+      "code": "sz.002753",
+      "raw_code": "002753",
+      "name": "永东股份"
+    },
+    {
+      "code": "sz.300035",
+      "raw_code": "300035",
+      "name": "中科电气"
+    },
+    {
+      "code": "sz.300077",
+      "raw_code": "300077",
+      "name": "国民技术"
+    },
+    {
+      "code": "sz.300080",
+      "raw_code": "300080",
+      "name": "易成新能"
+    },
+    {
+      "code": "sz.300409",
+      "raw_code": "300409",
+      "name": "道氏技术"
+    },
+    {
+      "code": "sz.300890",
+      "raw_code": "300890",
+      "name": "翔丰华"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:19",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307512/"
+  "fetched_at": "2026-07-13 16:57:27",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

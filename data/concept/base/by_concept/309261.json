@@ -3,10 +3,457 @@
   "concept_name": "雅下水电概念",
   "first_trade_date": "2025-07-21",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 89,
+  "constituents": [
+    {
+      "code": "bj.920174",
+      "raw_code": "920174",
+      "name": "五新智能"
+    },
+    {
+      "code": "bj.920208",
+      "raw_code": "920208",
+      "name": "青矩技术"
+    },
+    {
+      "code": "bj.920879",
+      "raw_code": "920879",
+      "name": "基康技术"
+    },
+    {
+      "code": "sh.600010",
+      "raw_code": "600010",
+      "name": "包钢股份"
+    },
+    {
+      "code": "sh.600031",
+      "raw_code": "600031",
+      "name": "三一重工"
+    },
+    {
+      "code": "sh.600039",
+      "raw_code": "600039",
+      "name": "四川路桥"
+    },
+    {
+      "code": "sh.600089",
+      "raw_code": "600089",
+      "name": "特变电工"
+    },
+    {
+      "code": "sh.600117",
+      "raw_code": "600117",
+      "name": "西宁特钢"
+    },
+    {
+      "code": "sh.600131",
+      "raw_code": "600131",
+      "name": "国网信通"
+    },
+    {
+      "code": "sh.600248",
+      "raw_code": "600248",
+      "name": "陕建股份"
+    },
+    {
+      "code": "sh.600268",
+      "raw_code": "600268",
+      "name": "国电南自"
+    },
+    {
+      "code": "sh.600307",
+      "raw_code": "600307",
+      "name": "酒钢宏兴"
+    },
+    {
+      "code": "sh.600326",
+      "raw_code": "600326",
+      "name": "西藏天路"
+    },
+    {
+      "code": "sh.600406",
+      "raw_code": "600406",
+      "name": "国电南瑞"
+    },
+    {
+      "code": "sh.600502",
+      "raw_code": "600502",
+      "name": "安徽建工"
+    },
+    {
+      "code": "sh.600585",
+      "raw_code": "600585",
+      "name": "海螺水泥"
+    },
+    {
+      "code": "sh.600801",
+      "raw_code": "600801",
+      "name": "华新建材"
+    },
+    {
+      "code": "sh.600835",
+      "raw_code": "600835",
+      "name": "上海机电"
+    },
+    {
+      "code": "sh.600853",
+      "raw_code": "600853",
+      "name": "龙建股份"
+    },
+    {
+      "code": "sh.600869",
+      "raw_code": "600869",
+      "name": "远东股份"
+    },
+    {
+      "code": "sh.600875",
+      "raw_code": "600875",
+      "name": "东方电气"
+    },
+    {
+      "code": "sh.600939",
+      "raw_code": "600939",
+      "name": "重庆建工"
+    },
+    {
+      "code": "sh.601126",
+      "raw_code": "601126",
+      "name": "四方股份"
+    },
+    {
+      "code": "sh.601669",
+      "raw_code": "601669",
+      "name": "中国电建"
+    },
+    {
+      "code": "sh.601686",
+      "raw_code": "601686",
+      "name": "友发集团"
+    },
+    {
+      "code": "sh.601800",
+      "raw_code": "601800",
+      "name": "中国交建"
+    },
+    {
+      "code": "sh.601868",
+      "raw_code": "601868",
+      "name": "中国能建"
+    },
+    {
+      "code": "sh.601991",
+      "raw_code": "601991",
+      "name": "大唐发电"
+    },
+    {
+      "code": "sh.603018",
+      "raw_code": "603018",
+      "name": "华设集团"
+    },
+    {
+      "code": "sh.603060",
+      "raw_code": "603060",
+      "name": "国检集团"
+    },
+    {
+      "code": "sh.603191",
+      "raw_code": "603191",
+      "name": "望变电气"
+    },
+    {
+      "code": "sh.603280",
+      "raw_code": "603280",
+      "name": "南方路机"
+    },
+    {
+      "code": "sh.603300",
+      "raw_code": "603300",
+      "name": "海南华铁"
+    },
+    {
+      "code": "sh.603638",
+      "raw_code": "603638",
+      "name": "艾迪精密"
+    },
+    {
+      "code": "sh.603843",
+      "raw_code": "603843",
+      "name": "*ST正平"
+    },
+    {
+      "code": "sh.603916",
+      "raw_code": "603916",
+      "name": "苏博特"
+    },
+    {
+      "code": "sh.603977",
+      "raw_code": "603977",
+      "name": "国泰集团"
+    },
+    {
+      "code": "sh.688109",
+      "raw_code": "688109",
+      "name": "品茗科技"
+    },
+    {
+      "code": "sh.688186",
+      "raw_code": "688186",
+      "name": "广大特材"
+    },
+    {
+      "code": "sh.688425",
+      "raw_code": "688425",
+      "name": "铁建重工"
+    },
+    {
+      "code": "sh.688676",
+      "raw_code": "688676",
+      "name": "金盘科技"
+    },
+    {
+      "code": "sz.000157",
+      "raw_code": "000157",
+      "name": "中联重科"
+    },
+    {
+      "code": "sz.000425",
+      "raw_code": "000425",
+      "name": "徐工机械"
+    },
+    {
+      "code": "sz.000528",
+      "raw_code": "000528",
+      "name": "柳工"
+    },
+    {
+      "code": "sz.000657",
+      "raw_code": "000657",
+      "name": "中钨高新"
+    },
+    {
+      "code": "sz.000680",
+      "raw_code": "000680",
+      "name": "山推股份"
+    },
+    {
+      "code": "sz.000786",
+      "raw_code": "000786",
+      "name": "北新建材"
+    },
+    {
+      "code": "sz.000811",
+      "raw_code": "000811",
+      "name": "冰轮环境"
+    },
+    {
+      "code": "sz.001288",
+      "raw_code": "001288",
+      "name": "运机集团"
+    },
+    {
+      "code": "sz.001360",
+      "raw_code": "001360",
+      "name": "南矿集团"
+    },
+    {
+      "code": "sz.002037",
+      "raw_code": "002037",
+      "name": "保利联合"
+    },
+    {
+      "code": "sz.002057",
+      "raw_code": "002057",
+      "name": "中钢天源"
+    },
+    {
+      "code": "sz.002062",
+      "raw_code": "002062",
+      "name": "宏润建设"
+    },
+    {
+      "code": "sz.002096",
+      "raw_code": "002096",
+      "name": "易普力"
+    },
+    {
+      "code": "sz.002097",
+      "raw_code": "002097",
+      "name": "山河智能"
+    },
+    {
+      "code": "sz.002223",
+      "raw_code": "002223",
+      "name": "鱼跃医疗"
+    },
+    {
+      "code": "sz.002226",
+      "raw_code": "002226",
+      "name": "江南化工"
+    },
+    {
+      "code": "sz.002266",
+      "raw_code": "002266",
+      "name": "浙富控股"
+    },
+    {
+      "code": "sz.002268",
+      "raw_code": "002268",
+      "name": "电科网安"
+    },
+    {
+      "code": "sz.002307",
+      "raw_code": "002307",
+      "name": "北新路桥"
+    },
+    {
+      "code": "sz.002368",
+      "raw_code": "002368",
+      "name": "太极股份"
+    },
+    {
+      "code": "sz.002497",
+      "raw_code": "002497",
+      "name": "雅化集团"
+    },
+    {
+      "code": "sz.002523",
+      "raw_code": "002523",
+      "name": "天桥起重"
+    },
+    {
+      "code": "sz.002533",
+      "raw_code": "002533",
+      "name": "金杯电工"
+    },
+    {
+      "code": "sz.002560",
+      "raw_code": "002560",
+      "name": "通达股份"
+    },
+    {
+      "code": "sz.002639",
+      "raw_code": "002639",
+      "name": "雪人集团"
+    },
+    {
+      "code": "sz.002683",
+      "raw_code": "002683",
+      "name": "广东宏大"
+    },
+    {
+      "code": "sz.002761",
+      "raw_code": "002761",
+      "name": "浙江建投"
+    },
+    {
+      "code": "sz.002775",
+      "raw_code": "002775",
+      "name": "文科股份"
+    },
+    {
+      "code": "sz.002809",
+      "raw_code": "002809",
+      "name": "红墙股份"
+    },
+    {
+      "code": "sz.002827",
+      "raw_code": "002827",
+      "name": "高争民爆"
+    },
+    {
+      "code": "sz.002917",
+      "raw_code": "002917",
+      "name": "金奥博"
+    },
+    {
+      "code": "sz.003001",
+      "raw_code": "003001",
+      "name": "中岩大地"
+    },
+    {
+      "code": "sz.003002",
+      "raw_code": "003002",
+      "name": "壶化股份"
+    },
+    {
+      "code": "sz.300012",
+      "raw_code": "300012",
+      "name": "华测检测"
+    },
+    {
+      "code": "sz.300021",
+      "raw_code": "300021",
+      "name": "大禹节水"
+    },
+    {
+      "code": "sz.300036",
+      "raw_code": "300036",
+      "name": "超图软件"
+    },
+    {
+      "code": "sz.300135",
+      "raw_code": "300135",
+      "name": "宝利国际"
+    },
+    {
+      "code": "sz.300284",
+      "raw_code": "300284",
+      "name": "苏交科"
+    },
+    {
+      "code": "sz.300354",
+      "raw_code": "300354",
+      "name": "东华测试"
+    },
+    {
+      "code": "sz.300411",
+      "raw_code": "300411",
+      "name": "金盾股份"
+    },
+    {
+      "code": "sz.300627",
+      "raw_code": "300627",
+      "name": "华测导航"
+    },
+    {
+      "code": "sz.300732",
+      "raw_code": "300732",
+      "name": "设研院"
+    },
+    {
+      "code": "sz.300789",
+      "raw_code": "300789",
+      "name": "唐源电气"
+    },
+    {
+      "code": "sz.300837",
+      "raw_code": "300837",
+      "name": "浙矿股份"
+    },
+    {
+      "code": "sz.300986",
+      "raw_code": "300986",
+      "name": "志特新材"
+    },
+    {
+      "code": "sz.301028",
+      "raw_code": "301028",
+      "name": "鼎熔岩"
+    },
+    {
+      "code": "sz.301038",
+      "raw_code": "301038",
+      "name": "深水规院"
+    },
+    {
+      "code": "sz.301286",
+      "raw_code": "301286",
+      "name": "侨源股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:31",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309261/"
+  "fetched_at": "2026-07-13 17:05:32",
+  "page_count": 9,
+  "is_partial": false,
+  "page_limit_reason": null
 }

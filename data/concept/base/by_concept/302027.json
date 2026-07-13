@@ -3,10 +3,192 @@
   "concept_name": "电子竞技",
   "first_trade_date": "2016-04-01",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 36,
+  "constituents": [
+    {
+      "code": "bj.920190",
+      "raw_code": "920190",
+      "name": "雷神科技"
+    },
+    {
+      "code": "bj.920212",
+      "raw_code": "920212",
+      "name": "智新电子"
+    },
+    {
+      "code": "sh.600358",
+      "raw_code": "600358",
+      "name": "国旅联合"
+    },
+    {
+      "code": "sh.600633",
+      "raw_code": "600633",
+      "name": "浙数文化"
+    },
+    {
+      "code": "sh.600637",
+      "raw_code": "600637",
+      "name": "东方明珠"
+    },
+    {
+      "code": "sh.600986",
+      "raw_code": "600986",
+      "name": "浙文互联"
+    },
+    {
+      "code": "sh.603258",
+      "raw_code": "603258",
+      "name": "电魂网络"
+    },
+    {
+      "code": "sh.688793",
+      "raw_code": "688793",
+      "name": "倍轻松"
+    },
+    {
+      "code": "sz.000058",
+      "raw_code": "000058",
+      "name": "深赛格"
+    },
+    {
+      "code": "sz.000501",
+      "raw_code": "000501",
+      "name": "武商集团"
+    },
+    {
+      "code": "sz.000558",
+      "raw_code": "000558",
+      "name": "天府文旅"
+    },
+    {
+      "code": "sz.000656",
+      "raw_code": "000656",
+      "name": "金科股份"
+    },
+    {
+      "code": "sz.000727",
+      "raw_code": "000727",
+      "name": "冠捷科技"
+    },
+    {
+      "code": "sz.001314",
+      "raw_code": "001314",
+      "name": "亿道信息"
+    },
+    {
+      "code": "sz.002174",
+      "raw_code": "002174",
+      "name": "游族网络"
+    },
+    {
+      "code": "sz.002351",
+      "raw_code": "002351",
+      "name": "漫步者"
+    },
+    {
+      "code": "sz.002354",
+      "raw_code": "002354",
+      "name": "天娱数科"
+    },
+    {
+      "code": "sz.002517",
+      "raw_code": "002517",
+      "name": "恺英网络"
+    },
+    {
+      "code": "sz.002539",
+      "raw_code": "002539",
+      "name": "云图控股"
+    },
+    {
+      "code": "sz.002555",
+      "raw_code": "002555",
+      "name": "三七互娱"
+    },
+    {
+      "code": "sz.002558",
+      "raw_code": "002558",
+      "name": "巨人网络"
+    },
+    {
+      "code": "sz.002577",
+      "raw_code": "002577",
+      "name": "雷柏科技"
+    },
+    {
+      "code": "sz.002602",
+      "raw_code": "002602",
+      "name": "世纪华通"
+    },
+    {
+      "code": "sz.002624",
+      "raw_code": "002624",
+      "name": "完美世界"
+    },
+    {
+      "code": "sz.300043",
+      "raw_code": "300043",
+      "name": "星辉娱乐"
+    },
+    {
+      "code": "sz.300052",
+      "raw_code": "300052",
+      "name": "中青宝"
+    },
+    {
+      "code": "sz.300113",
+      "raw_code": "300113",
+      "name": "顺网科技"
+    },
+    {
+      "code": "sz.300144",
+      "raw_code": "300144",
+      "name": "宋城演艺"
+    },
+    {
+      "code": "sz.300232",
+      "raw_code": "300232",
+      "name": "洲明科技"
+    },
+    {
+      "code": "sz.300494",
+      "raw_code": "300494",
+      "name": "盛天网络"
+    },
+    {
+      "code": "sz.300710",
+      "raw_code": "300710",
+      "name": "万隆光电"
+    },
+    {
+      "code": "sz.300770",
+      "raw_code": "300770",
+      "name": "新媒股份"
+    },
+    {
+      "code": "sz.300785",
+      "raw_code": "300785",
+      "name": "值得买"
+    },
+    {
+      "code": "sz.301011",
+      "raw_code": "301011",
+      "name": "华立科技"
+    },
+    {
+      "code": "sz.301383",
+      "raw_code": "301383",
+      "name": "天键股份"
+    },
+    {
+      "code": "sz.301503",
+      "raw_code": "301503",
+      "name": "智迪科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:11",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302027/"
+  "fetched_at": "2026-07-13 16:55:40",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

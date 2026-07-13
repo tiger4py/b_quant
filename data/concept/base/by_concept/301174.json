@@ -3,10 +3,202 @@
   "concept_name": "钒电池",
   "first_trade_date": "2022-07-04",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 38,
+  "constituents": [
+    {
+      "code": "sh.600101",
+      "raw_code": "600101",
+      "name": "明星电力"
+    },
+    {
+      "code": "sh.600157",
+      "raw_code": "600157",
+      "name": "永泰能源"
+    },
+    {
+      "code": "sh.600218",
+      "raw_code": "600218",
+      "name": "全柴动力"
+    },
+    {
+      "code": "sh.600319",
+      "raw_code": "600319",
+      "name": "亚星化学"
+    },
+    {
+      "code": "sh.600517",
+      "raw_code": "600517",
+      "name": "国网英大"
+    },
+    {
+      "code": "sh.600642",
+      "raw_code": "600642",
+      "name": "申能股份"
+    },
+    {
+      "code": "sh.600839",
+      "raw_code": "600839",
+      "name": "四川长虹"
+    },
+    {
+      "code": "sh.600905",
+      "raw_code": "600905",
+      "name": "三峡能源"
+    },
+    {
+      "code": "sh.600956",
+      "raw_code": "600956",
+      "name": "新天绿能"
+    },
+    {
+      "code": "sh.601168",
+      "raw_code": "601168",
+      "name": "西部矿业"
+    },
+    {
+      "code": "sh.601727",
+      "raw_code": "601727",
+      "name": "上海电气"
+    },
+    {
+      "code": "sh.603067",
+      "raw_code": "603067",
+      "name": "振华股份"
+    },
+    {
+      "code": "sh.603810",
+      "raw_code": "603810",
+      "name": "丰山集团"
+    },
+    {
+      "code": "sz.000567",
+      "raw_code": "000567",
+      "name": "海德股份"
+    },
+    {
+      "code": "sz.000629",
+      "raw_code": "000629",
+      "name": "钒钛股份"
+    },
+    {
+      "code": "sz.000655",
+      "raw_code": "000655",
+      "name": "金岭矿业"
+    },
+    {
+      "code": "sz.000709",
+      "raw_code": "000709",
+      "name": "河钢股份"
+    },
+    {
+      "code": "sz.000778",
+      "raw_code": "000778",
+      "name": "新兴铸管"
+    },
+    {
+      "code": "sz.000822",
+      "raw_code": "000822",
+      "name": "山东海化"
+    },
+    {
+      "code": "sz.002145",
+      "raw_code": "002145",
+      "name": "钛能化学"
+    },
+    {
+      "code": "sz.002169",
+      "raw_code": "002169",
+      "name": "智光电气"
+    },
+    {
+      "code": "sz.002171",
+      "raw_code": "002171",
+      "name": "楚江新材"
+    },
+    {
+      "code": "sz.002203",
+      "raw_code": "002203",
+      "name": "海亮股份"
+    },
+    {
+      "code": "sz.002227",
+      "raw_code": "002227",
+      "name": "*ST特迅"
+    },
+    {
+      "code": "sz.002274",
+      "raw_code": "002274",
+      "name": "华昌化工"
+    },
+    {
+      "code": "sz.002296",
+      "raw_code": "002296",
+      "name": "辉煌科技"
+    },
+    {
+      "code": "sz.002480",
+      "raw_code": "002480",
+      "name": "新筑股份"
+    },
+    {
+      "code": "sz.002506",
+      "raw_code": "002506",
+      "name": "协鑫集成"
+    },
+    {
+      "code": "sz.002534",
+      "raw_code": "002534",
+      "name": "西子洁能"
+    },
+    {
+      "code": "sz.002601",
+      "raw_code": "002601",
+      "name": "龙佰集团"
+    },
+    {
+      "code": "sz.002978",
+      "raw_code": "002978",
+      "name": "安宁股份"
+    },
+    {
+      "code": "sz.300080",
+      "raw_code": "300080",
+      "name": "易成新能"
+    },
+    {
+      "code": "sz.300444",
+      "raw_code": "300444",
+      "name": "双杰电气"
+    },
+    {
+      "code": "sz.300706",
+      "raw_code": "300706",
+      "name": "阿石创"
+    },
+    {
+      "code": "sz.300779",
+      "raw_code": "300779",
+      "name": "惠城环保"
+    },
+    {
+      "code": "sz.300789",
+      "raw_code": "300789",
+      "name": "唐源电气"
+    },
+    {
+      "code": "sz.301289",
+      "raw_code": "301289",
+      "name": "国缆检测"
+    },
+    {
+      "code": "sz.301349",
+      "raw_code": "301349",
+      "name": "信德新材"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:43",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301174/"
+  "fetched_at": "2026-07-13 16:46:03",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

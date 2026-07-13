@@ -3,10 +3,382 @@
   "concept_name": "辅助生殖",
   "first_trade_date": "2020-10-23",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 74,
+  "constituents": [
+    {
+      "code": "bj.920017",
+      "raw_code": "920017",
+      "name": "星昊医药"
+    },
+    {
+      "code": "sh.600079",
+      "raw_code": "600079",
+      "name": "ST人福"
+    },
+    {
+      "code": "sh.600196",
+      "raw_code": "600196",
+      "name": "复星医药"
+    },
+    {
+      "code": "sh.600216",
+      "raw_code": "600216",
+      "name": "浙江医药"
+    },
+    {
+      "code": "sh.600276",
+      "raw_code": "600276",
+      "name": "恒瑞医药"
+    },
+    {
+      "code": "sh.600380",
+      "raw_code": "600380",
+      "name": "健康元"
+    },
+    {
+      "code": "sh.600420",
+      "raw_code": "600420",
+      "name": "国药现代"
+    },
+    {
+      "code": "sh.600488",
+      "raw_code": "600488",
+      "name": "津药药业"
+    },
+    {
+      "code": "sh.600645",
+      "raw_code": "600645",
+      "name": "中源协和"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.600763",
+      "raw_code": "600763",
+      "name": "通策医疗"
+    },
+    {
+      "code": "sh.600774",
+      "raw_code": "600774",
+      "name": "汉商集团"
+    },
+    {
+      "code": "sh.601089",
+      "raw_code": "601089",
+      "name": "福元医药"
+    },
+    {
+      "code": "sh.603538",
+      "raw_code": "603538",
+      "name": "美诺华"
+    },
+    {
+      "code": "sh.603987",
+      "raw_code": "603987",
+      "name": "康德莱"
+    },
+    {
+      "code": "sh.603990",
+      "raw_code": "603990",
+      "name": "麦迪科技"
+    },
+    {
+      "code": "sh.605116",
+      "raw_code": "605116",
+      "name": "奥锐特"
+    },
+    {
+      "code": "sh.688026",
+      "raw_code": "688026",
+      "name": "洁特生物"
+    },
+    {
+      "code": "sh.688067",
+      "raw_code": "688067",
+      "name": "爱威科技"
+    },
+    {
+      "code": "sh.688076",
+      "raw_code": "688076",
+      "name": "ST诺泰"
+    },
+    {
+      "code": "sh.688117",
+      "raw_code": "688117",
+      "name": "圣诺生物"
+    },
+    {
+      "code": "sh.688193",
+      "raw_code": "688193",
+      "name": "仁度生物"
+    },
+    {
+      "code": "sh.688253",
+      "raw_code": "688253",
+      "name": "英诺特"
+    },
+    {
+      "code": "sh.688265",
+      "raw_code": "688265",
+      "name": "南模生物"
+    },
+    {
+      "code": "sh.688273",
+      "raw_code": "688273",
+      "name": "麦澜德"
+    },
+    {
+      "code": "sh.688575",
+      "raw_code": "688575",
+      "name": "亚辉龙"
+    },
+    {
+      "code": "sh.688606",
+      "raw_code": "688606",
+      "name": "奥泰生物"
+    },
+    {
+      "code": "sh.688767",
+      "raw_code": "688767",
+      "name": "博拓生物"
+    },
+    {
+      "code": "sz.000513",
+      "raw_code": "000513",
+      "name": "丽珠集团"
+    },
+    {
+      "code": "sz.000516",
+      "raw_code": "000516",
+      "name": "国际医学"
+    },
+    {
+      "code": "sz.000597",
+      "raw_code": "000597",
+      "name": "东北制药"
+    },
+    {
+      "code": "sz.000661",
+      "raw_code": "000661",
+      "name": "长春高新"
+    },
+    {
+      "code": "sz.000710",
+      "raw_code": "000710",
+      "name": "贝瑞基因"
+    },
+    {
+      "code": "sz.000756",
+      "raw_code": "000756",
+      "name": "新华制药"
+    },
+    {
+      "code": "sz.000935",
+      "raw_code": "000935",
+      "name": "四川双马"
+    },
+    {
+      "code": "sz.000950",
+      "raw_code": "000950",
+      "name": "重药控股"
+    },
+    {
+      "code": "sz.002030",
+      "raw_code": "002030",
+      "name": "达安基因"
+    },
+    {
+      "code": "sz.002038",
+      "raw_code": "002038",
+      "name": "双鹭药业"
+    },
+    {
+      "code": "sz.002162",
+      "raw_code": "002162",
+      "name": "悦心健康"
+    },
+    {
+      "code": "sz.002317",
+      "raw_code": "002317",
+      "name": "众生药业"
+    },
+    {
+      "code": "sz.002332",
+      "raw_code": "002332",
+      "name": "仙琚制药"
+    },
+    {
+      "code": "sz.002584",
+      "raw_code": "002584",
+      "name": "西陇科学"
+    },
+    {
+      "code": "sz.002693",
+      "raw_code": "002693",
+      "name": "双成药业"
+    },
+    {
+      "code": "sz.002932",
+      "raw_code": "002932",
+      "name": "*ST明德"
+    },
+    {
+      "code": "sz.300006",
+      "raw_code": "300006",
+      "name": "莱美药业"
+    },
+    {
+      "code": "sz.300009",
+      "raw_code": "300009",
+      "name": "安科生物"
+    },
+    {
+      "code": "sz.300012",
+      "raw_code": "300012",
+      "name": "华测检测"
+    },
+    {
+      "code": "sz.300078",
+      "raw_code": "300078",
+      "name": "思创智联"
+    },
+    {
+      "code": "sz.300147",
+      "raw_code": "300147",
+      "name": "*ST香雪"
+    },
+    {
+      "code": "sz.300151",
+      "raw_code": "300151",
+      "name": "昌红科技"
+    },
+    {
+      "code": "sz.300199",
+      "raw_code": "300199",
+      "name": "翰宇药业"
+    },
+    {
+      "code": "sz.300204",
+      "raw_code": "300204",
+      "name": "舒泰神"
+    },
+    {
+      "code": "sz.300233",
+      "raw_code": "300233",
+      "name": "金城医药"
+    },
+    {
+      "code": "sz.300244",
+      "raw_code": "300244",
+      "name": "迪安诊断"
+    },
+    {
+      "code": "sz.300272",
+      "raw_code": "300272",
+      "name": "开能健康"
+    },
+    {
+      "code": "sz.300289",
+      "raw_code": "300289",
+      "name": "利德曼"
+    },
+    {
+      "code": "sz.300396",
+      "raw_code": "300396",
+      "name": "ST迪瑞"
+    },
+    {
+      "code": "sz.300436",
+      "raw_code": "300436",
+      "name": "广生堂"
+    },
+    {
+      "code": "sz.300482",
+      "raw_code": "300482",
+      "name": "万孚生物"
+    },
+    {
+      "code": "sz.300485",
+      "raw_code": "300485",
+      "name": "赛升药业"
+    },
+    {
+      "code": "sz.300519",
+      "raw_code": "300519",
+      "name": "新光药业"
+    },
+    {
+      "code": "sz.300583",
+      "raw_code": "300583",
+      "name": "赛托生物"
+    },
+    {
+      "code": "sz.300584",
+      "raw_code": "300584",
+      "name": "海辰药业"
+    },
+    {
+      "code": "sz.300639",
+      "raw_code": "300639",
+      "name": "凯普生物"
+    },
+    {
+      "code": "sz.300642",
+      "raw_code": "300642",
+      "name": "透景生命"
+    },
+    {
+      "code": "sz.300653",
+      "raw_code": "300653",
+      "name": "正海生物"
+    },
+    {
+      "code": "sz.300676",
+      "raw_code": "300676",
+      "name": "华大基因"
+    },
+    {
+      "code": "sz.300887",
+      "raw_code": "300887",
+      "name": "谱尼测试"
+    },
+    {
+      "code": "sz.300966",
+      "raw_code": "300966",
+      "name": "共同药业"
+    },
+    {
+      "code": "sz.301060",
+      "raw_code": "301060",
+      "name": "兰卫医学"
+    },
+    {
+      "code": "sz.301122",
+      "raw_code": "301122",
+      "name": "采纳股份"
+    },
+    {
+      "code": "sz.301126",
+      "raw_code": "301126",
+      "name": "达嘉维康"
+    },
+    {
+      "code": "sz.301235",
+      "raw_code": "301235",
+      "name": "华康洁净"
+    },
+    {
+      "code": "sz.301330",
+      "raw_code": "301330",
+      "name": "熵基科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:40",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308708/"
+  "fetched_at": "2026-07-13 16:59:35",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,222 @@
   "concept_name": "化债概念(AMC概念)",
   "first_trade_date": "2016-10-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 42,
+  "constituents": [
+    {
+      "code": "bj.920208",
+      "raw_code": "920208",
+      "name": "青矩技术"
+    },
+    {
+      "code": "sh.600020",
+      "raw_code": "600020",
+      "name": "中原高速"
+    },
+    {
+      "code": "sh.600084",
+      "raw_code": "600084",
+      "name": "*ST尼雅"
+    },
+    {
+      "code": "sh.600163",
+      "raw_code": "600163",
+      "name": "中闽能源"
+    },
+    {
+      "code": "sh.600318",
+      "raw_code": "600318",
+      "name": "新力金融"
+    },
+    {
+      "code": "sh.600475",
+      "raw_code": "600475",
+      "name": "华光环能"
+    },
+    {
+      "code": "sh.600507",
+      "raw_code": "600507",
+      "name": "方大特钢"
+    },
+    {
+      "code": "sh.600622",
+      "raw_code": "600622",
+      "name": "光大嘉宝"
+    },
+    {
+      "code": "sh.600657",
+      "raw_code": "600657",
+      "name": "信达地产"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.600730",
+      "raw_code": "600730",
+      "name": "*ST高科"
+    },
+    {
+      "code": "sh.600784",
+      "raw_code": "600784",
+      "name": "鲁银投资"
+    },
+    {
+      "code": "sh.600830",
+      "raw_code": "600830",
+      "name": "香溢融通"
+    },
+    {
+      "code": "sh.601198",
+      "raw_code": "601198",
+      "name": "东兴证券"
+    },
+    {
+      "code": "sh.601700",
+      "raw_code": "601700",
+      "name": "风范股份"
+    },
+    {
+      "code": "sh.601727",
+      "raw_code": "601727",
+      "name": "上海电气"
+    },
+    {
+      "code": "sh.603153",
+      "raw_code": "603153",
+      "name": "上海建科"
+    },
+    {
+      "code": "sh.603918",
+      "raw_code": "603918",
+      "name": "金桥信息"
+    },
+    {
+      "code": "sz.000011",
+      "raw_code": "000011",
+      "name": "深物业A"
+    },
+    {
+      "code": "sz.000401",
+      "raw_code": "000401",
+      "name": "金隅冀东"
+    },
+    {
+      "code": "sz.000510",
+      "raw_code": "000510",
+      "name": "新金路"
+    },
+    {
+      "code": "sz.000531",
+      "raw_code": "000531",
+      "name": "穗恒运A"
+    },
+    {
+      "code": "sz.000563",
+      "raw_code": "000563",
+      "name": "陕国投A"
+    },
+    {
+      "code": "sz.000567",
+      "raw_code": "000567",
+      "name": "海德股份"
+    },
+    {
+      "code": "sz.000652",
+      "raw_code": "000652",
+      "name": "泰达股份"
+    },
+    {
+      "code": "sz.000793",
+      "raw_code": "000793",
+      "name": "*ST华闻"
+    },
+    {
+      "code": "sz.000886",
+      "raw_code": "000886",
+      "name": "海南高速"
+    },
+    {
+      "code": "sz.000987",
+      "raw_code": "000987",
+      "name": "越秀资本"
+    },
+    {
+      "code": "sz.002057",
+      "raw_code": "002057",
+      "name": "中钢天源"
+    },
+    {
+      "code": "sz.002094",
+      "raw_code": "002094",
+      "name": "青岛金王"
+    },
+    {
+      "code": "sz.002279",
+      "raw_code": "002279",
+      "name": "久其软件"
+    },
+    {
+      "code": "sz.002285",
+      "raw_code": "002285",
+      "name": "世联行"
+    },
+    {
+      "code": "sz.002451",
+      "raw_code": "002451",
+      "name": "摩恩电气"
+    },
+    {
+      "code": "sz.002657",
+      "raw_code": "002657",
+      "name": "中科金财"
+    },
+    {
+      "code": "sz.002686",
+      "raw_code": "002686",
+      "name": "亿利达"
+    },
+    {
+      "code": "sz.002786",
+      "raw_code": "002786",
+      "name": "银宝山新"
+    },
+    {
+      "code": "sz.300348",
+      "raw_code": "300348",
+      "name": "长亮科技"
+    },
+    {
+      "code": "sz.300355",
+      "raw_code": "300355",
+      "name": "蒙草生态"
+    },
+    {
+      "code": "sz.300465",
+      "raw_code": "300465",
+      "name": "高伟达"
+    },
+    {
+      "code": "sz.300663",
+      "raw_code": "300663",
+      "name": "科蓝软件"
+    },
+    {
+      "code": "sz.300674",
+      "raw_code": "300674",
+      "name": "宇信科技"
+    },
+    {
+      "code": "sz.301378",
+      "raw_code": "301378",
+      "name": "通达海"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:12",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302046/"
+  "fetched_at": "2026-07-13 16:56:19",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

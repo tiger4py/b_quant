@@ -3,10 +3,112 @@
   "concept_name": "EDR概念",
   "first_trade_date": "2021-12-06",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 20,
+  "constituents": [
+    {
+      "code": "sh.600081",
+      "raw_code": "600081",
+      "name": "东风科技"
+    },
+    {
+      "code": "sh.600699",
+      "raw_code": "600699",
+      "name": "均胜电子"
+    },
+    {
+      "code": "sh.601360",
+      "raw_code": "601360",
+      "name": "三六零"
+    },
+    {
+      "code": "sh.603023",
+      "raw_code": "603023",
+      "name": "威帝股份"
+    },
+    {
+      "code": "sh.603936",
+      "raw_code": "603936",
+      "name": "博敏电子"
+    },
+    {
+      "code": "sh.688288",
+      "raw_code": "688288",
+      "name": "鸿泉技术"
+    },
+    {
+      "code": "sz.002055",
+      "raw_code": "002055",
+      "name": "ST得润"
+    },
+    {
+      "code": "sz.002212",
+      "raw_code": "002212",
+      "name": "天融信"
+    },
+    {
+      "code": "sz.002232",
+      "raw_code": "002232",
+      "name": "启明信息"
+    },
+    {
+      "code": "sz.002268",
+      "raw_code": "002268",
+      "name": "电科网安"
+    },
+    {
+      "code": "sz.002355",
+      "raw_code": "002355",
+      "name": "兴民智通"
+    },
+    {
+      "code": "sz.002970",
+      "raw_code": "002970",
+      "name": "锐明技术"
+    },
+    {
+      "code": "sz.300077",
+      "raw_code": "300077",
+      "name": "国民技术"
+    },
+    {
+      "code": "sz.300188",
+      "raw_code": "300188",
+      "name": "国投智能"
+    },
+    {
+      "code": "sz.300458",
+      "raw_code": "300458",
+      "name": "全志科技"
+    },
+    {
+      "code": "sz.300563",
+      "raw_code": "300563",
+      "name": "神宇股份"
+    },
+    {
+      "code": "sz.300735",
+      "raw_code": "300735",
+      "name": "光弘科技"
+    },
+    {
+      "code": "sz.300807",
+      "raw_code": "300807",
+      "name": "天迈科技"
+    },
+    {
+      "code": "sz.300857",
+      "raw_code": "300857",
+      "name": "协创数据"
+    },
+    {
+      "code": "sz.301308",
+      "raw_code": "301308",
+      "name": "江波龙"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:49",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308803/"
+  "fetched_at": "2026-07-13 17:01:13",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

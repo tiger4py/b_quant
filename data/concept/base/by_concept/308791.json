@@ -3,10 +3,302 @@
   "concept_name": "WiFi 6",
   "first_trade_date": "2021-11-04",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 58,
+  "constituents": [
+    {
+      "code": "bj.920190",
+      "raw_code": "920190",
+      "name": "雷神科技"
+    },
+    {
+      "code": "bj.920249",
+      "raw_code": "920249",
+      "name": "利尔达"
+    },
+    {
+      "code": "sh.600035",
+      "raw_code": "600035",
+      "name": "楚天高速"
+    },
+    {
+      "code": "sh.600498",
+      "raw_code": "600498",
+      "name": "烽火通信"
+    },
+    {
+      "code": "sh.600850",
+      "raw_code": "600850",
+      "name": "电科数字"
+    },
+    {
+      "code": "sh.600877",
+      "raw_code": "600877",
+      "name": "电科芯片"
+    },
+    {
+      "code": "sh.601231",
+      "raw_code": "601231",
+      "name": "环旭电子"
+    },
+    {
+      "code": "sh.603042",
+      "raw_code": "603042",
+      "name": "华脉科技"
+    },
+    {
+      "code": "sh.603068",
+      "raw_code": "603068",
+      "name": "博通集成"
+    },
+    {
+      "code": "sh.603083",
+      "raw_code": "603083",
+      "name": "剑桥科技"
+    },
+    {
+      "code": "sh.603118",
+      "raw_code": "603118",
+      "name": "共进股份"
+    },
+    {
+      "code": "sh.603236",
+      "raw_code": "603236",
+      "name": "移远通信"
+    },
+    {
+      "code": "sh.603738",
+      "raw_code": "603738",
+      "name": "泰晶科技"
+    },
+    {
+      "code": "sh.603803",
+      "raw_code": "603803",
+      "name": "瑞斯康达"
+    },
+    {
+      "code": "sh.603990",
+      "raw_code": "603990",
+      "name": "麦迪科技"
+    },
+    {
+      "code": "sh.688018",
+      "raw_code": "688018",
+      "name": "乐鑫科技"
+    },
+    {
+      "code": "sh.688099",
+      "raw_code": "688099",
+      "name": "晶晨股份"
+    },
+    {
+      "code": "sh.688115",
+      "raw_code": "688115",
+      "name": "思林杰"
+    },
+    {
+      "code": "sh.688153",
+      "raw_code": "688153",
+      "name": "唯捷创芯"
+    },
+    {
+      "code": "sh.688182",
+      "raw_code": "688182",
+      "name": "灿勤科技"
+    },
+    {
+      "code": "sh.688220",
+      "raw_code": "688220",
+      "name": "翱捷科技"
+    },
+    {
+      "code": "sh.688259",
+      "raw_code": "688259",
+      "name": "创耀科技"
+    },
+    {
+      "code": "sh.688418",
+      "raw_code": "688418",
+      "name": "震有科技"
+    },
+    {
+      "code": "sh.688591",
+      "raw_code": "688591",
+      "name": "泰凌微"
+    },
+    {
+      "code": "sh.688609",
+      "raw_code": "688609",
+      "name": "九联科技"
+    },
+    {
+      "code": "sh.688618",
+      "raw_code": "688618",
+      "name": "三旺通信"
+    },
+    {
+      "code": "sh.688653",
+      "raw_code": "688653",
+      "name": "康希通信"
+    },
+    {
+      "code": "sh.688790",
+      "raw_code": "688790",
+      "name": "昂瑞微"
+    },
+    {
+      "code": "sz.000801",
+      "raw_code": "000801",
+      "name": "四川九洲"
+    },
+    {
+      "code": "sz.000810",
+      "raw_code": "000810",
+      "name": "创维数字"
+    },
+    {
+      "code": "sz.000938",
+      "raw_code": "000938",
+      "name": "紫光股份"
+    },
+    {
+      "code": "sz.001287",
+      "raw_code": "001287",
+      "name": "中电港"
+    },
+    {
+      "code": "sz.002213",
+      "raw_code": "002213",
+      "name": "大为股份"
+    },
+    {
+      "code": "sz.002369",
+      "raw_code": "002369",
+      "name": "卓翼科技"
+    },
+    {
+      "code": "sz.002396",
+      "raw_code": "002396",
+      "name": "星网锐捷"
+    },
+    {
+      "code": "sz.002429",
+      "raw_code": "002429",
+      "name": "兆驰股份"
+    },
+    {
+      "code": "sz.002579",
+      "raw_code": "002579",
+      "name": "中京电子"
+    },
+    {
+      "code": "sz.002792",
+      "raw_code": "002792",
+      "name": "通宇通讯"
+    },
+    {
+      "code": "sz.300079",
+      "raw_code": "300079",
+      "name": "数码视讯"
+    },
+    {
+      "code": "sz.300136",
+      "raw_code": "300136",
+      "name": "信维通信"
+    },
+    {
+      "code": "sz.300250",
+      "raw_code": "300250",
+      "name": "初灵信息"
+    },
+    {
+      "code": "sz.300252",
+      "raw_code": "300252",
+      "name": "金信诺"
+    },
+    {
+      "code": "sz.300322",
+      "raw_code": "300322",
+      "name": "硕贝德"
+    },
+    {
+      "code": "sz.300504",
+      "raw_code": "300504",
+      "name": "天邑股份"
+    },
+    {
+      "code": "sz.300555",
+      "raw_code": "300555",
+      "name": "ST路通"
+    },
+    {
+      "code": "sz.300563",
+      "raw_code": "300563",
+      "name": "神宇股份"
+    },
+    {
+      "code": "sz.300571",
+      "raw_code": "300571",
+      "name": "平治信息"
+    },
+    {
+      "code": "sz.300590",
+      "raw_code": "300590",
+      "name": "移为通信"
+    },
+    {
+      "code": "sz.300638",
+      "raw_code": "300638",
+      "name": "广和通"
+    },
+    {
+      "code": "sz.300671",
+      "raw_code": "300671",
+      "name": "富满微"
+    },
+    {
+      "code": "sz.300672",
+      "raw_code": "300672",
+      "name": "国科微"
+    },
+    {
+      "code": "sz.300710",
+      "raw_code": "300710",
+      "name": "万隆光电"
+    },
+    {
+      "code": "sz.300782",
+      "raw_code": "300782",
+      "name": "卓胜微"
+    },
+    {
+      "code": "sz.300870",
+      "raw_code": "300870",
+      "name": "欧陆通"
+    },
+    {
+      "code": "sz.301165",
+      "raw_code": "301165",
+      "name": "锐捷网络"
+    },
+    {
+      "code": "sz.301191",
+      "raw_code": "301191",
+      "name": "菲菱科思"
+    },
+    {
+      "code": "sz.301314",
+      "raw_code": "301314",
+      "name": "科瑞思"
+    },
+    {
+      "code": "sz.301577",
+      "raw_code": "301577",
+      "name": "美信科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:48",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308791/"
+  "fetched_at": "2026-07-13 17:01:07",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

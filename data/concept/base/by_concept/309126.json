@@ -3,10 +3,272 @@
   "concept_name": "AI语料",
   "first_trade_date": "2024-03-25",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 52,
+  "constituents": [
+    {
+      "code": "sh.600100",
+      "raw_code": "600100",
+      "name": "同方股份"
+    },
+    {
+      "code": "sh.600308",
+      "raw_code": "600308",
+      "name": "华泰股份"
+    },
+    {
+      "code": "sh.600728",
+      "raw_code": "600728",
+      "name": "佳都科技"
+    },
+    {
+      "code": "sh.600825",
+      "raw_code": "600825",
+      "name": "新华传媒"
+    },
+    {
+      "code": "sh.600839",
+      "raw_code": "600839",
+      "name": "四川长虹"
+    },
+    {
+      "code": "sh.601360",
+      "raw_code": "601360",
+      "name": "三六零"
+    },
+    {
+      "code": "sh.603000",
+      "raw_code": "603000",
+      "name": "人民网"
+    },
+    {
+      "code": "sh.603533",
+      "raw_code": "603533",
+      "name": "掌阅科技"
+    },
+    {
+      "code": "sh.603721",
+      "raw_code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "code": "sh.603888",
+      "raw_code": "603888",
+      "name": "新华网"
+    },
+    {
+      "code": "sh.605186",
+      "raw_code": "605186",
+      "name": "健麾信息"
+    },
+    {
+      "code": "sh.688039",
+      "raw_code": "688039",
+      "name": "当虹科技"
+    },
+    {
+      "code": "sh.688228",
+      "raw_code": "688228",
+      "name": "开普云"
+    },
+    {
+      "code": "sh.688500",
+      "raw_code": "688500",
+      "name": "慧辰股份"
+    },
+    {
+      "code": "sh.688590",
+      "raw_code": "688590",
+      "name": "新致软件"
+    },
+    {
+      "code": "sh.688692",
+      "raw_code": "688692",
+      "name": "达梦数据"
+    },
+    {
+      "code": "sh.688787",
+      "raw_code": "688787",
+      "name": "海天瑞声"
+    },
+    {
+      "code": "sz.000032",
+      "raw_code": "000032",
+      "name": "深桑达A"
+    },
+    {
+      "code": "sz.000681",
+      "raw_code": "000681",
+      "name": "视觉中国"
+    },
+    {
+      "code": "sz.000710",
+      "raw_code": "000710",
+      "name": "贝瑞基因"
+    },
+    {
+      "code": "sz.000785",
+      "raw_code": "000785",
+      "name": "居然智家"
+    },
+    {
+      "code": "sz.000839",
+      "raw_code": "000839",
+      "name": "国安股份"
+    },
+    {
+      "code": "sz.002122",
+      "raw_code": "002122",
+      "name": "ST汇洲"
+    },
+    {
+      "code": "sz.002195",
+      "raw_code": "002195",
+      "name": "岩山科技"
+    },
+    {
+      "code": "sz.002226",
+      "raw_code": "002226",
+      "name": "江南化工"
+    },
+    {
+      "code": "sz.002230",
+      "raw_code": "002230",
+      "name": "科大讯飞"
+    },
+    {
+      "code": "sz.002343",
+      "raw_code": "002343",
+      "name": "慈文传媒"
+    },
+    {
+      "code": "sz.002354",
+      "raw_code": "002354",
+      "name": "天娱数科"
+    },
+    {
+      "code": "sz.002362",
+      "raw_code": "002362",
+      "name": "汉王科技"
+    },
+    {
+      "code": "sz.002649",
+      "raw_code": "002649",
+      "name": "博彦科技"
+    },
+    {
+      "code": "sz.002908",
+      "raw_code": "002908",
+      "name": "德生科技"
+    },
+    {
+      "code": "sz.300033",
+      "raw_code": "300033",
+      "name": "同花顺"
+    },
+    {
+      "code": "sz.300071",
+      "raw_code": "300071",
+      "name": "福石控股"
+    },
+    {
+      "code": "sz.300079",
+      "raw_code": "300079",
+      "name": "数码视讯"
+    },
+    {
+      "code": "sz.300130",
+      "raw_code": "300130",
+      "name": "新国都"
+    },
+    {
+      "code": "sz.300133",
+      "raw_code": "300133",
+      "name": "华策影视"
+    },
+    {
+      "code": "sz.300166",
+      "raw_code": "300166",
+      "name": "东方国信"
+    },
+    {
+      "code": "sz.300182",
+      "raw_code": "300182",
+      "name": "捷成股份"
+    },
+    {
+      "code": "sz.300226",
+      "raw_code": "300226",
+      "name": "上海钢联"
+    },
+    {
+      "code": "sz.300229",
+      "raw_code": "300229",
+      "name": "拓尔思"
+    },
+    {
+      "code": "sz.300248",
+      "raw_code": "300248",
+      "name": "新开普"
+    },
+    {
+      "code": "sz.300341",
+      "raw_code": "300341",
+      "name": "麦克奥迪"
+    },
+    {
+      "code": "sz.300364",
+      "raw_code": "300364",
+      "name": "中文在线"
+    },
+    {
+      "code": "sz.300369",
+      "raw_code": "300369",
+      "name": "绿盟科技"
+    },
+    {
+      "code": "sz.300413",
+      "raw_code": "300413",
+      "name": "芒果超媒"
+    },
+    {
+      "code": "sz.300418",
+      "raw_code": "300418",
+      "name": "昆仑万维"
+    },
+    {
+      "code": "sz.300609",
+      "raw_code": "300609",
+      "name": "汇纳科技"
+    },
+    {
+      "code": "sz.300654",
+      "raw_code": "300654",
+      "name": "世纪天鸿"
+    },
+    {
+      "code": "sz.300766",
+      "raw_code": "300766",
+      "name": "每日互动"
+    },
+    {
+      "code": "sz.300785",
+      "raw_code": "300785",
+      "name": "值得买"
+    },
+    {
+      "code": "sz.300977",
+      "raw_code": "300977",
+      "name": "深圳瑞捷"
+    },
+    {
+      "code": "sz.300996",
+      "raw_code": "300996",
+      "name": "普联软件"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:21",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309126/"
+  "fetched_at": "2026-07-13 17:04:30",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

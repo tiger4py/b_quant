@@ -3,10 +3,387 @@
   "concept_name": "化肥",
   "first_trade_date": "2022-03-04",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 75,
+  "constituents": [
+    {
+      "code": "bj.920159",
+      "raw_code": "920159",
+      "name": "农大科技"
+    },
+    {
+      "code": "bj.920304",
+      "raw_code": "920304",
+      "name": "迪尔化工"
+    },
+    {
+      "code": "sh.600096",
+      "raw_code": "600096",
+      "name": "云天化"
+    },
+    {
+      "code": "sh.600123",
+      "raw_code": "600123",
+      "name": "兰花科创"
+    },
+    {
+      "code": "sh.600128",
+      "raw_code": "600128",
+      "name": "苏豪弘业"
+    },
+    {
+      "code": "sh.600141",
+      "raw_code": "600141",
+      "name": "兴发集团"
+    },
+    {
+      "code": "sh.600227",
+      "raw_code": "600227",
+      "name": "赤天化"
+    },
+    {
+      "code": "sh.600251",
+      "raw_code": "600251",
+      "name": "冠农股份"
+    },
+    {
+      "code": "sh.600313",
+      "raw_code": "600313",
+      "name": "农发种业"
+    },
+    {
+      "code": "sh.600331",
+      "raw_code": "600331",
+      "name": "宏达股份"
+    },
+    {
+      "code": "sh.600371",
+      "raw_code": "600371",
+      "name": "万向德农"
+    },
+    {
+      "code": "sh.600425",
+      "raw_code": "600425",
+      "name": "青松建化"
+    },
+    {
+      "code": "sh.600426",
+      "raw_code": "600426",
+      "name": "华鲁恒升"
+    },
+    {
+      "code": "sh.600470",
+      "raw_code": "600470",
+      "name": "六国化工"
+    },
+    {
+      "code": "sh.600579",
+      "raw_code": "600579",
+      "name": "中化装备"
+    },
+    {
+      "code": "sh.600598",
+      "raw_code": "600598",
+      "name": "北大荒"
+    },
+    {
+      "code": "sh.600691",
+      "raw_code": "600691",
+      "name": "潞化科技"
+    },
+    {
+      "code": "sh.600725",
+      "raw_code": "600725",
+      "name": "云维股份"
+    },
+    {
+      "code": "sh.600727",
+      "raw_code": "600727",
+      "name": "鲁北化工"
+    },
+    {
+      "code": "sh.600812",
+      "raw_code": "600812",
+      "name": "华北制药"
+    },
+    {
+      "code": "sh.601898",
+      "raw_code": "601898",
+      "name": "中煤能源"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603227",
+      "raw_code": "603227",
+      "name": "雪峰科技"
+    },
+    {
+      "code": "sh.603334",
+      "raw_code": "603334",
+      "name": "丰倍生物"
+    },
+    {
+      "code": "sh.603395",
+      "raw_code": "603395",
+      "name": "红四方"
+    },
+    {
+      "code": "sh.603639",
+      "raw_code": "603639",
+      "name": "海利尔"
+    },
+    {
+      "code": "sh.603739",
+      "raw_code": "603739",
+      "name": "蔚蓝生物"
+    },
+    {
+      "code": "sz.000059",
+      "raw_code": "000059",
+      "name": "华锦股份"
+    },
+    {
+      "code": "sz.000408",
+      "raw_code": "000408",
+      "name": "藏格矿业"
+    },
+    {
+      "code": "sz.000422",
+      "raw_code": "000422",
+      "name": "湖北宜化"
+    },
+    {
+      "code": "sz.000552",
+      "raw_code": "000552",
+      "name": "甘肃能化"
+    },
+    {
+      "code": "sz.000592",
+      "raw_code": "000592",
+      "name": "平潭发展"
+    },
+    {
+      "code": "sz.000683",
+      "raw_code": "000683",
+      "name": "博源化工"
+    },
+    {
+      "code": "sz.000707",
+      "raw_code": "000707",
+      "name": "双环科技"
+    },
+    {
+      "code": "sz.000713",
+      "raw_code": "000713",
+      "name": "国投丰乐"
+    },
+    {
+      "code": "sz.000731",
+      "raw_code": "000731",
+      "name": "四川美丰"
+    },
+    {
+      "code": "sz.000762",
+      "raw_code": "000762",
+      "name": "西藏矿业"
+    },
+    {
+      "code": "sz.000792",
+      "raw_code": "000792",
+      "name": "盐湖股份"
+    },
+    {
+      "code": "sz.000830",
+      "raw_code": "000830",
+      "name": "鲁西化工"
+    },
+    {
+      "code": "sz.000833",
+      "raw_code": "000833",
+      "name": "粤桂股份"
+    },
+    {
+      "code": "sz.000893",
+      "raw_code": "000893",
+      "name": "亚钾国际"
+    },
+    {
+      "code": "sz.000902",
+      "raw_code": "000902",
+      "name": "新洋丰"
+    },
+    {
+      "code": "sz.000912",
+      "raw_code": "000912",
+      "name": "泸天化"
+    },
+    {
+      "code": "sz.000953",
+      "raw_code": "000953",
+      "name": "中哲精化"
+    },
+    {
+      "code": "sz.001217",
+      "raw_code": "001217",
+      "name": "华尔泰"
+    },
+    {
+      "code": "sz.002170",
+      "raw_code": "002170",
+      "name": "芭田股份"
+    },
+    {
+      "code": "sz.002237",
+      "raw_code": "002237",
+      "name": "恒邦股份"
+    },
+    {
+      "code": "sz.002256",
+      "raw_code": "002256",
+      "name": "兆新股份"
+    },
+    {
+      "code": "sz.002274",
+      "raw_code": "002274",
+      "name": "华昌化工"
+    },
+    {
+      "code": "sz.002312",
+      "raw_code": "002312",
+      "name": "川发龙蟒"
+    },
+    {
+      "code": "sz.002391",
+      "raw_code": "002391",
+      "name": "长青股份"
+    },
+    {
+      "code": "sz.002460",
+      "raw_code": "002460",
+      "name": "赣锋锂业"
+    },
+    {
+      "code": "sz.002466",
+      "raw_code": "002466",
+      "name": "天齐锂业"
+    },
+    {
+      "code": "sz.002470",
+      "raw_code": "002470",
+      "name": "金正大"
+    },
+    {
+      "code": "sz.002481",
+      "raw_code": "002481",
+      "name": "双塔食品"
+    },
+    {
+      "code": "sz.002496",
+      "raw_code": "002496",
+      "name": "辉丰股份"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002539",
+      "raw_code": "002539",
+      "name": "云图控股"
+    },
+    {
+      "code": "sz.002545",
+      "raw_code": "002545",
+      "name": "东方铁塔"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002588",
+      "raw_code": "002588",
+      "name": "史丹利"
+    },
+    {
+      "code": "sz.002683",
+      "raw_code": "002683",
+      "name": "广东宏大"
+    },
+    {
+      "code": "sz.002749",
+      "raw_code": "002749",
+      "name": "国光股份"
+    },
+    {
+      "code": "sz.002758",
+      "raw_code": "002758",
+      "name": "浙农股份"
+    },
+    {
+      "code": "sz.002783",
+      "raw_code": "002783",
+      "name": "凯龙股份"
+    },
+    {
+      "code": "sz.002895",
+      "raw_code": "002895",
+      "name": "川恒股份"
+    },
+    {
+      "code": "sz.002999",
+      "raw_code": "002999",
+      "name": "天禾股份"
+    },
+    {
+      "code": "sz.003017",
+      "raw_code": "003017",
+      "name": "大洋生物"
+    },
+    {
+      "code": "sz.300072",
+      "raw_code": "300072",
+      "name": "海新能科"
+    },
+    {
+      "code": "sz.300239",
+      "raw_code": "300239",
+      "name": "东宝生物"
+    },
+    {
+      "code": "sz.300387",
+      "raw_code": "300387",
+      "name": "富邦科技"
+    },
+    {
+      "code": "sz.300497",
+      "raw_code": "300497",
+      "name": "富祥股份"
+    },
+    {
+      "code": "sz.300505",
+      "raw_code": "300505",
+      "name": "川金诺"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.301256",
+      "raw_code": "301256",
+      "name": "华融化学"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:34",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/2/code/301104/"
+  "fetched_at": "2026-07-13 16:45:34",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,137 @@
   "concept_name": "无人零售",
   "first_trade_date": "2017-11-17",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 25,
+  "constituents": [
+    {
+      "code": "bj.920407",
+      "raw_code": "920407",
+      "name": "驰诚股份"
+    },
+    {
+      "code": "sh.600336",
+      "raw_code": "600336",
+      "name": "澳柯玛"
+    },
+    {
+      "code": "sh.600825",
+      "raw_code": "600825",
+      "name": "新华传媒"
+    },
+    {
+      "code": "sh.603123",
+      "raw_code": "603123",
+      "name": "翠微股份"
+    },
+    {
+      "code": "sh.603187",
+      "raw_code": "603187",
+      "name": "海容冷链"
+    },
+    {
+      "code": "sh.603236",
+      "raw_code": "603236",
+      "name": "移远通信"
+    },
+    {
+      "code": "sh.688327",
+      "raw_code": "688327",
+      "name": "云从科技"
+    },
+    {
+      "code": "sz.000530",
+      "raw_code": "000530",
+      "name": "冰山冷热"
+    },
+    {
+      "code": "sz.000564",
+      "raw_code": "000564",
+      "name": "供销大集"
+    },
+    {
+      "code": "sz.000701",
+      "raw_code": "000701",
+      "name": "厦门信达"
+    },
+    {
+      "code": "sz.002009",
+      "raw_code": "002009",
+      "name": "天奇股份"
+    },
+    {
+      "code": "sz.002024",
+      "raw_code": "002024",
+      "name": "ST易购"
+    },
+    {
+      "code": "sz.002161",
+      "raw_code": "002161",
+      "name": "远望谷"
+    },
+    {
+      "code": "sz.002376",
+      "raw_code": "002376",
+      "name": "新北洋"
+    },
+    {
+      "code": "sz.002419",
+      "raw_code": "002419",
+      "name": "天虹股份"
+    },
+    {
+      "code": "sz.002697",
+      "raw_code": "002697",
+      "name": "红旗连锁"
+    },
+    {
+      "code": "sz.300078",
+      "raw_code": "300078",
+      "name": "思创智联"
+    },
+    {
+      "code": "sz.300220",
+      "raw_code": "300220",
+      "name": "金运激光"
+    },
+    {
+      "code": "sz.300368",
+      "raw_code": "300368",
+      "name": "汇金股份"
+    },
+    {
+      "code": "sz.300512",
+      "raw_code": "300512",
+      "name": "中亚股份"
+    },
+    {
+      "code": "sz.300562",
+      "raw_code": "300562",
+      "name": "乐心医疗"
+    },
+    {
+      "code": "sz.300663",
+      "raw_code": "300663",
+      "name": "科蓝软件"
+    },
+    {
+      "code": "sz.300771",
+      "raw_code": "300771",
+      "name": "智莱科技"
+    },
+    {
+      "code": "sz.301126",
+      "raw_code": "301126",
+      "name": "达嘉维康"
+    },
+    {
+      "code": "sz.301330",
+      "raw_code": "301330",
+      "name": "熵基科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:15",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/304756/"
+  "fetched_at": "2026-07-13 16:56:50",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

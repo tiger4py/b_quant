@@ -3,10 +3,422 @@
   "concept_name": "TOPCON电池",
   "first_trade_date": "2022-07-21",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 82,
+  "constituents": [
+    {
+      "code": "bj.920167",
+      "raw_code": "920167",
+      "name": "同享科技"
+    },
+    {
+      "code": "bj.920368",
+      "raw_code": "920368",
+      "name": "连城数控"
+    },
+    {
+      "code": "bj.920985",
+      "raw_code": "920985",
+      "name": "海泰新能"
+    },
+    {
+      "code": "sh.600151",
+      "raw_code": "600151",
+      "name": "航天机电"
+    },
+    {
+      "code": "sh.600348",
+      "raw_code": "600348",
+      "name": "华阳股份"
+    },
+    {
+      "code": "sh.600438",
+      "raw_code": "600438",
+      "name": "通威股份"
+    },
+    {
+      "code": "sh.600537",
+      "raw_code": "600537",
+      "name": "*ST亿晶"
+    },
+    {
+      "code": "sh.600641",
+      "raw_code": "600641",
+      "name": "先导基电"
+    },
+    {
+      "code": "sh.600732",
+      "raw_code": "600732",
+      "name": "爱旭股份"
+    },
+    {
+      "code": "sh.601012",
+      "raw_code": "601012",
+      "name": "隆基绿能"
+    },
+    {
+      "code": "sh.601137",
+      "raw_code": "601137",
+      "name": "博威合金"
+    },
+    {
+      "code": "sh.601222",
+      "raw_code": "601222",
+      "name": "林洋能源"
+    },
+    {
+      "code": "sh.603028",
+      "raw_code": "603028",
+      "name": "赛福天"
+    },
+    {
+      "code": "sh.603045",
+      "raw_code": "603045",
+      "name": "福达合金"
+    },
+    {
+      "code": "sh.603051",
+      "raw_code": "603051",
+      "name": "鹿山新材"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603185",
+      "raw_code": "603185",
+      "name": "弘元绿能"
+    },
+    {
+      "code": "sh.603212",
+      "raw_code": "603212",
+      "name": "赛伍技术"
+    },
+    {
+      "code": "sh.603255",
+      "raw_code": "603255",
+      "name": "鼎际得"
+    },
+    {
+      "code": "sh.603331",
+      "raw_code": "603331",
+      "name": "百达精工"
+    },
+    {
+      "code": "sh.603396",
+      "raw_code": "603396",
+      "name": "金辰股份"
+    },
+    {
+      "code": "sh.603398",
+      "raw_code": "603398",
+      "name": "*ST沐邦"
+    },
+    {
+      "code": "sh.603759",
+      "raw_code": "603759",
+      "name": "海天股份"
+    },
+    {
+      "code": "sh.603778",
+      "raw_code": "603778",
+      "name": "国晟科技"
+    },
+    {
+      "code": "sh.688025",
+      "raw_code": "688025",
+      "name": "杰普特"
+    },
+    {
+      "code": "sh.688035",
+      "raw_code": "688035",
+      "name": "德邦科技"
+    },
+    {
+      "code": "sh.688147",
+      "raw_code": "688147",
+      "name": "微导纳米"
+    },
+    {
+      "code": "sh.688223",
+      "raw_code": "688223",
+      "name": "晶科能源"
+    },
+    {
+      "code": "sh.688359",
+      "raw_code": "688359",
+      "name": "三孚新科"
+    },
+    {
+      "code": "sh.688429",
+      "raw_code": "688429",
+      "name": "时创能源"
+    },
+    {
+      "code": "sh.688472",
+      "raw_code": "688472",
+      "name": "阿特斯"
+    },
+    {
+      "code": "sh.688503",
+      "raw_code": "688503",
+      "name": "聚和材料"
+    },
+    {
+      "code": "sh.688516",
+      "raw_code": "688516",
+      "name": "奥特维"
+    },
+    {
+      "code": "sh.688559",
+      "raw_code": "688559",
+      "name": "海目星"
+    },
+    {
+      "code": "sh.688560",
+      "raw_code": "688560",
+      "name": "明冠新材"
+    },
+    {
+      "code": "sh.688599",
+      "raw_code": "688599",
+      "name": "天合光能"
+    },
+    {
+      "code": "sh.688630",
+      "raw_code": "688630",
+      "name": "芯碁微装"
+    },
+    {
+      "code": "sh.688678",
+      "raw_code": "688678",
+      "name": "福立旺"
+    },
+    {
+      "code": "sh.688726",
+      "raw_code": "688726",
+      "name": "拉普拉斯"
+    },
+    {
+      "code": "sz.000591",
+      "raw_code": "000591",
+      "name": "太阳能"
+    },
+    {
+      "code": "sz.000821",
+      "raw_code": "000821",
+      "name": "ST京机"
+    },
+    {
+      "code": "sz.000833",
+      "raw_code": "000833",
+      "name": "粤桂股份"
+    },
+    {
+      "code": "sz.002008",
+      "raw_code": "002008",
+      "name": "大族激光"
+    },
+    {
+      "code": "sz.002056",
+      "raw_code": "002056",
+      "name": "横店东磁"
+    },
+    {
+      "code": "sz.002079",
+      "raw_code": "002079",
+      "name": "苏州固锝"
+    },
+    {
+      "code": "sz.002129",
+      "raw_code": "002129",
+      "name": "TCL中环"
+    },
+    {
+      "code": "sz.002306",
+      "raw_code": "002306",
+      "name": "ST云网"
+    },
+    {
+      "code": "sz.002309",
+      "raw_code": "002309",
+      "name": "中利集团"
+    },
+    {
+      "code": "sz.002459",
+      "raw_code": "002459",
+      "name": "晶澳科技"
+    },
+    {
+      "code": "sz.002506",
+      "raw_code": "002506",
+      "name": "协鑫集成"
+    },
+    {
+      "code": "sz.002513",
+      "raw_code": "002513",
+      "name": "蓝丰生化"
+    },
+    {
+      "code": "sz.002514",
+      "raw_code": "002514",
+      "name": "*ST宝馨"
+    },
+    {
+      "code": "sz.002574",
+      "raw_code": "002574",
+      "name": "明牌珠宝"
+    },
+    {
+      "code": "sz.002634",
+      "raw_code": "002634",
+      "name": "*ST棒杰"
+    },
+    {
+      "code": "sz.002795",
+      "raw_code": "002795",
+      "name": "永和智控"
+    },
+    {
+      "code": "sz.002860",
+      "raw_code": "002860",
+      "name": "星帅尔"
+    },
+    {
+      "code": "sz.002862",
+      "raw_code": "002862",
+      "name": "实丰文化"
+    },
+    {
+      "code": "sz.002865",
+      "raw_code": "002865",
+      "name": "钧达股份"
+    },
+    {
+      "code": "sz.002943",
+      "raw_code": "002943",
+      "name": "宇晶股份"
+    },
+    {
+      "code": "sz.300051",
+      "raw_code": "300051",
+      "name": "琏升科技"
+    },
+    {
+      "code": "sz.300080",
+      "raw_code": "300080",
+      "name": "易成新能"
+    },
+    {
+      "code": "sz.300118",
+      "raw_code": "300118",
+      "name": "东方日升"
+    },
+    {
+      "code": "sz.300125",
+      "raw_code": "300125",
+      "name": "*ST聆达"
+    },
+    {
+      "code": "sz.300307",
+      "raw_code": "300307",
+      "name": "慈星股份"
+    },
+    {
+      "code": "sz.300316",
+      "raw_code": "300316",
+      "name": "晶盛机电"
+    },
+    {
+      "code": "sz.300345",
+      "raw_code": "300345",
+      "name": "华民股份"
+    },
+    {
+      "code": "sz.300393",
+      "raw_code": "300393",
+      "name": "中来股份"
+    },
+    {
+      "code": "sz.300433",
+      "raw_code": "300433",
+      "name": "蓝思科技"
+    },
+    {
+      "code": "sz.300450",
+      "raw_code": "300450",
+      "name": "先导智能"
+    },
+    {
+      "code": "sz.300566",
+      "raw_code": "300566",
+      "name": "激智科技"
+    },
+    {
+      "code": "sz.300716",
+      "raw_code": "300716",
+      "name": "*ST泉为"
+    },
+    {
+      "code": "sz.300724",
+      "raw_code": "300724",
+      "name": "捷佳伟创"
+    },
+    {
+      "code": "sz.300747",
+      "raw_code": "300747",
+      "name": "锐科激光"
+    },
+    {
+      "code": "sz.300757",
+      "raw_code": "300757",
+      "name": "罗博特科"
+    },
+    {
+      "code": "sz.300776",
+      "raw_code": "300776",
+      "name": "帝尔激光"
+    },
+    {
+      "code": "sz.300820",
+      "raw_code": "300820",
+      "name": "英杰电气"
+    },
+    {
+      "code": "sz.300842",
+      "raw_code": "300842",
+      "name": "帝科股份"
+    },
+    {
+      "code": "sz.300956",
+      "raw_code": "300956",
+      "name": "英力股份"
+    },
+    {
+      "code": "sz.301021",
+      "raw_code": "301021",
+      "name": "英诺激光"
+    },
+    {
+      "code": "sz.301030",
+      "raw_code": "301030",
+      "name": "*ST仕净"
+    },
+    {
+      "code": "sz.301131",
+      "raw_code": "301131",
+      "name": "聚赛龙"
+    },
+    {
+      "code": "sz.301392",
+      "raw_code": "301392",
+      "name": "汇成真空"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:03",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308992/"
+  "fetched_at": "2026-07-13 17:02:27",
+  "page_count": 9,
+  "is_partial": false,
+  "page_limit_reason": null
 }

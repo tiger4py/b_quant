@@ -3,10 +3,147 @@
   "concept_name": "云游戏",
   "first_trade_date": "2019-12-16",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 27,
+  "constituents": [
+    {
+      "code": "sh.600037",
+      "raw_code": "600037",
+      "name": "歌华有线"
+    },
+    {
+      "code": "sh.600637",
+      "raw_code": "600637",
+      "name": "东方明珠"
+    },
+    {
+      "code": "sh.600640",
+      "raw_code": "600640",
+      "name": "国脉文化"
+    },
+    {
+      "code": "sh.600839",
+      "raw_code": "600839",
+      "name": "四川长虹"
+    },
+    {
+      "code": "sh.688158",
+      "raw_code": "688158",
+      "name": "优刻得"
+    },
+    {
+      "code": "sz.000727",
+      "raw_code": "000727",
+      "name": "冠捷科技"
+    },
+    {
+      "code": "sz.002174",
+      "raw_code": "002174",
+      "name": "游族网络"
+    },
+    {
+      "code": "sz.002290",
+      "raw_code": "002290",
+      "name": "禾盛新材"
+    },
+    {
+      "code": "sz.002425",
+      "raw_code": "002425",
+      "name": "凯撒文化"
+    },
+    {
+      "code": "sz.002555",
+      "raw_code": "002555",
+      "name": "三七互娱"
+    },
+    {
+      "code": "sz.002558",
+      "raw_code": "002558",
+      "name": "巨人网络"
+    },
+    {
+      "code": "sz.002602",
+      "raw_code": "002602",
+      "name": "世纪华通"
+    },
+    {
+      "code": "sz.002624",
+      "raw_code": "002624",
+      "name": "完美世界"
+    },
+    {
+      "code": "sz.300031",
+      "raw_code": "300031",
+      "name": "宝通科技"
+    },
+    {
+      "code": "sz.300043",
+      "raw_code": "300043",
+      "name": "星辉娱乐"
+    },
+    {
+      "code": "sz.300052",
+      "raw_code": "300052",
+      "name": "中青宝"
+    },
+    {
+      "code": "sz.300113",
+      "raw_code": "300113",
+      "name": "顺网科技"
+    },
+    {
+      "code": "sz.300134",
+      "raw_code": "300134",
+      "name": "大富科技"
+    },
+    {
+      "code": "sz.300148",
+      "raw_code": "300148",
+      "name": "天舟文化"
+    },
+    {
+      "code": "sz.300264",
+      "raw_code": "300264",
+      "name": "佳创视讯"
+    },
+    {
+      "code": "sz.300324",
+      "raw_code": "300324",
+      "name": "旋极信息"
+    },
+    {
+      "code": "sz.300459",
+      "raw_code": "300459",
+      "name": "汤姆猫"
+    },
+    {
+      "code": "sz.300494",
+      "raw_code": "300494",
+      "name": "盛天网络"
+    },
+    {
+      "code": "sz.300770",
+      "raw_code": "300770",
+      "name": "新媒股份"
+    },
+    {
+      "code": "sz.300846",
+      "raw_code": "300846",
+      "name": "首都在线"
+    },
+    {
+      "code": "sz.300857",
+      "raw_code": "300857",
+      "name": "协创数据"
+    },
+    {
+      "code": "sz.301382",
+      "raw_code": "301382",
+      "name": "蜂助手"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:35",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308624/"
+  "fetched_at": "2026-07-13 16:59:21",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

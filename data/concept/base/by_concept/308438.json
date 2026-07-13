@@ -3,10 +3,52 @@
   "concept_name": "芬太尼",
   "first_trade_date": "2018-12-04",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 8,
+  "constituents": [
+    {
+      "code": "sh.600079",
+      "raw_code": "600079",
+      "name": "ST人福"
+    },
+    {
+      "code": "sh.600285",
+      "raw_code": "600285",
+      "name": "羚锐制药"
+    },
+    {
+      "code": "sh.600420",
+      "raw_code": "600420",
+      "name": "国药现代"
+    },
+    {
+      "code": "sh.600511",
+      "raw_code": "600511",
+      "name": "国药股份"
+    },
+    {
+      "code": "sh.688298",
+      "raw_code": "688298",
+      "name": "东方生物"
+    },
+    {
+      "code": "sh.688767",
+      "raw_code": "688767",
+      "name": "博拓生物"
+    },
+    {
+      "code": "sz.002262",
+      "raw_code": "002262",
+      "name": "恩华药业"
+    },
+    {
+      "code": "sz.300482",
+      "raw_code": "300482",
+      "name": "万孚生物"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:27",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308438/"
+  "fetched_at": "2026-07-13 16:58:37",
+  "page_count": 1,
+  "is_partial": false,
+  "page_limit_reason": null
 }

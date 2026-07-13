@@ -3,10 +3,482 @@
   "concept_name": "金属铜",
   "first_trade_date": "2022-03-10",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 94,
+  "constituents": [
+    {
+      "code": "bj.920030",
+      "raw_code": "920030",
+      "name": "德众汽车"
+    },
+    {
+      "code": "bj.920033",
+      "raw_code": "920033",
+      "name": "康普化学"
+    },
+    {
+      "code": "bj.920475",
+      "raw_code": "920475",
+      "name": "三友科技"
+    },
+    {
+      "code": "bj.920682",
+      "raw_code": "920682",
+      "name": "球冠电缆"
+    },
+    {
+      "code": "sh.600039",
+      "raw_code": "600039",
+      "name": "四川路桥"
+    },
+    {
+      "code": "sh.600119",
+      "raw_code": "600119",
+      "name": "*ST长投"
+    },
+    {
+      "code": "sh.600153",
+      "raw_code": "600153",
+      "name": "建发股份"
+    },
+    {
+      "code": "sh.600173",
+      "raw_code": "600173",
+      "name": "卧龙新能"
+    },
+    {
+      "code": "sh.600217",
+      "raw_code": "600217",
+      "name": "中再资环"
+    },
+    {
+      "code": "sh.600255",
+      "raw_code": "600255",
+      "name": "鑫科材料"
+    },
+    {
+      "code": "sh.600259",
+      "raw_code": "600259",
+      "name": "中稀有色"
+    },
+    {
+      "code": "sh.600301",
+      "raw_code": "600301",
+      "name": "华锡有色"
+    },
+    {
+      "code": "sh.600307",
+      "raw_code": "600307",
+      "name": "酒钢宏兴"
+    },
+    {
+      "code": "sh.600326",
+      "raw_code": "600326",
+      "name": "西藏天路"
+    },
+    {
+      "code": "sh.600331",
+      "raw_code": "600331",
+      "name": "宏达股份"
+    },
+    {
+      "code": "sh.600338",
+      "raw_code": "600338",
+      "name": "西藏珠峰"
+    },
+    {
+      "code": "sh.600361",
+      "raw_code": "600361",
+      "name": "创新新材"
+    },
+    {
+      "code": "sh.600362",
+      "raw_code": "600362",
+      "name": "江西铜业"
+    },
+    {
+      "code": "sh.600489",
+      "raw_code": "600489",
+      "name": "中金黄金"
+    },
+    {
+      "code": "sh.600490",
+      "raw_code": "600490",
+      "name": "鹏欣资源"
+    },
+    {
+      "code": "sh.600531",
+      "raw_code": "600531",
+      "name": "豫光金铅"
+    },
+    {
+      "code": "sh.600711",
+      "raw_code": "600711",
+      "name": "盛屯矿业"
+    },
+    {
+      "code": "sh.600961",
+      "raw_code": "600961",
+      "name": "株冶集团"
+    },
+    {
+      "code": "sh.600988",
+      "raw_code": "600988",
+      "name": "赤峰黄金"
+    },
+    {
+      "code": "sh.601020",
+      "raw_code": "601020",
+      "name": "华钰矿业"
+    },
+    {
+      "code": "sh.601061",
+      "raw_code": "601061",
+      "name": "中信金属"
+    },
+    {
+      "code": "sh.601069",
+      "raw_code": "601069",
+      "name": "西部黄金"
+    },
+    {
+      "code": "sh.601121",
+      "raw_code": "601121",
+      "name": "宝地矿业"
+    },
+    {
+      "code": "sh.601168",
+      "raw_code": "601168",
+      "name": "西部矿业"
+    },
+    {
+      "code": "sh.601186",
+      "raw_code": "601186",
+      "name": "中国铁建"
+    },
+    {
+      "code": "sh.601212",
+      "raw_code": "601212",
+      "name": "白银有色"
+    },
+    {
+      "code": "sh.601390",
+      "raw_code": "601390",
+      "name": "中国中铁"
+    },
+    {
+      "code": "sh.601609",
+      "raw_code": "601609",
+      "name": "金田股份"
+    },
+    {
+      "code": "sh.601899",
+      "raw_code": "601899",
+      "name": "紫金矿业"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603257",
+      "raw_code": "603257",
+      "name": "中国瑞林"
+    },
+    {
+      "code": "sh.603527",
+      "raw_code": "603527",
+      "name": "众源新材"
+    },
+    {
+      "code": "sh.603588",
+      "raw_code": "603588",
+      "name": "高能环境"
+    },
+    {
+      "code": "sh.603759",
+      "raw_code": "603759",
+      "name": "海天股份"
+    },
+    {
+      "code": "sh.603799",
+      "raw_code": "603799",
+      "name": "华友钴业"
+    },
+    {
+      "code": "sh.603843",
+      "raw_code": "603843",
+      "name": "*ST正平"
+    },
+    {
+      "code": "sh.603979",
+      "raw_code": "603979",
+      "name": "金诚信"
+    },
+    {
+      "code": "sh.603993",
+      "raw_code": "603993",
+      "name": "洛阳钼业"
+    },
+    {
+      "code": "sz.000060",
+      "raw_code": "000060",
+      "name": "中金岭南"
+    },
+    {
+      "code": "sz.000408",
+      "raw_code": "000408",
+      "name": "藏格矿业"
+    },
+    {
+      "code": "sz.000426",
+      "raw_code": "000426",
+      "name": "兴业银锡"
+    },
+    {
+      "code": "sz.000506",
+      "raw_code": "000506",
+      "name": "招金黄金"
+    },
+    {
+      "code": "sz.000510",
+      "raw_code": "000510",
+      "name": "新金路"
+    },
+    {
+      "code": "sz.000546",
+      "raw_code": "000546",
+      "name": "金圆股份"
+    },
+    {
+      "code": "sz.000603",
+      "raw_code": "000603",
+      "name": "盛达资源"
+    },
+    {
+      "code": "sz.000630",
+      "raw_code": "000630",
+      "name": "铜陵有色"
+    },
+    {
+      "code": "sz.000655",
+      "raw_code": "000655",
+      "name": "金岭矿业"
+    },
+    {
+      "code": "sz.000657",
+      "raw_code": "000657",
+      "name": "中钨高新"
+    },
+    {
+      "code": "sz.000688",
+      "raw_code": "000688",
+      "name": "国城矿业"
+    },
+    {
+      "code": "sz.000701",
+      "raw_code": "000701",
+      "name": "厦门信达"
+    },
+    {
+      "code": "sz.000737",
+      "raw_code": "000737",
+      "name": "北方铜业"
+    },
+    {
+      "code": "sz.000751",
+      "raw_code": "000751",
+      "name": "锌业股份"
+    },
+    {
+      "code": "sz.000758",
+      "raw_code": "000758",
+      "name": "中色股份"
+    },
+    {
+      "code": "sz.000762",
+      "raw_code": "000762",
+      "name": "西藏矿业"
+    },
+    {
+      "code": "sz.000816",
+      "raw_code": "000816",
+      "name": "智慧农业"
+    },
+    {
+      "code": "sz.000820",
+      "raw_code": "000820",
+      "name": "*ST节能"
+    },
+    {
+      "code": "sz.000850",
+      "raw_code": "000850",
+      "name": "华茂股份"
+    },
+    {
+      "code": "sz.000878",
+      "raw_code": "000878",
+      "name": "云南铜业"
+    },
+    {
+      "code": "sz.000923",
+      "raw_code": "000923",
+      "name": "河钢资源"
+    },
+    {
+      "code": "sz.000960",
+      "raw_code": "000960",
+      "name": "锡业股份"
+    },
+    {
+      "code": "sz.001257",
+      "raw_code": "001257",
+      "name": "盛龙股份"
+    },
+    {
+      "code": "sz.002114",
+      "raw_code": "002114",
+      "name": "罗平锌电"
+    },
+    {
+      "code": "sz.002171",
+      "raw_code": "002171",
+      "name": "楚江新材"
+    },
+    {
+      "code": "sz.002203",
+      "raw_code": "002203",
+      "name": "海亮股份"
+    },
+    {
+      "code": "sz.002237",
+      "raw_code": "002237",
+      "name": "恒邦股份"
+    },
+    {
+      "code": "sz.002266",
+      "raw_code": "002266",
+      "name": "浙富控股"
+    },
+    {
+      "code": "sz.002295",
+      "raw_code": "002295",
+      "name": "精艺股份"
+    },
+    {
+      "code": "sz.002340",
+      "raw_code": "002340",
+      "name": "格林美"
+    },
+    {
+      "code": "sz.002378",
+      "raw_code": "002378",
+      "name": "章源钨业"
+    },
+    {
+      "code": "sz.002479",
+      "raw_code": "002479",
+      "name": "富春环保"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002573",
+      "raw_code": "002573",
+      "name": "清新环境"
+    },
+    {
+      "code": "sz.002645",
+      "raw_code": "002645",
+      "name": "华宏科技"
+    },
+    {
+      "code": "sz.002672",
+      "raw_code": "002672",
+      "name": "东江环保"
+    },
+    {
+      "code": "sz.002716",
+      "raw_code": "002716",
+      "name": "湖南白银"
+    },
+    {
+      "code": "sz.002738",
+      "raw_code": "002738",
+      "name": "中矿资源"
+    },
+    {
+      "code": "sz.002842",
+      "raw_code": "002842",
+      "name": "翔鹭钨业"
+    },
+    {
+      "code": "sz.300056",
+      "raw_code": "300056",
+      "name": "中创环保"
+    },
+    {
+      "code": "sz.300402",
+      "raw_code": "300402",
+      "name": "宝色股份"
+    },
+    {
+      "code": "sz.300409",
+      "raw_code": "300409",
+      "name": "道氏技术"
+    },
+    {
+      "code": "sz.300477",
+      "raw_code": "300477",
+      "name": "ST合纵"
+    },
+    {
+      "code": "sz.300618",
+      "raw_code": "300618",
+      "name": "寒锐钴业"
+    },
+    {
+      "code": "sz.300697",
+      "raw_code": "300697",
+      "name": "电工合金"
+    },
+    {
+      "code": "sz.300774",
+      "raw_code": "300774",
+      "name": "倍杰特"
+    },
+    {
+      "code": "sz.301219",
+      "raw_code": "301219",
+      "name": "腾远钴业"
+    },
+    {
+      "code": "sz.301265",
+      "raw_code": "301265",
+      "name": "华新科技"
+    },
+    {
+      "code": "sz.301358",
+      "raw_code": "301358",
+      "name": "湖南裕能"
+    },
+    {
+      "code": "sz.301500",
+      "raw_code": "301500",
+      "name": "飞南资源"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:03",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301577/"
+  "fetched_at": "2026-07-13 16:53:31",
+  "page_count": 10,
+  "is_partial": false,
+  "page_limit_reason": null
 }

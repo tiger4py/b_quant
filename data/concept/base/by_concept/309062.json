@@ -3,10 +3,512 @@
   "concept_name": "同花顺中特估100",
   "first_trade_date": "2023-05-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 100,
+  "constituents": [
+    {
+      "code": "sh.600004",
+      "raw_code": "600004",
+      "name": "白云机场"
+    },
+    {
+      "code": "sh.600007",
+      "raw_code": "600007",
+      "name": "中国国贸"
+    },
+    {
+      "code": "sh.600009",
+      "raw_code": "600009",
+      "name": "上海机场"
+    },
+    {
+      "code": "sh.600018",
+      "raw_code": "600018",
+      "name": "上港集团"
+    },
+    {
+      "code": "sh.600019",
+      "raw_code": "600019",
+      "name": "宝钢股份"
+    },
+    {
+      "code": "sh.600026",
+      "raw_code": "600026",
+      "name": "中远海能"
+    },
+    {
+      "code": "sh.600028",
+      "raw_code": "600028",
+      "name": "中国石化"
+    },
+    {
+      "code": "sh.600030",
+      "raw_code": "600030",
+      "name": "中信证券"
+    },
+    {
+      "code": "sh.600036",
+      "raw_code": "600036",
+      "name": "招商银行"
+    },
+    {
+      "code": "sh.600039",
+      "raw_code": "600039",
+      "name": "四川路桥"
+    },
+    {
+      "code": "sh.600050",
+      "raw_code": "600050",
+      "name": "中国联通"
+    },
+    {
+      "code": "sh.600072",
+      "raw_code": "600072",
+      "name": "中船科技"
+    },
+    {
+      "code": "sh.600115",
+      "raw_code": "600115",
+      "name": "中国东航"
+    },
+    {
+      "code": "sh.600150",
+      "raw_code": "600150",
+      "name": "中国船舶"
+    },
+    {
+      "code": "sh.600176",
+      "raw_code": "600176",
+      "name": "中国巨石"
+    },
+    {
+      "code": "sh.600326",
+      "raw_code": "600326",
+      "name": "西藏天路"
+    },
+    {
+      "code": "sh.600339",
+      "raw_code": "600339",
+      "name": "中油工程"
+    },
+    {
+      "code": "sh.600415",
+      "raw_code": "600415",
+      "name": "小商品城"
+    },
+    {
+      "code": "sh.600425",
+      "raw_code": "600425",
+      "name": "青松建化"
+    },
+    {
+      "code": "sh.600502",
+      "raw_code": "600502",
+      "name": "安徽建工"
+    },
+    {
+      "code": "sh.600585",
+      "raw_code": "600585",
+      "name": "海螺水泥"
+    },
+    {
+      "code": "sh.600685",
+      "raw_code": "600685",
+      "name": "中船防务"
+    },
+    {
+      "code": "sh.600720",
+      "raw_code": "600720",
+      "name": "中交设计"
+    },
+    {
+      "code": "sh.600760",
+      "raw_code": "600760",
+      "name": "中航沈飞"
+    },
+    {
+      "code": "sh.600886",
+      "raw_code": "600886",
+      "name": "国投电力"
+    },
+    {
+      "code": "sh.600900",
+      "raw_code": "600900",
+      "name": "长江电力"
+    },
+    {
+      "code": "sh.600905",
+      "raw_code": "600905",
+      "name": "三峡能源"
+    },
+    {
+      "code": "sh.600916",
+      "raw_code": "600916",
+      "name": "中国黄金"
+    },
+    {
+      "code": "sh.600938",
+      "raw_code": "600938",
+      "name": "中国海油"
+    },
+    {
+      "code": "sh.600941",
+      "raw_code": "600941",
+      "name": "中国移动"
+    },
+    {
+      "code": "sh.600970",
+      "raw_code": "600970",
+      "name": "中材国际"
+    },
+    {
+      "code": "sh.600977",
+      "raw_code": "600977",
+      "name": "中国电影"
+    },
+    {
+      "code": "sh.601006",
+      "raw_code": "601006",
+      "name": "大秦铁路"
+    },
+    {
+      "code": "sh.601018",
+      "raw_code": "601018",
+      "name": "宁波港"
+    },
+    {
+      "code": "sh.601061",
+      "raw_code": "601061",
+      "name": "中信金属"
+    },
+    {
+      "code": "sh.601066",
+      "raw_code": "601066",
+      "name": "中信建投"
+    },
+    {
+      "code": "sh.601088",
+      "raw_code": "601088",
+      "name": "中国神华"
+    },
+    {
+      "code": "sh.601106",
+      "raw_code": "601106",
+      "name": "中国一重"
+    },
+    {
+      "code": "sh.601111",
+      "raw_code": "601111",
+      "name": "中国国航"
+    },
+    {
+      "code": "sh.601117",
+      "raw_code": "601117",
+      "name": "中国化学"
+    },
+    {
+      "code": "sh.601179",
+      "raw_code": "601179",
+      "name": "中国西电"
+    },
+    {
+      "code": "sh.601186",
+      "raw_code": "601186",
+      "name": "中国铁建"
+    },
+    {
+      "code": "sh.601211",
+      "raw_code": "601211",
+      "name": "国泰海通"
+    },
+    {
+      "code": "sh.601288",
+      "raw_code": "601288",
+      "name": "农业银行"
+    },
+    {
+      "code": "sh.601298",
+      "raw_code": "601298",
+      "name": "青岛港"
+    },
+    {
+      "code": "sh.601318",
+      "raw_code": "601318",
+      "name": "中国平安"
+    },
+    {
+      "code": "sh.601319",
+      "raw_code": "601319",
+      "name": "中国人保"
+    },
+    {
+      "code": "sh.601328",
+      "raw_code": "601328",
+      "name": "交通银行"
+    },
+    {
+      "code": "sh.601390",
+      "raw_code": "601390",
+      "name": "中国中铁"
+    },
+    {
+      "code": "sh.601398",
+      "raw_code": "601398",
+      "name": "工商银行"
+    },
+    {
+      "code": "sh.601598",
+      "raw_code": "601598",
+      "name": "中国外运"
+    },
+    {
+      "code": "sh.601600",
+      "raw_code": "601600",
+      "name": "中国铝业"
+    },
+    {
+      "code": "sh.601601",
+      "raw_code": "601601",
+      "name": "中国太保"
+    },
+    {
+      "code": "sh.601608",
+      "raw_code": "601608",
+      "name": "中信重工"
+    },
+    {
+      "code": "sh.601611",
+      "raw_code": "601611",
+      "name": "中国核建"
+    },
+    {
+      "code": "sh.601618",
+      "raw_code": "601618",
+      "name": "中国中冶"
+    },
+    {
+      "code": "sh.601628",
+      "raw_code": "601628",
+      "name": "中国人寿"
+    },
+    {
+      "code": "sh.601668",
+      "raw_code": "601668",
+      "name": "中国建筑"
+    },
+    {
+      "code": "sh.601669",
+      "raw_code": "601669",
+      "name": "中国电建"
+    },
+    {
+      "code": "sh.601698",
+      "raw_code": "601698",
+      "name": "中国卫通"
+    },
+    {
+      "code": "sh.601728",
+      "raw_code": "601728",
+      "name": "中国电信"
+    },
+    {
+      "code": "sh.601766",
+      "raw_code": "601766",
+      "name": "中国中车"
+    },
+    {
+      "code": "sh.601800",
+      "raw_code": "601800",
+      "name": "中国交建"
+    },
+    {
+      "code": "sh.601808",
+      "raw_code": "601808",
+      "name": "中海油服"
+    },
+    {
+      "code": "sh.601816",
+      "raw_code": "601816",
+      "name": "京沪高铁"
+    },
+    {
+      "code": "sh.601857",
+      "raw_code": "601857",
+      "name": "中国石油"
+    },
+    {
+      "code": "sh.601858",
+      "raw_code": "601858",
+      "name": "中国科传"
+    },
+    {
+      "code": "sh.601866",
+      "raw_code": "601866",
+      "name": "中远海发"
+    },
+    {
+      "code": "sh.601868",
+      "raw_code": "601868",
+      "name": "中国能建"
+    },
+    {
+      "code": "sh.601881",
+      "raw_code": "601881",
+      "name": "中国银河"
+    },
+    {
+      "code": "sh.601888",
+      "raw_code": "601888",
+      "name": "中国中免"
+    },
+    {
+      "code": "sh.601898",
+      "raw_code": "601898",
+      "name": "中煤能源"
+    },
+    {
+      "code": "sh.601899",
+      "raw_code": "601899",
+      "name": "紫金矿业"
+    },
+    {
+      "code": "sh.601919",
+      "raw_code": "601919",
+      "name": "中远海控"
+    },
+    {
+      "code": "sh.601939",
+      "raw_code": "601939",
+      "name": "建设银行"
+    },
+    {
+      "code": "sh.601949",
+      "raw_code": "601949",
+      "name": "中国出版"
+    },
+    {
+      "code": "sh.601985",
+      "raw_code": "601985",
+      "name": "中国核电"
+    },
+    {
+      "code": "sh.601988",
+      "raw_code": "601988",
+      "name": "中国银行"
+    },
+    {
+      "code": "sh.601995",
+      "raw_code": "601995",
+      "name": "中金公司"
+    },
+    {
+      "code": "sh.601998",
+      "raw_code": "601998",
+      "name": "中信银行"
+    },
+    {
+      "code": "sh.603019",
+      "raw_code": "603019",
+      "name": "中科曙光"
+    },
+    {
+      "code": "sh.688041",
+      "raw_code": "688041",
+      "name": "海光信息"
+    },
+    {
+      "code": "sz.000065",
+      "raw_code": "000065",
+      "name": "北方国际"
+    },
+    {
+      "code": "sz.000498",
+      "raw_code": "000498",
+      "name": "山东路桥"
+    },
+    {
+      "code": "sz.000519",
+      "raw_code": "000519",
+      "name": "中兵红箭"
+    },
+    {
+      "code": "sz.000617",
+      "raw_code": "000617",
+      "name": "中油资本"
+    },
+    {
+      "code": "sz.000708",
+      "raw_code": "000708",
+      "name": "中信特钢"
+    },
+    {
+      "code": "sz.000831",
+      "raw_code": "000831",
+      "name": "中国稀土"
+    },
+    {
+      "code": "sz.000923",
+      "raw_code": "000923",
+      "name": "河钢资源"
+    },
+    {
+      "code": "sz.000928",
+      "raw_code": "000928",
+      "name": "中钢国际"
+    },
+    {
+      "code": "sz.000932",
+      "raw_code": "000932",
+      "name": "华菱钢铁"
+    },
+    {
+      "code": "sz.001872",
+      "raw_code": "001872",
+      "name": "招商港口"
+    },
+    {
+      "code": "sz.001965",
+      "raw_code": "001965",
+      "name": "招商公路"
+    },
+    {
+      "code": "sz.002051",
+      "raw_code": "002051",
+      "name": "中工国际"
+    },
+    {
+      "code": "sz.002271",
+      "raw_code": "002271",
+      "name": "东方雨虹"
+    },
+    {
+      "code": "sz.002302",
+      "raw_code": "002302",
+      "name": "西部建设"
+    },
+    {
+      "code": "sz.002423",
+      "raw_code": "002423",
+      "name": "中粮资本"
+    },
+    {
+      "code": "sz.002493",
+      "raw_code": "002493",
+      "name": "荣盛石化"
+    },
+    {
+      "code": "sz.002541",
+      "raw_code": "002541",
+      "name": "鸿路钢构"
+    },
+    {
+      "code": "sz.003816",
+      "raw_code": "003816",
+      "name": "中国广核"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:11",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309062/"
+  "fetched_at": "2026-07-13 17:03:35",
+  "page_count": 10,
+  "is_partial": false,
+  "page_limit_reason": null
 }

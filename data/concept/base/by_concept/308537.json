@@ -3,10 +3,112 @@
   "concept_name": "动物疫苗",
   "first_trade_date": "2019-05-27",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 20,
+  "constituents": [
+    {
+      "code": "bj.920729",
+      "raw_code": "920729",
+      "name": "永顺生物"
+    },
+    {
+      "code": "sh.600195",
+      "raw_code": "600195",
+      "name": "中牧股份"
+    },
+    {
+      "code": "sh.600201",
+      "raw_code": "600201",
+      "name": "生物股份"
+    },
+    {
+      "code": "sh.600226",
+      "raw_code": "600226",
+      "name": "亨通股份"
+    },
+    {
+      "code": "sh.600267",
+      "raw_code": "600267",
+      "name": "海正药业"
+    },
+    {
+      "code": "sh.600420",
+      "raw_code": "600420",
+      "name": "国药现代"
+    },
+    {
+      "code": "sh.603566",
+      "raw_code": "603566",
+      "name": "普莱柯"
+    },
+    {
+      "code": "sh.603718",
+      "raw_code": "603718",
+      "name": "*ST海利"
+    },
+    {
+      "code": "sh.603739",
+      "raw_code": "603739",
+      "name": "蔚蓝生物"
+    },
+    {
+      "code": "sh.688098",
+      "raw_code": "688098",
+      "name": "申联生物"
+    },
+    {
+      "code": "sh.688136",
+      "raw_code": "688136",
+      "name": "科兴制药"
+    },
+    {
+      "code": "sh.688298",
+      "raw_code": "688298",
+      "name": "东方生物"
+    },
+    {
+      "code": "sh.688526",
+      "raw_code": "688526",
+      "name": "科前生物"
+    },
+    {
+      "code": "sz.000735",
+      "raw_code": "000735",
+      "name": "罗牛山"
+    },
+    {
+      "code": "sz.002100",
+      "raw_code": "002100",
+      "name": "天康生物"
+    },
+    {
+      "code": "sz.002141",
+      "raw_code": "002141",
+      "name": "贤丰控股"
+    },
+    {
+      "code": "sz.002385",
+      "raw_code": "002385",
+      "name": "大北农"
+    },
+    {
+      "code": "sz.002688",
+      "raw_code": "002688",
+      "name": "金河生物"
+    },
+    {
+      "code": "sz.300119",
+      "raw_code": "300119",
+      "name": "瑞普生物"
+    },
+    {
+      "code": "sz.300841",
+      "raw_code": "300841",
+      "name": "康华生物"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:31",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308537/"
+  "fetched_at": "2026-07-13 16:59:07",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,387 @@
   "concept_name": "两轮车",
   "first_trade_date": "2022-03-10",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 75,
+  "constituents": [
+    {
+      "code": "bj.920058",
+      "raw_code": "920058",
+      "name": "华洋赛车"
+    },
+    {
+      "code": "bj.920106",
+      "raw_code": "920106",
+      "name": "林泰新材"
+    },
+    {
+      "code": "bj.920195",
+      "raw_code": "920195",
+      "name": "三祥科技"
+    },
+    {
+      "code": "bj.920249",
+      "raw_code": "920249",
+      "name": "利尔达"
+    },
+    {
+      "code": "bj.920252",
+      "raw_code": "920252",
+      "name": "天宏锂电"
+    },
+    {
+      "code": "bj.920627",
+      "raw_code": "920627",
+      "name": "力王股份"
+    },
+    {
+      "code": "bj.920833",
+      "raw_code": "920833",
+      "name": "美心翼申"
+    },
+    {
+      "code": "bj.920896",
+      "raw_code": "920896",
+      "name": "旺成科技"
+    },
+    {
+      "code": "sh.600067",
+      "raw_code": "600067",
+      "name": "冠城新材"
+    },
+    {
+      "code": "sh.600099",
+      "raw_code": "600099",
+      "name": "林海股份"
+    },
+    {
+      "code": "sh.600114",
+      "raw_code": "600114",
+      "name": "东睦股份"
+    },
+    {
+      "code": "sh.600152",
+      "raw_code": "600152",
+      "name": "维科技术"
+    },
+    {
+      "code": "sh.600478",
+      "raw_code": "600478",
+      "name": "科力远"
+    },
+    {
+      "code": "sh.600679",
+      "raw_code": "600679",
+      "name": "上海凤凰"
+    },
+    {
+      "code": "sh.600818",
+      "raw_code": "600818",
+      "name": "ST中路"
+    },
+    {
+      "code": "sh.601238",
+      "raw_code": "601238",
+      "name": "广汽集团"
+    },
+    {
+      "code": "sh.601633",
+      "raw_code": "601633",
+      "name": "长城汽车"
+    },
+    {
+      "code": "sh.601777",
+      "raw_code": "601777",
+      "name": "千里科技"
+    },
+    {
+      "code": "sh.603049",
+      "raw_code": "603049",
+      "name": "中策橡胶"
+    },
+    {
+      "code": "sh.603129",
+      "raw_code": "603129",
+      "name": "春风动力"
+    },
+    {
+      "code": "sh.603202",
+      "raw_code": "603202",
+      "name": "天有为"
+    },
+    {
+      "code": "sh.603236",
+      "raw_code": "603236",
+      "name": "移远通信"
+    },
+    {
+      "code": "sh.603348",
+      "raw_code": "603348",
+      "name": "文灿股份"
+    },
+    {
+      "code": "sh.603350",
+      "raw_code": "603350",
+      "name": "安乃达"
+    },
+    {
+      "code": "sh.603489",
+      "raw_code": "603489",
+      "name": "八方股份"
+    },
+    {
+      "code": "sh.603529",
+      "raw_code": "603529",
+      "name": "爱玛科技"
+    },
+    {
+      "code": "sh.603766",
+      "raw_code": "603766",
+      "name": "隆鑫通用"
+    },
+    {
+      "code": "sh.603776",
+      "raw_code": "603776",
+      "name": "永安行"
+    },
+    {
+      "code": "sh.603787",
+      "raw_code": "603787",
+      "name": "新日股份"
+    },
+    {
+      "code": "sh.688063",
+      "raw_code": "688063",
+      "name": "派能科技"
+    },
+    {
+      "code": "sh.688173",
+      "raw_code": "688173",
+      "name": "希荻微"
+    },
+    {
+      "code": "sh.688280",
+      "raw_code": "688280",
+      "name": "精进电动"
+    },
+    {
+      "code": "sh.688288",
+      "raw_code": "688288",
+      "name": "鸿泉技术"
+    },
+    {
+      "code": "sh.688345",
+      "raw_code": "688345",
+      "name": "博力威"
+    },
+    {
+      "code": "sh.688567",
+      "raw_code": "688567",
+      "name": "孚能科技"
+    },
+    {
+      "code": "sh.688609",
+      "raw_code": "688609",
+      "name": "九联科技"
+    },
+    {
+      "code": "sh.688819",
+      "raw_code": "688819",
+      "name": "天能股份"
+    },
+    {
+      "code": "sh.689009",
+      "raw_code": "689009",
+      "name": "九号公司"
+    },
+    {
+      "code": "sz.000017",
+      "raw_code": "000017",
+      "name": "深中华A"
+    },
+    {
+      "code": "sz.000913",
+      "raw_code": "000913",
+      "name": "钱江摩托"
+    },
+    {
+      "code": "sz.001283",
+      "raw_code": "001283",
+      "name": "豪鹏科技"
+    },
+    {
+      "code": "sz.001365",
+      "raw_code": "001365",
+      "name": "天海电子"
+    },
+    {
+      "code": "sz.001696",
+      "raw_code": "001696",
+      "name": "宗申动力"
+    },
+    {
+      "code": "sz.002074",
+      "raw_code": "002074",
+      "name": "国轩高科"
+    },
+    {
+      "code": "sz.002085",
+      "raw_code": "002085",
+      "name": "万丰奥威"
+    },
+    {
+      "code": "sz.002105",
+      "raw_code": "002105",
+      "name": "信隆健康"
+    },
+    {
+      "code": "sz.002139",
+      "raw_code": "002139",
+      "name": "拓邦股份"
+    },
+    {
+      "code": "sz.002151",
+      "raw_code": "002151",
+      "name": "北斗星通"
+    },
+    {
+      "code": "sz.002245",
+      "raw_code": "002245",
+      "name": "蔚蓝锂芯"
+    },
+    {
+      "code": "sz.002278",
+      "raw_code": "002278",
+      "name": "神开股份"
+    },
+    {
+      "code": "sz.002364",
+      "raw_code": "002364",
+      "name": "中恒电气"
+    },
+    {
+      "code": "sz.002405",
+      "raw_code": "002405",
+      "name": "四维图新"
+    },
+    {
+      "code": "sz.002590",
+      "raw_code": "002590",
+      "name": "万安科技"
+    },
+    {
+      "code": "sz.002735",
+      "raw_code": "002735",
+      "name": "王子新材"
+    },
+    {
+      "code": "sz.002863",
+      "raw_code": "002863",
+      "name": "今飞凯达"
+    },
+    {
+      "code": "sz.002909",
+      "raw_code": "002909",
+      "name": "集泰股份"
+    },
+    {
+      "code": "sz.300014",
+      "raw_code": "300014",
+      "name": "亿纬锂能"
+    },
+    {
+      "code": "sz.300068",
+      "raw_code": "300068",
+      "name": "ST南都"
+    },
+    {
+      "code": "sz.300207",
+      "raw_code": "300207",
+      "name": "欣旺达"
+    },
+    {
+      "code": "sz.300256",
+      "raw_code": "300256",
+      "name": "星星科技"
+    },
+    {
+      "code": "sz.300438",
+      "raw_code": "300438",
+      "name": "鹏辉能源"
+    },
+    {
+      "code": "sz.300471",
+      "raw_code": "300471",
+      "name": "厚普股份"
+    },
+    {
+      "code": "sz.300590",
+      "raw_code": "300590",
+      "name": "移为通信"
+    },
+    {
+      "code": "sz.300644",
+      "raw_code": "300644",
+      "name": "南京聚隆"
+    },
+    {
+      "code": "sz.300648",
+      "raw_code": "300648",
+      "name": "星云股份"
+    },
+    {
+      "code": "sz.300793",
+      "raw_code": "300793",
+      "name": "佳禾智能"
+    },
+    {
+      "code": "sz.300817",
+      "raw_code": "300817",
+      "name": "双飞集团"
+    },
+    {
+      "code": "sz.300994",
+      "raw_code": "300994",
+      "name": "久祺股份"
+    },
+    {
+      "code": "sz.301106",
+      "raw_code": "301106",
+      "name": "骏成科技"
+    },
+    {
+      "code": "sz.301260",
+      "raw_code": "301260",
+      "name": "格力博"
+    },
+    {
+      "code": "sz.301345",
+      "raw_code": "301345",
+      "name": "涛涛车业"
+    },
+    {
+      "code": "sz.301397",
+      "raw_code": "301397",
+      "name": "溯联股份"
+    },
+    {
+      "code": "sz.301418",
+      "raw_code": "301418",
+      "name": "协昌科技"
+    },
+    {
+      "code": "sz.301516",
+      "raw_code": "301516",
+      "name": "中远通"
+    },
+    {
+      "code": "sz.301608",
+      "raw_code": "301608",
+      "name": "博实结"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:46",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301248/"
+  "fetched_at": "2026-07-13 16:47:03",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

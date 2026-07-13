@@ -3,10 +3,302 @@
   "concept_name": "手机游戏",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 58,
+  "constituents": [
+    {
+      "code": "bj.920790",
+      "raw_code": "920790",
+      "name": "联迪信息"
+    },
+    {
+      "code": "sh.600173",
+      "raw_code": "600173",
+      "name": "卧龙新能"
+    },
+    {
+      "code": "sh.600373",
+      "raw_code": "600373",
+      "name": "中文传媒"
+    },
+    {
+      "code": "sh.600576",
+      "raw_code": "600576",
+      "name": "祥源文旅"
+    },
+    {
+      "code": "sh.600633",
+      "raw_code": "600633",
+      "name": "浙数文化"
+    },
+    {
+      "code": "sh.600640",
+      "raw_code": "600640",
+      "name": "国脉文化"
+    },
+    {
+      "code": "sh.600715",
+      "raw_code": "600715",
+      "name": "文投控股"
+    },
+    {
+      "code": "sh.600770",
+      "raw_code": "600770",
+      "name": "综艺股份"
+    },
+    {
+      "code": "sh.600880",
+      "raw_code": "600880",
+      "name": "博瑞传播"
+    },
+    {
+      "code": "sh.600892",
+      "raw_code": "600892",
+      "name": "大晟文化"
+    },
+    {
+      "code": "sh.600986",
+      "raw_code": "600986",
+      "name": "浙文互联"
+    },
+    {
+      "code": "sh.601595",
+      "raw_code": "601595",
+      "name": "上海电影"
+    },
+    {
+      "code": "sh.601928",
+      "raw_code": "601928",
+      "name": "凤凰传媒"
+    },
+    {
+      "code": "sh.603258",
+      "raw_code": "603258",
+      "name": "电魂网络"
+    },
+    {
+      "code": "sh.603444",
+      "raw_code": "603444",
+      "name": "吉比特"
+    },
+    {
+      "code": "sh.603466",
+      "raw_code": "603466",
+      "name": "风语筑"
+    },
+    {
+      "code": "sh.688696",
+      "raw_code": "688696",
+      "name": "极米科技"
+    },
+    {
+      "code": "sz.000793",
+      "raw_code": "000793",
+      "name": "*ST华闻"
+    },
+    {
+      "code": "sz.002148",
+      "raw_code": "002148",
+      "name": "北纬科技"
+    },
+    {
+      "code": "sz.002168",
+      "raw_code": "002168",
+      "name": "ST惠程"
+    },
+    {
+      "code": "sz.002174",
+      "raw_code": "002174",
+      "name": "游族网络"
+    },
+    {
+      "code": "sz.002261",
+      "raw_code": "002261",
+      "name": "拓维信息"
+    },
+    {
+      "code": "sz.002292",
+      "raw_code": "002292",
+      "name": "奥飞娱乐"
+    },
+    {
+      "code": "sz.002343",
+      "raw_code": "002343",
+      "name": "慈文传媒"
+    },
+    {
+      "code": "sz.002354",
+      "raw_code": "002354",
+      "name": "天娱数科"
+    },
+    {
+      "code": "sz.002425",
+      "raw_code": "002425",
+      "name": "凯撒文化"
+    },
+    {
+      "code": "sz.002445",
+      "raw_code": "002445",
+      "name": "中南文化"
+    },
+    {
+      "code": "sz.002517",
+      "raw_code": "002517",
+      "name": "恺英网络"
+    },
+    {
+      "code": "sz.002526",
+      "raw_code": "002526",
+      "name": "山东矿机"
+    },
+    {
+      "code": "sz.002555",
+      "raw_code": "002555",
+      "name": "三七互娱"
+    },
+    {
+      "code": "sz.002558",
+      "raw_code": "002558",
+      "name": "巨人网络"
+    },
+    {
+      "code": "sz.002599",
+      "raw_code": "002599",
+      "name": "盛通股份"
+    },
+    {
+      "code": "sz.002602",
+      "raw_code": "002602",
+      "name": "世纪华通"
+    },
+    {
+      "code": "sz.002605",
+      "raw_code": "002605",
+      "name": "姚记科技"
+    },
+    {
+      "code": "sz.002624",
+      "raw_code": "002624",
+      "name": "完美世界"
+    },
+    {
+      "code": "sz.002739",
+      "raw_code": "002739",
+      "name": "儒意电影"
+    },
+    {
+      "code": "sz.002862",
+      "raw_code": "002862",
+      "name": "实丰文化"
+    },
+    {
+      "code": "sz.002919",
+      "raw_code": "002919",
+      "name": "名臣健康"
+    },
+    {
+      "code": "sz.300002",
+      "raw_code": "300002",
+      "name": "神州泰岳"
+    },
+    {
+      "code": "sz.300031",
+      "raw_code": "300031",
+      "name": "宝通科技"
+    },
+    {
+      "code": "sz.300043",
+      "raw_code": "300043",
+      "name": "星辉娱乐"
+    },
+    {
+      "code": "sz.300044",
+      "raw_code": "300044",
+      "name": "*ST赛为"
+    },
+    {
+      "code": "sz.300052",
+      "raw_code": "300052",
+      "name": "中青宝"
+    },
+    {
+      "code": "sz.300113",
+      "raw_code": "300113",
+      "name": "顺网科技"
+    },
+    {
+      "code": "sz.300133",
+      "raw_code": "300133",
+      "name": "华策影视"
+    },
+    {
+      "code": "sz.300144",
+      "raw_code": "300144",
+      "name": "宋城演艺"
+    },
+    {
+      "code": "sz.300148",
+      "raw_code": "300148",
+      "name": "天舟文化"
+    },
+    {
+      "code": "sz.300299",
+      "raw_code": "300299",
+      "name": "富春股份"
+    },
+    {
+      "code": "sz.300315",
+      "raw_code": "300315",
+      "name": "掌趣科技"
+    },
+    {
+      "code": "sz.300413",
+      "raw_code": "300413",
+      "name": "芒果超媒"
+    },
+    {
+      "code": "sz.300418",
+      "raw_code": "300418",
+      "name": "昆仑万维"
+    },
+    {
+      "code": "sz.300459",
+      "raw_code": "300459",
+      "name": "汤姆猫"
+    },
+    {
+      "code": "sz.300467",
+      "raw_code": "300467",
+      "name": "迅游科技"
+    },
+    {
+      "code": "sz.300494",
+      "raw_code": "300494",
+      "name": "盛天网络"
+    },
+    {
+      "code": "sz.300518",
+      "raw_code": "300518",
+      "name": "新迅达"
+    },
+    {
+      "code": "sz.300533",
+      "raw_code": "300533",
+      "name": "冰川网络"
+    },
+    {
+      "code": "sz.300710",
+      "raw_code": "300710",
+      "name": "万隆光电"
+    },
+    {
+      "code": "sz.301302",
+      "raw_code": "301302",
+      "name": "华如科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:32",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/2/code/301050/"
+  "fetched_at": "2026-07-13 16:44:30",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

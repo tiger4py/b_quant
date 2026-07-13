@@ -3,10 +3,242 @@
   "concept_name": "房屋检测",
   "first_trade_date": "2024-08-27",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 46,
+  "constituents": [
+    {
+      "code": "bj.920149",
+      "raw_code": "920149",
+      "name": "旭杰科技"
+    },
+    {
+      "code": "bj.920427",
+      "raw_code": "920427",
+      "name": "华维设计"
+    },
+    {
+      "code": "bj.920873",
+      "raw_code": "920873",
+      "name": "中设咨询"
+    },
+    {
+      "code": "bj.920892",
+      "raw_code": "920892",
+      "name": "广咨国际"
+    },
+    {
+      "code": "sh.600170",
+      "raw_code": "600170",
+      "name": "上海建工"
+    },
+    {
+      "code": "sh.600491",
+      "raw_code": "600491",
+      "name": "ST龙元"
+    },
+    {
+      "code": "sh.600502",
+      "raw_code": "600502",
+      "name": "安徽建工"
+    },
+    {
+      "code": "sh.600629",
+      "raw_code": "600629",
+      "name": "华建集团"
+    },
+    {
+      "code": "sh.600846",
+      "raw_code": "600846",
+      "name": "同济科技"
+    },
+    {
+      "code": "sh.600939",
+      "raw_code": "600939",
+      "name": "重庆建工"
+    },
+    {
+      "code": "sh.600962",
+      "raw_code": "600962",
+      "name": "国投中鲁"
+    },
+    {
+      "code": "sh.601611",
+      "raw_code": "601611",
+      "name": "中国核建"
+    },
+    {
+      "code": "sh.601789",
+      "raw_code": "601789",
+      "name": "宁波建工"
+    },
+    {
+      "code": "sh.601992",
+      "raw_code": "601992",
+      "name": "金隅集团"
+    },
+    {
+      "code": "sh.603060",
+      "raw_code": "603060",
+      "name": "国检集团"
+    },
+    {
+      "code": "sh.603153",
+      "raw_code": "603153",
+      "name": "上海建科"
+    },
+    {
+      "code": "sh.603183",
+      "raw_code": "603183",
+      "name": "建研院"
+    },
+    {
+      "code": "sh.603316",
+      "raw_code": "603316",
+      "name": "诚邦股份"
+    },
+    {
+      "code": "sh.603636",
+      "raw_code": "603636",
+      "name": "南威软件"
+    },
+    {
+      "code": "sh.603909",
+      "raw_code": "603909",
+      "name": "建发合诚"
+    },
+    {
+      "code": "sh.603916",
+      "raw_code": "603916",
+      "name": "苏博特"
+    },
+    {
+      "code": "sh.688128",
+      "raw_code": "688128",
+      "name": "中国电研"
+    },
+    {
+      "code": "sh.688232",
+      "raw_code": "688232",
+      "name": "新点软件"
+    },
+    {
+      "code": "sz.000055",
+      "raw_code": "000055",
+      "name": "方大集团"
+    },
+    {
+      "code": "sz.000779",
+      "raw_code": "000779",
+      "name": "甘咨询"
+    },
+    {
+      "code": "sz.002057",
+      "raw_code": "002057",
+      "name": "中钢天源"
+    },
+    {
+      "code": "sz.002214",
+      "raw_code": "002214",
+      "name": "*ST大立"
+    },
+    {
+      "code": "sz.002271",
+      "raw_code": "002271",
+      "name": "东方雨虹"
+    },
+    {
+      "code": "sz.002333",
+      "raw_code": "002333",
+      "name": "罗普斯金"
+    },
+    {
+      "code": "sz.002398",
+      "raw_code": "002398",
+      "name": "垒知集团"
+    },
+    {
+      "code": "sz.300012",
+      "raw_code": "300012",
+      "name": "华测检测"
+    },
+    {
+      "code": "sz.300284",
+      "raw_code": "300284",
+      "name": "苏交科"
+    },
+    {
+      "code": "sz.300500",
+      "raw_code": "300500",
+      "name": "启迪设计"
+    },
+    {
+      "code": "sz.300675",
+      "raw_code": "300675",
+      "name": "建科院"
+    },
+    {
+      "code": "sz.300732",
+      "raw_code": "300732",
+      "name": "设研院"
+    },
+    {
+      "code": "sz.300826",
+      "raw_code": "300826",
+      "name": "测绘股份"
+    },
+    {
+      "code": "sz.300887",
+      "raw_code": "300887",
+      "name": "谱尼测试"
+    },
+    {
+      "code": "sz.300917",
+      "raw_code": "300917",
+      "name": "特发服务"
+    },
+    {
+      "code": "sz.300935",
+      "raw_code": "300935",
+      "name": "盈建科"
+    },
+    {
+      "code": "sz.300977",
+      "raw_code": "300977",
+      "name": "深圳瑞捷"
+    },
+    {
+      "code": "sz.301027",
+      "raw_code": "301027",
+      "name": "华蓝集团"
+    },
+    {
+      "code": "sz.301091",
+      "raw_code": "301091",
+      "name": "深城交"
+    },
+    {
+      "code": "sz.301115",
+      "raw_code": "301115",
+      "name": "联检科技"
+    },
+    {
+      "code": "sz.301136",
+      "raw_code": "301136",
+      "name": "招标股份"
+    },
+    {
+      "code": "sz.301167",
+      "raw_code": "301167",
+      "name": "建研设计"
+    },
+    {
+      "code": "sz.301632",
+      "raw_code": "301632",
+      "name": "广东建科"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:26",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309155/"
+  "fetched_at": "2026-07-13 17:05:04",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

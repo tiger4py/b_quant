@@ -3,10 +3,197 @@
   "concept_name": "农村电商",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 37,
+  "constituents": [
+    {
+      "code": "sh.600251",
+      "raw_code": "600251",
+      "name": "冠农股份"
+    },
+    {
+      "code": "sh.600359",
+      "raw_code": "600359",
+      "name": "新农开发"
+    },
+    {
+      "code": "sh.600438",
+      "raw_code": "600438",
+      "name": "通威股份"
+    },
+    {
+      "code": "sh.600712",
+      "raw_code": "600712",
+      "name": "南宁百货"
+    },
+    {
+      "code": "sh.600831",
+      "raw_code": "600831",
+      "name": "广电网络"
+    },
+    {
+      "code": "sh.600853",
+      "raw_code": "600853",
+      "name": "龙建股份"
+    },
+    {
+      "code": "sh.603043",
+      "raw_code": "603043",
+      "name": "广州酒家"
+    },
+    {
+      "code": "sh.603613",
+      "raw_code": "603613",
+      "name": "国联股份"
+    },
+    {
+      "code": "sh.603825",
+      "raw_code": "603825",
+      "name": "ST华扬"
+    },
+    {
+      "code": "sh.603999",
+      "raw_code": "603999",
+      "name": "读者传媒"
+    },
+    {
+      "code": "sz.000061",
+      "raw_code": "000061",
+      "name": "农产品"
+    },
+    {
+      "code": "sz.000417",
+      "raw_code": "000417",
+      "name": "合百集团"
+    },
+    {
+      "code": "sz.000525",
+      "raw_code": "000525",
+      "name": "红太阳"
+    },
+    {
+      "code": "sz.000564",
+      "raw_code": "000564",
+      "name": "供销大集"
+    },
+    {
+      "code": "sz.000713",
+      "raw_code": "000713",
+      "name": "国投丰乐"
+    },
+    {
+      "code": "sz.000816",
+      "raw_code": "000816",
+      "name": "智慧农业"
+    },
+    {
+      "code": "sz.000876",
+      "raw_code": "000876",
+      "name": "新希望"
+    },
+    {
+      "code": "sz.000902",
+      "raw_code": "000902",
+      "name": "新洋丰"
+    },
+    {
+      "code": "sz.002024",
+      "raw_code": "002024",
+      "name": "ST易购"
+    },
+    {
+      "code": "sz.002170",
+      "raw_code": "002170",
+      "name": "芭田股份"
+    },
+    {
+      "code": "sz.002187",
+      "raw_code": "002187",
+      "name": "广百股份"
+    },
+    {
+      "code": "sz.002215",
+      "raw_code": "002215",
+      "name": "诺普信"
+    },
+    {
+      "code": "sz.002277",
+      "raw_code": "002277",
+      "name": "友阿股份"
+    },
+    {
+      "code": "sz.002312",
+      "raw_code": "002312",
+      "name": "川发龙蟒"
+    },
+    {
+      "code": "sz.002321",
+      "raw_code": "002321",
+      "name": "华英农业"
+    },
+    {
+      "code": "sz.002385",
+      "raw_code": "002385",
+      "name": "大北农"
+    },
+    {
+      "code": "sz.002470",
+      "raw_code": "002470",
+      "name": "金正大"
+    },
+    {
+      "code": "sz.002496",
+      "raw_code": "002496",
+      "name": "辉丰股份"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002588",
+      "raw_code": "002588",
+      "name": "史丹利"
+    },
+    {
+      "code": "sz.002682",
+      "raw_code": "002682",
+      "name": "龙洲股份"
+    },
+    {
+      "code": "sz.002758",
+      "raw_code": "002758",
+      "name": "浙农股份"
+    },
+    {
+      "code": "sz.002908",
+      "raw_code": "002908",
+      "name": "德生科技"
+    },
+    {
+      "code": "sz.300022",
+      "raw_code": "300022",
+      "name": "吉峰科技"
+    },
+    {
+      "code": "sz.300413",
+      "raw_code": "300413",
+      "name": "芒果超媒"
+    },
+    {
+      "code": "sz.300555",
+      "raw_code": "300555",
+      "name": "ST路通"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:06",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301632/"
+  "fetched_at": "2026-07-13 16:54:06",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

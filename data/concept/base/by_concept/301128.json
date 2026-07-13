@@ -3,10 +3,302 @@
   "concept_name": "上海自贸区",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 58,
+  "constituents": [
+    {
+      "code": "bj.920139",
+      "raw_code": "920139",
+      "name": "华岭股份"
+    },
+    {
+      "code": "bj.920799",
+      "raw_code": "920799",
+      "name": "艾融软件"
+    },
+    {
+      "code": "sh.600009",
+      "raw_code": "600009",
+      "name": "上海机场"
+    },
+    {
+      "code": "sh.600018",
+      "raw_code": "600018",
+      "name": "上港集团"
+    },
+    {
+      "code": "sh.600026",
+      "raw_code": "600026",
+      "name": "中远海能"
+    },
+    {
+      "code": "sh.600097",
+      "raw_code": "600097",
+      "name": "开创国际"
+    },
+    {
+      "code": "sh.600151",
+      "raw_code": "600151",
+      "name": "航天机电"
+    },
+    {
+      "code": "sh.600278",
+      "raw_code": "600278",
+      "name": "东方创业"
+    },
+    {
+      "code": "sh.600284",
+      "raw_code": "600284",
+      "name": "浦东建设"
+    },
+    {
+      "code": "sh.600500",
+      "raw_code": "600500",
+      "name": "中化国际"
+    },
+    {
+      "code": "sh.600619",
+      "raw_code": "600619",
+      "name": "海立股份"
+    },
+    {
+      "code": "sh.600626",
+      "raw_code": "600626",
+      "name": "申达股份"
+    },
+    {
+      "code": "sh.600630",
+      "raw_code": "600630",
+      "name": "龙头股份"
+    },
+    {
+      "code": "sh.600639",
+      "raw_code": "600639",
+      "name": "浦东金桥"
+    },
+    {
+      "code": "sh.600648",
+      "raw_code": "600648",
+      "name": "外高桥"
+    },
+    {
+      "code": "sh.600650",
+      "raw_code": "600650",
+      "name": "锦江在线"
+    },
+    {
+      "code": "sh.600663",
+      "raw_code": "600663",
+      "name": "陆家嘴"
+    },
+    {
+      "code": "sh.600676",
+      "raw_code": "600676",
+      "name": "交运股份"
+    },
+    {
+      "code": "sh.600819",
+      "raw_code": "600819",
+      "name": "耀皮玻璃"
+    },
+    {
+      "code": "sh.600822",
+      "raw_code": "600822",
+      "name": "上海物贸"
+    },
+    {
+      "code": "sh.600845",
+      "raw_code": "600845",
+      "name": "宝信软件"
+    },
+    {
+      "code": "sh.600848",
+      "raw_code": "600848",
+      "name": "上海临港"
+    },
+    {
+      "code": "sh.600895",
+      "raw_code": "600895",
+      "name": "张江高科"
+    },
+    {
+      "code": "sh.601083",
+      "raw_code": "601083",
+      "name": "锦江航运"
+    },
+    {
+      "code": "sh.601200",
+      "raw_code": "601200",
+      "name": "上海环境"
+    },
+    {
+      "code": "sh.601607",
+      "raw_code": "601607",
+      "name": "上海医药"
+    },
+    {
+      "code": "sh.601866",
+      "raw_code": "601866",
+      "name": "中远海发"
+    },
+    {
+      "code": "sh.601872",
+      "raw_code": "601872",
+      "name": "招商轮船"
+    },
+    {
+      "code": "sh.603068",
+      "raw_code": "603068",
+      "name": "博通集成"
+    },
+    {
+      "code": "sh.603107",
+      "raw_code": "603107",
+      "name": "上海汽配"
+    },
+    {
+      "code": "sh.603128",
+      "raw_code": "603128",
+      "name": "华贸物流"
+    },
+    {
+      "code": "sh.603189",
+      "raw_code": "603189",
+      "name": "*ST网达"
+    },
+    {
+      "code": "sh.603296",
+      "raw_code": "603296",
+      "name": "华勤技术"
+    },
+    {
+      "code": "sh.603329",
+      "raw_code": "603329",
+      "name": "上海雅仕"
+    },
+    {
+      "code": "sh.603499",
+      "raw_code": "603499",
+      "name": "翔港科技"
+    },
+    {
+      "code": "sh.603648",
+      "raw_code": "603648",
+      "name": "畅联股份"
+    },
+    {
+      "code": "sh.603650",
+      "raw_code": "603650",
+      "name": "彤程新材"
+    },
+    {
+      "code": "sh.603713",
+      "raw_code": "603713",
+      "name": "密尔克卫"
+    },
+    {
+      "code": "sh.603729",
+      "raw_code": "603729",
+      "name": "ST龙韵"
+    },
+    {
+      "code": "sh.603730",
+      "raw_code": "603730",
+      "name": "岱美股份"
+    },
+    {
+      "code": "sh.603885",
+      "raw_code": "603885",
+      "name": "吉祥航空"
+    },
+    {
+      "code": "sh.603918",
+      "raw_code": "603918",
+      "name": "金桥信息"
+    },
+    {
+      "code": "sh.688018",
+      "raw_code": "688018",
+      "name": "乐鑫科技"
+    },
+    {
+      "code": "sh.688019",
+      "raw_code": "688019",
+      "name": "安集科技"
+    },
+    {
+      "code": "sh.688099",
+      "raw_code": "688099",
+      "name": "晶晨股份"
+    },
+    {
+      "code": "sh.688238",
+      "raw_code": "688238",
+      "name": "和元生物"
+    },
+    {
+      "code": "sh.688521",
+      "raw_code": "688521",
+      "name": "芯原股份"
+    },
+    {
+      "code": "sh.688591",
+      "raw_code": "688591",
+      "name": "泰凌微"
+    },
+    {
+      "code": "sh.688653",
+      "raw_code": "688653",
+      "name": "康希通信"
+    },
+    {
+      "code": "sh.688691",
+      "raw_code": "688691",
+      "name": "灿芯股份"
+    },
+    {
+      "code": "sh.688981",
+      "raw_code": "688981",
+      "name": "中芯国际"
+    },
+    {
+      "code": "sz.000571",
+      "raw_code": "000571",
+      "name": "新大洲A"
+    },
+    {
+      "code": "sz.002269",
+      "raw_code": "002269",
+      "name": "美邦服饰"
+    },
+    {
+      "code": "sz.002401",
+      "raw_code": "002401",
+      "name": "中远海科"
+    },
+    {
+      "code": "sz.002451",
+      "raw_code": "002451",
+      "name": "摩恩电气"
+    },
+    {
+      "code": "sz.300642",
+      "raw_code": "300642",
+      "name": "透景生命"
+    },
+    {
+      "code": "sz.300899",
+      "raw_code": "300899",
+      "name": "上海凯鑫"
+    },
+    {
+      "code": "sz.301024",
+      "raw_code": "301024",
+      "name": "霍普股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:41",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301128/"
+  "fetched_at": "2026-07-13 16:45:51",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

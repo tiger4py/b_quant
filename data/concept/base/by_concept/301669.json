@@ -3,10 +3,87 @@
   "concept_name": "供销社",
   "first_trade_date": "2022-11-01",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 15,
+  "constituents": [
+    {
+      "code": "sh.600217",
+      "raw_code": "600217",
+      "name": "中再资环"
+    },
+    {
+      "code": "sh.600318",
+      "raw_code": "600318",
+      "name": "新力金融"
+    },
+    {
+      "code": "sh.600354",
+      "raw_code": "600354",
+      "name": "敦煌种业"
+    },
+    {
+      "code": "sh.603029",
+      "raw_code": "603029",
+      "name": "天鹅股份"
+    },
+    {
+      "code": "sh.603970",
+      "raw_code": "603970",
+      "name": "中农立华"
+    },
+    {
+      "code": "sz.000564",
+      "raw_code": "000564",
+      "name": "供销大集"
+    },
+    {
+      "code": "sz.000722",
+      "raw_code": "000722",
+      "name": "湖南发展"
+    },
+    {
+      "code": "sz.000893",
+      "raw_code": "000893",
+      "name": "亚钾国际"
+    },
+    {
+      "code": "sz.002014",
+      "raw_code": "002014",
+      "name": "永新股份"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002643",
+      "raw_code": "002643",
+      "name": "万润股份"
+    },
+    {
+      "code": "sz.002758",
+      "raw_code": "002758",
+      "name": "浙农股份"
+    },
+    {
+      "code": "sz.002999",
+      "raw_code": "002999",
+      "name": "天禾股份"
+    },
+    {
+      "code": "sz.003042",
+      "raw_code": "003042",
+      "name": "中农联合"
+    },
+    {
+      "code": "sz.301581",
+      "raw_code": "301581",
+      "name": "黄山谷捷"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:06",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301669/"
+  "fetched_at": "2026-07-13 16:54:40",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

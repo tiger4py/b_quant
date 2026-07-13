@@ -3,10 +3,302 @@
   "concept_name": "核污染防治",
   "first_trade_date": "2023-08-28",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 58,
+  "constituents": [
+    {
+      "code": "bj.920078",
+      "raw_code": "920078",
+      "name": "族兴新材"
+    },
+    {
+      "code": "bj.920204",
+      "raw_code": "920204",
+      "name": "沪江材料"
+    },
+    {
+      "code": "bj.920438",
+      "raw_code": "920438",
+      "name": "戈碧迦"
+    },
+    {
+      "code": "bj.920665",
+      "raw_code": "920665",
+      "name": "科强股份"
+    },
+    {
+      "code": "bj.920781",
+      "raw_code": "920781",
+      "name": "瑞奇智造"
+    },
+    {
+      "code": "sh.600100",
+      "raw_code": "600100",
+      "name": "同方股份"
+    },
+    {
+      "code": "sh.600482",
+      "raw_code": "600482",
+      "name": "中国动力"
+    },
+    {
+      "code": "sh.600501",
+      "raw_code": "600501",
+      "name": "航天晨光"
+    },
+    {
+      "code": "sh.600579",
+      "raw_code": "600579",
+      "name": "中化装备"
+    },
+    {
+      "code": "sh.601718",
+      "raw_code": "601718",
+      "name": "ST际华"
+    },
+    {
+      "code": "sh.601727",
+      "raw_code": "601727",
+      "name": "上海电气"
+    },
+    {
+      "code": "sh.603060",
+      "raw_code": "603060",
+      "name": "国检集团"
+    },
+    {
+      "code": "sh.603169",
+      "raw_code": "603169",
+      "name": "兰石重装"
+    },
+    {
+      "code": "sh.603218",
+      "raw_code": "603218",
+      "name": "日月股份"
+    },
+    {
+      "code": "sh.603308",
+      "raw_code": "603308",
+      "name": "应流股份"
+    },
+    {
+      "code": "sh.603601",
+      "raw_code": "603601",
+      "name": "再升科技"
+    },
+    {
+      "code": "sh.688056",
+      "raw_code": "688056",
+      "name": "莱伯泰科"
+    },
+    {
+      "code": "sh.688101",
+      "raw_code": "688101",
+      "name": "三达膜"
+    },
+    {
+      "code": "sh.688119",
+      "raw_code": "688119",
+      "name": "中钢洛耐"
+    },
+    {
+      "code": "sh.688151",
+      "raw_code": "688151",
+      "name": "华强科技"
+    },
+    {
+      "code": "sh.688290",
+      "raw_code": "688290",
+      "name": "景业智能"
+    },
+    {
+      "code": "sh.688357",
+      "raw_code": "688357",
+      "name": "建龙微纳"
+    },
+    {
+      "code": "sh.688628",
+      "raw_code": "688628",
+      "name": "优利德"
+    },
+    {
+      "code": "sh.688671",
+      "raw_code": "688671",
+      "name": "碧兴物联"
+    },
+    {
+      "code": "sz.000881",
+      "raw_code": "000881",
+      "name": "中广核技"
+    },
+    {
+      "code": "sz.000969",
+      "raw_code": "000969",
+      "name": "安泰科技"
+    },
+    {
+      "code": "sz.001287",
+      "raw_code": "001287",
+      "name": "中电港"
+    },
+    {
+      "code": "sz.002097",
+      "raw_code": "002097",
+      "name": "山河智能"
+    },
+    {
+      "code": "sz.002246",
+      "raw_code": "002246",
+      "name": "北化股份"
+    },
+    {
+      "code": "sz.002393",
+      "raw_code": "002393",
+      "name": "力生制药"
+    },
+    {
+      "code": "sz.002474",
+      "raw_code": "002474",
+      "name": "榕基软件"
+    },
+    {
+      "code": "sz.002584",
+      "raw_code": "002584",
+      "name": "西陇科学"
+    },
+    {
+      "code": "sz.002631",
+      "raw_code": "002631",
+      "name": "德尔未来"
+    },
+    {
+      "code": "sz.002980",
+      "raw_code": "002980",
+      "name": "华盛昌"
+    },
+    {
+      "code": "sz.002990",
+      "raw_code": "002990",
+      "name": "盛视科技"
+    },
+    {
+      "code": "sz.003816",
+      "raw_code": "003816",
+      "name": "中国广核"
+    },
+    {
+      "code": "sz.300007",
+      "raw_code": "300007",
+      "name": "汉威科技"
+    },
+    {
+      "code": "sz.300012",
+      "raw_code": "300012",
+      "name": "华测检测"
+    },
+    {
+      "code": "sz.300092",
+      "raw_code": "300092",
+      "name": "科新机电"
+    },
+    {
+      "code": "sz.300137",
+      "raw_code": "300137",
+      "name": "先河环保"
+    },
+    {
+      "code": "sz.300172",
+      "raw_code": "300172",
+      "name": "中电环保"
+    },
+    {
+      "code": "sz.300185",
+      "raw_code": "300185",
+      "name": "通裕重工"
+    },
+    {
+      "code": "sz.300201",
+      "raw_code": "300201",
+      "name": "海伦哲"
+    },
+    {
+      "code": "sz.300337",
+      "raw_code": "300337",
+      "name": "银邦股份"
+    },
+    {
+      "code": "sz.300487",
+      "raw_code": "300487",
+      "name": "蓝晓科技"
+    },
+    {
+      "code": "sz.300489",
+      "raw_code": "300489",
+      "name": "光智科技"
+    },
+    {
+      "code": "sz.300523",
+      "raw_code": "300523",
+      "name": "辰安科技"
+    },
+    {
+      "code": "sz.300527",
+      "raw_code": "300527",
+      "name": "ST应急"
+    },
+    {
+      "code": "sz.300875",
+      "raw_code": "300875",
+      "name": "捷强装备"
+    },
+    {
+      "code": "sz.300887",
+      "raw_code": "300887",
+      "name": "谱尼测试"
+    },
+    {
+      "code": "sz.300958",
+      "raw_code": "300958",
+      "name": "建工修复"
+    },
+    {
+      "code": "sz.300962",
+      "raw_code": "300962",
+      "name": "中金辐照"
+    },
+    {
+      "code": "sz.300981",
+      "raw_code": "300981",
+      "name": "中红医疗"
+    },
+    {
+      "code": "sz.301092",
+      "raw_code": "301092",
+      "name": "争光股份"
+    },
+    {
+      "code": "sz.301148",
+      "raw_code": "301148",
+      "name": "嘉戎技术"
+    },
+    {
+      "code": "sz.301233",
+      "raw_code": "301233",
+      "name": "盛帮股份"
+    },
+    {
+      "code": "sz.301302",
+      "raw_code": "301302",
+      "name": "华如科技"
+    },
+    {
+      "code": "sz.301323",
+      "raw_code": "301323",
+      "name": "新莱福"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:53",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301424/"
+  "fetched_at": "2026-07-13 16:49:36",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

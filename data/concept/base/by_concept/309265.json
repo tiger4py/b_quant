@@ -3,10 +3,517 @@
   "concept_name": "2026一季报预增",
   "first_trade_date": "2026-04-03",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 101,
+  "constituents": [
+    {
+      "code": "bj.920156",
+      "raw_code": "920156",
+      "name": "海昌智能"
+    },
+    {
+      "code": "bj.920186",
+      "raw_code": "920186",
+      "name": "中科仪"
+    },
+    {
+      "code": "sh.600111",
+      "raw_code": "600111",
+      "name": "北方稀土"
+    },
+    {
+      "code": "sh.600176",
+      "raw_code": "600176",
+      "name": "中国巨石"
+    },
+    {
+      "code": "sh.600255",
+      "raw_code": "600255",
+      "name": "鑫科材料"
+    },
+    {
+      "code": "sh.600259",
+      "raw_code": "600259",
+      "name": "中稀有色"
+    },
+    {
+      "code": "sh.600378",
+      "raw_code": "600378",
+      "name": "昊华科技"
+    },
+    {
+      "code": "sh.600596",
+      "raw_code": "600596",
+      "name": "新安股份"
+    },
+    {
+      "code": "sh.600655",
+      "raw_code": "600655",
+      "name": "豫园股份"
+    },
+    {
+      "code": "sh.600685",
+      "raw_code": "600685",
+      "name": "中船防务"
+    },
+    {
+      "code": "sh.600711",
+      "raw_code": "600711",
+      "name": "盛屯矿业"
+    },
+    {
+      "code": "sh.600727",
+      "raw_code": "600727",
+      "name": "鲁北化工"
+    },
+    {
+      "code": "sh.600768",
+      "raw_code": "600768",
+      "name": "宁波富邦"
+    },
+    {
+      "code": "sh.600801",
+      "raw_code": "600801",
+      "name": "华新建材"
+    },
+    {
+      "code": "sh.600973",
+      "raw_code": "600973",
+      "name": "宝胜股份"
+    },
+    {
+      "code": "sh.601069",
+      "raw_code": "601069",
+      "name": "西部黄金"
+    },
+    {
+      "code": "sh.601600",
+      "raw_code": "601600",
+      "name": "中国铝业"
+    },
+    {
+      "code": "sh.601995",
+      "raw_code": "601995",
+      "name": "中金公司"
+    },
+    {
+      "code": "sh.603444",
+      "raw_code": "603444",
+      "name": "吉比特"
+    },
+    {
+      "code": "sh.603826",
+      "raw_code": "603826",
+      "name": "坤彩科技"
+    },
+    {
+      "code": "sh.603893",
+      "raw_code": "603893",
+      "name": "瑞芯微"
+    },
+    {
+      "code": "sh.603929",
+      "raw_code": "603929",
+      "name": "亚翔集成"
+    },
+    {
+      "code": "sh.603966",
+      "raw_code": "603966",
+      "name": "法兰泰克"
+    },
+    {
+      "code": "sh.603992",
+      "raw_code": "603992",
+      "name": "松霖科技"
+    },
+    {
+      "code": "sh.605117",
+      "raw_code": "605117",
+      "name": "德业股份"
+    },
+    {
+      "code": "sh.605189",
+      "raw_code": "605189",
+      "name": "富春染织"
+    },
+    {
+      "code": "sh.688059",
+      "raw_code": "688059",
+      "name": "华锐精密"
+    },
+    {
+      "code": "sh.688111",
+      "raw_code": "688111",
+      "name": "金山办公"
+    },
+    {
+      "code": "sh.688255",
+      "raw_code": "688255",
+      "name": "凯尔达"
+    },
+    {
+      "code": "sh.688257",
+      "raw_code": "688257",
+      "name": "新锐股份"
+    },
+    {
+      "code": "sh.688308",
+      "raw_code": "688308",
+      "name": "欧科亿"
+    },
+    {
+      "code": "sh.688378",
+      "raw_code": "688378",
+      "name": "奥来德"
+    },
+    {
+      "code": "sh.688388",
+      "raw_code": "688388",
+      "name": "嘉元科技"
+    },
+    {
+      "code": "sh.688630",
+      "raw_code": "688630",
+      "name": "芯碁微装"
+    },
+    {
+      "code": "sh.688678",
+      "raw_code": "688678",
+      "name": "福立旺"
+    },
+    {
+      "code": "sh.688690",
+      "raw_code": "688690",
+      "name": "纳微科技"
+    },
+    {
+      "code": "sh.688808",
+      "raw_code": "688808",
+      "name": "联讯仪器"
+    },
+    {
+      "code": "sh.688809",
+      "raw_code": "688809",
+      "name": "强一股份"
+    },
+    {
+      "code": "sz.000061",
+      "raw_code": "000061",
+      "name": "农产品"
+    },
+    {
+      "code": "sz.000062",
+      "raw_code": "000062",
+      "name": "深圳华强"
+    },
+    {
+      "code": "sz.000531",
+      "raw_code": "000531",
+      "name": "穗恒运A"
+    },
+    {
+      "code": "sz.000570",
+      "raw_code": "000570",
+      "name": "苏常柴A"
+    },
+    {
+      "code": "sz.000603",
+      "raw_code": "000603",
+      "name": "盛达资源"
+    },
+    {
+      "code": "sz.000612",
+      "raw_code": "000612",
+      "name": "焦作万方"
+    },
+    {
+      "code": "sz.000626",
+      "raw_code": "000626",
+      "name": "远大控股"
+    },
+    {
+      "code": "sz.000657",
+      "raw_code": "000657",
+      "name": "中钨高新"
+    },
+    {
+      "code": "sz.000682",
+      "raw_code": "000682",
+      "name": "东方电子"
+    },
+    {
+      "code": "sz.000722",
+      "raw_code": "000722",
+      "name": "湖南发展"
+    },
+    {
+      "code": "sz.000729",
+      "raw_code": "000729",
+      "name": "燕京啤酒"
+    },
+    {
+      "code": "sz.000833",
+      "raw_code": "000833",
+      "name": "粤桂股份"
+    },
+    {
+      "code": "sz.000933",
+      "raw_code": "000933",
+      "name": "神火股份"
+    },
+    {
+      "code": "sz.000960",
+      "raw_code": "000960",
+      "name": "锡业股份"
+    },
+    {
+      "code": "sz.000973",
+      "raw_code": "000973",
+      "name": "佛塑科技"
+    },
+    {
+      "code": "sz.000975",
+      "raw_code": "000975",
+      "name": "山金国际"
+    },
+    {
+      "code": "sz.000987",
+      "raw_code": "000987",
+      "name": "越秀资本"
+    },
+    {
+      "code": "sz.001389",
+      "raw_code": "001389",
+      "name": "广合科技"
+    },
+    {
+      "code": "sz.002033",
+      "raw_code": "002033",
+      "name": "丽江股份"
+    },
+    {
+      "code": "sz.002039",
+      "raw_code": "002039",
+      "name": "黔源电力"
+    },
+    {
+      "code": "sz.002082",
+      "raw_code": "002082",
+      "name": "ST万邦"
+    },
+    {
+      "code": "sz.002132",
+      "raw_code": "002132",
+      "name": "恒星科技"
+    },
+    {
+      "code": "sz.002155",
+      "raw_code": "002155",
+      "name": "湖南黄金"
+    },
+    {
+      "code": "sz.002297",
+      "raw_code": "002297",
+      "name": "博云新材"
+    },
+    {
+      "code": "sz.002299",
+      "raw_code": "002299",
+      "name": "圣农发展"
+    },
+    {
+      "code": "sz.002376",
+      "raw_code": "002376",
+      "name": "新北洋"
+    },
+    {
+      "code": "sz.002384",
+      "raw_code": "002384",
+      "name": "东山精密"
+    },
+    {
+      "code": "sz.002439",
+      "raw_code": "002439",
+      "name": "启明星辰"
+    },
+    {
+      "code": "sz.002463",
+      "raw_code": "002463",
+      "name": "沪电股份"
+    },
+    {
+      "code": "sz.002466",
+      "raw_code": "002466",
+      "name": "天齐锂业"
+    },
+    {
+      "code": "sz.002468",
+      "raw_code": "002468",
+      "name": "申通快递"
+    },
+    {
+      "code": "sz.002521",
+      "raw_code": "002521",
+      "name": "齐峰新材"
+    },
+    {
+      "code": "sz.002532",
+      "raw_code": "002532",
+      "name": "天山铝业"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002552",
+      "raw_code": "002552",
+      "name": "宝鼎科技"
+    },
+    {
+      "code": "sz.002558",
+      "raw_code": "002558",
+      "name": "巨人网络"
+    },
+    {
+      "code": "sz.002560",
+      "raw_code": "002560",
+      "name": "通达股份"
+    },
+    {
+      "code": "sz.002653",
+      "raw_code": "002653",
+      "name": "海思科"
+    },
+    {
+      "code": "sz.002738",
+      "raw_code": "002738",
+      "name": "中矿资源"
+    },
+    {
+      "code": "sz.002810",
+      "raw_code": "002810",
+      "name": "山东赫达"
+    },
+    {
+      "code": "sz.002838",
+      "raw_code": "002838",
+      "name": "道恩股份"
+    },
+    {
+      "code": "sz.002922",
+      "raw_code": "002922",
+      "name": "伊戈尔"
+    },
+    {
+      "code": "sz.002961",
+      "raw_code": "002961",
+      "name": "瑞达期货"
+    },
+    {
+      "code": "sz.300037",
+      "raw_code": "300037",
+      "name": "新宙邦"
+    },
+    {
+      "code": "sz.300054",
+      "raw_code": "300054",
+      "name": "鼎龙股份"
+    },
+    {
+      "code": "sz.300233",
+      "raw_code": "300233",
+      "name": "金城医药"
+    },
+    {
+      "code": "sz.300390",
+      "raw_code": "300390",
+      "name": "天华新能"
+    },
+    {
+      "code": "sz.300458",
+      "raw_code": "300458",
+      "name": "全志科技"
+    },
+    {
+      "code": "sz.300475",
+      "raw_code": "300475",
+      "name": "香农芯创"
+    },
+    {
+      "code": "sz.300497",
+      "raw_code": "300497",
+      "name": "富祥股份"
+    },
+    {
+      "code": "sz.300531",
+      "raw_code": "300531",
+      "name": "优博讯"
+    },
+    {
+      "code": "sz.300620",
+      "raw_code": "300620",
+      "name": "光库科技"
+    },
+    {
+      "code": "sz.300821",
+      "raw_code": "300821",
+      "name": "东岳硅材"
+    },
+    {
+      "code": "sz.300857",
+      "raw_code": "300857",
+      "name": "协创数据"
+    },
+    {
+      "code": "sz.300919",
+      "raw_code": "300919",
+      "name": "中伟新材"
+    },
+    {
+      "code": "sz.300953",
+      "raw_code": "300953",
+      "name": "震裕科技"
+    },
+    {
+      "code": "sz.301086",
+      "raw_code": "301086",
+      "name": "鸿富瀚"
+    },
+    {
+      "code": "sz.301110",
+      "raw_code": "301110",
+      "name": "青木科技"
+    },
+    {
+      "code": "sz.301179",
+      "raw_code": "301179",
+      "name": "泽宇智能"
+    },
+    {
+      "code": "sz.301219",
+      "raw_code": "301219",
+      "name": "腾远钴业"
+    },
+    {
+      "code": "sz.301265",
+      "raw_code": "301265",
+      "name": "华新科技"
+    },
+    {
+      "code": "sz.301345",
+      "raw_code": "301345",
+      "name": "涛涛车业"
+    },
+    {
+      "code": "sz.301563",
+      "raw_code": "301563",
+      "name": "云汉芯城"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:32",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309265/"
+  "fetched_at": "2026-07-13 17:05:39",
+  "page_count": 11,
+  "is_partial": false,
+  "page_limit_reason": null
 }

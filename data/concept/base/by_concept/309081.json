@@ -3,10 +3,332 @@
   "concept_name": "减肥药",
   "first_trade_date": "2023-08-10",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 64,
+  "constituents": [
+    {
+      "code": "bj.920017",
+      "raw_code": "920017",
+      "name": "星昊医药"
+    },
+    {
+      "code": "bj.920735",
+      "raw_code": "920735",
+      "name": "德源药业"
+    },
+    {
+      "code": "sh.600062",
+      "raw_code": "600062",
+      "name": "华润双鹤"
+    },
+    {
+      "code": "sh.600129",
+      "raw_code": "600129",
+      "name": "太极集团"
+    },
+    {
+      "code": "sh.600196",
+      "raw_code": "600196",
+      "name": "复星医药"
+    },
+    {
+      "code": "sh.600267",
+      "raw_code": "600267",
+      "name": "海正药业"
+    },
+    {
+      "code": "sh.600276",
+      "raw_code": "600276",
+      "name": "恒瑞医药"
+    },
+    {
+      "code": "sh.600380",
+      "raw_code": "600380",
+      "name": "健康元"
+    },
+    {
+      "code": "sh.600557",
+      "raw_code": "600557",
+      "name": "康缘药业"
+    },
+    {
+      "code": "sh.600721",
+      "raw_code": "600721",
+      "name": "百花医药"
+    },
+    {
+      "code": "sh.600867",
+      "raw_code": "600867",
+      "name": "通化东宝"
+    },
+    {
+      "code": "sh.603087",
+      "raw_code": "603087",
+      "name": "甘李药业"
+    },
+    {
+      "code": "sh.603538",
+      "raw_code": "603538",
+      "name": "美诺华"
+    },
+    {
+      "code": "sh.603707",
+      "raw_code": "603707",
+      "name": "健友股份"
+    },
+    {
+      "code": "sh.605116",
+      "raw_code": "605116",
+      "name": "奥锐特"
+    },
+    {
+      "code": "sh.688076",
+      "raw_code": "688076",
+      "name": "ST诺泰"
+    },
+    {
+      "code": "sh.688105",
+      "raw_code": "688105",
+      "name": "诺唯赞"
+    },
+    {
+      "code": "sh.688117",
+      "raw_code": "688117",
+      "name": "圣诺生物"
+    },
+    {
+      "code": "sh.688131",
+      "raw_code": "688131",
+      "name": "皓元医药"
+    },
+    {
+      "code": "sh.688136",
+      "raw_code": "688136",
+      "name": "科兴制药"
+    },
+    {
+      "code": "sh.688166",
+      "raw_code": "688166",
+      "name": "博瑞医药"
+    },
+    {
+      "code": "sh.688202",
+      "raw_code": "688202",
+      "name": "美迪西"
+    },
+    {
+      "code": "sh.688222",
+      "raw_code": "688222",
+      "name": "成都先导"
+    },
+    {
+      "code": "sh.688321",
+      "raw_code": "688321",
+      "name": "微芯生物"
+    },
+    {
+      "code": "sh.688550",
+      "raw_code": "688550",
+      "name": "瑞联新材"
+    },
+    {
+      "code": "sh.688602",
+      "raw_code": "688602",
+      "name": "康鹏科技"
+    },
+    {
+      "code": "sh.688621",
+      "raw_code": "688621",
+      "name": "阳光诺和"
+    },
+    {
+      "code": "sh.688690",
+      "raw_code": "688690",
+      "name": "纳微科技"
+    },
+    {
+      "code": "sh.688755",
+      "raw_code": "688755",
+      "name": "汉邦科技"
+    },
+    {
+      "code": "sh.688759",
+      "raw_code": "688759",
+      "name": "必贝特"
+    },
+    {
+      "code": "sz.000411",
+      "raw_code": "000411",
+      "name": "英特集团"
+    },
+    {
+      "code": "sz.000513",
+      "raw_code": "000513",
+      "name": "丽珠集团"
+    },
+    {
+      "code": "sz.000739",
+      "raw_code": "000739",
+      "name": "普洛药业"
+    },
+    {
+      "code": "sz.000813",
+      "raw_code": "000813",
+      "name": "德展健康"
+    },
+    {
+      "code": "sz.000935",
+      "raw_code": "000935",
+      "name": "四川双马"
+    },
+    {
+      "code": "sz.000950",
+      "raw_code": "000950",
+      "name": "重药控股"
+    },
+    {
+      "code": "sz.000963",
+      "raw_code": "000963",
+      "name": "华东医药"
+    },
+    {
+      "code": "sz.002038",
+      "raw_code": "002038",
+      "name": "双鹭药业"
+    },
+    {
+      "code": "sz.002099",
+      "raw_code": "002099",
+      "name": "海翔药业"
+    },
+    {
+      "code": "sz.002294",
+      "raw_code": "002294",
+      "name": "信立泰"
+    },
+    {
+      "code": "sz.002317",
+      "raw_code": "002317",
+      "name": "众生药业"
+    },
+    {
+      "code": "sz.002742",
+      "raw_code": "002742",
+      "name": "冀衡医药"
+    },
+    {
+      "code": "sz.002821",
+      "raw_code": "002821",
+      "name": "凯莱英"
+    },
+    {
+      "code": "sz.002907",
+      "raw_code": "002907",
+      "name": "华森制药"
+    },
+    {
+      "code": "sz.300003",
+      "raw_code": "300003",
+      "name": "乐普医疗"
+    },
+    {
+      "code": "sz.300122",
+      "raw_code": "300122",
+      "name": "智飞生物"
+    },
+    {
+      "code": "sz.300199",
+      "raw_code": "300199",
+      "name": "翰宇药业"
+    },
+    {
+      "code": "sz.300255",
+      "raw_code": "300255",
+      "name": "常山药业"
+    },
+    {
+      "code": "sz.300363",
+      "raw_code": "300363",
+      "name": "博腾股份"
+    },
+    {
+      "code": "sz.300404",
+      "raw_code": "300404",
+      "name": "博济医药"
+    },
+    {
+      "code": "sz.300487",
+      "raw_code": "300487",
+      "name": "蓝晓科技"
+    },
+    {
+      "code": "sz.300723",
+      "raw_code": "300723",
+      "name": "一品红"
+    },
+    {
+      "code": "sz.300765",
+      "raw_code": "300765",
+      "name": "石药创新"
+    },
+    {
+      "code": "sz.300896",
+      "raw_code": "300896",
+      "name": "爱美客"
+    },
+    {
+      "code": "sz.301092",
+      "raw_code": "301092",
+      "name": "争光股份"
+    },
+    {
+      "code": "sz.301166",
+      "raw_code": "301166",
+      "name": "优宁维"
+    },
+    {
+      "code": "sz.301201",
+      "raw_code": "301201",
+      "name": "诚达药业"
+    },
+    {
+      "code": "sz.301257",
+      "raw_code": "301257",
+      "name": "普蕊斯"
+    },
+    {
+      "code": "sz.301263",
+      "raw_code": "301263",
+      "name": "泰恩康"
+    },
+    {
+      "code": "sz.301277",
+      "raw_code": "301277",
+      "name": "新天地"
+    },
+    {
+      "code": "sz.301363",
+      "raw_code": "301363",
+      "name": "美好医疗"
+    },
+    {
+      "code": "sz.301393",
+      "raw_code": "301393",
+      "name": "昊帆生物"
+    },
+    {
+      "code": "sz.301509",
+      "raw_code": "301509",
+      "name": "金凯生科"
+    },
+    {
+      "code": "sz.301520",
+      "raw_code": "301520",
+      "name": "万邦医药"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:13",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309081/"
+  "fetched_at": "2026-07-13 17:03:39",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

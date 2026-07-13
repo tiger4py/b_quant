@@ -3,10 +3,282 @@
   "concept_name": "PEEK材料",
   "first_trade_date": "2023-12-20",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 54,
+  "constituents": [
+    {
+      "code": "bj.920099",
+      "raw_code": "920099",
+      "name": "瑞华技术"
+    },
+    {
+      "code": "bj.920247",
+      "raw_code": "920247",
+      "name": "华密新材"
+    },
+    {
+      "code": "bj.920469",
+      "raw_code": "920469",
+      "name": "富恒新材"
+    },
+    {
+      "code": "bj.920663",
+      "raw_code": "920663",
+      "name": "明阳科技"
+    },
+    {
+      "code": "sh.600143",
+      "raw_code": "600143",
+      "name": "金发科技"
+    },
+    {
+      "code": "sh.600176",
+      "raw_code": "600176",
+      "name": "中国巨石"
+    },
+    {
+      "code": "sh.600862",
+      "raw_code": "600862",
+      "name": "中航高科"
+    },
+    {
+      "code": "sh.601609",
+      "raw_code": "601609",
+      "name": "金田股份"
+    },
+    {
+      "code": "sh.603319",
+      "raw_code": "603319",
+      "name": "美湖股份"
+    },
+    {
+      "code": "sh.603616",
+      "raw_code": "603616",
+      "name": "韩建河山"
+    },
+    {
+      "code": "sh.603790",
+      "raw_code": "603790",
+      "name": "雅运股份"
+    },
+    {
+      "code": "sh.603823",
+      "raw_code": "603823",
+      "name": "百合花"
+    },
+    {
+      "code": "sh.605189",
+      "raw_code": "605189",
+      "name": "富春染织"
+    },
+    {
+      "code": "sh.688219",
+      "raw_code": "688219",
+      "name": "会通股份"
+    },
+    {
+      "code": "sh.688314",
+      "raw_code": "688314",
+      "name": "康拓医疗"
+    },
+    {
+      "code": "sh.688716",
+      "raw_code": "688716",
+      "name": "中研股份"
+    },
+    {
+      "code": "sz.000881",
+      "raw_code": "000881",
+      "name": "中广核技"
+    },
+    {
+      "code": "sz.002048",
+      "raw_code": "002048",
+      "name": "宁波华翔"
+    },
+    {
+      "code": "sz.002206",
+      "raw_code": "002206",
+      "name": "海利得"
+    },
+    {
+      "code": "sz.002324",
+      "raw_code": "002324",
+      "name": "普利特"
+    },
+    {
+      "code": "sz.002562",
+      "raw_code": "002562",
+      "name": "兄弟科技"
+    },
+    {
+      "code": "sz.002625",
+      "raw_code": "002625",
+      "name": "光启技术"
+    },
+    {
+      "code": "sz.002643",
+      "raw_code": "002643",
+      "name": "万润股份"
+    },
+    {
+      "code": "sz.002709",
+      "raw_code": "002709",
+      "name": "天赐材料"
+    },
+    {
+      "code": "sz.002768",
+      "raw_code": "002768",
+      "name": "国恩股份"
+    },
+    {
+      "code": "sz.002838",
+      "raw_code": "002838",
+      "name": "道恩股份"
+    },
+    {
+      "code": "sz.002850",
+      "raw_code": "002850",
+      "name": "科达利"
+    },
+    {
+      "code": "sz.002886",
+      "raw_code": "002886",
+      "name": "沃特股份"
+    },
+    {
+      "code": "sz.002915",
+      "raw_code": "002915",
+      "name": "中欣氟材"
+    },
+    {
+      "code": "sz.002937",
+      "raw_code": "002937",
+      "name": "兴瑞科技"
+    },
+    {
+      "code": "sz.003017",
+      "raw_code": "003017",
+      "name": "大洋生物"
+    },
+    {
+      "code": "sz.003022",
+      "raw_code": "003022",
+      "name": "联泓新科"
+    },
+    {
+      "code": "sz.300100",
+      "raw_code": "300100",
+      "name": "双林股份"
+    },
+    {
+      "code": "sz.300115",
+      "raw_code": "300115",
+      "name": "长盈精密"
+    },
+    {
+      "code": "sz.300538",
+      "raw_code": "300538",
+      "name": "同益股份"
+    },
+    {
+      "code": "sz.300539",
+      "raw_code": "300539",
+      "name": "横河精密"
+    },
+    {
+      "code": "sz.300644",
+      "raw_code": "300644",
+      "name": "南京聚隆"
+    },
+    {
+      "code": "sz.300680",
+      "raw_code": "300680",
+      "name": "隆盛科技"
+    },
+    {
+      "code": "sz.300690",
+      "raw_code": "300690",
+      "name": "双一科技"
+    },
+    {
+      "code": "sz.300699",
+      "raw_code": "300699",
+      "name": "光威复材"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.301005",
+      "raw_code": "301005",
+      "name": "超捷股份"
+    },
+    {
+      "code": "sz.301022",
+      "raw_code": "301022",
+      "name": "海泰科"
+    },
+    {
+      "code": "sz.301029",
+      "raw_code": "301029",
+      "name": "怡合达"
+    },
+    {
+      "code": "sz.301069",
+      "raw_code": "301069",
+      "name": "凯盛新材"
+    },
+    {
+      "code": "sz.301076",
+      "raw_code": "301076",
+      "name": "新瀚新材"
+    },
+    {
+      "code": "sz.301131",
+      "raw_code": "301131",
+      "name": "聚赛龙"
+    },
+    {
+      "code": "sz.301196",
+      "raw_code": "301196",
+      "name": "唯科科技"
+    },
+    {
+      "code": "sz.301216",
+      "raw_code": "301216",
+      "name": "万凯新材"
+    },
+    {
+      "code": "sz.301225",
+      "raw_code": "301225",
+      "name": "恒勃股份"
+    },
+    {
+      "code": "sz.301233",
+      "raw_code": "301233",
+      "name": "盛帮股份"
+    },
+    {
+      "code": "sz.301363",
+      "raw_code": "301363",
+      "name": "美好医疗"
+    },
+    {
+      "code": "sz.301548",
+      "raw_code": "301548",
+      "name": "崇德科技"
+    },
+    {
+      "code": "sz.301591",
+      "raw_code": "301591",
+      "name": "肯特股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:17",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309105/"
+  "fetched_at": "2026-07-13 17:04:03",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

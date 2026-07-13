@@ -3,10 +3,212 @@
   "concept_name": "足球概念",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 40,
+  "constituents": [
+    {
+      "code": "bj.920021",
+      "raw_code": "920021",
+      "name": "流金科技"
+    },
+    {
+      "code": "sh.600018",
+      "raw_code": "600018",
+      "name": "上港集团"
+    },
+    {
+      "code": "sh.600104",
+      "raw_code": "600104",
+      "name": "上汽集团"
+    },
+    {
+      "code": "sh.600158",
+      "raw_code": "600158",
+      "name": "中体产业"
+    },
+    {
+      "code": "sh.600676",
+      "raw_code": "600676",
+      "name": "交运股份"
+    },
+    {
+      "code": "sh.600959",
+      "raw_code": "600959",
+      "name": "江苏有线"
+    },
+    {
+      "code": "sh.603558",
+      "raw_code": "603558",
+      "name": "健盛集团"
+    },
+    {
+      "code": "sh.603721",
+      "raw_code": "603721",
+      "name": "中广天择"
+    },
+    {
+      "code": "sh.605099",
+      "raw_code": "605099",
+      "name": "共创草坪"
+    },
+    {
+      "code": "sh.605299",
+      "raw_code": "605299",
+      "name": "舒华体育"
+    },
+    {
+      "code": "sz.001300",
+      "raw_code": "001300",
+      "name": "三柏硕"
+    },
+    {
+      "code": "sz.001368",
+      "raw_code": "001368",
+      "name": "通达创智"
+    },
+    {
+      "code": "sz.002181",
+      "raw_code": "002181",
+      "name": "粤传媒"
+    },
+    {
+      "code": "sz.002238",
+      "raw_code": "002238",
+      "name": "天威视讯"
+    },
+    {
+      "code": "sz.002342",
+      "raw_code": "002342",
+      "name": "巨力索具"
+    },
+    {
+      "code": "sz.002373",
+      "raw_code": "002373",
+      "name": "千方科技"
+    },
+    {
+      "code": "sz.002395",
+      "raw_code": "002395",
+      "name": "双象股份"
+    },
+    {
+      "code": "sz.002415",
+      "raw_code": "002415",
+      "name": "海康威视"
+    },
+    {
+      "code": "sz.002563",
+      "raw_code": "002563",
+      "name": "森马服饰"
+    },
+    {
+      "code": "sz.002587",
+      "raw_code": "002587",
+      "name": "奥拓电子"
+    },
+    {
+      "code": "sz.002659",
+      "raw_code": "002659",
+      "name": "凯文教育"
+    },
+    {
+      "code": "sz.002701",
+      "raw_code": "002701",
+      "name": "奥瑞金"
+    },
+    {
+      "code": "sz.002707",
+      "raw_code": "002707",
+      "name": "众信旅游"
+    },
+    {
+      "code": "sz.002739",
+      "raw_code": "002739",
+      "name": "儒意电影"
+    },
+    {
+      "code": "sz.002768",
+      "raw_code": "002768",
+      "name": "国恩股份"
+    },
+    {
+      "code": "sz.002887",
+      "raw_code": "002887",
+      "name": "绿茵生态"
+    },
+    {
+      "code": "sz.002899",
+      "raw_code": "002899",
+      "name": "英派斯"
+    },
+    {
+      "code": "sz.300005",
+      "raw_code": "300005",
+      "name": "探路者"
+    },
+    {
+      "code": "sz.300162",
+      "raw_code": "300162",
+      "name": "雷曼光电"
+    },
+    {
+      "code": "sz.300218",
+      "raw_code": "300218",
+      "name": "安利股份"
+    },
+    {
+      "code": "sz.300232",
+      "raw_code": "300232",
+      "name": "洲明科技"
+    },
+    {
+      "code": "sz.300355",
+      "raw_code": "300355",
+      "name": "蒙草生态"
+    },
+    {
+      "code": "sz.300389",
+      "raw_code": "300389",
+      "name": "艾比森"
+    },
+    {
+      "code": "sz.300651",
+      "raw_code": "300651",
+      "name": "金陵体育"
+    },
+    {
+      "code": "sz.300905",
+      "raw_code": "300905",
+      "name": "宝丽迪"
+    },
+    {
+      "code": "sz.300980",
+      "raw_code": "300980",
+      "name": "祥源新材"
+    },
+    {
+      "code": "sz.301098",
+      "raw_code": "301098",
+      "name": "金埔园林"
+    },
+    {
+      "code": "sz.301287",
+      "raw_code": "301287",
+      "name": "康力源"
+    },
+    {
+      "code": "sz.301376",
+      "raw_code": "301376",
+      "name": "致欧科技"
+    },
+    {
+      "code": "sz.301589",
+      "raw_code": "301589",
+      "name": "诺瓦星云"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:34",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301100/"
+  "fetched_at": "2026-07-13 16:45:32",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

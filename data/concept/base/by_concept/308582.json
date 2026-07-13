@@ -3,10 +3,402 @@
   "concept_name": "光刻胶",
   "first_trade_date": "2019-07-18",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 78,
+  "constituents": [
+    {
+      "code": "bj.920015",
+      "raw_code": "920015",
+      "name": "锦华新材"
+    },
+    {
+      "code": "bj.920193",
+      "raw_code": "920193",
+      "name": "吉和昌"
+    },
+    {
+      "code": "bj.920489",
+      "raw_code": "920489",
+      "name": "佳先股份"
+    },
+    {
+      "code": "sh.600587",
+      "raw_code": "600587",
+      "name": "新华医疗"
+    },
+    {
+      "code": "sh.601208",
+      "raw_code": "601208",
+      "name": "东材科技"
+    },
+    {
+      "code": "sh.603078",
+      "raw_code": "603078",
+      "name": "江化微"
+    },
+    {
+      "code": "sh.603120",
+      "raw_code": "603120",
+      "name": "肯特催化"
+    },
+    {
+      "code": "sh.603155",
+      "raw_code": "603155",
+      "name": "新亚强"
+    },
+    {
+      "code": "sh.603306",
+      "raw_code": "603306",
+      "name": "华懋科技"
+    },
+    {
+      "code": "sh.603324",
+      "raw_code": "603324",
+      "name": "盛剑科技"
+    },
+    {
+      "code": "sh.603650",
+      "raw_code": "603650",
+      "name": "彤程新材"
+    },
+    {
+      "code": "sh.603823",
+      "raw_code": "603823",
+      "name": "百合花"
+    },
+    {
+      "code": "sh.603928",
+      "raw_code": "603928",
+      "name": "兴业股份"
+    },
+    {
+      "code": "sh.603931",
+      "raw_code": "603931",
+      "name": "格林达"
+    },
+    {
+      "code": "sh.605589",
+      "raw_code": "605589",
+      "name": "圣泉集团"
+    },
+    {
+      "code": "sh.688019",
+      "raw_code": "688019",
+      "name": "安集科技"
+    },
+    {
+      "code": "sh.688037",
+      "raw_code": "688037",
+      "name": "芯源微"
+    },
+    {
+      "code": "sh.688056",
+      "raw_code": "688056",
+      "name": "莱伯泰科"
+    },
+    {
+      "code": "sh.688093",
+      "raw_code": "688093",
+      "name": "世华科技"
+    },
+    {
+      "code": "sh.688125",
+      "raw_code": "688125",
+      "name": "安达智能"
+    },
+    {
+      "code": "sh.688157",
+      "raw_code": "688157",
+      "name": "松井股份"
+    },
+    {
+      "code": "sh.688179",
+      "raw_code": "688179",
+      "name": "阿拉丁"
+    },
+    {
+      "code": "sh.688181",
+      "raw_code": "688181",
+      "name": "八亿时空"
+    },
+    {
+      "code": "sh.688199",
+      "raw_code": "688199",
+      "name": "久日新材"
+    },
+    {
+      "code": "sh.688268",
+      "raw_code": "688268",
+      "name": "华特气体"
+    },
+    {
+      "code": "sh.688378",
+      "raw_code": "688378",
+      "name": "奥来德"
+    },
+    {
+      "code": "sh.688502",
+      "raw_code": "688502",
+      "name": "茂莱光学"
+    },
+    {
+      "code": "sh.688503",
+      "raw_code": "688503",
+      "name": "聚和材料"
+    },
+    {
+      "code": "sh.688545",
+      "raw_code": "688545",
+      "name": "兴福电子"
+    },
+    {
+      "code": "sh.688550",
+      "raw_code": "688550",
+      "name": "瑞联新材"
+    },
+    {
+      "code": "sh.688571",
+      "raw_code": "688571",
+      "name": "杭华股份"
+    },
+    {
+      "code": "sh.688602",
+      "raw_code": "688602",
+      "name": "康鹏科技"
+    },
+    {
+      "code": "sh.688630",
+      "raw_code": "688630",
+      "name": "芯碁微装"
+    },
+    {
+      "code": "sh.688669",
+      "raw_code": "688669",
+      "name": "聚石化学"
+    },
+    {
+      "code": "sh.688720",
+      "raw_code": "688720",
+      "name": "艾森股份"
+    },
+    {
+      "code": "sh.688727",
+      "raw_code": "688727",
+      "name": "恒坤新材"
+    },
+    {
+      "code": "sh.688757",
+      "raw_code": "688757",
+      "name": "胜科纳米"
+    },
+    {
+      "code": "sz.000422",
+      "raw_code": "000422",
+      "name": "湖北宜化"
+    },
+    {
+      "code": "sz.000859",
+      "raw_code": "000859",
+      "name": "国风新材"
+    },
+    {
+      "code": "sz.001358",
+      "raw_code": "001358",
+      "name": "兴欣新材"
+    },
+    {
+      "code": "sz.002409",
+      "raw_code": "002409",
+      "name": "雅克科技"
+    },
+    {
+      "code": "sz.002453",
+      "raw_code": "002453",
+      "name": "华软科技"
+    },
+    {
+      "code": "sz.002455",
+      "raw_code": "002455",
+      "name": "百川股份"
+    },
+    {
+      "code": "sz.002559",
+      "raw_code": "002559",
+      "name": "亚威股份"
+    },
+    {
+      "code": "sz.002584",
+      "raw_code": "002584",
+      "name": "西陇科学"
+    },
+    {
+      "code": "sz.002643",
+      "raw_code": "002643",
+      "name": "万润股份"
+    },
+    {
+      "code": "sz.002768",
+      "raw_code": "002768",
+      "name": "国恩股份"
+    },
+    {
+      "code": "sz.003022",
+      "raw_code": "003022",
+      "name": "联泓新科"
+    },
+    {
+      "code": "sz.300054",
+      "raw_code": "300054",
+      "name": "鼎龙股份"
+    },
+    {
+      "code": "sz.300063",
+      "raw_code": "300063",
+      "name": "天龙集团"
+    },
+    {
+      "code": "sz.300200",
+      "raw_code": "300200",
+      "name": "高盟新材"
+    },
+    {
+      "code": "sz.300203",
+      "raw_code": "300203",
+      "name": "聚光科技"
+    },
+    {
+      "code": "sz.300236",
+      "raw_code": "300236",
+      "name": "上海新阳"
+    },
+    {
+      "code": "sz.300346",
+      "raw_code": "300346",
+      "name": "南大光电"
+    },
+    {
+      "code": "sz.300398",
+      "raw_code": "300398",
+      "name": "飞凯材料"
+    },
+    {
+      "code": "sz.300412",
+      "raw_code": "300412",
+      "name": "迦南科技"
+    },
+    {
+      "code": "sz.300429",
+      "raw_code": "300429",
+      "name": "强力新材"
+    },
+    {
+      "code": "sz.300446",
+      "raw_code": "300446",
+      "name": "航天智造"
+    },
+    {
+      "code": "sz.300497",
+      "raw_code": "300497",
+      "name": "富祥股份"
+    },
+    {
+      "code": "sz.300522",
+      "raw_code": "300522",
+      "name": "世名科技"
+    },
+    {
+      "code": "sz.300535",
+      "raw_code": "300535",
+      "name": "达威股份"
+    },
+    {
+      "code": "sz.300537",
+      "raw_code": "300537",
+      "name": "广信材料"
+    },
+    {
+      "code": "sz.300538",
+      "raw_code": "300538",
+      "name": "同益股份"
+    },
+    {
+      "code": "sz.300576",
+      "raw_code": "300576",
+      "name": "容大感光"
+    },
+    {
+      "code": "sz.300655",
+      "raw_code": "300655",
+      "name": "晶瑞电材"
+    },
+    {
+      "code": "sz.300700",
+      "raw_code": "300700",
+      "name": "岱勒新材"
+    },
+    {
+      "code": "sz.300721",
+      "raw_code": "300721",
+      "name": "怡达股份"
+    },
+    {
+      "code": "sz.300758",
+      "raw_code": "300758",
+      "name": "七彩化学"
+    },
+    {
+      "code": "sz.300786",
+      "raw_code": "300786",
+      "name": "国林科技"
+    },
+    {
+      "code": "sz.300797",
+      "raw_code": "300797",
+      "name": "钢研纳克"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.300806",
+      "raw_code": "300806",
+      "name": "斯迪克"
+    },
+    {
+      "code": "sz.300905",
+      "raw_code": "300905",
+      "name": "宝丽迪"
+    },
+    {
+      "code": "sz.301036",
+      "raw_code": "301036",
+      "name": "双乐股份"
+    },
+    {
+      "code": "sz.301209",
+      "raw_code": "301209",
+      "name": "联合化学"
+    },
+    {
+      "code": "sz.301256",
+      "raw_code": "301256",
+      "name": "华融化学"
+    },
+    {
+      "code": "sz.301568",
+      "raw_code": "301568",
+      "name": "思泰克"
+    },
+    {
+      "code": "sz.301599",
+      "raw_code": "301599",
+      "name": "理奇智能"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:33",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308582/"
+  "fetched_at": "2026-07-13 16:59:14",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

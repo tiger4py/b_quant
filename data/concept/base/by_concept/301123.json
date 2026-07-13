@@ -3,10 +3,87 @@
   "concept_name": "大豆",
   "first_trade_date": "2019-02-20",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 15,
+  "constituents": [
+    {
+      "code": "bj.920087",
+      "raw_code": "920087",
+      "name": "秋乐种业"
+    },
+    {
+      "code": "sh.600180",
+      "raw_code": "600180",
+      "name": "*ST瑞茂"
+    },
+    {
+      "code": "sh.600300",
+      "raw_code": "600300",
+      "name": "维维股份"
+    },
+    {
+      "code": "sh.600313",
+      "raw_code": "600313",
+      "name": "农发种业"
+    },
+    {
+      "code": "sh.600596",
+      "raw_code": "600596",
+      "name": "新安股份"
+    },
+    {
+      "code": "sh.600598",
+      "raw_code": "600598",
+      "name": "北大荒"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.601952",
+      "raw_code": "601952",
+      "name": "苏垦农发"
+    },
+    {
+      "code": "sh.603086",
+      "raw_code": "603086",
+      "name": "先达股份"
+    },
+    {
+      "code": "sh.603182",
+      "raw_code": "603182",
+      "name": "嘉华股份"
+    },
+    {
+      "code": "sh.603231",
+      "raw_code": "603231",
+      "name": "索宝蛋白"
+    },
+    {
+      "code": "sz.000902",
+      "raw_code": "000902",
+      "name": "新洋丰"
+    },
+    {
+      "code": "sz.002385",
+      "raw_code": "002385",
+      "name": "大北农"
+    },
+    {
+      "code": "sz.300087",
+      "raw_code": "300087",
+      "name": "ST荃银"
+    },
+    {
+      "code": "sz.301058",
+      "raw_code": "301058",
+      "name": "中粮科工"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:41",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301123/"
+  "fetched_at": "2026-07-13 16:45:49",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

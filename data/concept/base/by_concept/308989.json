@@ -3,10 +3,327 @@
   "concept_name": "生物质能发电",
   "first_trade_date": "2022-07-19",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 63,
+  "constituents": [
+    {
+      "code": "sh.600163",
+      "raw_code": "600163",
+      "name": "中闽能源"
+    },
+    {
+      "code": "sh.600167",
+      "raw_code": "600167",
+      "name": "联美控股"
+    },
+    {
+      "code": "sh.600283",
+      "raw_code": "600283",
+      "name": "钱江水利"
+    },
+    {
+      "code": "sh.600308",
+      "raw_code": "600308",
+      "name": "华泰股份"
+    },
+    {
+      "code": "sh.600323",
+      "raw_code": "600323",
+      "name": "瀚蓝环境"
+    },
+    {
+      "code": "sh.600475",
+      "raw_code": "600475",
+      "name": "华光环能"
+    },
+    {
+      "code": "sh.600567",
+      "raw_code": "600567",
+      "name": "山鹰国际"
+    },
+    {
+      "code": "sh.600796",
+      "raw_code": "600796",
+      "name": "钱江生化"
+    },
+    {
+      "code": "sh.600963",
+      "raw_code": "600963",
+      "name": "岳阳林纸"
+    },
+    {
+      "code": "sh.600979",
+      "raw_code": "600979",
+      "name": "广安爱众"
+    },
+    {
+      "code": "sh.600982",
+      "raw_code": "600982",
+      "name": "宁波能源"
+    },
+    {
+      "code": "sh.601033",
+      "raw_code": "601033",
+      "name": "永兴股份"
+    },
+    {
+      "code": "sh.601200",
+      "raw_code": "601200",
+      "name": "上海环境"
+    },
+    {
+      "code": "sh.601330",
+      "raw_code": "601330",
+      "name": "绿色动力"
+    },
+    {
+      "code": "sh.601827",
+      "raw_code": "601827",
+      "name": "三峰环境"
+    },
+    {
+      "code": "sh.601868",
+      "raw_code": "601868",
+      "name": "中国能建"
+    },
+    {
+      "code": "sh.603071",
+      "raw_code": "603071",
+      "name": "物产环能"
+    },
+    {
+      "code": "sh.603126",
+      "raw_code": "603126",
+      "name": "中材节能"
+    },
+    {
+      "code": "sh.603278",
+      "raw_code": "603278",
+      "name": "大业股份"
+    },
+    {
+      "code": "sh.603334",
+      "raw_code": "603334",
+      "name": "丰倍生物"
+    },
+    {
+      "code": "sh.603568",
+      "raw_code": "603568",
+      "name": "伟明环保"
+    },
+    {
+      "code": "sh.603588",
+      "raw_code": "603588",
+      "name": "高能环境"
+    },
+    {
+      "code": "sh.603686",
+      "raw_code": "603686",
+      "name": "福龙马"
+    },
+    {
+      "code": "sh.603693",
+      "raw_code": "603693",
+      "name": "江苏新能"
+    },
+    {
+      "code": "sh.603759",
+      "raw_code": "603759",
+      "name": "海天股份"
+    },
+    {
+      "code": "sh.605028",
+      "raw_code": "605028",
+      "name": "世茂能源"
+    },
+    {
+      "code": "sz.000035",
+      "raw_code": "000035",
+      "name": "中国天楹"
+    },
+    {
+      "code": "sz.000600",
+      "raw_code": "000600",
+      "name": "建投能源"
+    },
+    {
+      "code": "sz.000601",
+      "raw_code": "000601",
+      "name": "韶能股份"
+    },
+    {
+      "code": "sz.000652",
+      "raw_code": "000652",
+      "name": "泰达股份"
+    },
+    {
+      "code": "sz.000803",
+      "raw_code": "000803",
+      "name": "山高环能"
+    },
+    {
+      "code": "sz.000826",
+      "raw_code": "000826",
+      "name": "*ST启环"
+    },
+    {
+      "code": "sz.000885",
+      "raw_code": "000885",
+      "name": "城发环境"
+    },
+    {
+      "code": "sz.000966",
+      "raw_code": "000966",
+      "name": "长源电力"
+    },
+    {
+      "code": "sz.001386",
+      "raw_code": "001386",
+      "name": "马可波罗"
+    },
+    {
+      "code": "sz.002015",
+      "raw_code": "002015",
+      "name": "协鑫能科"
+    },
+    {
+      "code": "sz.002034",
+      "raw_code": "002034",
+      "name": "旺能环境"
+    },
+    {
+      "code": "sz.002051",
+      "raw_code": "002051",
+      "name": "中工国际"
+    },
+    {
+      "code": "sz.002073",
+      "raw_code": "002073",
+      "name": "软控股份"
+    },
+    {
+      "code": "sz.002210",
+      "raw_code": "002210",
+      "name": "飞马国际"
+    },
+    {
+      "code": "sz.002234",
+      "raw_code": "002234",
+      "name": "民和股份"
+    },
+    {
+      "code": "sz.002479",
+      "raw_code": "002479",
+      "name": "富春环保"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002597",
+      "raw_code": "002597",
+      "name": "金禾实业"
+    },
+    {
+      "code": "sz.002616",
+      "raw_code": "002616",
+      "name": "长青集团"
+    },
+    {
+      "code": "sz.002630",
+      "raw_code": "002630",
+      "name": "*ST华西"
+    },
+    {
+      "code": "sz.002672",
+      "raw_code": "002672",
+      "name": "东江环保"
+    },
+    {
+      "code": "sz.300040",
+      "raw_code": "300040",
+      "name": "九洲集团"
+    },
+    {
+      "code": "sz.300140",
+      "raw_code": "300140",
+      "name": "节能环境"
+    },
+    {
+      "code": "sz.300152",
+      "raw_code": "300152",
+      "name": "*ST动力"
+    },
+    {
+      "code": "sz.300172",
+      "raw_code": "300172",
+      "name": "中电环保"
+    },
+    {
+      "code": "sz.300187",
+      "raw_code": "300187",
+      "name": "永清环保"
+    },
+    {
+      "code": "sz.300190",
+      "raw_code": "300190",
+      "name": "维尔利"
+    },
+    {
+      "code": "sz.300277",
+      "raw_code": "300277",
+      "name": "汽轮科技"
+    },
+    {
+      "code": "sz.300335",
+      "raw_code": "300335",
+      "name": "迪森股份"
+    },
+    {
+      "code": "sz.300614",
+      "raw_code": "300614",
+      "name": "百川畅银"
+    },
+    {
+      "code": "sz.300854",
+      "raw_code": "300854",
+      "name": "中兰环保"
+    },
+    {
+      "code": "sz.300867",
+      "raw_code": "300867",
+      "name": "圣元环保"
+    },
+    {
+      "code": "sz.301109",
+      "raw_code": "301109",
+      "name": "军信股份"
+    },
+    {
+      "code": "sz.301127",
+      "raw_code": "301127",
+      "name": "武汉天源"
+    },
+    {
+      "code": "sz.301175",
+      "raw_code": "301175",
+      "name": "中科环保"
+    },
+    {
+      "code": "sz.301305",
+      "raw_code": "301305",
+      "name": "朗坤科技"
+    },
+    {
+      "code": "sz.301548",
+      "raw_code": "301548",
+      "name": "崇德科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:02",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308989/"
+  "fetched_at": "2026-07-13 17:02:23",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

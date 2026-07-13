@@ -3,10 +3,122 @@
   "concept_name": "科创次新股",
   "first_trade_date": "2020-08-24",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 22,
+  "constituents": [
+    {
+      "code": "sh.688635",
+      "raw_code": "688635",
+      "name": "长进光子"
+    },
+    {
+      "code": "sh.688712",
+      "raw_code": "688712",
+      "name": "北芯生命"
+    },
+    {
+      "code": "sh.688727",
+      "raw_code": "688727",
+      "name": "恒坤新材"
+    },
+    {
+      "code": "sh.688759",
+      "raw_code": "688759",
+      "name": "必贝特"
+    },
+    {
+      "code": "sh.688765",
+      "raw_code": "688765",
+      "name": "禾元生物"
+    },
+    {
+      "code": "sh.688781",
+      "raw_code": "688781",
+      "name": "视涯科技"
+    },
+    {
+      "code": "sh.688783",
+      "raw_code": "688783",
+      "name": "西安奕材"
+    },
+    {
+      "code": "sh.688785",
+      "raw_code": "688785",
+      "name": "恒运昌"
+    },
+    {
+      "code": "sh.688790",
+      "raw_code": "688790",
+      "name": "昂瑞微"
+    },
+    {
+      "code": "sh.688795",
+      "raw_code": "688795",
+      "name": "摩尔线程"
+    },
+    {
+      "code": "sh.688796",
+      "raw_code": "688796",
+      "name": "百奥赛图"
+    },
+    {
+      "code": "sh.688797",
+      "raw_code": "688797",
+      "name": "臻宝科技"
+    },
+    {
+      "code": "sh.688802",
+      "raw_code": "688802",
+      "name": "沐曦股份"
+    },
+    {
+      "code": "sh.688805",
+      "raw_code": "688805",
+      "name": "健信超导"
+    },
+    {
+      "code": "sh.688807",
+      "raw_code": "688807",
+      "name": "优迅股份"
+    },
+    {
+      "code": "sh.688808",
+      "raw_code": "688808",
+      "name": "联讯仪器"
+    },
+    {
+      "code": "sh.688809",
+      "raw_code": "688809",
+      "name": "强一股份"
+    },
+    {
+      "code": "sh.688811",
+      "raw_code": "688811",
+      "name": "有研复材"
+    },
+    {
+      "code": "sh.688813",
+      "raw_code": "688813",
+      "name": "泰金新能"
+    },
+    {
+      "code": "sh.688816",
+      "raw_code": "688816",
+      "name": "易思维"
+    },
+    {
+      "code": "sh.688818",
+      "raw_code": "688818",
+      "name": "电科蓝天"
+    },
+    {
+      "code": "sh.688820",
+      "raw_code": "688820",
+      "name": "盛合晶微"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:38:40",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308699/"
+  "fetched_at": "2026-07-13 16:59:32",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

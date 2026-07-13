@@ -3,10 +3,212 @@
   "concept_name": "染料",
   "first_trade_date": "2015-01-23",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 40,
+  "constituents": [
+    {
+      "code": "bj.920066",
+      "raw_code": "920066",
+      "name": "科拜尔"
+    },
+    {
+      "code": "bj.920206",
+      "raw_code": "920206",
+      "name": "彩客科技"
+    },
+    {
+      "code": "bj.920819",
+      "raw_code": "920819",
+      "name": "颖泰生物"
+    },
+    {
+      "code": "sh.600352",
+      "raw_code": "600352",
+      "name": "浙江龙盛"
+    },
+    {
+      "code": "sh.600987",
+      "raw_code": "600987",
+      "name": "航民股份"
+    },
+    {
+      "code": "sh.603004",
+      "raw_code": "603004",
+      "name": "鼎龙科技"
+    },
+    {
+      "code": "sh.603172",
+      "raw_code": "603172",
+      "name": "万丰股份"
+    },
+    {
+      "code": "sh.603181",
+      "raw_code": "603181",
+      "name": "皇马科技"
+    },
+    {
+      "code": "sh.603188",
+      "raw_code": "603188",
+      "name": "亚邦股份"
+    },
+    {
+      "code": "sh.603599",
+      "raw_code": "603599",
+      "name": "广信股份"
+    },
+    {
+      "code": "sh.603790",
+      "raw_code": "603790",
+      "name": "雅运股份"
+    },
+    {
+      "code": "sh.603968",
+      "raw_code": "603968",
+      "name": "醋化股份"
+    },
+    {
+      "code": "sh.603980",
+      "raw_code": "603980",
+      "name": "吉华集团"
+    },
+    {
+      "code": "sh.605189",
+      "raw_code": "605189",
+      "name": "富春染织"
+    },
+    {
+      "code": "sh.605566",
+      "raw_code": "605566",
+      "name": "福莱蒽特"
+    },
+    {
+      "code": "sh.605589",
+      "raw_code": "605589",
+      "name": "圣泉集团"
+    },
+    {
+      "code": "sh.688181",
+      "raw_code": "688181",
+      "name": "八亿时空"
+    },
+    {
+      "code": "sh.688789",
+      "raw_code": "688789",
+      "name": "宏华数科"
+    },
+    {
+      "code": "sz.001217",
+      "raw_code": "001217",
+      "name": "华尔泰"
+    },
+    {
+      "code": "sz.001335",
+      "raw_code": "001335",
+      "name": "信凯科技"
+    },
+    {
+      "code": "sz.002099",
+      "raw_code": "002099",
+      "name": "海翔药业"
+    },
+    {
+      "code": "sz.002256",
+      "raw_code": "002256",
+      "name": "兆新股份"
+    },
+    {
+      "code": "sz.002440",
+      "raw_code": "002440",
+      "name": "闰土股份"
+    },
+    {
+      "code": "sz.002513",
+      "raw_code": "002513",
+      "name": "蓝丰生化"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002748",
+      "raw_code": "002748",
+      "name": "世龙实业"
+    },
+    {
+      "code": "sz.300067",
+      "raw_code": "300067",
+      "name": "安诺其"
+    },
+    {
+      "code": "sz.300107",
+      "raw_code": "300107",
+      "name": "建新股份"
+    },
+    {
+      "code": "sz.300522",
+      "raw_code": "300522",
+      "name": "世名科技"
+    },
+    {
+      "code": "sz.300535",
+      "raw_code": "300535",
+      "name": "达威股份"
+    },
+    {
+      "code": "sz.300586",
+      "raw_code": "300586",
+      "name": "美联新材"
+    },
+    {
+      "code": "sz.300721",
+      "raw_code": "300721",
+      "name": "怡达股份"
+    },
+    {
+      "code": "sz.300727",
+      "raw_code": "300727",
+      "name": "润禾材料"
+    },
+    {
+      "code": "sz.300758",
+      "raw_code": "300758",
+      "name": "七彩化学"
+    },
+    {
+      "code": "sz.300798",
+      "raw_code": "300798",
+      "name": "锦鸡股份"
+    },
+    {
+      "code": "sz.300848",
+      "raw_code": "300848",
+      "name": "美瑞新材"
+    },
+    {
+      "code": "sz.300905",
+      "raw_code": "300905",
+      "name": "宝丽迪"
+    },
+    {
+      "code": "sz.301019",
+      "raw_code": "301019",
+      "name": "宁波色母"
+    },
+    {
+      "code": "sz.301190",
+      "raw_code": "301190",
+      "name": "善水科技"
+    },
+    {
+      "code": "sz.301209",
+      "raw_code": "301209",
+      "name": "联合化学"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:50",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301292/"
+  "fetched_at": "2026-07-13 16:48:08",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

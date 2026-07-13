@@ -3,10 +3,207 @@
   "concept_name": "AI手机",
   "first_trade_date": "2024-03-04",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 39,
+  "constituents": [
+    {
+      "code": "sh.600745",
+      "raw_code": "600745",
+      "name": "*ST闻泰"
+    },
+    {
+      "code": "sh.601137",
+      "raw_code": "601137",
+      "name": "博威合金"
+    },
+    {
+      "code": "sh.603160",
+      "raw_code": "603160",
+      "name": "汇顶科技"
+    },
+    {
+      "code": "sh.603327",
+      "raw_code": "603327",
+      "name": "福蓉科技"
+    },
+    {
+      "code": "sh.603683",
+      "raw_code": "603683",
+      "name": "晶华新材"
+    },
+    {
+      "code": "sh.688036",
+      "raw_code": "688036",
+      "name": "传音控股"
+    },
+    {
+      "code": "sh.688157",
+      "raw_code": "688157",
+      "name": "松井股份"
+    },
+    {
+      "code": "sh.688173",
+      "raw_code": "688173",
+      "name": "希荻微"
+    },
+    {
+      "code": "sh.688230",
+      "raw_code": "688230",
+      "name": "芯导科技"
+    },
+    {
+      "code": "sh.688333",
+      "raw_code": "688333",
+      "name": "铂力特"
+    },
+    {
+      "code": "sh.688381",
+      "raw_code": "688381",
+      "name": "帝奥微"
+    },
+    {
+      "code": "sh.688458",
+      "raw_code": "688458",
+      "name": "美芯晟"
+    },
+    {
+      "code": "sh.688484",
+      "raw_code": "688484",
+      "name": "南芯科技"
+    },
+    {
+      "code": "sh.688521",
+      "raw_code": "688521",
+      "name": "芯原股份"
+    },
+    {
+      "code": "sh.688525",
+      "raw_code": "688525",
+      "name": "佰维存储"
+    },
+    {
+      "code": "sh.688601",
+      "raw_code": "688601",
+      "name": "力芯微"
+    },
+    {
+      "code": "sz.000063",
+      "raw_code": "000063",
+      "name": "中兴通讯"
+    },
+    {
+      "code": "sz.000829",
+      "raw_code": "000829",
+      "name": "天音控股"
+    },
+    {
+      "code": "sz.002230",
+      "raw_code": "002230",
+      "name": "科大讯飞"
+    },
+    {
+      "code": "sz.002256",
+      "raw_code": "002256",
+      "name": "兆新股份"
+    },
+    {
+      "code": "sz.002273",
+      "raw_code": "002273",
+      "name": "水晶光电"
+    },
+    {
+      "code": "sz.002384",
+      "raw_code": "002384",
+      "name": "东山精密"
+    },
+    {
+      "code": "sz.002579",
+      "raw_code": "002579",
+      "name": "中京电子"
+    },
+    {
+      "code": "sz.002600",
+      "raw_code": "002600",
+      "name": "领益智造"
+    },
+    {
+      "code": "sz.002654",
+      "raw_code": "002654",
+      "name": "万润科技"
+    },
+    {
+      "code": "sz.002938",
+      "raw_code": "002938",
+      "name": "鹏鼎控股"
+    },
+    {
+      "code": "sz.300079",
+      "raw_code": "300079",
+      "name": "数码视讯"
+    },
+    {
+      "code": "sz.300088",
+      "raw_code": "300088",
+      "name": "长信科技"
+    },
+    {
+      "code": "sz.300115",
+      "raw_code": "300115",
+      "name": "长盈精密"
+    },
+    {
+      "code": "sz.300166",
+      "raw_code": "300166",
+      "name": "东方国信"
+    },
+    {
+      "code": "sz.300433",
+      "raw_code": "300433",
+      "name": "蓝思科技"
+    },
+    {
+      "code": "sz.300476",
+      "raw_code": "300476",
+      "name": "胜宏科技"
+    },
+    {
+      "code": "sz.300496",
+      "raw_code": "300496",
+      "name": "中科创达"
+    },
+    {
+      "code": "sz.300598",
+      "raw_code": "300598",
+      "name": "诚迈科技"
+    },
+    {
+      "code": "sz.300657",
+      "raw_code": "300657",
+      "name": "弘信电子"
+    },
+    {
+      "code": "sz.300735",
+      "raw_code": "300735",
+      "name": "光弘科技"
+    },
+    {
+      "code": "sz.300968",
+      "raw_code": "300968",
+      "name": "格林精密"
+    },
+    {
+      "code": "sz.301308",
+      "raw_code": "301308",
+      "name": "江波龙"
+    },
+    {
+      "code": "sz.301489",
+      "raw_code": "301489",
+      "name": "思泉新材"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:20",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309120/"
+  "fetched_at": "2026-07-13 17:04:22",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

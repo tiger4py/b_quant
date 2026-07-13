@@ -3,10 +3,282 @@
   "concept_name": "一体化压铸",
   "first_trade_date": "2022-06-28",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 54,
+  "constituents": [
+    {
+      "code": "bj.920579",
+      "raw_code": "920579",
+      "name": "机科股份"
+    },
+    {
+      "code": "sh.600006",
+      "raw_code": "600006",
+      "name": "东风股份"
+    },
+    {
+      "code": "sh.600081",
+      "raw_code": "600081",
+      "name": "东风科技"
+    },
+    {
+      "code": "sh.600335",
+      "raw_code": "600335",
+      "name": "国机汽车"
+    },
+    {
+      "code": "sh.600733",
+      "raw_code": "600733",
+      "name": "北汽蓝谷"
+    },
+    {
+      "code": "sh.600888",
+      "raw_code": "600888",
+      "name": "新疆众和"
+    },
+    {
+      "code": "sh.600933",
+      "raw_code": "600933",
+      "name": "爱柯迪"
+    },
+    {
+      "code": "sh.601608",
+      "raw_code": "601608",
+      "name": "中信重工"
+    },
+    {
+      "code": "sh.601689",
+      "raw_code": "601689",
+      "name": "拓普集团"
+    },
+    {
+      "code": "sh.603169",
+      "raw_code": "603169",
+      "name": "兰石重装"
+    },
+    {
+      "code": "sh.603190",
+      "raw_code": "603190",
+      "name": "亚通精工"
+    },
+    {
+      "code": "sh.603289",
+      "raw_code": "603289",
+      "name": "泰瑞机器"
+    },
+    {
+      "code": "sh.603305",
+      "raw_code": "603305",
+      "name": "旭升集团"
+    },
+    {
+      "code": "sh.603335",
+      "raw_code": "603335",
+      "name": "迪生力"
+    },
+    {
+      "code": "sh.603348",
+      "raw_code": "603348",
+      "name": "文灿股份"
+    },
+    {
+      "code": "sh.603358",
+      "raw_code": "603358",
+      "name": "华达科技"
+    },
+    {
+      "code": "sh.603418",
+      "raw_code": "603418",
+      "name": "友升股份"
+    },
+    {
+      "code": "sh.603663",
+      "raw_code": "603663",
+      "name": "三祥新材"
+    },
+    {
+      "code": "sh.603768",
+      "raw_code": "603768",
+      "name": "常青股份"
+    },
+    {
+      "code": "sh.603917",
+      "raw_code": "603917",
+      "name": "合力科技"
+    },
+    {
+      "code": "sh.603978",
+      "raw_code": "603978",
+      "name": "深圳新星"
+    },
+    {
+      "code": "sh.603982",
+      "raw_code": "603982",
+      "name": "泉峰汽车"
+    },
+    {
+      "code": "sh.605018",
+      "raw_code": "605018",
+      "name": "长华集团"
+    },
+    {
+      "code": "sh.605050",
+      "raw_code": "605050",
+      "name": "福然德"
+    },
+    {
+      "code": "sh.605133",
+      "raw_code": "605133",
+      "name": "嵘泰股份"
+    },
+    {
+      "code": "sh.605208",
+      "raw_code": "605208",
+      "name": "永茂泰"
+    },
+    {
+      "code": "sh.688531",
+      "raw_code": "688531",
+      "name": "日联科技"
+    },
+    {
+      "code": "sz.000651",
+      "raw_code": "000651",
+      "name": "格力电器"
+    },
+    {
+      "code": "sz.001311",
+      "raw_code": "001311",
+      "name": "多利科技"
+    },
+    {
+      "code": "sz.001319",
+      "raw_code": "001319",
+      "name": "铭科精技"
+    },
+    {
+      "code": "sz.002085",
+      "raw_code": "002085",
+      "name": "万丰奥威"
+    },
+    {
+      "code": "sz.002101",
+      "raw_code": "002101",
+      "name": "广东鸿图"
+    },
+    {
+      "code": "sz.002182",
+      "raw_code": "002182",
+      "name": "宝武镁业"
+    },
+    {
+      "code": "sz.002426",
+      "raw_code": "002426",
+      "name": "胜利精密"
+    },
+    {
+      "code": "sz.002434",
+      "raw_code": "002434",
+      "name": "万里扬"
+    },
+    {
+      "code": "sz.002547",
+      "raw_code": "002547",
+      "name": "*ST春兴"
+    },
+    {
+      "code": "sz.002863",
+      "raw_code": "002863",
+      "name": "今飞凯达"
+    },
+    {
+      "code": "sz.002906",
+      "raw_code": "002906",
+      "name": "华阳集团"
+    },
+    {
+      "code": "sz.002965",
+      "raw_code": "002965",
+      "name": "祥鑫科技"
+    },
+    {
+      "code": "sz.002996",
+      "raw_code": "002996",
+      "name": "顺博合金"
+    },
+    {
+      "code": "sz.002997",
+      "raw_code": "002997",
+      "name": "瑞鹄模具"
+    },
+    {
+      "code": "sz.003025",
+      "raw_code": "003025",
+      "name": "思进智能"
+    },
+    {
+      "code": "sz.300083",
+      "raw_code": "300083",
+      "name": "创世纪"
+    },
+    {
+      "code": "sz.300124",
+      "raw_code": "300124",
+      "name": "汇川技术"
+    },
+    {
+      "code": "sz.300328",
+      "raw_code": "300328",
+      "name": "宜安科技"
+    },
+    {
+      "code": "sz.300415",
+      "raw_code": "300415",
+      "name": "伊之密"
+    },
+    {
+      "code": "sz.300428",
+      "raw_code": "300428",
+      "name": "立中集团"
+    },
+    {
+      "code": "sz.300572",
+      "raw_code": "300572",
+      "name": "安车检测"
+    },
+    {
+      "code": "sz.300602",
+      "raw_code": "300602",
+      "name": "飞荣达"
+    },
+    {
+      "code": "sz.300881",
+      "raw_code": "300881",
+      "name": "盛德鑫泰"
+    },
+    {
+      "code": "sz.300926",
+      "raw_code": "300926",
+      "name": "博俊科技"
+    },
+    {
+      "code": "sz.301112",
+      "raw_code": "301112",
+      "name": "信邦智能"
+    },
+    {
+      "code": "sz.301268",
+      "raw_code": "301268",
+      "name": "铭利达"
+    },
+    {
+      "code": "sz.301307",
+      "raw_code": "301307",
+      "name": "美利信"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:02",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308984/"
+  "fetched_at": "2026-07-13 17:02:21",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

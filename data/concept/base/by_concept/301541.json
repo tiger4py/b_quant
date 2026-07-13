@@ -3,10 +3,97 @@
   "concept_name": "中韩自贸区",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 17,
+  "constituents": [
+    {
+      "code": "bj.920351",
+      "raw_code": "920351",
+      "name": "华光源海"
+    },
+    {
+      "code": "sh.600017",
+      "raw_code": "600017",
+      "name": "日照港"
+    },
+    {
+      "code": "sh.600467",
+      "raw_code": "600467",
+      "name": "好当家"
+    },
+    {
+      "code": "sh.600735",
+      "raw_code": "600735",
+      "name": "ST新华锦"
+    },
+    {
+      "code": "sh.601008",
+      "raw_code": "601008",
+      "name": "连云港"
+    },
+    {
+      "code": "sh.601083",
+      "raw_code": "601083",
+      "name": "锦江航运"
+    },
+    {
+      "code": "sh.601298",
+      "raw_code": "601298",
+      "name": "青岛港"
+    },
+    {
+      "code": "sh.601677",
+      "raw_code": "601677",
+      "name": "明泰铝业"
+    },
+    {
+      "code": "sh.601880",
+      "raw_code": "601880",
+      "name": "辽港股份"
+    },
+    {
+      "code": "sh.603836",
+      "raw_code": "603836",
+      "name": "海程邦达"
+    },
+    {
+      "code": "sh.603967",
+      "raw_code": "603967",
+      "name": "中创物流"
+    },
+    {
+      "code": "sh.605567",
+      "raw_code": "605567",
+      "name": "春雪食品"
+    },
+    {
+      "code": "sz.000599",
+      "raw_code": "000599",
+      "name": "青岛双星"
+    },
+    {
+      "code": "sz.001219",
+      "raw_code": "001219",
+      "name": "青岛食品"
+    },
+    {
+      "code": "sz.002094",
+      "raw_code": "002094",
+      "name": "青岛金王"
+    },
+    {
+      "code": "sz.002612",
+      "raw_code": "002612",
+      "name": "朗姿股份"
+    },
+    {
+      "code": "sz.300666",
+      "raw_code": "300666",
+      "name": "江丰电子"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:37:59",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301541/"
+  "fetched_at": "2026-07-13 16:52:19",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

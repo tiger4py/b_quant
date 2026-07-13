@@ -3,10 +3,262 @@
   "concept_name": "光刻机",
   "first_trade_date": "2023-09-08",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 50,
+  "constituents": [
+    {
+      "code": "bj.920690",
+      "raw_code": "920690",
+      "name": "捷众科技"
+    },
+    {
+      "code": "sh.600353",
+      "raw_code": "600353",
+      "name": "旭光电子"
+    },
+    {
+      "code": "sh.600619",
+      "raw_code": "600619",
+      "name": "海立股份"
+    },
+    {
+      "code": "sh.600850",
+      "raw_code": "600850",
+      "name": "电科数字"
+    },
+    {
+      "code": "sh.600889",
+      "raw_code": "600889",
+      "name": "*ST京化"
+    },
+    {
+      "code": "sh.600895",
+      "raw_code": "600895",
+      "name": "张江高科"
+    },
+    {
+      "code": "sh.603005",
+      "raw_code": "603005",
+      "name": "晶方科技"
+    },
+    {
+      "code": "sh.603297",
+      "raw_code": "603297",
+      "name": "永新光学"
+    },
+    {
+      "code": "sh.603360",
+      "raw_code": "603360",
+      "name": "百傲化学"
+    },
+    {
+      "code": "sh.603738",
+      "raw_code": "603738",
+      "name": "泰晶科技"
+    },
+    {
+      "code": "sh.603773",
+      "raw_code": "603773",
+      "name": "沃格光电"
+    },
+    {
+      "code": "sh.603800",
+      "raw_code": "603800",
+      "name": "洪田股份"
+    },
+    {
+      "code": "sh.688010",
+      "raw_code": "688010",
+      "name": "福光股份"
+    },
+    {
+      "code": "sh.688079",
+      "raw_code": "688079",
+      "name": "美迪凯"
+    },
+    {
+      "code": "sh.688127",
+      "raw_code": "688127",
+      "name": "蓝特光学"
+    },
+    {
+      "code": "sh.688146",
+      "raw_code": "688146",
+      "name": "中船特气"
+    },
+    {
+      "code": "sh.688167",
+      "raw_code": "688167",
+      "name": "炬光科技"
+    },
+    {
+      "code": "sh.688195",
+      "raw_code": "688195",
+      "name": "腾景科技"
+    },
+    {
+      "code": "sh.688199",
+      "raw_code": "688199",
+      "name": "久日新材"
+    },
+    {
+      "code": "sh.688268",
+      "raw_code": "688268",
+      "name": "华特气体"
+    },
+    {
+      "code": "sh.688307",
+      "raw_code": "688307",
+      "name": "中润光学"
+    },
+    {
+      "code": "sh.688376",
+      "raw_code": "688376",
+      "name": "美埃科技"
+    },
+    {
+      "code": "sh.688401",
+      "raw_code": "688401",
+      "name": "路维光电"
+    },
+    {
+      "code": "sh.688409",
+      "raw_code": "688409",
+      "name": "富创精密"
+    },
+    {
+      "code": "sh.688502",
+      "raw_code": "688502",
+      "name": "茂莱光学"
+    },
+    {
+      "code": "sh.688605",
+      "raw_code": "688605",
+      "name": "先锋精科"
+    },
+    {
+      "code": "sh.688630",
+      "raw_code": "688630",
+      "name": "芯碁微装"
+    },
+    {
+      "code": "sz.002008",
+      "raw_code": "002008",
+      "name": "大族激光"
+    },
+    {
+      "code": "sz.002549",
+      "raw_code": "002549",
+      "name": "凯美特气"
+    },
+    {
+      "code": "sz.002816",
+      "raw_code": "002816",
+      "name": "*ST和科"
+    },
+    {
+      "code": "sz.002889",
+      "raw_code": "002889",
+      "name": "东方嘉盛"
+    },
+    {
+      "code": "sz.003031",
+      "raw_code": "003031",
+      "name": "中瓷电子"
+    },
+    {
+      "code": "sz.003043",
+      "raw_code": "003043",
+      "name": "华亚智能"
+    },
+    {
+      "code": "sz.300219",
+      "raw_code": "300219",
+      "name": "鸿利智汇"
+    },
+    {
+      "code": "sz.300260",
+      "raw_code": "300260",
+      "name": "新莱应材"
+    },
+    {
+      "code": "sz.300293",
+      "raw_code": "300293",
+      "name": "蓝英装备"
+    },
+    {
+      "code": "sz.300331",
+      "raw_code": "300331",
+      "name": "苏大维格"
+    },
+    {
+      "code": "sz.300414",
+      "raw_code": "300414",
+      "name": "中光防雷"
+    },
+    {
+      "code": "sz.300456",
+      "raw_code": "300456",
+      "name": "赛微电子"
+    },
+    {
+      "code": "sz.300666",
+      "raw_code": "300666",
+      "name": "江丰电子"
+    },
+    {
+      "code": "sz.300786",
+      "raw_code": "300786",
+      "name": "国林科技"
+    },
+    {
+      "code": "sz.300809",
+      "raw_code": "300809",
+      "name": "华辰装备"
+    },
+    {
+      "code": "sz.300990",
+      "raw_code": "300990",
+      "name": "同飞股份"
+    },
+    {
+      "code": "sz.301095",
+      "raw_code": "301095",
+      "name": "广立微"
+    },
+    {
+      "code": "sz.301128",
+      "raw_code": "301128",
+      "name": "强瑞技术"
+    },
+    {
+      "code": "sz.301209",
+      "raw_code": "301209",
+      "name": "联合化学"
+    },
+    {
+      "code": "sz.301297",
+      "raw_code": "301297",
+      "name": "富乐德"
+    },
+    {
+      "code": "sz.301421",
+      "raw_code": "301421",
+      "name": "波长光电"
+    },
+    {
+      "code": "sz.301568",
+      "raw_code": "301568",
+      "name": "思泰克"
+    },
+    {
+      "code": "sz.301611",
+      "raw_code": "301611",
+      "name": "珂玛科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 14:39:14",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309085/"
+  "fetched_at": "2026-07-13 17:03:42",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }
