@@ -3,10 +3,122 @@
   "concept_name": "太赫兹",
   "first_trade_date": "2023-04-20",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 22,
+  "constituents": [
+    {
+      "code": "bj.920961",
+      "raw_code": "920961",
+      "name": "创远信科"
+    },
+    {
+      "code": "sh.600071",
+      "raw_code": "600071",
+      "name": "凤凰光学"
+    },
+    {
+      "code": "sh.600288",
+      "raw_code": "600288",
+      "name": "大恒科技"
+    },
+    {
+      "code": "sh.600487",
+      "raw_code": "600487",
+      "name": "亨通光电"
+    },
+    {
+      "code": "sh.600590",
+      "raw_code": "600590",
+      "name": "泰豪科技"
+    },
+    {
+      "code": "sh.600879",
+      "raw_code": "600879",
+      "name": "航天电子"
+    },
+    {
+      "code": "sh.601869",
+      "raw_code": "601869",
+      "name": "长飞光纤"
+    },
+    {
+      "code": "sz.000063",
+      "raw_code": "000063",
+      "name": "中兴通讯"
+    },
+    {
+      "code": "sz.000519",
+      "raw_code": "000519",
+      "name": "中兵红箭"
+    },
+    {
+      "code": "sz.002023",
+      "raw_code": "002023",
+      "name": "海特高新"
+    },
+    {
+      "code": "sz.002413",
+      "raw_code": "002413",
+      "name": "雷科防务"
+    },
+    {
+      "code": "sz.002446",
+      "raw_code": "002446",
+      "name": "盛路通信"
+    },
+    {
+      "code": "sz.002465",
+      "raw_code": "002465",
+      "name": "海格通信"
+    },
+    {
+      "code": "sz.300008",
+      "raw_code": "300008",
+      "name": "天海防务"
+    },
+    {
+      "code": "sz.300112",
+      "raw_code": "300112",
+      "name": "万讯自控"
+    },
+    {
+      "code": "sz.300123",
+      "raw_code": "300123",
+      "name": "ST亚光"
+    },
+    {
+      "code": "sz.300322",
+      "raw_code": "300322",
+      "name": "硕贝德"
+    },
+    {
+      "code": "sz.300342",
+      "raw_code": "300342",
+      "name": "天银机电"
+    },
+    {
+      "code": "sz.300397",
+      "raw_code": "300397",
+      "name": "天和防务"
+    },
+    {
+      "code": "sz.300456",
+      "raw_code": "300456",
+      "name": "赛微电子"
+    },
+    {
+      "code": "sz.300565",
+      "raw_code": "300565",
+      "name": "科信技术"
+    },
+    {
+      "code": "sz.301517",
+      "raw_code": "301517",
+      "name": "陕西华达"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:47",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300795/"
+  "fetched_at": "2026-07-13 14:36:18",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

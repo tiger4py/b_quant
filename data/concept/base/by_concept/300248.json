@@ -3,10 +3,417 @@
   "concept_name": "黄金概念",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 81,
+  "constituents": [
+    {
+      "code": "sh.600089",
+      "raw_code": "600089",
+      "name": "特变电工"
+    },
+    {
+      "code": "sh.600170",
+      "raw_code": "600170",
+      "name": "上海建工"
+    },
+    {
+      "code": "sh.600173",
+      "raw_code": "600173",
+      "name": "卧龙新能"
+    },
+    {
+      "code": "sh.600208",
+      "raw_code": "600208",
+      "name": "衢州发展"
+    },
+    {
+      "code": "sh.600362",
+      "raw_code": "600362",
+      "name": "江西铜业"
+    },
+    {
+      "code": "sh.600459",
+      "raw_code": "600459",
+      "name": "贵研铂业"
+    },
+    {
+      "code": "sh.600489",
+      "raw_code": "600489",
+      "name": "中金黄金"
+    },
+    {
+      "code": "sh.600490",
+      "raw_code": "600490",
+      "name": "鹏欣资源"
+    },
+    {
+      "code": "sh.600497",
+      "raw_code": "600497",
+      "name": "驰宏锌锗"
+    },
+    {
+      "code": "sh.600531",
+      "raw_code": "600531",
+      "name": "豫光金铅"
+    },
+    {
+      "code": "sh.600547",
+      "raw_code": "600547",
+      "name": "山东黄金"
+    },
+    {
+      "code": "sh.600612",
+      "raw_code": "600612",
+      "name": "老凤祥"
+    },
+    {
+      "code": "sh.600655",
+      "raw_code": "600655",
+      "name": "豫园股份"
+    },
+    {
+      "code": "sh.600697",
+      "raw_code": "600697",
+      "name": "欧亚集团"
+    },
+    {
+      "code": "sh.600711",
+      "raw_code": "600711",
+      "name": "盛屯矿业"
+    },
+    {
+      "code": "sh.600729",
+      "raw_code": "600729",
+      "name": "重百集团"
+    },
+    {
+      "code": "sh.600824",
+      "raw_code": "600824",
+      "name": "益民集团"
+    },
+    {
+      "code": "sh.600857",
+      "raw_code": "600857",
+      "name": "宁波中百"
+    },
+    {
+      "code": "sh.600916",
+      "raw_code": "600916",
+      "name": "中国黄金"
+    },
+    {
+      "code": "sh.600961",
+      "raw_code": "600961",
+      "name": "株冶集团"
+    },
+    {
+      "code": "sh.600987",
+      "raw_code": "600987",
+      "name": "航民股份"
+    },
+    {
+      "code": "sh.600988",
+      "raw_code": "600988",
+      "name": "赤峰黄金"
+    },
+    {
+      "code": "sh.601020",
+      "raw_code": "601020",
+      "name": "华钰矿业"
+    },
+    {
+      "code": "sh.601061",
+      "raw_code": "601061",
+      "name": "中信金属"
+    },
+    {
+      "code": "sh.601069",
+      "raw_code": "601069",
+      "name": "西部黄金"
+    },
+    {
+      "code": "sh.601121",
+      "raw_code": "601121",
+      "name": "宝地矿业"
+    },
+    {
+      "code": "sh.601168",
+      "raw_code": "601168",
+      "name": "西部矿业"
+    },
+    {
+      "code": "sh.601212",
+      "raw_code": "601212",
+      "name": "白银有色"
+    },
+    {
+      "code": "sh.601899",
+      "raw_code": "601899",
+      "name": "紫金矿业"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.603045",
+      "raw_code": "603045",
+      "name": "福达合金"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603132",
+      "raw_code": "603132",
+      "name": "金徽股份"
+    },
+    {
+      "code": "sh.603257",
+      "raw_code": "603257",
+      "name": "中国瑞林"
+    },
+    {
+      "code": "sh.603588",
+      "raw_code": "603588",
+      "name": "高能环境"
+    },
+    {
+      "code": "sh.603900",
+      "raw_code": "603900",
+      "name": "莱绅通灵"
+    },
+    {
+      "code": "sh.603979",
+      "raw_code": "603979",
+      "name": "金诚信"
+    },
+    {
+      "code": "sh.603993",
+      "raw_code": "603993",
+      "name": "洛阳钼业"
+    },
+    {
+      "code": "sh.605599",
+      "raw_code": "605599",
+      "name": "菜百股份"
+    },
+    {
+      "code": "sz.000009",
+      "raw_code": "000009",
+      "name": "中国宝安"
+    },
+    {
+      "code": "sz.000017",
+      "raw_code": "000017",
+      "name": "深中华A"
+    },
+    {
+      "code": "sz.000025",
+      "raw_code": "000025",
+      "name": "特力A"
+    },
+    {
+      "code": "sz.000060",
+      "raw_code": "000060",
+      "name": "中金岭南"
+    },
+    {
+      "code": "sz.000408",
+      "raw_code": "000408",
+      "name": "藏格矿业"
+    },
+    {
+      "code": "sz.000417",
+      "raw_code": "000417",
+      "name": "合百集团"
+    },
+    {
+      "code": "sz.000426",
+      "raw_code": "000426",
+      "name": "兴业银锡"
+    },
+    {
+      "code": "sz.000501",
+      "raw_code": "000501",
+      "name": "武商集团"
+    },
+    {
+      "code": "sz.000506",
+      "raw_code": "000506",
+      "name": "招金黄金"
+    },
+    {
+      "code": "sz.000603",
+      "raw_code": "000603",
+      "name": "盛达资源"
+    },
+    {
+      "code": "sz.000630",
+      "raw_code": "000630",
+      "name": "铜陵有色"
+    },
+    {
+      "code": "sz.000688",
+      "raw_code": "000688",
+      "name": "国城矿业"
+    },
+    {
+      "code": "sz.000737",
+      "raw_code": "000737",
+      "name": "北方铜业"
+    },
+    {
+      "code": "sz.000751",
+      "raw_code": "000751",
+      "name": "锌业股份"
+    },
+    {
+      "code": "sz.000758",
+      "raw_code": "000758",
+      "name": "中色股份"
+    },
+    {
+      "code": "sz.000878",
+      "raw_code": "000878",
+      "name": "云南铜业"
+    },
+    {
+      "code": "sz.000975",
+      "raw_code": "000975",
+      "name": "山金国际"
+    },
+    {
+      "code": "sz.001337",
+      "raw_code": "001337",
+      "name": "四川黄金"
+    },
+    {
+      "code": "sz.001360",
+      "raw_code": "001360",
+      "name": "南矿集团"
+    },
+    {
+      "code": "sz.002132",
+      "raw_code": "002132",
+      "name": "恒星科技"
+    },
+    {
+      "code": "sz.002155",
+      "raw_code": "002155",
+      "name": "湖南黄金"
+    },
+    {
+      "code": "sz.002237",
+      "raw_code": "002237",
+      "name": "恒邦股份"
+    },
+    {
+      "code": "sz.002266",
+      "raw_code": "002266",
+      "name": "浙富控股"
+    },
+    {
+      "code": "sz.002340",
+      "raw_code": "002340",
+      "name": "格林美"
+    },
+    {
+      "code": "sz.002345",
+      "raw_code": "002345",
+      "name": "潮宏基"
+    },
+    {
+      "code": "sz.002479",
+      "raw_code": "002479",
+      "name": "富春环保"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002552",
+      "raw_code": "002552",
+      "name": "宝鼎科技"
+    },
+    {
+      "code": "sz.002574",
+      "raw_code": "002574",
+      "name": "明牌珠宝"
+    },
+    {
+      "code": "sz.002672",
+      "raw_code": "002672",
+      "name": "东江环保"
+    },
+    {
+      "code": "sz.002715",
+      "raw_code": "002715",
+      "name": "登云股份"
+    },
+    {
+      "code": "sz.002716",
+      "raw_code": "002716",
+      "name": "湖南白银"
+    },
+    {
+      "code": "sz.002721",
+      "raw_code": "002721",
+      "name": "金一文化"
+    },
+    {
+      "code": "sz.002731",
+      "raw_code": "002731",
+      "name": "*ST萃华"
+    },
+    {
+      "code": "sz.002867",
+      "raw_code": "002867",
+      "name": "周大生"
+    },
+    {
+      "code": "sz.300056",
+      "raw_code": "300056",
+      "name": "中创环保"
+    },
+    {
+      "code": "sz.300139",
+      "raw_code": "300139",
+      "name": "晓程科技"
+    },
+    {
+      "code": "sz.300945",
+      "raw_code": "300945",
+      "name": "曼卡龙"
+    },
+    {
+      "code": "sz.301026",
+      "raw_code": "301026",
+      "name": "浩通科技"
+    },
+    {
+      "code": "sz.301177",
+      "raw_code": "301177",
+      "name": "迪阿股份"
+    },
+    {
+      "code": "sz.301265",
+      "raw_code": "301265",
+      "name": "华新科技"
+    },
+    {
+      "code": "sz.301500",
+      "raw_code": "301500",
+      "name": "飞南资源"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:35",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300248/"
+  "fetched_at": "2026-07-13 14:35:32",
+  "page_count": 9,
+  "is_partial": false,
+  "page_limit_reason": null
 }

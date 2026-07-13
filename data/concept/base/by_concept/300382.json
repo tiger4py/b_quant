@@ -3,10 +3,337 @@
   "concept_name": "稀土永磁",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 65,
+  "constituents": [
+    {
+      "code": "bj.920061",
+      "raw_code": "920061",
+      "name": "西磁科技"
+    },
+    {
+      "code": "bj.920263",
+      "raw_code": "920263",
+      "name": "中航泰达"
+    },
+    {
+      "code": "bj.920505",
+      "raw_code": "920505",
+      "name": "九菱科技"
+    },
+    {
+      "code": "bj.920807",
+      "raw_code": "920807",
+      "name": "奔朗新材"
+    },
+    {
+      "code": "sh.600010",
+      "raw_code": "600010",
+      "name": "包钢股份"
+    },
+    {
+      "code": "sh.600111",
+      "raw_code": "600111",
+      "name": "北方稀土"
+    },
+    {
+      "code": "sh.600173",
+      "raw_code": "600173",
+      "name": "卧龙新能"
+    },
+    {
+      "code": "sh.600206",
+      "raw_code": "600206",
+      "name": "有研新材"
+    },
+    {
+      "code": "sh.600259",
+      "raw_code": "600259",
+      "name": "中稀有色"
+    },
+    {
+      "code": "sh.600366",
+      "raw_code": "600366",
+      "name": "宁波韵升"
+    },
+    {
+      "code": "sh.600392",
+      "raw_code": "600392",
+      "name": "盛和资源"
+    },
+    {
+      "code": "sh.600416",
+      "raw_code": "600416",
+      "name": "湘电股份"
+    },
+    {
+      "code": "sh.600444",
+      "raw_code": "600444",
+      "name": "国机通用"
+    },
+    {
+      "code": "sh.600549",
+      "raw_code": "600549",
+      "name": "厦门钨业"
+    },
+    {
+      "code": "sh.600872",
+      "raw_code": "600872",
+      "name": "中炬高新"
+    },
+    {
+      "code": "sh.600980",
+      "raw_code": "600980",
+      "name": "北矿科技"
+    },
+    {
+      "code": "sh.600988",
+      "raw_code": "600988",
+      "name": "赤峰黄金"
+    },
+    {
+      "code": "sh.601068",
+      "raw_code": "601068",
+      "name": "中铝国际"
+    },
+    {
+      "code": "sh.601600",
+      "raw_code": "601600",
+      "name": "中国铝业"
+    },
+    {
+      "code": "sh.601609",
+      "raw_code": "601609",
+      "name": "金田股份"
+    },
+    {
+      "code": "sh.603072",
+      "raw_code": "603072",
+      "name": "天和磁材"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603150",
+      "raw_code": "603150",
+      "name": "万朗磁塑"
+    },
+    {
+      "code": "sh.603257",
+      "raw_code": "603257",
+      "name": "中国瑞林"
+    },
+    {
+      "code": "sh.603389",
+      "raw_code": "603389",
+      "name": "亚振家居"
+    },
+    {
+      "code": "sh.603663",
+      "raw_code": "603663",
+      "name": "三祥新材"
+    },
+    {
+      "code": "sh.688020",
+      "raw_code": "688020",
+      "name": "方邦股份"
+    },
+    {
+      "code": "sh.688077",
+      "raw_code": "688077",
+      "name": "大地熊"
+    },
+    {
+      "code": "sh.688211",
+      "raw_code": "688211",
+      "name": "中科微至"
+    },
+    {
+      "code": "sh.688571",
+      "raw_code": "688571",
+      "name": "杭华股份"
+    },
+    {
+      "code": "sh.688663",
+      "raw_code": "688663",
+      "name": "新风光"
+    },
+    {
+      "code": "sz.000612",
+      "raw_code": "000612",
+      "name": "焦作万方"
+    },
+    {
+      "code": "sz.000758",
+      "raw_code": "000758",
+      "name": "中色股份"
+    },
+    {
+      "code": "sz.000795",
+      "raw_code": "000795",
+      "name": "英洛华"
+    },
+    {
+      "code": "sz.000831",
+      "raw_code": "000831",
+      "name": "中国稀土"
+    },
+    {
+      "code": "sz.000969",
+      "raw_code": "000969",
+      "name": "安泰科技"
+    },
+    {
+      "code": "sz.000970",
+      "raw_code": "000970",
+      "name": "中科三环"
+    },
+    {
+      "code": "sz.001280",
+      "raw_code": "001280",
+      "name": "中国铀业"
+    },
+    {
+      "code": "sz.002056",
+      "raw_code": "002056",
+      "name": "横店东磁"
+    },
+    {
+      "code": "sz.002057",
+      "raw_code": "002057",
+      "name": "中钢天源"
+    },
+    {
+      "code": "sz.002167",
+      "raw_code": "002167",
+      "name": "东方锆业"
+    },
+    {
+      "code": "sz.002334",
+      "raw_code": "002334",
+      "name": "英威腾"
+    },
+    {
+      "code": "sz.002340",
+      "raw_code": "002340",
+      "name": "格林美"
+    },
+    {
+      "code": "sz.002600",
+      "raw_code": "002600",
+      "name": "领益智造"
+    },
+    {
+      "code": "sz.002645",
+      "raw_code": "002645",
+      "name": "华宏科技"
+    },
+    {
+      "code": "sz.002738",
+      "raw_code": "002738",
+      "name": "中矿资源"
+    },
+    {
+      "code": "sz.002943",
+      "raw_code": "002943",
+      "name": "宇晶股份"
+    },
+    {
+      "code": "sz.300066",
+      "raw_code": "300066",
+      "name": "三川智慧"
+    },
+    {
+      "code": "sz.300127",
+      "raw_code": "300127",
+      "name": "银河磁体"
+    },
+    {
+      "code": "sz.300224",
+      "raw_code": "300224",
+      "name": "正海磁材"
+    },
+    {
+      "code": "sz.300340",
+      "raw_code": "300340",
+      "name": "科恒股份"
+    },
+    {
+      "code": "sz.300405",
+      "raw_code": "300405",
+      "name": "科隆股份"
+    },
+    {
+      "code": "sz.300428",
+      "raw_code": "300428",
+      "name": "立中集团"
+    },
+    {
+      "code": "sz.300631",
+      "raw_code": "300631",
+      "name": "久吾高科"
+    },
+    {
+      "code": "sz.300748",
+      "raw_code": "300748",
+      "name": "金力永磁"
+    },
+    {
+      "code": "sz.300779",
+      "raw_code": "300779",
+      "name": "惠城环保"
+    },
+    {
+      "code": "sz.300797",
+      "raw_code": "300797",
+      "name": "钢研纳克"
+    },
+    {
+      "code": "sz.300835",
+      "raw_code": "300835",
+      "name": "龙磁科技"
+    },
+    {
+      "code": "sz.301092",
+      "raw_code": "301092",
+      "name": "争光股份"
+    },
+    {
+      "code": "sz.301141",
+      "raw_code": "301141",
+      "name": "中科磁业"
+    },
+    {
+      "code": "sz.301226",
+      "raw_code": "301226",
+      "name": "祥明智能"
+    },
+    {
+      "code": "sz.301265",
+      "raw_code": "301265",
+      "name": "华新科技"
+    },
+    {
+      "code": "sz.301273",
+      "raw_code": "301273",
+      "name": "瑞晨环保"
+    },
+    {
+      "code": "sz.301323",
+      "raw_code": "301323",
+      "name": "新莱福"
+    },
+    {
+      "code": "sz.301622",
+      "raw_code": "301622",
+      "name": "英思特"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:42",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300382/"
+  "fetched_at": "2026-07-13 14:35:55",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

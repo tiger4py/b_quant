@@ -3,10 +3,302 @@
   "concept_name": "参股保险",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 58,
+  "constituents": [
+    {
+      "code": "sh.600020",
+      "raw_code": "600020",
+      "name": "中原高速"
+    },
+    {
+      "code": "sh.600033",
+      "raw_code": "600033",
+      "name": "福建高速"
+    },
+    {
+      "code": "sh.600094",
+      "raw_code": "600094",
+      "name": "大名城"
+    },
+    {
+      "code": "sh.600120",
+      "raw_code": "600120",
+      "name": "浙江东方"
+    },
+    {
+      "code": "sh.600135",
+      "raw_code": "600135",
+      "name": "乐凯胶片"
+    },
+    {
+      "code": "sh.600157",
+      "raw_code": "600157",
+      "name": "永泰能源"
+    },
+    {
+      "code": "sh.600167",
+      "raw_code": "600167",
+      "name": "联美控股"
+    },
+    {
+      "code": "sh.600177",
+      "raw_code": "600177",
+      "name": "雅戈尔"
+    },
+    {
+      "code": "sh.600195",
+      "raw_code": "600195",
+      "name": "中牧股份"
+    },
+    {
+      "code": "sh.600208",
+      "raw_code": "600208",
+      "name": "衢州发展"
+    },
+    {
+      "code": "sh.600248",
+      "raw_code": "600248",
+      "name": "陕建股份"
+    },
+    {
+      "code": "sh.600269",
+      "raw_code": "600269",
+      "name": "赣粤高速"
+    },
+    {
+      "code": "sh.600287",
+      "raw_code": "600287",
+      "name": "苏豪时尚"
+    },
+    {
+      "code": "sh.600390",
+      "raw_code": "600390",
+      "name": "五矿资本"
+    },
+    {
+      "code": "sh.600392",
+      "raw_code": "600392",
+      "name": "盛和资源"
+    },
+    {
+      "code": "sh.600588",
+      "raw_code": "600588",
+      "name": "用友网络"
+    },
+    {
+      "code": "sh.600642",
+      "raw_code": "600642",
+      "name": "申能股份"
+    },
+    {
+      "code": "sh.600657",
+      "raw_code": "600657",
+      "name": "信达地产"
+    },
+    {
+      "code": "sh.600663",
+      "raw_code": "600663",
+      "name": "陆家嘴"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.600718",
+      "raw_code": "600718",
+      "name": "东软集团"
+    },
+    {
+      "code": "sh.600739",
+      "raw_code": "600739",
+      "name": "辽宁成大"
+    },
+    {
+      "code": "sh.600742",
+      "raw_code": "600742",
+      "name": "富维股份"
+    },
+    {
+      "code": "sh.600981",
+      "raw_code": "600981",
+      "name": "苏豪汇鸿"
+    },
+    {
+      "code": "sh.601007",
+      "raw_code": "601007",
+      "name": "金陵饭店"
+    },
+    {
+      "code": "sh.601169",
+      "raw_code": "601169",
+      "name": "北京银行"
+    },
+    {
+      "code": "sh.601678",
+      "raw_code": "601678",
+      "name": "滨化股份"
+    },
+    {
+      "code": "sh.601766",
+      "raw_code": "601766",
+      "name": "中国中车"
+    },
+    {
+      "code": "sh.601857",
+      "raw_code": "601857",
+      "name": "中国石油"
+    },
+    {
+      "code": "sh.601868",
+      "raw_code": "601868",
+      "name": "中国能建"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.601999",
+      "raw_code": "601999",
+      "name": "出版传媒"
+    },
+    {
+      "code": "sh.603257",
+      "raw_code": "603257",
+      "name": "中国瑞林"
+    },
+    {
+      "code": "sh.603999",
+      "raw_code": "603999",
+      "name": "读者传媒"
+    },
+    {
+      "code": "sz.000030",
+      "raw_code": "000030",
+      "name": "富奥股份"
+    },
+    {
+      "code": "sz.000415",
+      "raw_code": "000415",
+      "name": "渤海租赁"
+    },
+    {
+      "code": "sz.000419",
+      "raw_code": "000419",
+      "name": "通程控股"
+    },
+    {
+      "code": "sz.000539",
+      "raw_code": "000539",
+      "name": "粤电力A"
+    },
+    {
+      "code": "sz.000563",
+      "raw_code": "000563",
+      "name": "陕国投A"
+    },
+    {
+      "code": "sz.000798",
+      "raw_code": "000798",
+      "name": "中水渔业"
+    },
+    {
+      "code": "sz.000850",
+      "raw_code": "000850",
+      "name": "华茂股份"
+    },
+    {
+      "code": "sz.002029",
+      "raw_code": "002029",
+      "name": "七匹狼"
+    },
+    {
+      "code": "sz.002091",
+      "raw_code": "002091",
+      "name": "江苏国泰"
+    },
+    {
+      "code": "sz.002162",
+      "raw_code": "002162",
+      "name": "悦心健康"
+    },
+    {
+      "code": "sz.002294",
+      "raw_code": "002294",
+      "name": "信立泰"
+    },
+    {
+      "code": "sz.002403",
+      "raw_code": "002403",
+      "name": "爱仕达"
+    },
+    {
+      "code": "sz.002405",
+      "raw_code": "002405",
+      "name": "四维图新"
+    },
+    {
+      "code": "sz.002416",
+      "raw_code": "002416",
+      "name": "爱施德"
+    },
+    {
+      "code": "sz.002423",
+      "raw_code": "002423",
+      "name": "中粮资本"
+    },
+    {
+      "code": "sz.002558",
+      "raw_code": "002558",
+      "name": "巨人网络"
+    },
+    {
+      "code": "sz.002608",
+      "raw_code": "002608",
+      "name": "江苏国信"
+    },
+    {
+      "code": "sz.300003",
+      "raw_code": "300003",
+      "name": "乐普医疗"
+    },
+    {
+      "code": "sz.300024",
+      "raw_code": "300024",
+      "name": "机器人"
+    },
+    {
+      "code": "sz.300049",
+      "raw_code": "300049",
+      "name": "福瑞医科"
+    },
+    {
+      "code": "sz.300096",
+      "raw_code": "300096",
+      "name": "ST易联众"
+    },
+    {
+      "code": "sz.300130",
+      "raw_code": "300130",
+      "name": "新国都"
+    },
+    {
+      "code": "sz.300242",
+      "raw_code": "300242",
+      "name": "佳云科技"
+    },
+    {
+      "code": "sz.300773",
+      "raw_code": "300773",
+      "name": "拉卡拉"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:24",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300018/"
+  "fetched_at": "2026-07-13 14:34:33",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

@@ -3,10 +3,352 @@
   "concept_name": "磷化工",
   "first_trade_date": "2019-07-15",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 68,
+  "constituents": [
+    {
+      "code": "bj.920809",
+      "raw_code": "920809",
+      "name": "安达科技"
+    },
+    {
+      "code": "sh.600078",
+      "raw_code": "600078",
+      "name": "澄星股份"
+    },
+    {
+      "code": "sh.600096",
+      "raw_code": "600096",
+      "name": "云天化"
+    },
+    {
+      "code": "sh.600141",
+      "raw_code": "600141",
+      "name": "兴发集团"
+    },
+    {
+      "code": "sh.600331",
+      "raw_code": "600331",
+      "name": "宏达股份"
+    },
+    {
+      "code": "sh.600378",
+      "raw_code": "600378",
+      "name": "昊华科技"
+    },
+    {
+      "code": "sh.600389",
+      "raw_code": "600389",
+      "name": "江山股份"
+    },
+    {
+      "code": "sh.600470",
+      "raw_code": "600470",
+      "name": "六国化工"
+    },
+    {
+      "code": "sh.600691",
+      "raw_code": "600691",
+      "name": "潞化科技"
+    },
+    {
+      "code": "sh.600727",
+      "raw_code": "600727",
+      "name": "鲁北化工"
+    },
+    {
+      "code": "sh.601117",
+      "raw_code": "601117",
+      "name": "中国化学"
+    },
+    {
+      "code": "sh.603010",
+      "raw_code": "603010",
+      "name": "万盛股份"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603690",
+      "raw_code": "603690",
+      "name": "至纯科技"
+    },
+    {
+      "code": "sh.603799",
+      "raw_code": "603799",
+      "name": "华友钴业"
+    },
+    {
+      "code": "sh.603867",
+      "raw_code": "603867",
+      "name": "新化股份"
+    },
+    {
+      "code": "sh.603906",
+      "raw_code": "603906",
+      "name": "龙蟠科技"
+    },
+    {
+      "code": "sh.603979",
+      "raw_code": "603979",
+      "name": "金诚信"
+    },
+    {
+      "code": "sh.603993",
+      "raw_code": "603993",
+      "name": "洛阳钼业"
+    },
+    {
+      "code": "sh.688275",
+      "raw_code": "688275",
+      "name": "万润新能"
+    },
+    {
+      "code": "sh.688545",
+      "raw_code": "688545",
+      "name": "兴福电子"
+    },
+    {
+      "code": "sh.688596",
+      "raw_code": "688596",
+      "name": "正帆科技"
+    },
+    {
+      "code": "sh.688669",
+      "raw_code": "688669",
+      "name": "聚石化学"
+    },
+    {
+      "code": "sz.000155",
+      "raw_code": "000155",
+      "name": "川能动力"
+    },
+    {
+      "code": "sz.000422",
+      "raw_code": "000422",
+      "name": "湖北宜化"
+    },
+    {
+      "code": "sz.000545",
+      "raw_code": "000545",
+      "name": "金浦钛业"
+    },
+    {
+      "code": "sz.000713",
+      "raw_code": "000713",
+      "name": "国投丰乐"
+    },
+    {
+      "code": "sz.000731",
+      "raw_code": "000731",
+      "name": "四川美丰"
+    },
+    {
+      "code": "sz.000830",
+      "raw_code": "000830",
+      "name": "鲁西化工"
+    },
+    {
+      "code": "sz.000833",
+      "raw_code": "000833",
+      "name": "粤桂股份"
+    },
+    {
+      "code": "sz.000902",
+      "raw_code": "000902",
+      "name": "新洋丰"
+    },
+    {
+      "code": "sz.002074",
+      "raw_code": "002074",
+      "name": "国轩高科"
+    },
+    {
+      "code": "sz.002136",
+      "raw_code": "002136",
+      "name": "安纳达"
+    },
+    {
+      "code": "sz.002145",
+      "raw_code": "002145",
+      "name": "钛能化学"
+    },
+    {
+      "code": "sz.002170",
+      "raw_code": "002170",
+      "name": "芭田股份"
+    },
+    {
+      "code": "sz.002237",
+      "raw_code": "002237",
+      "name": "恒邦股份"
+    },
+    {
+      "code": "sz.002312",
+      "raw_code": "002312",
+      "name": "川发龙蟒"
+    },
+    {
+      "code": "sz.002386",
+      "raw_code": "002386",
+      "name": "天原股份"
+    },
+    {
+      "code": "sz.002409",
+      "raw_code": "002409",
+      "name": "雅克科技"
+    },
+    {
+      "code": "sz.002455",
+      "raw_code": "002455",
+      "name": "百川股份"
+    },
+    {
+      "code": "sz.002470",
+      "raw_code": "002470",
+      "name": "金正大"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002539",
+      "raw_code": "002539",
+      "name": "云图控股"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002584",
+      "raw_code": "002584",
+      "name": "西陇科学"
+    },
+    {
+      "code": "sz.002588",
+      "raw_code": "002588",
+      "name": "史丹利"
+    },
+    {
+      "code": "sz.002667",
+      "raw_code": "002667",
+      "name": "*ST威领"
+    },
+    {
+      "code": "sz.002672",
+      "raw_code": "002672",
+      "name": "东江环保"
+    },
+    {
+      "code": "sz.002749",
+      "raw_code": "002749",
+      "name": "国光股份"
+    },
+    {
+      "code": "sz.002759",
+      "raw_code": "002759",
+      "name": "天际股份"
+    },
+    {
+      "code": "sz.002805",
+      "raw_code": "002805",
+      "name": "丰元股份"
+    },
+    {
+      "code": "sz.002895",
+      "raw_code": "002895",
+      "name": "川恒股份"
+    },
+    {
+      "code": "sz.002942",
+      "raw_code": "002942",
+      "name": "新农股份"
+    },
+    {
+      "code": "sz.300243",
+      "raw_code": "300243",
+      "name": "瑞丰高材"
+    },
+    {
+      "code": "sz.300346",
+      "raw_code": "300346",
+      "name": "南大光电"
+    },
+    {
+      "code": "sz.300387",
+      "raw_code": "300387",
+      "name": "富邦科技"
+    },
+    {
+      "code": "sz.300432",
+      "raw_code": "300432",
+      "name": "富临精工"
+    },
+    {
+      "code": "sz.300437",
+      "raw_code": "300437",
+      "name": "清水源"
+    },
+    {
+      "code": "sz.300505",
+      "raw_code": "300505",
+      "name": "川金诺"
+    },
+    {
+      "code": "sz.300610",
+      "raw_code": "300610",
+      "name": "晨化股份"
+    },
+    {
+      "code": "sz.300637",
+      "raw_code": "300637",
+      "name": "扬帆新材"
+    },
+    {
+      "code": "sz.300769",
+      "raw_code": "300769",
+      "name": "德方纳米"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.300919",
+      "raw_code": "300919",
+      "name": "中伟新材"
+    },
+    {
+      "code": "sz.300958",
+      "raw_code": "300958",
+      "name": "建工修复"
+    },
+    {
+      "code": "sz.301118",
+      "raw_code": "301118",
+      "name": "恒光股份"
+    },
+    {
+      "code": "sz.301246",
+      "raw_code": "301246",
+      "name": "宏源药业"
+    },
+    {
+      "code": "sz.301358",
+      "raw_code": "301358",
+      "name": "湖南裕能"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:29",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300098/"
+  "fetched_at": "2026-07-13 14:34:57",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

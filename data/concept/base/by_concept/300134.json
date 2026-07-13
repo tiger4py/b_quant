@@ -3,10 +3,192 @@
   "concept_name": "PM2.5",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 36,
+  "constituents": [
+    {
+      "code": "bj.920802",
+      "raw_code": "920802",
+      "name": "保丽洁"
+    },
+    {
+      "code": "sh.600459",
+      "raw_code": "600459",
+      "name": "贵研铂业"
+    },
+    {
+      "code": "sh.600526",
+      "raw_code": "600526",
+      "name": "菲达环保"
+    },
+    {
+      "code": "sh.603286",
+      "raw_code": "603286",
+      "name": "日盈电子"
+    },
+    {
+      "code": "sh.603311",
+      "raw_code": "603311",
+      "name": "金海高科"
+    },
+    {
+      "code": "sh.603601",
+      "raw_code": "603601",
+      "name": "再升科技"
+    },
+    {
+      "code": "sh.688051",
+      "raw_code": "688051",
+      "name": "佳华科技"
+    },
+    {
+      "code": "sh.688376",
+      "raw_code": "688376",
+      "name": "美埃科技"
+    },
+    {
+      "code": "sh.688622",
+      "raw_code": "688622",
+      "name": "*ST禾信"
+    },
+    {
+      "code": "sh.688628",
+      "raw_code": "688628",
+      "name": "优利德"
+    },
+    {
+      "code": "sh.688631",
+      "raw_code": "688631",
+      "name": "莱斯信息"
+    },
+    {
+      "code": "sh.688665",
+      "raw_code": "688665",
+      "name": "四方光电"
+    },
+    {
+      "code": "sz.000551",
+      "raw_code": "000551",
+      "name": "创元科技"
+    },
+    {
+      "code": "sz.002322",
+      "raw_code": "002322",
+      "name": "理工能科"
+    },
+    {
+      "code": "sz.002362",
+      "raw_code": "002362",
+      "name": "汉王科技"
+    },
+    {
+      "code": "sz.002573",
+      "raw_code": "002573",
+      "name": "清新环境"
+    },
+    {
+      "code": "sz.002658",
+      "raw_code": "002658",
+      "name": "雪迪龙"
+    },
+    {
+      "code": "sz.002980",
+      "raw_code": "002980",
+      "name": "华盛昌"
+    },
+    {
+      "code": "sz.300004",
+      "raw_code": "300004",
+      "name": "南风股份"
+    },
+    {
+      "code": "sz.300072",
+      "raw_code": "300072",
+      "name": "海新能科"
+    },
+    {
+      "code": "sz.300105",
+      "raw_code": "300105",
+      "name": "龙源技术"
+    },
+    {
+      "code": "sz.300137",
+      "raw_code": "300137",
+      "name": "先河环保"
+    },
+    {
+      "code": "sz.300152",
+      "raw_code": "300152",
+      "name": "*ST动力"
+    },
+    {
+      "code": "sz.300172",
+      "raw_code": "300172",
+      "name": "中电环保"
+    },
+    {
+      "code": "sz.300174",
+      "raw_code": "300174",
+      "name": "元力股份"
+    },
+    {
+      "code": "sz.300187",
+      "raw_code": "300187",
+      "name": "永清环保"
+    },
+    {
+      "code": "sz.300203",
+      "raw_code": "300203",
+      "name": "聚光科技"
+    },
+    {
+      "code": "sz.300335",
+      "raw_code": "300335",
+      "name": "迪森股份"
+    },
+    {
+      "code": "sz.300411",
+      "raw_code": "300411",
+      "name": "金盾股份"
+    },
+    {
+      "code": "sz.300572",
+      "raw_code": "300572",
+      "name": "安车检测"
+    },
+    {
+      "code": "sz.300800",
+      "raw_code": "300800",
+      "name": "力合科技"
+    },
+    {
+      "code": "sz.300862",
+      "raw_code": "300862",
+      "name": "蓝盾光电"
+    },
+    {
+      "code": "sz.300884",
+      "raw_code": "300884",
+      "name": "狄耐克"
+    },
+    {
+      "code": "sz.300887",
+      "raw_code": "300887",
+      "name": "谱尼测试"
+    },
+    {
+      "code": "sz.300977",
+      "raw_code": "300977",
+      "name": "深圳瑞捷"
+    },
+    {
+      "code": "sz.301043",
+      "raw_code": "301043",
+      "name": "绿岛风"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:30",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300134/"
+  "fetched_at": "2026-07-13 14:35:06",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

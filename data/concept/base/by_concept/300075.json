@@ -3,10 +3,142 @@
   "concept_name": "禽流感",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 26,
+  "constituents": [
+    {
+      "code": "bj.920729",
+      "raw_code": "920729",
+      "name": "永顺生物"
+    },
+    {
+      "code": "sh.600129",
+      "raw_code": "600129",
+      "name": "太极集团"
+    },
+    {
+      "code": "sh.600195",
+      "raw_code": "600195",
+      "name": "中牧股份"
+    },
+    {
+      "code": "sh.600201",
+      "raw_code": "600201",
+      "name": "生物股份"
+    },
+    {
+      "code": "sh.600513",
+      "raw_code": "600513",
+      "name": "联环药业"
+    },
+    {
+      "code": "sh.600557",
+      "raw_code": "600557",
+      "name": "康缘药业"
+    },
+    {
+      "code": "sh.600881",
+      "raw_code": "600881",
+      "name": "亚泰集团"
+    },
+    {
+      "code": "sh.603566",
+      "raw_code": "603566",
+      "name": "普莱柯"
+    },
+    {
+      "code": "sh.603739",
+      "raw_code": "603739",
+      "name": "蔚蓝生物"
+    },
+    {
+      "code": "sh.688298",
+      "raw_code": "688298",
+      "name": "东方生物"
+    },
+    {
+      "code": "sh.688317",
+      "raw_code": "688317",
+      "name": "之江生物"
+    },
+    {
+      "code": "sh.688526",
+      "raw_code": "688526",
+      "name": "科前生物"
+    },
+    {
+      "code": "sh.688606",
+      "raw_code": "688606",
+      "name": "奥泰生物"
+    },
+    {
+      "code": "sz.000999",
+      "raw_code": "000999",
+      "name": "华润三九"
+    },
+    {
+      "code": "sz.002007",
+      "raw_code": "002007",
+      "name": "华兰生物"
+    },
+    {
+      "code": "sz.002030",
+      "raw_code": "002030",
+      "name": "达安基因"
+    },
+    {
+      "code": "sz.002100",
+      "raw_code": "002100",
+      "name": "天康生物"
+    },
+    {
+      "code": "sz.002166",
+      "raw_code": "002166",
+      "name": "莱茵生物"
+    },
+    {
+      "code": "sz.002317",
+      "raw_code": "002317",
+      "name": "众生药业"
+    },
+    {
+      "code": "sz.002603",
+      "raw_code": "002603",
+      "name": "以岭药业"
+    },
+    {
+      "code": "sz.002688",
+      "raw_code": "002688",
+      "name": "金河生物"
+    },
+    {
+      "code": "sz.300039",
+      "raw_code": "300039",
+      "name": "上海凯宝"
+    },
+    {
+      "code": "sz.300119",
+      "raw_code": "300119",
+      "name": "瑞普生物"
+    },
+    {
+      "code": "sz.300147",
+      "raw_code": "300147",
+      "name": "*ST香雪"
+    },
+    {
+      "code": "sz.300498",
+      "raw_code": "300498",
+      "name": "温氏股份"
+    },
+    {
+      "code": "sz.301207",
+      "raw_code": "301207",
+      "name": "华兰疫苗"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:27",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300075/"
+  "fetched_at": "2026-07-13 14:34:50",
+  "page_count": 3,
+  "is_partial": false,
+  "page_limit_reason": null
 }

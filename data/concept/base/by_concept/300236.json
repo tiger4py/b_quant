@@ -3,10 +3,192 @@
   "concept_name": "国产航母",
   "first_trade_date": "2018-05-14",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 36,
+  "constituents": [
+    {
+      "code": "bj.920885",
+      "raw_code": "920885",
+      "name": "星辰科技"
+    },
+    {
+      "code": "sh.600038",
+      "raw_code": "600038",
+      "name": "中直股份"
+    },
+    {
+      "code": "sh.600072",
+      "raw_code": "600072",
+      "name": "中船科技"
+    },
+    {
+      "code": "sh.600118",
+      "raw_code": "600118",
+      "name": "中国卫星"
+    },
+    {
+      "code": "sh.600150",
+      "raw_code": "600150",
+      "name": "中国船舶"
+    },
+    {
+      "code": "sh.600184",
+      "raw_code": "600184",
+      "name": "光电股份"
+    },
+    {
+      "code": "sh.600372",
+      "raw_code": "600372",
+      "name": "中航机载"
+    },
+    {
+      "code": "sh.600378",
+      "raw_code": "600378",
+      "name": "昊华科技"
+    },
+    {
+      "code": "sh.600391",
+      "raw_code": "600391",
+      "name": "航发科技"
+    },
+    {
+      "code": "sh.600435",
+      "raw_code": "600435",
+      "name": "北方导航"
+    },
+    {
+      "code": "sh.600456",
+      "raw_code": "600456",
+      "name": "宝钛股份"
+    },
+    {
+      "code": "sh.600482",
+      "raw_code": "600482",
+      "name": "中国动力"
+    },
+    {
+      "code": "sh.600590",
+      "raw_code": "600590",
+      "name": "泰豪科技"
+    },
+    {
+      "code": "sh.600685",
+      "raw_code": "600685",
+      "name": "中船防务"
+    },
+    {
+      "code": "sh.600764",
+      "raw_code": "600764",
+      "name": "中国海防"
+    },
+    {
+      "code": "sh.600765",
+      "raw_code": "600765",
+      "name": "中航重机"
+    },
+    {
+      "code": "sh.600893",
+      "raw_code": "600893",
+      "name": "航发动力"
+    },
+    {
+      "code": "sh.600990",
+      "raw_code": "600990",
+      "name": "四创电子"
+    },
+    {
+      "code": "sh.600992",
+      "raw_code": "600992",
+      "name": "贵绳股份"
+    },
+    {
+      "code": "sh.601106",
+      "raw_code": "601106",
+      "name": "中国一重"
+    },
+    {
+      "code": "sh.601137",
+      "raw_code": "601137",
+      "name": "博威合金"
+    },
+    {
+      "code": "sh.601608",
+      "raw_code": "601608",
+      "name": "中信重工"
+    },
+    {
+      "code": "sh.601890",
+      "raw_code": "601890",
+      "name": "亚星锚链"
+    },
+    {
+      "code": "sh.688151",
+      "raw_code": "688151",
+      "name": "华强科技"
+    },
+    {
+      "code": "sz.000595",
+      "raw_code": "000595",
+      "name": "新能股份"
+    },
+    {
+      "code": "sz.000738",
+      "raw_code": "000738",
+      "name": "航发控制"
+    },
+    {
+      "code": "sz.000768",
+      "raw_code": "000768",
+      "name": "中航西飞"
+    },
+    {
+      "code": "sz.002151",
+      "raw_code": "002151",
+      "name": "北斗星通"
+    },
+    {
+      "code": "sz.002179",
+      "raw_code": "002179",
+      "name": "中航光电"
+    },
+    {
+      "code": "sz.002314",
+      "raw_code": "002314",
+      "name": "南山控股"
+    },
+    {
+      "code": "sz.002465",
+      "raw_code": "002465",
+      "name": "海格通信"
+    },
+    {
+      "code": "sz.300065",
+      "raw_code": "300065",
+      "name": "海兰信"
+    },
+    {
+      "code": "sz.300101",
+      "raw_code": "300101",
+      "name": "振芯科技"
+    },
+    {
+      "code": "sz.300252",
+      "raw_code": "300252",
+      "name": "金信诺"
+    },
+    {
+      "code": "sz.300337",
+      "raw_code": "300337",
+      "name": "银邦股份"
+    },
+    {
+      "code": "sz.300600",
+      "raw_code": "300600",
+      "name": "国瑞科技"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:35",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300236/"
+  "fetched_at": "2026-07-13 14:35:28",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

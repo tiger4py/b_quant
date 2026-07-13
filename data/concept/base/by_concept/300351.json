@@ -3,10 +3,87 @@
   "concept_name": "钛白粉概念",
   "first_trade_date": "2015-05-11",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 15,
+  "constituents": [
+    {
+      "code": "sh.600727",
+      "raw_code": "600727",
+      "name": "鲁北化工"
+    },
+    {
+      "code": "sh.603067",
+      "raw_code": "603067",
+      "name": "振华股份"
+    },
+    {
+      "code": "sh.603389",
+      "raw_code": "603389",
+      "name": "亚振家居"
+    },
+    {
+      "code": "sh.603826",
+      "raw_code": "603826",
+      "name": "坤彩科技"
+    },
+    {
+      "code": "sz.000545",
+      "raw_code": "000545",
+      "name": "金浦钛业"
+    },
+    {
+      "code": "sz.000629",
+      "raw_code": "000629",
+      "name": "钒钛股份"
+    },
+    {
+      "code": "sz.000688",
+      "raw_code": "000688",
+      "name": "国城矿业"
+    },
+    {
+      "code": "sz.002136",
+      "raw_code": "002136",
+      "name": "安纳达"
+    },
+    {
+      "code": "sz.002140",
+      "raw_code": "002140",
+      "name": "东华科技"
+    },
+    {
+      "code": "sz.002145",
+      "raw_code": "002145",
+      "name": "钛能化学"
+    },
+    {
+      "code": "sz.002386",
+      "raw_code": "002386",
+      "name": "天原股份"
+    },
+    {
+      "code": "sz.002601",
+      "raw_code": "002601",
+      "name": "龙佰集团"
+    },
+    {
+      "code": "sz.002838",
+      "raw_code": "002838",
+      "name": "道恩股份"
+    },
+    {
+      "code": "sz.002978",
+      "raw_code": "002978",
+      "name": "安宁股份"
+    },
+    {
+      "code": "sz.300891",
+      "raw_code": "300891",
+      "name": "惠云钛业"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:38",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300351/"
+  "fetched_at": "2026-07-13 14:35:42",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

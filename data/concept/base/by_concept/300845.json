@@ -3,10 +3,222 @@
   "concept_name": "特钢概念",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 42,
+  "constituents": [
+    {
+      "code": "sh.600010",
+      "raw_code": "600010",
+      "name": "包钢股份"
+    },
+    {
+      "code": "sh.600019",
+      "raw_code": "600019",
+      "name": "宝钢股份"
+    },
+    {
+      "code": "sh.600022",
+      "raw_code": "600022",
+      "name": "山东钢铁"
+    },
+    {
+      "code": "sh.600117",
+      "raw_code": "600117",
+      "name": "西宁特钢"
+    },
+    {
+      "code": "sh.600126",
+      "raw_code": "600126",
+      "name": "杭钢股份"
+    },
+    {
+      "code": "sh.600231",
+      "raw_code": "600231",
+      "name": "凌钢股份"
+    },
+    {
+      "code": "sh.600282",
+      "raw_code": "600282",
+      "name": "南钢股份"
+    },
+    {
+      "code": "sh.600307",
+      "raw_code": "600307",
+      "name": "酒钢宏兴"
+    },
+    {
+      "code": "sh.600399",
+      "raw_code": "600399",
+      "name": "抚顺特钢"
+    },
+    {
+      "code": "sh.600507",
+      "raw_code": "600507",
+      "name": "方大特钢"
+    },
+    {
+      "code": "sh.600569",
+      "raw_code": "600569",
+      "name": "安阳钢铁"
+    },
+    {
+      "code": "sh.600581",
+      "raw_code": "600581",
+      "name": "*ST八钢"
+    },
+    {
+      "code": "sh.600808",
+      "raw_code": "600808",
+      "name": "马钢股份"
+    },
+    {
+      "code": "sh.601005",
+      "raw_code": "601005",
+      "name": "重庆钢铁"
+    },
+    {
+      "code": "sh.603028",
+      "raw_code": "603028",
+      "name": "赛福天"
+    },
+    {
+      "code": "sh.603191",
+      "raw_code": "603191",
+      "name": "望变电气"
+    },
+    {
+      "code": "sh.603315",
+      "raw_code": "603315",
+      "name": "福鞍股份"
+    },
+    {
+      "code": "sh.603667",
+      "raw_code": "603667",
+      "name": "五洲新春"
+    },
+    {
+      "code": "sh.603995",
+      "raw_code": "603995",
+      "name": "甬金股份"
+    },
+    {
+      "code": "sh.688186",
+      "raw_code": "688186",
+      "name": "广大特材"
+    },
+    {
+      "code": "sh.688786",
+      "raw_code": "688786",
+      "name": "悦安新材"
+    },
+    {
+      "code": "sz.000708",
+      "raw_code": "000708",
+      "name": "中信特钢"
+    },
+    {
+      "code": "sz.000709",
+      "raw_code": "000709",
+      "name": "河钢股份"
+    },
+    {
+      "code": "sz.000717",
+      "raw_code": "000717",
+      "name": "中南股份"
+    },
+    {
+      "code": "sz.000761",
+      "raw_code": "000761",
+      "name": "本钢板材"
+    },
+    {
+      "code": "sz.000778",
+      "raw_code": "000778",
+      "name": "新兴铸管"
+    },
+    {
+      "code": "sz.000825",
+      "raw_code": "000825",
+      "name": "太钢不锈"
+    },
+    {
+      "code": "sz.000898",
+      "raw_code": "000898",
+      "name": "鞍钢股份"
+    },
+    {
+      "code": "sz.000932",
+      "raw_code": "000932",
+      "name": "华菱钢铁"
+    },
+    {
+      "code": "sz.000959",
+      "raw_code": "000959",
+      "name": "首钢股份"
+    },
+    {
+      "code": "sz.002075",
+      "raw_code": "002075",
+      "name": "沙钢股份"
+    },
+    {
+      "code": "sz.002110",
+      "raw_code": "002110",
+      "name": "三钢闽光"
+    },
+    {
+      "code": "sz.002318",
+      "raw_code": "002318",
+      "name": "久立特材"
+    },
+    {
+      "code": "sz.002392",
+      "raw_code": "002392",
+      "name": "北京利尔"
+    },
+    {
+      "code": "sz.002478",
+      "raw_code": "002478",
+      "name": "常宝股份"
+    },
+    {
+      "code": "sz.002722",
+      "raw_code": "002722",
+      "name": "物产金轮"
+    },
+    {
+      "code": "sz.002756",
+      "raw_code": "002756",
+      "name": "永兴材料"
+    },
+    {
+      "code": "sz.300034",
+      "raw_code": "300034",
+      "name": "钢研高纳"
+    },
+    {
+      "code": "sz.300402",
+      "raw_code": "300402",
+      "name": "宝色股份"
+    },
+    {
+      "code": "sz.300855",
+      "raw_code": "300855",
+      "name": "图南股份"
+    },
+    {
+      "code": "sz.300881",
+      "raw_code": "300881",
+      "name": "盛德鑫泰"
+    },
+    {
+      "code": "sz.301522",
+      "raw_code": "301522",
+      "name": "上大股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:51",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300845/"
+  "fetched_at": "2026-07-13 14:36:46",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

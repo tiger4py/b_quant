@@ -3,10 +3,172 @@
   "concept_name": "猪肉",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 32,
+  "constituents": [
+    {
+      "code": "bj.920970",
+      "raw_code": "920970",
+      "name": "大禹生物"
+    },
+    {
+      "code": "sh.600073",
+      "raw_code": "600073",
+      "name": "光明肉业"
+    },
+    {
+      "code": "sh.600975",
+      "raw_code": "600975",
+      "name": "新五丰"
+    },
+    {
+      "code": "sh.603363",
+      "raw_code": "603363",
+      "name": "傲农生物"
+    },
+    {
+      "code": "sh.603477",
+      "raw_code": "603477",
+      "name": "巨星农牧"
+    },
+    {
+      "code": "sh.603609",
+      "raw_code": "603609",
+      "name": "禾丰股份"
+    },
+    {
+      "code": "sh.603717",
+      "raw_code": "603717",
+      "name": "天域生物"
+    },
+    {
+      "code": "sh.605296",
+      "raw_code": "605296",
+      "name": "神农集团"
+    },
+    {
+      "code": "sz.000048",
+      "raw_code": "000048",
+      "name": "京基智农"
+    },
+    {
+      "code": "sz.000529",
+      "raw_code": "000529",
+      "name": "广弘控股"
+    },
+    {
+      "code": "sz.000702",
+      "raw_code": "000702",
+      "name": "正虹科技"
+    },
+    {
+      "code": "sz.000735",
+      "raw_code": "000735",
+      "name": "罗牛山"
+    },
+    {
+      "code": "sz.000860",
+      "raw_code": "000860",
+      "name": "顺鑫农业"
+    },
+    {
+      "code": "sz.000876",
+      "raw_code": "000876",
+      "name": "新希望"
+    },
+    {
+      "code": "sz.000895",
+      "raw_code": "000895",
+      "name": "双汇发展"
+    },
+    {
+      "code": "sz.001201",
+      "raw_code": "001201",
+      "name": "东瑞股份"
+    },
+    {
+      "code": "sz.002100",
+      "raw_code": "002100",
+      "name": "天康生物"
+    },
+    {
+      "code": "sz.002124",
+      "raw_code": "002124",
+      "name": "天邦食品"
+    },
+    {
+      "code": "sz.002157",
+      "raw_code": "002157",
+      "name": "正邦科技"
+    },
+    {
+      "code": "sz.002311",
+      "raw_code": "002311",
+      "name": "海大集团"
+    },
+    {
+      "code": "sz.002330",
+      "raw_code": "002330",
+      "name": "得利斯"
+    },
+    {
+      "code": "sz.002385",
+      "raw_code": "002385",
+      "name": "大北农"
+    },
+    {
+      "code": "sz.002458",
+      "raw_code": "002458",
+      "name": "益生股份"
+    },
+    {
+      "code": "sz.002548",
+      "raw_code": "002548",
+      "name": "金新农"
+    },
+    {
+      "code": "sz.002567",
+      "raw_code": "002567",
+      "name": "唐人神"
+    },
+    {
+      "code": "sz.002661",
+      "raw_code": "002661",
+      "name": "克明食品"
+    },
+    {
+      "code": "sz.002714",
+      "raw_code": "002714",
+      "name": "牧原股份"
+    },
+    {
+      "code": "sz.002726",
+      "raw_code": "002726",
+      "name": "ST龙大"
+    },
+    {
+      "code": "sz.002840",
+      "raw_code": "002840",
+      "name": "华统股份"
+    },
+    {
+      "code": "sz.002982",
+      "raw_code": "002982",
+      "name": "湘佳股份"
+    },
+    {
+      "code": "sz.300498",
+      "raw_code": "300498",
+      "name": "温氏股份"
+    },
+    {
+      "code": "sz.300761",
+      "raw_code": "300761",
+      "name": "立华股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:43",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300451/"
+  "fetched_at": "2026-07-13 14:36:00",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

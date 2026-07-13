@@ -3,10 +3,367 @@
   "concept_name": "期货概念",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 71,
+  "constituents": [
+    {
+      "code": "sh.600030",
+      "raw_code": "600030",
+      "name": "中信证券"
+    },
+    {
+      "code": "sh.600061",
+      "raw_code": "600061",
+      "name": "国投资本"
+    },
+    {
+      "code": "sh.600109",
+      "raw_code": "600109",
+      "name": "国金证券"
+    },
+    {
+      "code": "sh.600120",
+      "raw_code": "600120",
+      "name": "浙江东方"
+    },
+    {
+      "code": "sh.600128",
+      "raw_code": "600128",
+      "name": "苏豪弘业"
+    },
+    {
+      "code": "sh.600155",
+      "raw_code": "600155",
+      "name": "华创云信"
+    },
+    {
+      "code": "sh.600208",
+      "raw_code": "600208",
+      "name": "衢州发展"
+    },
+    {
+      "code": "sh.600287",
+      "raw_code": "600287",
+      "name": "苏豪时尚"
+    },
+    {
+      "code": "sh.600288",
+      "raw_code": "600288",
+      "name": "大恒科技"
+    },
+    {
+      "code": "sh.600292",
+      "raw_code": "600292",
+      "name": "电投水电"
+    },
+    {
+      "code": "sh.600339",
+      "raw_code": "600339",
+      "name": "中油工程"
+    },
+    {
+      "code": "sh.600369",
+      "raw_code": "600369",
+      "name": "西南证券"
+    },
+    {
+      "code": "sh.600390",
+      "raw_code": "600390",
+      "name": "五矿资本"
+    },
+    {
+      "code": "sh.600517",
+      "raw_code": "600517",
+      "name": "国网英大"
+    },
+    {
+      "code": "sh.600621",
+      "raw_code": "600621",
+      "name": "华鑫股份"
+    },
+    {
+      "code": "sh.600638",
+      "raw_code": "600638",
+      "name": "新黄浦"
+    },
+    {
+      "code": "sh.600704",
+      "raw_code": "600704",
+      "name": "物产中大"
+    },
+    {
+      "code": "sh.600755",
+      "raw_code": "600755",
+      "name": "厦门国贸"
+    },
+    {
+      "code": "sh.600864",
+      "raw_code": "600864",
+      "name": "哈投股份"
+    },
+    {
+      "code": "sh.600906",
+      "raw_code": "600906",
+      "name": "财达证券"
+    },
+    {
+      "code": "sh.600909",
+      "raw_code": "600909",
+      "name": "华安证券"
+    },
+    {
+      "code": "sh.600918",
+      "raw_code": "600918",
+      "name": "中泰证券"
+    },
+    {
+      "code": "sh.600927",
+      "raw_code": "600927",
+      "name": "永安期货"
+    },
+    {
+      "code": "sh.600958",
+      "raw_code": "600958",
+      "name": "东方证券"
+    },
+    {
+      "code": "sh.600981",
+      "raw_code": "600981",
+      "name": "苏豪汇鸿"
+    },
+    {
+      "code": "sh.601059",
+      "raw_code": "601059",
+      "name": "信达证券"
+    },
+    {
+      "code": "sh.601108",
+      "raw_code": "601108",
+      "name": "财通证券"
+    },
+    {
+      "code": "sh.601136",
+      "raw_code": "601136",
+      "name": "首创证券"
+    },
+    {
+      "code": "sh.601162",
+      "raw_code": "601162",
+      "name": "天风证券"
+    },
+    {
+      "code": "sh.601198",
+      "raw_code": "601198",
+      "name": "东兴证券"
+    },
+    {
+      "code": "sh.601211",
+      "raw_code": "601211",
+      "name": "国泰海通"
+    },
+    {
+      "code": "sh.601236",
+      "raw_code": "601236",
+      "name": "红塔证券"
+    },
+    {
+      "code": "sh.601375",
+      "raw_code": "601375",
+      "name": "中原证券"
+    },
+    {
+      "code": "sh.601555",
+      "raw_code": "601555",
+      "name": "东吴证券"
+    },
+    {
+      "code": "sh.601688",
+      "raw_code": "601688",
+      "name": "华泰证券"
+    },
+    {
+      "code": "sh.601696",
+      "raw_code": "601696",
+      "name": "中银证券"
+    },
+    {
+      "code": "sh.601788",
+      "raw_code": "601788",
+      "name": "光大证券"
+    },
+    {
+      "code": "sh.601878",
+      "raw_code": "601878",
+      "name": "浙商证券"
+    },
+    {
+      "code": "sh.601901",
+      "raw_code": "601901",
+      "name": "方正证券"
+    },
+    {
+      "code": "sh.601990",
+      "raw_code": "601990",
+      "name": "南京证券"
+    },
+    {
+      "code": "sh.601995",
+      "raw_code": "601995",
+      "name": "中金公司"
+    },
+    {
+      "code": "sh.603093",
+      "raw_code": "603093",
+      "name": "南华期货"
+    },
+    {
+      "code": "sh.603319",
+      "raw_code": "603319",
+      "name": "美湖股份"
+    },
+    {
+      "code": "sz.000060",
+      "raw_code": "000060",
+      "name": "中金岭南"
+    },
+    {
+      "code": "sz.000166",
+      "raw_code": "000166",
+      "name": "申万宏源"
+    },
+    {
+      "code": "sz.000488",
+      "raw_code": "000488",
+      "name": "ST晨鸣"
+    },
+    {
+      "code": "sz.000539",
+      "raw_code": "000539",
+      "name": "粤电力A"
+    },
+    {
+      "code": "sz.000551",
+      "raw_code": "000551",
+      "name": "创元科技"
+    },
+    {
+      "code": "sz.000617",
+      "raw_code": "000617",
+      "name": "中油资本"
+    },
+    {
+      "code": "sz.000686",
+      "raw_code": "000686",
+      "name": "东北证券"
+    },
+    {
+      "code": "sz.000712",
+      "raw_code": "000712",
+      "name": "锦龙股份"
+    },
+    {
+      "code": "sz.000750",
+      "raw_code": "000750",
+      "name": "国海证券"
+    },
+    {
+      "code": "sz.000776",
+      "raw_code": "000776",
+      "name": "广发证券"
+    },
+    {
+      "code": "sz.000783",
+      "raw_code": "000783",
+      "name": "长江证券"
+    },
+    {
+      "code": "sz.000828",
+      "raw_code": "000828",
+      "name": "东莞控股"
+    },
+    {
+      "code": "sz.000878",
+      "raw_code": "000878",
+      "name": "云南铜业"
+    },
+    {
+      "code": "sz.000900",
+      "raw_code": "000900",
+      "name": "现代投资"
+    },
+    {
+      "code": "sz.000958",
+      "raw_code": "000958",
+      "name": "电投产融"
+    },
+    {
+      "code": "sz.000987",
+      "raw_code": "000987",
+      "name": "越秀资本"
+    },
+    {
+      "code": "sz.001236",
+      "raw_code": "001236",
+      "name": "弘业期货"
+    },
+    {
+      "code": "sz.002423",
+      "raw_code": "002423",
+      "name": "中粮资本"
+    },
+    {
+      "code": "sz.002657",
+      "raw_code": "002657",
+      "name": "中科金财"
+    },
+    {
+      "code": "sz.002670",
+      "raw_code": "002670",
+      "name": "国盛证券"
+    },
+    {
+      "code": "sz.002673",
+      "raw_code": "002673",
+      "name": "西部证券"
+    },
+    {
+      "code": "sz.002797",
+      "raw_code": "002797",
+      "name": "第一创业"
+    },
+    {
+      "code": "sz.002926",
+      "raw_code": "002926",
+      "name": "华西证券"
+    },
+    {
+      "code": "sz.002939",
+      "raw_code": "002939",
+      "name": "长城证券"
+    },
+    {
+      "code": "sz.002961",
+      "raw_code": "002961",
+      "name": "瑞达期货"
+    },
+    {
+      "code": "sz.300059",
+      "raw_code": "300059",
+      "name": "东方财富"
+    },
+    {
+      "code": "sz.300175",
+      "raw_code": "300175",
+      "name": "朗源股份"
+    },
+    {
+      "code": "sz.301299",
+      "raw_code": "301299",
+      "name": "卓创资讯"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:34",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300220/"
+  "fetched_at": "2026-07-13 14:35:23",
+  "page_count": 8,
+  "is_partial": false,
+  "page_limit_reason": null
 }

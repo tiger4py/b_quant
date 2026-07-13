@@ -3,10 +3,577 @@
   "concept_name": "参股券商",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 113,
+  "constituents": [
+    {
+      "code": "sh.600054",
+      "raw_code": "600054",
+      "name": "黄山旅游"
+    },
+    {
+      "code": "sh.600061",
+      "raw_code": "600061",
+      "name": "国投资本"
+    },
+    {
+      "code": "sh.600063",
+      "raw_code": "600063",
+      "name": "皖维高新"
+    },
+    {
+      "code": "sh.600064",
+      "raw_code": "600064",
+      "name": "南京高科"
+    },
+    {
+      "code": "sh.600095",
+      "raw_code": "600095",
+      "name": "湘财股份"
+    },
+    {
+      "code": "sh.600100",
+      "raw_code": "600100",
+      "name": "同方股份"
+    },
+    {
+      "code": "sh.600106",
+      "raw_code": "600106",
+      "name": "重庆路桥"
+    },
+    {
+      "code": "sh.600108",
+      "raw_code": "600108",
+      "name": "亚盛集团"
+    },
+    {
+      "code": "sh.600120",
+      "raw_code": "600120",
+      "name": "浙江东方"
+    },
+    {
+      "code": "sh.600155",
+      "raw_code": "600155",
+      "name": "华创云信"
+    },
+    {
+      "code": "sh.600170",
+      "raw_code": "600170",
+      "name": "上海建工"
+    },
+    {
+      "code": "sh.600191",
+      "raw_code": "600191",
+      "name": "华资实业"
+    },
+    {
+      "code": "sh.600208",
+      "raw_code": "600208",
+      "name": "衢州发展"
+    },
+    {
+      "code": "sh.600249",
+      "raw_code": "600249",
+      "name": "两面针"
+    },
+    {
+      "code": "sh.600252",
+      "raw_code": "600252",
+      "name": "中恒集团"
+    },
+    {
+      "code": "sh.600266",
+      "raw_code": "600266",
+      "name": "城建发展"
+    },
+    {
+      "code": "sh.600269",
+      "raw_code": "600269",
+      "name": "赣粤高速"
+    },
+    {
+      "code": "sh.600278",
+      "raw_code": "600278",
+      "name": "东方创业"
+    },
+    {
+      "code": "sh.600287",
+      "raw_code": "600287",
+      "name": "苏豪时尚"
+    },
+    {
+      "code": "sh.600310",
+      "raw_code": "600310",
+      "name": "广西能源"
+    },
+    {
+      "code": "sh.600350",
+      "raw_code": "600350",
+      "name": "山东高速"
+    },
+    {
+      "code": "sh.600362",
+      "raw_code": "600362",
+      "name": "江西铜业"
+    },
+    {
+      "code": "sh.600390",
+      "raw_code": "600390",
+      "name": "五矿资本"
+    },
+    {
+      "code": "sh.600395",
+      "raw_code": "600395",
+      "name": "盘江股份"
+    },
+    {
+      "code": "sh.600415",
+      "raw_code": "600415",
+      "name": "小商品城"
+    },
+    {
+      "code": "sh.600475",
+      "raw_code": "600475",
+      "name": "华光环能"
+    },
+    {
+      "code": "sh.600517",
+      "raw_code": "600517",
+      "name": "国网英大"
+    },
+    {
+      "code": "sh.600548",
+      "raw_code": "600548",
+      "name": "深高速"
+    },
+    {
+      "code": "sh.600551",
+      "raw_code": "600551",
+      "name": "时代出版"
+    },
+    {
+      "code": "sh.600571",
+      "raw_code": "600571",
+      "name": "信雅达"
+    },
+    {
+      "code": "sh.600592",
+      "raw_code": "600592",
+      "name": "龙溪股份"
+    },
+    {
+      "code": "sh.600611",
+      "raw_code": "600611",
+      "name": "大众交通"
+    },
+    {
+      "code": "sh.600621",
+      "raw_code": "600621",
+      "name": "华鑫股份"
+    },
+    {
+      "code": "sh.600623",
+      "raw_code": "600623",
+      "name": "华谊集团"
+    },
+    {
+      "code": "sh.600629",
+      "raw_code": "600629",
+      "name": "华建集团"
+    },
+    {
+      "code": "sh.600639",
+      "raw_code": "600639",
+      "name": "浦东金桥"
+    },
+    {
+      "code": "sh.600643",
+      "raw_code": "600643",
+      "name": "爱建集团"
+    },
+    {
+      "code": "sh.600649",
+      "raw_code": "600649",
+      "name": "城投控股"
+    },
+    {
+      "code": "sh.600650",
+      "raw_code": "600650",
+      "name": "锦江在线"
+    },
+    {
+      "code": "sh.600663",
+      "raw_code": "600663",
+      "name": "陆家嘴"
+    },
+    {
+      "code": "sh.600713",
+      "raw_code": "600713",
+      "name": "南京医药"
+    },
+    {
+      "code": "sh.600716",
+      "raw_code": "600716",
+      "name": "凤凰股份"
+    },
+    {
+      "code": "sh.600730",
+      "raw_code": "600730",
+      "name": "*ST高科"
+    },
+    {
+      "code": "sh.600739",
+      "raw_code": "600739",
+      "name": "辽宁成大"
+    },
+    {
+      "code": "sh.600741",
+      "raw_code": "600741",
+      "name": "华域汽车"
+    },
+    {
+      "code": "sh.600755",
+      "raw_code": "600755",
+      "name": "厦门国贸"
+    },
+    {
+      "code": "sh.600783",
+      "raw_code": "600783",
+      "name": "鲁信创投"
+    },
+    {
+      "code": "sh.600802",
+      "raw_code": "600802",
+      "name": "福建水泥"
+    },
+    {
+      "code": "sh.600826",
+      "raw_code": "600826",
+      "name": "兰生股份"
+    },
+    {
+      "code": "sh.600827",
+      "raw_code": "600827",
+      "name": "百联股份"
+    },
+    {
+      "code": "sh.600838",
+      "raw_code": "600838",
+      "name": "上海九百"
+    },
+    {
+      "code": "sh.600851",
+      "raw_code": "600851",
+      "name": "海欣股份"
+    },
+    {
+      "code": "sh.600864",
+      "raw_code": "600864",
+      "name": "哈投股份"
+    },
+    {
+      "code": "sh.600881",
+      "raw_code": "600881",
+      "name": "亚泰集团"
+    },
+    {
+      "code": "sh.600889",
+      "raw_code": "600889",
+      "name": "*ST京化"
+    },
+    {
+      "code": "sh.600895",
+      "raw_code": "600895",
+      "name": "张江高科"
+    },
+    {
+      "code": "sh.600981",
+      "raw_code": "600981",
+      "name": "苏豪汇鸿"
+    },
+    {
+      "code": "sh.601086",
+      "raw_code": "601086",
+      "name": "国芳集团"
+    },
+    {
+      "code": "sh.601216",
+      "raw_code": "601216",
+      "name": "君正集团"
+    },
+    {
+      "code": "sh.601318",
+      "raw_code": "601318",
+      "name": "中国平安"
+    },
+    {
+      "code": "sh.601390",
+      "raw_code": "601390",
+      "name": "中国中铁"
+    },
+    {
+      "code": "sh.601789",
+      "raw_code": "601789",
+      "name": "宁波建工"
+    },
+    {
+      "code": "sh.601800",
+      "raw_code": "601800",
+      "name": "中国交建"
+    },
+    {
+      "code": "sh.601999",
+      "raw_code": "601999",
+      "name": "出版传媒"
+    },
+    {
+      "code": "sh.603093",
+      "raw_code": "603093",
+      "name": "南华期货"
+    },
+    {
+      "code": "sh.603587",
+      "raw_code": "603587",
+      "name": "地素时尚"
+    },
+    {
+      "code": "sh.603606",
+      "raw_code": "603606",
+      "name": "东方电缆"
+    },
+    {
+      "code": "sh.603733",
+      "raw_code": "603733",
+      "name": "仙鹤股份"
+    },
+    {
+      "code": "sh.603999",
+      "raw_code": "603999",
+      "name": "读者传媒"
+    },
+    {
+      "code": "sh.605168",
+      "raw_code": "605168",
+      "name": "三人行"
+    },
+    {
+      "code": "sz.000027",
+      "raw_code": "000027",
+      "name": "深圳能源"
+    },
+    {
+      "code": "sz.000039",
+      "raw_code": "000039",
+      "name": "中集集团"
+    },
+    {
+      "code": "sz.000069",
+      "raw_code": "000069",
+      "name": "华侨城A"
+    },
+    {
+      "code": "sz.000402",
+      "raw_code": "000402",
+      "name": "金融街"
+    },
+    {
+      "code": "sz.000429",
+      "raw_code": "000429",
+      "name": "粤高速A"
+    },
+    {
+      "code": "sz.000532",
+      "raw_code": "000532",
+      "name": "华金资本"
+    },
+    {
+      "code": "sz.000538",
+      "raw_code": "000538",
+      "name": "云南白药"
+    },
+    {
+      "code": "sz.000543",
+      "raw_code": "000543",
+      "name": "皖能电力"
+    },
+    {
+      "code": "sz.000568",
+      "raw_code": "000568",
+      "name": "泸州老窖"
+    },
+    {
+      "code": "sz.000581",
+      "raw_code": "000581",
+      "name": "威孚高科"
+    },
+    {
+      "code": "sz.000615",
+      "raw_code": "000615",
+      "name": "*ST美谷"
+    },
+    {
+      "code": "sz.000617",
+      "raw_code": "000617",
+      "name": "中油资本"
+    },
+    {
+      "code": "sz.000623",
+      "raw_code": "000623",
+      "name": "吉林敖东"
+    },
+    {
+      "code": "sz.000652",
+      "raw_code": "000652",
+      "name": "泰达股份"
+    },
+    {
+      "code": "sz.000685",
+      "raw_code": "000685",
+      "name": "中山公用"
+    },
+    {
+      "code": "sz.000690",
+      "raw_code": "000690",
+      "name": "宝新能源"
+    },
+    {
+      "code": "sz.000702",
+      "raw_code": "000702",
+      "name": "正虹科技"
+    },
+    {
+      "code": "sz.000733",
+      "raw_code": "000733",
+      "name": "振华科技"
+    },
+    {
+      "code": "sz.000736",
+      "raw_code": "000736",
+      "name": "中交发展"
+    },
+    {
+      "code": "sz.000793",
+      "raw_code": "000793",
+      "name": "*ST华闻"
+    },
+    {
+      "code": "sz.000812",
+      "raw_code": "000812",
+      "name": "陕西金叶"
+    },
+    {
+      "code": "sz.000828",
+      "raw_code": "000828",
+      "name": "东莞控股"
+    },
+    {
+      "code": "sz.000850",
+      "raw_code": "000850",
+      "name": "华茂股份"
+    },
+    {
+      "code": "sz.000858",
+      "raw_code": "000858",
+      "name": "五粮液"
+    },
+    {
+      "code": "sz.000920",
+      "raw_code": "000920",
+      "name": "沃顿科技"
+    },
+    {
+      "code": "sz.000936",
+      "raw_code": "000936",
+      "name": "华西股份"
+    },
+    {
+      "code": "sz.000965",
+      "raw_code": "000965",
+      "name": "天保基建"
+    },
+    {
+      "code": "sz.000987",
+      "raw_code": "000987",
+      "name": "越秀资本"
+    },
+    {
+      "code": "sz.001227",
+      "raw_code": "001227",
+      "name": "兰州银行"
+    },
+    {
+      "code": "sz.001965",
+      "raw_code": "001965",
+      "name": "招商公路"
+    },
+    {
+      "code": "sz.002054",
+      "raw_code": "002054",
+      "name": "德美化工"
+    },
+    {
+      "code": "sz.002116",
+      "raw_code": "002116",
+      "name": "中国海诚"
+    },
+    {
+      "code": "sz.002159",
+      "raw_code": "002159",
+      "name": "三特索道"
+    },
+    {
+      "code": "sz.002181",
+      "raw_code": "002181",
+      "name": "粤传媒"
+    },
+    {
+      "code": "sz.002304",
+      "raw_code": "002304",
+      "name": "洋河股份"
+    },
+    {
+      "code": "sz.002392",
+      "raw_code": "002392",
+      "name": "北京利尔"
+    },
+    {
+      "code": "sz.002572",
+      "raw_code": "002572",
+      "name": "索菲亚"
+    },
+    {
+      "code": "sz.002670",
+      "raw_code": "002670",
+      "name": "国盛证券"
+    },
+    {
+      "code": "sz.002961",
+      "raw_code": "002961",
+      "name": "瑞达期货"
+    },
+    {
+      "code": "sz.300085",
+      "raw_code": "300085",
+      "name": "银之杰"
+    },
+    {
+      "code": "sz.300180",
+      "raw_code": "300180",
+      "name": "华峰超纤"
+    },
+    {
+      "code": "sz.300534",
+      "raw_code": "300534",
+      "name": "陇神戎发"
+    },
+    {
+      "code": "sz.300803",
+      "raw_code": "300803",
+      "name": "指南针"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:29",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300100/"
+  "fetched_at": "2026-07-13 14:35:00",
+  "page_count": 12,
+  "is_partial": false,
+  "page_limit_reason": null
 }

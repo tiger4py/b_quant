@@ -3,10 +3,427 @@
   "concept_name": "食品安全",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 83,
+  "constituents": [
+    {
+      "code": "bj.920225",
+      "raw_code": "920225",
+      "name": "利通科技"
+    },
+    {
+      "code": "bj.920476",
+      "raw_code": "920476",
+      "name": "海能技术"
+    },
+    {
+      "code": "bj.920504",
+      "raw_code": "920504",
+      "name": "博迅生物"
+    },
+    {
+      "code": "bj.920753",
+      "raw_code": "920753",
+      "name": "天纺标"
+    },
+    {
+      "code": "bj.920970",
+      "raw_code": "920970",
+      "name": "大禹生物"
+    },
+    {
+      "code": "sh.600100",
+      "raw_code": "600100",
+      "name": "同方股份"
+    },
+    {
+      "code": "sh.600251",
+      "raw_code": "600251",
+      "name": "冠农股份"
+    },
+    {
+      "code": "sh.600271",
+      "raw_code": "600271",
+      "name": "航天信息"
+    },
+    {
+      "code": "sh.600602",
+      "raw_code": "600602",
+      "name": "云赛智联"
+    },
+    {
+      "code": "sh.600718",
+      "raw_code": "600718",
+      "name": "东软集团"
+    },
+    {
+      "code": "sh.600793",
+      "raw_code": "600793",
+      "name": "宜宾纸业"
+    },
+    {
+      "code": "sh.600959",
+      "raw_code": "600959",
+      "name": "江苏有线"
+    },
+    {
+      "code": "sh.601929",
+      "raw_code": "601929",
+      "name": "吉视传媒"
+    },
+    {
+      "code": "sh.603011",
+      "raw_code": "603011",
+      "name": "合锻智能"
+    },
+    {
+      "code": "sh.603656",
+      "raw_code": "603656",
+      "name": "泰禾智能"
+    },
+    {
+      "code": "sh.603739",
+      "raw_code": "603739",
+      "name": "蔚蓝生物"
+    },
+    {
+      "code": "sh.603882",
+      "raw_code": "603882",
+      "name": "金域医学"
+    },
+    {
+      "code": "sh.688056",
+      "raw_code": "688056",
+      "name": "莱伯泰科"
+    },
+    {
+      "code": "sh.688068",
+      "raw_code": "688068",
+      "name": "热景生物"
+    },
+    {
+      "code": "sh.688193",
+      "raw_code": "688193",
+      "name": "仁度生物"
+    },
+    {
+      "code": "sh.688298",
+      "raw_code": "688298",
+      "name": "东方生物"
+    },
+    {
+      "code": "sh.688317",
+      "raw_code": "688317",
+      "name": "之江生物"
+    },
+    {
+      "code": "sh.688531",
+      "raw_code": "688531",
+      "name": "日联科技"
+    },
+    {
+      "code": "sh.688622",
+      "raw_code": "688622",
+      "name": "*ST禾信"
+    },
+    {
+      "code": "sh.688690",
+      "raw_code": "688690",
+      "name": "纳微科技"
+    },
+    {
+      "code": "sz.000061",
+      "raw_code": "000061",
+      "name": "农产品"
+    },
+    {
+      "code": "sz.000551",
+      "raw_code": "000551",
+      "name": "创元科技"
+    },
+    {
+      "code": "sz.000997",
+      "raw_code": "000997",
+      "name": "新大陆"
+    },
+    {
+      "code": "sz.002022",
+      "raw_code": "002022",
+      "name": "科华生物"
+    },
+    {
+      "code": "sz.002030",
+      "raw_code": "002030",
+      "name": "达安基因"
+    },
+    {
+      "code": "sz.002086",
+      "raw_code": "002086",
+      "name": "东方海洋"
+    },
+    {
+      "code": "sz.002161",
+      "raw_code": "002161",
+      "name": "远望谷"
+    },
+    {
+      "code": "sz.002299",
+      "raw_code": "002299",
+      "name": "圣农发展"
+    },
+    {
+      "code": "sz.002321",
+      "raw_code": "002321",
+      "name": "华英农业"
+    },
+    {
+      "code": "sz.002584",
+      "raw_code": "002584",
+      "name": "西陇科学"
+    },
+    {
+      "code": "sz.002637",
+      "raw_code": "002637",
+      "name": "赞宇科技"
+    },
+    {
+      "code": "sz.002661",
+      "raw_code": "002661",
+      "name": "克明食品"
+    },
+    {
+      "code": "sz.002690",
+      "raw_code": "002690",
+      "name": "美亚光电"
+    },
+    {
+      "code": "sz.002777",
+      "raw_code": "002777",
+      "name": "久远银海"
+    },
+    {
+      "code": "sz.002787",
+      "raw_code": "002787",
+      "name": "华源控股"
+    },
+    {
+      "code": "sz.002932",
+      "raw_code": "002932",
+      "name": "*ST明德"
+    },
+    {
+      "code": "sz.002967",
+      "raw_code": "002967",
+      "name": "广电计量"
+    },
+    {
+      "code": "sz.002980",
+      "raw_code": "002980",
+      "name": "华盛昌"
+    },
+    {
+      "code": "sz.300007",
+      "raw_code": "300007",
+      "name": "汉威科技"
+    },
+    {
+      "code": "sz.300012",
+      "raw_code": "300012",
+      "name": "华测检测"
+    },
+    {
+      "code": "sz.300078",
+      "raw_code": "300078",
+      "name": "思创智联"
+    },
+    {
+      "code": "sz.300094",
+      "raw_code": "300094",
+      "name": "国联水产"
+    },
+    {
+      "code": "sz.300155",
+      "raw_code": "300155",
+      "name": "安居宝"
+    },
+    {
+      "code": "sz.300165",
+      "raw_code": "300165",
+      "name": "天瑞仪器"
+    },
+    {
+      "code": "sz.300188",
+      "raw_code": "300188",
+      "name": "国投智能"
+    },
+    {
+      "code": "sz.300203",
+      "raw_code": "300203",
+      "name": "聚光科技"
+    },
+    {
+      "code": "sz.300248",
+      "raw_code": "300248",
+      "name": "新开普"
+    },
+    {
+      "code": "sz.300260",
+      "raw_code": "300260",
+      "name": "新莱应材"
+    },
+    {
+      "code": "sz.300284",
+      "raw_code": "300284",
+      "name": "苏交科"
+    },
+    {
+      "code": "sz.300287",
+      "raw_code": "300287",
+      "name": "飞利信"
+    },
+    {
+      "code": "sz.300410",
+      "raw_code": "300410",
+      "name": "正业科技"
+    },
+    {
+      "code": "sz.300422",
+      "raw_code": "300422",
+      "name": "博世科"
+    },
+    {
+      "code": "sz.300469",
+      "raw_code": "300469",
+      "name": "信息发展"
+    },
+    {
+      "code": "sz.300482",
+      "raw_code": "300482",
+      "name": "万孚生物"
+    },
+    {
+      "code": "sz.300531",
+      "raw_code": "300531",
+      "name": "优博讯"
+    },
+    {
+      "code": "sz.300534",
+      "raw_code": "300534",
+      "name": "陇神戎发"
+    },
+    {
+      "code": "sz.300645",
+      "raw_code": "300645",
+      "name": "正元智慧"
+    },
+    {
+      "code": "sz.300667",
+      "raw_code": "300667",
+      "name": "必创科技"
+    },
+    {
+      "code": "sz.300730",
+      "raw_code": "300730",
+      "name": "科创信息"
+    },
+    {
+      "code": "sz.300783",
+      "raw_code": "300783",
+      "name": "三只松鼠"
+    },
+    {
+      "code": "sz.300797",
+      "raw_code": "300797",
+      "name": "钢研纳克"
+    },
+    {
+      "code": "sz.300813",
+      "raw_code": "300813",
+      "name": "泰林生物"
+    },
+    {
+      "code": "sz.300875",
+      "raw_code": "300875",
+      "name": "捷强装备"
+    },
+    {
+      "code": "sz.300887",
+      "raw_code": "300887",
+      "name": "谱尼测试"
+    },
+    {
+      "code": "sz.300938",
+      "raw_code": "300938",
+      "name": "信测标准"
+    },
+    {
+      "code": "sz.300942",
+      "raw_code": "300942",
+      "name": "易瑞生物"
+    },
+    {
+      "code": "sz.300962",
+      "raw_code": "300962",
+      "name": "中金辐照"
+    },
+    {
+      "code": "sz.301058",
+      "raw_code": "301058",
+      "name": "中粮科工"
+    },
+    {
+      "code": "sz.301062",
+      "raw_code": "301062",
+      "name": "上海艾录"
+    },
+    {
+      "code": "sz.301115",
+      "raw_code": "301115",
+      "name": "联检科技"
+    },
+    {
+      "code": "sz.301159",
+      "raw_code": "301159",
+      "name": "三维天地"
+    },
+    {
+      "code": "sz.301228",
+      "raw_code": "301228",
+      "name": "实朴检测"
+    },
+    {
+      "code": "sz.301296",
+      "raw_code": "301296",
+      "name": "新巨丰"
+    },
+    {
+      "code": "sz.301323",
+      "raw_code": "301323",
+      "name": "新莱福"
+    },
+    {
+      "code": "sz.301355",
+      "raw_code": "301355",
+      "name": "南王科技"
+    },
+    {
+      "code": "sz.301469",
+      "raw_code": "301469",
+      "name": "恒达新材"
+    },
+    {
+      "code": "sz.301520",
+      "raw_code": "301520",
+      "name": "万邦医药"
+    },
+    {
+      "code": "sz.301565",
+      "raw_code": "301565",
+      "name": "中仑新材"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:25",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300023/"
+  "fetched_at": "2026-07-13 14:34:36",
+  "page_count": 9,
+  "is_partial": false,
+  "page_limit_reason": null
 }

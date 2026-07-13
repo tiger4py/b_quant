@@ -3,10 +3,107 @@
   "concept_name": "草甘膦",
   "first_trade_date": "2015-05-11",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 19,
+  "constituents": [
+    {
+      "code": "bj.920819",
+      "raw_code": "920819",
+      "name": "颖泰生物"
+    },
+    {
+      "code": "sh.600141",
+      "raw_code": "600141",
+      "name": "兴发集团"
+    },
+    {
+      "code": "sh.600389",
+      "raw_code": "600389",
+      "name": "江山股份"
+    },
+    {
+      "code": "sh.600486",
+      "raw_code": "600486",
+      "name": "扬农化工"
+    },
+    {
+      "code": "sh.600596",
+      "raw_code": "600596",
+      "name": "新安股份"
+    },
+    {
+      "code": "sh.603077",
+      "raw_code": "603077",
+      "name": "和邦生物"
+    },
+    {
+      "code": "sh.603599",
+      "raw_code": "603599",
+      "name": "广信股份"
+    },
+    {
+      "code": "sh.603970",
+      "raw_code": "603970",
+      "name": "中农立华"
+    },
+    {
+      "code": "sz.000525",
+      "raw_code": "000525",
+      "name": "红太阳"
+    },
+    {
+      "code": "sz.000553",
+      "raw_code": "000553",
+      "name": "安道麦A"
+    },
+    {
+      "code": "sz.000713",
+      "raw_code": "000713",
+      "name": "国投丰乐"
+    },
+    {
+      "code": "sz.002215",
+      "raw_code": "002215",
+      "name": "诺普信"
+    },
+    {
+      "code": "sz.002258",
+      "raw_code": "002258",
+      "name": "利尔化学"
+    },
+    {
+      "code": "sz.002513",
+      "raw_code": "002513",
+      "name": "蓝丰生化"
+    },
+    {
+      "code": "sz.002749",
+      "raw_code": "002749",
+      "name": "国光股份"
+    },
+    {
+      "code": "sz.003042",
+      "raw_code": "003042",
+      "name": "中农联合"
+    },
+    {
+      "code": "sz.300927",
+      "raw_code": "300927",
+      "name": "江天化学"
+    },
+    {
+      "code": "sz.301035",
+      "raw_code": "301035",
+      "name": "润丰股份"
+    },
+    {
+      "code": "sz.301665",
+      "raw_code": "301665",
+      "name": "泰禾股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:32",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300157/"
+  "fetched_at": "2026-07-13 14:35:06",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

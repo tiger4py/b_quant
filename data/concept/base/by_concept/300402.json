@@ -3,10 +3,267 @@
   "concept_name": "页岩气",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 51,
+  "constituents": [
+    {
+      "code": "bj.920225",
+      "raw_code": "920225",
+      "name": "利通科技"
+    },
+    {
+      "code": "bj.920260",
+      "raw_code": "920260",
+      "name": "中寰股份"
+    },
+    {
+      "code": "bj.920263",
+      "raw_code": "920263",
+      "name": "中航泰达"
+    },
+    {
+      "code": "bj.920675",
+      "raw_code": "920675",
+      "name": "秉扬科技"
+    },
+    {
+      "code": "bj.920694",
+      "raw_code": "920694",
+      "name": "中裕科技"
+    },
+    {
+      "code": "sh.600028",
+      "raw_code": "600028",
+      "name": "中国石化"
+    },
+    {
+      "code": "sh.600157",
+      "raw_code": "600157",
+      "name": "永泰能源"
+    },
+    {
+      "code": "sh.600256",
+      "raw_code": "600256",
+      "name": "广汇能源"
+    },
+    {
+      "code": "sh.600378",
+      "raw_code": "600378",
+      "name": "昊华科技"
+    },
+    {
+      "code": "sh.600739",
+      "raw_code": "600739",
+      "name": "辽宁成大"
+    },
+    {
+      "code": "sh.600777",
+      "raw_code": "600777",
+      "name": "新潮能源"
+    },
+    {
+      "code": "sh.600871",
+      "raw_code": "600871",
+      "name": "石化油服"
+    },
+    {
+      "code": "sh.600903",
+      "raw_code": "600903",
+      "name": "贵州燃气"
+    },
+    {
+      "code": "sh.600938",
+      "raw_code": "600938",
+      "name": "中国海油"
+    },
+    {
+      "code": "sh.600968",
+      "raw_code": "600968",
+      "name": "海油发展"
+    },
+    {
+      "code": "sh.601369",
+      "raw_code": "601369",
+      "name": "陕鼓动力"
+    },
+    {
+      "code": "sh.601798",
+      "raw_code": "601798",
+      "name": "蓝科高新"
+    },
+    {
+      "code": "sh.601857",
+      "raw_code": "601857",
+      "name": "中国石油"
+    },
+    {
+      "code": "sh.603393",
+      "raw_code": "603393",
+      "name": "新天然气"
+    },
+    {
+      "code": "sh.603699",
+      "raw_code": "603699",
+      "name": "纽威股份"
+    },
+    {
+      "code": "sh.603800",
+      "raw_code": "603800",
+      "name": "洪田股份"
+    },
+    {
+      "code": "sh.688377",
+      "raw_code": "688377",
+      "name": "迪威尔"
+    },
+    {
+      "code": "sz.000407",
+      "raw_code": "000407",
+      "name": "胜利股份"
+    },
+    {
+      "code": "sz.000552",
+      "raw_code": "000552",
+      "name": "甘肃能化"
+    },
+    {
+      "code": "sz.000852",
+      "raw_code": "000852",
+      "name": "石化机械"
+    },
+    {
+      "code": "sz.000883",
+      "raw_code": "000883",
+      "name": "湖北能源"
+    },
+    {
+      "code": "sz.001296",
+      "raw_code": "001296",
+      "name": "长江材料"
+    },
+    {
+      "code": "sz.002053",
+      "raw_code": "002053",
+      "name": "云南能投"
+    },
+    {
+      "code": "sz.002097",
+      "raw_code": "002097",
+      "name": "山河智能"
+    },
+    {
+      "code": "sz.002207",
+      "raw_code": "002207",
+      "name": "*ST准油"
+    },
+    {
+      "code": "sz.002221",
+      "raw_code": "002221",
+      "name": "东华能源"
+    },
+    {
+      "code": "sz.002278",
+      "raw_code": "002278",
+      "name": "神开股份"
+    },
+    {
+      "code": "sz.002353",
+      "raw_code": "002353",
+      "name": "杰瑞股份"
+    },
+    {
+      "code": "sz.002476",
+      "raw_code": "002476",
+      "name": "新叶股份"
+    },
+    {
+      "code": "sz.002478",
+      "raw_code": "002478",
+      "name": "常宝股份"
+    },
+    {
+      "code": "sz.002490",
+      "raw_code": "002490",
+      "name": "山东墨龙"
+    },
+    {
+      "code": "sz.002629",
+      "raw_code": "002629",
+      "name": "仁智股份"
+    },
+    {
+      "code": "sz.002828",
+      "raw_code": "002828",
+      "name": "贝肯能源"
+    },
+    {
+      "code": "sz.300072",
+      "raw_code": "300072",
+      "name": "海新能科"
+    },
+    {
+      "code": "sz.300084",
+      "raw_code": "300084",
+      "name": "海默科技"
+    },
+    {
+      "code": "sz.300157",
+      "raw_code": "300157",
+      "name": "新锦动力"
+    },
+    {
+      "code": "sz.300164",
+      "raw_code": "300164",
+      "name": "通源石油"
+    },
+    {
+      "code": "sz.300228",
+      "raw_code": "300228",
+      "name": "富瑞特装"
+    },
+    {
+      "code": "sz.300332",
+      "raw_code": "300332",
+      "name": "天壕能源"
+    },
+    {
+      "code": "sz.300353",
+      "raw_code": "300353",
+      "name": "东土科技"
+    },
+    {
+      "code": "sz.300370",
+      "raw_code": "300370",
+      "name": "安控科技"
+    },
+    {
+      "code": "sz.300446",
+      "raw_code": "300446",
+      "name": "航天智造"
+    },
+    {
+      "code": "sz.300471",
+      "raw_code": "300471",
+      "name": "厚普股份"
+    },
+    {
+      "code": "sz.301063",
+      "raw_code": "301063",
+      "name": "海锅股份"
+    },
+    {
+      "code": "sz.301082",
+      "raw_code": "301082",
+      "name": "久盛电气"
+    },
+    {
+      "code": "sz.301158",
+      "raw_code": "301158",
+      "name": "德石股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:42",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300402/"
+  "fetched_at": "2026-07-13 14:35:56",
+  "page_count": 6,
+  "is_partial": false,
+  "page_limit_reason": null
 }

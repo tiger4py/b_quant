@@ -3,10 +3,347 @@
   "concept_name": "氟化工概念",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 67,
+  "constituents": [
+    {
+      "code": "sh.600010",
+      "raw_code": "600010",
+      "name": "包钢股份"
+    },
+    {
+      "code": "sh.600096",
+      "raw_code": "600096",
+      "name": "云天化"
+    },
+    {
+      "code": "sh.600141",
+      "raw_code": "600141",
+      "name": "兴发集团"
+    },
+    {
+      "code": "sh.600160",
+      "raw_code": "600160",
+      "name": "巨化股份"
+    },
+    {
+      "code": "sh.600378",
+      "raw_code": "600378",
+      "name": "昊华科技"
+    },
+    {
+      "code": "sh.600618",
+      "raw_code": "600618",
+      "name": "氯碱化工"
+    },
+    {
+      "code": "sh.600623",
+      "raw_code": "600623",
+      "name": "华谊集团"
+    },
+    {
+      "code": "sh.600673",
+      "raw_code": "600673",
+      "name": "东阳光"
+    },
+    {
+      "code": "sh.600884",
+      "raw_code": "600884",
+      "name": "杉杉股份"
+    },
+    {
+      "code": "sh.601117",
+      "raw_code": "601117",
+      "name": "中国化学"
+    },
+    {
+      "code": "sh.601678",
+      "raw_code": "601678",
+      "name": "滨化股份"
+    },
+    {
+      "code": "sh.601969",
+      "raw_code": "601969",
+      "name": "海南矿业"
+    },
+    {
+      "code": "sh.603026",
+      "raw_code": "603026",
+      "name": "石大胜华"
+    },
+    {
+      "code": "sh.603078",
+      "raw_code": "603078",
+      "name": "江化微"
+    },
+    {
+      "code": "sh.603310",
+      "raw_code": "603310",
+      "name": "巍华新材"
+    },
+    {
+      "code": "sh.603333",
+      "raw_code": "603333",
+      "name": "福华尚纬"
+    },
+    {
+      "code": "sh.603379",
+      "raw_code": "603379",
+      "name": "三美股份"
+    },
+    {
+      "code": "sh.603505",
+      "raw_code": "603505",
+      "name": "金石资源"
+    },
+    {
+      "code": "sh.603520",
+      "raw_code": "603520",
+      "name": "司太立"
+    },
+    {
+      "code": "sh.603717",
+      "raw_code": "603717",
+      "name": "天域生物"
+    },
+    {
+      "code": "sh.603978",
+      "raw_code": "603978",
+      "name": "深圳新星"
+    },
+    {
+      "code": "sh.605020",
+      "raw_code": "605020",
+      "name": "永和股份"
+    },
+    {
+      "code": "sh.688106",
+      "raw_code": "688106",
+      "name": "金宏气体"
+    },
+    {
+      "code": "sh.688146",
+      "raw_code": "688146",
+      "name": "中船特气"
+    },
+    {
+      "code": "sh.688181",
+      "raw_code": "688181",
+      "name": "八亿时空"
+    },
+    {
+      "code": "sh.688268",
+      "raw_code": "688268",
+      "name": "华特气体"
+    },
+    {
+      "code": "sh.688353",
+      "raw_code": "688353",
+      "name": "华盛锂电"
+    },
+    {
+      "code": "sh.688549",
+      "raw_code": "688549",
+      "name": "中巨芯"
+    },
+    {
+      "code": "sh.688596",
+      "raw_code": "688596",
+      "name": "正帆科技"
+    },
+    {
+      "code": "sh.688602",
+      "raw_code": "688602",
+      "name": "康鹏科技"
+    },
+    {
+      "code": "sz.000422",
+      "raw_code": "000422",
+      "name": "湖北宜化"
+    },
+    {
+      "code": "sz.000790",
+      "raw_code": "000790",
+      "name": "华神科技"
+    },
+    {
+      "code": "sz.000830",
+      "raw_code": "000830",
+      "name": "鲁西化工"
+    },
+    {
+      "code": "sz.000833",
+      "raw_code": "000833",
+      "name": "粤桂股份"
+    },
+    {
+      "code": "sz.000902",
+      "raw_code": "000902",
+      "name": "新洋丰"
+    },
+    {
+      "code": "sz.002001",
+      "raw_code": "002001",
+      "name": "新和成"
+    },
+    {
+      "code": "sz.002004",
+      "raw_code": "002004",
+      "name": "华邦健康"
+    },
+    {
+      "code": "sz.002083",
+      "raw_code": "002083",
+      "name": "孚日股份"
+    },
+    {
+      "code": "sz.002250",
+      "raw_code": "002250",
+      "name": "联化科技"
+    },
+    {
+      "code": "sz.002326",
+      "raw_code": "002326",
+      "name": "永太科技"
+    },
+    {
+      "code": "sz.002388",
+      "raw_code": "002388",
+      "name": "新亚制程"
+    },
+    {
+      "code": "sz.002407",
+      "raw_code": "002407",
+      "name": "多氟多"
+    },
+    {
+      "code": "sz.002409",
+      "raw_code": "002409",
+      "name": "雅克科技"
+    },
+    {
+      "code": "sz.002428",
+      "raw_code": "002428",
+      "name": "云南锗业"
+    },
+    {
+      "code": "sz.002440",
+      "raw_code": "002440",
+      "name": "闰土股份"
+    },
+    {
+      "code": "sz.002549",
+      "raw_code": "002549",
+      "name": "凯美特气"
+    },
+    {
+      "code": "sz.002584",
+      "raw_code": "002584",
+      "name": "西陇科学"
+    },
+    {
+      "code": "sz.002628",
+      "raw_code": "002628",
+      "name": "成都路桥"
+    },
+    {
+      "code": "sz.002672",
+      "raw_code": "002672",
+      "name": "东江环保"
+    },
+    {
+      "code": "sz.002709",
+      "raw_code": "002709",
+      "name": "天赐材料"
+    },
+    {
+      "code": "sz.002741",
+      "raw_code": "002741",
+      "name": "光华科技"
+    },
+    {
+      "code": "sz.002759",
+      "raw_code": "002759",
+      "name": "天际股份"
+    },
+    {
+      "code": "sz.002915",
+      "raw_code": "002915",
+      "name": "中欣氟材"
+    },
+    {
+      "code": "sz.002971",
+      "raw_code": "002971",
+      "name": "和远气体"
+    },
+    {
+      "code": "sz.003017",
+      "raw_code": "003017",
+      "name": "大洋生物"
+    },
+    {
+      "code": "sz.300037",
+      "raw_code": "300037",
+      "name": "新宙邦"
+    },
+    {
+      "code": "sz.300343",
+      "raw_code": "300343",
+      "name": "联创股份"
+    },
+    {
+      "code": "sz.300346",
+      "raw_code": "300346",
+      "name": "南大光电"
+    },
+    {
+      "code": "sz.300428",
+      "raw_code": "300428",
+      "name": "立中集团"
+    },
+    {
+      "code": "sz.300470",
+      "raw_code": "300470",
+      "name": "中密控股"
+    },
+    {
+      "code": "sz.300497",
+      "raw_code": "300497",
+      "name": "富祥股份"
+    },
+    {
+      "code": "sz.300617",
+      "raw_code": "300617",
+      "name": "安靠智电"
+    },
+    {
+      "code": "sz.300655",
+      "raw_code": "300655",
+      "name": "晶瑞电材"
+    },
+    {
+      "code": "sz.300801",
+      "raw_code": "300801",
+      "name": "泰和科技"
+    },
+    {
+      "code": "sz.301246",
+      "raw_code": "301246",
+      "name": "宏源药业"
+    },
+    {
+      "code": "sz.301509",
+      "raw_code": "301509",
+      "name": "金凯生科"
+    },
+    {
+      "code": "sz.301665",
+      "raw_code": "301665",
+      "name": "泰禾股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:29",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300085/"
+  "fetched_at": "2026-07-13 14:34:55",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

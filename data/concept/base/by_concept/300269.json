@@ -3,10 +3,97 @@
   "concept_name": "举牌",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 17,
+  "constituents": [
+    {
+      "code": "sh.600009",
+      "raw_code": "600009",
+      "name": "上海机场"
+    },
+    {
+      "code": "sh.600039",
+      "raw_code": "600039",
+      "name": "四川路桥"
+    },
+    {
+      "code": "sh.600312",
+      "raw_code": "600312",
+      "name": "平高电气"
+    },
+    {
+      "code": "sh.600846",
+      "raw_code": "600846",
+      "name": "同济科技"
+    },
+    {
+      "code": "sh.601963",
+      "raw_code": "601963",
+      "name": "重庆银行"
+    },
+    {
+      "code": "sh.603052",
+      "raw_code": "603052",
+      "name": "可川科技"
+    },
+    {
+      "code": "sh.688139",
+      "raw_code": "688139",
+      "name": "海尔生物"
+    },
+    {
+      "code": "sh.688623",
+      "raw_code": "688623",
+      "name": "双元科技"
+    },
+    {
+      "code": "sz.000598",
+      "raw_code": "000598",
+      "name": "兴蓉环境"
+    },
+    {
+      "code": "sz.000932",
+      "raw_code": "000932",
+      "name": "华菱钢铁"
+    },
+    {
+      "code": "sz.001223",
+      "raw_code": "001223",
+      "name": "欧克科技"
+    },
+    {
+      "code": "sz.002430",
+      "raw_code": "002430",
+      "name": "杭氧股份"
+    },
+    {
+      "code": "sz.002623",
+      "raw_code": "002623",
+      "name": "亚玛顿"
+    },
+    {
+      "code": "sz.003023",
+      "raw_code": "003023",
+      "name": "彩虹集团"
+    },
+    {
+      "code": "sz.300201",
+      "raw_code": "300201",
+      "name": "海伦哲"
+    },
+    {
+      "code": "sz.300295",
+      "raw_code": "300295",
+      "name": "*ST三六五"
+    },
+    {
+      "code": "sz.300929",
+      "raw_code": "300929",
+      "name": "华骐环保"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:37",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300269/"
+  "fetched_at": "2026-07-13 14:35:33",
+  "page_count": 2,
+  "is_partial": false,
+  "page_limit_reason": null
 }

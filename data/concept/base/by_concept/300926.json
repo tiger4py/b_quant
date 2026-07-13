@@ -3,10 +3,232 @@
   "concept_name": "超级电容",
   "first_trade_date": "2020-02-24",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 44,
+  "constituents": [
+    {
+      "code": "bj.920152",
+      "raw_code": "920152",
+      "name": "昆工科技"
+    },
+    {
+      "code": "bj.920522",
+      "raw_code": "920522",
+      "name": "纳科诺尔"
+    },
+    {
+      "code": "sh.600458",
+      "raw_code": "600458",
+      "name": "时代新材"
+    },
+    {
+      "code": "sh.600510",
+      "raw_code": "600510",
+      "name": "黑牡丹"
+    },
+    {
+      "code": "sh.600516",
+      "raw_code": "600516",
+      "name": "方大炭素"
+    },
+    {
+      "code": "sh.600522",
+      "raw_code": "600522",
+      "name": "中天科技"
+    },
+    {
+      "code": "sh.600673",
+      "raw_code": "600673",
+      "name": "东阳光"
+    },
+    {
+      "code": "sh.600884",
+      "raw_code": "600884",
+      "name": "杉杉股份"
+    },
+    {
+      "code": "sh.601179",
+      "raw_code": "601179",
+      "name": "中国西电"
+    },
+    {
+      "code": "sh.603500",
+      "raw_code": "603500",
+      "name": "祥和实业"
+    },
+    {
+      "code": "sh.603678",
+      "raw_code": "603678",
+      "name": "火炬电子"
+    },
+    {
+      "code": "sh.603733",
+      "raw_code": "603733",
+      "name": "仙鹤股份"
+    },
+    {
+      "code": "sh.605589",
+      "raw_code": "605589",
+      "name": "圣泉集团"
+    },
+    {
+      "code": "sh.688116",
+      "raw_code": "688116",
+      "name": "天奈科技"
+    },
+    {
+      "code": "sh.688602",
+      "raw_code": "688602",
+      "name": "康鹏科技"
+    },
+    {
+      "code": "sh.688646",
+      "raw_code": "688646",
+      "name": "ST逸飞"
+    },
+    {
+      "code": "sz.000021",
+      "raw_code": "000021",
+      "name": "深科技"
+    },
+    {
+      "code": "sz.000600",
+      "raw_code": "000600",
+      "name": "建投能源"
+    },
+    {
+      "code": "sz.000636",
+      "raw_code": "000636",
+      "name": "风华高科"
+    },
+    {
+      "code": "sz.000723",
+      "raw_code": "000723",
+      "name": "美锦能源"
+    },
+    {
+      "code": "sz.000733",
+      "raw_code": "000733",
+      "name": "振华科技"
+    },
+    {
+      "code": "sz.000962",
+      "raw_code": "000962",
+      "name": "东方钽业"
+    },
+    {
+      "code": "sz.002028",
+      "raw_code": "002028",
+      "name": "思源电气"
+    },
+    {
+      "code": "sz.002068",
+      "raw_code": "002068",
+      "name": "黑猫股份"
+    },
+    {
+      "code": "sz.002091",
+      "raw_code": "002091",
+      "name": "江苏国泰"
+    },
+    {
+      "code": "sz.002175",
+      "raw_code": "002175",
+      "name": "*ST东智"
+    },
+    {
+      "code": "sz.002350",
+      "raw_code": "002350",
+      "name": "北京科锐"
+    },
+    {
+      "code": "sz.002418",
+      "raw_code": "002418",
+      "name": "康盛股份"
+    },
+    {
+      "code": "sz.002484",
+      "raw_code": "002484",
+      "name": "江海股份"
+    },
+    {
+      "code": "sz.002806",
+      "raw_code": "002806",
+      "name": "华锋股份"
+    },
+    {
+      "code": "sz.002851",
+      "raw_code": "002851",
+      "name": "麦格米特"
+    },
+    {
+      "code": "sz.002915",
+      "raw_code": "002915",
+      "name": "中欣氟材"
+    },
+    {
+      "code": "sz.002951",
+      "raw_code": "002951",
+      "name": "金时科技"
+    },
+    {
+      "code": "sz.300037",
+      "raw_code": "300037",
+      "name": "新宙邦"
+    },
+    {
+      "code": "sz.300057",
+      "raw_code": "300057",
+      "name": "万顺新材"
+    },
+    {
+      "code": "sz.300174",
+      "raw_code": "300174",
+      "name": "元力股份"
+    },
+    {
+      "code": "sz.300275",
+      "raw_code": "300275",
+      "name": "梅安森"
+    },
+    {
+      "code": "sz.300354",
+      "raw_code": "300354",
+      "name": "东华测试"
+    },
+    {
+      "code": "sz.300726",
+      "raw_code": "300726",
+      "name": "宏达电子"
+    },
+    {
+      "code": "sz.300960",
+      "raw_code": "300960",
+      "name": "通业科技"
+    },
+    {
+      "code": "sz.300975",
+      "raw_code": "300975",
+      "name": "商络电子"
+    },
+    {
+      "code": "sz.301238",
+      "raw_code": "301238",
+      "name": "瑞泰新材"
+    },
+    {
+      "code": "sz.301682",
+      "raw_code": "301682",
+      "name": "宏明电子"
+    },
+    {
+      "code": "sz.301683",
+      "raw_code": "301683",
+      "name": "慧谷新材"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:56",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300926/"
+  "fetched_at": "2026-07-13 14:37:20",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }

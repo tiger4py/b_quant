@@ -3,10 +3,187 @@
   "concept_name": "乳业",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 35,
+  "constituents": [
+    {
+      "code": "bj.920786",
+      "raw_code": "920786",
+      "name": "骑士乳业"
+    },
+    {
+      "code": "sh.600127",
+      "raw_code": "600127",
+      "name": "金健米业"
+    },
+    {
+      "code": "sh.600300",
+      "raw_code": "600300",
+      "name": "维维股份"
+    },
+    {
+      "code": "sh.600359",
+      "raw_code": "600359",
+      "name": "新农开发"
+    },
+    {
+      "code": "sh.600419",
+      "raw_code": "600419",
+      "name": "天润乳业"
+    },
+    {
+      "code": "sh.600429",
+      "raw_code": "600429",
+      "name": "三元股份"
+    },
+    {
+      "code": "sh.600597",
+      "raw_code": "600597",
+      "name": "光明乳业"
+    },
+    {
+      "code": "sh.600882",
+      "raw_code": "600882",
+      "name": "妙可蓝多"
+    },
+    {
+      "code": "sh.600887",
+      "raw_code": "600887",
+      "name": "伊利股份"
+    },
+    {
+      "code": "sh.600965",
+      "raw_code": "600965",
+      "name": "*ST福成"
+    },
+    {
+      "code": "sh.603719",
+      "raw_code": "603719",
+      "name": "良品铺子"
+    },
+    {
+      "code": "sh.605179",
+      "raw_code": "605179",
+      "name": "一鸣食品"
+    },
+    {
+      "code": "sh.605337",
+      "raw_code": "605337",
+      "name": "李子园"
+    },
+    {
+      "code": "sh.605339",
+      "raw_code": "605339",
+      "name": "南侨食品"
+    },
+    {
+      "code": "sh.605388",
+      "raw_code": "605388",
+      "name": "均瑶健康"
+    },
+    {
+      "code": "sz.001219",
+      "raw_code": "001219",
+      "name": "青岛食品"
+    },
+    {
+      "code": "sz.001318",
+      "raw_code": "001318",
+      "name": "阳光乳业"
+    },
+    {
+      "code": "sz.002183",
+      "raw_code": "002183",
+      "name": "怡亚通"
+    },
+    {
+      "code": "sz.002329",
+      "raw_code": "002329",
+      "name": "皇氏集团"
+    },
+    {
+      "code": "sz.002385",
+      "raw_code": "002385",
+      "name": "大北农"
+    },
+    {
+      "code": "sz.002458",
+      "raw_code": "002458",
+      "name": "益生股份"
+    },
+    {
+      "code": "sz.002557",
+      "raw_code": "002557",
+      "name": "洽洽食品"
+    },
+    {
+      "code": "sz.002570",
+      "raw_code": "002570",
+      "name": "贝因美"
+    },
+    {
+      "code": "sz.002719",
+      "raw_code": "002719",
+      "name": "ST麦趣"
+    },
+    {
+      "code": "sz.002732",
+      "raw_code": "002732",
+      "name": "燕塘乳业"
+    },
+    {
+      "code": "sz.002910",
+      "raw_code": "002910",
+      "name": "庄园牧场"
+    },
+    {
+      "code": "sz.002946",
+      "raw_code": "002946",
+      "name": "新乳业"
+    },
+    {
+      "code": "sz.300106",
+      "raw_code": "300106",
+      "name": "西部牧业"
+    },
+    {
+      "code": "sz.300313",
+      "raw_code": "300313",
+      "name": "天山生物"
+    },
+    {
+      "code": "sz.300858",
+      "raw_code": "300858",
+      "name": "科拓生物"
+    },
+    {
+      "code": "sz.300892",
+      "raw_code": "300892",
+      "name": "品渥食品"
+    },
+    {
+      "code": "sz.300898",
+      "raw_code": "300898",
+      "name": "熊猫乳品"
+    },
+    {
+      "code": "sz.300972",
+      "raw_code": "300972",
+      "name": "万辰集团"
+    },
+    {
+      "code": "sz.300973",
+      "raw_code": "300973",
+      "name": "立高食品"
+    },
+    {
+      "code": "sz.300997",
+      "raw_code": "300997",
+      "name": "欢乐家"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:58",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300983/"
+  "fetched_at": "2026-07-13 14:37:29",
+  "page_count": 4,
+  "is_partial": false,
+  "page_limit_reason": null
 }

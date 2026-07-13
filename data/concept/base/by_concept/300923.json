@@ -3,10 +3,322 @@
   "concept_name": "生态农业",
   "first_trade_date": "2015-01-05",
   "latest_trade_date": "2026-07-09",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 62,
+  "constituents": [
+    {
+      "code": "bj.920159",
+      "raw_code": "920159",
+      "name": "农大科技"
+    },
+    {
+      "code": "bj.920363",
+      "raw_code": "920363",
+      "name": "莱赛激光"
+    },
+    {
+      "code": "sh.600075",
+      "raw_code": "600075",
+      "name": "新疆天业"
+    },
+    {
+      "code": "sh.600108",
+      "raw_code": "600108",
+      "name": "亚盛集团"
+    },
+    {
+      "code": "sh.600251",
+      "raw_code": "600251",
+      "name": "冠农股份"
+    },
+    {
+      "code": "sh.600300",
+      "raw_code": "600300",
+      "name": "维维股份"
+    },
+    {
+      "code": "sh.600354",
+      "raw_code": "600354",
+      "name": "敦煌种业"
+    },
+    {
+      "code": "sh.600598",
+      "raw_code": "600598",
+      "name": "北大荒"
+    },
+    {
+      "code": "sh.600692",
+      "raw_code": "600692",
+      "name": "亚通股份"
+    },
+    {
+      "code": "sh.600796",
+      "raw_code": "600796",
+      "name": "钱江生化"
+    },
+    {
+      "code": "sh.600807",
+      "raw_code": "600807",
+      "name": "济高发展"
+    },
+    {
+      "code": "sh.600853",
+      "raw_code": "600853",
+      "name": "龙建股份"
+    },
+    {
+      "code": "sh.600887",
+      "raw_code": "600887",
+      "name": "伊利股份"
+    },
+    {
+      "code": "sh.600965",
+      "raw_code": "600965",
+      "name": "*ST福成"
+    },
+    {
+      "code": "sh.603086",
+      "raw_code": "603086",
+      "name": "先达股份"
+    },
+    {
+      "code": "sh.603276",
+      "raw_code": "603276",
+      "name": "恒兴新材"
+    },
+    {
+      "code": "sh.603359",
+      "raw_code": "603359",
+      "name": "*ST东珠"
+    },
+    {
+      "code": "sh.603609",
+      "raw_code": "603609",
+      "name": "禾丰股份"
+    },
+    {
+      "code": "sh.603639",
+      "raw_code": "603639",
+      "name": "海利尔"
+    },
+    {
+      "code": "sh.603717",
+      "raw_code": "603717",
+      "name": "天域生物"
+    },
+    {
+      "code": "sh.603789",
+      "raw_code": "603789",
+      "name": "ST星农"
+    },
+    {
+      "code": "sh.688526",
+      "raw_code": "688526",
+      "name": "科前生物"
+    },
+    {
+      "code": "sz.000626",
+      "raw_code": "000626",
+      "name": "远大控股"
+    },
+    {
+      "code": "sz.000735",
+      "raw_code": "000735",
+      "name": "罗牛山"
+    },
+    {
+      "code": "sz.000830",
+      "raw_code": "000830",
+      "name": "鲁西化工"
+    },
+    {
+      "code": "sz.000902",
+      "raw_code": "000902",
+      "name": "新洋丰"
+    },
+    {
+      "code": "sz.000930",
+      "raw_code": "000930",
+      "name": "中粮科技"
+    },
+    {
+      "code": "sz.000998",
+      "raw_code": "000998",
+      "name": "隆平高科"
+    },
+    {
+      "code": "sz.002041",
+      "raw_code": "002041",
+      "name": "登海种业"
+    },
+    {
+      "code": "sz.002170",
+      "raw_code": "002170",
+      "name": "芭田股份"
+    },
+    {
+      "code": "sz.002215",
+      "raw_code": "002215",
+      "name": "诺普信"
+    },
+    {
+      "code": "sz.002234",
+      "raw_code": "002234",
+      "name": "民和股份"
+    },
+    {
+      "code": "sz.002310",
+      "raw_code": "002310",
+      "name": "东方新能"
+    },
+    {
+      "code": "sz.002311",
+      "raw_code": "002311",
+      "name": "海大集团"
+    },
+    {
+      "code": "sz.002329",
+      "raw_code": "002329",
+      "name": "皇氏集团"
+    },
+    {
+      "code": "sz.002383",
+      "raw_code": "002383",
+      "name": "合众思壮"
+    },
+    {
+      "code": "sz.002470",
+      "raw_code": "002470",
+      "name": "金正大"
+    },
+    {
+      "code": "sz.002496",
+      "raw_code": "002496",
+      "name": "辉丰股份"
+    },
+    {
+      "code": "sz.002513",
+      "raw_code": "002513",
+      "name": "蓝丰生化"
+    },
+    {
+      "code": "sz.002538",
+      "raw_code": "002538",
+      "name": "ST司特"
+    },
+    {
+      "code": "sz.002539",
+      "raw_code": "002539",
+      "name": "云图控股"
+    },
+    {
+      "code": "sz.002548",
+      "raw_code": "002548",
+      "name": "金新农"
+    },
+    {
+      "code": "sz.002556",
+      "raw_code": "002556",
+      "name": "辉隆股份"
+    },
+    {
+      "code": "sz.002565",
+      "raw_code": "002565",
+      "name": "顺灏股份"
+    },
+    {
+      "code": "sz.002582",
+      "raw_code": "002582",
+      "name": "好想你"
+    },
+    {
+      "code": "sz.002588",
+      "raw_code": "002588",
+      "name": "史丹利"
+    },
+    {
+      "code": "sz.002683",
+      "raw_code": "002683",
+      "name": "广东宏大"
+    },
+    {
+      "code": "sz.002732",
+      "raw_code": "002732",
+      "name": "燕塘乳业"
+    },
+    {
+      "code": "sz.002758",
+      "raw_code": "002758",
+      "name": "浙农股份"
+    },
+    {
+      "code": "sz.002783",
+      "raw_code": "002783",
+      "name": "凯龙股份"
+    },
+    {
+      "code": "sz.002910",
+      "raw_code": "002910",
+      "name": "庄园牧场"
+    },
+    {
+      "code": "sz.300021",
+      "raw_code": "300021",
+      "name": "大禹节水"
+    },
+    {
+      "code": "sz.300072",
+      "raw_code": "300072",
+      "name": "海新能科"
+    },
+    {
+      "code": "sz.300189",
+      "raw_code": "300189",
+      "name": "神农种业"
+    },
+    {
+      "code": "sz.300266",
+      "raw_code": "300266",
+      "name": "兴源环境"
+    },
+    {
+      "code": "sz.300335",
+      "raw_code": "300335",
+      "name": "迪森股份"
+    },
+    {
+      "code": "sz.300355",
+      "raw_code": "300355",
+      "name": "蒙草生态"
+    },
+    {
+      "code": "sz.300387",
+      "raw_code": "300387",
+      "name": "富邦科技"
+    },
+    {
+      "code": "sz.300958",
+      "raw_code": "300958",
+      "name": "建工修复"
+    },
+    {
+      "code": "sz.301362",
+      "raw_code": "301362",
+      "name": "民爆光电"
+    },
+    {
+      "code": "sz.301556",
+      "raw_code": "301556",
+      "name": "托普云农"
+    },
+    {
+      "code": "sz.301665",
+      "raw_code": "301665",
+      "name": "泰禾股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:55",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300923/"
+  "fetched_at": "2026-07-13 14:37:17",
+  "page_count": 7,
+  "is_partial": false,
+  "page_limit_reason": null
 }

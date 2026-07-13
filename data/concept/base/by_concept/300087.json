@@ -3,10 +3,222 @@
   "concept_name": "横琴新区",
   "first_trade_date": "2019-04-02",
   "latest_trade_date": "2026-07-10",
-  "constituent_count": 0,
-  "constituents": [],
+  "constituent_count": 42,
+  "constituents": [
+    {
+      "code": "bj.920110",
+      "raw_code": "920110",
+      "name": "雷特科技"
+    },
+    {
+      "code": "sh.600185",
+      "raw_code": "600185",
+      "name": "珠免集团"
+    },
+    {
+      "code": "sh.600325",
+      "raw_code": "600325",
+      "name": "华发股份"
+    },
+    {
+      "code": "sh.603138",
+      "raw_code": "603138",
+      "name": "海量数据"
+    },
+    {
+      "code": "sz.000507",
+      "raw_code": "000507",
+      "name": "珠海港"
+    },
+    {
+      "code": "sz.000513",
+      "raw_code": "000513",
+      "name": "丽珠集团"
+    },
+    {
+      "code": "sz.000532",
+      "raw_code": "000532",
+      "name": "华金资本"
+    },
+    {
+      "code": "sz.000659",
+      "raw_code": "000659",
+      "name": "珠海中富"
+    },
+    {
+      "code": "sz.002005",
+      "raw_code": "002005",
+      "name": "ST德豪"
+    },
+    {
+      "code": "sz.002017",
+      "raw_code": "002017",
+      "name": "东信和平"
+    },
+    {
+      "code": "sz.002047",
+      "raw_code": "002047",
+      "name": "宝鹰股份"
+    },
+    {
+      "code": "sz.002063",
+      "raw_code": "002063",
+      "name": "远光软件"
+    },
+    {
+      "code": "sz.002101",
+      "raw_code": "002101",
+      "name": "广东鸿图"
+    },
+    {
+      "code": "sz.002141",
+      "raw_code": "002141",
+      "name": "贤丰控股"
+    },
+    {
+      "code": "sz.002285",
+      "raw_code": "002285",
+      "name": "世联行"
+    },
+    {
+      "code": "sz.002319",
+      "raw_code": "002319",
+      "name": "乐通股份"
+    },
+    {
+      "code": "sz.002400",
+      "raw_code": "002400",
+      "name": "省广集团"
+    },
+    {
+      "code": "sz.002431",
+      "raw_code": "002431",
+      "name": "ST棕榈"
+    },
+    {
+      "code": "sz.002492",
+      "raw_code": "002492",
+      "name": "恒基达鑫"
+    },
+    {
+      "code": "sz.002544",
+      "raw_code": "002544",
+      "name": "普天科技"
+    },
+    {
+      "code": "sz.002663",
+      "raw_code": "002663",
+      "name": "普邦股份"
+    },
+    {
+      "code": "sz.002717",
+      "raw_code": "002717",
+      "name": "*ST岭南"
+    },
+    {
+      "code": "sz.002789",
+      "raw_code": "002789",
+      "name": "*ST建艺"
+    },
+    {
+      "code": "sz.002888",
+      "raw_code": "002888",
+      "name": "惠威科技"
+    },
+    {
+      "code": "sz.002906",
+      "raw_code": "002906",
+      "name": "华阳集团"
+    },
+    {
+      "code": "sz.002975",
+      "raw_code": "002975",
+      "name": "博杰股份"
+    },
+    {
+      "code": "sz.300030",
+      "raw_code": "300030",
+      "name": "阳普医疗"
+    },
+    {
+      "code": "sz.300043",
+      "raw_code": "300043",
+      "name": "星辉娱乐"
+    },
+    {
+      "code": "sz.300050",
+      "raw_code": "300050",
+      "name": "世纪鼎利"
+    },
+    {
+      "code": "sz.300053",
+      "raw_code": "300053",
+      "name": "航宇微"
+    },
+    {
+      "code": "sz.300123",
+      "raw_code": "300123",
+      "name": "ST亚光"
+    },
+    {
+      "code": "sz.300147",
+      "raw_code": "300147",
+      "name": "*ST香雪"
+    },
+    {
+      "code": "sz.300167",
+      "raw_code": "300167",
+      "name": "ST迪威迅"
+    },
+    {
+      "code": "sz.300246",
+      "raw_code": "300246",
+      "name": "宝莱特"
+    },
+    {
+      "code": "sz.300304",
+      "raw_code": "300304",
+      "name": "云意电气"
+    },
+    {
+      "code": "sz.300359",
+      "raw_code": "300359",
+      "name": "全通教育"
+    },
+    {
+      "code": "sz.300381",
+      "raw_code": "300381",
+      "name": "溢多利"
+    },
+    {
+      "code": "sz.300458",
+      "raw_code": "300458",
+      "name": "全志科技"
+    },
+    {
+      "code": "sz.300529",
+      "raw_code": "300529",
+      "name": "健帆生物"
+    },
+    {
+      "code": "sz.300569",
+      "raw_code": "300569",
+      "name": "天能重工"
+    },
+    {
+      "code": "sz.300620",
+      "raw_code": "300620",
+      "name": "光库科技"
+    },
+    {
+      "code": "sz.300621",
+      "raw_code": "300621",
+      "name": "维业股份"
+    }
+  ],
   "source": "ths_q_10jqka",
-  "fetched_at": "2026-07-13 12:26:29",
-  "page_count": 0,
-  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300087/"
+  "fetched_at": "2026-07-13 14:34:56",
+  "page_count": 5,
+  "is_partial": false,
+  "page_limit_reason": null
 }
