@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>交易复盘 - 操作原因统计</title>
+<title>交易复盘 — 操作原因统计</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -152,7 +152,6 @@
   <a href="/strategy-backtest">策略回测</a>
   <a href="/strategy-lab">策略试验</a>
   <a href="/trading" class="on">交易复盘</a>
-  <a href="/trading-summary">交易总结</a>
 </nav>
 
 <div class="main">
@@ -166,8 +165,7 @@
     <button class="tab-btn" data-tab="tab-operate">手动操作</button>
     <button class="tab-btn" data-tab="tab-history">历史记录</button>
     <button class="tab-btn" data-tab="tab-compare">策略对比</button>
-    <button class="tab-btn" data-tab="tab-journal">买卖复盘</button>
-    <button class="tab-btn" data-tab="tab-macro-review">大盘预测复盘</button>
+    <button class="tab-btn" data-tab="tab-journal">原因复盘</button>
   </div>
 
   <!-- Tab 1: 持仓 -->
@@ -187,10 +185,10 @@
       <div class="form-group"><label>买入价</label><input id="buyPrice" type="number" step="0.01" placeholder="3.68"></div>
       <div class="form-group"><label>股数</label><input id="buyShares" type="number" step="100" value="100"></div>
       <div class="form-group"><label>买入日期</label><input id="buyDate" type="date"></div>
-      <div class="form-group"><label>策略来源</label><select id="buyStrategySource"><option value="">手动/主动</option><option value="vegas_tunnel">vegas_tunnel</option><option value="alpha042">alpha042</option><option value="daily_guide">V反(daily_guide)</option><option value="price_volume_rising">价升量增</option></select></div>
+      <div class="form-group"><label>策略来源</label><select id="buyStrategySource"><option value="">手动/主观</option><option value="market_bottom">market_bottom</option><option value="vegas_tunnel">vegas_tunnel</option><option value="alpha042">alpha042</option><option value="daily_guide">V反(daily_guide)</option><option value="price_volume_rising">价增量增</option></select></div>
       <div class="form-group"><label>信号排名</label><input id="buySignalRank" type="number" min="1" placeholder="在策略推荐中的排名" style="width:80px"></div>
-      <div class="form-group"><label>大盘信号</label><select id="buyMarketSignal"><option value="">未选</option><option value="GREEN">GREEN</option><option value="YELLOW">YELLOW</option><option value="RED">RED</option></select></div>
-      <div class="form-group"><label>原因</label><input id="buyReason" placeholder="例如 daily_guide买入信号" style="width:200px"></div>
+      <div class="form-group"><label>大盘信号</label><select id="buyMarketSignal"><option value="">未知</option><option value="GREEN">GREEN</option><option value="YELLOW">YELLOW</option><option value="RED">RED</option></select></div>
+      <div class="form-group"><label>原因</label><input id="buyReason" placeholder="如: market_bottom买入信号" style="width:200px"></div>
       <div class="form-group"><label>备注</label><input id="buyDecisionNote" placeholder="决策备注（可选）" style="width:200px"></div>
       <button class="btn btn-primary" onclick="doBuy()">记录买入</button>
     </div>
@@ -201,7 +199,7 @@
       <div class="form-group"><label>卖出价</label><input id="sellPrice" type="number" step="0.01"></div>
       <div class="form-group"><label>股数(0=全卖)</label><input id="sellShares" type="number" step="100" value="0"></div>
       <div class="form-group"><label>卖出日期</label><input id="sellDate" type="date"></div>
-      <div class="form-group"><label>原因</label><input id="sellReason" placeholder="例如 止损/止盈/破MA20" style="width:200px"></div>
+      <div class="form-group"><label>原因</label><input id="sellReason" placeholder="如: 止损/止盈/破MA20" style="width:200px"></div>
       <button class="btn btn-danger" onclick="doSell()">记录卖出</button>
     </div>
   </div>
@@ -221,15 +219,15 @@
   <div class="tab-content" id="tab-compare">
     <div style="margin-bottom:14px; display:flex; gap:20px; font-size:13px;" id="compareSummary"></div>
 
-    <!-- 一: 持仓对照 (策略 vs 你) -->
+    <!-- 区1: 持仓对照 (策略 vs 你) -->
     <h3 style="font-size:14px; margin-bottom:8px; color:#60a5fa;">持仓对照 (策略 vs 你)</h3>
     <table id="compareHoldsTable">
-      <thead><tr><th>代码</th><th>名称</th><th>策略</th><th>策略买入价</th><th>策略现价</th><th>策略盈亏</th><th>你</th><th>你买入价</th><th>你现价</th><th>你盈亏</th><th>持仓天</th></tr></thead>
+      <thead><tr><th>代码</th><th>名称</th><th>策略</th><th>策略买入日</th><th>策略价</th><th>策略盈亏</th><th>你</th><th>你买入价</th><th>你现价</th><th>你盈亏</th><th>持仓天</th></tr></thead>
       <tbody></tbody>
     </table>
     <div class="empty" id="emptyHolds" style="display:none">暂无持仓数据</div>
 
-    <!-- 二: 策略买入信号 -->
+    <!-- 区2: 策略买入信号 -->
     <h3 style="font-size:14px; margin:24px 0 8px; color:#ef4444;">策略买入信号 (全市场扫描)</h3>
     <table id="compareBuyTable">
       <thead><tr><th>排名</th><th>代码</th><th>名称</th><th>评分</th><th>收盘</th><th>5日涨</th><th>量比</th><th>涨跌量比</th><th>原因</th><th>跟了?</th></tr></thead>
@@ -238,7 +236,7 @@
     <div class="empty" id="emptyBuys" style="display:none">暂无买入信号</div>
   </div>
 
-  <!-- Tab 5: 买卖复盘 -->
+  <!-- Tab 5: 原因复盘 -->
   <div class="tab-content" id="tab-journal">
     <div id="reviewReminder" style="display:none; background:#1e1b0a; border:1px solid #f59e0b; border-radius:8px; padding:12px 16px; margin-bottom:16px; align-items:center; gap:12px;">
       <span style="font-size:13px;"><b id="reviewReminderDate"></b> 这笔还没复盘，先把当时原因写清楚。</span>
@@ -262,7 +260,7 @@
               <button class="emo-btn" data-v="不甘心" onclick="toggleEmotion(this)">不甘心</button>
               <button class="emo-btn" data-v="急着回本" onclick="toggleEmotion(this)">急着回本</button>
               <button class="emo-btn" data-v="随手单" onclick="toggleEmotion(this)">随手单</button>
-              <button class="emo-btn" data-v="其他" onclick="toggleEmotion(this)">其他</button>
+              <button class="emo-btn" data-v="贪婪" onclick="toggleEmotion(this)">贪婪</button>
             </div>
           </div>
         </div>
@@ -276,7 +274,7 @@
           <div class="form-group" style="width:100%;">
             <label>操作类型</label>
             <select id="journalTradeType" style="width:100%">
-              <option value="">混合/无</option>
+              <option value="">混合/未选</option>
               <option value="计划内买入">计划内买入</option>
               <option value="追高买入">追高买入</option>
               <option value="低吸买入">低吸买入</option>
@@ -291,7 +289,7 @@
           <div class="form-group" style="width:100%;">
             <label>是否按计划</label>
             <select id="journalPlanFollowed" style="width:100%">
-              <option value="">未选</option>
+              <option value="">未判断</option>
               <option value="是">是，按计划</option>
               <option value="否">否，盘中变形</option>
               <option value="部分">部分符合</option>
@@ -302,15 +300,15 @@
 
         <div class="form-group" style="width:100%; margin-bottom:10px;">
           <label>当时原因</label>
-          <textarea id="journalRationale" class="textarea" rows="4" placeholder="当时我为什么买/卖？看到什么信号？题材、形态、消息、策略、恐惧，还是想回本？"></textarea>
+          <textarea id="journalRationale" class="textarea" rows="4" placeholder="当时我为什么买/卖？看到什么信号？是题材、形态、消息、策略、恐惧，还是想回本？"></textarea>
         </div>
         <div class="form-group" style="width:100%; margin-bottom:10px;">
           <label>当时预期</label>
-          <textarea id="journalExpectation" class="textarea" rows="2" placeholder="我当时预期它接下来怎么走？如果错了，什么条件证明我错了？"></textarea>
+          <textarea id="journalExpectation" class="textarea" rows="2" placeholder="我当时预期它接下来怎么走？如果错了，什么条件说明我错了？"></textarea>
         </div>
         <div class="form-group" style="width:100%; margin-bottom:10px;">
           <label>实际结果</label>
-          <textarea id="journalOutcome" class="textarea" rows="2" placeholder="后面走势验证了什么？亏损/盈利主要来自判断、仓位、卖点，还是市场？"></textarea>
+          <textarea id="journalOutcome" class="textarea" rows="2" placeholder="后面走势验证了什么？亏损/盈利主要来自判断、仓位、卖点，还是市场环境？"></textarea>
         </div>
 
         <div style="margin-bottom:14px; padding:12px; background:#11151c; border:1px solid #2a2d3e; border-radius:8px;">
@@ -321,29 +319,29 @@
             <button class="btn btn-sm" id="reviewBtnHalf" onclick="setReview('半对')" style="border-color:#f59e0b;color:#f59e0b;">半对</button>
             <span id="reviewVerdict" style="font-size:13px;align-self:center;"></span>
           </div>
-          <textarea id="journalReviewNote" class="textarea" rows="2" placeholder="具体对在哪里、错在哪里？不是只看涨跌，而是看当时逻辑和执行是否成立。"></textarea>
+          <textarea id="journalReviewNote" class="textarea" rows="2" placeholder="具体哪里对/错？不是涨跌对错，而是当时逻辑和执行是否成立。"></textarea>
         </div>
 
         <div class="review-row">
           <div class="form-group" style="width:100%;">
             <label>错误类型</label>
             <div id="journalMistakeType" style="display:flex;flex-wrap:wrap;gap:6px;">
-              <button class="emo-btn" data-v="无明显错误" onclick="toggleMistakeBtn(this)">无明显错误</button>
+              <button class="emo-btn" data-v="无错误" onclick="toggleMistakeBtn(this)">无错误</button>
               <button class="emo-btn" data-v="追高" onclick="toggleMistakeBtn(this)">追高</button>
               <button class="emo-btn" data-v="卖点拖延" onclick="toggleMistakeBtn(this)">卖点拖延</button>
               <button class="emo-btn" data-v="止损不坚决" onclick="toggleMistakeBtn(this)">止损不坚决</button>
               <button class="emo-btn" data-v="仓位过重" onclick="toggleMistakeBtn(this)">仓位过重</button>
               <button class="emo-btn" data-v="逆势交易" onclick="toggleMistakeBtn(this)">逆势交易</button>
-              <button class="emo-btn" data-v="题材误判" onclick="toggleMistakeBtn(this)">题材误判</button>
+              <button class="emo-btn" data-v="题材退潮" onclick="toggleMistakeBtn(this)">题材退潮</button>
               <button class="emo-btn" data-v="频繁交易" onclick="toggleMistakeBtn(this)">频繁交易</button>
               <button class="emo-btn" data-v="情绪单" onclick="toggleMistakeBtn(this)">情绪单</button>
-              <button class="emo-btn" data-v="脱离策略" onclick="toggleMistakeBtn(this)">脱离策略</button>
+              <button class="emo-btn" data-v="未按策略" onclick="toggleMistakeBtn(this)">未按策略</button>
             </div>
           </div>
           <div class="form-group" style="width:100%;">
             <label>执行评分</label>
             <select id="journalScore" style="width:100%">
-              <option value="">未选</option>
+              <option value="">未评分</option>
               <option value="5">5 很好</option>
               <option value="4">4 基本正确</option>
               <option value="3">3 一半一半</option>
@@ -359,7 +357,7 @@
         </div>
         <div class="form-group" style="width:100%; margin-bottom:14px;">
           <label>明日计划</label>
-          <textarea id="journalPlan" class="textarea" rows="2" placeholder="明天操作条件：什么情况买，什么情况卖，什么情况不做？"></textarea>
+          <textarea id="journalPlan" class="textarea" rows="2" placeholder="明天只写条件：什么情况买，什么情况卖，什么情况不做。"></textarea>
         </div>
 
         <button class="btn btn-primary" onclick="saveJournal()">保存复盘</button>
@@ -384,102 +382,6 @@
     </div>
   </div>
 
-  <!-- Tab 6: 大盘预测复盘 -->
-  <div class="tab-content" id="tab-macro-review">
-
-    <!-- 日期选择 -->
-    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;">
-      <label style="font-weight:600; white-space:nowrap;">日期</label>
-      <input type="date" id="macroDate" style="background:#0d1117; border:1px solid #2a2d3e; color:#e1e4e8; padding:6px 12px; border-radius:6px;" onchange="loadMacroPrediction()">
-      <button class="btn btn-sm" onclick="loadMacroPrediction()" style="border-color:#3b82f6;color:#3b82f6;">查询</button>
-      <button class="btn btn-sm" onclick="goMacroDay(-1)">前一天</button>
-      <button class="btn btn-sm" onclick="goMacroDay(1)">后一天</button>
-      <button class="btn btn-primary btn-sm" onclick="saveMacroPrediction()" style="margin-left:auto;">保存</button>
-      <span id="macroMsg" style="font-size:12px; color:#22c55e;"></span>
-    </div>
-
-    <!-- 两栏 -->
-    <div style="display:flex; gap:16px; flex-wrap:wrap;">
-      <!-- 左栏：盘前预测 -->
-      <div style="flex:1; min-width:360px;">
-        <div class="review-panel" style="margin-bottom:12px;">
-          <h3 style="color:#f59e0b;">盘前预测</h3>
-          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">前一天晚上 / 当天开盘前填写</div>
-
-          <div class="form-group" style="margin-bottom:8px;">
-            <label>预测信号</label>
-            <div style="display:flex; gap:6px;">
-              <button class="btn btn-sm" id="predGreen" onclick="setPredSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">🟢 GREEN</button>
-              <button class="btn btn-sm" id="predYellow" onclick="setPredSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">🟡 YELLOW</button>
-              <button class="btn btn-sm" id="predRed" onclick="setPredSignal('RED')" style="border-color:#ef4444;color:#ef4444;">🔴 RED</button>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-bottom:8px;">
-            <label>预测理由</label>
-            <textarea id="predReason" class="textarea" rows="3" placeholder="为什么这样判断？看到什么信号？量化数据还是主观感觉？"></textarea>
-          </div>
-
-          <div class="form-group" style="margin-bottom:8px;">
-            <label>明天操作计划</label>
-            <textarea id="predPlan" class="textarea" rows="3" placeholder="具体操作：开盘加减仓还是观望？什么条件触发什么动作？"></textarea>
-          </div>
-        </div>
-      </div>
-
-      <!-- 右栏：盘后复盘 -->
-      <div style="flex:1; min-width:360px;">
-        <div class="review-panel" style="margin-bottom:12px;">
-          <h3 style="color:#22c55e;">盘后复盘</h3>
-          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">收盘后填写实际结果</div>
-
-          <div class="form-group" style="margin-bottom:8px;">
-            <label>实际信号</label>
-            <div style="display:flex; gap:6px;">
-              <button class="btn btn-sm" id="actualGreen" onclick="setActualSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">🟢 GREEN</button>
-              <button class="btn btn-sm" id="actualYellow" onclick="setActualSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">🟡 YELLOW</button>
-              <button class="btn btn-sm" id="actualRed" onclick="setActualSignal('RED')" style="border-color:#ef4444;color:#ef4444;">🔴 RED</button>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-bottom:8px;">
-            <label>实际大盘走势</label>
-            <textarea id="actualDesc" class="textarea" rows="2" placeholder="涨跌比、涨跌停数、成交量、主要板块表现..."></textarea>
-          </div>
-
-          <div class="form-group" style="margin-bottom:8px;">
-            <label>判断对错</label>
-            <div style="display:flex; gap:6px;">
-              <button class="btn btn-sm" id="verdictRight" onclick="setVerdict('对')" style="border-color:#22c55e;color:#22c55e;">对</button>
-              <button class="btn btn-sm" id="verdictWrong" onclick="setVerdict('错')" style="border-color:#ef4444;color:#ef4444;">错</button>
-              <button class="btn btn-sm" id="verdictHalf" onclick="setVerdict('半对')" style="border-color:#f59e0b;color:#f59e0b;">半对</button>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-bottom:8px;">
-            <label>反思：对在哪 / 错在哪</label>
-            <textarea id="actualReflection" class="textarea" rows="3" placeholder="预测对了是为什么？错了忽略了什么？下次怎么改？"></textarea>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 对比表 -->
-    <div class="review-panel" style="margin-top:16px;">
-      <h3>预测 vs 实际</h3>
-      <div id="macroComparison" style="font-size:13px; line-height:2;">
-        <div class="empty">选择日期后显示</div>
-      </div>
-    </div>
-
-    <!-- 统计 -->
-    <div class="review-panel" style="margin-top:16px;">
-      <h3>预测准确率</h3>
-      <div class="review-stat-grid" id="macroStats"></div>
-    </div>
-
-  </div>
-
 </div>
 
 <!-- Sell Modal -->
@@ -487,7 +389,7 @@
   <div class="modal">
     <h3>确认卖出 <span id="sellModalName"></span></h3>
     <div class="form-group" style="width:100%"><label>卖出价</label><input id="sellModalPrice" type="number" step="0.01" style="width:100%"></div>
-    <div class="form-group" style="width:100%;margin-top:8px"><label>原因</label><input id="sellModalReason" placeholder="例如 止损/止盈/破MA20" style="width:100%"></div>
+    <div class="form-group" style="width:100%;margin-top:8px"><label>原因</label><input id="sellModalReason" placeholder="如: 止损/止盈/破MA20" style="width:100%"></div>
     <div class="btn-row">
       <button class="btn" onclick="closeSellModal()">取消</button>
       <button class="btn btn-danger" onclick="confirmSell()">确认卖出</button>
@@ -514,10 +416,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (btn.dataset.tab === "tab-journal") {
         renderDayTrades();
       }
-      // 切换到大盘预测复盘 tab 时加载数据
-      if (btn.dataset.tab === "tab-macro-review") {
-        loadMacroReview();
-      }
     });
   });
 
@@ -538,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 等 state.logs 就绪后再加载复盘列表
     return loadJournalList();
   }).then(() => {
-    // 加载完复盘数据后重绘历史，显示已复盘标记
+    // 加载完复盘数据后重绘历史，显示"已复盘"标记
     renderHistory();
     return checkReviewReminder();
   });
@@ -560,9 +458,9 @@ function renderStats() {
   const s = state.stats;
   document.getElementById("statsBar").innerHTML = `
     <div class="stat-card"><div class="label">总市值</div><div class="value blue">${fmtMoney(s.totalValue)}</div><div class="sub">现金 ${fmtMoney(p.cash)}</div></div>
-    <div class="stat-card"><div class="label">持仓市值</div><div class="value">${fmtMoney(s.holdingValue)}</div><div class="sub">${p.holdings.length}/${p.max_positions} 只</div></div>
+    <div class="stat-card"><div class="label">持仓市值</div><div class="value">${fmtMoney(s.holdingValue)}</div><div class="sub">${p.holdings.length}/${p.max_positions} 仓</div></div>
     <div class="stat-card"><div class="label">浮动盈亏</div><div class="value ${s.totalPnl >= 0 ? 'green' : 'red'}">${s.totalPnl >= 0 ? '+' : ''}${fmtMoney(s.totalPnl)}</div><div class="sub ${s.totalPnlPct >= 0 ? 'g' : 'r'}">${s.totalPnlPct >= 0 ? '+' : ''}${s.totalPnlPct.toFixed(2)}%</div></div>
-    <div class="stat-card"><div class="label">已实现</div><div class="value ${s.realizedPnl >= 0 ? 'green' : 'red'}">${s.realizedPnl >= 0 ? '+' : ''}${fmtMoney(s.realizedPnl)}</div><div class="sub">${s.closedTrades} 笔 / 胜率${s.winRate.toFixed(0)}%</div></div>
+    <div class="stat-card"><div class="label">累计已实现</div><div class="value ${s.realizedPnl >= 0 ? 'green' : 'red'}">${s.realizedPnl >= 0 ? '+' : ''}${fmtMoney(s.realizedPnl)}</div><div class="sub">${s.closedTrades}笔 / 胜率${s.winRate.toFixed(0)}%</div></div>
   `;
 }
 
@@ -593,11 +491,11 @@ function renderHoldings() {
       if (a.stopLoss) priceLines.push({label:"止损", price:a.stopLoss, dist:a.stopLossDist});
       if (a.ma10) priceLines.push({label:"MA10", price:a.ma10, dist:a.ma10Dist});
 
-      // 按距现价从近到远排序（dist 为正表示现价在上方，越小越危险）
+      // 按距现价从近到远排序（dist 正值=现价在上方，越小越危险）
       priceLines.sort((a,b) => a.dist - b.dist);
       const nearest = priceLines[0];
 
-      // 量价背离提示
+      // 量条件
       if (a.volDiverge) priceLines.push({label:"量价背离", price:null, dist:0});
 
       // 高亮最近线
@@ -661,7 +559,7 @@ async function doBuy() {
   const decisionNote = document.getElementById("buyDecisionNote").value.trim();
   if (!code) { toast("请输入股票代码", "err"); return; }
   if (!price || price <= 0) { toast("请输入有效买入价", "err"); return; }
-  if (!shares || shares < 100) { toast("至少100股", "err"); return; }
+  if (!shares || shares < 100) { toast("最少100股", "err"); return; }
   await api("buy", { code, price, shares, date, reason, strategy_source: strategySource, signal_rank: signalRank, market_signal: marketSignal, decision_note: decisionNote });
   document.getElementById("buyCode").value = "";
   document.getElementById("buyPrice").value = "";
@@ -684,7 +582,7 @@ async function doSell() {
     const h = (state.holdings || []).find(r => r.code === code);
     shares = h ? h.shares : 0;
   }
-  if (shares < 100) { toast("至少100股", "err"); return; }
+  if (shares < 100) { toast("最少100股", "err"); return; }
   await api("sell", { code, price, shares, date, reason });
   document.getElementById("sellPrice").value = "";
   document.getElementById("sellShares").value = "0";
@@ -718,7 +616,7 @@ function renderHistory() {
   const winRate = closed.length ? (wins / closed.length * 100) : 0;
   const reviewedCount = [..._reviewedTradeIds].filter(id => logs.some(l => l.id === id)).length;
   statsDiv.innerHTML = `
-    <span>总操作 <b style="color:#e1e4e8">${logs.length}</b> 笔</span>
+    <span>总操作 <b style="color:#e1e4e8">${logs.length}</b> 次</span>
     <span>已平仓 <b style="color:#e1e4e8">${closed.length}</b> 笔</span>
     <span>胜率 <b style="color:#22c55e">${winRate.toFixed(0)}%</b></span>
     <span>已实现盈亏 <b style="color:${totalPnl>=0?'#22c55e':'#ef4444'}">${totalPnl>=0?'+':''}${fmtMoney(totalPnl)}</b></span>
@@ -742,7 +640,7 @@ function renderHistory() {
       const cls = l.pnl >= 0 ? "g" : "r";
       pnlCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${fmtMoney(l.pnl)}</span>`;
       pnlPctCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${(l.pnlPct||0).toFixed(2)}%</span>`;
-      // 前向涨跌：优先使用后端生成的 HTML，没有则 fallback 到字段
+      // 前向涨跌 - 直接用预生成的 HTML，如果没有则 fallback 到对象
       if (l.fwdHtml) {
         fwdCells = l.fwdHtml;
       } else {
@@ -774,7 +672,7 @@ function renderHistory() {
     pager.style.display = "flex";
     pager.innerHTML = `
       <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage - 1})" ${_historyPage <= 1 ? 'disabled style="opacity:.3"' : ''}>上一页</button>
-      <span>第 <b style="color:#e1e4e8">${_historyPage}</b> / ${totalPages} 页（共 ${logs.length} 笔）</span>
+      <span>第 <b style="color:#e1e4e8">${_historyPage}</b> / ${totalPages} 页 (共 ${logs.length} 条)</span>
       <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage + 1})" ${_historyPage >= totalPages ? 'disabled style="opacity:.3"' : ''}>下一页</button>
     `;
   }
@@ -792,7 +690,7 @@ function goToReviewedTrade() {
   const logs = state.logs || [];
   const reversed = [...logs].reverse();
   const idx = reversed.findIndex(l => l.id === tradeId);
-  if (idx < 0) { toast("找不到这笔交易", "err"); return; }
+  if (idx < 0) { toast("找不到该交易", "err"); return; }
   // 切换到对应页
   _historyPage = Math.floor(idx / _historyPageSize) + 1;
   // 切换 tab
@@ -822,7 +720,7 @@ function renderCompare() {
     <span>额外 <b style="color:#a78bfa">${s.extraCount||0}</b></span>
   `;
 
-  // === 一: 持仓对照 (策略 vs 你，合并一张表) ===
+  // === 区1: 持仓对照 (策略 vs 你 合并一张表) ===
   const stratHolds = state.strategyHolds || [];
   const myHolds = state.holdings || [];
 
@@ -857,7 +755,7 @@ function renderCompare() {
       const s = row.strat;
       const m = row.mine;
 
-      // 策略侧
+      // 策略列
       const sHtml = s
         ? `<span style="color:#22c55e;font-weight:600">持有</span>`
         : `<span style="color:#374151">-</span>`;
@@ -867,7 +765,7 @@ function renderCompare() {
       const sSign = (s?.pnlPct||0) >= 0 ? "+" : "";
       const sPnl = s ? `${sSign}${(s.pnlPct||0).toFixed(1)}%` : "-";
 
-      // 你的侧
+      // 你的列
       const mHtml = m
         ? `<span style="color:#a78bfa;font-weight:600">持有</span>`
         : `<span style="color:#374151">-</span>`;
@@ -878,7 +776,7 @@ function renderCompare() {
       const mPnl = m ? `${mSign}${(m.pnlPct||0).toFixed(1)}%` : "-";
       const mDays = m ? `${m.holdDays}天` : "-";
 
-      // 行底色：双方都有=绿边，仅策略=蓝边，仅你=红边
+      // 行颜色：双方都有=绿边，仅策略=蓝边，仅你=紫边
       let border;
       if (s && m) border = 'border-left:3px solid #22c55e';
       else if (s) border = 'border-left:3px solid #60a5fa';
@@ -900,7 +798,7 @@ function renderCompare() {
     }).join("");
   }
 
-  // === 二: 策略买入信号 ===
+  // === 区2: 策略买入信号 ===
   const buys = state.strategyBuys || [];
   const buysBody = document.querySelector("#compareBuyTable tbody");
   const buysEmpty = document.getElementById("emptyBuys");
@@ -995,7 +893,7 @@ function renderDayTrades() {
   const date = document.getElementById("journalDate").value;
   const list = document.getElementById("dayTradeList");
   if (!date) {
-    list.innerHTML = '<div class="empty" style="padding:16px;">先选择日期</div>';
+    list.innerHTML = '<div class="empty" style="padding:16px;">先选日期</div>';
     return;
   }
   const trades = (state.logs || []).filter(l => l.date === date);
@@ -1012,7 +910,7 @@ function renderDayTrades() {
     _reviewTargetTrade = trades[0];
   }
 
-  // 同时拉取大盘数据
+  // 同时拉取大盘环境
   fetch(`/api/trading/market_context?date=${date}`)
     .then(r => r.json())
     .then(market => {
@@ -1061,7 +959,7 @@ function renderDayTrades() {
                   <div>
                     <span class="${cls}" style="font-weight:700;">${t.action === "buy" ? "买入" : "卖出"}</span>
                     <span style="margin-left:8px;">${t.code} ${t.name}</span>
-                    ${isTarget ? '<span style="margin-left:6px;font-size:10px;color:#3b82f6;">正在复盘</span>' : ''}
+                    ${isTarget ? '<span style="margin-left:6px;font-size:10px;color:#3b82f6;">◀ 正在复盘</span>' : ''}
                   </div>
                   <div style="text-align:right;font-size:12px;">
                     <div>${fmtPrice(t.price)} x ${t.shares}</div>
@@ -1170,7 +1068,7 @@ async function saveJournal() {
   });
   const data = await r.json();
   if (data.error) { toast(data.error, "err"); return; }
-  document.getElementById("journalMsg").textContent = "已保存";
+  document.getElementById("journalMsg").textContent = "已保存 ✓";
   setTimeout(() => document.getElementById("journalMsg").textContent = "", 2000);
   // 记录最后复盘的目标
   if (tradeId) _lastReviewedTradeId = tradeId;
@@ -1197,13 +1095,13 @@ function renderJournalStats(entries) {
   const planRate = entries.length ? (planFollowed / entries.length * 100) : 0;
   document.getElementById("journalStats").innerHTML = `
     <div class="review-stat"><div class="k">复盘天数</div><div class="v">${judged}/${entries.length || 0}</div><div class="k">当天流水 ${totalTrades} 笔</div></div>
-    <div class="review-stat"><div class="k">判断准确率</div><div class="v">${accuracy.toFixed(0)}%</div><div class="k">对 ${correct} / 错 ${wrong} / 半对 ${half}</div></div>
+    <div class="review-stat"><div class="k">判对率</div><div class="v">${accuracy.toFixed(0)}%</div><div class="k">对 ${correct} / 错 ${wrong} / 半对 ${half}</div></div>
     <div class="review-stat"><div class="k">平均评分</div><div class="v">${avgScore ? avgScore.toFixed(1) : "-"}</div><div class="k">按计划率 ${planRate.toFixed(0)}%</div></div>
   `;
 
   const mistakes = {};
   entries.forEach(e => {
-    const k = e.mistake_type || "未分类";
+    const k = e.mistake_type || "未归类";
     if (!k || k === "无明显错误") return;
     mistakes[k] = (mistakes[k] || 0) + 1;
   });
@@ -1211,7 +1109,7 @@ function renderJournalStats(entries) {
   const latest = entries[0];
   const latestVerdict = latest && latest.review ? (latest.review.verdict || "待复盘") : "待复盘";
   document.getElementById("mistakeStats").innerHTML = `
-    <div style="margin-bottom:6px;">最近一篇 <span class="tag" style="${REVIEW_STYLE[latestVerdict] || REVIEW_STYLE['待复盘']}">${latest?.date || "-"}</span> ${latestVerdict}</div>
+    <div style="margin-bottom:6px;">最近一笔: <span class="tag" style="${REVIEW_STYLE[latestVerdict] || REVIEW_STYLE['待复盘']}">${latest?.date || "-"}</span> ${latestVerdict}</div>
     <div style="margin-bottom:6px;">按计划率: ${planRate.toFixed(1)}%</div>
     <div>常见错误: ${
       topMistakes.length
@@ -1233,7 +1131,7 @@ async function loadJournalList() {
     }
   });
   const container = document.getElementById("journalList");
-  document.getElementById("journalCount").textContent = `(${entries.length} 篇)`;
+  document.getElementById("journalCount").textContent = `(${entries.length} 天)`;
   renderJournalStats(entries);
 
   if (!entries.length) {
@@ -1387,7 +1285,7 @@ let _reviewedTradeIds = new Set();
 function reviewTrade(date, id) {
   // 找到这笔交易
   const trade = (state.logs || []).find(l => l.id === id);
-  if (!trade) { alert("找不到这笔交易"); return; }
+  if (!trade) { alert('找不到该交易'); return; }
   _reviewTargetTrade = trade;
 
   // 切换到复盘 tab
@@ -1413,192 +1311,6 @@ function reviewTrade(date, id) {
   // 滚动到复盘区域
   document.getElementById("tab-journal").scrollIntoView({ behavior: "smooth" });
 }
-
-// ============ 大盘预测复盘 ============
-
-let _macroState = {}; // { pred_signal, pred_reason, pred_plan, actual_signal, actual_desc, verdict, reflection }
-
-function setPredSignal(sig) {
-  _macroState.pred_signal = sig;
-  ["GREEN","YELLOW","RED"].forEach(s => {
-    const btn = document.getElementById("pred"+s.charAt(0)+s.slice(1).toLowerCase());
-    if (btn) btn.style.background = s === sig ? ({"GREEN":"#22c55e22","YELLOW":"#f59e0b22","RED":"#ef444422"}[s]||"") : "";
-  });
-}
-
-function setActualSignal(sig) {
-  _macroState.actual_signal = sig;
-  ["GREEN","YELLOW","RED"].forEach(s => {
-    const btn = document.getElementById("actual"+s.charAt(0)+s.slice(1).toLowerCase());
-    if (btn) btn.style.background = s === sig ? ({"GREEN":"#22c55e22","YELLOW":"#f59e0b22","RED":"#ef444422"}[s]||"") : "";
-  });
-}
-
-function setVerdict(v) {
-  _macroState.verdict = v;
-  ["Right","Wrong","Half"].forEach(s => {
-    const btn = document.getElementById("verdict"+s);
-    if (btn) btn.style.background = "";
-  });
-  const map = {"对":"Right","错":"Wrong","半对":"Half"};
-  const btn = document.getElementById("verdict"+map[v]);
-  if (btn) btn.style.background = {"对":"#22c55e22","错":"#ef444422","半对":"#f59e0b22"}[v]||"";
-}
-
-async function loadMacroPrediction() {
-  const date = document.getElementById("macroDate").value;
-  if (!date) return;
-
-  // Reset
-  _macroState = {};
-  document.getElementById("predReason").value = "";
-  document.getElementById("predPlan").value = "";
-  document.getElementById("actualDesc").value = "";
-  document.getElementById("actualReflection").value = "";
-  setPredSignal(""); setActualSignal(""); setVerdict("");
-
-  try {
-    const r = await fetch(`/api/trading/macro_prediction?date=${date}`);
-    const d = await r.json();
-    if (d.found) {
-      const p = d.data;
-      _macroState = {
-        pred_signal: p.pred_signal || "",
-        pred_reason: p.pred_reason || "",
-        pred_plan: p.pred_plan || "",
-        actual_signal: p.actual_signal || "",
-        actual_desc: p.actual_desc || "",
-        verdict: p.verdict || "",
-        reflection: p.reflection || "",
-      };
-      document.getElementById("predReason").value = p.pred_reason || "";
-      document.getElementById("predPlan").value = p.pred_plan || "";
-      document.getElementById("actualDesc").value = p.actual_desc || "";
-      document.getElementById("actualReflection").value = p.reflection || "";
-      if (p.pred_signal) setPredSignal(p.pred_signal);
-      if (p.actual_signal) setActualSignal(p.actual_signal);
-      if (p.verdict) setVerdict(p.verdict);
-    }
-    _renderMacroComparison();
-  } catch (e) {
-    document.getElementById("macroMsg").textContent = "載入失敗";
-  }
-}
-
-async function saveMacroPrediction() {
-  const date = document.getElementById("macroDate").value;
-  if (!date) return;
-
-  _macroState.pred_reason = document.getElementById("predReason").value;
-  _macroState.pred_plan = document.getElementById("predPlan").value;
-  _macroState.actual_desc = document.getElementById("actualDesc").value;
-  _macroState.reflection = document.getElementById("actualReflection").value;
-
-  const payload = { date, ..._macroState };
-
-  try {
-    const r = await fetch("/api/trading/macro_prediction", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify(payload),
-    });
-    const d = await r.json();
-    if (d.ok) {
-      document.getElementById("macroMsg").textContent = "已保存";
-      setTimeout(() => document.getElementById("macroMsg").textContent = "", 2000);
-      _renderMacroComparison();
-      loadMacroStats();
-    } else {
-      document.getElementById("macroMsg").textContent = "保存失败";
-    }
-  } catch (e) {
-    document.getElementById("macroMsg").textContent = "保存失败";
-  }
-}
-
-function _renderMacroComparison() {
-  const el = document.getElementById("macroComparison");
-  const ps = _macroState.pred_signal || "?";
-  const as = _macroState.actual_signal || "?";
-  const pv = _macroState.verdict || "";
-
-  if (!_macroState.pred_signal && !_macroState.actual_signal) {
-    el.innerHTML = '<div class="empty">尚未填写预测或复盘</div>';
-    return;
-  }
-
-  let html = '<table style="width:100%; border-collapse:collapse;">';
-  html += '<tr><th style="width:20%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">项目</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">预测</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">实际</th><th style="width:10%;padding:8px;text-align:center;border-bottom:1px solid #2a2d3e;"></th></tr>';
-
-  html += `<tr>
-    <td style="padding:8px;border-bottom:1px solid #1e2230;">信号</td>
-    <td style="padding:8px;border-bottom:1px solid #1e2230;font-weight:700;color:${_sigColor(ps)};">${ps}</td>
-    <td style="padding:8px;border-bottom:1px solid #1e2230;font-weight:700;color:${_sigColor(as)};">${as}</td>
-    <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${ps===as&&as!=='?'?'对':(as!=='?'?'错':'')}</td>
-  </tr>`;
-
-  if (_macroState.pred_reason) {
-    html += `<tr>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;">预测理由</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.pred_reason}</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.actual_desc || '-'}</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${pv==='对'?'对':(pv==='错'?'错':(pv==='半对'?'半对':''))}</td>
-    </tr>`;
-  }
-
-  if (_macroState.pred_plan) {
-    html += `<tr>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;">操作计划</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.pred_plan.replace(/\n/g,'<br>')}</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#6b7280;">${pv==='对'?'计划有效':(pv==='错'?'计划偏差':'-')}</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;"></td>
-    </tr>`;
-  }
-
-  if (_macroState.reflection) {
-    html += `<tr>
-      <td style="padding:8px;">反思</td>
-      <td colspan="3" style="padding:8px;font-size:12px;color:#9ca3af;">${_macroState.reflection.replace(/\n/g,'<br>')}</td>
-    </tr>`;
-  }
-
-  html += '</table>';
-  el.innerHTML = html;
-}
-
-function _sigColor(s) {
-  return {"GREEN":"#22c55e","YELLOW":"#f59e0b","RED":"#ef4444"}[s]||"#6b7280";
-}
-
-function goMacroDay(delta) {
-  const d = document.getElementById("macroDate").value;
-  if (!d) return;
-  const dt = new Date(d);
-  dt.setDate(dt.getDate() + delta);
-  const today = new Date().toISOString().slice(0,10);
-  if (dt.toISOString().slice(0,10) > today) return;
-  document.getElementById("macroDate").value = dt.toISOString().slice(0,10);
-  loadMacroPrediction();
-}
-
-async function loadMacroStats() {
-  try {
-    const r = await fetch("/api/trading/macro_prediction?stats=1");
-    const s = await r.json();
-    document.getElementById("macroStats").innerHTML = `
-      <div class="review-stat"><div class="k">预测天数</div><div class="v">${s.total || 0}</div><div class="k">总交易日</div></div>
-      <div class="review-stat"><div class="k">准确率</div><div class="v">${s.accuracy || 0}%</div><div class="k">对 ${s.correct||0} / 错 ${s.wrong||0} / 半对 ${s.half||0}</div></div>
-      <div class="review-stat"><div class="k">最近</div><div class="v">${s.recent || '-'}</div><div class="k">近几次准确率: ${s.recent_accuracy||0}%</div></div>
-    `;
-  } catch(e) {}
-}
-
-// init
-(async function initMacro() {
-  document.getElementById("macroDate").value = new Date().toISOString().slice(0,10);
-  loadMacroStats();
-})();
 </script>
 </body>
 </html>
-
