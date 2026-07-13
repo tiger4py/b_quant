@@ -16,7 +16,7 @@
 區間: 2023-01-03 ~ 2026-07-10 | 標的池: 365 個同花順概念
 
 用法:
-  python script/run_backtest.py --universe concept --strategy divergent_concept
+  python script/run_backtest.py --universe concept --strategy divergent_adaptive
 """
 
 

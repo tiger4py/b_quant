@@ -3,7 +3,7 @@
 统一回测入口 — 支持 concept / etf / stock 三种标的池
 
 用法:
-  python script/run_backtest.py --universe concept --strategy divergent_concept
+  python script/run_backtest.py --universe concept --strategy divergent_adaptive
   python script/run_backtest.py --universe etf --strategy etf_alpha
   python script/run_backtest.py --universe stock --strategy alpha042
   python script/run_backtest.py --universe concept --strategy all
@@ -367,7 +367,7 @@ def main():
             continue
 
         # ---- 跨截面策略走独立引擎 ----
-        if sid in ("divergent_concept", "divergent_adaptive") and args.universe == "concept":
+        if sid == "divergent_adaptive" and args.universe == "concept":
             from backtest.strategy.strategy_divergent_adaptive import run_adaptive_backtest
             name_map = {c: s["name"] for c, s in stock_map.items()}
             result = run_adaptive_backtest(bars_by_code, name_map,
