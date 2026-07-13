@@ -1,0 +1,20 @@
+{
+  "code": "sh510500",
+  "raw_code": "510500",
+  "exchange": "sh",
+  "name": "中证500ETF南方",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3038,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 8.806,
+    "high": 8.933,
+    "low": 8.661,
+    "close": 8.698,
+    "volume": 435206229,
+    "amount": 3818717056.36
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sz159870",
+  "raw_code": "159870",
+  "exchange": "sz",
+  "name": "化工ETF鹏华",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-03-03",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1296,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.801,
+    "high": 0.805,
+    "low": 0.785,
+    "close": 0.786,
+    "volume": 485557628,
+    "amount": 385654146.04
+  }
+}

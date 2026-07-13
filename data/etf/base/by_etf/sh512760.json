@@ -1,0 +1,20 @@
+{
+  "code": "sh512760",
+  "raw_code": "512760",
+  "exchange": "sh",
+  "name": "芯片ETF国泰",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2019-06-12",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1714,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.56,
+    "high": 1.589,
+    "low": 1.445,
+    "close": 1.448,
+    "volume": 798702653,
+    "amount": 1206440357.36
+  }
+}

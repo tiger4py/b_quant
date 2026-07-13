@@ -1,0 +1,20 @@
+{
+  "code": "sz159326",
+  "raw_code": "159326",
+  "exchange": "sz",
+  "name": "电网设备ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-09-09",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 439,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.816,
+    "high": 1.865,
+    "low": 1.792,
+    "close": 1.794,
+    "volume": 531591092,
+    "amount": 965768116.39
+  }
+}

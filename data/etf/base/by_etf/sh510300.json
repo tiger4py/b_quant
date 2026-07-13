@@ -1,0 +1,20 @@
+{
+  "code": "sh510300",
+  "raw_code": "510300",
+  "exchange": "sh",
+  "name": "沪深300ETF华泰柏瑞",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3040,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 4.918,
+    "high": 4.949,
+    "low": 4.827,
+    "close": 4.829,
+    "volume": 824280021,
+    "amount": 4023104712.5
+  }
+}

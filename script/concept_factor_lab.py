@@ -55,7 +55,7 @@ from script.alpha_factor_lab import (
 
 # ======== 配置 ========
 
-DEFAULT_START_DATE = "2022-05-06"
+DEFAULT_START_DATE = "2023-01-01"
 DEFAULT_INITIAL_CASH = 1_000_000.0
 DEFAULT_MAX_POSITIONS = 10
 DEFAULT_REBALANCE_DAYS = 5

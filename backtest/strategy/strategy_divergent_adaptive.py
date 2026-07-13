@@ -459,7 +459,7 @@ def run_adaptive_backtest(
 
     bars_by_code, name_map,
 
-    initial_cash=1_000_000, start_date="2023-01-01",
+    initial_cash=1_000_000, start_date="2023-01-01", end_date=None,
 
     regime_eval_days=10,  # 每N天评估一次市场股性
 
@@ -473,7 +473,7 @@ def run_adaptive_backtest(
 
     ))
 
-    all_dates = [d for d in all_dates if d >= start_date]
+    all_dates = [d for d in all_dates if d >= start_date and (end_date is None or d <= end_date)]
 
 
 
@@ -906,6 +906,7 @@ def main():
     parser = argparse.ArgumentParser(description="股性突变埋伏-自适应版")
 
     parser.add_argument("--start", default="2023-01-01")
+    parser.add_argument("--end", default=None)
 
     parser.add_argument("--cash", type=float, default=1_000_000)
 
@@ -927,7 +928,7 @@ def main():
 
         bars_by_code, name_map,
 
-        initial_cash=args.cash, start_date=args.start,
+        initial_cash=args.cash, start_date=args.start, end_date=args.end,
 
         regime_eval_days=args.eval_days,
 

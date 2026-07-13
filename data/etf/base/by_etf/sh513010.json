@@ -1,0 +1,20 @@
+{
+  "code": "sh513010",
+  "raw_code": "513010",
+  "exchange": "sh",
+  "name": "恒生科技ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-05-25",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1241,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.626,
+    "high": 0.635,
+    "low": 0.619,
+    "close": 0.623,
+    "volume": 1972937367,
+    "amount": 1234565557.4
+  }
+}

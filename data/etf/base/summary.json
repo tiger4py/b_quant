@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-07-13 13:36:09",
+  "source": "data/etf_codes_main.json + data/etf/YYYY/YYYY-MM.csv",
+  "etf_count": 123,
+  "etf_with_daily": 123,
+  "etf_without_daily": 0,
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "total_daily_bars": 159952
+}

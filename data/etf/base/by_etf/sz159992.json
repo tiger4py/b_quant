@@ -1,0 +1,20 @@
+{
+  "code": "sz159992",
+  "raw_code": "159992",
+  "exchange": "sz",
+  "name": "创新药ETF银华",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-04-10",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1512,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.82,
+    "high": 0.868,
+    "low": 0.816,
+    "close": 0.855,
+    "volume": 1683270573,
+    "amount": 1413526463.68
+  }
+}

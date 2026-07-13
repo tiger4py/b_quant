@@ -1,0 +1,20 @@
+{
+  "code": "sz159682",
+  "raw_code": "159682",
+  "exchange": "sz",
+  "name": "创业板50ETF景顺",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2023-01-03",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 848,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.871,
+    "high": 1.884,
+    "low": 1.776,
+    "close": 1.78,
+    "volume": 200760660,
+    "amount": 366940296.31
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sz159327",
+  "raw_code": "159327",
+  "exchange": "sz",
+  "name": "半导体设备ETF万家",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-08-05",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 464,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 4.791,
+    "high": 4.903,
+    "low": 4.45,
+    "close": 4.457,
+    "volume": 120103000,
+    "amount": 558508975.75
+  }
+}

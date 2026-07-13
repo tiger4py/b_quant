@@ -1,0 +1,20 @@
+{
+  "code": "sz159558",
+  "raw_code": "159558",
+  "exchange": "sz",
+  "name": "半导体设备ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-06-18",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 498,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.554,
+    "high": 1.611,
+    "low": 1.44,
+    "close": 1.445,
+    "volume": 2631119858,
+    "amount": 3979568785.23
+  }
+}

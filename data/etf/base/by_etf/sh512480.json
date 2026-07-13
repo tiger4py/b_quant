@@ -1,0 +1,20 @@
+{
+  "code": "sh512480",
+  "raw_code": "512480",
+  "exchange": "sh",
+  "name": "半导体ETF国联安",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2019-06-12",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1714,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.487,
+    "high": 1.512,
+    "low": 1.366,
+    "close": 1.369,
+    "volume": 2519213988,
+    "amount": 3611293251.8
+  }
+}

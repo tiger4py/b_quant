@@ -1,0 +1,20 @@
+{
+  "code": "sz159381",
+  "raw_code": "159381",
+  "exchange": "sz",
+  "name": "创业板人工智能ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2025-03-24",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 313,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.382,
+    "high": 1.414,
+    "low": 1.335,
+    "close": 1.337,
+    "volume": 566141793,
+    "amount": 773915831.03
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sh512050",
+  "raw_code": "512050",
+  "exchange": "sh",
+  "name": "A500ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-11-15",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 397,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.298,
+    "high": 1.31,
+    "low": 1.274,
+    "close": 1.276,
+    "volume": 1481034777,
+    "amount": 1909794344.94
+  }
+}

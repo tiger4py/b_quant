@@ -1,0 +1,20 @@
+{
+  "code": "sz159502",
+  "raw_code": "159502",
+  "exchange": "sz",
+  "name": "标普生物科技ETF嘉实",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-01-10",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 600,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.697,
+    "high": 1.703,
+    "low": 1.672,
+    "close": 1.683,
+    "volume": 289204800,
+    "amount": 488394606.0
+  }
+}

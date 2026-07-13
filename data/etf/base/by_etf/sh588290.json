@@ -1,0 +1,20 @@
+{
+  "code": "sh588290",
+  "raw_code": "588290",
+  "exchange": "sh",
+  "name": "科创芯片ETF华安",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-10-26",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 896,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 4.848,
+    "high": 4.907,
+    "low": 4.467,
+    "close": 4.475,
+    "volume": 152374971,
+    "amount": 712238708.2
+  }
+}

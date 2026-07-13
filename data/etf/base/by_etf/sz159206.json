@@ -1,0 +1,20 @@
+{
+  "code": "sz159206",
+  "raw_code": "159206",
+  "exchange": "sz",
+  "name": "卫星ETF永赢",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2025-03-14",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 319,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.694,
+    "high": 1.866,
+    "low": 1.667,
+    "close": 1.795,
+    "volume": 2940225615,
+    "amount": 5161566067.13
+  }
+}

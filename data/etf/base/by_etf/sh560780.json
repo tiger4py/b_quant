@@ -1,0 +1,20 @@
+{
+  "code": "sh560780",
+  "raw_code": "560780",
+  "exchange": "sh",
+  "name": "半导体设备ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2023-12-12",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 620,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.469,
+    "high": 1.516,
+    "low": 1.362,
+    "close": 1.369,
+    "volume": 1444495908,
+    "amount": 2064184652.53
+  }
+}

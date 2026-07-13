@@ -33,7 +33,7 @@ from backtest.strategy import strategy_etf_alpha042 as ETF_ALPHA042
 from backtest.portfolio import _build_market_stats
 
 
-DEFAULT_START_DATE = "2022-05-06"
+DEFAULT_START_DATE = "2023-01-01"
 DEFAULT_INITIAL_CASH = 1_000_000.0
 DEFAULT_MAX_POSITIONS = 5
 DEFAULT_REBALANCE_DAYS = 5

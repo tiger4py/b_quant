@@ -1,0 +1,20 @@
+{
+  "code": "sh512880",
+  "raw_code": "512880",
+  "exchange": "sh",
+  "name": "证券ETF国泰",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2016-08-08",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2405,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.128,
+    "high": 1.128,
+    "low": 1.11,
+    "close": 1.11,
+    "volume": 2741098784,
+    "amount": 3067289539.3
+  }
+}

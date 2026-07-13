@@ -1,0 +1,20 @@
+{
+  "code": "sh563300",
+  "raw_code": "563300",
+  "exchange": "sh",
+  "name": "中证2000ETF华泰柏瑞",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2023-09-14",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 677,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.516,
+    "high": 1.554,
+    "low": 1.51,
+    "close": 1.512,
+    "volume": 459856570,
+    "amount": 700361556.11
+  }
+}

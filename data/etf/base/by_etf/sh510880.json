@@ -1,0 +1,20 @@
+{
+  "code": "sh510880",
+  "raw_code": "510880",
+  "exchange": "sh",
+  "name": "红利ETF华泰柏瑞",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3040,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 3.025,
+    "high": 3.057,
+    "low": 3.008,
+    "close": 3.045,
+    "volume": 161705300,
+    "amount": 490573453.88
+  }
+}

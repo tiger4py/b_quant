@@ -10,7 +10,7 @@ from models.stock import StockDaily, StockInfo
 
 DEFAULT_MARKET_INITIAL_CASH = 1000000.0
 DEFAULT_MARKET_MAX_POSITIONS = 5
-FIXED_START_DATE = "2022-05-06"
+FIXED_START_DATE = "2023-01-01"
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 ARCHIVE_ROOT = ROOT_DIR / "data" / "strategy"
@@ -143,6 +143,7 @@ def compute_market_result(
     result = run_portfolio_backtest(
         bars_by_code, stock_map, strategy,
         initial_cash=initial_cash, max_positions=max_positions,
+        start_date=effective_start, end_date=effective_end,
     )
     trades = result["trades"]
     trades.sort(key=lambda x: (x["buy_date"], x["code"]))

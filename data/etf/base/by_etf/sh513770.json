@@ -1,0 +1,20 @@
+{
+  "code": "sh513770",
+  "raw_code": "513770",
+  "exchange": "sh",
+  "name": "港股互联网ETF华宝",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-02-18",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1062,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.365,
+    "high": 0.372,
+    "low": 0.357,
+    "close": 0.366,
+    "volume": 1846964600,
+    "amount": 674142079.0
+  }
+}

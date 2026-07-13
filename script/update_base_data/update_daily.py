@@ -11,7 +11,7 @@
 
 不再直接写数据库，数据库导入由 script/import_day_stock.py 负责。
 """
-import os, sys, csv
+import os, sys, csv, json
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 import argparse
@@ -19,6 +19,7 @@ import logging
 import time
 from datetime import datetime
 from collections import defaultdict
+from types import SimpleNamespace
 
 import baostock as bs
 
@@ -30,9 +31,24 @@ logger = logging.getLogger(__name__)
 # ======== 输出目录 ========
 DAY_STOCK_DIR = os.path.join(DATA_DIR, "day_stock")
 DAY_CONCEPT_DIR = os.path.join(DATA_DIR, "day_concept")
+CONCEPT_BASE_PATH = os.path.join(DATA_DIR, "concept", "base", "concepts.json")
 
 
 _TRADE_DATES_CACHE = None  # 交易日集合缓存
+
+
+def _load_concepts_from_base():
+    if not os.path.exists(CONCEPT_BASE_PATH):
+        return None
+    with open(CONCEPT_BASE_PATH, "r", encoding="utf-8") as f:
+        items = json.load(f)
+    concepts = [
+        SimpleNamespace(code=item["concept_code"], name=item["concept_name"])
+        for item in items
+        if item.get("concept_code") and item.get("concept_name")
+    ]
+    logger.info("Concept list from base: %d", len(concepts))
+    return concepts
 
 
 def _get_trade_dates() -> set:
@@ -365,8 +381,13 @@ def update_concepts(start: str, end: str):
     start_date = start.replace("-", "")
     end_date = end.replace("-", "")
 
-    with Session() as sess:
-        concepts = sess.query(Concept).all()
+    concepts = _load_concepts_from_base()
+    if concepts is None:
+        engine = create_engine(DATABASE_URL, echo=False)
+        Session = sessionmaker(bind=engine)
+        with Session() as sess:
+            concepts = sess.query(Concept).all()
+        logger.info("Concept list from DB fallback: %d", len(concepts))
 
     logger.info("Fetching concept daily: %d concepts, %s ~ %s", len(concepts), start_date, end_date)
 

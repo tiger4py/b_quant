@@ -1,0 +1,20 @@
+{
+  "code": "sz159819",
+  "raw_code": "159819",
+  "exchange": "sz",
+  "name": "人工智能ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-09-23",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1399,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 2.189,
+    "high": 2.246,
+    "low": 2.116,
+    "close": 2.116,
+    "volume": 473520158,
+    "amount": 1025999802.35
+  }
+}

@@ -1,0 +1,1860 @@
+{
+  "generated_at": "2026-07-13 12:28:53",
+  "concept_count": 370,
+  "concept_with_constituents": 0,
+  "failure_count": 370,
+  "total_constituent_relations": 0,
+  "source": "data/concept CSV + ths_q_10jqka constituents",
+  "failures": [
+    {
+      "concept_code": "300008",
+      "concept_name": "新能源汽车",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300008/"
+    },
+    {
+      "concept_code": "300018",
+      "concept_name": "参股保险",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300018/"
+    },
+    {
+      "concept_code": "300013",
+      "concept_name": "大飞机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300013/"
+    },
+    {
+      "concept_code": "300019",
+      "concept_name": "网络游戏",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300019/"
+    },
+    {
+      "concept_code": "300023",
+      "concept_name": "食品安全",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300023/"
+    },
+    {
+      "concept_code": "300061",
+      "concept_name": "京津冀一体化",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300061/"
+    },
+    {
+      "concept_code": "300038",
+      "concept_name": "流感",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300038/"
+    },
+    {
+      "concept_code": "300037",
+      "concept_name": "智能电网",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300037/"
+    },
+    {
+      "concept_code": "300066",
+      "concept_name": "海峡两岸",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300066/"
+    },
+    {
+      "concept_code": "300075",
+      "concept_name": "禽流感",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300075/"
+    },
+    {
+      "concept_code": "300082",
+      "concept_name": "军工",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300082/"
+    },
+    {
+      "concept_code": "300084",
+      "concept_name": "煤化工概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300084/"
+    },
+    {
+      "concept_code": "300098",
+      "concept_name": "磷化工",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300098/"
+    },
+    {
+      "concept_code": "300085",
+      "concept_name": "氟化工概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300085/"
+    },
+    {
+      "concept_code": "300087",
+      "concept_name": "横琴新区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300087/"
+    },
+    {
+      "concept_code": "300100",
+      "concept_name": "参股券商",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300100/"
+    },
+    {
+      "concept_code": "300105",
+      "concept_name": "海工装备",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300105/"
+    },
+    {
+      "concept_code": "300134",
+      "concept_name": "PM2.5",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300134/"
+    },
+    {
+      "concept_code": "300106",
+      "concept_name": "生物疫苗",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300106/"
+    },
+    {
+      "concept_code": "300127",
+      "concept_name": "3D打印",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300127/"
+    },
+    {
+      "concept_code": "300157",
+      "concept_name": "草甘膦",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300157/"
+    },
+    {
+      "concept_code": "300180",
+      "concept_name": "时空大数据",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300180/"
+    },
+    {
+      "concept_code": "300163",
+      "concept_name": "车联网(车路协同)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300163/"
+    },
+    {
+      "concept_code": "300168",
+      "concept_name": "创投",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300168/"
+    },
+    {
+      "concept_code": "300188",
+      "concept_name": "移动支付",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300188/"
+    },
+    {
+      "concept_code": "300200",
+      "concept_name": "风电",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300200/"
+    },
+    {
+      "concept_code": "300220",
+      "concept_name": "期货概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300220/"
+    },
+    {
+      "concept_code": "300221",
+      "concept_name": "固废处理",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300221/"
+    },
+    {
+      "concept_code": "300223",
+      "concept_name": "光热发电",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300223/"
+    },
+    {
+      "concept_code": "300236",
+      "concept_name": "国产航母",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300236/"
+    },
+    {
+      "concept_code": "300238",
+      "concept_name": "核电",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300238/"
+    },
+    {
+      "concept_code": "300248",
+      "concept_name": "黄金概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300248/"
+    },
+    {
+      "concept_code": "300261",
+      "concept_name": "建筑节能",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300261/"
+    },
+    {
+      "concept_code": "300269",
+      "concept_name": "举牌",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300269/"
+    },
+    {
+      "concept_code": "300277",
+      "concept_name": "可燃冰",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300277/"
+    },
+    {
+      "concept_code": "300309",
+      "concept_name": "苹果概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300309/"
+    },
+    {
+      "concept_code": "300316",
+      "concept_name": "燃料电池",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300316/"
+    },
+    {
+      "concept_code": "300337",
+      "concept_name": "石墨烯",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300337/"
+    },
+    {
+      "concept_code": "300345",
+      "concept_name": "水利",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300345/"
+    },
+    {
+      "concept_code": "300351",
+      "concept_name": "钛白粉概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300351/"
+    },
+    {
+      "concept_code": "300352",
+      "concept_name": "碳纤维",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300352/"
+    },
+    {
+      "concept_code": "300358",
+      "concept_name": "天然气",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300358/"
+    },
+    {
+      "concept_code": "300353",
+      "concept_name": "特高压",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300353/"
+    },
+    {
+      "concept_code": "300374",
+      "concept_name": "污水处理",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300374/"
+    },
+    {
+      "concept_code": "300378",
+      "concept_name": "物联网",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300378/"
+    },
+    {
+      "concept_code": "300386",
+      "concept_name": "新疆振兴",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300386/"
+    },
+    {
+      "concept_code": "300382",
+      "concept_name": "稀土永磁",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300382/"
+    },
+    {
+      "concept_code": "300402",
+      "concept_name": "页岩气",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300402/"
+    },
+    {
+      "concept_code": "300419",
+      "concept_name": "云计算",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300419/"
+    },
+    {
+      "concept_code": "300435",
+      "concept_name": "转基因",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300435/"
+    },
+    {
+      "concept_code": "300642",
+      "concept_name": "智慧城市",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300642/"
+    },
+    {
+      "concept_code": "300451",
+      "concept_name": "猪肉",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300451/"
+    },
+    {
+      "concept_code": "300682",
+      "concept_name": "智能医疗",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300682/"
+    },
+    {
+      "concept_code": "300704",
+      "concept_name": "中字头股票",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300704/"
+    },
+    {
+      "concept_code": "300722",
+      "concept_name": "卫星导航",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300722/"
+    },
+    {
+      "concept_code": "300723",
+      "concept_name": "无线充电",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300723/"
+    },
+    {
+      "concept_code": "300733",
+      "concept_name": "锂电池概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300733/"
+    },
+    {
+      "concept_code": "300756",
+      "concept_name": "网络安全",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300756/"
+    },
+    {
+      "concept_code": "300795",
+      "concept_name": "太赫兹",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300795/"
+    },
+    {
+      "concept_code": "300786",
+      "concept_name": "充电桩",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300786/"
+    },
+    {
+      "concept_code": "300800",
+      "concept_name": "安防",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300800/"
+    },
+    {
+      "concept_code": "300809",
+      "concept_name": "小金属概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300809/"
+    },
+    {
+      "concept_code": "300806",
+      "concept_name": "文化传媒概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300806/"
+    },
+    {
+      "concept_code": "300814",
+      "concept_name": "家用电器",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300814/"
+    },
+    {
+      "concept_code": "300816",
+      "concept_name": "机器人概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300816/"
+    },
+    {
+      "concept_code": "300830",
+      "concept_name": "量子科技",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300830/"
+    },
+    {
+      "concept_code": "300841",
+      "concept_name": "新型城镇化",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300841/"
+    },
+    {
+      "concept_code": "300836",
+      "concept_name": "乡村振兴",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300836/"
+    },
+    {
+      "concept_code": "300843",
+      "concept_name": "5G",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300843/"
+    },
+    {
+      "concept_code": "300845",
+      "concept_name": "特钢概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300845/"
+    },
+    {
+      "concept_code": "300862",
+      "concept_name": "ST板块",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300862/"
+    },
+    {
+      "concept_code": "300858",
+      "concept_name": "土地流转",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300858/"
+    },
+    {
+      "concept_code": "300889",
+      "concept_name": "无人机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300889/"
+    },
+    {
+      "concept_code": "300890",
+      "concept_name": "高端装备",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300890/"
+    },
+    {
+      "concept_code": "300870",
+      "concept_name": "新股与次新股",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300870/"
+    },
+    {
+      "concept_code": "300891",
+      "concept_name": "三胎概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300891/"
+    },
+    {
+      "concept_code": "300920",
+      "concept_name": "智能家居",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300920/"
+    },
+    {
+      "concept_code": "300917",
+      "concept_name": "语音技术",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300917/"
+    },
+    {
+      "concept_code": "300900",
+      "concept_name": "融资融券",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300900/"
+    },
+    {
+      "concept_code": "300923",
+      "concept_name": "生态农业",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300923/"
+    },
+    {
+      "concept_code": "300931",
+      "concept_name": "碳交易",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300931/"
+    },
+    {
+      "concept_code": "300925",
+      "concept_name": "土壤修复",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300925/"
+    },
+    {
+      "concept_code": "300926",
+      "concept_name": "超级电容",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300926/"
+    },
+    {
+      "concept_code": "300941",
+      "concept_name": "工业母机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300941/"
+    },
+    {
+      "concept_code": "300973",
+      "concept_name": "航运概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300973/"
+    },
+    {
+      "concept_code": "300983",
+      "concept_name": "乳业",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300983/"
+    },
+    {
+      "concept_code": "301016",
+      "concept_name": "传感器",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301016/"
+    },
+    {
+      "concept_code": "301032",
+      "concept_name": "净水概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301032/"
+    },
+    {
+      "concept_code": "301050",
+      "concept_name": "手机游戏",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301050/"
+    },
+    {
+      "concept_code": "301079",
+      "concept_name": "光伏概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301079/"
+    },
+    {
+      "concept_code": "301096",
+      "concept_name": "钠离子电池",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301096/"
+    },
+    {
+      "concept_code": "301085",
+      "concept_name": "芯片概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301085/"
+    },
+    {
+      "concept_code": "301100",
+      "concept_name": "足球概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301100/"
+    },
+    {
+      "concept_code": "301104",
+      "concept_name": "化肥",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301104/"
+    },
+    {
+      "concept_code": "301117",
+      "concept_name": "可降解塑料",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301117/"
+    },
+    {
+      "concept_code": "301107",
+      "concept_name": "金属回收",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301107/"
+    },
+    {
+      "concept_code": "301121",
+      "concept_name": "特斯拉概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301121/"
+    },
+    {
+      "concept_code": "301123",
+      "concept_name": "大豆",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301123/"
+    },
+    {
+      "concept_code": "301135",
+      "concept_name": "电子纸",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301135/"
+    },
+    {
+      "concept_code": "301128",
+      "concept_name": "上海自贸区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301128/"
+    },
+    {
+      "concept_code": "301166",
+      "concept_name": "人脸识别",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301166/"
+    },
+    {
+      "concept_code": "301146",
+      "concept_name": "基因测序",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301146/"
+    },
+    {
+      "concept_code": "301171",
+      "concept_name": "深圳国企改革",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301171/"
+    },
+    {
+      "concept_code": "301154",
+      "concept_name": "OLED",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301154/"
+    },
+    {
+      "concept_code": "301175",
+      "concept_name": "智能穿戴",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301175/"
+    },
+    {
+      "concept_code": "301174",
+      "concept_name": "钒电池",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301174/"
+    },
+    {
+      "concept_code": "301179",
+      "concept_name": "冷链物流",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301179/"
+    },
+    {
+      "concept_code": "301209",
+      "concept_name": "互联网金融",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301209/"
+    },
+    {
+      "concept_code": "301223",
+      "concept_name": "旅游概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301223/"
+    },
+    {
+      "concept_code": "301227",
+      "concept_name": "在线教育",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301227/"
+    },
+    {
+      "concept_code": "301229",
+      "concept_name": "天津自贸区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301229/"
+    },
+    {
+      "concept_code": "301236",
+      "concept_name": "福建自贸区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301236/"
+    },
+    {
+      "concept_code": "301248",
+      "concept_name": "两轮车",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301248/"
+    },
+    {
+      "concept_code": "301252",
+      "concept_name": "眼科医疗",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301252/"
+    },
+    {
+      "concept_code": "301258",
+      "concept_name": "机器视觉",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301258/"
+    },
+    {
+      "concept_code": "301259",
+      "concept_name": "百度概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301259/"
+    },
+    {
+      "concept_code": "301270",
+      "concept_name": "参股银行",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301270/"
+    },
+    {
+      "concept_code": "301279",
+      "concept_name": "有机硅概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301279/"
+    },
+    {
+      "concept_code": "301278",
+      "concept_name": "小米概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301278/"
+    },
+    {
+      "concept_code": "301286",
+      "concept_name": "无人驾驶",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301286/"
+    },
+    {
+      "concept_code": "301292",
+      "concept_name": "染料",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301292/"
+    },
+    {
+      "concept_code": "301346",
+      "concept_name": "民营医院",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301346/"
+    },
+    {
+      "concept_code": "301306",
+      "concept_name": "农机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301306/"
+    },
+    {
+      "concept_code": "301362",
+      "concept_name": "新型烟草(电子烟)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301362/"
+    },
+    {
+      "concept_code": "301402",
+      "concept_name": "上海国企改革",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301402/"
+    },
+    {
+      "concept_code": "301377",
+      "concept_name": "信托概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301377/"
+    },
+    {
+      "concept_code": "301365",
+      "concept_name": "一带一路",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301365/"
+    },
+    {
+      "concept_code": "301424",
+      "concept_name": "核污染防治",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301424/"
+    },
+    {
+      "concept_code": "301470",
+      "concept_name": "航空发动机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301470/"
+    },
+    {
+      "concept_code": "301455",
+      "concept_name": "摘帽",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301455/"
+    },
+    {
+      "concept_code": "301459",
+      "concept_name": "华为概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301459/"
+    },
+    {
+      "concept_code": "301471",
+      "concept_name": "汽车电子",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301471/"
+    },
+    {
+      "concept_code": "301477",
+      "concept_name": "工业大麻",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301477/"
+    },
+    {
+      "concept_code": "301491",
+      "concept_name": "粤港澳大湾区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301491/"
+    },
+    {
+      "concept_code": "301490",
+      "concept_name": "沪股通",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301490/"
+    },
+    {
+      "concept_code": "301494",
+      "concept_name": "养老概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301494/"
+    },
+    {
+      "concept_code": "301496",
+      "concept_name": "白酒概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301496/"
+    },
+    {
+      "concept_code": "301505",
+      "concept_name": "医疗器械概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301505/"
+    },
+    {
+      "concept_code": "301497",
+      "concept_name": "啤酒概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301497/"
+    },
+    {
+      "concept_code": "301511",
+      "concept_name": "金属镍",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301511/"
+    },
+    {
+      "concept_code": "301539",
+      "concept_name": "职业教育",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301539/"
+    },
+    {
+      "concept_code": "301518",
+      "concept_name": "高铁",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301518/"
+    },
+    {
+      "concept_code": "301541",
+      "concept_name": "中韩自贸区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301541/"
+    },
+    {
+      "concept_code": "301543",
+      "concept_name": "细胞免疫治疗",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301543/"
+    },
+    {
+      "concept_code": "301558",
+      "concept_name": "阿里巴巴概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301558/"
+    },
+    {
+      "concept_code": "301546",
+      "concept_name": "央企国企改革",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301546/"
+    },
+    {
+      "concept_code": "301564",
+      "concept_name": "跨境电商",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301564/"
+    },
+    {
+      "concept_code": "301565",
+      "concept_name": "医药电商",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301565/"
+    },
+    {
+      "concept_code": "301572",
+      "concept_name": "玉米",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301572/"
+    },
+    {
+      "concept_code": "301576",
+      "concept_name": "养鸡",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301576/"
+    },
+    {
+      "concept_code": "301577",
+      "concept_name": "金属铜",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301577/"
+    },
+    {
+      "concept_code": "301582",
+      "concept_name": "金属锌",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301582/"
+    },
+    {
+      "concept_code": "301605",
+      "concept_name": "体育产业",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301605/"
+    },
+    {
+      "concept_code": "301602",
+      "concept_name": "赛马概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301602/"
+    },
+    {
+      "concept_code": "301623",
+      "concept_name": "地下管网",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301623/"
+    },
+    {
+      "concept_code": "301624",
+      "concept_name": "PPP概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301624/"
+    },
+    {
+      "concept_code": "301628",
+      "concept_name": "互联网保险",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301628/"
+    },
+    {
+      "concept_code": "301630",
+      "concept_name": "广东自贸区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301630/"
+    },
+    {
+      "concept_code": "301632",
+      "concept_name": "农村电商",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301632/"
+    },
+    {
+      "concept_code": "301636",
+      "concept_name": "深股通",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301636/"
+    },
+    {
+      "concept_code": "301699",
+      "concept_name": "虚拟现实",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301699/"
+    },
+    {
+      "concept_code": "301669",
+      "concept_name": "供销社",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301669/"
+    },
+    {
+      "concept_code": "301713",
+      "concept_name": "中船系",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301713/"
+    },
+    {
+      "concept_code": "301715",
+      "concept_name": "证金持股",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301715/"
+    },
+    {
+      "concept_code": "301780",
+      "concept_name": "工业互联网",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301780/"
+    },
+    {
+      "concept_code": "301786",
+      "concept_name": "军民融合",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301786/"
+    },
+    {
+      "concept_code": "301794",
+      "concept_name": "青蒿素",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301794/"
+    },
+    {
+      "concept_code": "301797",
+      "concept_name": "智能物流",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301797/"
+    },
+    {
+      "concept_code": "301997",
+      "concept_name": "数字货币",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301997/"
+    },
+    {
+      "concept_code": "302010",
+      "concept_name": "腾讯概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302010/"
+    },
+    {
+      "concept_code": "302027",
+      "concept_name": "电子竞技",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302027/"
+    },
+    {
+      "concept_code": "302034",
+      "concept_name": "租售同权",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302034/"
+    },
+    {
+      "concept_code": "302045",
+      "concept_name": "区块链",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302045/"
+    },
+    {
+      "concept_code": "302035",
+      "concept_name": "人工智能",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302035/"
+    },
+    {
+      "concept_code": "302046",
+      "concept_name": "化债概念(AMC概念)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302046/"
+    },
+    {
+      "concept_code": "302131",
+      "concept_name": "智能音箱",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302131/"
+    },
+    {
+      "concept_code": "302142",
+      "concept_name": "网约车",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302142/"
+    },
+    {
+      "concept_code": "302150",
+      "concept_name": "蚂蚁集团概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302150/"
+    },
+    {
+      "concept_code": "302154",
+      "concept_name": "股权转让(并购重组)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302154/"
+    },
+    {
+      "concept_code": "302166",
+      "concept_name": "共享单车",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302166/"
+    },
+    {
+      "concept_code": "302174",
+      "concept_name": "金属钴",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302174/"
+    },
+    {
+      "concept_code": "302182",
+      "concept_name": "雄安新区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302182/"
+    },
+    {
+      "concept_code": "302674",
+      "concept_name": "特色小镇",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302674/"
+    },
+    {
+      "concept_code": "304756",
+      "concept_name": "无人零售",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/304756/"
+    },
+    {
+      "concept_code": "305376",
+      "concept_name": "丙烯酸",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/305376/"
+    },
+    {
+      "concept_code": "305794",
+      "concept_name": "装配式建筑",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/305794/"
+    },
+    {
+      "concept_code": "306380",
+      "concept_name": "储能",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/306380/"
+    },
+    {
+      "concept_code": "306398",
+      "concept_name": "自由贸易港",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/306398/"
+    },
+    {
+      "concept_code": "306750",
+      "concept_name": "超级品牌",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/306750/"
+    },
+    {
+      "concept_code": "307512",
+      "concept_name": "石墨电极",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307512/"
+    },
+    {
+      "concept_code": "306912",
+      "concept_name": "宁德时代概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/306912/"
+    },
+    {
+      "concept_code": "307550",
+      "concept_name": "冰雪产业",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307550/"
+    },
+    {
+      "concept_code": "307816",
+      "concept_name": "国家大基金持股",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307816/"
+    },
+    {
+      "concept_code": "307822",
+      "concept_name": "动力电池回收",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307822/"
+    },
+    {
+      "concept_code": "307826",
+      "concept_name": "水泥概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307826/"
+    },
+    {
+      "concept_code": "307904",
+      "concept_name": "盐湖提锂",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307904/"
+    },
+    {
+      "concept_code": "307940",
+      "concept_name": "存储芯片",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307940/"
+    },
+    {
+      "concept_code": "307954",
+      "concept_name": "富士康概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/307954/"
+    },
+    {
+      "concept_code": "308014",
+      "concept_name": "创新药",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308014/"
+    },
+    {
+      "concept_code": "308002",
+      "concept_name": "独角兽概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308002/"
+    },
+    {
+      "concept_code": "308016",
+      "concept_name": "农业种植",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308016/"
+    },
+    {
+      "concept_code": "308202",
+      "concept_name": "环氧丙烷",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308202/"
+    },
+    {
+      "concept_code": "308172",
+      "concept_name": "知识产权保护",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308172/"
+    },
+    {
+      "concept_code": "308294",
+      "concept_name": "固态电池",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308294/"
+    },
+    {
+      "concept_code": "308300",
+      "concept_name": "MCU芯片",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308300/"
+    },
+    {
+      "concept_code": "308366",
+      "concept_name": "抖音概念(字节概念)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308366/"
+    },
+    {
+      "concept_code": "308384",
+      "concept_name": "消费电子概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308384/"
+    },
+    {
+      "concept_code": "308428",
+      "concept_name": "海南自贸区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308428/"
+    },
+    {
+      "concept_code": "308432",
+      "concept_name": "长三角一体化",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308432/"
+    },
+    {
+      "concept_code": "308438",
+      "concept_name": "芬太尼",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308438/"
+    },
+    {
+      "concept_code": "308467",
+      "concept_name": "柔性屏(折叠屏)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308467/"
+    },
+    {
+      "concept_code": "308477",
+      "concept_name": "电力物联网",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308477/"
+    },
+    {
+      "concept_code": "308479",
+      "concept_name": "数字孪生",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308479/"
+    },
+    {
+      "concept_code": "308517",
+      "concept_name": "人造肉",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308517/"
+    },
+    {
+      "concept_code": "308491",
+      "concept_name": "氢能源",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308491/"
+    },
+    {
+      "concept_code": "308507",
+      "concept_name": "华为汽车",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308507/"
+    },
+    {
+      "concept_code": "308525",
+      "concept_name": "数字乡村",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308525/"
+    },
+    {
+      "concept_code": "308527",
+      "concept_name": "华为海思概念股",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308527/"
+    },
+    {
+      "concept_code": "308531",
+      "concept_name": "国产操作系统",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308531/"
+    },
+    {
+      "concept_code": "308535",
+      "concept_name": "脑机接口",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308535/"
+    },
+    {
+      "concept_code": "308537",
+      "concept_name": "动物疫苗",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308537/"
+    },
+    {
+      "concept_code": "308547",
+      "concept_name": "黑龙江自贸区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308547/"
+    },
+    {
+      "concept_code": "308555",
+      "concept_name": "ETC",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308555/"
+    },
+    {
+      "concept_code": "308560",
+      "concept_name": "烟草",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308560/"
+    },
+    {
+      "concept_code": "308566",
+      "concept_name": "垃圾分类",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308566/"
+    },
+    {
+      "concept_code": "308572",
+      "concept_name": "仿制药一致性评价",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308572/"
+    },
+    {
+      "concept_code": "308582",
+      "concept_name": "光刻胶",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308582/"
+    },
+    {
+      "concept_code": "308588",
+      "concept_name": "宠物经济",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308588/"
+    },
+    {
+      "concept_code": "308606",
+      "concept_name": "智慧政务",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308606/"
+    },
+    {
+      "concept_code": "308612",
+      "concept_name": "无线耳机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308612/"
+    },
+    {
+      "concept_code": "308624",
+      "concept_name": "云游戏",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308624/"
+    },
+    {
+      "concept_code": "308614",
+      "concept_name": "阿尔茨海默概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308614/"
+    },
+    {
+      "concept_code": "308628",
+      "concept_name": "MiniLED",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308628/"
+    },
+    {
+      "concept_code": "308630",
+      "concept_name": "网红经济",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308630/"
+    },
+    {
+      "concept_code": "308634",
+      "concept_name": "云办公",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308634/"
+    },
+    {
+      "concept_code": "308636",
+      "concept_name": "消毒剂",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308636/"
+    },
+    {
+      "concept_code": "308657",
+      "concept_name": "免税店",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308657/"
+    },
+    {
+      "concept_code": "308659",
+      "concept_name": "快手概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308659/"
+    },
+    {
+      "concept_code": "308694",
+      "concept_name": "汽车拆解概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308694/"
+    },
+    {
+      "concept_code": "308690",
+      "concept_name": "中芯国际概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308690/"
+    },
+    {
+      "concept_code": "308696",
+      "concept_name": "代糖概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308696/"
+    },
+    {
+      "concept_code": "308697",
+      "concept_name": "注册制次新股",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308697/"
+    },
+    {
+      "concept_code": "308699",
+      "concept_name": "科创次新股",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308699/"
+    },
+    {
+      "concept_code": "308700",
+      "concept_name": "第三代半导体",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308700/"
+    },
+    {
+      "concept_code": "308708",
+      "concept_name": "辅助生殖",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308708/"
+    },
+    {
+      "concept_code": "308709",
+      "concept_name": "拼多多概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308709/"
+    },
+    {
+      "concept_code": "308712",
+      "concept_name": "医美概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308712/"
+    },
+    {
+      "concept_code": "308716",
+      "concept_name": "煤炭概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308716/"
+    },
+    {
+      "concept_code": "308717",
+      "concept_name": "物业管理",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308717/"
+    },
+    {
+      "concept_code": "308718",
+      "concept_name": "同花顺漂亮100",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308718/"
+    },
+    {
+      "concept_code": "308725",
+      "concept_name": "汽车芯片",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308725/"
+    },
+    {
+      "concept_code": "308728",
+      "concept_name": "碳中和",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308728/"
+    },
+    {
+      "concept_code": "308732",
+      "concept_name": "共同富裕示范区",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308732/"
+    },
+    {
+      "concept_code": "308731",
+      "concept_name": "鸿蒙概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308731/"
+    },
+    {
+      "concept_code": "308733",
+      "concept_name": "牙科医疗",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308733/"
+    },
+    {
+      "concept_code": "308740",
+      "concept_name": "专精特新",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308740/"
+    },
+    {
+      "concept_code": "308748",
+      "concept_name": "NFT概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308748/"
+    },
+    {
+      "concept_code": "308752",
+      "concept_name": "元宇宙",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308752/"
+    },
+    {
+      "concept_code": "308760",
+      "concept_name": "绿色电力",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308760/"
+    },
+    {
+      "concept_code": "308753",
+      "concept_name": "抽水蓄能",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308753/"
+    },
+    {
+      "concept_code": "308761",
+      "concept_name": "虚拟电厂",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308761/"
+    },
+    {
+      "concept_code": "308774",
+      "concept_name": "培育钻石",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308774/"
+    },
+    {
+      "concept_code": "308775",
+      "concept_name": "换电概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308775/"
+    },
+    {
+      "concept_code": "308791",
+      "concept_name": "WiFi 6",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308791/"
+    },
+    {
+      "concept_code": "308794",
+      "concept_name": "虚拟数字人",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308794/"
+    },
+    {
+      "concept_code": "308801",
+      "concept_name": "数据安全",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308801/"
+    },
+    {
+      "concept_code": "308803",
+      "concept_name": "EDR概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308803/"
+    },
+    {
+      "concept_code": "308805",
+      "concept_name": "汽车热管理",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308805/"
+    },
+    {
+      "concept_code": "308806",
+      "concept_name": "高压快充",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308806/"
+    },
+    {
+      "concept_code": "308810",
+      "concept_name": "柔性直流输电",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308810/"
+    },
+    {
+      "concept_code": "308814",
+      "concept_name": "预制菜",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308814/"
+    },
+    {
+      "concept_code": "308818",
+      "concept_name": "幽门螺杆菌概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308818/"
+    },
+    {
+      "concept_code": "308822",
+      "concept_name": "重组蛋白",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308822/"
+    },
+    {
+      "concept_code": "308828",
+      "concept_name": "东数西算(算力)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308828/"
+    },
+    {
+      "concept_code": "308829",
+      "concept_name": "硅能源",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308829/"
+    },
+    {
+      "concept_code": "308832",
+      "concept_name": "PCB概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308832/"
+    },
+    {
+      "concept_code": "308834",
+      "concept_name": "民爆概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308834/"
+    },
+    {
+      "concept_code": "308841",
+      "concept_name": "智慧灯杆",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308841/"
+    },
+    {
+      "concept_code": "308850",
+      "concept_name": "俄乌冲突概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308850/"
+    },
+    {
+      "concept_code": "308854",
+      "concept_name": "中俄贸易概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308854/"
+    },
+    {
+      "concept_code": "308862",
+      "concept_name": "托育服务",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308862/"
+    },
+    {
+      "concept_code": "308864",
+      "concept_name": "金属铅",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308864/"
+    },
+    {
+      "concept_code": "308869",
+      "concept_name": "电子身份证",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308869/"
+    },
+    {
+      "concept_code": "308870",
+      "concept_name": "数字经济",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308870/"
+    },
+    {
+      "concept_code": "308874",
+      "concept_name": "国资云",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308874/"
+    },
+    {
+      "concept_code": "308883",
+      "concept_name": "华为鲲鹏",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308883/"
+    },
+    {
+      "concept_code": "308885",
+      "concept_name": "家庭医生",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308885/"
+    },
+    {
+      "concept_code": "308887",
+      "concept_name": "华为欧拉",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308887/"
+    },
+    {
+      "concept_code": "308893",
+      "concept_name": "毛发医疗",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308893/"
+    },
+    {
+      "concept_code": "308901",
+      "concept_name": "统一大市场",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308901/"
+    },
+    {
+      "concept_code": "308915",
+      "concept_name": "肝炎概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308915/"
+    },
+    {
+      "concept_code": "308926",
+      "concept_name": "露营经济",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308926/"
+    },
+    {
+      "concept_code": "308941",
+      "concept_name": "猴痘概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308941/"
+    },
+    {
+      "concept_code": "308956",
+      "concept_name": "粮食概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308956/"
+    },
+    {
+      "concept_code": "308969",
+      "concept_name": "超超临界发电",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308969/"
+    },
+    {
+      "concept_code": "308972",
+      "concept_name": "比亚迪概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308972/"
+    },
+    {
+      "concept_code": "308977",
+      "concept_name": "F5G概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308977/"
+    },
+    {
+      "concept_code": "308984",
+      "concept_name": "一体化压铸",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308984/"
+    },
+    {
+      "concept_code": "308989",
+      "concept_name": "生物质能发电",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308989/"
+    },
+    {
+      "concept_code": "308991",
+      "concept_name": "钙钛矿电池",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308991/"
+    },
+    {
+      "concept_code": "309000",
+      "concept_name": "减速器",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309000/"
+    },
+    {
+      "concept_code": "308992",
+      "concept_name": "TOPCON电池",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/308992/"
+    },
+    {
+      "concept_code": "309004",
+      "concept_name": "先进封装",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309004/"
+    },
+    {
+      "concept_code": "309007",
+      "concept_name": "空气能热泵",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309007/"
+    },
+    {
+      "concept_code": "309020",
+      "concept_name": "信创",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309020/"
+    },
+    {
+      "concept_code": "309023",
+      "concept_name": "高压氧舱",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309023/"
+    },
+    {
+      "concept_code": "309030",
+      "concept_name": "PET铜箔",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309030/"
+    },
+    {
+      "concept_code": "309034",
+      "concept_name": "国企改革",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309034/"
+    },
+    {
+      "concept_code": "309037",
+      "concept_name": "数据确权",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309037/"
+    },
+    {
+      "concept_code": "309040",
+      "concept_name": "POE胶膜",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309040/"
+    },
+    {
+      "concept_code": "309042",
+      "concept_name": "血氧仪",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309042/"
+    },
+    {
+      "concept_code": "309045",
+      "concept_name": "成飞概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309045/"
+    },
+    {
+      "concept_code": "309049",
+      "concept_name": "共封装光学(CPO)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309049/"
+    },
+    {
+      "concept_code": "309050",
+      "concept_name": "数字水印",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309050/"
+    },
+    {
+      "concept_code": "309051",
+      "concept_name": "毫米波雷达",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309051/"
+    },
+    {
+      "concept_code": "309055",
+      "concept_name": "6G概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309055/"
+    },
+    {
+      "concept_code": "309058",
+      "concept_name": "ERP概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309058/"
+    },
+    {
+      "concept_code": "309056",
+      "concept_name": "超导概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309056/"
+    },
+    {
+      "concept_code": "309060",
+      "concept_name": "数据要素",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309060/"
+    },
+    {
+      "concept_code": "309061",
+      "concept_name": "液冷服务器",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309061/"
+    },
+    {
+      "concept_code": "309062",
+      "concept_name": "同花顺中特估100",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309062/"
+    },
+    {
+      "concept_code": "309065",
+      "concept_name": "英伟达概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309065/"
+    },
+    {
+      "concept_code": "309066",
+      "concept_name": "空间计算",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309066/"
+    },
+    {
+      "concept_code": "309068",
+      "concept_name": "算力租赁",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309068/"
+    },
+    {
+      "concept_code": "309081",
+      "concept_name": "减肥药",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309081/"
+    },
+    {
+      "concept_code": "309084",
+      "concept_name": "BC电池",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309084/"
+    },
+    {
+      "concept_code": "309085",
+      "concept_name": "光刻机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309085/"
+    },
+    {
+      "concept_code": "309086",
+      "concept_name": "星闪概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309086/"
+    },
+    {
+      "concept_code": "309089",
+      "concept_name": "新型工业化",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309089/"
+    },
+    {
+      "concept_code": "309090",
+      "concept_name": "华为昇腾",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309090/"
+    },
+    {
+      "concept_code": "309092",
+      "concept_name": "智能座舱",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309092/"
+    },
+    {
+      "concept_code": "309093",
+      "concept_name": "短剧游戏",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309093/"
+    },
+    {
+      "concept_code": "309104",
+      "concept_name": "多模态AI",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309104/"
+    },
+    {
+      "concept_code": "309094",
+      "concept_name": "长安汽车概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309094/"
+    },
+    {
+      "concept_code": "309105",
+      "concept_name": "PEEK材料",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309105/"
+    },
+    {
+      "concept_code": "309106",
+      "concept_name": "小米汽车",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309106/"
+    },
+    {
+      "concept_code": "309108",
+      "concept_name": "可控核聚变",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309108/"
+    },
+    {
+      "concept_code": "309113",
+      "concept_name": "飞行汽车(eVTOL)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309113/"
+    },
+    {
+      "concept_code": "309115",
+      "concept_name": "低空经济",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309115/"
+    },
+    {
+      "concept_code": "309119",
+      "concept_name": "人形机器人",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309119/"
+    },
+    {
+      "concept_code": "309120",
+      "concept_name": "AI手机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309120/"
+    },
+    {
+      "concept_code": "309121",
+      "concept_name": "AI PC",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309121/"
+    },
+    {
+      "concept_code": "309124",
+      "concept_name": "高股息精选",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309124/"
+    },
+    {
+      "concept_code": "309125",
+      "concept_name": "铜缆高速连接",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309125/"
+    },
+    {
+      "concept_code": "309126",
+      "concept_name": "AI语料",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309126/"
+    },
+    {
+      "concept_code": "309127",
+      "concept_name": "同花顺出海50",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309127/"
+    },
+    {
+      "concept_code": "309128",
+      "concept_name": "军工信息化",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309128/"
+    },
+    {
+      "concept_code": "309129",
+      "concept_name": "合成生物",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309129/"
+    },
+    {
+      "concept_code": "309134",
+      "concept_name": "财税数字化",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309134/"
+    },
+    {
+      "concept_code": "309130",
+      "concept_name": "商业航天",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309130/"
+    },
+    {
+      "concept_code": "309135",
+      "concept_name": "维生素",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309135/"
+    },
+    {
+      "concept_code": "309136",
+      "concept_name": "同花顺果指数",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309136/"
+    },
+    {
+      "concept_code": "309151",
+      "concept_name": "光纤概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309151/"
+    },
+    {
+      "concept_code": "309152",
+      "concept_name": "AI眼镜",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309152/"
+    },
+    {
+      "concept_code": "309154",
+      "concept_name": "西部大开发",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309154/"
+    },
+    {
+      "concept_code": "309155",
+      "concept_name": "房屋检测",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309155/"
+    },
+    {
+      "concept_code": "309164",
+      "concept_name": "智谱AI",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309164/"
+    },
+    {
+      "concept_code": "309167",
+      "concept_name": "华为手机",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309167/"
+    },
+    {
+      "concept_code": "309169",
+      "concept_name": "华为数字能源",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309169/"
+    },
+    {
+      "concept_code": "309170",
+      "concept_name": "华为盘古",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309170/"
+    },
+    {
+      "concept_code": "309174",
+      "concept_name": "IP经济(谷子经济)",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309174/"
+    },
+    {
+      "concept_code": "309177",
+      "concept_name": "同花顺新质50",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309177/"
+    },
+    {
+      "concept_code": "309182",
+      "concept_name": "小红书概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309182/"
+    },
+    {
+      "concept_code": "309183",
+      "concept_name": "AI智能体",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309183/"
+    },
+    {
+      "concept_code": "309185",
+      "concept_name": "兵装重组概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309185/"
+    },
+    {
+      "concept_code": "309184",
+      "concept_name": "DeepSeek概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309184/"
+    },
+    {
+      "concept_code": "309187",
+      "concept_name": "中国AI 50",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309187/"
+    },
+    {
+      "concept_code": "309261",
+      "concept_name": "雅下水电概念",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309261/"
+    },
+    {
+      "concept_code": "309264",
+      "concept_name": "AI应用",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309264/"
+    },
+    {
+      "concept_code": "309265",
+      "concept_name": "2026一季报预增",
+      "error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309265/"
+    }
+  ]
+}

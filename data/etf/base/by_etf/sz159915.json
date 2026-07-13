@@ -1,0 +1,20 @@
+{
+  "code": "sz159915",
+  "raw_code": "159915",
+  "exchange": "sz",
+  "name": "创业板ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3039,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 4.046,
+    "high": 4.088,
+    "low": 3.86,
+    "close": 3.862,
+    "volume": 1904831367,
+    "amount": 7550751538.79
+  }
+}

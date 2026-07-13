@@ -1,0 +1,20 @@
+{
+  "code": "sz159892",
+  "raw_code": "159892",
+  "exchange": "sz",
+  "name": "恒生医药ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-10-19",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1144,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.707,
+    "high": 0.738,
+    "low": 0.698,
+    "close": 0.73,
+    "volume": 1772845575,
+    "amount": 1273346334.24
+  }
+}

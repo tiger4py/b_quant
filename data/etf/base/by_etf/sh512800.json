@@ -1,0 +1,20 @@
+{
+  "code": "sh512800",
+  "raw_code": "512800",
+  "exchange": "sh",
+  "name": "银行ETF华宝",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2017-08-03",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2165,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.761,
+    "high": 0.767,
+    "low": 0.758,
+    "close": 0.767,
+    "volume": 964055700,
+    "amount": 735815513.02
+  }
+}

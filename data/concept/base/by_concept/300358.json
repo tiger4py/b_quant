@@ -1,0 +1,12 @@
+{
+  "concept_code": "300358",
+  "concept_name": "天然气",
+  "first_trade_date": "2015-01-05",
+  "latest_trade_date": "2026-07-10",
+  "constituent_count": 0,
+  "constituents": [],
+  "source": "ths_q_10jqka",
+  "fetched_at": "2026-07-13 12:26:40",
+  "page_count": 0,
+  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/300358/"
+}

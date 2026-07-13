@@ -1,0 +1,20 @@
+{
+  "code": "sh512000",
+  "raw_code": "512000",
+  "exchange": "sh",
+  "name": "券商ETF华宝",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2016-09-14",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2378,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.54,
+    "high": 0.54,
+    "low": 0.53,
+    "close": 0.532,
+    "volume": 2719867181,
+    "amount": 1456488875.43
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sh513780",
+  "raw_code": "513780",
+  "exchange": "sh",
+  "name": "港股创新药ETF景顺",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-10-25",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 412,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.461,
+    "high": 1.54,
+    "low": 1.449,
+    "close": 1.523,
+    "volume": 592590164,
+    "amount": 884885262.39
+  }
+}

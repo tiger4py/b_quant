@@ -1,0 +1,20 @@
+{
+  "code": "sz159636",
+  "raw_code": "159636",
+  "exchange": "sz",
+  "name": "港股通科技30ETF工银",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-07-20",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 960,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.524,
+    "high": 0.534,
+    "low": 0.516,
+    "close": 0.526,
+    "volume": 1164625075,
+    "amount": 611428164.38
+  }
+}

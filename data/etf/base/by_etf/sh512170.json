@@ -1,0 +1,20 @@
+{
+  "code": "sh512170",
+  "raw_code": "512170",
+  "exchange": "sh",
+  "name": "医疗ETF华宝",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2019-06-17",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1711,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.306,
+    "high": 0.321,
+    "low": 0.304,
+    "close": 0.316,
+    "volume": 3531239758,
+    "amount": 1100863994.56
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sh515050",
+  "raw_code": "515050",
+  "exchange": "sh",
+  "name": "通信ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2019-10-16",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1631,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.299,
+    "high": 1.314,
+    "low": 1.219,
+    "close": 1.223,
+    "volume": 1603712118,
+    "amount": 2026691189.12
+  }
+}

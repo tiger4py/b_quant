@@ -1,0 +1,20 @@
+{
+  "code": "sh518880",
+  "raw_code": "518880",
+  "exchange": "sh",
+  "name": "黄金ETF华安",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3040,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 8.551,
+    "high": 8.587,
+    "low": 8.538,
+    "close": 8.541,
+    "volume": 228291524,
+    "amount": 1952862769.18
+  }
+}

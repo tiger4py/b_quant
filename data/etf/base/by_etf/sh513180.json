@@ -1,0 +1,20 @@
+{
+  "code": "sh513180",
+  "raw_code": "513180",
+  "exchange": "sh",
+  "name": "恒生科技ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-05-25",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1241,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.607,
+    "high": 0.617,
+    "low": 0.6,
+    "close": 0.606,
+    "volume": 6817411318,
+    "amount": 4141577375.68
+  }
+}

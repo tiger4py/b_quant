@@ -1,0 +1,20 @@
+{
+  "code": "sz159755",
+  "raw_code": "159755",
+  "exchange": "sz",
+  "name": "电池ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-06-24",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1220,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.003,
+    "high": 1.008,
+    "low": 0.978,
+    "close": 0.978,
+    "volume": 504726441,
+    "amount": 500562447.86
+  }
+}

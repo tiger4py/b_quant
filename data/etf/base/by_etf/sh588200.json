@@ -1,0 +1,20 @@
+{
+  "code": "sh588200",
+  "raw_code": "588200",
+  "exchange": "sh",
+  "name": "科创芯片ETF嘉实",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-10-26",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 896,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 4.951,
+    "high": 5.013,
+    "low": 4.56,
+    "close": 4.565,
+    "volume": 1827670684,
+    "amount": 8722101421.72
+  }
+}

@@ -52,6 +52,21 @@ def _get_concept_list(codes_filter=None):
     参数:
         codes_filter: 可选的概念代码列表，只下载指定概念
     """
+    base_path = os.path.join(CONCEPT_DIR, "base", "concepts.json")
+    if os.path.exists(base_path):
+        with open(base_path, "r", encoding="utf-8") as f:
+            items = json.load(f)
+        concepts = [
+            (item["concept_code"], item["concept_name"])
+            for item in items
+            if item.get("concept_code") and item.get("concept_name")
+        ]
+        if codes_filter:
+            code_set = set(codes_filter)
+            concepts = [item for item in concepts if item[0] in code_set]
+        logger.info("Concept list from base: %d", len(concepts))
+        return concepts
+
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
     from config import DATABASE_URL

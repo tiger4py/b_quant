@@ -1,0 +1,20 @@
+{
+  "code": "sz159611",
+  "raw_code": "159611",
+  "exchange": "sz",
+  "name": "电力ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-01-07",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1087,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.006,
+    "high": 1.026,
+    "low": 0.999,
+    "close": 1.022,
+    "volume": 519078253,
+    "amount": 525956039.85
+  }
+}

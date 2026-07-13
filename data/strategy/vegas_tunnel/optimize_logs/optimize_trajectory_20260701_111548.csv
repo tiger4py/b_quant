@@ -1,2 +1,0 @@
-﻿轮次,名称,状态,收益%,回撤%,胜率%,PF,交易笔数,平均盈亏%,JSON,Excel,参数变更
-0,基线,baseline,68.98,23.00,36.1,1.55,108,2.52,D:\my_import\sync_content\code\b_quant\data\strategy\vegas_tunnel\2026-06\2026-06-30_09.json,,"{'EMA_FAST': '12', 'EMA_TUNNEL_LO': '144', 'EMA_TUNNEL_HI': '169', 'EMA_LONG': '576', 'VOL_RATIO_MIN': '1.0', 'VOL_RATIO_MAX': '5.0', 'MAX_EXTENSION': '0.12', 'MIN_TUNNEL_SLOPE': '0', 'STOP_LOSS_PCT': '-99', 'TAKE_PROFIT_PCT': '999', 'HIGH_RETREAT_PCT': '-12'}"

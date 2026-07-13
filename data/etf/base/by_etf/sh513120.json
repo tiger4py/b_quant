@@ -1,0 +1,20 @@
+{
+  "code": "sh513120",
+  "raw_code": "513120",
+  "exchange": "sh",
+  "name": "港股创新药ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-07-12",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 966,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.14,
+    "high": 1.194,
+    "low": 1.126,
+    "close": 1.185,
+    "volume": 10209080570,
+    "amount": 11855294811.91
+  }
+}

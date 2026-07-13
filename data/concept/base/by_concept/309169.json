@@ -1,0 +1,12 @@
+{
+  "concept_code": "309169",
+  "concept_name": "华为数字能源",
+  "first_trade_date": "2024-11-19",
+  "latest_trade_date": "2026-07-10",
+  "constituent_count": 0,
+  "constituents": [],
+  "source": "ths_q_10jqka",
+  "fetched_at": "2026-07-13 12:28:48",
+  "page_count": 0,
+  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/309169/"
+}

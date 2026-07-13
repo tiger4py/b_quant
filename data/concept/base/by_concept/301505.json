@@ -1,0 +1,12 @@
+{
+  "concept_code": "301505",
+  "concept_name": "医疗器械概念",
+  "first_trade_date": "2015-01-05",
+  "latest_trade_date": "2026-07-10",
+  "constituent_count": 0,
+  "constituents": [],
+  "source": "ths_q_10jqka",
+  "fetched_at": "2026-07-13 12:27:19",
+  "page_count": 0,
+  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/301505/"
+}

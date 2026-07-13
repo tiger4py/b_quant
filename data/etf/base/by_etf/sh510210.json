@@ -1,0 +1,20 @@
+{
+  "code": "sh510210",
+  "raw_code": "510210",
+  "exchange": "sh",
+  "name": "上证指数ETF富国",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3003,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.014,
+    "high": 1.024,
+    "low": 1.006,
+    "close": 1.007,
+    "volume": 1148366300,
+    "amount": 1163007970.33
+  }
+}

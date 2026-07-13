@@ -1,0 +1,20 @@
+{
+  "code": "sz159509",
+  "raw_code": "159509",
+  "exchange": "sz",
+  "name": "纳指科技ETF景顺",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2023-08-08",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 704,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 2.637,
+    "high": 2.659,
+    "low": 2.613,
+    "close": 2.624,
+    "volume": 254044050,
+    "amount": 668961494.66
+  }
+}

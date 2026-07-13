@@ -1,0 +1,20 @@
+{
+  "code": "sh512500",
+  "raw_code": "512500",
+  "exchange": "sh",
+  "name": "中证500ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2015-08-04",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2652,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 4.89,
+    "high": 4.959,
+    "low": 4.814,
+    "close": 4.82,
+    "volume": 146170400,
+    "amount": 711959475.8
+  }
+}

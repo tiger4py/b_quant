@@ -1,0 +1,20 @@
+{
+  "code": "sz159740",
+  "raw_code": "159740",
+  "exchange": "sz",
+  "name": "恒生科技ETF大成",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-05-27",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1239,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.599,
+    "high": 0.608,
+    "low": 0.591,
+    "close": 0.597,
+    "volume": 2473123207,
+    "amount": 1480782520.19
+  }
+}

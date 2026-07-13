@@ -347,7 +347,8 @@ def main():
     end_date = args.end or all_dates[-1]
     stock_count = len(bars_by_code)
 
-    print(f"[数据] {stock_count} 个标的, {all_dates[0]} ~ {end_date}")
+    print(f"[??] {stock_count} ???, ???? {all_dates[0]} ~ {all_dates[-1]}")
+    print(f"[??] ???? {args.start} ~ {end_date}")
     print()
 
     # ---- 逐个跑 ----
@@ -366,11 +367,12 @@ def main():
             continue
 
         # ---- 跨截面策略走独立引擎 ----
-        if sid == "divergent_concept" and args.universe == "concept":
+        if sid in ("divergent_concept", "divergent_adaptive") and args.universe == "concept":
             from backtest.strategy.strategy_divergent_adaptive import run_adaptive_backtest
             name_map = {c: s["name"] for c, s in stock_map.items()}
             result = run_adaptive_backtest(bars_by_code, name_map,
-                                           initial_cash=args.cash, start_date=args.start)
+                                           initial_cash=args.cash, start_date=args.start,
+                                           end_date=args.end)
             # 转换为统一格式
             result["stock_summaries"] = []
             result["market_gate"] = [
@@ -383,6 +385,7 @@ def main():
                 result = run_portfolio_backtest(
                     bars_by_code, stock_map, strategy,
                     initial_cash=args.cash, max_positions=args.max_positions,
+                    start_date=args.start, end_date=args.end,
                 )
             except Exception as e:
                 print(f"  [错误] 回测失败: {e}")

@@ -1,0 +1,20 @@
+{
+  "code": "sz159583",
+  "raw_code": "159583",
+  "exchange": "sz",
+  "name": "通信ETF富国",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-07-08",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 483,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.966,
+    "high": 2.006,
+    "low": 1.905,
+    "close": 1.907,
+    "volume": 621980130,
+    "amount": 1210373332.98
+  }
+}

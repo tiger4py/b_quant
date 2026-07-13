@@ -1,0 +1,20 @@
+{
+  "code": "sz159352",
+  "raw_code": "159352",
+  "exchange": "sz",
+  "name": "A500ETF南方",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-10-15",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 420,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.357,
+    "high": 1.369,
+    "low": 1.332,
+    "close": 1.335,
+    "volume": 2364812800,
+    "amount": 3188358857.6
+  }
+}

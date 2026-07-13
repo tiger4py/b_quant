@@ -1,0 +1,20 @@
+{
+  "code": "sz159842",
+  "raw_code": "159842",
+  "exchange": "sz",
+  "name": "券商ETF银华",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-03-19",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1284,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.074,
+    "high": 1.074,
+    "low": 1.056,
+    "close": 1.057,
+    "volume": 390170800,
+    "amount": 415629444.7
+  }
+}

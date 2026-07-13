@@ -1,0 +1,20 @@
+{
+  "code": "sz159633",
+  "raw_code": "159633",
+  "exchange": "sz",
+  "name": "中证1000ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-08-04",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 949,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 3.53,
+    "high": 3.59,
+    "low": 3.489,
+    "close": 3.5,
+    "volume": 207299890,
+    "amount": 731198537.0
+  }
+}

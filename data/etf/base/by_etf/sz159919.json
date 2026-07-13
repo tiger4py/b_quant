@@ -1,0 +1,20 @@
+{
+  "code": "sz159919",
+  "raw_code": "159919",
+  "exchange": "sz",
+  "name": "沪深300ETF嘉实",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3039,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 5.126,
+    "high": 5.162,
+    "low": 5.036,
+    "close": 5.038,
+    "volume": 198453354,
+    "amount": 1010226798.54
+  }
+}

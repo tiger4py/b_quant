@@ -1,0 +1,20 @@
+{
+  "code": "sh562500",
+  "raw_code": "562500",
+  "exchange": "sh",
+  "name": "机器人ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-12-29",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1093,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.109,
+    "high": 1.145,
+    "low": 1.104,
+    "close": 1.108,
+    "volume": 973357706,
+    "amount": 1086753878.75
+  }
+}

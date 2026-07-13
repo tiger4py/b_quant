@@ -40,6 +40,18 @@ def _get_etf_list(all_etfs: bool = False, min_amount: float = None):
     """
     cache_path = os.path.join(ROOT_DIR, "data", "etf_codes.json")
     main_cache_path = os.path.join(ROOT_DIR, "data", "etf_codes_main.json")
+    base_path = os.path.join(ROOT_DIR, "data", "etf", "base", "etfs.json")
+
+    if os.path.exists(base_path):
+        with open(base_path, "r", encoding="utf-8") as f:
+            items = json.load(f)
+        codes = [
+            {"code": item["code"], "name": item["name"]}
+            for item in items
+            if item.get("code") and item.get("name")
+        ]
+        logger.info("ETF list from base: %d", len(codes))
+        return codes
 
     # 全量模式
     if all_etfs:

@@ -1728,10 +1728,10 @@ CONCEPT_DIR = ROOT_DIR / "data" / "concept"
 LAB_CACHE_DIR = ROOT_DIR / "data" / "factor_lab" / "cache"
 LAB_RESULT_DIR = ROOT_DIR / "data" / "factor_lab" / "result"
 LAB_CACHE_VERSION = 4
-LAB_FIXED_START_DATE = "2022-01-15"
+LAB_FIXED_START_DATE = "2023-01-01"
 LAB_FIXED_SOURCE = "concept"
 LAB_FIXED_TOP_K = 5
-LAB_FIXED_RESULT_PREFIX = "concept_gtja_alpha191_phase1_top5_2022-01-15"
+LAB_FIXED_RESULT_PREFIX = "concept_gtja_alpha191_phase1_top5_2023-01-01"
 
 # 全局缓存：一次性加载全部数据
 _ETF_CACHE = None     # {code: {"name": str, "rows": [{...}]}}
@@ -2660,8 +2660,8 @@ def api_lab_analyze():
     payload = request.get_json(silent=True) or {}
     items = payload.get("items", [])  # [{code, name, type: 'etf'|'concept'}]
     factors = payload.get("factors", ["momentum", "volatility", "vol_ratio", "sharpe"])
-    start_date = payload.get("start_date", "")
-    end_date = payload.get("end_date", "")
+    start_date = payload.get("start_date") or LAB_FIXED_START_DATE
+    end_date = payload.get("end_date") or datetime.now().strftime("%Y-%m-%d")
     sort_by = payload.get("sort_by", "composite")
 
     if not items:
@@ -3263,8 +3263,8 @@ def api_lab_backtest():
     """因子全量回测：8个因子各自生成收益曲线 + 交易详情"""
     payload = request.get_json(silent=True) or {}
     source = payload.get("source", "all")  # 'etf' | 'concept' | 'all'
-    start_date = payload.get("start_date", "")
-    end_date = payload.get("end_date", "")
+    start_date = payload.get("start_date") or LAB_FIXED_START_DATE
+    end_date = payload.get("end_date") or datetime.now().strftime("%Y-%m-%d")
     top_k = min(payload.get("top_k", 5), 10)
     selected_factors = payload.get("factors")
     selected_factor = payload.get("factor", "all")

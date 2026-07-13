@@ -1,0 +1,20 @@
+{
+  "code": "sz159363",
+  "raw_code": "159363",
+  "exchange": "sz",
+  "name": "创业板人工智能ETF华宝",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-12-16",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 376,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.461,
+    "high": 1.495,
+    "low": 1.411,
+    "close": 1.412,
+    "volume": 1068738646,
+    "amount": 1544060158.81
+  }
+}

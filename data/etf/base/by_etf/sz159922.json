@@ -1,0 +1,20 @@
+{
+  "code": "sz159922",
+  "raw_code": "159922",
+  "exchange": "sz",
+  "name": "中证500ETF嘉实",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3040,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 3.5,
+    "high": 3.555,
+    "low": 3.448,
+    "close": 3.455,
+    "volume": 236268894,
+    "amount": 824460305.61
+  }
+}

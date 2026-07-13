@@ -1,0 +1,20 @@
+{
+  "code": "sz159985",
+  "raw_code": "159985",
+  "exchange": "sz",
+  "name": "豆粕ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2019-12-05",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1595,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 2.16,
+    "high": 2.173,
+    "low": 2.124,
+    "close": 2.144,
+    "volume": 222676400,
+    "amount": 478809929.1
+  }
+}

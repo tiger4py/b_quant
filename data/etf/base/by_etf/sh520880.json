@@ -1,0 +1,20 @@
+{
+  "code": "sh520880",
+  "raw_code": "520880",
+  "exchange": "sh",
+  "name": "港股通创新药ETF华宝",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2025-07-07",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 243,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.434,
+    "high": 0.453,
+    "low": 0.427,
+    "close": 0.449,
+    "volume": 2163229600,
+    "amount": 953443446.2
+  }
+}

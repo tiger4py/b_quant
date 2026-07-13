@@ -1,0 +1,20 @@
+{
+  "code": "sz159361",
+  "raw_code": "159361",
+  "exchange": "sz",
+  "name": "A500ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-11-19",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 395,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.33,
+    "high": 1.343,
+    "low": 1.306,
+    "close": 1.311,
+    "volume": 1277217945,
+    "amount": 1689120732.26
+  }
+}

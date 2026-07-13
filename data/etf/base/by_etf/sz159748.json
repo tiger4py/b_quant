@@ -1,0 +1,20 @@
+{
+  "code": "sz159748",
+  "raw_code": "159748",
+  "exchange": "sz",
+  "name": "创新药ETF富国",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-12-03",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1111,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.754,
+    "high": 0.79,
+    "low": 0.741,
+    "close": 0.782,
+    "volume": 267856002,
+    "amount": 205378589.53
+  }
+}

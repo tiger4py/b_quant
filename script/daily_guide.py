@@ -1019,16 +1019,6 @@ def main():
         print(f"  综合评分: {market['composite_score']:.0f}/100 → {signal_label.get(market['signal'], '?')} {market['signal']}")
 
         # 额外：原始 market_gate 判断
-        strategy = None
-        try:
-            from backtest.registry import get_strategy
-            strategy = get_strategy("market_bottom")
-            if hasattr(strategy, "market_gate"):
-                gate = strategy.market_gate(latest, market_stats)
-                print(f"  原始Gate: {'允许' if gate['allowed'] else '禁止'} ({' | '.join(gate['reasons'])})")
-        except Exception:
-            pass
-
         # ---- 4. 候选股扫描+评分 ----
         print("[4/5] 扫描候选股...")
         candidates = screen_candidates(bars_by_code, stock_map, latest)

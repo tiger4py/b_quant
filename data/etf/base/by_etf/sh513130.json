@@ -1,0 +1,20 @@
+{
+  "code": "sh513130",
+  "raw_code": "513130",
+  "exchange": "sh",
+  "name": "恒生科技ETF华泰柏瑞",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-06-01",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1236,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.597,
+    "high": 0.607,
+    "low": 0.591,
+    "close": 0.597,
+    "volume": 6295682293,
+    "amount": 3764818011.21
+  }
+}

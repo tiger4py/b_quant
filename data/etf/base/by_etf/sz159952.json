@@ -1,0 +1,20 @@
+{
+  "code": "sz159952",
+  "raw_code": "159952",
+  "exchange": "sz",
+  "name": "创业板ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2017-05-19",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2204,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 2.451,
+    "high": 2.475,
+    "low": 2.34,
+    "close": 2.344,
+    "volume": 348604046,
+    "amount": 837521220.51
+  }
+}

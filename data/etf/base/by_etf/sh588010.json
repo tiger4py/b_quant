@@ -1,0 +1,20 @@
+{
+  "code": "sh588010",
+  "raw_code": "588010",
+  "exchange": "sh",
+  "name": "科创新材料ETF博时",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-10-26",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 896,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.415,
+    "high": 1.431,
+    "low": 1.312,
+    "close": 1.313,
+    "volume": 302171500,
+    "amount": 413295069.12
+  }
+}

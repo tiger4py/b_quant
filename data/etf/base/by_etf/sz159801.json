@@ -1,0 +1,20 @@
+{
+  "code": "sz159801",
+  "raw_code": "159801",
+  "exchange": "sz",
+  "name": "芯片ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-02-18",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1549,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.649,
+    "high": 1.679,
+    "low": 1.521,
+    "close": 1.525,
+    "volume": 425647679,
+    "amount": 678269576.49
+  }
+}

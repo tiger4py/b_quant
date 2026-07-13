@@ -1,0 +1,20 @@
+{
+  "code": "sh513980",
+  "raw_code": "513980",
+  "exchange": "sh",
+  "name": "港股科技ETF景顺",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-07-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1214,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.61,
+    "high": 0.623,
+    "low": 0.604,
+    "close": 0.611,
+    "volume": 693643900,
+    "amount": 424510066.8
+  }
+}

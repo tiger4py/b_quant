@@ -1,0 +1,20 @@
+{
+  "code": "sz159967",
+  "raw_code": "159967",
+  "exchange": "sz",
+  "name": "创业板成长ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2019-07-15",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1692,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.98,
+    "high": 0.993,
+    "low": 0.92,
+    "close": 0.922,
+    "volume": 1145648176,
+    "amount": 1092661947.86
+  }
+}

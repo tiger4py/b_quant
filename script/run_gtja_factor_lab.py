@@ -39,7 +39,7 @@ def parse_factors(text):
 def main_cli():
     parser = argparse.ArgumentParser(description="Run GTJA Alpha factor lab for concept data.")
     parser.add_argument("--factors", required=True, help="Factor numbers, e.g. 001 or 001-010 or 001,005,042")
-    parser.add_argument("--start-date", default="2022-01-15", help="Backtest start date, default 2022-01-15")
+    parser.add_argument("--start-date", default="2023-01-01", help="Backtest start date, default 2023-01-01")
     parser.add_argument("--end-date", required=True, help="Backtest end date, e.g. 2026-07-07")
     parser.add_argument("--top-k", type=int, default=5, help="Top K holdings, default 5")
     parser.add_argument("--source", default="concept", choices=["concept", "etf"], help="Data source, default concept")

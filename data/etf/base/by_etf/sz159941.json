@@ -1,0 +1,20 @@
+{
+  "code": "sz159941",
+  "raw_code": "159941",
+  "exchange": "sz",
+  "name": "纳指ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2015-07-13",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2668,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.629,
+    "high": 1.632,
+    "low": 1.617,
+    "close": 1.619,
+    "volume": 758348438,
+    "amount": 1231747450.42
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sz159530",
+  "raw_code": "159530",
+  "exchange": "sz",
+  "name": "机器人ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-01-18",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 594,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.55,
+    "high": 1.608,
+    "low": 1.543,
+    "close": 1.559,
+    "volume": 1186990837,
+    "amount": 1857640659.91
+  }
+}

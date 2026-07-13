@@ -1,0 +1,20 @@
+{
+  "code": "sh512400",
+  "raw_code": "512400",
+  "exchange": "sh",
+  "name": "有色金属ETF南方",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2017-09-01",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2144,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.75,
+    "high": 1.803,
+    "low": 1.729,
+    "close": 1.756,
+    "volume": 502344177,
+    "amount": 883874579.43
+  }
+}

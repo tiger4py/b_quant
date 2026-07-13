@@ -1,0 +1,20 @@
+{
+  "code": "sh588000",
+  "raw_code": "588000",
+  "exchange": "sh",
+  "name": "科创50ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-11-16",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1367,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 2.334,
+    "high": 2.386,
+    "low": 2.204,
+    "close": 2.209,
+    "volume": 4702931900,
+    "amount": 10737969260.68
+  }
+}

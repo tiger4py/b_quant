@@ -1,0 +1,20 @@
+{
+  "code": "sz159131",
+  "raw_code": "159131",
+  "exchange": "sz",
+  "name": "港股通信息技术ETF华宝",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2025-11-13",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 156,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.084,
+    "high": 1.104,
+    "low": 1.049,
+    "close": 1.049,
+    "volume": 3006011647,
+    "amount": 3220941479.76
+  }
+}

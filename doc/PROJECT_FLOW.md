@@ -58,9 +58,7 @@
 
 ## 三、策略引擎层
 
-### 3.1 策略1: 大底抄底 (market_bottom) ★ 日终管线主力
 
-文件：`backtest/strategy/strategy_market_bottom.py`
 
 **策略理念：** 只在市场恐慌时出手的逆势策略。恐慌→深跌→卖压衰竭三重确认。
 
@@ -100,7 +98,6 @@
 
 ### 3.4 补充分析: 波动率V反（内联在 daily_guide.py）
 
-V反检测逻辑内联在 `script/daily_guide.py` 中（`_detect_v_reversal`、`_check_buy_conditions`），不是独立的策略文件。用于每日候选股扫描，辅助 market_bottom 策略的视角补充。
 
 **买入条件：** 60日波动率<2.5% + 波动异动 + V反形态（跌≥3%后涨≥1.5%，恢复≥40%）+ 无涨停 + 右侧放量
 
@@ -140,7 +137,6 @@ V反检测逻辑内联在 `script/daily_guide.py` 中（`_detect_v_reversal`、`
 ```
 Step 1:    update_daily.py              → 更新K线数据（BaoStock + AKShare → CSV）
 Step 1.5:  import_day_stock.py          → CSV 导入 SQLite 数据库
-Step 2:    run_strategy_market_backtest.py → market_bottom 全市场回测(1000天, max5仓)
 Step 3:    push_latest_trades.py        → 推送当日买卖信号 + 持仓到QQ
 ```
 
@@ -151,7 +147,6 @@ Step 3:    push_latest_trades.py        → 推送当日买卖信号 + 持仓到
 ```
 汇总所有策略信号 + 实盘持仓 + 大盘评估 → 生成 data/reviews/YYYY-MM-DD.md
   ├─ 大盘环境（信号灯 + 涨跌比 + 跌停数 + 成交额）
-  ├─ market_bottom 信号（买入/卖出/持仓）
   ├─ V反候选（daily_guide 评分排序）
   ├─ 价量齐升候选（scan_price_volume_rising）
   ├─ 实盘持仓状态
@@ -251,7 +246,6 @@ QQPusher 类:
 ```
 每个工作日 19:30 触发:
   1. _run_daily_update_job() → 更新股票+概念数据 + CSV导入数据库
-  2. _run_push_job() → daily_full_flow.py (market_bottom回测+推送)
 ```
 
 ---
@@ -332,7 +326,6 @@ QQPusher 类:
 
 ## 九、关键设计特点
 
-1. **market_bottom 为主，V反为辅**：日终管线运行 market_bottom 回测推送；daily_guide 提供 V反辅助视角；daily_review 汇总两者
 2. **策略与回测分离**：策略只输出信号，回测引擎独立处理资金管理
 3. **无未来函数**：信号日和入场日分离，采用次日收盘价成交
 4. **CSV+DB双存储**：原始数据存CSV（可追溯），导入SQLite后用于查询分析

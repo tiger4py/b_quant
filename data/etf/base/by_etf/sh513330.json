@@ -1,0 +1,20 @@
+{
+  "code": "sh513330",
+  "raw_code": "513330",
+  "exchange": "sh",
+  "name": "恒生互联网ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-02-08",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1308,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.384,
+    "high": 0.39,
+    "low": 0.378,
+    "close": 0.383,
+    "volume": 6169325592,
+    "amount": 2367478695.93
+  }
+}

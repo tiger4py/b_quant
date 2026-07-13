@@ -1,0 +1,20 @@
+{
+  "code": "sh513050",
+  "raw_code": "513050",
+  "exchange": "sh",
+  "name": "中概互联网ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2017-01-18",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2285,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.096,
+    "high": 1.111,
+    "low": 1.08,
+    "close": 1.092,
+    "volume": 2755680671,
+    "amount": 3016781414.58
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sz159338",
+  "raw_code": "159338",
+  "exchange": "sz",
+  "name": "中证A500ETF国泰",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-10-15",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 420,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.304,
+    "high": 1.317,
+    "low": 1.281,
+    "close": 1.282,
+    "volume": 2692967400,
+    "amount": 3490085750.4
+  }
+}

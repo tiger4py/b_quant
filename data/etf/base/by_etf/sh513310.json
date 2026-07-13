@@ -1,0 +1,20 @@
+{
+  "code": "sh513310",
+  "raw_code": "513310",
+  "exchange": "sh",
+  "name": "中韩半导体ETF华泰柏瑞",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-12-22",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 855,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 6.3,
+    "high": 6.323,
+    "low": 5.966,
+    "close": 5.969,
+    "volume": 2182625673,
+    "amount": 13400230319.38
+  }
+}

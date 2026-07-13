@@ -1,0 +1,20 @@
+{
+  "code": "sz159506",
+  "raw_code": "159506",
+  "exchange": "sz",
+  "name": "港股通创新药医疗ETF富国",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2023-07-03",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 730,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.187,
+    "high": 1.239,
+    "low": 1.161,
+    "close": 1.228,
+    "volume": 1106814200,
+    "amount": 1332327593.25
+  }
+}

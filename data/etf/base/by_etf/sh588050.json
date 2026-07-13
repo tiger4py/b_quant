@@ -1,0 +1,20 @@
+{
+  "code": "sh588050",
+  "raw_code": "588050",
+  "exchange": "sh",
+  "name": "科创50ETF工银",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-11-16",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1367,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 2.267,
+    "high": 2.317,
+    "low": 2.132,
+    "close": 2.132,
+    "volume": 529988689,
+    "amount": 1172334980.07
+  }
+}

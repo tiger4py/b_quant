@@ -1,0 +1,20 @@
+{
+  "code": "sh561980",
+  "raw_code": "561980",
+  "exchange": "sh",
+  "name": "半导体设备ETF招商",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2023-09-01",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 686,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.948,
+    "high": 0.965,
+    "low": 0.872,
+    "close": 0.875,
+    "volume": 1363100862,
+    "amount": 1247237288.73
+  }
+}

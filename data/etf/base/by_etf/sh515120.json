@@ -1,0 +1,20 @@
+{
+  "code": "sh515120",
+  "raw_code": "515120",
+  "exchange": "sh",
+  "name": "创新药ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-01-04",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1333,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.614,
+    "high": 0.65,
+    "low": 0.61,
+    "close": 0.641,
+    "volume": 1743560955,
+    "amount": 1096263950.46
+  }
+}

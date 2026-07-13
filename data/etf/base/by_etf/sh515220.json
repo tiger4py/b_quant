@@ -1,0 +1,20 @@
+{
+  "code": "sh515220",
+  "raw_code": "515220",
+  "exchange": "sh",
+  "name": "煤炭ETF国泰",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-03-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1540,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.101,
+    "high": 1.129,
+    "low": 1.089,
+    "close": 1.119,
+    "volume": 609782582,
+    "amount": 676553774.73
+  }
+}

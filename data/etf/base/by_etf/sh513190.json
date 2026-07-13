@@ -1,0 +1,20 @@
+{
+  "code": "sh513190",
+  "raw_code": "513190",
+  "exchange": "sh",
+  "name": "港股通金融ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2023-10-11",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 664,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.68,
+    "high": 1.689,
+    "low": 1.667,
+    "close": 1.676,
+    "volume": 237747000,
+    "amount": 398939466.0
+  }
+}

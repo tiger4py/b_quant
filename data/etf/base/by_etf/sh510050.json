@@ -1,0 +1,20 @@
+{
+  "code": "sh510050",
+  "raw_code": "510050",
+  "exchange": "sh",
+  "name": "上证50ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3040,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 3.088,
+    "high": 3.125,
+    "low": 3.053,
+    "close": 3.057,
+    "volume": 571879597,
+    "amount": 1761818068.46
+  }
+}

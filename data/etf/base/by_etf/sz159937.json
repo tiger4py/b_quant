@@ -1,0 +1,20 @@
+{
+  "code": "sz159937",
+  "raw_code": "159937",
+  "exchange": "sz",
+  "name": "黄金ETF博时",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2015-01-08",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2792,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 8.544,
+    "high": 8.565,
+    "low": 8.518,
+    "close": 8.521,
+    "volume": 48985600,
+    "amount": 418190067.2
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sz159934",
+  "raw_code": "159934",
+  "exchange": "sz",
+  "name": "黄金ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2014-01-02",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 3040,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 8.946,
+    "high": 8.97,
+    "low": 8.92,
+    "close": 8.925,
+    "volume": 50929028,
+    "amount": 455318242.58
+  }
+}

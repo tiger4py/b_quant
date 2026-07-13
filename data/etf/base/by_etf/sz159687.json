@@ -1,0 +1,20 @@
+{
+  "code": "sz159687",
+  "raw_code": "159687",
+  "exchange": "sz",
+  "name": "亚太精选ETF南方",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2022-12-30",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 846,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.836,
+    "high": 1.848,
+    "low": 1.821,
+    "close": 1.822,
+    "volume": 278497558,
+    "amount": 510137901.87
+  }
+}

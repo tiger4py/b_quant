@@ -238,13 +238,6 @@ def generate_report(target_date=None):
         market_stats = _build_market_stats(bars_by_code)
         market = assess_market(market_stats, latest)
 
-        # ======== 2. market_bottom 信号 ========
-        mb_result = load_latest_strategy_result("market_bottom")
-        mb_trades = mb_result.get("trades", []) if mb_result else []
-        mb_summary = mb_result.get("summary", {}) if mb_result else {}
-        mb_buys_today = [t for t in mb_trades if t.get("buy_date") == latest]
-        mb_sells_today = [t for t in mb_trades if t.get("sell_date") == latest and t.get("sell_reason") != "期末持仓"]
-        mb_open = [t for t in mb_trades if t.get("sell_reason") == "期末持仓"]
 
         # ======== 3. V反候选（快速扫描） ========
         v_reversal_candidates = []
@@ -416,13 +409,6 @@ def generate_report(target_date=None):
             lines.append(f"")
 
         # -- 策略买入信号参考 --
-        if mb_buys_today:
-            lines.append(f"### 📋 策略买入信号参考 (market_bottom)")
-            lines.append(f"")
-            for t in mb_buys_today[:5]:
-                lines.append(f"- {t['name']}({t['code']}) {t.get('buy_price', '-')}元 | {t.get('buy_reason', '')}")
-            lines.append(f"")
-
         # ======== 今日卖出个股复盘 ========
         lines.append(f"## 三、今日卖出 — 个股复盘")
         lines.append(f"")
@@ -507,14 +493,6 @@ def generate_report(target_date=None):
             lines.append(f"")
 
         # -- 策略卖出信号参考 --
-        if mb_sells_today:
-            lines.append(f"### 📋 策略卖出信号参考 (market_bottom)")
-            lines.append(f"")
-            for t in mb_sells_today:
-                sign = "+" if t.get("profit_pct", 0) >= 0 else ""
-                lines.append(f"- {t['name']}({t['code']}) 盈亏{sign}{t.get('profit_pct', 0):.1f}% → {t.get('sell_reason', '')}")
-            lines.append(f"")
-
         # ======== 持仓个股逐一复盘 ========
         lines.append(f"## 四、持仓个股 — 逐一复盘")
         lines.append(f"")
@@ -735,37 +713,6 @@ def generate_report(target_date=None):
                         "trigger": f"开盘量比>1.2 或 盘中放量突破",
                     })
 
-        # 从 market_bottom 买入信号收集
-        if mb_buys_today:
-            for t in mb_buys_today[:5]:
-                # 避免重复
-                if not any(c["code"] == t["code"] for c in candidates_tomorrow):
-                    candidates_tomorrow.append({
-                        "name": t["name"], "code": t["code"],
-                        "source": "market_bottom",
-                        "score": 50,
-                        "trigger": t.get("buy_reason", "信号触发"),
-                    })
-
-        if candidates_tomorrow:
-            lines.append(f"| 优先级 | 股票 | 来源 | 买入触发条件 |")
-            lines.append(f"|--------|------|------|-------------|")
-            for i, c in enumerate(candidates_tomorrow[:8], 1):
-                priority = "🔥" if i <= 2 else ("⭐" if i <= 4 else "👀")
-                lines.append(f"| {priority} | {c['name']}({c['code']}) | {c['source']} | {c['trigger']} |")
-        else:
-            lines.append(f"(暂无候选 — 等待信号出现)")
-        lines.append(f"")
-
-        # 3. 交易纪律提醒
-        lines.append(f"**三、纪律提醒:**")
-        lines.append(f"")
-        lines.append(f"- [ ] 单只股票仓位不超过总资产 20%")
-        lines.append(f"- [ ] 买入前确认: 理由写下来了吗？止损位设好了吗？")
-        lines.append(f"- [ ] 盘中不做情绪化交易")
-        lines.append(f"- [ ] 收盘前检查所有持仓是否触发止损/止盈条件")
-        lines.append(f"")
-
         # ======== 八、回望复盘 ========
         lines.append(f"## 八、回望复盘 — 对在哪 / 错在哪")
         lines.append(f"")
@@ -877,16 +824,6 @@ def generate_report(target_date=None):
                 lines.append(f"")
 
         # 8.4 策略回测 vs 实盘对比
-        if mb_result and mb_summary:
-            lines.append(f"### 📊 策略回测表现")
-            lines.append(f"")
-            lines.append(f"| 策略 | 累计收益 | 最大回撤 | 胜率 | 交易数 |")
-            lines.append(f"|------|----------|----------|------|--------|")
-            lines.append(f"| market_bottom | {mb_summary.get('total_return_pct','-')}% | {mb_summary.get('max_drawdown_pct','-')}% | {mb_summary.get('win_rate_pct','-')}% | {mb_summary.get('trade_count',0)} |")
-            lines.append(f"")
-            lines.append(f"**对比反思:** 实盘是否跑赢了策略回测？如果没有，差距在哪？（执行偏差/滑点/心态）")
-            lines.append(f"")
-
         lines.append(f"---")
         lines.append(f"*免责声明: 基于历史数据的量化分析，不构成投资建议。投资有风险，入市需谨慎。*")
 
@@ -897,12 +834,6 @@ def generate_report(target_date=None):
             "date": latest,
             "generated_at": now_str,
             "market": market,
-            "market_bottom": {
-                "buys_today": mb_buys_today,
-                "sells_today": mb_sells_today,
-                "open_positions": mb_open,
-                "summary": mb_summary,
-            },
             "v_reversal": {
                 "candidates": v_reversal_candidates[:20],
                 "strong_count": len([c for c in v_reversal_candidates if c["simple_score"] >= 45]),

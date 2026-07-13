@@ -1,0 +1,20 @@
+{
+  "code": "sz159869",
+  "raw_code": "159869",
+  "exchange": "sz",
+  "name": "游戏ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-03-05",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1294,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.094,
+    "high": 1.148,
+    "low": 1.078,
+    "close": 1.129,
+    "volume": 862242789,
+    "amount": 959029542.07
+  }
+}

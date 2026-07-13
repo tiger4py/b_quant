@@ -1,0 +1,20 @@
+{
+  "code": "sz159949",
+  "raw_code": "159949",
+  "exchange": "sz",
+  "name": "创业板50ETF华安",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2016-07-22",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 2416,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.926,
+    "high": 1.939,
+    "low": 1.826,
+    "close": 1.826,
+    "volume": 1423217130,
+    "amount": 2674580791.55
+  }
+}

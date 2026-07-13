@@ -1,0 +1,20 @@
+{
+  "code": "sh518600",
+  "raw_code": "518600",
+  "exchange": "sh",
+  "name": "金ETF广发",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-08-05",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1434,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 8.911,
+    "high": 8.947,
+    "low": 8.899,
+    "close": 8.902,
+    "volume": 11647400,
+    "amount": 103833659.15
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "code": "sh513090",
+  "raw_code": "513090",
+  "exchange": "sh",
+  "name": "香港证券ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2020-03-26",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1522,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.838,
+    "high": 1.856,
+    "low": 1.82,
+    "close": 1.822,
+    "volume": 3512550041,
+    "amount": 6442016775.19
+  }
+}

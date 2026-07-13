@@ -1,0 +1,4109 @@
+{
+  "strategy": {
+    "id": "divergent_adaptive",
+    "name": "股性突变埋伏-自适应",
+    "type": "concept",
+    "description": "12维股性指纹(10d vs 60d)+跨截面Top10排名+大盘自适应(fast/normal/slow)。v1: +184%收益/14.5%回撤/53.7%胜率/1.69PF。365个同花顺概念。"
+  },
+  "selection": {
+    "stock_count": 365,
+    "start_date": "2026-01-01",
+    "end_date": "2026-07-10",
+    "initial_cash": 1000000,
+    "max_positions": 5,
+    "max_position_cash": 200000.0,
+    "latest_trade_date": "2026-07-10"
+  },
+  "summary": {
+    "strategy": "股性突变埋伏-自适应",
+    "initial_cash": 1000000,
+    "final_equity": 1250387.69,
+    "total_return_pct": 25.04,
+    "max_drawdown_pct": 8.11,
+    "trade_count": 146,
+    "win_rate_pct": 58.22,
+    "profit_factor": 2.11,
+    "date_range": "2026-01-05 ~ 2026-07-10"
+  },
+  "equity_curve": [
+    {
+      "date": "2026-01-05",
+      "equity": 1000000.0
+    },
+    {
+      "date": "2026-01-06",
+      "equity": 1015242.19
+    },
+    {
+      "date": "2026-01-07",
+      "equity": 1015541.21
+    },
+    {
+      "date": "2026-01-08",
+      "equity": 1034989.71
+    },
+    {
+      "date": "2026-01-09",
+      "equity": 1063669.66
+    },
+    {
+      "date": "2026-01-12",
+      "equity": 1126867.38
+    },
+    {
+      "date": "2026-01-13",
+      "equity": 1107830.16
+    },
+    {
+      "date": "2026-01-14",
+      "equity": 1114136.31
+    },
+    {
+      "date": "2026-01-15",
+      "equity": 1105314.07
+    },
+    {
+      "date": "2026-01-16",
+      "equity": 1098303.96
+    },
+    {
+      "date": "2026-01-19",
+      "equity": 1096525.21
+    },
+    {
+      "date": "2026-01-20",
+      "equity": 1096881.05
+    },
+    {
+      "date": "2026-01-21",
+      "equity": 1096593.56
+    },
+    {
+      "date": "2026-01-22",
+      "equity": 1103663.12
+    },
+    {
+      "date": "2026-01-23",
+      "equity": 1132807.51
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 1153647.39
+    },
+    {
+      "date": "2026-01-27",
+      "equity": 1150749.49
+    },
+    {
+      "date": "2026-01-28",
+      "equity": 1161757.61
+    },
+    {
+      "date": "2026-01-29",
+      "equity": 1162602.88
+    },
+    {
+      "date": "2026-01-30",
+      "equity": 1153558.69
+    },
+    {
+      "date": "2026-02-02",
+      "equity": 1144165.97
+    },
+    {
+      "date": "2026-02-03",
+      "equity": 1145975.45
+    },
+    {
+      "date": "2026-02-04",
+      "equity": 1166539.13
+    },
+    {
+      "date": "2026-02-05",
+      "equity": 1129591.66
+    },
+    {
+      "date": "2026-02-06",
+      "equity": 1135620.77
+    },
+    {
+      "date": "2026-02-09",
+      "equity": 1154624.56
+    },
+    {
+      "date": "2026-02-10",
+      "equity": 1144635.47
+    },
+    {
+      "date": "2026-02-11",
+      "equity": 1140425.07
+    },
+    {
+      "date": "2026-02-12",
+      "equity": 1140828.72
+    },
+    {
+      "date": "2026-02-13",
+      "equity": 1138725.04
+    },
+    {
+      "date": "2026-02-24",
+      "equity": 1140268.6
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 1153696.54
+    },
+    {
+      "date": "2026-02-26",
+      "equity": 1154646.6
+    },
+    {
+      "date": "2026-02-27",
+      "equity": 1164082.88
+    },
+    {
+      "date": "2026-03-02",
+      "equity": 1161523.68
+    },
+    {
+      "date": "2026-03-03",
+      "equity": 1115677.71
+    },
+    {
+      "date": "2026-03-04",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-05",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-06",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-09",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-10",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-11",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-12",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-13",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-16",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-17",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-18",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-19",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-20",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-23",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-24",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-25",
+      "equity": 1115267.03
+    },
+    {
+      "date": "2026-03-26",
+      "equity": 1095645.41
+    },
+    {
+      "date": "2026-03-27",
+      "equity": 1115181.82
+    },
+    {
+      "date": "2026-03-30",
+      "equity": 1114422.47
+    },
+    {
+      "date": "2026-03-31",
+      "equity": 1105589.53
+    },
+    {
+      "date": "2026-04-01",
+      "equity": 1129918.96
+    },
+    {
+      "date": "2026-04-02",
+      "equity": 1132402.73
+    },
+    {
+      "date": "2026-04-03",
+      "equity": 1126299.75
+    },
+    {
+      "date": "2026-04-07",
+      "equity": 1127073.81
+    },
+    {
+      "date": "2026-04-08",
+      "equity": 1130755.95
+    },
+    {
+      "date": "2026-04-09",
+      "equity": 1108750.9
+    },
+    {
+      "date": "2026-04-10",
+      "equity": 1114186.28
+    },
+    {
+      "date": "2026-04-13",
+      "equity": 1102685.93
+    },
+    {
+      "date": "2026-04-14",
+      "equity": 1122492.33
+    },
+    {
+      "date": "2026-04-15",
+      "equity": 1112529.94
+    },
+    {
+      "date": "2026-04-16",
+      "equity": 1131730.26
+    },
+    {
+      "date": "2026-04-17",
+      "equity": 1155409.34
+    },
+    {
+      "date": "2026-04-20",
+      "equity": 1165888.04
+    },
+    {
+      "date": "2026-04-21",
+      "equity": 1166271.1
+    },
+    {
+      "date": "2026-04-22",
+      "equity": 1171069.74
+    },
+    {
+      "date": "2026-04-23",
+      "equity": 1167806.35
+    },
+    {
+      "date": "2026-04-24",
+      "equity": 1166067.29
+    },
+    {
+      "date": "2026-04-27",
+      "equity": 1166067.29
+    },
+    {
+      "date": "2026-04-28",
+      "equity": 1166067.29
+    },
+    {
+      "date": "2026-04-29",
+      "equity": 1166067.29
+    },
+    {
+      "date": "2026-04-30",
+      "equity": 1175276.39
+    },
+    {
+      "date": "2026-05-06",
+      "equity": 1205254.32
+    },
+    {
+      "date": "2026-05-07",
+      "equity": 1219248.39
+    },
+    {
+      "date": "2026-05-08",
+      "equity": 1222942.84
+    },
+    {
+      "date": "2026-05-11",
+      "equity": 1264238.85
+    },
+    {
+      "date": "2026-05-12",
+      "equity": 1261608.06
+    },
+    {
+      "date": "2026-05-13",
+      "equity": 1268434.69
+    },
+    {
+      "date": "2026-05-14",
+      "equity": 1263357.66
+    },
+    {
+      "date": "2026-05-15",
+      "equity": 1266055.57
+    },
+    {
+      "date": "2026-05-18",
+      "equity": 1274567.31
+    },
+    {
+      "date": "2026-05-19",
+      "equity": 1279689.92
+    },
+    {
+      "date": "2026-05-20",
+      "equity": 1289705.95
+    },
+    {
+      "date": "2026-05-21",
+      "equity": 1281003.45
+    },
+    {
+      "date": "2026-05-22",
+      "equity": 1286346.95
+    },
+    {
+      "date": "2026-05-25",
+      "equity": 1294576.4
+    },
+    {
+      "date": "2026-05-26",
+      "equity": 1277960.43
+    },
+    {
+      "date": "2026-05-27",
+      "equity": 1259097.0
+    },
+    {
+      "date": "2026-05-28",
+      "equity": 1295242.62
+    },
+    {
+      "date": "2026-05-29",
+      "equity": 1236759.14
+    },
+    {
+      "date": "2026-06-01",
+      "equity": 1213244.65
+    },
+    {
+      "date": "2026-06-02",
+      "equity": 1232787.84
+    },
+    {
+      "date": "2026-06-03",
+      "equity": 1238290.65
+    },
+    {
+      "date": "2026-06-04",
+      "equity": 1241542.47
+    },
+    {
+      "date": "2026-06-05",
+      "equity": 1234658.63
+    },
+    {
+      "date": "2026-06-08",
+      "equity": 1205181.89
+    },
+    {
+      "date": "2026-06-09",
+      "equity": 1207775.55
+    },
+    {
+      "date": "2026-06-10",
+      "equity": 1190184.18
+    },
+    {
+      "date": "2026-06-11",
+      "equity": 1190153.9
+    },
+    {
+      "date": "2026-06-12",
+      "equity": 1191505.57
+    },
+    {
+      "date": "2026-06-15",
+      "equity": 1190614.5
+    },
+    {
+      "date": "2026-06-16",
+      "equity": 1212889.52
+    },
+    {
+      "date": "2026-06-17",
+      "equity": 1220596.22
+    },
+    {
+      "date": "2026-06-18",
+      "equity": 1216166.48
+    },
+    {
+      "date": "2026-06-22",
+      "equity": 1247651.76
+    },
+    {
+      "date": "2026-06-23",
+      "equity": 1220458.1
+    },
+    {
+      "date": "2026-06-24",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-06-25",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-06-26",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-06-29",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-06-30",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-01",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-02",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-03",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-06",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-07",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-08",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-09",
+      "equity": 1250387.69
+    },
+    {
+      "date": "2026-07-10",
+      "equity": 1250387.69
+    }
+  ],
+  "stock_summaries": [
+    {
+      "code": "307816",
+      "name": "国家大基金持股",
+      "trade_count": 4,
+      "win_rate": 75.0,
+      "total_profit": 37991.97,
+      "avg_profit_pct": 8.59
+    },
+    {
+      "code": "308582",
+      "name": "光刻胶",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 21826.62,
+      "avg_profit_pct": 9.58
+    },
+    {
+      "code": "308690",
+      "name": "中芯国际概念",
+      "trade_count": 3,
+      "win_rate": 66.7,
+      "total_profit": 18451.04,
+      "avg_profit_pct": 5.54
+    },
+    {
+      "code": "308659",
+      "name": "快手概念",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 15991.41,
+      "avg_profit_pct": 15.48
+    },
+    {
+      "code": "307940",
+      "name": "存储芯片",
+      "trade_count": 4,
+      "win_rate": 75.0,
+      "total_profit": 15084.97,
+      "avg_profit_pct": 3.33
+    },
+    {
+      "code": "309085",
+      "name": "光刻机",
+      "trade_count": 3,
+      "win_rate": 100.0,
+      "total_profit": 15002.06,
+      "avg_profit_pct": 4.28
+    },
+    {
+      "code": "308699",
+      "name": "科创次新股",
+      "trade_count": 4,
+      "win_rate": 50.0,
+      "total_profit": 14962.53,
+      "avg_profit_pct": 3.19
+    },
+    {
+      "code": "309164",
+      "name": "智谱AI",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 14634.84,
+      "avg_profit_pct": 14.66
+    },
+    {
+      "code": "309030",
+      "name": "PET铜箔",
+      "trade_count": 3,
+      "win_rate": 66.7,
+      "total_profit": 12965.44,
+      "avg_profit_pct": 3.64
+    },
+    {
+      "code": "308624",
+      "name": "云游戏",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 10817.02,
+      "avg_profit_pct": 10.35
+    },
+    {
+      "code": "301582",
+      "name": "金属锌",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 10638.15,
+      "avg_profit_pct": 4.93
+    },
+    {
+      "code": "307954",
+      "name": "富士康概念",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 9719.99,
+      "avg_profit_pct": 4.53
+    },
+    {
+      "code": "309049",
+      "name": "共封装光学(CPO)",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 9685.65,
+      "avg_profit_pct": 8.85
+    },
+    {
+      "code": "309182",
+      "name": "小红书概念",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 9622.46,
+      "avg_profit_pct": 9.33
+    },
+    {
+      "code": "309177",
+      "name": "同花顺新质50",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 9493.08,
+      "avg_profit_pct": 9.68
+    },
+    {
+      "code": "300085",
+      "name": "氟化工概念",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 8973.26,
+      "avg_profit_pct": 7.78
+    },
+    {
+      "code": "300157",
+      "name": "草甘膦",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 7319.2,
+      "avg_profit_pct": 3.28
+    },
+    {
+      "code": "308014",
+      "name": "创新药",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 7289.22,
+      "avg_profit_pct": 6.47
+    },
+    {
+      "code": "301577",
+      "name": "金属铜",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 6976.26,
+      "avg_profit_pct": 3.2
+    },
+    {
+      "code": "300248",
+      "name": "黄金概念",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 6731.99,
+      "avg_profit_pct": 3.15
+    },
+    {
+      "code": "300309",
+      "name": "苹果概念",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 5910.79,
+      "avg_profit_pct": 5.54
+    },
+    {
+      "code": "308202",
+      "name": "环氧丙烷",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 5701.26,
+      "avg_profit_pct": 2.62
+    },
+    {
+      "code": "309125",
+      "name": "铜缆高速连接",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 5697.76,
+      "avg_profit_pct": 5.22
+    },
+    {
+      "code": "309128",
+      "name": "军工信息化",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 5514.56,
+      "avg_profit_pct": 5.38
+    },
+    {
+      "code": "309004",
+      "name": "先进封装",
+      "trade_count": 5,
+      "win_rate": 60.0,
+      "total_profit": 5514.08,
+      "avg_profit_pct": 1.0
+    },
+    {
+      "code": "308535",
+      "name": "脑机接口",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 5453.33,
+      "avg_profit_pct": 5.53
+    },
+    {
+      "code": "300013",
+      "name": "大飞机",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 5311.82,
+      "avg_profit_pct": 5.28
+    },
+    {
+      "code": "301602",
+      "name": "赛马概念",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 5053.19,
+      "avg_profit_pct": 2.27
+    },
+    {
+      "code": "301470",
+      "name": "航空发动机",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 4837.95,
+      "avg_profit_pct": 4.85
+    },
+    {
+      "code": "309167",
+      "name": "华为手机",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 4061.23,
+      "avg_profit_pct": 3.52
+    },
+    {
+      "code": "300277",
+      "name": "可燃冰",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 4050.41,
+      "avg_profit_pct": 3.54
+    },
+    {
+      "code": "308725",
+      "name": "汽车芯片",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 4027.08,
+      "avg_profit_pct": 3.39
+    },
+    {
+      "code": "300352",
+      "name": "碳纤维",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 3566.64,
+      "avg_profit_pct": 3.56
+    },
+    {
+      "code": "309023",
+      "name": "高压氧舱",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 3548.92,
+      "avg_profit_pct": 3.49
+    },
+    {
+      "code": "308992",
+      "name": "TOPCON电池",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 3348.47,
+      "avg_profit_pct": 2.88
+    },
+    {
+      "code": "308384",
+      "name": "消费电子概念",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 3233.8,
+      "avg_profit_pct": 2.88
+    },
+    {
+      "code": "305376",
+      "name": "丙烯酸",
+      "trade_count": 2,
+      "win_rate": 100.0,
+      "total_profit": 3103.64,
+      "avg_profit_pct": 1.36
+    },
+    {
+      "code": "309050",
+      "name": "数字水印",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 3085.11,
+      "avg_profit_pct": 2.72
+    },
+    {
+      "code": "309081",
+      "name": "减肥药",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 3083.18,
+      "avg_profit_pct": 1.4
+    },
+    {
+      "code": "309105",
+      "name": "PEEK材料",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 2415.23,
+      "avg_profit_pct": 2.45
+    },
+    {
+      "code": "301362",
+      "name": "新型烟草(电子烟)",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 2388.81,
+      "avg_profit_pct": 2.1
+    },
+    {
+      "code": "301794",
+      "name": "青蒿素",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 2303.24,
+      "avg_profit_pct": 1.04
+    },
+    {
+      "code": "308991",
+      "name": "钙钛矿电池",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 2300.27,
+      "avg_profit_pct": 1.98
+    },
+    {
+      "code": "309084",
+      "name": "BC电池",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 2267.72,
+      "avg_profit_pct": 1.96
+    },
+    {
+      "code": "308612",
+      "name": "无线耳机",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 2156.13,
+      "avg_profit_pct": 1.95
+    },
+    {
+      "code": "300926",
+      "name": "超级电容",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 2155.25,
+      "avg_profit_pct": 1.72
+    },
+    {
+      "code": "301279",
+      "name": "有机硅概念",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 2013.07,
+      "avg_profit_pct": 1.69
+    },
+    {
+      "code": "309121",
+      "name": "AI PC",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 1846.65,
+      "avg_profit_pct": 1.63
+    },
+    {
+      "code": "308572",
+      "name": "仿制药一致性评价",
+      "trade_count": 3,
+      "win_rate": 33.3,
+      "total_profit": 1785.43,
+      "avg_profit_pct": 0.56
+    },
+    {
+      "code": "309000",
+      "name": "减速器",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 1738.11,
+      "avg_profit_pct": 1.74
+    },
+    {
+      "code": "300353",
+      "name": "特高压",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 1573.95,
+      "avg_profit_pct": 1.43
+    },
+    {
+      "code": "301455",
+      "name": "摘帽",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 1561.71,
+      "avg_profit_pct": 1.35
+    },
+    {
+      "code": "300236",
+      "name": "国产航母",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 1407.24,
+      "avg_profit_pct": 1.37
+    },
+    {
+      "code": "308560",
+      "name": "烟草",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 1248.9,
+      "avg_profit_pct": 1.1
+    },
+    {
+      "code": "308977",
+      "name": "F5G概念",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 1244.93,
+      "avg_profit_pct": 0.58
+    },
+    {
+      "code": "301292",
+      "name": "染料",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 1229.2,
+      "avg_profit_pct": 0.55
+    },
+    {
+      "code": "301171",
+      "name": "深圳国企改革",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 1014.8,
+      "avg_profit_pct": 0.87
+    },
+    {
+      "code": "308818",
+      "name": "幽门螺杆菌概念",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 808.49,
+      "avg_profit_pct": 0.33
+    },
+    {
+      "code": "308810",
+      "name": "柔性直流输电",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 663.16,
+      "avg_profit_pct": 0.61
+    },
+    {
+      "code": "302034",
+      "name": "租售同权",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 312.35,
+      "avg_profit_pct": 0.28
+    },
+    {
+      "code": "308864",
+      "name": "金属铅",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 253.78,
+      "avg_profit_pct": 0.23
+    },
+    {
+      "code": "308915",
+      "name": "肝炎概念",
+      "trade_count": 3,
+      "win_rate": 33.3,
+      "total_profit": 142.05,
+      "avg_profit_pct": 0.04
+    },
+    {
+      "code": "300451",
+      "name": "猪肉",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": 100.64,
+      "avg_profit_pct": 0.04
+    },
+    {
+      "code": "301628",
+      "name": "互联网保险",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 99.01,
+      "avg_profit_pct": 0.08
+    },
+    {
+      "code": "300809",
+      "name": "小金属概念",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 72.13,
+      "avg_profit_pct": 0.06
+    },
+    {
+      "code": "309187",
+      "name": "中国AI 50",
+      "trade_count": 1,
+      "win_rate": 100.0,
+      "total_profit": 64.18,
+      "avg_profit_pct": 0.05
+    },
+    {
+      "code": "300106",
+      "name": "生物疫苗",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": 0.0,
+      "avg_profit_pct": 0.0
+    },
+    {
+      "code": "300858",
+      "name": "土地流转",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": 0.0,
+      "avg_profit_pct": 0.0
+    },
+    {
+      "code": "306750",
+      "name": "超级品牌",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -122.5,
+      "avg_profit_pct": -0.11
+    },
+    {
+      "code": "308774",
+      "name": "培育钻石",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -359.84,
+      "avg_profit_pct": -0.28
+    },
+    {
+      "code": "301576",
+      "name": "养鸡",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -511.27,
+      "avg_profit_pct": -0.23
+    },
+    {
+      "code": "308829",
+      "name": "硅能源",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -540.86,
+      "avg_profit_pct": -0.45
+    },
+    {
+      "code": "301100",
+      "name": "足球概念",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -796.48,
+      "avg_profit_pct": -0.72
+    },
+    {
+      "code": "301496",
+      "name": "白酒概念",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -1249.88,
+      "avg_profit_pct": -1.12
+    },
+    {
+      "code": "300084",
+      "name": "煤化工概念",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -1640.17,
+      "avg_profit_pct": -0.6
+    },
+    {
+      "code": "308517",
+      "name": "人造肉",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -1689.98,
+      "avg_profit_pct": -1.55
+    },
+    {
+      "code": "301104",
+      "name": "化肥",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -1771.7,
+      "avg_profit_pct": -1.46
+    },
+    {
+      "code": "308716",
+      "name": "煤炭概念",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -1879.98,
+      "avg_profit_pct": -0.64
+    },
+    {
+      "code": "309124",
+      "name": "高股息精选",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -1942.42,
+      "avg_profit_pct": -1.59
+    },
+    {
+      "code": "308438",
+      "name": "芬太尼",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -2066.31,
+      "avg_profit_pct": -0.86
+    },
+    {
+      "code": "308969",
+      "name": "超超临界发电",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2132.0,
+      "avg_profit_pct": -1.83
+    },
+    {
+      "code": "308822",
+      "name": "重组蛋白",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2450.66,
+      "avg_profit_pct": -2.2
+    },
+    {
+      "code": "309120",
+      "name": "AI手机",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2473.7,
+      "avg_profit_pct": -2.21
+    },
+    {
+      "code": "308537",
+      "name": "动物疫苗",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2492.07,
+      "avg_profit_pct": -2.24
+    },
+    {
+      "code": "301229",
+      "name": "天津自贸区",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2662.56,
+      "avg_profit_pct": -2.4
+    },
+    {
+      "code": "308614",
+      "name": "阿尔茨海默概念",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2749.82,
+      "avg_profit_pct": -2.44
+    },
+    {
+      "code": "301543",
+      "name": "细胞免疫治疗",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -2792.87,
+      "avg_profit_pct": -1.26
+    },
+    {
+      "code": "300038",
+      "name": "流感",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2867.11,
+      "avg_profit_pct": -2.58
+    },
+    {
+      "code": "308760",
+      "name": "绿色电力",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -2874.73,
+      "avg_profit_pct": -2.58
+    },
+    {
+      "code": "308989",
+      "name": "生物质能发电",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -3576.73,
+      "avg_profit_pct": -3.22
+    },
+    {
+      "code": "308832",
+      "name": "PCB概念",
+      "trade_count": 4,
+      "win_rate": 25.0,
+      "total_profit": -4182.75,
+      "avg_profit_pct": -0.61
+    },
+    {
+      "code": "308657",
+      "name": "免税店",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -4421.35,
+      "avg_profit_pct": -3.59
+    },
+    {
+      "code": "300098",
+      "name": "磷化工",
+      "trade_count": 2,
+      "win_rate": 50.0,
+      "total_profit": -4577.26,
+      "avg_profit_pct": -1.99
+    },
+    {
+      "code": "300351",
+      "name": "钛白粉概念",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -4577.66,
+      "avg_profit_pct": -3.93
+    },
+    {
+      "code": "301123",
+      "name": "大豆",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -4648.34,
+      "avg_profit_pct": -1.95
+    },
+    {
+      "code": "301713",
+      "name": "中船系",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -4771.49,
+      "avg_profit_pct": -2.04
+    },
+    {
+      "code": "300862",
+      "name": "ST板块",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -5590.61,
+      "avg_profit_pct": -4.58
+    },
+    {
+      "code": "307904",
+      "name": "盐湖提锂",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -5726.32,
+      "avg_profit_pct": -4.85
+    },
+    {
+      "code": "308628",
+      "name": "MiniLED",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -5939.67,
+      "avg_profit_pct": -4.72
+    },
+    {
+      "code": "300845",
+      "name": "特钢概念",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -6093.0,
+      "avg_profit_pct": -5.28
+    },
+    {
+      "code": "300382",
+      "name": "稀土永磁",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -6433.0,
+      "avg_profit_pct": -5.62
+    },
+    {
+      "code": "301154",
+      "name": "OLED",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -7344.91,
+      "avg_profit_pct": -5.78
+    },
+    {
+      "code": "300435",
+      "name": "转基因",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -8031.63,
+      "avg_profit_pct": -3.41
+    },
+    {
+      "code": "300723",
+      "name": "无线充电",
+      "trade_count": 1,
+      "win_rate": 0.0,
+      "total_profit": -8672.56,
+      "avg_profit_pct": -6.7
+    },
+    {
+      "code": "309185",
+      "name": "兵装重组概念",
+      "trade_count": 2,
+      "win_rate": 0.0,
+      "total_profit": -10404.9,
+      "avg_profit_pct": -4.48
+    }
+  ],
+  "trades": [
+    {
+      "code": "300013",
+      "name": "大飞机",
+      "buy_date": "2026-01-05",
+      "buy_price": 4026.152,
+      "sell_date": "2026-01-08",
+      "sell_price": 4238.625,
+      "shares": 25,
+      "profit": 5311.82,
+      "profit_pct": 5.28,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 100653.8,
+      "sell_amount": 105965.62,
+      "buy_reason": ""
+    },
+    {
+      "code": "300352",
+      "name": "碳纤维",
+      "buy_date": "2026-01-05",
+      "buy_price": 2132.154,
+      "sell_date": "2026-01-08",
+      "sell_price": 2208.04,
+      "shares": 47,
+      "profit": 3566.64,
+      "profit_pct": 3.56,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 100211.24,
+      "sell_amount": 103777.88,
+      "buy_reason": ""
+    },
+    {
+      "code": "301470",
+      "name": "航空发动机",
+      "buy_date": "2026-01-05",
+      "buy_price": 3439.936,
+      "sell_date": "2026-01-08",
+      "sell_price": 3606.762,
+      "shares": 29,
+      "profit": 4837.95,
+      "profit_pct": 4.85,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 99758.14,
+      "sell_amount": 104596.1,
+      "buy_reason": ""
+    },
+    {
+      "code": "307954",
+      "name": "富士康概念",
+      "buy_date": "2026-01-05",
+      "buy_price": 2910.001,
+      "sell_date": "2026-01-08",
+      "sell_price": 2973.37,
+      "shares": 34,
+      "profit": 2154.55,
+      "profit_pct": 2.18,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 98940.03,
+      "sell_amount": 101094.58,
+      "buy_reason": ""
+    },
+    {
+      "code": "308535",
+      "name": "脑机接口",
+      "buy_date": "2026-01-05",
+      "buy_price": 1861.12,
+      "sell_date": "2026-01-16",
+      "sell_price": 1964.013,
+      "shares": 53,
+      "profit": 5453.33,
+      "profit_pct": 5.53,
+      "sell_reason": "rank_out",
+      "hold_days": 12,
+      "regime": "normal",
+      "buy_amount": 98639.36,
+      "sell_amount": 104092.69,
+      "buy_reason": ""
+    },
+    {
+      "code": "308624",
+      "name": "云游戏",
+      "buy_date": "2026-01-05",
+      "buy_price": 1633.579,
+      "sell_date": "2026-01-13",
+      "sell_price": 1802.595,
+      "shares": 64,
+      "profit": 10817.02,
+      "profit_pct": 10.35,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 104549.06,
+      "sell_amount": 115366.08,
+      "buy_reason": ""
+    },
+    {
+      "code": "309000",
+      "name": "减速器",
+      "buy_date": "2026-01-05",
+      "buy_price": 2128.768,
+      "sell_date": "2026-01-08",
+      "sell_price": 2165.749,
+      "shares": 47,
+      "profit": 1738.11,
+      "profit_pct": 1.74,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 100052.1,
+      "sell_amount": 101790.2,
+      "buy_reason": ""
+    },
+    {
+      "code": "309105",
+      "name": "PEEK材料",
+      "buy_date": "2026-01-05",
+      "buy_price": 2144.306,
+      "sell_date": "2026-01-08",
+      "sell_price": 2196.811,
+      "shares": 46,
+      "profit": 2415.23,
+      "profit_pct": 2.45,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 98638.08,
+      "sell_amount": 101053.31,
+      "buy_reason": ""
+    },
+    {
+      "code": "309164",
+      "name": "智谱AI",
+      "buy_date": "2026-01-05",
+      "buy_price": 1584.78,
+      "sell_date": "2026-01-13",
+      "sell_price": 1817.079,
+      "shares": 63,
+      "profit": 14634.84,
+      "profit_pct": 14.66,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 99841.14,
+      "sell_amount": 114475.98,
+      "buy_reason": ""
+    },
+    {
+      "code": "309177",
+      "name": "同花顺新质50",
+      "buy_date": "2026-01-05",
+      "buy_price": 2580.577,
+      "sell_date": "2026-01-13",
+      "sell_price": 2830.395,
+      "shares": 38,
+      "profit": 9493.08,
+      "profit_pct": 9.68,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 98061.93,
+      "sell_amount": 107555.01,
+      "buy_reason": ""
+    },
+    {
+      "code": "300236",
+      "name": "国产航母",
+      "buy_date": "2026-01-08",
+      "buy_price": 2514.037,
+      "sell_date": "2026-01-13",
+      "sell_price": 2548.36,
+      "shares": 41,
+      "profit": 1407.24,
+      "profit_pct": 1.37,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 103075.52,
+      "sell_amount": 104482.76,
+      "buy_reason": ""
+    },
+    {
+      "code": "308659",
+      "name": "快手概念",
+      "buy_date": "2026-01-08",
+      "buy_price": 2025.056,
+      "sell_date": "2026-01-13",
+      "sell_price": 2338.613,
+      "shares": 51,
+      "profit": 15991.41,
+      "profit_pct": 15.48,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 103277.86,
+      "sell_amount": 119269.26,
+      "buy_reason": ""
+    },
+    {
+      "code": "308699",
+      "name": "科创次新股",
+      "buy_date": "2026-01-08",
+      "buy_price": 673.887,
+      "sell_date": "2026-01-13",
+      "sell_price": 674.448,
+      "shares": 154,
+      "profit": 86.39,
+      "profit_pct": 0.08,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 103778.6,
+      "sell_amount": 103864.99,
+      "buy_reason": ""
+    },
+    {
+      "code": "309023",
+      "name": "高压氧舱",
+      "buy_date": "2026-01-08",
+      "buy_price": 1495.587,
+      "sell_date": "2026-01-13",
+      "sell_price": 1547.777,
+      "shares": 68,
+      "profit": 3548.92,
+      "profit_pct": 3.49,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 101699.92,
+      "sell_amount": 105248.84,
+      "buy_reason": ""
+    },
+    {
+      "code": "309128",
+      "name": "军工信息化",
+      "buy_date": "2026-01-08",
+      "buy_price": 2178.97,
+      "sell_date": "2026-01-13",
+      "sell_price": 2296.301,
+      "shares": 47,
+      "profit": 5514.56,
+      "profit_pct": 5.38,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 102411.59,
+      "sell_amount": 107926.15,
+      "buy_reason": ""
+    },
+    {
+      "code": "309182",
+      "name": "小红书概念",
+      "buy_date": "2026-01-08",
+      "buy_price": 1611.253,
+      "sell_date": "2026-01-21",
+      "sell_price": 1761.604,
+      "shares": 64,
+      "profit": 9622.46,
+      "profit_pct": 9.33,
+      "sell_reason": "rank_out",
+      "hold_days": 12,
+      "regime": "normal",
+      "buy_amount": 103120.19,
+      "sell_amount": 112742.66,
+      "buy_reason": ""
+    },
+    {
+      "code": "300157",
+      "name": "草甘膦",
+      "buy_date": "2026-01-21",
+      "buy_price": 1688.888,
+      "sell_date": "2026-01-26",
+      "sell_price": 1753.236,
+      "shares": 65,
+      "profit": 4182.62,
+      "profit_pct": 3.81,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109777.72,
+      "sell_amount": 113960.34,
+      "buy_reason": ""
+    },
+    {
+      "code": "300248",
+      "name": "黄金概念",
+      "buy_date": "2026-01-21",
+      "buy_price": 4028.838,
+      "sell_date": "2026-01-26",
+      "sell_price": 4385.931,
+      "shares": 27,
+      "profit": 9641.51,
+      "profit_pct": 8.86,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 108778.63,
+      "sell_amount": 118420.14,
+      "buy_reason": ""
+    },
+    {
+      "code": "300353",
+      "name": "特高压",
+      "buy_date": "2026-01-21",
+      "buy_price": 4994.294,
+      "sell_date": "2026-01-26",
+      "sell_price": 5065.837,
+      "shares": 22,
+      "profit": 1573.95,
+      "profit_pct": 1.43,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109874.47,
+      "sell_amount": 111448.41,
+      "buy_reason": ""
+    },
+    {
+      "code": "301577",
+      "name": "金属铜",
+      "buy_date": "2026-01-21",
+      "buy_price": 1990.63,
+      "sell_date": "2026-01-26",
+      "sell_price": 2148.638,
+      "shares": 56,
+      "profit": 8848.45,
+      "profit_pct": 7.94,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111475.28,
+      "sell_amount": 120323.73,
+      "buy_reason": ""
+    },
+    {
+      "code": "301582",
+      "name": "金属锌",
+      "buy_date": "2026-01-21",
+      "buy_price": 2276.655,
+      "sell_date": "2026-01-26",
+      "sell_price": 2557.932,
+      "shares": 48,
+      "profit": 13501.3,
+      "profit_pct": 12.35,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109279.44,
+      "sell_amount": 122780.74,
+      "buy_reason": ""
+    },
+    {
+      "code": "305376",
+      "name": "丙烯酸",
+      "buy_date": "2026-01-21",
+      "buy_price": 2140.446,
+      "sell_date": "2026-01-26",
+      "sell_price": 2168.781,
+      "shares": 51,
+      "profit": 1445.08,
+      "profit_pct": 1.32,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109162.75,
+      "sell_amount": 110607.83,
+      "buy_reason": ""
+    },
+    {
+      "code": "308202",
+      "name": "环氧丙烷",
+      "buy_date": "2026-01-21",
+      "buy_price": 1654.248,
+      "sell_date": "2026-01-29",
+      "sell_price": 1747.584,
+      "shares": 66,
+      "profit": 6160.18,
+      "profit_pct": 5.64,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 109180.37,
+      "sell_amount": 115340.54,
+      "buy_reason": ""
+    },
+    {
+      "code": "308810",
+      "name": "柔性直流输电",
+      "buy_date": "2026-01-21",
+      "buy_price": 1585.752,
+      "sell_date": "2026-01-26",
+      "sell_price": 1595.363,
+      "shares": 69,
+      "profit": 663.16,
+      "profit_pct": 0.61,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109416.89,
+      "sell_amount": 110080.05,
+      "buy_reason": ""
+    },
+    {
+      "code": "308864",
+      "name": "金属铅",
+      "buy_date": "2026-01-21",
+      "buy_price": 2117.703,
+      "sell_date": "2026-02-06",
+      "sell_price": 2122.679,
+      "shares": 51,
+      "profit": 253.78,
+      "profit_pct": 0.23,
+      "sell_reason": "rank_out",
+      "hold_days": 17,
+      "regime": "normal",
+      "buy_amount": 108002.85,
+      "sell_amount": 108256.63,
+      "buy_reason": ""
+    },
+    {
+      "code": "309004",
+      "name": "先进封装",
+      "buy_date": "2026-01-21",
+      "buy_price": 2153.077,
+      "sell_date": "2026-01-26",
+      "sell_price": 2141.771,
+      "shares": 51,
+      "profit": -576.61,
+      "profit_pct": -0.53,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109806.93,
+      "sell_amount": 109230.32,
+      "buy_reason": ""
+    },
+    {
+      "code": "300248",
+      "name": "黄金概念",
+      "buy_date": "2026-02-03",
+      "buy_price": 4202.601,
+      "sell_date": "2026-02-06",
+      "sell_price": 4094.841,
+      "shares": 27,
+      "profit": -2909.52,
+      "profit_pct": -2.56,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113470.23,
+      "sell_amount": 110560.71,
+      "buy_reason": ""
+    },
+    {
+      "code": "300277",
+      "name": "可燃冰",
+      "buy_date": "2026-02-03",
+      "buy_price": 1761.078,
+      "sell_date": "2026-02-11",
+      "sell_price": 1823.392,
+      "shares": 65,
+      "profit": 4050.41,
+      "profit_pct": 3.54,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 114470.07,
+      "sell_amount": 118520.48,
+      "buy_reason": ""
+    },
+    {
+      "code": "300435",
+      "name": "转基因",
+      "buy_date": "2026-02-03",
+      "buy_price": 2124.265,
+      "sell_date": "2026-02-06",
+      "sell_price": 2048.085,
+      "shares": 54,
+      "profit": -4113.72,
+      "profit_pct": -3.59,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 114710.31,
+      "sell_amount": 110596.59,
+      "buy_reason": ""
+    },
+    {
+      "code": "301123",
+      "name": "大豆",
+      "buy_date": "2026-02-03",
+      "buy_price": 1991.262,
+      "sell_date": "2026-02-06",
+      "sell_price": 1974.942,
+      "shares": 58,
+      "profit": -946.56,
+      "profit_pct": -0.82,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 115493.2,
+      "sell_amount": 114546.64,
+      "buy_reason": ""
+    },
+    {
+      "code": "301496",
+      "name": "白酒概念",
+      "buy_date": "2026-02-03",
+      "buy_price": 7410.671,
+      "sell_date": "2026-02-11",
+      "sell_price": 7327.346,
+      "shares": 15,
+      "profit": -1249.88,
+      "profit_pct": -1.12,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 111160.07,
+      "sell_amount": 109910.19,
+      "buy_reason": ""
+    },
+    {
+      "code": "301582",
+      "name": "金属锌",
+      "buy_date": "2026-02-03",
+      "buy_price": 2409.824,
+      "sell_date": "2026-02-06",
+      "sell_price": 2350.175,
+      "shares": 48,
+      "profit": -2863.15,
+      "profit_pct": -2.48,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 115671.55,
+      "sell_amount": 112808.4,
+      "buy_reason": ""
+    },
+    {
+      "code": "308991",
+      "name": "钙钛矿电池",
+      "buy_date": "2026-02-03",
+      "buy_price": 1233.025,
+      "sell_date": "2026-02-11",
+      "sell_price": 1257.496,
+      "shares": 94,
+      "profit": 2300.27,
+      "profit_pct": 1.98,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 115904.35,
+      "sell_amount": 118204.62,
+      "buy_reason": ""
+    },
+    {
+      "code": "308992",
+      "name": "TOPCON电池",
+      "buy_date": "2026-02-03",
+      "buy_price": 1223.521,
+      "sell_date": "2026-02-24",
+      "sell_price": 1258.768,
+      "shares": 95,
+      "profit": 3348.47,
+      "profit_pct": 2.88,
+      "sell_reason": "rank_out",
+      "hold_days": 12,
+      "regime": "normal",
+      "buy_amount": 116234.49,
+      "sell_amount": 119582.96,
+      "buy_reason": ""
+    },
+    {
+      "code": "309084",
+      "name": "BC电池",
+      "buy_date": "2026-02-03",
+      "buy_price": 1362.877,
+      "sell_date": "2026-02-11",
+      "sell_price": 1389.556,
+      "shares": 85,
+      "profit": 2267.72,
+      "profit_pct": 1.96,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 115844.54,
+      "sell_amount": 118112.26,
+      "buy_reason": ""
+    },
+    {
+      "code": "300451",
+      "name": "猪肉",
+      "buy_date": "2026-02-06",
+      "buy_price": 2732.551,
+      "sell_date": "2026-02-11",
+      "sell_price": 2735.067,
+      "shares": 40,
+      "profit": 100.64,
+      "profit_pct": 0.09,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109302.04,
+      "sell_amount": 109402.68,
+      "buy_reason": ""
+    },
+    {
+      "code": "301576",
+      "name": "养鸡",
+      "buy_date": "2026-02-06",
+      "buy_price": 1315.703,
+      "sell_date": "2026-02-11",
+      "sell_price": 1309.758,
+      "shares": 86,
+      "profit": -511.27,
+      "profit_pct": -0.45,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113150.46,
+      "sell_amount": 112639.19,
+      "buy_reason": ""
+    },
+    {
+      "code": "301602",
+      "name": "赛马概念",
+      "buy_date": "2026-02-06",
+      "buy_price": 1199.052,
+      "sell_date": "2026-02-11",
+      "sell_price": 1180.97,
+      "shares": 93,
+      "profit": -1681.63,
+      "profit_pct": -1.51,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111511.84,
+      "sell_amount": 109830.21,
+      "buy_reason": ""
+    },
+    {
+      "code": "302034",
+      "name": "租售同权",
+      "buy_date": "2026-02-06",
+      "buy_price": 942.459,
+      "sell_date": "2026-02-11",
+      "sell_price": 945.106,
+      "shares": 118,
+      "profit": 312.35,
+      "profit_pct": 0.28,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111210.16,
+      "sell_amount": 111522.51,
+      "buy_reason": ""
+    },
+    {
+      "code": "306750",
+      "name": "超级品牌",
+      "buy_date": "2026-02-06",
+      "buy_price": 1591.188,
+      "sell_date": "2026-02-11",
+      "sell_price": 1589.438,
+      "shares": 70,
+      "profit": -122.5,
+      "profit_pct": -0.11,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111383.16,
+      "sell_amount": 111260.66,
+      "buy_reason": ""
+    },
+    {
+      "code": "300084",
+      "name": "煤化工概念",
+      "buy_date": "2026-02-24",
+      "buy_price": 2783.502,
+      "sell_date": "2026-02-27",
+      "sell_price": 2865.962,
+      "shares": 41,
+      "profit": 3380.86,
+      "profit_pct": 2.96,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 114123.58,
+      "sell_amount": 117504.44,
+      "buy_reason": ""
+    },
+    {
+      "code": "300157",
+      "name": "草甘膦",
+      "buy_date": "2026-02-24",
+      "buy_price": 1786.083,
+      "sell_date": "2026-02-27",
+      "sell_price": 1835.092,
+      "shares": 64,
+      "profit": 3136.58,
+      "profit_pct": 2.74,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 114309.31,
+      "sell_amount": 117445.89,
+      "buy_reason": ""
+    },
+    {
+      "code": "301171",
+      "name": "深圳国企改革",
+      "buy_date": "2026-02-24",
+      "buy_price": 1976.667,
+      "sell_date": "2026-02-27",
+      "sell_price": 1993.867,
+      "shares": 59,
+      "profit": 1014.8,
+      "profit_pct": 0.87,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 116623.35,
+      "sell_amount": 117638.15,
+      "buy_reason": ""
+    },
+    {
+      "code": "301292",
+      "name": "染料",
+      "buy_date": "2026-02-24",
+      "buy_price": 1742.073,
+      "sell_date": "2026-02-27",
+      "sell_price": 1771.112,
+      "shares": 65,
+      "profit": 1887.53,
+      "profit_pct": 1.67,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113234.75,
+      "sell_amount": 115122.28,
+      "buy_reason": ""
+    },
+    {
+      "code": "301362",
+      "name": "新型烟草(电子烟)",
+      "buy_date": "2026-02-24",
+      "buy_price": 1999.451,
+      "sell_date": "2026-02-27",
+      "sell_price": 2041.36,
+      "shares": 57,
+      "profit": 2388.81,
+      "profit_pct": 2.1,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113968.71,
+      "sell_amount": 116357.52,
+      "buy_reason": ""
+    },
+    {
+      "code": "301455",
+      "name": "摘帽",
+      "buy_date": "2026-02-24",
+      "buy_price": 994.399,
+      "sell_date": "2026-02-27",
+      "sell_price": 1007.862,
+      "shares": 116,
+      "profit": 1561.71,
+      "profit_pct": 1.35,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 115350.28,
+      "sell_amount": 116911.99,
+      "buy_reason": ""
+    },
+    {
+      "code": "301713",
+      "name": "中船系",
+      "buy_date": "2026-02-24",
+      "buy_price": 1817.384,
+      "sell_date": "2026-03-04",
+      "sell_price": 1786.023,
+      "shares": 62,
+      "profit": -1944.38,
+      "profit_pct": -1.73,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 112677.81,
+      "sell_amount": 110733.43,
+      "buy_reason": ""
+    },
+    {
+      "code": "308560",
+      "name": "烟草",
+      "buy_date": "2026-02-24",
+      "buy_price": 1776.023,
+      "sell_date": "2026-02-27",
+      "sell_price": 1795.537,
+      "shares": 64,
+      "profit": 1248.9,
+      "profit_pct": 1.1,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113665.47,
+      "sell_amount": 114914.37,
+      "buy_reason": ""
+    },
+    {
+      "code": "308716",
+      "name": "煤炭概念",
+      "buy_date": "2026-02-24",
+      "buy_price": 2449.838,
+      "sell_date": "2026-02-27",
+      "sell_price": 2549.747,
+      "shares": 46,
+      "profit": 4595.81,
+      "profit_pct": 4.08,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 112692.55,
+      "sell_amount": 117288.36,
+      "buy_reason": ""
+    },
+    {
+      "code": "309050",
+      "name": "数字水印",
+      "buy_date": "2026-02-24",
+      "buy_price": 1261.934,
+      "sell_date": "2026-02-27",
+      "sell_price": 1296.213,
+      "shares": 90,
+      "profit": 3085.11,
+      "profit_pct": 2.72,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113574.06,
+      "sell_amount": 116659.17,
+      "buy_reason": ""
+    },
+    {
+      "code": "300098",
+      "name": "磷化工",
+      "buy_date": "2026-02-27",
+      "buy_price": 3482.603,
+      "sell_date": "2026-03-04",
+      "sell_price": 3342.227,
+      "shares": 33,
+      "profit": -4632.41,
+      "profit_pct": -4.03,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 114925.9,
+      "sell_amount": 110293.49,
+      "buy_reason": ""
+    },
+    {
+      "code": "300351",
+      "name": "钛白粉概念",
+      "buy_date": "2026-02-27",
+      "buy_price": 2197.883,
+      "sell_date": "2026-03-04",
+      "sell_price": 2111.512,
+      "shares": 53,
+      "profit": -4577.66,
+      "profit_pct": -3.93,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 116487.8,
+      "sell_amount": 111910.14,
+      "buy_reason": ""
+    },
+    {
+      "code": "300382",
+      "name": "稀土永磁",
+      "buy_date": "2026-02-27",
+      "buy_price": 4084.974,
+      "sell_date": "2026-03-04",
+      "sell_price": 3855.224,
+      "shares": 28,
+      "profit": -6433.0,
+      "profit_pct": -5.62,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 114379.27,
+      "sell_amount": 107946.27,
+      "buy_reason": ""
+    },
+    {
+      "code": "300845",
+      "name": "特钢概念",
+      "buy_date": "2026-02-27",
+      "buy_price": 4118.91,
+      "sell_date": "2026-03-04",
+      "sell_price": 3901.303,
+      "shares": 28,
+      "profit": -6093.0,
+      "profit_pct": -5.28,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 115329.48,
+      "sell_amount": 109236.48,
+      "buy_reason": ""
+    },
+    {
+      "code": "301104",
+      "name": "化肥",
+      "buy_date": "2026-02-27",
+      "buy_price": 1215.615,
+      "sell_date": "2026-03-04",
+      "sell_price": 1197.898,
+      "shares": 100,
+      "profit": -1771.7,
+      "profit_pct": -1.46,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 121561.5,
+      "sell_amount": 119789.8,
+      "buy_reason": ""
+    },
+    {
+      "code": "307904",
+      "name": "盐湖提锂",
+      "buy_date": "2026-02-27",
+      "buy_price": 2187.072,
+      "sell_date": "2026-03-04",
+      "sell_price": 2081.029,
+      "shares": 54,
+      "profit": -5726.32,
+      "profit_pct": -4.85,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 118101.89,
+      "sell_amount": 112375.57,
+      "buy_reason": ""
+    },
+    {
+      "code": "308832",
+      "name": "PCB概念",
+      "buy_date": "2026-02-27",
+      "buy_price": 2227.691,
+      "sell_date": "2026-03-04",
+      "sell_price": 2095.104,
+      "shares": 52,
+      "profit": -6894.52,
+      "profit_pct": -5.95,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 115839.93,
+      "sell_amount": 108945.41,
+      "buy_reason": ""
+    },
+    {
+      "code": "308969",
+      "name": "超超临界发电",
+      "buy_date": "2026-02-27",
+      "buy_price": 1794.764,
+      "sell_date": "2026-03-04",
+      "sell_price": 1761.964,
+      "shares": 65,
+      "profit": -2132.0,
+      "profit_pct": -1.83,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 116659.66,
+      "sell_amount": 114527.66,
+      "buy_reason": ""
+    },
+    {
+      "code": "309030",
+      "name": "PET铜箔",
+      "buy_date": "2026-02-27",
+      "buy_price": 1709.178,
+      "sell_date": "2026-03-04",
+      "sell_price": 1604.815,
+      "shares": 68,
+      "profit": -7096.68,
+      "profit_pct": -6.11,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 116224.1,
+      "sell_amount": 109127.42,
+      "buy_reason": ""
+    },
+    {
+      "code": "301100",
+      "name": "足球概念",
+      "buy_date": "2026-03-25",
+      "buy_price": 1637.092,
+      "sell_date": "2026-03-30",
+      "sell_price": 1625.379,
+      "shares": 68,
+      "profit": -796.48,
+      "profit_pct": -0.72,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111322.26,
+      "sell_amount": 110525.77,
+      "buy_reason": ""
+    },
+    {
+      "code": "301602",
+      "name": "赛马概念",
+      "buy_date": "2026-03-25",
+      "buy_price": 1264.284,
+      "sell_date": "2026-04-02",
+      "sell_price": 1340.816,
+      "shares": 88,
+      "profit": 6734.82,
+      "profit_pct": 6.05,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 111256.99,
+      "sell_amount": 117991.81,
+      "buy_reason": ""
+    },
+    {
+      "code": "308014",
+      "name": "创新药",
+      "buy_date": "2026-03-25",
+      "buy_price": 1280.284,
+      "sell_date": "2026-04-13",
+      "sell_price": 1363.116,
+      "shares": 88,
+      "profit": 7289.22,
+      "profit_pct": 6.47,
+      "sell_reason": "rank_out",
+      "hold_days": 17,
+      "regime": "normal",
+      "buy_amount": 112664.99,
+      "sell_amount": 119954.21,
+      "buy_reason": ""
+    },
+    {
+      "code": "308699",
+      "name": "科创次新股",
+      "buy_date": "2026-03-25",
+      "buy_price": 604.139,
+      "sell_date": "2026-03-30",
+      "sell_price": 596.946,
+      "shares": 184,
+      "profit": -1323.51,
+      "profit_pct": -1.19,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111161.58,
+      "sell_amount": 109838.06,
+      "buy_reason": ""
+    },
+    {
+      "code": "308760",
+      "name": "绿色电力",
+      "buy_date": "2026-03-25",
+      "buy_price": 1326.039,
+      "sell_date": "2026-03-30",
+      "sell_price": 1291.816,
+      "shares": 84,
+      "profit": -2874.73,
+      "profit_pct": -2.58,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111387.28,
+      "sell_amount": 108512.54,
+      "buy_reason": ""
+    },
+    {
+      "code": "308818",
+      "name": "幽门螺杆菌概念",
+      "buy_date": "2026-03-25",
+      "buy_price": 1039.834,
+      "sell_date": "2026-03-30",
+      "sell_price": 1076.761,
+      "shares": 109,
+      "profit": 4025.04,
+      "profit_pct": 3.55,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113341.91,
+      "sell_amount": 117366.95,
+      "buy_reason": ""
+    },
+    {
+      "code": "308977",
+      "name": "F5G概念",
+      "buy_date": "2026-03-25",
+      "buy_price": 3771.143,
+      "sell_date": "2026-04-02",
+      "sell_price": 3727.644,
+      "shares": 29,
+      "profit": -1261.47,
+      "profit_pct": -1.15,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 109363.15,
+      "sell_amount": 108101.68,
+      "buy_reason": ""
+    },
+    {
+      "code": "308989",
+      "name": "生物质能发电",
+      "buy_date": "2026-03-25",
+      "buy_price": 1248.661,
+      "sell_date": "2026-03-30",
+      "sell_price": 1208.473,
+      "shares": 89,
+      "profit": -3576.73,
+      "profit_pct": -3.22,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111130.83,
+      "sell_amount": 107554.1,
+      "buy_reason": ""
+    },
+    {
+      "code": "309120",
+      "name": "AI手机",
+      "buy_date": "2026-03-25",
+      "buy_price": 1927.544,
+      "sell_date": "2026-03-30",
+      "sell_price": 1884.894,
+      "shares": 58,
+      "profit": -2473.7,
+      "profit_pct": -2.21,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111797.55,
+      "sell_amount": 109323.85,
+      "buy_reason": ""
+    },
+    {
+      "code": "309185",
+      "name": "兵装重组概念",
+      "buy_date": "2026-03-25",
+      "buy_price": 1353.994,
+      "sell_date": "2026-04-02",
+      "sell_price": 1296.484,
+      "shares": 82,
+      "profit": -4715.82,
+      "profit_pct": -4.25,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 111027.51,
+      "sell_amount": 106311.69,
+      "buy_reason": ""
+    },
+    {
+      "code": "301229",
+      "name": "天津自贸区",
+      "buy_date": "2026-03-30",
+      "buy_price": 1233.144,
+      "sell_date": "2026-04-02",
+      "sell_price": 1203.56,
+      "shares": 90,
+      "profit": -2662.56,
+      "profit_pct": -2.4,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 110982.96,
+      "sell_amount": 108320.4,
+      "buy_reason": ""
+    },
+    {
+      "code": "301794",
+      "name": "青蒿素",
+      "buy_date": "2026-03-30",
+      "buy_price": 2119.568,
+      "sell_date": "2026-04-02",
+      "sell_price": 2163.861,
+      "shares": 52,
+      "profit": 2303.24,
+      "profit_pct": 2.09,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 110217.54,
+      "sell_amount": 112520.77,
+      "buy_reason": ""
+    },
+    {
+      "code": "308517",
+      "name": "人造肉",
+      "buy_date": "2026-03-30",
+      "buy_price": 1516.466,
+      "sell_date": "2026-04-02",
+      "sell_price": 1492.994,
+      "shares": 72,
+      "profit": -1689.98,
+      "profit_pct": -1.55,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109185.55,
+      "sell_amount": 107495.57,
+      "buy_reason": ""
+    },
+    {
+      "code": "308572",
+      "name": "仿制药一致性评价",
+      "buy_date": "2026-03-30",
+      "buy_price": 1744.638,
+      "sell_date": "2026-04-02",
+      "sell_price": 1823.083,
+      "shares": 63,
+      "profit": 4942.04,
+      "profit_pct": 4.5,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 109912.19,
+      "sell_amount": 114854.23,
+      "buy_reason": ""
+    },
+    {
+      "code": "308915",
+      "name": "肝炎概念",
+      "buy_date": "2026-03-30",
+      "buy_price": 1206.174,
+      "sell_date": "2026-04-02",
+      "sell_price": 1245.335,
+      "shares": 93,
+      "profit": 3641.97,
+      "profit_pct": 3.25,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 112174.18,
+      "sell_amount": 115816.15,
+      "buy_reason": ""
+    },
+    {
+      "code": "309081",
+      "name": "减肥药",
+      "buy_date": "2026-03-30",
+      "buy_price": 1366.324,
+      "sell_date": "2026-04-13",
+      "sell_price": 1404.388,
+      "shares": 81,
+      "profit": 3083.18,
+      "profit_pct": 2.79,
+      "sell_reason": "rank_out",
+      "hold_days": 12,
+      "regime": "normal",
+      "buy_amount": 110672.24,
+      "sell_amount": 113755.43,
+      "buy_reason": ""
+    },
+    {
+      "code": "300038",
+      "name": "流感",
+      "buy_date": "2026-04-08",
+      "buy_price": 1541.829,
+      "sell_date": "2026-04-13",
+      "sell_price": 1502.008,
+      "shares": 72,
+      "profit": -2867.11,
+      "profit_pct": -2.58,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111011.69,
+      "sell_amount": 108144.58,
+      "buy_reason": ""
+    },
+    {
+      "code": "301543",
+      "name": "细胞免疫治疗",
+      "buy_date": "2026-04-08",
+      "buy_price": 1273.601,
+      "sell_date": "2026-04-13",
+      "sell_price": 1241.499,
+      "shares": 87,
+      "profit": -2792.87,
+      "profit_pct": -2.52,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 110803.29,
+      "sell_amount": 108010.41,
+      "buy_reason": ""
+    },
+    {
+      "code": "308537",
+      "name": "动物疫苗",
+      "buy_date": "2026-04-08",
+      "buy_price": 1591.581,
+      "sell_date": "2026-04-13",
+      "sell_price": 1555.98,
+      "shares": 70,
+      "profit": -2492.07,
+      "profit_pct": -2.24,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111410.67,
+      "sell_amount": 108918.6,
+      "buy_reason": ""
+    },
+    {
+      "code": "308572",
+      "name": "仿制药一致性评价",
+      "buy_date": "2026-04-08",
+      "buy_price": 1798.485,
+      "sell_date": "2026-04-13",
+      "sell_price": 1747.572,
+      "shares": 62,
+      "profit": -3156.61,
+      "profit_pct": -2.83,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111506.07,
+      "sell_amount": 108349.46,
+      "buy_reason": ""
+    },
+    {
+      "code": "308614",
+      "name": "阿尔茨海默概念",
+      "buy_date": "2026-04-08",
+      "buy_price": 1339.273,
+      "sell_date": "2026-04-13",
+      "sell_price": 1306.537,
+      "shares": 84,
+      "profit": -2749.82,
+      "profit_pct": -2.44,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 112498.93,
+      "sell_amount": 109749.11,
+      "buy_reason": ""
+    },
+    {
+      "code": "308818",
+      "name": "幽门螺杆菌概念",
+      "buy_date": "2026-04-08",
+      "buy_price": 1105.848,
+      "sell_date": "2026-04-13",
+      "sell_price": 1074.001,
+      "shares": 101,
+      "profit": -3216.55,
+      "profit_pct": -2.88,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111690.65,
+      "sell_amount": 108474.1,
+      "buy_reason": ""
+    },
+    {
+      "code": "308822",
+      "name": "重组蛋白",
+      "buy_date": "2026-04-08",
+      "buy_price": 825.346,
+      "sell_date": "2026-04-13",
+      "sell_price": 807.193,
+      "shares": 135,
+      "profit": -2450.66,
+      "profit_pct": -2.2,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111421.71,
+      "sell_amount": 108971.05,
+      "buy_reason": ""
+    },
+    {
+      "code": "308915",
+      "name": "肝炎概念",
+      "buy_date": "2026-04-08",
+      "buy_price": 1240.359,
+      "sell_date": "2026-04-13",
+      "sell_price": 1201.471,
+      "shares": 90,
+      "profit": -3499.92,
+      "profit_pct": -3.14,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111632.31,
+      "sell_amount": 108132.39,
+      "buy_reason": ""
+    },
+    {
+      "code": "300309",
+      "name": "苹果概念",
+      "buy_date": "2026-04-13",
+      "buy_price": 5618.319,
+      "sell_date": "2026-04-21",
+      "sell_price": 5929.413,
+      "shares": 19,
+      "profit": 5910.79,
+      "profit_pct": 5.54,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 106748.06,
+      "sell_amount": 112658.85,
+      "buy_reason": ""
+    },
+    {
+      "code": "307816",
+      "name": "国家大基金持股",
+      "buy_date": "2026-04-13",
+      "buy_price": 2202.522,
+      "sell_date": "2026-04-21",
+      "sell_price": 2284.809,
+      "shares": 51,
+      "profit": 4196.64,
+      "profit_pct": 3.74,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 112328.62,
+      "sell_amount": 116525.26,
+      "buy_reason": ""
+    },
+    {
+      "code": "307954",
+      "name": "富士康概念",
+      "buy_date": "2026-04-13",
+      "buy_price": 3234.191,
+      "sell_date": "2026-04-21",
+      "sell_price": 3456.704,
+      "shares": 34,
+      "profit": 7565.44,
+      "profit_pct": 6.88,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 109962.49,
+      "sell_amount": 117527.94,
+      "buy_reason": ""
+    },
+    {
+      "code": "308384",
+      "name": "消费电子概念",
+      "buy_date": "2026-04-13",
+      "buy_price": 3034.301,
+      "sell_date": "2026-04-16",
+      "sell_price": 3121.701,
+      "shares": 37,
+      "profit": 3233.8,
+      "profit_pct": 2.88,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 112269.14,
+      "sell_amount": 115502.94,
+      "buy_reason": ""
+    },
+    {
+      "code": "308612",
+      "name": "无线耳机",
+      "buy_date": "2026-04-13",
+      "buy_price": 2460.293,
+      "sell_date": "2026-04-16",
+      "sell_price": 2508.207,
+      "shares": 45,
+      "profit": 2156.13,
+      "profit_pct": 1.95,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 110713.19,
+      "sell_amount": 112869.31,
+      "buy_reason": ""
+    },
+    {
+      "code": "308832",
+      "name": "PCB概念",
+      "buy_date": "2026-04-13",
+      "buy_price": 2205.876,
+      "sell_date": "2026-04-21",
+      "sell_price": 2372.867,
+      "shares": 50,
+      "profit": 8349.55,
+      "profit_pct": 7.57,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 110293.8,
+      "sell_amount": 118643.35,
+      "buy_reason": ""
+    },
+    {
+      "code": "308977",
+      "name": "F5G概念",
+      "buy_date": "2026-04-13",
+      "buy_price": 4159.474,
+      "sell_date": "2026-04-16",
+      "sell_price": 4255.874,
+      "shares": 26,
+      "profit": 2506.4,
+      "profit_pct": 2.32,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 108146.32,
+      "sell_amount": 110652.72,
+      "buy_reason": ""
+    },
+    {
+      "code": "309049",
+      "name": "共封装光学(CPO)",
+      "buy_date": "2026-04-13",
+      "buy_price": 4975.934,
+      "sell_date": "2026-04-24",
+      "sell_price": 5416.191,
+      "shares": 22,
+      "profit": 9685.65,
+      "profit_pct": 8.85,
+      "sell_reason": "rank_out",
+      "hold_days": 12,
+      "regime": "normal",
+      "buy_amount": 109470.55,
+      "sell_amount": 119156.2,
+      "buy_reason": ""
+    },
+    {
+      "code": "309085",
+      "name": "光刻机",
+      "buy_date": "2026-04-13",
+      "buy_price": 2231.317,
+      "sell_date": "2026-04-16",
+      "sell_price": 2269.257,
+      "shares": 50,
+      "profit": 1897.0,
+      "profit_pct": 1.7,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 111565.85,
+      "sell_amount": 113462.85,
+      "buy_reason": ""
+    },
+    {
+      "code": "309125",
+      "name": "铜缆高速连接",
+      "buy_date": "2026-04-13",
+      "buy_price": 2874.365,
+      "sell_date": "2026-04-21",
+      "sell_price": 3024.306,
+      "shares": 38,
+      "profit": 5697.76,
+      "profit_pct": 5.22,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 109225.87,
+      "sell_amount": 114923.63,
+      "buy_reason": ""
+    },
+    {
+      "code": "307940",
+      "name": "存储芯片",
+      "buy_date": "2026-04-16",
+      "buy_price": 2156.129,
+      "sell_date": "2026-04-21",
+      "sell_price": 2206.547,
+      "shares": 52,
+      "profit": 2621.74,
+      "profit_pct": 2.34,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 112118.71,
+      "sell_amount": 114740.44,
+      "buy_reason": ""
+    },
+    {
+      "code": "309004",
+      "name": "先进封装",
+      "buy_date": "2026-04-16",
+      "buy_price": 2184.866,
+      "sell_date": "2026-04-21",
+      "sell_price": 2255.108,
+      "shares": 52,
+      "profit": 3652.58,
+      "profit_pct": 3.21,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113613.03,
+      "sell_amount": 117265.62,
+      "buy_reason": ""
+    },
+    {
+      "code": "309121",
+      "name": "AI PC",
+      "buy_date": "2026-04-16",
+      "buy_price": 2268.001,
+      "sell_date": "2026-04-21",
+      "sell_price": 2304.934,
+      "shares": 50,
+      "profit": 1846.65,
+      "profit_pct": 1.63,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 113400.05,
+      "sell_amount": 115246.7,
+      "buy_reason": ""
+    },
+    {
+      "code": "309167",
+      "name": "华为手机",
+      "buy_date": "2026-04-16",
+      "buy_price": 1695.658,
+      "sell_date": "2026-04-21",
+      "sell_price": 1755.382,
+      "shares": 68,
+      "profit": 4061.23,
+      "profit_pct": 3.52,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 115304.74,
+      "sell_amount": 119365.98,
+      "buy_reason": ""
+    },
+    {
+      "code": "300098",
+      "name": "磷化工",
+      "buy_date": "2026-04-29",
+      "buy_price": 3515.041,
+      "sell_date": "2026-05-07",
+      "sell_price": 3516.663,
+      "shares": 34,
+      "profit": 55.15,
+      "profit_pct": 0.05,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 119511.39,
+      "sell_amount": 119566.54,
+      "buy_reason": ""
+    },
+    {
+      "code": "301292",
+      "name": "染料",
+      "buy_date": "2026-04-29",
+      "buy_price": 1678.98,
+      "sell_date": "2026-05-07",
+      "sell_price": 1669.439,
+      "shares": 69,
+      "profit": -658.33,
+      "profit_pct": -0.57,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 115849.62,
+      "sell_amount": 115191.29,
+      "buy_reason": ""
+    },
+    {
+      "code": "305376",
+      "name": "丙烯酸",
+      "buy_date": "2026-04-29",
+      "buy_price": 2170.884,
+      "sell_date": "2026-05-07",
+      "sell_price": 2201.598,
+      "shares": 54,
+      "profit": 1658.56,
+      "profit_pct": 1.41,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 117227.74,
+      "sell_amount": 118886.29,
+      "buy_reason": ""
+    },
+    {
+      "code": "307816",
+      "name": "国家大基金持股",
+      "buy_date": "2026-04-29",
+      "buy_price": 2371.449,
+      "sell_date": "2026-05-28",
+      "sell_price": 3190.149,
+      "shares": 49,
+      "profit": 40116.3,
+      "profit_pct": 34.52,
+      "sell_reason": "max_hold",
+      "hold_days": 27,
+      "regime": "normal",
+      "buy_amount": 116201.0,
+      "sell_amount": 156317.3,
+      "buy_reason": ""
+    },
+    {
+      "code": "307940",
+      "name": "存储芯片",
+      "buy_date": "2026-04-29",
+      "buy_price": 2275.053,
+      "sell_date": "2026-05-12",
+      "sell_price": 2619.563,
+      "shares": 52,
+      "profit": 17914.52,
+      "profit_pct": 15.14,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 118302.76,
+      "sell_amount": 136217.28,
+      "buy_reason": ""
+    },
+    {
+      "code": "308202",
+      "name": "环氧丙烷",
+      "buy_date": "2026-04-29",
+      "buy_price": 1693.717,
+      "sell_date": "2026-05-07",
+      "sell_price": 1687.066,
+      "shares": 69,
+      "profit": -458.92,
+      "profit_pct": -0.39,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 116866.47,
+      "sell_amount": 116407.55,
+      "buy_reason": ""
+    },
+    {
+      "code": "308582",
+      "name": "光刻胶",
+      "buy_date": "2026-04-29",
+      "buy_price": 4671.143,
+      "sell_date": "2026-05-12",
+      "sell_price": 4998.759,
+      "shares": 24,
+      "profit": 7862.78,
+      "profit_pct": 7.01,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 112107.43,
+      "sell_amount": 119970.22,
+      "buy_reason": ""
+    },
+    {
+      "code": "308690",
+      "name": "中芯国际概念",
+      "buy_date": "2026-04-29",
+      "buy_price": 2793.604,
+      "sell_date": "2026-05-12",
+      "sell_price": 3130.319,
+      "shares": 41,
+      "profit": 13805.32,
+      "profit_pct": 12.05,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 114537.76,
+      "sell_amount": 128343.08,
+      "buy_reason": ""
+    },
+    {
+      "code": "309030",
+      "name": "PET铜箔",
+      "buy_date": "2026-04-29",
+      "buy_price": 1948.936,
+      "sell_date": "2026-05-12",
+      "sell_price": 2151.599,
+      "shares": 60,
+      "profit": 12159.78,
+      "profit_pct": 10.4,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 116936.16,
+      "sell_amount": 129095.94,
+      "buy_reason": ""
+    },
+    {
+      "code": "309085",
+      "name": "光刻机",
+      "buy_date": "2026-04-29",
+      "buy_price": 2428.543,
+      "sell_date": "2026-05-07",
+      "sell_price": 2566.274,
+      "shares": 48,
+      "profit": 6611.09,
+      "profit_pct": 5.67,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 116570.06,
+      "sell_amount": 123181.15,
+      "buy_reason": ""
+    },
+    {
+      "code": "301628",
+      "name": "互联网保险",
+      "buy_date": "2026-05-07",
+      "buy_price": 1069.051,
+      "sell_date": "2026-05-12",
+      "sell_price": 1069.943,
+      "shares": 111,
+      "profit": 99.01,
+      "profit_pct": 0.08,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 118664.66,
+      "sell_amount": 118763.67,
+      "buy_reason": ""
+    },
+    {
+      "code": "308699",
+      "name": "科创次新股",
+      "buy_date": "2026-05-07",
+      "buy_price": 754.763,
+      "sell_date": "2026-05-20",
+      "sell_price": 881.589,
+      "shares": 157,
+      "profit": 19911.68,
+      "profit_pct": 16.8,
+      "sell_reason": "rank_out",
+      "hold_days": 12,
+      "regime": "normal",
+      "buy_amount": 118497.79,
+      "sell_amount": 138409.47,
+      "buy_reason": ""
+    },
+    {
+      "code": "308725",
+      "name": "汽车芯片",
+      "buy_date": "2026-05-07",
+      "buy_price": 1432.257,
+      "sell_date": "2026-05-12",
+      "sell_price": 1480.776,
+      "shares": 83,
+      "profit": 4027.08,
+      "profit_pct": 3.39,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 118877.33,
+      "sell_amount": 122904.41,
+      "buy_reason": ""
+    },
+    {
+      "code": "309004",
+      "name": "先进封装",
+      "buy_date": "2026-05-07",
+      "buy_price": 2507.155,
+      "sell_date": "2026-05-12",
+      "sell_price": 2621.413,
+      "shares": 48,
+      "profit": 5484.38,
+      "profit_pct": 4.56,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 120343.44,
+      "sell_amount": 125827.82,
+      "buy_reason": ""
+    },
+    {
+      "code": "309187",
+      "name": "中国AI 50",
+      "buy_date": "2026-05-07",
+      "buy_price": 2234.335,
+      "sell_date": "2026-05-12",
+      "sell_price": 2235.546,
+      "shares": 53,
+      "profit": 64.18,
+      "profit_pct": 0.05,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 118419.76,
+      "sell_amount": 118483.94,
+      "buy_reason": ""
+    },
+    {
+      "code": "300723",
+      "name": "无线充电",
+      "buy_date": "2026-05-25",
+      "buy_price": 2488.849,
+      "sell_date": "2026-06-02",
+      "sell_price": 2322.069,
+      "shares": 52,
+      "profit": -8672.56,
+      "profit_pct": -6.7,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 129420.15,
+      "sell_amount": 120747.59,
+      "buy_reason": ""
+    },
+    {
+      "code": "300926",
+      "name": "超级电容",
+      "buy_date": "2026-05-25",
+      "buy_price": 3479.205,
+      "sell_date": "2026-06-10",
+      "sell_price": 3539.073,
+      "shares": 36,
+      "profit": 2155.25,
+      "profit_pct": 1.72,
+      "sell_reason": "rank_out",
+      "hold_days": 17,
+      "regime": "normal",
+      "buy_amount": 125251.38,
+      "sell_amount": 127406.63,
+      "buy_reason": ""
+    },
+    {
+      "code": "301154",
+      "name": "OLED",
+      "buy_date": "2026-05-25",
+      "buy_price": 3432.401,
+      "sell_date": "2026-06-02",
+      "sell_price": 3233.89,
+      "shares": 37,
+      "profit": -7344.91,
+      "profit_pct": -5.78,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 126998.84,
+      "sell_amount": 119653.93,
+      "buy_reason": ""
+    },
+    {
+      "code": "307940",
+      "name": "存储芯片",
+      "buy_date": "2026-05-25",
+      "buy_price": 2915.691,
+      "sell_date": "2026-06-02",
+      "sell_price": 2667.543,
+      "shares": 43,
+      "profit": -10670.36,
+      "profit_pct": -8.51,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 125374.71,
+      "sell_amount": 114704.35,
+      "buy_reason": ""
+    },
+    {
+      "code": "308628",
+      "name": "MiniLED",
+      "buy_date": "2026-05-25",
+      "buy_price": 3070.961,
+      "sell_date": "2026-06-02",
+      "sell_price": 2926.091,
+      "shares": 41,
+      "profit": -5939.67,
+      "profit_pct": -4.72,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 125909.4,
+      "sell_amount": 119969.73,
+      "buy_reason": ""
+    },
+    {
+      "code": "308690",
+      "name": "中芯国际概念",
+      "buy_date": "2026-05-25",
+      "buy_price": 3467.971,
+      "sell_date": "2026-06-02",
+      "sell_price": 3136.357,
+      "shares": 36,
+      "profit": -11938.1,
+      "profit_pct": -9.56,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 124846.96,
+      "sell_amount": 112908.85,
+      "buy_reason": ""
+    },
+    {
+      "code": "308699",
+      "name": "科创次新股",
+      "buy_date": "2026-05-25",
+      "buy_price": 879.56,
+      "sell_date": "2026-05-28",
+      "sell_price": 853.782,
+      "shares": 144,
+      "profit": -3712.03,
+      "profit_pct": -2.93,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 126656.64,
+      "sell_amount": 122944.61,
+      "buy_reason": ""
+    },
+    {
+      "code": "308774",
+      "name": "培育钻石",
+      "buy_date": "2026-05-25",
+      "buy_price": 2428.625,
+      "sell_date": "2026-06-10",
+      "sell_price": 2421.705,
+      "shares": 52,
+      "profit": -359.84,
+      "profit_pct": -0.28,
+      "sell_reason": "rank_out",
+      "hold_days": 17,
+      "regime": "normal",
+      "buy_amount": 126288.5,
+      "sell_amount": 125928.66,
+      "buy_reason": ""
+    },
+    {
+      "code": "309004",
+      "name": "先进封装",
+      "buy_date": "2026-05-25",
+      "buy_price": 2937.045,
+      "sell_date": "2026-06-02",
+      "sell_price": 2794.8,
+      "shares": 43,
+      "profit": -6116.53,
+      "profit_pct": -4.84,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 126292.93,
+      "sell_amount": 120176.4,
+      "buy_reason": ""
+    },
+    {
+      "code": "307816",
+      "name": "国家大基金持股",
+      "buy_date": "2026-05-28",
+      "buy_price": 3190.149,
+      "sell_date": "2026-06-02",
+      "sell_price": 2896.526,
+      "shares": 43,
+      "profit": -12625.79,
+      "profit_pct": -9.2,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 137176.41,
+      "sell_amount": 124550.62,
+      "buy_reason": ""
+    },
+    {
+      "code": "308832",
+      "name": "PCB概念",
+      "buy_date": "2026-05-28",
+      "buy_price": 2944.041,
+      "sell_date": "2026-06-02",
+      "sell_price": 2840.232,
+      "shares": 48,
+      "profit": -4982.83,
+      "profit_pct": -3.53,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 141313.97,
+      "sell_amount": 136331.14,
+      "buy_reason": ""
+    },
+    {
+      "code": "300084",
+      "name": "煤化工概念",
+      "buy_date": "2026-06-05",
+      "buy_price": 2461.145,
+      "sell_date": "2026-06-10",
+      "sell_price": 2358.675,
+      "shares": 49,
+      "profit": -5021.03,
+      "profit_pct": -4.16,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 120596.1,
+      "sell_amount": 115575.08,
+      "buy_reason": ""
+    },
+    {
+      "code": "300435",
+      "name": "转基因",
+      "buy_date": "2026-06-05",
+      "buy_price": 1665.529,
+      "sell_date": "2026-06-10",
+      "sell_price": 1611.859,
+      "shares": 73,
+      "profit": -3917.91,
+      "profit_pct": -3.22,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 121583.62,
+      "sell_amount": 117665.71,
+      "buy_reason": ""
+    },
+    {
+      "code": "300862",
+      "name": "ST板块",
+      "buy_date": "2026-06-05",
+      "buy_price": 530.202,
+      "sell_date": "2026-06-10",
+      "sell_price": 505.895,
+      "shares": 230,
+      "profit": -5590.61,
+      "profit_pct": -4.58,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 121946.46,
+      "sell_amount": 116355.85,
+      "buy_reason": ""
+    },
+    {
+      "code": "301123",
+      "name": "大豆",
+      "buy_date": "2026-06-05",
+      "buy_price": 1600.823,
+      "sell_date": "2026-06-10",
+      "sell_price": 1551.466,
+      "shares": 75,
+      "profit": -3701.78,
+      "profit_pct": -3.08,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 120061.73,
+      "sell_amount": 116359.95,
+      "buy_reason": ""
+    },
+    {
+      "code": "301713",
+      "name": "中船系",
+      "buy_date": "2026-06-05",
+      "buy_price": 1859.449,
+      "sell_date": "2026-06-10",
+      "sell_price": 1815.955,
+      "shares": 65,
+      "profit": -2827.11,
+      "profit_pct": -2.34,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 120864.18,
+      "sell_amount": 118037.07,
+      "buy_reason": ""
+    },
+    {
+      "code": "308657",
+      "name": "免税店",
+      "buy_date": "2026-06-05",
+      "buy_price": 955.435,
+      "sell_date": "2026-06-10",
+      "sell_price": 921.161,
+      "shares": 129,
+      "profit": -4421.35,
+      "profit_pct": -3.59,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 123251.11,
+      "sell_amount": 118829.77,
+      "buy_reason": ""
+    },
+    {
+      "code": "308716",
+      "name": "煤炭概念",
+      "buy_date": "2026-06-05",
+      "buy_price": 2463.471,
+      "sell_date": "2026-06-15",
+      "sell_price": 2331.312,
+      "shares": 49,
+      "profit": -6475.79,
+      "profit_pct": -5.36,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 120710.08,
+      "sell_amount": 114234.29,
+      "buy_reason": ""
+    },
+    {
+      "code": "309124",
+      "name": "高股息精选",
+      "buy_date": "2026-06-05",
+      "buy_price": 1488.056,
+      "sell_date": "2026-06-10",
+      "sell_price": 1464.368,
+      "shares": 82,
+      "profit": -1942.42,
+      "profit_pct": -1.59,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 122020.59,
+      "sell_amount": 120078.18,
+      "buy_reason": ""
+    },
+    {
+      "code": "300085",
+      "name": "氟化工概念",
+      "buy_date": "2026-06-15",
+      "buy_price": 5765.776,
+      "sell_date": "2026-06-24",
+      "sell_price": 6214.439,
+      "shares": 20,
+      "profit": 8973.26,
+      "profit_pct": 7.78,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 115315.52,
+      "sell_amount": 124288.78,
+      "buy_reason": ""
+    },
+    {
+      "code": "300809",
+      "name": "小金属概念",
+      "buy_date": "2026-06-15",
+      "buy_price": 3858.066,
+      "sell_date": "2026-06-24",
+      "sell_price": 3860.32,
+      "shares": 32,
+      "profit": 72.13,
+      "profit_pct": 0.06,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 123458.11,
+      "sell_amount": 123530.24,
+      "buy_reason": ""
+    },
+    {
+      "code": "301279",
+      "name": "有机硅概念",
+      "buy_date": "2026-06-15",
+      "buy_price": 2205.538,
+      "sell_date": "2026-06-18",
+      "sell_price": 2242.817,
+      "shares": 54,
+      "profit": 2013.07,
+      "profit_pct": 1.69,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 119099.05,
+      "sell_amount": 121112.12,
+      "buy_reason": ""
+    },
+    {
+      "code": "308438",
+      "name": "芬太尼",
+      "buy_date": "2026-06-15",
+      "buy_price": 2104.487,
+      "sell_date": "2026-06-18",
+      "sell_price": 2068.236,
+      "shares": 57,
+      "profit": -2066.31,
+      "profit_pct": -1.72,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 119955.76,
+      "sell_amount": 117889.45,
+      "buy_reason": ""
+    },
+    {
+      "code": "308582",
+      "name": "光刻胶",
+      "buy_date": "2026-06-15",
+      "buy_price": 5472.535,
+      "sell_date": "2026-06-24",
+      "sell_price": 6137.48,
+      "shares": 21,
+      "profit": 13963.84,
+      "profit_pct": 12.15,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 114923.24,
+      "sell_amount": 128887.08,
+      "buy_reason": ""
+    },
+    {
+      "code": "308690",
+      "name": "中芯国际概念",
+      "buy_date": "2026-06-15",
+      "buy_price": 3559.646,
+      "sell_date": "2026-06-24",
+      "sell_price": 4062.186,
+      "shares": 33,
+      "profit": 16583.82,
+      "profit_pct": 14.12,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 117468.32,
+      "sell_amount": 134052.14,
+      "buy_reason": ""
+    },
+    {
+      "code": "308829",
+      "name": "硅能源",
+      "buy_date": "2026-06-15",
+      "buy_price": 1239.612,
+      "sell_date": "2026-06-18",
+      "sell_price": 1234.093,
+      "shares": 98,
+      "profit": -540.86,
+      "profit_pct": -0.45,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 121481.98,
+      "sell_amount": 120941.11,
+      "buy_reason": ""
+    },
+    {
+      "code": "309030",
+      "name": "PET铜箔",
+      "buy_date": "2026-06-15",
+      "buy_price": 2482.264,
+      "sell_date": "2026-06-24",
+      "sell_price": 2646.896,
+      "shares": 48,
+      "profit": 7902.34,
+      "profit_pct": 6.63,
+      "sell_reason": "rank_out",
+      "hold_days": 7,
+      "regime": "normal",
+      "buy_amount": 119148.67,
+      "sell_amount": 127051.01,
+      "buy_reason": ""
+    },
+    {
+      "code": "309085",
+      "name": "光刻机",
+      "buy_date": "2026-06-15",
+      "buy_price": 3039.329,
+      "sell_date": "2026-06-18",
+      "sell_price": 3205.841,
+      "shares": 39,
+      "profit": 6493.97,
+      "profit_pct": 5.48,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 118533.83,
+      "sell_amount": 125027.8,
+      "buy_reason": ""
+    },
+    {
+      "code": "309185",
+      "name": "兵装重组概念",
+      "buy_date": "2026-06-15",
+      "buy_price": 1126.393,
+      "sell_date": "2026-06-18",
+      "sell_price": 1073.224,
+      "shares": 107,
+      "profit": -5689.08,
+      "profit_pct": -4.72,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 120524.05,
+      "sell_amount": 114834.97,
+      "buy_reason": ""
+    },
+    {
+      "code": "301577",
+      "name": "金属铜",
+      "buy_date": "2026-06-18",
+      "buy_price": 1893.692,
+      "sell_date": "2026-06-24",
+      "sell_price": 1864.439,
+      "shares": 64,
+      "profit": -1872.19,
+      "profit_pct": -1.54,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 121196.29,
+      "sell_amount": 119324.1,
+      "buy_reason": ""
+    },
+    {
+      "code": "307816",
+      "name": "国家大基金持股",
+      "buy_date": "2026-06-18",
+      "buy_price": 3489.547,
+      "sell_date": "2026-06-24",
+      "sell_price": 3674.983,
+      "shares": 34,
+      "profit": 6304.82,
+      "profit_pct": 5.31,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 118644.6,
+      "sell_amount": 124949.42,
+      "buy_reason": ""
+    },
+    {
+      "code": "307940",
+      "name": "存储芯片",
+      "buy_date": "2026-06-18",
+      "buy_price": 3150.899,
+      "sell_date": "2026-06-24",
+      "sell_price": 3288.243,
+      "shares": 38,
+      "profit": 5219.07,
+      "profit_pct": 4.36,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 119734.16,
+      "sell_amount": 124953.23,
+      "buy_reason": ""
+    },
+    {
+      "code": "308832",
+      "name": "PCB概念",
+      "buy_date": "2026-06-18",
+      "buy_price": 3334.436,
+      "sell_date": "2026-06-24",
+      "sell_price": 3316.243,
+      "shares": 36,
+      "profit": -654.95,
+      "profit_pct": -0.55,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 120039.7,
+      "sell_amount": 119384.75,
+      "buy_reason": ""
+    },
+    {
+      "code": "309004",
+      "name": "先进封装",
+      "buy_date": "2026-06-18",
+      "buy_price": 3296.659,
+      "sell_date": "2026-06-24",
+      "sell_price": 3381.944,
+      "shares": 36,
+      "profit": 3070.26,
+      "profit_pct": 2.59,
+      "sell_reason": "rank_out",
+      "hold_days": 2,
+      "regime": "normal",
+      "buy_amount": 118679.72,
+      "sell_amount": 121749.98,
+      "buy_reason": ""
+    },
+    {
+      "code": "300106",
+      "name": "生物疫苗",
+      "buy_date": "2026-07-10",
+      "buy_price": 1520.794,
+      "sell_date": "2026-07-10",
+      "sell_price": 1520.794,
+      "shares": 82,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 124705.11,
+      "sell_amount": 124705.11,
+      "buy_reason": ""
+    },
+    {
+      "code": "300451",
+      "name": "猪肉",
+      "buy_date": "2026-07-10",
+      "buy_price": 2263.462,
+      "sell_date": "2026-07-10",
+      "sell_price": 2263.462,
+      "shares": 55,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 124490.41,
+      "sell_amount": 124490.41,
+      "buy_reason": ""
+    },
+    {
+      "code": "300858",
+      "name": "土地流转",
+      "buy_date": "2026-07-10",
+      "buy_price": 1733.339,
+      "sell_date": "2026-07-10",
+      "sell_price": 1733.339,
+      "shares": 72,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 124800.41,
+      "sell_amount": 124800.41,
+      "buy_reason": ""
+    },
+    {
+      "code": "301543",
+      "name": "细胞免疫治疗",
+      "buy_date": "2026-07-10",
+      "buy_price": 1067.423,
+      "sell_date": "2026-07-10",
+      "sell_price": 1067.423,
+      "shares": 117,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 124888.49,
+      "sell_amount": 124888.49,
+      "buy_reason": ""
+    },
+    {
+      "code": "301576",
+      "name": "养鸡",
+      "buy_date": "2026-07-10",
+      "buy_price": 1129.731,
+      "sell_date": "2026-07-10",
+      "sell_price": 1129.731,
+      "shares": 110,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 124270.41,
+      "sell_amount": 124270.41,
+      "buy_reason": ""
+    },
+    {
+      "code": "301794",
+      "name": "青蒿素",
+      "buy_date": "2026-07-10",
+      "buy_price": 1824.757,
+      "sell_date": "2026-07-10",
+      "sell_price": 1824.757,
+      "shares": 68,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 124083.48,
+      "sell_amount": 124083.48,
+      "buy_reason": ""
+    },
+    {
+      "code": "308438",
+      "name": "芬太尼",
+      "buy_date": "2026-07-10",
+      "buy_price": 2047.136,
+      "sell_date": "2026-07-10",
+      "sell_price": 2047.136,
+      "shares": 61,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 124875.3,
+      "sell_amount": 124875.3,
+      "buy_reason": ""
+    },
+    {
+      "code": "308572",
+      "name": "仿制药一致性评价",
+      "buy_date": "2026-07-10",
+      "buy_price": 1568.433,
+      "sell_date": "2026-07-10",
+      "sell_price": 1568.433,
+      "shares": 80,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 125474.64,
+      "sell_amount": 125474.64,
+      "buy_reason": ""
+    },
+    {
+      "code": "308915",
+      "name": "肝炎概念",
+      "buy_date": "2026-07-10",
+      "buy_price": 1059.265,
+      "sell_date": "2026-07-10",
+      "sell_price": 1059.265,
+      "shares": 119,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 126052.54,
+      "sell_amount": 126052.54,
+      "buy_reason": ""
+    },
+    {
+      "code": "309081",
+      "name": "减肥药",
+      "buy_date": "2026-07-10",
+      "buy_price": 1381.404,
+      "sell_date": "2026-07-10",
+      "sell_price": 1381.404,
+      "shares": 91,
+      "profit": 0.0,
+      "profit_pct": 0.0,
+      "sell_reason": "期末",
+      "buy_amount": 125707.76,
+      "sell_amount": 125707.76,
+      "buy_reason": ""
+    }
+  ],
+  "current_positions": [],
+  "market_gate": [
+    {
+      "date": "2026-01-05",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-01-19",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-02-02",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-02-24",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-05-11",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    },
+    {
+      "date": "2026-07-07",
+      "allowed": true,
+      "state": "NORMAL",
+      "reasons": [
+        "normal"
+      ]
+    }
+  ]
+}

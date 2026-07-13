@@ -1,0 +1,20 @@
+{
+  "code": "sh588170",
+  "raw_code": "588170",
+  "exchange": "sh",
+  "name": "科创半导体ETF华夏",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2025-04-08",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 303,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.39,
+    "high": 1.439,
+    "low": 1.288,
+    "close": 1.292,
+    "volume": 7777410525,
+    "amount": 10517003382.43
+  }
+}

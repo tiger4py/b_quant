@@ -1,0 +1,20 @@
+{
+  "code": "sz159570",
+  "raw_code": "159570",
+  "exchange": "sz",
+  "name": "港股通创新药ETF汇添富",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-01-22",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 592,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.38,
+    "high": 1.45,
+    "low": 1.36,
+    "close": 1.435,
+    "volume": 3436627809,
+    "amount": 4832757856.41
+  }
+}

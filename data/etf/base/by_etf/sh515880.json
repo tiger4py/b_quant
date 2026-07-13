@@ -1,0 +1,20 @@
+{
+  "code": "sh515880",
+  "raw_code": "515880",
+  "exchange": "sh",
+  "name": "通信ETF国泰",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2019-09-06",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1653,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.815,
+    "high": 0.828,
+    "low": 0.778,
+    "close": 0.779,
+    "volume": 7745982136,
+    "amount": 6196785708.8
+  }
+}

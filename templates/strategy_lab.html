@@ -224,7 +224,7 @@
     <label>回测时间</label>
     <div class="date-range-control">
       <div class="date-range-values">
-        <span id="date-start-label">2022-01-15</span>
+        <span id="date-start-label">2023-01-01</span>
         <span class="sep">—</span>
         <span id="date-end-label">2026-07-07</span>
       </div>
@@ -233,7 +233,7 @@
         <input type="range" id="range-start" min="0" value="0" aria-label="开始日期" disabled>
         <input type="range" id="range-end" min="0" value="0" aria-label="结束日期">
       </div>
-      <input type="hidden" id="sel-start" value="2022-01-15">
+      <input type="hidden" id="sel-start" value="2023-01-01">
       <input type="hidden" id="sel-end" value="2026-07-07">
     </div>
     <label style="margin-left:8px;">数据源</label>
@@ -280,7 +280,7 @@ let activeDetailFactor = null;
 let selectedFactors = new Set();
 let chartHoverState = null;
 const DATE_RANGE_MIN = '2014-01-01';
-const DATE_RANGE_DEFAULT_START = '2022-01-15';
+const DATE_RANGE_DEFAULT_START = '2023-01-01';
 const MS_PER_DAY = 86400000;
 
 const FACTOR_COLORS = {

@@ -1,0 +1,20 @@
+{
+  "code": "sz159781",
+  "raw_code": "159781",
+  "exchange": "sz",
+  "name": "科创创业ETF易方达",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2021-07-05",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 1213,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.391,
+    "high": 1.41,
+    "low": 1.313,
+    "close": 1.316,
+    "volume": 643480444,
+    "amount": 873524702.73
+  }
+}

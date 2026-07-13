@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>交易复盘 — 操作原因统计</title>
+<title>浜ゆ槗澶嶇洏 鈥?鎿嶄綔鍘熷洜缁熻</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -145,14 +145,14 @@
 <body>
 
 <nav class="nav">
-  <span class="brand">A股数据面板</span>
-  <a href="/">首页</a>
-  <a href="/stocks">个股</a>
-  <a href="/concepts">概念</a>
-  <a href="/strategy-backtest">策略回测</a>
-  <a href="/strategy-lab">策略试验</a>
-  <a href="/trading" class="on">交易复盘</a>
-  <a href="/trading-summary">交易总结</a>
+  <span class="brand">A鑲℃暟鎹潰鏉?/span>
+  <a href="/">棣栭〉</a>
+  <a href="/stocks">涓偂</a>
+  <a href="/concepts">姒傚康</a>
+  <a href="/strategy-backtest">绛栫暐鍥炴祴</a>
+  <a href="/strategy-lab">绛栫暐璇曢獙</a>
+  <a href="/trading" class="on">浜ゆ槗澶嶇洏</a>
+  <a href="/trading-summary">浜ゆ槗鎬荤粨</a>
 </nav>
 
 <div class="main">
@@ -162,319 +162,319 @@
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="tab-btn active" data-tab="tab-holdings">当前持仓</button>
-    <button class="tab-btn" data-tab="tab-operate">手动操作</button>
-    <button class="tab-btn" data-tab="tab-history">历史记录</button>
-    <button class="tab-btn" data-tab="tab-compare">策略对比</button>
-    <button class="tab-btn" data-tab="tab-journal">買賣復盤</button>
-    <button class="tab-btn" data-tab="tab-macro-review">大盘预测复盘</button>
+    <button class="tab-btn active" data-tab="tab-holdings">褰撳墠鎸佷粨</button>
+    <button class="tab-btn" data-tab="tab-operate">鎵嬪姩鎿嶄綔</button>
+    <button class="tab-btn" data-tab="tab-history">鍘嗗彶璁板綍</button>
+    <button class="tab-btn" data-tab="tab-compare">绛栫暐瀵规瘮</button>
+    <button class="tab-btn" data-tab="tab-journal">璨疯常寰╃洡</button>
+    <button class="tab-btn" data-tab="tab-macro-review">澶х洏棰勬祴澶嶇洏</button>
   </div>
 
-  <!-- Tab 1: 持仓 -->
+  <!-- Tab 1: 鎸佷粨 -->
   <div class="tab-content active" id="tab-holdings">
     <table id="holdingsTable">
-      <thead><tr><th>代码</th><th>名称</th><th>买入价</th><th>现价</th><th>股数</th><th>市值</th><th>盈亏%</th><th>持仓天</th><th>平仓预警</th><th>操作</th></tr></thead>
+      <thead><tr><th>浠ｇ爜</th><th>鍚嶇О</th><th>涔板叆浠?/th><th>鐜颁环</th><th>鑲℃暟</th><th>甯傚€?/th><th>鐩堜簭%</th><th>鎸佷粨澶?/th><th>骞充粨棰勮</th><th>鎿嶄綔</th></tr></thead>
       <tbody></tbody>
     </table>
-    <div class="empty" id="emptyHoldings" style="display:none">暂无持仓，去「手动操作」页记录买入</div>
+    <div class="empty" id="emptyHoldings" style="display:none">鏆傛棤鎸佷粨锛屽幓銆屾墜鍔ㄦ搷浣溿€嶉〉璁板綍涔板叆</div>
   </div>
 
-  <!-- Tab 2: 操作 -->
+  <!-- Tab 2: 鎿嶄綔 -->
   <div class="tab-content" id="tab-operate">
-    <h3 style="font-size:15px; margin-bottom:12px;">买入记录</h3>
+    <h3 style="font-size:15px; margin-bottom:12px;">涔板叆璁板綍</h3>
     <div class="form-row" id="buyForm">
-      <div class="form-group"><label>股票代码</label><input id="buyCode" placeholder="sz.002303"></div>
-      <div class="form-group"><label>买入价</label><input id="buyPrice" type="number" step="0.01" placeholder="3.68"></div>
-      <div class="form-group"><label>股数</label><input id="buyShares" type="number" step="100" value="100"></div>
-      <div class="form-group"><label>买入日期</label><input id="buyDate" type="date"></div>
-      <div class="form-group"><label>策略来源</label><select id="buyStrategySource"><option value="">手动/主观</option><option value="market_bottom">market_bottom</option><option value="vegas_tunnel">vegas_tunnel</option><option value="alpha042">alpha042</option><option value="daily_guide">V反(daily_guide)</option><option value="price_volume_rising">价增量增</option></select></div>
-      <div class="form-group"><label>信号排名</label><input id="buySignalRank" type="number" min="1" placeholder="在策略推荐中的排名" style="width:80px"></div>
-      <div class="form-group"><label>大盘信号</label><select id="buyMarketSignal"><option value="">未知</option><option value="GREEN">GREEN</option><option value="YELLOW">YELLOW</option><option value="RED">RED</option></select></div>
-      <div class="form-group"><label>原因</label><input id="buyReason" placeholder="如: market_bottom买入信号" style="width:200px"></div>
-      <div class="form-group"><label>备注</label><input id="buyDecisionNote" placeholder="决策备注（可选）" style="width:200px"></div>
-      <button class="btn btn-primary" onclick="doBuy()">记录买入</button>
+      <div class="form-group"><label>鑲＄エ浠ｇ爜</label><input id="buyCode" placeholder="sz.002303"></div>
+      <div class="form-group"><label>涔板叆浠?/label><input id="buyPrice" type="number" step="0.01" placeholder="3.68"></div>
+      <div class="form-group"><label>鑲℃暟</label><input id="buyShares" type="number" step="100" value="100"></div>
+      <div class="form-group"><label>涔板叆鏃ユ湡</label><input id="buyDate" type="date"></div>
+      <div class="form-group"><label>绛栫暐鏉ユ簮</label><select id="buyStrategySource"><option value="">鎵嬪姩/涓昏</option><option value="vegas_tunnel">vegas_tunnel</option><option value="alpha042">alpha042</option><option value="daily_guide">V鍙?daily_guide)</option><option value="price_volume_rising">浠峰閲忓</option></select></div>
+      <div class="form-group"><label>淇″彿鎺掑悕</label><input id="buySignalRank" type="number" min="1" placeholder="鍦ㄧ瓥鐣ユ帹鑽愪腑鐨勬帓鍚? style="width:80px"></div>
+      <div class="form-group"><label>澶х洏淇″彿</label><select id="buyMarketSignal"><option value="">鏈煡</option><option value="GREEN">GREEN</option><option value="YELLOW">YELLOW</option><option value="RED">RED</option></select></div>
+      <div class="form-group"><label>鍘熷洜</label><input id="buyReason" placeholder="濡? daily_guide涔板叆淇″彿" style="width:200px"></div>
+      <div class="form-group"><label>澶囨敞</label><input id="buyDecisionNote" placeholder="鍐崇瓥澶囨敞锛堝彲閫夛級" style="width:200px"></div>
+      <button class="btn btn-primary" onclick="doBuy()">璁板綍涔板叆</button>
     </div>
 
-    <h3 style="font-size:15px; margin:28px 0 12px;">卖出操作</h3>
+    <h3 style="font-size:15px; margin:28px 0 12px;">鍗栧嚭鎿嶄綔</h3>
     <div class="form-row" id="sellForm">
-      <div class="form-group"><label>持仓股票</label><select id="sellCode"></select></div>
-      <div class="form-group"><label>卖出价</label><input id="sellPrice" type="number" step="0.01"></div>
-      <div class="form-group"><label>股数(0=全卖)</label><input id="sellShares" type="number" step="100" value="0"></div>
-      <div class="form-group"><label>卖出日期</label><input id="sellDate" type="date"></div>
-      <div class="form-group"><label>原因</label><input id="sellReason" placeholder="如: 止损/止盈/破MA20" style="width:200px"></div>
-      <button class="btn btn-danger" onclick="doSell()">记录卖出</button>
+      <div class="form-group"><label>鎸佷粨鑲＄エ</label><select id="sellCode"></select></div>
+      <div class="form-group"><label>鍗栧嚭浠?/label><input id="sellPrice" type="number" step="0.01"></div>
+      <div class="form-group"><label>鑲℃暟(0=鍏ㄥ崠)</label><input id="sellShares" type="number" step="100" value="0"></div>
+      <div class="form-group"><label>鍗栧嚭鏃ユ湡</label><input id="sellDate" type="date"></div>
+      <div class="form-group"><label>鍘熷洜</label><input id="sellReason" placeholder="濡? 姝㈡崯/姝㈢泩/鐮碝A20" style="width:200px"></div>
+      <button class="btn btn-danger" onclick="doSell()">璁板綍鍗栧嚭</button>
     </div>
   </div>
 
-  <!-- Tab 3: 历史 -->
+  <!-- Tab 3: 鍘嗗彶 -->
   <div class="tab-content" id="tab-history">
     <div style="margin-bottom:14px; display:flex; gap:20px; font-size:13px; color:#6b7280;" id="historyStats"></div>
     <table id="historyTable">
-      <thead><tr><th>日期</th><th>代码</th><th>名称</th><th>方向</th><th>价格</th><th>股数</th><th>盈亏</th><th>盈亏%</th><th>卖后3d</th><th>5d</th><th>10d</th><th>20d</th><th>至今</th><th>原因</th><th>复盘</th></tr></thead>
+      <thead><tr><th>鏃ユ湡</th><th>浠ｇ爜</th><th>鍚嶇О</th><th>鏂瑰悜</th><th>浠锋牸</th><th>鑲℃暟</th><th>鐩堜簭</th><th>鐩堜簭%</th><th>鍗栧悗3d</th><th>5d</th><th>10d</th><th>20d</th><th>鑷充粖</th><th>鍘熷洜</th><th>澶嶇洏</th></tr></thead>
       <tbody></tbody>
     </table>
     <div id="historyPager" style="display:flex;justify-content:center;align-items:center;gap:12px;margin-top:14px;font-size:13px;color:#6b7280;"></div>
-    <div class="empty" id="emptyHistory" style="display:none">暂无记录</div>
+    <div class="empty" id="emptyHistory" style="display:none">鏆傛棤璁板綍</div>
   </div>
 
-  <!-- Tab 4: 策略对比 -->
+  <!-- Tab 4: 绛栫暐瀵规瘮 -->
   <div class="tab-content" id="tab-compare">
     <div style="margin-bottom:14px; display:flex; gap:20px; font-size:13px;" id="compareSummary"></div>
 
-    <!-- 区1: 持仓对照 (策略 vs 你) -->
-    <h3 style="font-size:14px; margin-bottom:8px; color:#60a5fa;">持仓对照 (策略 vs 你)</h3>
+    <!-- 鍖?: 鎸佷粨瀵圭収 (绛栫暐 vs 浣? -->
+    <h3 style="font-size:14px; margin-bottom:8px; color:#60a5fa;">鎸佷粨瀵圭収 (绛栫暐 vs 浣?</h3>
     <table id="compareHoldsTable">
-      <thead><tr><th>代码</th><th>名称</th><th>策略</th><th>策略买入日</th><th>策略价</th><th>策略盈亏</th><th>你</th><th>你买入价</th><th>你现价</th><th>你盈亏</th><th>持仓天</th></tr></thead>
+      <thead><tr><th>浠ｇ爜</th><th>鍚嶇О</th><th>绛栫暐</th><th>绛栫暐涔板叆鏃?/th><th>绛栫暐浠?/th><th>绛栫暐鐩堜簭</th><th>浣?/th><th>浣犱拱鍏ヤ环</th><th>浣犵幇浠?/th><th>浣犵泩浜?/th><th>鎸佷粨澶?/th></tr></thead>
       <tbody></tbody>
     </table>
-    <div class="empty" id="emptyHolds" style="display:none">暂无持仓数据</div>
+    <div class="empty" id="emptyHolds" style="display:none">鏆傛棤鎸佷粨鏁版嵁</div>
 
-    <!-- 区2: 策略买入信号 -->
-    <h3 style="font-size:14px; margin:24px 0 8px; color:#ef4444;">策略买入信号 (全市场扫描)</h3>
+    <!-- 鍖?: 绛栫暐涔板叆淇″彿 -->
+    <h3 style="font-size:14px; margin:24px 0 8px; color:#ef4444;">绛栫暐涔板叆淇″彿 (鍏ㄥ競鍦烘壂鎻?</h3>
     <table id="compareBuyTable">
-      <thead><tr><th>排名</th><th>代码</th><th>名称</th><th>评分</th><th>收盘</th><th>5日涨</th><th>量比</th><th>涨跌量比</th><th>原因</th><th>跟了?</th></tr></thead>
+      <thead><tr><th>鎺掑悕</th><th>浠ｇ爜</th><th>鍚嶇О</th><th>璇勫垎</th><th>鏀剁洏</th><th>5鏃ユ定</th><th>閲忔瘮</th><th>娑ㄨ穼閲忔瘮</th><th>鍘熷洜</th><th>璺熶簡?</th></tr></thead>
       <tbody></tbody>
     </table>
-    <div class="empty" id="emptyBuys" style="display:none">暂无买入信号</div>
+    <div class="empty" id="emptyBuys" style="display:none">鏆傛棤涔板叆淇″彿</div>
   </div>
 
-  <!-- Tab 5: 買賣復盤 -->
+  <!-- Tab 5: 璨疯常寰╃洡 -->
   <div class="tab-content" id="tab-journal">
     <div id="reviewReminder" style="display:none; background:#1e1b0a; border:1px solid #f59e0b; border-radius:8px; padding:12px 16px; margin-bottom:16px; align-items:center; gap:12px;">
-      <span style="font-size:13px;"><b id="reviewReminderDate"></b> 这笔还没复盘，先把当时原因写清楚。</span>
-      <button class="btn btn-sm" style="border-color:#f59e0b;color:#f59e0b;" onclick="reviewYesterday()" id="reviewReminderBtn">去复盘</button>
+      <span style="font-size:13px;"><b id="reviewReminderDate"></b> 杩欑瑪杩樻病澶嶇洏锛屽厛鎶婂綋鏃跺師鍥犲啓娓呮銆?/span>
+      <button class="btn btn-sm" style="border-color:#f59e0b;color:#f59e0b;" onclick="reviewYesterday()" id="reviewReminderBtn">鍘诲鐩?/button>
     </div>
 
     <div class="review-grid">
       <div class="review-panel">
-        <h3>交易原因</h3>
+        <h3>浜ゆ槗鍘熷洜</h3>
         <div class="review-row">
           <div class="form-group" style="width:100%;">
-            <label>日期</label>
+            <label>鏃ユ湡</label>
             <input id="journalDate" type="date" style="width:100%" onchange="renderDayTrades()">
           </div>
           <div class="form-group" style="width:100%;">
-            <label>当天情绪</label>
+            <label>褰撳ぉ鎯呯华</label>
             <div id="journalEmotion" style="display:flex;flex-wrap:wrap;gap:6px;">
-              <button class="emo-btn" data-v="冷静" onclick="toggleEmotion(this)">冷静</button>
-              <button class="emo-btn" data-v="兴奋" onclick="toggleEmotion(this)">兴奋</button>
-              <button class="emo-btn" data-v="恐惧" onclick="toggleEmotion(this)">恐惧</button>
-              <button class="emo-btn" data-v="不甘心" onclick="toggleEmotion(this)">不甘心</button>
-              <button class="emo-btn" data-v="急着回本" onclick="toggleEmotion(this)">急着回本</button>
-              <button class="emo-btn" data-v="随手单" onclick="toggleEmotion(this)">随手单</button>
-              <button class="emo-btn" data-v="贪婪" onclick="toggleEmotion(this)">贪婪</button>
+              <button class="emo-btn" data-v="鍐烽潤" onclick="toggleEmotion(this)">鍐烽潤</button>
+              <button class="emo-btn" data-v="鍏村" onclick="toggleEmotion(this)">鍏村</button>
+              <button class="emo-btn" data-v="鎭愭儳" onclick="toggleEmotion(this)">鎭愭儳</button>
+              <button class="emo-btn" data-v="涓嶇敇蹇? onclick="toggleEmotion(this)">涓嶇敇蹇?/button>
+              <button class="emo-btn" data-v="鎬ョ潃鍥炴湰" onclick="toggleEmotion(this)">鎬ョ潃鍥炴湰</button>
+              <button class="emo-btn" data-v="闅忔墜鍗? onclick="toggleEmotion(this)">闅忔墜鍗?/button>
+              <button class="emo-btn" data-v="璐┆" onclick="toggleEmotion(this)">璐┆</button>
             </div>
           </div>
         </div>
 
         <div style="margin-bottom:12px;">
-          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:6px;">当天流水</label>
+          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:6px;">褰撳ぉ娴佹按</label>
           <div id="dayTradeList" style="min-height:28px;"></div>
         </div>
 
         <div class="review-row">
           <div class="form-group" style="width:100%;">
-            <label>操作类型</label>
+            <label>鎿嶄綔绫诲瀷</label>
             <select id="journalTradeType" style="width:100%">
-              <option value="">混合/未选</option>
-              <option value="计划内买入">计划内买入</option>
-              <option value="追高买入">追高买入</option>
-              <option value="低吸买入">低吸买入</option>
-              <option value="补仓">补仓</option>
-              <option value="做T">做T</option>
-              <option value="止盈">止盈</option>
-              <option value="止损">止损</option>
-              <option value="割肉">割肉</option>
-              <option value="空仓/没操作">空仓/没操作</option>
+              <option value="">娣峰悎/鏈€?/option>
+              <option value="璁″垝鍐呬拱鍏?>璁″垝鍐呬拱鍏?/option>
+              <option value="杩介珮涔板叆">杩介珮涔板叆</option>
+              <option value="浣庡惛涔板叆">浣庡惛涔板叆</option>
+              <option value="琛ヤ粨">琛ヤ粨</option>
+              <option value="鍋歍">鍋歍</option>
+              <option value="姝㈢泩">姝㈢泩</option>
+              <option value="姝㈡崯">姝㈡崯</option>
+              <option value="鍓茶倝">鍓茶倝</option>
+              <option value="绌轰粨/娌℃搷浣?>绌轰粨/娌℃搷浣?/option>
             </select>
           </div>
           <div class="form-group" style="width:100%;">
-            <label>是否按计划</label>
+            <label>鏄惁鎸夎鍒?/label>
             <select id="journalPlanFollowed" style="width:100%">
-              <option value="">未判断</option>
-              <option value="是">是，按计划</option>
-              <option value="否">否，盘中变形</option>
-              <option value="部分">部分符合</option>
-              <option value="无计划">当时没计划</option>
+              <option value="">鏈垽鏂?/option>
+              <option value="鏄?>鏄紝鎸夎鍒?/option>
+              <option value="鍚?>鍚︼紝鐩樹腑鍙樺舰</option>
+              <option value="閮ㄥ垎">閮ㄥ垎绗﹀悎</option>
+              <option value="鏃犺鍒?>褰撴椂娌¤鍒?/option>
             </select>
           </div>
         </div>
 
         <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>当时原因</label>
-          <textarea id="journalRationale" class="textarea" rows="4" placeholder="当时我为什么买/卖？看到什么信号？是题材、形态、消息、策略、恐惧，还是想回本？"></textarea>
+          <label>褰撴椂鍘熷洜</label>
+          <textarea id="journalRationale" class="textarea" rows="4" placeholder="褰撴椂鎴戜负浠€涔堜拱/鍗栵紵鐪嬪埌浠€涔堜俊鍙凤紵鏄鏉愩€佸舰鎬併€佹秷鎭€佺瓥鐣ャ€佹亹鎯э紝杩樻槸鎯冲洖鏈紵"></textarea>
         </div>
         <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>当时预期</label>
-          <textarea id="journalExpectation" class="textarea" rows="2" placeholder="我当时预期它接下来怎么走？如果错了，什么条件说明我错了？"></textarea>
+          <label>褰撴椂棰勬湡</label>
+          <textarea id="journalExpectation" class="textarea" rows="2" placeholder="鎴戝綋鏃堕鏈熷畠鎺ヤ笅鏉ユ€庝箞璧帮紵濡傛灉閿欎簡锛屼粈涔堟潯浠惰鏄庢垜閿欎簡锛?></textarea>
         </div>
         <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>实际结果</label>
-          <textarea id="journalOutcome" class="textarea" rows="2" placeholder="后面走势验证了什么？亏损/盈利主要来自判断、仓位、卖点，还是市场环境？"></textarea>
+          <label>瀹為檯缁撴灉</label>
+          <textarea id="journalOutcome" class="textarea" rows="2" placeholder="鍚庨潰璧板娍楠岃瘉浜嗕粈涔堬紵浜忔崯/鐩堝埄涓昏鏉ヨ嚜鍒ゆ柇銆佷粨浣嶃€佸崠鐐癸紝杩樻槸甯傚満鐜锛?></textarea>
         </div>
 
         <div style="margin-bottom:14px; padding:12px; background:#11151c; border:1px solid #2a2d3e; border-radius:8px;">
-          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:6px;">判断对错</label>
+          <label style="font-size:12px; color:#6b7280; display:block; margin-bottom:6px;">鍒ゆ柇瀵归敊</label>
           <div style="display:flex; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
-            <button class="btn btn-sm" id="reviewBtnRight" onclick="setReview('对')" style="border-color:#22c55e;color:#22c55e;">对</button>
-            <button class="btn btn-sm" id="reviewBtnWrong" onclick="setReview('错')" style="border-color:#ef4444;color:#ef4444;">错</button>
-            <button class="btn btn-sm" id="reviewBtnHalf" onclick="setReview('半对')" style="border-color:#f59e0b;color:#f59e0b;">半对</button>
+            <button class="btn btn-sm" id="reviewBtnRight" onclick="setReview('瀵?)" style="border-color:#22c55e;color:#22c55e;">瀵?/button>
+            <button class="btn btn-sm" id="reviewBtnWrong" onclick="setReview('閿?)" style="border-color:#ef4444;color:#ef4444;">閿?/button>
+            <button class="btn btn-sm" id="reviewBtnHalf" onclick="setReview('鍗婂')" style="border-color:#f59e0b;color:#f59e0b;">鍗婂</button>
             <span id="reviewVerdict" style="font-size:13px;align-self:center;"></span>
           </div>
-          <textarea id="journalReviewNote" class="textarea" rows="2" placeholder="具体哪里对/错？不是涨跌对错，而是当时逻辑和执行是否成立。"></textarea>
+          <textarea id="journalReviewNote" class="textarea" rows="2" placeholder="鍏蜂綋鍝噷瀵?閿欙紵涓嶆槸娑ㄨ穼瀵归敊锛岃€屾槸褰撴椂閫昏緫鍜屾墽琛屾槸鍚︽垚绔嬨€?></textarea>
         </div>
 
         <div class="review-row">
           <div class="form-group" style="width:100%;">
-            <label>错误类型</label>
+            <label>閿欒绫诲瀷</label>
             <div id="journalMistakeType" style="display:flex;flex-wrap:wrap;gap:6px;">
-              <button class="emo-btn" data-v="无错误" onclick="toggleMistakeBtn(this)">无错误</button>
-              <button class="emo-btn" data-v="追高" onclick="toggleMistakeBtn(this)">追高</button>
-              <button class="emo-btn" data-v="卖点拖延" onclick="toggleMistakeBtn(this)">卖点拖延</button>
-              <button class="emo-btn" data-v="止损不坚决" onclick="toggleMistakeBtn(this)">止损不坚决</button>
-              <button class="emo-btn" data-v="仓位过重" onclick="toggleMistakeBtn(this)">仓位过重</button>
-              <button class="emo-btn" data-v="逆势交易" onclick="toggleMistakeBtn(this)">逆势交易</button>
-              <button class="emo-btn" data-v="题材退潮" onclick="toggleMistakeBtn(this)">题材退潮</button>
-              <button class="emo-btn" data-v="频繁交易" onclick="toggleMistakeBtn(this)">频繁交易</button>
-              <button class="emo-btn" data-v="情绪单" onclick="toggleMistakeBtn(this)">情绪单</button>
-              <button class="emo-btn" data-v="未按策略" onclick="toggleMistakeBtn(this)">未按策略</button>
+              <button class="emo-btn" data-v="鏃犻敊璇? onclick="toggleMistakeBtn(this)">鏃犻敊璇?/button>
+              <button class="emo-btn" data-v="杩介珮" onclick="toggleMistakeBtn(this)">杩介珮</button>
+              <button class="emo-btn" data-v="鍗栫偣鎷栧欢" onclick="toggleMistakeBtn(this)">鍗栫偣鎷栧欢</button>
+              <button class="emo-btn" data-v="姝㈡崯涓嶅潥鍐? onclick="toggleMistakeBtn(this)">姝㈡崯涓嶅潥鍐?/button>
+              <button class="emo-btn" data-v="浠撲綅杩囬噸" onclick="toggleMistakeBtn(this)">浠撲綅杩囬噸</button>
+              <button class="emo-btn" data-v="閫嗗娍浜ゆ槗" onclick="toggleMistakeBtn(this)">閫嗗娍浜ゆ槗</button>
+              <button class="emo-btn" data-v="棰樻潗閫€娼? onclick="toggleMistakeBtn(this)">棰樻潗閫€娼?/button>
+              <button class="emo-btn" data-v="棰戠箒浜ゆ槗" onclick="toggleMistakeBtn(this)">棰戠箒浜ゆ槗</button>
+              <button class="emo-btn" data-v="鎯呯华鍗? onclick="toggleMistakeBtn(this)">鎯呯华鍗?/button>
+              <button class="emo-btn" data-v="鏈寜绛栫暐" onclick="toggleMistakeBtn(this)">鏈寜绛栫暐</button>
             </div>
           </div>
           <div class="form-group" style="width:100%;">
-            <label>执行评分</label>
+            <label>鎵ц璇勫垎</label>
             <select id="journalScore" style="width:100%">
-              <option value="">未评分</option>
-              <option value="5">5 很好</option>
-              <option value="4">4 基本正确</option>
-              <option value="3">3 一半一半</option>
-              <option value="2">2 明显变形</option>
-              <option value="1">1 情绪主导</option>
+              <option value="">鏈瘎鍒?/option>
+              <option value="5">5 寰堝ソ</option>
+              <option value="4">4 鍩烘湰姝ｇ‘</option>
+              <option value="3">3 涓€鍗婁竴鍗?/option>
+              <option value="2">2 鏄庢樉鍙樺舰</option>
+              <option value="1">1 鎯呯华涓诲</option>
             </select>
           </div>
         </div>
 
         <div class="form-group" style="width:100%; margin-bottom:10px;">
-          <label>下次规则</label>
-          <textarea id="journalLessons" class="textarea" rows="3" placeholder="写成能执行的规则：例如连续亏损后半仓；涨停炸板不追回；亏损超过 -3% 必须减仓。"></textarea>
+          <label>涓嬫瑙勫垯</label>
+          <textarea id="journalLessons" class="textarea" rows="3" placeholder="鍐欐垚鑳芥墽琛岀殑瑙勫垯锛氫緥濡傝繛缁簭鎹熷悗鍗婁粨锛涙定鍋滅偢鏉夸笉杩藉洖锛涗簭鎹熻秴杩?-3% 蹇呴』鍑忎粨銆?></textarea>
         </div>
         <div class="form-group" style="width:100%; margin-bottom:14px;">
-          <label>明日计划</label>
-          <textarea id="journalPlan" class="textarea" rows="2" placeholder="明天只写条件：什么情况买，什么情况卖，什么情况不做。"></textarea>
+          <label>鏄庢棩璁″垝</label>
+          <textarea id="journalPlan" class="textarea" rows="2" placeholder="鏄庡ぉ鍙啓鏉′欢锛氫粈涔堟儏鍐典拱锛屼粈涔堟儏鍐靛崠锛屼粈涔堟儏鍐典笉鍋氥€?></textarea>
         </div>
 
-        <button class="btn btn-primary" onclick="saveJournal()">保存复盘</button>
-        <button class="btn btn-sm" style="border-color:#a78bfa;color:#a78bfa;" onclick="goToReviewedTrade()">跳转记录</button>
-        <button class="btn" onclick="clearJournalForm()">清空表单</button>
+        <button class="btn btn-primary" onclick="saveJournal()">淇濆瓨澶嶇洏</button>
+        <button class="btn btn-sm" style="border-color:#a78bfa;color:#a78bfa;" onclick="goToReviewedTrade()">璺宠浆璁板綍</button>
+        <button class="btn" onclick="clearJournalForm()">娓呯┖琛ㄥ崟</button>
         <span id="journalMsg" style="margin-left:12px; font-size:12px; color:#22c55e;"></span>
       </div>
 
       <div>
         <div class="review-panel" style="margin-bottom:12px;">
-          <h3>统计</h3>
+          <h3>缁熻</h3>
           <div class="review-stat-grid" id="journalStats"></div>
           <div id="mistakeStats" style="font-size:12px; color:#9ca3af; line-height:1.8;"></div>
         </div>
         <div class="review-panel">
-          <h3>历史复盘 <span style="font-weight:400;font-size:12px;color:#6b7280;" id="journalCount"></span></h3>
+          <h3>鍘嗗彶澶嶇洏 <span style="font-weight:400;font-size:12px;color:#6b7280;" id="journalCount"></span></h3>
           <div style="max-height:560px; overflow-y:auto;" id="journalList">
-            <div class="empty">加载中...</div>
+            <div class="empty">鍔犺浇涓?..</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Tab 6: 大盘预测复盘 -->
+  <!-- Tab 6: 澶х洏棰勬祴澶嶇洏 -->
   <div class="tab-content" id="tab-macro-review">
 
-    <!-- 日期选择 -->
+    <!-- 鏃ユ湡閫夋嫨 -->
     <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap;">
-      <label style="font-weight:600; white-space:nowrap;">📅 日期</label>
+      <label style="font-weight:600; white-space:nowrap;">馃搮 鏃ユ湡</label>
       <input type="date" id="macroDate" style="background:#0d1117; border:1px solid #2a2d3e; color:#e1e4e8; padding:6px 12px; border-radius:6px;" onchange="loadMacroPrediction()">
-      <button class="btn btn-sm" onclick="loadMacroPrediction()" style="border-color:#3b82f6;color:#3b82f6;">查詢</button>
-      <button class="btn btn-sm" onclick="goMacroDay(-1)">⬅ 前一天</button>
-      <button class="btn btn-sm" onclick="goMacroDay(1)">後一天 ➡</button>
-      <button class="btn btn-primary btn-sm" onclick="saveMacroPrediction()" style="margin-left:auto;">💾 保存</button>
+      <button class="btn btn-sm" onclick="loadMacroPrediction()" style="border-color:#3b82f6;color:#3b82f6;">鏌ヨ</button>
+      <button class="btn btn-sm" onclick="goMacroDay(-1)">猬?鍓嶄竴澶?/button>
+      <button class="btn btn-sm" onclick="goMacroDay(1)">寰屼竴澶?鉃?/button>
+      <button class="btn btn-primary btn-sm" onclick="saveMacroPrediction()" style="margin-left:auto;">馃捑 淇濆瓨</button>
       <span id="macroMsg" style="font-size:12px; color:#22c55e;"></span>
     </div>
 
-    <!-- 兩欄 -->
+    <!-- 鍏╂瑒 -->
     <div style="display:flex; gap:16px; flex-wrap:wrap;">
-      <!-- 左栏：盘前预测 -->
+      <!-- 宸︽爮锛氱洏鍓嶉娴?-->
       <div style="flex:1; min-width:360px;">
         <div class="review-panel" style="margin-bottom:12px;">
-          <h3 style="color:#f59e0b;">🔮 盤前預測</h3>
-          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">前一天晚上 / 當天開盤前寫下</div>
+          <h3 style="color:#f59e0b;">馃敭 鐩ゅ墠闋愭脯</h3>
+          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">鍓嶄竴澶╂櫄涓?/ 鐣跺ぉ闁嬬洡鍓嶅涓?/div>
 
           <div class="form-group" style="margin-bottom:8px;">
-            <label>預測信號燈</label>
+            <label>闋愭脯淇¤櫉鐕?/label>
             <div style="display:flex; gap:6px;">
-              <button class="btn btn-sm" id="predGreen" onclick="setPredSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">🟢 GREEN</button>
-              <button class="btn btn-sm" id="predYellow" onclick="setPredSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">🟡 YELLOW</button>
-              <button class="btn btn-sm" id="predRed" onclick="setPredSignal('RED')" style="border-color:#ef4444;color:#ef4444;">🔴 RED</button>
+              <button class="btn btn-sm" id="predGreen" onclick="setPredSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">馃煝 GREEN</button>
+              <button class="btn btn-sm" id="predYellow" onclick="setPredSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">馃煛 YELLOW</button>
+              <button class="btn btn-sm" id="predRed" onclick="setPredSignal('RED')" style="border-color:#ef4444;color:#ef4444;">馃敶 RED</button>
             </div>
           </div>
 
           <div class="form-group" style="margin-bottom:8px;">
-            <label>預測理由</label>
-            <textarea id="predReason" class="textarea" rows="3" placeholder="為什麼這樣判斷？看到什麼信號？量化數據還是主觀感覺？"></textarea>
+            <label>闋愭脯鐞嗙敱</label>
+            <textarea id="predReason" class="textarea" rows="3" placeholder="鐐轰粈楹奸€欐ǎ鍒ゆ柗锛熺湅鍒颁粈楹间俊铏燂紵閲忓寲鏁告摎閭勬槸涓昏鎰熻锛?></textarea>
           </div>
 
           <div class="form-group" style="margin-bottom:8px;">
-            <label>明天操作計劃</label>
-            <textarea id="predPlan" class="textarea" rows="3" placeholder="具體操作：開倉/減倉/觀望？什麼條件觸發什麼動作？"></textarea>
+            <label>鏄庡ぉ鎿嶄綔瑷堝妰</label>
+            <textarea id="predPlan" class="textarea" rows="3" placeholder="鍏烽珨鎿嶄綔锛氶枊鍊?娓涘€?瑙€鏈涳紵浠€楹兼浠惰Ц鐧间粈楹煎嫊浣滐紵"></textarea>
           </div>
         </div>
       </div>
 
-      <!-- 右栏：盘后复盘 -->
+      <!-- 鍙虫爮锛氱洏鍚庡鐩?-->
       <div style="flex:1; min-width:360px;">
         <div class="review-panel" style="margin-bottom:12px;">
-          <h3 style="color:#22c55e;">📝 盤後復盤</h3>
-          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">收盤後填寫實際結果</div>
+          <h3 style="color:#22c55e;">馃摑 鐩ゅ緦寰╃洡</h3>
+          <div style="font-size:12px; color:#6b7280; margin-bottom:10px;">鏀剁洡寰屽～瀵闅涚祼鏋?/div>
 
           <div class="form-group" style="margin-bottom:8px;">
-            <label>實際信號燈</label>
+            <label>瀵﹂殯淇¤櫉鐕?/label>
             <div style="display:flex; gap:6px;">
-              <button class="btn btn-sm" id="actualGreen" onclick="setActualSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">🟢 GREEN</button>
-              <button class="btn btn-sm" id="actualYellow" onclick="setActualSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">🟡 YELLOW</button>
-              <button class="btn btn-sm" id="actualRed" onclick="setActualSignal('RED')" style="border-color:#ef4444;color:#ef4444;">🔴 RED</button>
+              <button class="btn btn-sm" id="actualGreen" onclick="setActualSignal('GREEN')" style="border-color:#22c55e;color:#22c55e;">馃煝 GREEN</button>
+              <button class="btn btn-sm" id="actualYellow" onclick="setActualSignal('YELLOW')" style="border-color:#f59e0b;color:#f59e0b;">馃煛 YELLOW</button>
+              <button class="btn btn-sm" id="actualRed" onclick="setActualSignal('RED')" style="border-color:#ef4444;color:#ef4444;">馃敶 RED</button>
             </div>
           </div>
 
           <div class="form-group" style="margin-bottom:8px;">
-            <label>實際大盤走勢</label>
-            <textarea id="actualDesc" class="textarea" rows="2" placeholder="漲跌比、跌停數、成交額、主要板塊表現..."></textarea>
+            <label>瀵﹂殯澶х洡璧板嫝</label>
+            <textarea id="actualDesc" class="textarea" rows="2" placeholder="婕茶穼姣斻€佽穼鍋滄暩銆佹垚浜ら銆佷富瑕佹澘濉婅〃鐝?.."></textarea>
           </div>
 
           <div class="form-group" style="margin-bottom:8px;">
-            <label>判斷對錯</label>
+            <label>鍒ゆ柗灏嶉尟</label>
             <div style="display:flex; gap:6px;">
-              <button class="btn btn-sm" id="verdictRight" onclick="setVerdict('对')" style="border-color:#22c55e;color:#22c55e;">✅ 對</button>
-              <button class="btn btn-sm" id="verdictWrong" onclick="setVerdict('错')" style="border-color:#ef4444;color:#ef4444;">❌ 錯</button>
-              <button class="btn btn-sm" id="verdictHalf" onclick="setVerdict('半对')" style="border-color:#f59e0b;color:#f59e0b;">⚠️ 半對</button>
+              <button class="btn btn-sm" id="verdictRight" onclick="setVerdict('瀵?)" style="border-color:#22c55e;color:#22c55e;">鉁?灏?/button>
+              <button class="btn btn-sm" id="verdictWrong" onclick="setVerdict('閿?)" style="border-color:#ef4444;color:#ef4444;">鉂?閷?/button>
+              <button class="btn btn-sm" id="verdictHalf" onclick="setVerdict('鍗婂')" style="border-color:#f59e0b;color:#f59e0b;">鈿狅笍 鍗婂皪</button>
             </div>
           </div>
 
           <div class="form-group" style="margin-bottom:8px;">
-            <label>反思：對在哪 / 錯在哪</label>
-            <textarea id="actualReflection" class="textarea" rows="3" placeholder="預測對了是因為什麼？錯了是忽略了什麼？下次怎麼改？"></textarea>
+            <label>鍙嶆€濓細灏嶅湪鍝?/ 閷湪鍝?/label>
+            <textarea id="actualReflection" class="textarea" rows="3" placeholder="闋愭脯灏嶄簡鏄洜鐐轰粈楹硷紵閷簡鏄拷鐣ヤ簡浠€楹硷紵涓嬫鎬庨杭鏀癸紵"></textarea>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 對比欄 -->
+    <!-- 灏嶆瘮娆?-->
     <div class="review-panel" style="margin-top:16px;">
-      <h3>📊 預測 vs 實際</h3>
+      <h3>馃搳 闋愭脯 vs 瀵﹂殯</h3>
       <div id="macroComparison" style="font-size:13px; line-height:2;">
-        <div class="empty">選擇日期後顯示</div>
+        <div class="empty">閬告搰鏃ユ湡寰岄’绀?/div>
       </div>
     </div>
 
-    <!-- 統計 -->
+    <!-- 绲辫▓ -->
     <div class="review-panel" style="margin-top:16px;">
-      <h3>📈 預測準確率</h3>
+      <h3>馃搱 闋愭脯婧栫⒑鐜?/h3>
       <div class="review-stat-grid" id="macroStats"></div>
     </div>
 
@@ -485,12 +485,12 @@
 <!-- Sell Modal -->
 <div class="modal-overlay" id="sellModal">
   <div class="modal">
-    <h3>确认卖出 <span id="sellModalName"></span></h3>
-    <div class="form-group" style="width:100%"><label>卖出价</label><input id="sellModalPrice" type="number" step="0.01" style="width:100%"></div>
-    <div class="form-group" style="width:100%;margin-top:8px"><label>原因</label><input id="sellModalReason" placeholder="如: 止损/止盈/破MA20" style="width:100%"></div>
+    <h3>纭鍗栧嚭 <span id="sellModalName"></span></h3>
+    <div class="form-group" style="width:100%"><label>鍗栧嚭浠?/label><input id="sellModalPrice" type="number" step="0.01" style="width:100%"></div>
+    <div class="form-group" style="width:100%;margin-top:8px"><label>鍘熷洜</label><input id="sellModalReason" placeholder="濡? 姝㈡崯/姝㈢泩/鐮碝A20" style="width:100%"></div>
     <div class="btn-row">
-      <button class="btn" onclick="closeSellModal()">取消</button>
-      <button class="btn btn-danger" onclick="confirmSell()">确认卖出</button>
+      <button class="btn" onclick="closeSellModal()">鍙栨秷</button>
+      <button class="btn btn-danger" onclick="confirmSell()">纭鍗栧嚭</button>
     </div>
   </div>
 </div>
@@ -510,11 +510,11 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.classList.add("active");
       document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
       document.getElementById(btn.dataset.tab).classList.add("active");
-      // 切换到复盘 tab 时刷新当天流水
+      // 鍒囨崲鍒板鐩?tab 鏃跺埛鏂板綋澶╂祦姘?
       if (btn.dataset.tab === "tab-journal") {
         renderDayTrades();
       }
-      // 切换到大盘预测复盘 tab 时加载数据
+      // 鍒囨崲鍒板ぇ鐩橀娴嬪鐩?tab 鏃跺姞杞芥暟鎹?
       if (btn.dataset.tab === "tab-macro-review") {
         loadMacroReview();
       }
@@ -525,20 +525,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const today = new Date().toISOString().slice(0,10);
   document.getElementById("buyDate").value = today;
   document.getElementById("sellDate").value = today;
-  // 复盘日期默认用最近的交易日（有数据的那天），否则用今天
+  // 澶嶇洏鏃ユ湡榛樿鐢ㄦ渶杩戠殑浜ゆ槗鏃ワ紙鏈夋暟鎹殑閭ｅぉ锛夛紝鍚﹀垯鐢ㄤ粖澶?
   document.getElementById("journalDate").value = today;
 
   refresh().then(() => {
-    // 如果有交易数据，journalDate 跳到最近交易日
+    // 濡傛灉鏈変氦鏄撴暟鎹紝journalDate 璺冲埌鏈€杩戜氦鏄撴棩
     if (state.logs && state.logs.length > 0) {
       const lastDate = state.logs[state.logs.length - 1].date;
       document.getElementById("journalDate").value = lastDate;
     }
     renderDayTrades();
-    // 等 state.logs 就绪后再加载复盘列表
+    // 绛?state.logs 灏辩华鍚庡啀鍔犺浇澶嶇洏鍒楄〃
     return loadJournalList();
   }).then(() => {
-    // 加载完复盘数据后重绘历史，显示"已复盘"标记
+    // 鍔犺浇瀹屽鐩樻暟鎹悗閲嶇粯鍘嗗彶锛屾樉绀?宸插鐩?鏍囪
     renderHistory();
     return checkReviewReminder();
   });
@@ -559,10 +559,10 @@ function renderStats() {
   const p = state.portfolio;
   const s = state.stats;
   document.getElementById("statsBar").innerHTML = `
-    <div class="stat-card"><div class="label">总市值</div><div class="value blue">${fmtMoney(s.totalValue)}</div><div class="sub">现金 ${fmtMoney(p.cash)}</div></div>
-    <div class="stat-card"><div class="label">持仓市值</div><div class="value">${fmtMoney(s.holdingValue)}</div><div class="sub">${p.holdings.length}/${p.max_positions} 仓</div></div>
-    <div class="stat-card"><div class="label">浮动盈亏</div><div class="value ${s.totalPnl >= 0 ? 'green' : 'red'}">${s.totalPnl >= 0 ? '+' : ''}${fmtMoney(s.totalPnl)}</div><div class="sub ${s.totalPnlPct >= 0 ? 'g' : 'r'}">${s.totalPnlPct >= 0 ? '+' : ''}${s.totalPnlPct.toFixed(2)}%</div></div>
-    <div class="stat-card"><div class="label">累计已实现</div><div class="value ${s.realizedPnl >= 0 ? 'green' : 'red'}">${s.realizedPnl >= 0 ? '+' : ''}${fmtMoney(s.realizedPnl)}</div><div class="sub">${s.closedTrades}笔 / 胜率${s.winRate.toFixed(0)}%</div></div>
+    <div class="stat-card"><div class="label">鎬诲競鍊?/div><div class="value blue">${fmtMoney(s.totalValue)}</div><div class="sub">鐜伴噾 ${fmtMoney(p.cash)}</div></div>
+    <div class="stat-card"><div class="label">鎸佷粨甯傚€?/div><div class="value">${fmtMoney(s.holdingValue)}</div><div class="sub">${p.holdings.length}/${p.max_positions} 浠?/div></div>
+    <div class="stat-card"><div class="label">娴姩鐩堜簭</div><div class="value ${s.totalPnl >= 0 ? 'green' : 'red'}">${s.totalPnl >= 0 ? '+' : ''}${fmtMoney(s.totalPnl)}</div><div class="sub ${s.totalPnlPct >= 0 ? 'g' : 'r'}">${s.totalPnlPct >= 0 ? '+' : ''}${s.totalPnlPct.toFixed(2)}%</div></div>
+    <div class="stat-card"><div class="label">绱宸插疄鐜?/div><div class="value ${s.realizedPnl >= 0 ? 'green' : 'red'}">${s.realizedPnl >= 0 ? '+' : ''}${fmtMoney(s.realizedPnl)}</div><div class="sub">${s.closedTrades}绗?/ 鑳滅巼${s.winRate.toFixed(0)}%</div></div>
   `;
 }
 
@@ -584,26 +584,26 @@ function renderHoldings() {
     const pnlSign = r.pnlPct >= 0 ? "+" : "";
     const a = r.alerts || {};
 
-    // 找最近的危险线
+    // 鎵炬渶杩戠殑鍗遍櫓绾?
     let alertHtml = "-";
     if (a.stopLoss) {
-      // 收集所有价格线
+      // 鏀堕泦鎵€鏈変环鏍肩嚎
       const priceLines = [];
-      if (a.highRetreat) priceLines.push({label:"高位回撤", price:a.highRetreat, dist:a.highRetreatDist});
-      if (a.stopLoss) priceLines.push({label:"止损", price:a.stopLoss, dist:a.stopLossDist});
+      if (a.highRetreat) priceLines.push({label:"楂樹綅鍥炴挙", price:a.highRetreat, dist:a.highRetreatDist});
+      if (a.stopLoss) priceLines.push({label:"姝㈡崯", price:a.stopLoss, dist:a.stopLossDist});
       if (a.ma10) priceLines.push({label:"MA10", price:a.ma10, dist:a.ma10Dist});
 
-      // 按距现价从近到远排序（dist 正值=现价在上方，越小越危险）
+      // 鎸夎窛鐜颁环浠庤繎鍒拌繙鎺掑簭锛坉ist 姝ｅ€?鐜颁环鍦ㄤ笂鏂癸紝瓒婂皬瓒婂嵄闄╋級
       priceLines.sort((a,b) => a.dist - b.dist);
       const nearest = priceLines[0];
 
-      // 量条件
-      if (a.volDiverge) priceLines.push({label:"量价背离", price:null, dist:0});
+      // 閲忔潯浠?
+      if (a.volDiverge) priceLines.push({label:"閲忎环鑳岀", price:null, dist:0});
 
-      // 高亮最近线
+      // 楂樹寒鏈€杩戠嚎
       alertHtml = priceLines.map(l => {
-        if (l.label === "量价背离") {
-          return `<span style="color:#f59e0b">量价背离</span>`;
+        if (l.label === "閲忎环鑳岀") {
+          return `<span style="color:#f59e0b">閲忎环鑳岀</span>`;
         }
         const distPct = (l.dist>0?"-":"") + Math.abs(l.dist).toFixed(1)+"%";
         const isNearest = l === nearest && l.dist < 5;
@@ -618,9 +618,9 @@ function renderHoldings() {
       <td>${fmtPrice(r.buy_price)}</td><td>${fmtPrice(r.currentPrice)}</td>
       <td>${r.shares}</td><td>${fmtMoney(r.marketValue)}</td>
       <td class="${pnlCls}">${pnlSign}${r.pnlPct.toFixed(2)}%</td>
-      <td>${r.holdDays}天</td>
+      <td>${r.holdDays}澶?/td>
       <td>${alertHtml}</td>
-      <td><button class="btn btn-sm btn-danger" onclick="openSellModal('${r.code}','${r.name}',${r.currentPrice},${r.shares})">卖出</button></td>
+      <td><button class="btn btn-sm btn-danger" onclick="openSellModal('${r.code}','${r.name}',${r.currentPrice},${r.shares})">鍗栧嚭</button></td>
     </tr>`;
   }).join("");
 }
@@ -641,7 +641,7 @@ async function confirmSell() {
   if (!sellTarget) return;
   const price = parseFloat(document.getElementById("sellModalPrice").value);
   const reason = document.getElementById("sellModalReason").value.trim();
-  if (!price || price <= 0) { toast("请输入有效卖出价", "err"); return; }
+  if (!price || price <= 0) { toast("璇疯緭鍏ユ湁鏁堝崠鍑轰环", "err"); return; }
   const today = new Date().toISOString().slice(0,10);
   await api("sell", { code: sellTarget.code, price, shares: sellTarget.shares, date: today, reason });
   closeSellModal();
@@ -659,9 +659,9 @@ async function doBuy() {
   const signalRank = parseInt(document.getElementById("buySignalRank").value) || null;
   const marketSignal = document.getElementById("buyMarketSignal").value;
   const decisionNote = document.getElementById("buyDecisionNote").value.trim();
-  if (!code) { toast("请输入股票代码", "err"); return; }
-  if (!price || price <= 0) { toast("请输入有效买入价", "err"); return; }
-  if (!shares || shares < 100) { toast("最少100股", "err"); return; }
+  if (!code) { toast("璇疯緭鍏ヨ偂绁ㄤ唬鐮?, "err"); return; }
+  if (!price || price <= 0) { toast("璇疯緭鍏ユ湁鏁堜拱鍏ヤ环", "err"); return; }
+  if (!shares || shares < 100) { toast("鏈€灏?00鑲?, "err"); return; }
   await api("buy", { code, price, shares, date, reason, strategy_source: strategySource, signal_rank: signalRank, market_signal: marketSignal, decision_note: decisionNote });
   document.getElementById("buyCode").value = "";
   document.getElementById("buyPrice").value = "";
@@ -678,13 +678,13 @@ async function doSell() {
   let shares = parseInt(document.getElementById("sellShares").value);
   const date = document.getElementById("sellDate").value;
   const reason = document.getElementById("sellReason").value.trim();
-  if (!code) { toast("请选择持仓股票", "err"); return; }
-  if (!price || price <= 0) { toast("请输入有效卖出价", "err"); return; }
+  if (!code) { toast("璇烽€夋嫨鎸佷粨鑲＄エ", "err"); return; }
+  if (!price || price <= 0) { toast("璇疯緭鍏ユ湁鏁堝崠鍑轰环", "err"); return; }
   if (shares === 0) {
     const h = (state.holdings || []).find(r => r.code === code);
     shares = h ? h.shares : 0;
   }
-  if (shares < 100) { toast("最少100股", "err"); return; }
+  if (shares < 100) { toast("鏈€灏?00鑲?, "err"); return; }
   await api("sell", { code, price, shares, date, reason });
   document.getElementById("sellPrice").value = "";
   document.getElementById("sellShares").value = "0";
@@ -718,11 +718,11 @@ function renderHistory() {
   const winRate = closed.length ? (wins / closed.length * 100) : 0;
   const reviewedCount = [..._reviewedTradeIds].filter(id => logs.some(l => l.id === id)).length;
   statsDiv.innerHTML = `
-    <span>总操作 <b style="color:#e1e4e8">${logs.length}</b> 次</span>
-    <span>已平仓 <b style="color:#e1e4e8">${closed.length}</b> 笔</span>
-    <span>胜率 <b style="color:#22c55e">${winRate.toFixed(0)}%</b></span>
-    <span>已实现盈亏 <b style="color:${totalPnl>=0?'#22c55e':'#ef4444'}">${totalPnl>=0?'+':''}${fmtMoney(totalPnl)}</b></span>
-    <span>已复盘 <b style="color:#a78bfa">${reviewedCount}</b> 笔</span>
+    <span>鎬绘搷浣?<b style="color:#e1e4e8">${logs.length}</b> 娆?/span>
+    <span>宸插钩浠?<b style="color:#e1e4e8">${closed.length}</b> 绗?/span>
+    <span>鑳滅巼 <b style="color:#22c55e">${winRate.toFixed(0)}%</b></span>
+    <span>宸插疄鐜扮泩浜?<b style="color:${totalPnl>=0?'#22c55e':'#ef4444'}">${totalPnl>=0?'+':''}${fmtMoney(totalPnl)}</b></span>
+    <span>宸插鐩?<b style="color:#a78bfa">${reviewedCount}</b> 绗?/span>
   `;
 
   // Pagination
@@ -735,14 +735,14 @@ function renderHistory() {
 
   // Table - newest first
   tbody.innerHTML = pageLogs.map(l => {
-    const dir = l.action === "buy" ? '<span style="color:#ef4444">买入</span>' : '<span style="color:#22c55e">卖出</span>';
+    const dir = l.action === "buy" ? '<span style="color:#ef4444">涔板叆</span>' : '<span style="color:#22c55e">鍗栧嚭</span>';
     let pnlCell = "-", pnlPctCell = "-";
     let fwdCells = "";
     if (l.action === "sell") {
       const cls = l.pnl >= 0 ? "g" : "r";
       pnlCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${fmtMoney(l.pnl)}</span>`;
       pnlPctCell = `<span class="${cls}">${l.pnl >= 0 ? '+' : ''}${(l.pnlPct||0).toFixed(2)}%</span>`;
-      // 前向涨跌 - 直接用预生成的 HTML，如果没有则 fallback 到对象
+      // 鍓嶅悜娑ㄨ穼 - 鐩存帴鐢ㄩ鐢熸垚鐨?HTML锛屽鏋滄病鏈夊垯 fallback 鍒板璞?
       if (l.fwdHtml) {
         fwdCells = l.fwdHtml;
       } else {
@@ -761,8 +761,8 @@ function renderHistory() {
     const reason = l.reason || "-";
     const reviewed = _reviewedTradeIds.has(l.id);
     const reviewBtn = reviewed
-      ? `<button class="btn btn-sm" style="border-color:#22c55e;color:#22c55e" onclick="reviewTrade('${l.date}',${l.id})">已复盘</button>`
-      : `<button class="btn btn-sm" style="border-color:#3b82f6;color:#60a5fa" onclick="reviewTrade('${l.date}',${l.id})">复盘</button>`;
+      ? `<button class="btn btn-sm" style="border-color:#22c55e;color:#22c55e" onclick="reviewTrade('${l.date}',${l.id})">宸插鐩?/button>`
+      : `<button class="btn btn-sm" style="border-color:#3b82f6;color:#60a5fa" onclick="reviewTrade('${l.date}',${l.id})">澶嶇洏</button>`;
     return `<tr><td>${l.date}</td><td>${l.code}</td><td>${l.name}</td><td>${dir}</td><td>${fmtPrice(l.price)}</td><td>${l.shares}</td><td>${pnlCell}</td><td>${pnlPctCell}</td>${fwdCells}<td style="font-size:11px;color:#6b7280;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${l.reason||''}">${reason}</td><td>${reviewBtn}</td></tr>`;
   }).join("");
 
@@ -773,9 +773,9 @@ function renderHistory() {
   } else {
     pager.style.display = "flex";
     pager.innerHTML = `
-      <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage - 1})" ${_historyPage <= 1 ? 'disabled style="opacity:.3"' : ''}>上一页</button>
-      <span>第 <b style="color:#e1e4e8">${_historyPage}</b> / ${totalPages} 页 (共 ${logs.length} 条)</span>
-      <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage + 1})" ${_historyPage >= totalPages ? 'disabled style="opacity:.3"' : ''}>下一页</button>
+      <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage - 1})" ${_historyPage <= 1 ? 'disabled style="opacity:.3"' : ''}>涓婁竴椤?/button>
+      <span>绗?<b style="color:#e1e4e8">${_historyPage}</b> / ${totalPages} 椤?(鍏?${logs.length} 鏉?</span>
+      <button class="btn btn-sm" onclick="goHistoryPage(${_historyPage + 1})" ${_historyPage >= totalPages ? 'disabled style="opacity:.3"' : ''}>涓嬩竴椤?/button>
     `;
   }
 }
@@ -788,14 +788,14 @@ function goHistoryPage(p) {
 
 function goToReviewedTrade() {
   const tradeId = _reviewTargetTrade ? _reviewTargetTrade.id : _lastReviewedTradeId;
-  if (!tradeId) { toast("没有正在复盘的目标", "err"); return; }
+  if (!tradeId) { toast("娌℃湁姝ｅ湪澶嶇洏鐨勭洰鏍?, "err"); return; }
   const logs = state.logs || [];
   const reversed = [...logs].reverse();
   const idx = reversed.findIndex(l => l.id === tradeId);
-  if (idx < 0) { toast("找不到该交易", "err"); return; }
-  // 切换到对应页
+  if (idx < 0) { toast("鎵句笉鍒拌浜ゆ槗", "err"); return; }
+  // 鍒囨崲鍒板搴旈〉
   _historyPage = Math.floor(idx / _historyPageSize) + 1;
-  // 切换 tab
+  // 鍒囨崲 tab
   document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
   document.querySelector('[data-tab="tab-history"]').classList.add("active");
   document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
@@ -807,8 +807,8 @@ function goToReviewedTrade() {
 function renderSellSelect() {
   const sel = document.getElementById("sellCode");
   const h = state.holdings || [];
-  sel.innerHTML = '<option value="">-- 选择 --</option>' +
-    h.map(r => `<option value="${r.code}">${r.code} ${r.name} (${r.shares}股)</option>`).join("");
+  sel.innerHTML = '<option value="">-- 閫夋嫨 --</option>' +
+    h.map(r => `<option value="${r.code}">${r.code} ${r.name} (${r.shares}鑲?</option>`).join("");
 }
 
 // ============ Strategy Comparison ============
@@ -816,17 +816,17 @@ function renderCompare() {
   const s = state.stats;
   const summary = document.getElementById("compareSummary");
   summary.innerHTML = `
-    <span>策略日期 <b style="color:#e1e4e8">${state.strategyDate || "-"}</b></span>
-    <span>持仓: 策略<b style="color:#60a5fa">${s.strategyHoldCount||0}</b>只 / 你跟<b style="color:#22c55e">${s.followedHolds||0}</b>只</span>
-    <span>买入信号: <b style="color:#ef4444">${s.strategyBuyCount||0}</b>只 / 你跟<b style="color:#22c55e">${s.followedBuys||0}</b>只</span>
-    <span>额外 <b style="color:#a78bfa">${s.extraCount||0}</b></span>
+    <span>绛栫暐鏃ユ湡 <b style="color:#e1e4e8">${state.strategyDate || "-"}</b></span>
+    <span>鎸佷粨: 绛栫暐<b style="color:#60a5fa">${s.strategyHoldCount||0}</b>鍙?/ 浣犺窡<b style="color:#22c55e">${s.followedHolds||0}</b>鍙?/span>
+    <span>涔板叆淇″彿: <b style="color:#ef4444">${s.strategyBuyCount||0}</b>鍙?/ 浣犺窡<b style="color:#22c55e">${s.followedBuys||0}</b>鍙?/span>
+    <span>棰濆 <b style="color:#a78bfa">${s.extraCount||0}</b></span>
   `;
 
-  // === 区1: 持仓对照 (策略 vs 你 合并一张表) ===
+  // === 鍖?: 鎸佷粨瀵圭収 (绛栫暐 vs 浣?鍚堝苟涓€寮犺〃) ===
   const stratHolds = state.strategyHolds || [];
   const myHolds = state.holdings || [];
 
-  // 合并去重
+  // 鍚堝苟鍘婚噸
   const allCodes = new Set();
   stratHolds.forEach(h => allCodes.add(h.code));
   myHolds.forEach(h => allCodes.add(h.code));
@@ -838,7 +838,7 @@ function renderCompare() {
     merged.push({ code, strat: s || null, mine: m || null });
   });
 
-  // 排序：双方都有 > 仅策略 > 仅你
+  // 鎺掑簭锛氬弻鏂归兘鏈?> 浠呯瓥鐣?> 浠呬綘
   merged.sort((a, b) => {
     const aBoth = a.strat && a.mine ? 1 : 0;
     const bBoth = b.strat && b.mine ? 1 : 0;
@@ -857,9 +857,9 @@ function renderCompare() {
       const s = row.strat;
       const m = row.mine;
 
-      // 策略列
+      // 绛栫暐鍒?
       const sHtml = s
-        ? `<span style="color:#22c55e;font-weight:600">持有</span>`
+        ? `<span style="color:#22c55e;font-weight:600">鎸佹湁</span>`
         : `<span style="color:#374151">-</span>`;
       const sBuyDate = s ? (s.buyDate||"-") : "-";
       const sPrice = s ? (s.strategyPrice||s.buyPrice||0).toFixed(2) : "-";
@@ -867,18 +867,18 @@ function renderCompare() {
       const sSign = (s?.pnlPct||0) >= 0 ? "+" : "";
       const sPnl = s ? `${sSign}${(s.pnlPct||0).toFixed(1)}%` : "-";
 
-      // 你的列
+      // 浣犵殑鍒?
       const mHtml = m
-        ? `<span style="color:#a78bfa;font-weight:600">持有</span>`
+        ? `<span style="color:#a78bfa;font-weight:600">鎸佹湁</span>`
         : `<span style="color:#374151">-</span>`;
       const mBuy = m ? (m.buy_price||0).toFixed(2) : "-";
       const mPrice = m ? (m.currentPrice||0).toFixed(2) : "-";
       const mPnlCls = (m?.pnlPct||0) >= 0 ? "g" : "r";
       const mSign = (m?.pnlPct||0) >= 0 ? "+" : "";
       const mPnl = m ? `${mSign}${(m.pnlPct||0).toFixed(1)}%` : "-";
-      const mDays = m ? `${m.holdDays}天` : "-";
+      const mDays = m ? `${m.holdDays}澶ー : "-";
 
-      // 行颜色：双方都有=绿边，仅策略=蓝边，仅你=紫边
+      // 琛岄鑹诧細鍙屾柟閮芥湁=缁胯竟锛屼粎绛栫暐=钃濊竟锛屼粎浣?绱竟
       let border;
       if (s && m) border = 'border-left:3px solid #22c55e';
       else if (s) border = 'border-left:3px solid #60a5fa';
@@ -900,7 +900,7 @@ function renderCompare() {
     }).join("");
   }
 
-  // === 区2: 策略买入信号 ===
+  // === 鍖?: 绛栫暐涔板叆淇″彿 ===
   const buys = state.strategyBuys || [];
   const buysBody = document.querySelector("#compareBuyTable tbody");
   const buysEmpty = document.getElementById("emptyBuys");
@@ -911,8 +911,8 @@ function renderCompare() {
     buysEmpty.style.display = "none";
     buysBody.innerHTML = buys.map(b => {
       const followed = b.followed
-        ? '<span style="color:#22c55e;font-weight:600">已跟</span>'
-        : '<span style="color:#f59e0b;font-weight:600">漏了</span>';
+        ? '<span style="color:#22c55e;font-weight:600">宸茶窡</span>'
+        : '<span style="color:#f59e0b;font-weight:600">婕忎簡</span>';
       const border = b.followed ? 'border-left:3px solid #22c55e' : 'border-left:3px solid #f59e0b';
       const shortR = b.reason ? (b.reason.length>30 ? b.reason.slice(0,28)+'..' : b.reason) : '-';
       return `<tr style="${border}">
@@ -939,7 +939,7 @@ async function api(action, body) {
   });
   const data = await r.json();
   if (data.error) toast(data.error, "err");
-  else toast(data.ok || "操作成功", "ok");
+  else toast(data.ok || "鎿嶄綔鎴愬姛", "ok");
 }
 
 function toast(msg, type) {
@@ -952,8 +952,8 @@ function toast(msg, type) {
 function fmtMoney(v) {
   if (v === undefined || v === null) return "-";
   const n = Math.abs(v);
-  if (n >= 1e8) return (v / 1e8).toFixed(2) + "亿";
-  if (n >= 1e4) return (v / 1e4).toFixed(1) + "万";
+  if (n >= 1e8) return (v / 1e8).toFixed(2) + "浜?;
+  if (n >= 1e4) return (v / 1e4).toFixed(1) + "涓?;
   return v.toFixed(0);
 }
 // ============ Journal ============
@@ -961,20 +961,20 @@ let journalEntries = [];
 let currentReview = { verdict: "", note: "" };
 
 const REVIEW_STYLE = {
-  "对": "background:#14532d;color:#86efac;border:1px solid #22c55e;",
-  "错": "background:#7f1d1d;color:#fca5a5;border:1px solid #ef4444;",
-  "半对": "background:#713f12;color:#fde68a;border:1px solid #f59e0b;",
-  "待复盘": "background:#1f2937;color:#cbd5e1;border:1px solid #4b5563;",
+  "瀵?: "background:#14532d;color:#86efac;border:1px solid #22c55e;",
+  "閿?: "background:#7f1d1d;color:#fca5a5;border:1px solid #ef4444;",
+  "鍗婂": "background:#713f12;color:#fde68a;border:1px solid #f59e0b;",
+  "寰呭鐩?: "background:#1f2937;color:#cbd5e1;border:1px solid #4b5563;",
 };
 
 function setReview(verdict) {
   currentReview.verdict = verdict;
-  document.getElementById("reviewVerdict").textContent = verdict ? `当前: ${verdict}` : "";
+  document.getElementById("reviewVerdict").textContent = verdict ? `褰撳墠: ${verdict}` : "";
   ["reviewBtnRight", "reviewBtnWrong", "reviewBtnHalf"].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.boxShadow = "none";
   });
-  const activeId = verdict === "对" ? "reviewBtnRight" : verdict === "错" ? "reviewBtnWrong" : verdict === "半对" ? "reviewBtnHalf" : null;
+  const activeId = verdict === "瀵? ? "reviewBtnRight" : verdict === "閿? ? "reviewBtnWrong" : verdict === "鍗婂" ? "reviewBtnHalf" : null;
   if (activeId) {
     const el = document.getElementById(activeId);
     if (el) el.style.boxShadow = "0 0 0 1px currentColor";
@@ -995,24 +995,24 @@ function renderDayTrades() {
   const date = document.getElementById("journalDate").value;
   const list = document.getElementById("dayTradeList");
   if (!date) {
-    list.innerHTML = '<div class="empty" style="padding:16px;">先选日期</div>';
+    list.innerHTML = '<div class="empty" style="padding:16px;">鍏堥€夋棩鏈?/div>';
     return;
   }
   const trades = (state.logs || []).filter(l => l.date === date);
   if (!trades.length) {
-    list.innerHTML = '<div class="empty" style="padding:16px;">这一天没有找到流水</div>';
+    list.innerHTML = '<div class="empty" style="padding:16px;">杩欎竴澶╂病鏈夋壘鍒版祦姘?/div>';
     return;
   }
   const buys = trades.filter(t => t.action === "buy").length;
   const sells = trades.filter(t => t.action === "sell").length;
   const realized = trades.filter(t => t.action === "sell").reduce((s, t) => s + (t.pnl || 0), 0);
 
-  // 如果只有一笔交易且没有指定目标，自动选中它
+  // 濡傛灉鍙湁涓€绗斾氦鏄撲笖娌℃湁鎸囧畾鐩爣锛岃嚜鍔ㄩ€変腑瀹?
   if (!_reviewTargetTrade && trades.length === 1) {
     _reviewTargetTrade = trades[0];
   }
 
-  // 同时拉取大盘环境
+  // 鍚屾椂鎷夊彇澶х洏鐜
   fetch(`/api/trading/market_context?date=${date}`)
     .then(r => r.json())
     .then(market => {
@@ -1022,17 +1022,17 @@ function renderDayTrades() {
         const sBg = { GREEN: "#14532d44", YELLOW: "#713f1244", RED: "#7f1d1d44" };
         const color = sColors[market.sentiment] || "#6b7280";
         const bg = sBg[market.sentiment] || "#1f2937";
-        // 概念领涨/领跌
+        // 姒傚康棰嗘定/棰嗚穼
         let conceptHtml = "";
         const top = market.top_concepts || [];
         const bot = market.bot_concepts || [];
         if (top.length || bot.length) {
           conceptHtml = '<div style="display:flex;gap:12px;flex-wrap:wrap;font-size:10px;">';
           if (top.length) {
-            conceptHtml += '<span style="color:#22c55e;">领涨: ' + top.map(c => c.name + '<b>+' + c.pct.toFixed(1) + '%</b>').join(' / ') + '</span>';
+            conceptHtml += '<span style="color:#22c55e;">棰嗘定: ' + top.map(c => c.name + '<b>+' + c.pct.toFixed(1) + '%</b>').join(' / ') + '</span>';
           }
           if (bot.length) {
-            conceptHtml += '<span style="color:#ef4444;">领跌: ' + bot.map(c => c.name + '<b>' + c.pct.toFixed(1) + '%</b>').join(' / ') + '</span>';
+            conceptHtml += '<span style="color:#ef4444;">棰嗚穼: ' + bot.map(c => c.name + '<b>' + c.pct.toFixed(1) + '%</b>').join(' / ') + '</span>';
           }
           conceptHtml += '</div>';
         }
@@ -1045,7 +1045,7 @@ function renderDayTrades() {
       list.innerHTML = `
         ${mktHtml}
         <div style="margin-bottom:8px; font-size:12px; color:#9ca3af;">
-          共 ${trades.length} 笔，买入 ${buys}，卖出 ${sells}，当日已实现 ${realized >= 0 ? "+" : ""}${fmtMoney(realized)}
+          鍏?${trades.length} 绗旓紝涔板叆 ${buys}锛屽崠鍑?${sells}锛屽綋鏃ュ凡瀹炵幇 ${realized >= 0 ? "+" : ""}${fmtMoney(realized)}
         </div>
         <div style="display:flex; flex-direction:column; gap:8px;">
           ${trades.map(t => {
@@ -1059,9 +1059,9 @@ function renderDayTrades() {
               <div style="${bg}${border}border-radius:8px;padding:10px 12px;">
                 <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
                   <div>
-                    <span class="${cls}" style="font-weight:700;">${t.action === "buy" ? "买入" : "卖出"}</span>
+                    <span class="${cls}" style="font-weight:700;">${t.action === "buy" ? "涔板叆" : "鍗栧嚭"}</span>
                     <span style="margin-left:8px;">${t.code} ${t.name}</span>
-                    ${isTarget ? '<span style="margin-left:6px;font-size:10px;color:#3b82f6;">◀ 正在复盘</span>' : ''}
+                    ${isTarget ? '<span style="margin-left:6px;font-size:10px;color:#3b82f6;">鈼€ 姝ｅ湪澶嶇洏</span>' : ''}
                   </div>
                   <div style="text-align:right;font-size:12px;">
                     <div>${fmtPrice(t.price)} x ${t.shares}</div>
@@ -1127,9 +1127,9 @@ function clearJournalForm() {
 
 async function saveJournal() {
   const date = document.getElementById("journalDate").value;
-  if (!date) { toast("请选择日期", "err"); return; }
+  if (!date) { toast("璇烽€夋嫨鏃ユ湡", "err"); return; }
 
-  // 如果有正在复盘的目标交易，用 trade_id 保存
+  // 濡傛灉鏈夋鍦ㄥ鐩樼殑鐩爣浜ゆ槗锛岀敤 trade_id 淇濆瓨
   const tradeId = _reviewTargetTrade ? _reviewTargetTrade.id : null;
 
   const tradeItems = (state.logs || []).filter(l => l.date === date).map(l => ({
@@ -1170,11 +1170,11 @@ async function saveJournal() {
   });
   const data = await r.json();
   if (data.error) { toast(data.error, "err"); return; }
-  document.getElementById("journalMsg").textContent = "已保存 ✓";
+  document.getElementById("journalMsg").textContent = "宸蹭繚瀛?鉁?;
   setTimeout(() => document.getElementById("journalMsg").textContent = "", 2000);
-  // 记录最后复盘的目标
+  // 璁板綍鏈€鍚庡鐩樼殑鐩爣
   if (tradeId) _lastReviewedTradeId = tradeId;
-  // 立即更新按钮状态
+  // 绔嬪嵆鏇存柊鎸夐挳鐘舵€?
   if (tradeId && currentReview.verdict) {
     _reviewedTradeIds.add(tradeId);
     renderHistory();
@@ -1186,37 +1186,37 @@ async function saveJournal() {
 function renderJournalStats(entries) {
   const reviewed = entries.filter(e => (e.review || {}).verdict);
   const judged = reviewed.length;
-  const correct = reviewed.filter(e => (e.review || {}).verdict === "对").length;
-  const wrong = reviewed.filter(e => (e.review || {}).verdict === "错").length;
-  const half = reviewed.filter(e => (e.review || {}).verdict === "半对").length;
+  const correct = reviewed.filter(e => (e.review || {}).verdict === "瀵?).length;
+  const wrong = reviewed.filter(e => (e.review || {}).verdict === "閿?).length;
+  const half = reviewed.filter(e => (e.review || {}).verdict === "鍗婂").length;
   const scoreList = entries.map(e => parseFloat(e.score)).filter(v => !Number.isNaN(v));
   const avgScore = scoreList.length ? (scoreList.reduce((s, v) => s + v, 0) / scoreList.length) : 0;
-  const planFollowed = entries.filter(e => e.plan_followed === "是").length;
+  const planFollowed = entries.filter(e => e.plan_followed === "鏄?).length;
   const totalTrades = entries.reduce((s, e) => s + ((e.trades && e.trades.length) ? e.trades.length : (e.trade_count || 0)), 0);
   const accuracy = judged ? (correct / judged * 100) : 0;
   const planRate = entries.length ? (planFollowed / entries.length * 100) : 0;
   document.getElementById("journalStats").innerHTML = `
-    <div class="review-stat"><div class="k">复盘天数</div><div class="v">${judged}/${entries.length || 0}</div><div class="k">当天流水 ${totalTrades} 笔</div></div>
-    <div class="review-stat"><div class="k">判对率</div><div class="v">${accuracy.toFixed(0)}%</div><div class="k">对 ${correct} / 错 ${wrong} / 半对 ${half}</div></div>
-    <div class="review-stat"><div class="k">平均评分</div><div class="v">${avgScore ? avgScore.toFixed(1) : "-"}</div><div class="k">按计划率 ${planRate.toFixed(0)}%</div></div>
+    <div class="review-stat"><div class="k">澶嶇洏澶╂暟</div><div class="v">${judged}/${entries.length || 0}</div><div class="k">褰撳ぉ娴佹按 ${totalTrades} 绗?/div></div>
+    <div class="review-stat"><div class="k">鍒ゅ鐜?/div><div class="v">${accuracy.toFixed(0)}%</div><div class="k">瀵?${correct} / 閿?${wrong} / 鍗婂 ${half}</div></div>
+    <div class="review-stat"><div class="k">骞冲潎璇勫垎</div><div class="v">${avgScore ? avgScore.toFixed(1) : "-"}</div><div class="k">鎸夎鍒掔巼 ${planRate.toFixed(0)}%</div></div>
   `;
 
   const mistakes = {};
   entries.forEach(e => {
-    const k = e.mistake_type || "未归类";
-    if (!k || k === "无明显错误") return;
+    const k = e.mistake_type || "鏈綊绫?;
+    if (!k || k === "鏃犳槑鏄鹃敊璇?) return;
     mistakes[k] = (mistakes[k] || 0) + 1;
   });
   const topMistakes = Object.entries(mistakes).sort((a, b) => b[1] - a[1]).slice(0, 5);
   const latest = entries[0];
-  const latestVerdict = latest && latest.review ? (latest.review.verdict || "待复盘") : "待复盘";
+  const latestVerdict = latest && latest.review ? (latest.review.verdict || "寰呭鐩?) : "寰呭鐩?;
   document.getElementById("mistakeStats").innerHTML = `
-    <div style="margin-bottom:6px;">最近一笔: <span class="tag" style="${REVIEW_STYLE[latestVerdict] || REVIEW_STYLE['待复盘']}">${latest?.date || "-"}</span> ${latestVerdict}</div>
-    <div style="margin-bottom:6px;">按计划率: ${planRate.toFixed(1)}%</div>
-    <div>常见错误: ${
+    <div style="margin-bottom:6px;">鏈€杩戜竴绗? <span class="tag" style="${REVIEW_STYLE[latestVerdict] || REVIEW_STYLE['寰呭鐩?]}">${latest?.date || "-"}</span> ${latestVerdict}</div>
+    <div style="margin-bottom:6px;">鎸夎鍒掔巼: ${planRate.toFixed(1)}%</div>
+    <div>甯歌閿欒: ${
       topMistakes.length
         ? topMistakes.map(([k, v]) => `<span class="trade-pill">${k} ${v}</span>`).join("")
-        : '<span style="color:#6b7280;">暂无错误分类</span>'
+        : '<span style="color:#6b7280;">鏆傛棤閿欒鍒嗙被</span>'
     }</div>
   `;
 }
@@ -1225,7 +1225,7 @@ async function loadJournalList() {
   const r = await fetch("/api/trading/journal");
   const entries = await r.json();
   journalEntries = entries;
-  // 更新已复盘集合
+  // 鏇存柊宸插鐩橀泦鍚?
   _reviewedTradeIds = new Set();
   entries.forEach(e => {
     if (e.trade_id && (e.review || {}).verdict) {
@@ -1233,11 +1233,11 @@ async function loadJournalList() {
     }
   });
   const container = document.getElementById("journalList");
-  document.getElementById("journalCount").textContent = `(${entries.length} 天)`;
+  document.getElementById("journalCount").textContent = `(${entries.length} 澶?`;
   renderJournalStats(entries);
 
   if (!entries.length) {
-    container.innerHTML = '<div class="empty">暂无复盘记录</div>';
+    container.innerHTML = '<div class="empty">鏆傛棤澶嶇洏璁板綍</div>';
     return;
   }
 
@@ -1245,23 +1245,23 @@ async function loadJournalList() {
     const rv = e.review || {};
     const verdict = rv.verdict || "";
     const badge = verdict
-      ? `<span class="tag" style="${REVIEW_STYLE[verdict] || REVIEW_STYLE['待复盘']}">${verdict}</span>`
-      : '<span class="tag" style="' + REVIEW_STYLE['待复盘'] + '">待复盘</span>';
-    // 查找对应的交易
+      ? `<span class="tag" style="${REVIEW_STYLE[verdict] || REVIEW_STYLE['寰呭鐩?]}">${verdict}</span>`
+      : '<span class="tag" style="' + REVIEW_STYLE['寰呭鐩?] + '">寰呭鐩?/span>';
+    // 鏌ユ壘瀵瑰簲鐨勪氦鏄?
     let tradeLabel = "";
     if (e.trade_id) {
       const trade = (state.logs || []).find(l => l.id === e.trade_id);
       if (trade) {
-        const dir = trade.action === "buy" ? '<span style="color:#ef4444">买入</span>' : '<span style="color:#22c55e">卖出</span>';
+        const dir = trade.action === "buy" ? '<span style="color:#ef4444">涔板叆</span>' : '<span style="color:#22c55e">鍗栧嚭</span>';
         tradeLabel = `<span style="font-size:12px;color:#cbd5e1;">${trade.name}(${trade.code}) ${dir}</span>`;
       }
     }
     const info = [
       e.emotion ? `${e.emotion}` : "",
       e.trade_type ? `${e.trade_type}` : "",
-      e.plan_followed ? `按计划:${e.plan_followed}` : "",
+      e.plan_followed ? `鎸夎鍒?${e.plan_followed}` : "",
       e.mistake_type ? `${e.mistake_type}` : "",
-    ].filter(Boolean).join(" · ");
+    ].filter(Boolean).join(" 路 ");
     const summary = (e.trade_rationale || e.expectation || e.outcome || "").slice(0, 110);
     return `
       <div style="background:#161822; border:1px solid #2a2d3e; border-radius:8px; padding:14px; margin-bottom:10px; cursor:pointer;"
@@ -1278,9 +1278,9 @@ async function loadJournalList() {
         </div>
         ${info ? `<div style="font-size:11px;color:#9ca3af;margin-bottom:6px;">${info}</div>` : ""}
         <div style="font-size:12px; color:#cbd5e1; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">
-          ${summary || "无摘要"}
+          ${summary || "鏃犳憳瑕?}
         </div>
-        <button class="btn btn-sm" style="margin-top:8px;" onclick="event.stopPropagation(); deleteJournal(${e.id})">删除</button>
+        <button class="btn btn-sm" style="margin-top:8px;" onclick="event.stopPropagation(); deleteJournal(${e.id})">鍒犻櫎</button>
       </div>
     `;
   }).join("");
@@ -1288,7 +1288,7 @@ async function loadJournalList() {
 
 function loadJournalEntry(date, entryObj) {
   if (entryObj) {
-    // 直接使用传入的 entry object
+    // 鐩存帴浣跨敤浼犲叆鐨?entry object
     fillJournalForm(entryObj);
     return;
   }
@@ -1313,13 +1313,13 @@ function fillJournalForm(e) {
       setSelectedMistakes(e.mistake_type || "");
       document.getElementById("journalScore").value = e.score ? String(e.score) : "";
       currentReview = e.review || { verdict: "", note: "" };
-      document.getElementById("reviewVerdict").textContent = currentReview.verdict ? `当前: ${currentReview.verdict}` : "";
+      document.getElementById("reviewVerdict").textContent = currentReview.verdict ? `褰撳墠: ${currentReview.verdict}` : "";
       document.getElementById("journalReviewNote").value = currentReview.note || "";
       ["reviewBtnRight", "reviewBtnWrong", "reviewBtnHalf"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.boxShadow = "none";
       });
-      const activeId = currentReview.verdict === "对" ? "reviewBtnRight" : currentReview.verdict === "错" ? "reviewBtnWrong" : currentReview.verdict === "半对" ? "reviewBtnHalf" : null;
+      const activeId = currentReview.verdict === "瀵? ? "reviewBtnRight" : currentReview.verdict === "閿? ? "reviewBtnWrong" : currentReview.verdict === "鍗婂" ? "reviewBtnHalf" : null;
       if (activeId) {
         const el = document.getElementById(activeId);
         if (el) el.style.boxShadow = "0 0 0 1px currentColor";
@@ -1329,7 +1329,7 @@ function fillJournalForm(e) {
 }
 
 async function deleteJournal(id) {
-  if (!confirm("删除这条复盘？")) return;
+  if (!confirm("鍒犻櫎杩欐潯澶嶇洏锛?)) return;
   await fetch(`/api/trading/journal/${id}`, { method: "DELETE" });
   loadJournalList();
   checkReviewReminder();
@@ -1345,7 +1345,7 @@ async function reviewYesterday() {
     return Math.floor((today - d) / 86400000) >= 1;
   }).sort((a, b) => a.date.localeCompare(b.date));
   if (!unreviewed.length) {
-    toast("没有待复盘的记录", "err");
+    toast("娌℃湁寰呭鐩樼殑璁板綍", "err");
     return;
   }
   loadJournalEntry(unreviewed[0].date);
@@ -1367,7 +1367,7 @@ async function checkReviewReminder() {
     reminder.style.display = "flex";
     document.getElementById("reviewReminderDate").textContent = unreviewed[0].date;
     document.getElementById("reviewReminderBtn").textContent =
-      unreviewed.length === 1 ? "去复盘" : `去复盘（还有${unreviewed.length}篇）`;
+      unreviewed.length === 1 ? "鍘诲鐩? : `鍘诲鐩橈紙杩樻湁${unreviewed.length}绡囷級`;
   } else {
     reminder.style.display = "none";
   }
@@ -1378,26 +1378,26 @@ function fmtPrice(v) {
   return v.toFixed(2);
 }
 
-// 当前复盘目标交易（从历史记录点进来的）
+// 褰撳墠澶嶇洏鐩爣浜ゆ槗锛堜粠鍘嗗彶璁板綍鐐硅繘鏉ョ殑锛?
 let _reviewTargetTrade = null;
 let _lastReviewedTradeId = null;
-// 已复盘的 trade_id 集合
+// 宸插鐩樼殑 trade_id 闆嗗悎
 let _reviewedTradeIds = new Set();
 
 function reviewTrade(date, id) {
-  // 找到这笔交易
+  // 鎵惧埌杩欑瑪浜ゆ槗
   const trade = (state.logs || []).find(l => l.id === id);
-  if (!trade) { alert('找不到该交易'); return; }
+  if (!trade) { alert('鎵句笉鍒拌浜ゆ槗'); return; }
   _reviewTargetTrade = trade;
 
-  // 切换到复盘 tab
+  // 鍒囨崲鍒板鐩?tab
   document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
   document.querySelector('[data-tab="tab-journal"]').classList.add("active");
   document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
   document.getElementById("tab-journal").classList.add("active");
   document.getElementById("journalDate").value = date;
 
-  // 加载这笔交易的复盘（如果之前保存过）
+  // 鍔犺浇杩欑瑪浜ゆ槗鐨勫鐩橈紙濡傛灉涔嬪墠淇濆瓨杩囷級
   fetch(`/api/trading/journal?trade_id=${id}`)
     .then(r => r.json())
     .then(entries => {
@@ -1410,11 +1410,11 @@ function reviewTrade(date, id) {
       renderDayTrades();
     });
 
-  // 滚动到复盘区域
+  // 婊氬姩鍒板鐩樺尯鍩?
   document.getElementById("tab-journal").scrollIntoView({ behavior: "smooth" });
 }
 
-// ============ 大盘预测复盘 ============
+// ============ 澶х洏棰勬祴澶嶇洏 ============
 
 let _macroState = {}; // { pred_signal, pred_reason, pred_plan, actual_signal, actual_desc, verdict, reflection }
 
@@ -1440,9 +1440,9 @@ function setVerdict(v) {
     const btn = document.getElementById("verdict"+s);
     if (btn) btn.style.background = "";
   });
-  const map = {"对":"Right","错":"Wrong","半对":"Half"};
+  const map = {"瀵?:"Right","閿?:"Wrong","鍗婂":"Half"};
   const btn = document.getElementById("verdict"+map[v]);
-  if (btn) btn.style.background = {"对":"#22c55e22","错":"#ef444422","半对":"#f59e0b22"}[v]||"";
+  if (btn) btn.style.background = {"瀵?:"#22c55e22","閿?:"#ef444422","鍗婂":"#f59e0b22"}[v]||"";
 }
 
 async function loadMacroPrediction() {
@@ -1481,7 +1481,7 @@ async function loadMacroPrediction() {
     }
     _renderMacroComparison();
   } catch (e) {
-    document.getElementById("macroMsg").textContent = "載入失敗";
+    document.getElementById("macroMsg").textContent = "杓夊叆澶辨晽";
   }
 }
 
@@ -1504,15 +1504,15 @@ async function saveMacroPrediction() {
     });
     const d = await r.json();
     if (d.ok) {
-      document.getElementById("macroMsg").textContent = "已保存 ✓";
+      document.getElementById("macroMsg").textContent = "宸蹭繚瀛?鉁?;
       setTimeout(() => document.getElementById("macroMsg").textContent = "", 2000);
       _renderMacroComparison();
       loadMacroStats();
     } else {
-      document.getElementById("macroMsg").textContent = "保存失败";
+      document.getElementById("macroMsg").textContent = "淇濆瓨澶辫触";
     }
   } catch (e) {
-    document.getElementById("macroMsg").textContent = "保存失败";
+    document.getElementById("macroMsg").textContent = "淇濆瓨澶辫触";
   }
 }
 
@@ -1523,41 +1523,41 @@ function _renderMacroComparison() {
   const pv = _macroState.verdict || "";
 
   if (!_macroState.pred_signal && !_macroState.actual_signal) {
-    el.innerHTML = '<div class="empty">尚未填寫預測或復盤</div>';
+    el.innerHTML = '<div class="empty">灏氭湭濉闋愭脯鎴栧京鐩?/div>';
     return;
   }
 
   let html = '<table style="width:100%; border-collapse:collapse;">';
-  html += '<tr><th style="width:20%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">項目</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">🔮 預測</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">📝 實際</th><th style="width:10%;padding:8px;text-align:center;border-bottom:1px solid #2a2d3e;"></th></tr>';
+  html += '<tr><th style="width:20%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">闋呯洰</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">馃敭 闋愭脯</th><th style="width:35%;padding:8px;text-align:left;border-bottom:1px solid #2a2d3e;">馃摑 瀵﹂殯</th><th style="width:10%;padding:8px;text-align:center;border-bottom:1px solid #2a2d3e;"></th></tr>';
 
   html += `<tr>
-    <td style="padding:8px;border-bottom:1px solid #1e2230;">信號燈</td>
+    <td style="padding:8px;border-bottom:1px solid #1e2230;">淇¤櫉鐕?/td>
     <td style="padding:8px;border-bottom:1px solid #1e2230;font-weight:700;color:${_sigColor(ps)};">${ps}</td>
     <td style="padding:8px;border-bottom:1px solid #1e2230;font-weight:700;color:${_sigColor(as)};">${as}</td>
-    <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${ps===as&&as!=='?'?'✅':(as!=='?'?'❌':'')}</td>
+    <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${ps===as&&as!=='?'?'鉁?:(as!=='?'?'鉂?:'')}</td>
   </tr>`;
 
   if (_macroState.pred_reason) {
     html += `<tr>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;">預測理由</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;">闋愭脯鐞嗙敱</td>
       <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.pred_reason}</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.actual_desc || '—'}</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${pv==='对'?'✅':(pv==='错'?'❌':(pv==='半对'?'⚠️':''))}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.actual_desc || '鈥?}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;">${pv==='瀵??'鉁?:(pv==='閿??'鉂?:(pv==='鍗婂'?'鈿狅笍':''))}</td>
     </tr>`;
   }
 
   if (_macroState.pred_plan) {
     html += `<tr>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;">操作計劃</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;">鎿嶄綔瑷堝妰</td>
       <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#9ca3af;">${_macroState.pred_plan.replace(/\n/g,'<br>')}</td>
-      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#6b7280;">${pv==='对'?'✅ 計劃有效':(pv==='错'?'❌ 計劃偏差':'—')}</td>
+      <td style="padding:8px;border-bottom:1px solid #1e2230;font-size:12px;color:#6b7280;">${pv==='瀵??'鉁?瑷堝妰鏈夋晥':(pv==='閿??'鉂?瑷堝妰鍋忓樊':'鈥?)}</td>
       <td style="padding:8px;border-bottom:1px solid #1e2230;text-align:center;"></td>
     </tr>`;
   }
 
   if (_macroState.reflection) {
     html += `<tr>
-      <td style="padding:8px;">反思</td>
+      <td style="padding:8px;">鍙嶆€?/td>
       <td colspan="3" style="padding:8px;font-size:12px;color:#9ca3af;">${_macroState.reflection.replace(/\n/g,'<br>')}</td>
     </tr>`;
   }
@@ -1586,9 +1586,9 @@ async function loadMacroStats() {
     const r = await fetch("/api/trading/macro_prediction?stats=1");
     const s = await r.json();
     document.getElementById("macroStats").innerHTML = `
-      <div class="review-stat"><div class="k">預測天數</div><div class="v">${s.total || 0}</div><div class="k">總交易日</div></div>
-      <div class="review-stat"><div class="k">準確率</div><div class="v">${s.accuracy || 0}%</div><div class="k">對${s.correct||0} / 錯${s.wrong||0} / 半對${s.half||0}</div></div>
-      <div class="review-stat"><div class="k">最近</div><div class="v">${s.recent || '—'}</div><div class="k">近5次準確率: ${s.recent_accuracy||0}%</div></div>
+      <div class="review-stat"><div class="k">闋愭脯澶╂暩</div><div class="v">${s.total || 0}</div><div class="k">绺戒氦鏄撴棩</div></div>
+      <div class="review-stat"><div class="k">婧栫⒑鐜?/div><div class="v">${s.accuracy || 0}%</div><div class="k">灏?{s.correct||0} / 閷?{s.wrong||0} / 鍗婂皪${s.half||0}</div></div>
+      <div class="review-stat"><div class="k">鏈€杩?/div><div class="v">${s.recent || '鈥?}</div><div class="k">杩?娆℃簴纰虹巼: ${s.recent_accuracy||0}%</div></div>
     `;
   } catch(e) {}
 }
@@ -1601,3 +1601,4 @@ async function loadMacroStats() {
 </script>
 </body>
 </html>
+

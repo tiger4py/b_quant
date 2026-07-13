@@ -1,0 +1,20 @@
+{
+  "code": "sz159567",
+  "raw_code": "159567",
+  "exchange": "sz",
+  "name": "港股创新药ETF银华",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-01-11",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 599,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 0.664,
+    "high": 0.698,
+    "low": 0.655,
+    "close": 0.694,
+    "volume": 5064561046,
+    "amount": 3432506248.93
+  }
+}

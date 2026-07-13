@@ -1,0 +1,12 @@
+{
+  "concept_code": "302027",
+  "concept_name": "电子竞技",
+  "first_trade_date": "2016-04-01",
+  "latest_trade_date": "2026-07-09",
+  "constituent_count": 0,
+  "constituents": [],
+  "source": "ths_q_10jqka",
+  "fetched_at": "2026-07-13 12:27:32",
+  "page_count": 0,
+  "fetch_error": "403 Client Error: Forbidden for url: http://q.10jqka.com.cn/gn/detail/order/asc/op/code/page/1/code/302027/"
+}

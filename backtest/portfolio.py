@@ -9,6 +9,8 @@ def run_portfolio_backtest(
     max_positions=5,
     enable_position_sizing=False,
     enable_circuit_breaker=False,
+    start_date=None,
+    end_date=None,
 ):
     """全市场组合回测。
 
@@ -44,6 +46,10 @@ def run_portfolio_backtest(
     amount_ma20 = _build_amount_ma20(bar_lookup)
 
     dates = sorted(all_dates)
+    if start_date:
+        dates = [d for d in dates if d >= start_date]
+    if end_date:
+        dates = [d for d in dates if d <= end_date]
     if not dates:
         raise ValueError("没有可用于组合回测的历史数据")
 
@@ -475,6 +481,8 @@ def run_multi_strategy_backtest(
     max_positions=5,
     enable_position_sizing=True,
     enable_circuit_breaker=True,
+    start_date=None,
+    end_date=None,
 ):
     """多策略组合回测。
 
@@ -516,6 +524,10 @@ def run_multi_strategy_backtest(
     amount_ma20 = _build_amount_ma20(bar_lookup)
 
     dates = sorted(all_dates)
+    if start_date:
+        dates = [d for d in dates if d >= start_date]
+    if end_date:
+        dates = [d for d in dates if d <= end_date]
     if not dates:
         raise ValueError("没有可用于组合回测的历史数据")
 

@@ -1,0 +1,20 @@
+{
+  "code": "sh563360",
+  "raw_code": "563360",
+  "exchange": "sh",
+  "name": "A500ETF华泰柏瑞",
+  "is_mainstream": true,
+  "source": "data/etf_codes_main.json",
+  "first_trade_date": "2024-10-15",
+  "latest_trade_date": "2026-07-10",
+  "bar_count": 420,
+  "latest_bar": {
+    "trade_date": "2026-07-10",
+    "open": 1.379,
+    "high": 1.39,
+    "low": 1.352,
+    "close": 1.354,
+    "volume": 2739213299,
+    "amount": 3749298203.01
+  }
+}
