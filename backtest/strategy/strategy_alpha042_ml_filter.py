@@ -187,6 +187,25 @@ def generate_signals(bars, market_stats=None):
     entry_index = None
 
     min_idx = max(alpha042.VOL_LONG, alpha042.PRICE_NEAR_HIGH_LOOKBACK, alpha042.CORR_WINDOW) + 5
+    raw_buy_indices = []
+    feature_rows = []
+    for i in range(min_idx, n):
+        if not _is_raw_alpha042_buy(metrics, i):
+            continue
+        features = _features_for(metrics, bars, i, market_stats or {})
+        raw_buy_indices.append(i)
+        feature_rows.append([features.get(col) for col in FEATURE_COLUMNS])
+
+    buy_prob_by_index = {}
+    threshold = 0.5
+    if feature_rows:
+        bundle = _load_model_bundle()
+        threshold = float(bundle.get("threshold", 0.5))
+        probabilities = bundle["model"].predict_proba(feature_rows)[:, 1]
+        buy_prob_by_index = {
+            i: float(prob)
+            for i, prob in zip(raw_buy_indices, probabilities)
+        }
 
     for i in range(min_idx, n):
         close = closes[i]
@@ -199,9 +218,9 @@ def generate_signals(bars, market_stats=None):
             continue
 
         if not in_pos:
-            if not _is_raw_alpha042_buy(metrics, i):
+            probability = buy_prob_by_index.get(i)
+            if probability is None:
                 continue
-            probability, threshold = _score_buy(metrics, bars, i, market_stats or {})
             if probability < threshold:
                 continue
 
