@@ -25,13 +25,7 @@
     "ma5_ma20_ratio",
     "max_drawdown_5d",
     "up_days_5d",
-    "limit_up_recent_3d",
-    "market_breadth",
-    "market_above_ma20_ratio",
-    "market_false_breakout_rate_5d",
-    "market_ret_20d",
-    "market_range_20d",
-    "market_amount_ratio"
+    "limit_up_recent_3d"
   ],
   "samples": {
     "total": 26683,
@@ -41,197 +35,173 @@
     "test_positive_rate": 0.2359
   },
   "metrics": {
-    "train_auc": 0.7485,
-    "test_auc": 0.7567,
-    "test_accuracy": 0.786,
+    "train_auc": 0.7268,
+    "test_auc": 0.7578,
+    "test_accuracy": 0.7851,
     "confusion_matrix": [
       [
-        3472,
-        499
+        3481,
+        490
       ],
       [
-        613,
-        613
+        627,
+        599
       ]
     ],
     "classification_report": {
       "0": {
-        "precision": 0.8499388004895961,
-        "recall": 0.8743389574414505,
-        "f1-score": 0.8619662363455809,
+        "precision": 0.8473709834469328,
+        "recall": 0.876605389070763,
+        "f1-score": 0.8617403143953459,
         "support": 3971.0
       },
       "1": {
-        "precision": 0.5512589928057554,
-        "recall": 0.5,
-        "f1-score": 0.5243798118049615,
+        "precision": 0.5500459136822773,
+        "recall": 0.48858075040783033,
+        "f1-score": 0.5174946004319655,
         "support": 1226.0
       },
-      "accuracy": 0.7860304021550895,
+      "accuracy": 0.7850683086395998,
       "macro avg": {
-        "precision": 0.7005988966476757,
-        "recall": 0.6871694787207252,
-        "f1-score": 0.6931730240752711,
+        "precision": 0.6987084485646051,
+        "recall": 0.6825930697392967,
+        "f1-score": 0.6896174574136558,
         "support": 5197.0
       },
       "weighted avg": {
-        "precision": 0.7794786418941778,
-        "recall": 0.7860304021550895,
-        "f1-score": 0.7823277994614556,
+        "precision": 0.7772304147474008,
+        "recall": 0.7850683086395998,
+        "f1-score": 0.7805309156423914,
         "support": 5197.0
       }
     }
   },
   "selected_threshold": {
-    "threshold": 0.5207641187886016,
-    "precision": 0.5512589928057554,
-    "recall": 0.5,
-    "score": 0.2756294964028777
+    "threshold": 0.5792038372641742,
+    "precision": 0.5500459136822773,
+    "recall": 0.48858075040783033,
+    "score": 0.2687418452656477
   },
   "probability_buckets": {
     "0.2-0.3": {
-      "count": 346,
-      "success": 23,
-      "avg_future_max_return": 0.0266,
-      "success_rate": 0.0665
+      "count": 313,
+      "success": 17,
+      "avg_future_max_return": 0.0263,
+      "success_rate": 0.0543
     },
     "0.3-0.4": {
-      "count": 1741,
-      "success": 185,
-      "avg_future_max_return": 0.0391,
-      "success_rate": 0.1063
+      "count": 1303,
+      "success": 130,
+      "avg_future_max_return": 0.0385,
+      "success_rate": 0.0998
     },
     "0.4-0.5": {
-      "count": 1907,
-      "success": 378,
-      "avg_future_max_return": 0.0566,
-      "success_rate": 0.1982
+      "count": 1749,
+      "success": 274,
+      "avg_future_max_return": 0.048,
+      "success_rate": 0.1567
     },
     "0.5-0.6": {
-      "count": 332,
-      "success": 135,
-      "avg_future_max_return": 0.1013,
-      "success_rate": 0.4066
+      "count": 831,
+      "success": 246,
+      "avg_future_max_return": 0.0755,
+      "success_rate": 0.296
     },
     "0.6-0.7": {
-      "count": 322,
-      "success": 156,
-      "avg_future_max_return": 0.1045,
-      "success_rate": 0.4845
+      "count": 393,
+      "success": 171,
+      "avg_future_max_return": 0.0988,
+      "success_rate": 0.4351
     },
     "0.7-0.8": {
-      "count": 538,
-      "success": 342,
-      "avg_future_max_return": 0.1555,
-      "success_rate": 0.6357
+      "count": 586,
+      "success": 370,
+      "avg_future_max_return": 0.1538,
+      "success_rate": 0.6314
     },
     "0.8-0.9": {
-      "count": 11,
-      "success": 7,
-      "avg_future_max_return": 0.1695,
-      "success_rate": 0.6364
+      "count": 22,
+      "success": 18,
+      "avg_future_max_return": 0.1793,
+      "success_rate": 0.8182
     }
   },
   "feature_importances": [
     {
       "feature": "amplitude",
-      "importance": 0.202338561411944
-    },
-    {
-      "feature": "market_range_20d",
-      "importance": 0.09220882298437585
+      "importance": 0.2690863567928828
     },
     {
       "feature": "close_ma10_ratio",
-      "importance": 0.07992390920090302
-    },
-    {
-      "feature": "ma5_ma20_ratio",
-      "importance": 0.06815236038697797
+      "importance": 0.1013377315890951
     },
     {
       "feature": "close_ma20_ratio",
-      "importance": 0.0676835916151123
+      "importance": 0.09119166376804472
     },
     {
-      "feature": "market_ret_20d",
-      "importance": 0.060867232897634634
-    },
-    {
-      "feature": "chg_10d",
-      "importance": 0.046400099227127616
-    },
-    {
-      "feature": "market_above_ma20_ratio",
-      "importance": 0.04271547225340668
-    },
-    {
-      "feature": "chg_20d",
-      "importance": 0.03697823042946517
-    },
-    {
-      "feature": "market_false_breakout_rate_5d",
-      "importance": 0.03694039502085291
+      "feature": "ma5_ma20_ratio",
+      "importance": 0.08129650840369473
     },
     {
       "feature": "chg_5d",
-      "importance": 0.03664704932491162
+      "importance": 0.06063084018565318
+    },
+    {
+      "feature": "chg_10d",
+      "importance": 0.0595580217187453
     },
     {
       "feature": "chg_1d",
-      "importance": 0.030790818944120047
+      "importance": 0.048529130706411
+    },
+    {
+      "feature": "chg_20d",
+      "importance": 0.04330927543303162
     },
     {
       "feature": "amount",
-      "importance": 0.02850593643447554
-    },
-    {
-      "feature": "market_amount_ratio",
-      "importance": 0.028122219272549192
-    },
-    {
-      "feature": "market_breadth",
-      "importance": 0.022158003062050957
-    },
-    {
-      "feature": "max_drawdown_5d",
-      "importance": 0.02103741348556933
+      "importance": 0.04116107293779927
     },
     {
       "feature": "near_high_pct",
-      "importance": 0.018487793808546465
+      "importance": 0.03658241125992654
+    },
+    {
+      "feature": "max_drawdown_5d",
+      "importance": 0.03355438274182669
     },
     {
       "feature": "close_ma5_ratio",
-      "importance": 0.016428861416534272
+      "importance": 0.02803069679723964
     },
     {
       "feature": "vol_amp",
-      "importance": 0.015676807334888635
+      "importance": 0.01856180777134213
     },
     {
       "feature": "chg_3d",
-      "importance": 0.010698225546332468
+      "importance": 0.018448144999939776
     },
     {
       "feature": "volume_ratio_20",
-      "importance": 0.0102377233313388
-    },
-    {
-      "feature": "amount_ratio_20",
-      "importance": 0.009309087765658757
+      "importance": 0.018225856251827852
     },
     {
       "feature": "close_position",
-      "importance": 0.00847103590170144
+      "importance": 0.017682812788586282
+    },
+    {
+      "feature": "amount_ratio_20",
+      "importance": 0.015626391273225123
     },
     {
       "feature": "corr_high_volume_10",
-      "importance": 0.0061296738247795645
+      "importance": 0.009890125663718517
     },
     {
       "feature": "up_days_5d",
-      "importance": 0.0030906751187428894
+      "importance": 0.0072967689170099145
     },
     {
       "feature": "limit_up_recent_3d",
