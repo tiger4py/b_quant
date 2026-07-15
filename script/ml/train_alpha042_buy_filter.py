@@ -29,7 +29,6 @@ from sklearn.metrics import (
 )
 from sklearn.pipeline import Pipeline
 
-from backtest.portfolio import _build_market_stats
 from backtest.strategy import strategy_alpha042 as alpha042
 from script.run_backtest import load_stock_bars
 
@@ -57,12 +56,6 @@ FEATURE_COLUMNS = [
     "max_drawdown_5d",
     "up_days_5d",
     "limit_up_recent_3d",
-    "market_breadth",
-    "market_above_ma20_ratio",
-    "market_false_breakout_rate_5d",
-    "market_ret_20d",
-    "market_range_20d",
-    "market_amount_ratio",
 ]
 
 
@@ -116,7 +109,7 @@ def _is_raw_alpha042_buy(metrics, i):
     )
 
 
-def _features_for(metrics, bars, i, market_stats):
+def _features_for(metrics, bars, i):
     closes = metrics["closes"]
     highs = metrics["highs"]
     lows = metrics["lows"]
@@ -132,10 +125,6 @@ def _features_for(metrics, bars, i, market_stats):
     ma10 = _mean(closes[max(0, i - 9):i + 1])
     ma20 = _mean(closes[max(0, i - 19):i + 1])
     recent_changes = metrics["daily_change"][max(1, i - 4):i + 1]
-    market = market_stats.get(bars[i]["trade_date"], {})
-    market_amount = market.get("amount", 0.0)
-    market_amount_ma20 = market.get("amount_ma20", 0.0)
-
     return {
         "corr_high_volume_10": metrics["high_vol_corr"][i],
         "vol_amp": metrics["vol_amp"][i],
@@ -157,17 +146,10 @@ def _features_for(metrics, bars, i, market_stats):
         "max_drawdown_5d": _max_drawdown(closes[max(0, i - 4):i + 1]),
         "up_days_5d": sum(1 for v in recent_changes if v > 0),
         "limit_up_recent_3d": int(alpha042._has_recent_limit_up(metrics["daily_change"], i, 3)),
-        "market_breadth": market.get("breadth", 0.5),
-        "market_above_ma20_ratio": market.get("above_ma20_ratio", 0.5),
-        "market_false_breakout_rate_5d": market.get("false_breakout_rate_5d", 0.0),
-        "market_ret_20d": market.get("market_ret_20d", 0.0),
-        "market_range_20d": market.get("market_range_20d", 0.0),
-        "market_amount_ratio": _safe_div(market_amount, market_amount_ma20, 1.0),
     }
 
 
 def build_samples(bars_by_code, stock_map, horizon_days, target_return):
-    market_stats = _build_market_stats(bars_by_code)
     samples = []
 
     for code, bars in sorted(bars_by_code.items()):
@@ -188,7 +170,7 @@ def build_samples(bars_by_code, stock_map, horizon_days, target_return):
             future_max_return = future_high / close - 1 if close else 0.0
             future_max_drawdown = future_low / close - 1 if close else 0.0
             label = int(future_max_return >= target_return)
-            features = _features_for(metrics, clean_bars, i, market_stats)
+            features = _features_for(metrics, clean_bars, i)
 
             row = {
                 "date": clean_bars[i]["trade_date"],
