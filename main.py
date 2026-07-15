@@ -3,17 +3,15 @@ import logging
 import os
 import re
 import hashlib
-import threading
-import time
+import sys
 from datetime import datetime, date
 
 from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask_apscheduler import APScheduler
 from sqlalchemy import create_engine, desc, func
 from sqlalchemy.orm import Session, sessionmaker
 
 from config import DATABASE_URL, DOWNLOAD_DAYS
-from script.update_base_data.update_daily import update_concepts as scheduled_update_concepts
-from script.update_base_data.update_daily import update_stocks as scheduled_update_stocks
 from pathlib import Path
 from backtest import get_strategy, list_strategies, run_backtest, run_portfolio_backtest
 from logic.backtest_cache import (
@@ -71,9 +69,9 @@ def _load_etf_strategy_result(strategy_id: str):
 
 engine = create_engine(DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(bind=engine)
-_scheduler_thread = None
-_scheduler_lock = threading.Lock()
-_last_scheduler_run_date = None
+SCHEDULED_UPDATE_HOUR = 23
+SCHEDULED_UPDATE_MINUTE = 30
+scheduler = APScheduler()
 
 
 def get_session() -> Session:
@@ -83,81 +81,92 @@ def get_session() -> Session:
 Base.metadata.create_all(engine)
 
 
-def _run_daily_update_job():
-    logger.info("scheduled daily update started")
-    try:
-        scheduled_update_stocks()
-    except Exception:
-        logger.exception("scheduled stock update failed")
-
-    try:
-        scheduled_update_concepts()
-    except Exception:
-        logger.exception("scheduled concept update failed")
-
-    # CSV 导入数据库
+def _run_command_step(name, args, timeout=1800):
     import subprocess
+
+    logger.info("scheduled step started: %s", name)
+    result = subprocess.run(
+        [sys.executable] + args,
+        cwd=os.path.dirname(os.path.abspath(__file__)),
+        capture_output=True,
+        text=True,
+        timeout=timeout,
+    )
+    if result.returncode != 0:
+        logger.error("scheduled step failed: %s code=%s stderr=%s", name, result.returncode, result.stderr[-1000:])
+        return False
+    logger.info("scheduled step finished: %s", name)
+    return True
+
+
+def _run_daily_update_job():
+    """Update stock, concept, ETF data, then rebuild strategy backtest archives."""
+    logger.info("scheduled market data update started")
+    steps = [
+        ("stock csv", ["script/update_base_data/update_stock.py"], 1800),
+        ("concept files", ["script/update_base_data/update_concept_ths.py"], 1800),
+        ("etf files", ["script/update_base_data/update_etf.py"], 2400),
+        ("stock db import", ["script/update_base_data/import_day_stock.py", "--type", "stock", "-q"], 600),
+        ("stock strategy backtests", ["script/run_backtest.py", "--universe", "stock", "--strategy", "all"], 7200),
+        ("concept strategy backtests", ["script/run_backtest.py", "--universe", "concept", "--strategy", "all"], 7200),
+        ("etf strategy backtests", ["script/run_backtest.py", "--universe", "etf", "--strategy", "all"], 7200),
+    ]
+    ok = True
+    for name, args, timeout in steps:
+        try:
+            ok = _run_command_step(name, args, timeout=timeout) and ok
+        except Exception:
+            ok = False
+            logger.exception("scheduled step crashed: %s", name)
+    logger.info("scheduled market data update finished: %s", "ok" if ok else "failed")
+
+
+def _run_push_job():
+    """Optional QQ push. Data updates are handled separately by _run_daily_update_job()."""
+    import subprocess
+    script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "script", "push_latest_trades.py")
+    if not os.path.exists(script_path):
+        logger.info("push script not found, skip: %s", script_path)
+        return
+
+    logger.info("scheduled push started")
     try:
         subprocess.run(
-            [sys.executable, "script/update_base_data/import_day_stock.py", "-q"],
+            [sys.executable, "script/push_latest_trades.py"],
             cwd=os.path.dirname(os.path.abspath(__file__)),
             timeout=600,
         )
     except Exception:
-        logger.exception("scheduled csv import failed")
-
-    logger.info("scheduled daily update finished")
+        logger.exception("scheduled push failed")
 
 
-def _run_push_job():
-    """收盘后：更新数据 → 回测 → 推送，一条龙"""
-    import subprocess
-    logger.info("scheduled full flow started")
-    try:
-        result = subprocess.run(
-            ["python", "script/daily_full_flow.py", "--days", "1000", "--max-positions", "5"],
-            cwd=os.path.dirname(os.path.abspath(__file__)),
-            capture_output=True,
-            text=True,
-            timeout=1800,
-        )
-        if result.returncode != 0:
-            logger.error(f"full flow failed: {result.stderr[:500]}")
-        else:
-            logger.info("full flow finished")
-    except Exception:
-        logger.exception("scheduled full flow failed")
-
-
-def _scheduler_loop():
-    global _last_scheduler_run_date
-    logger.info("flask scheduler started: workdays 18:02 update → push")
-
-    while True:
-        now = datetime.now()
-        today = now.strftime("%Y-%m-%d")
-        is_workday = now.weekday() < 5
-
-        # 收盘后 19:30 — 更新数据 → 回测 → QQ推送
-        if is_workday and now.hour == 19 and now.minute == 30 and _last_scheduler_run_date != today:
-            _last_scheduler_run_date = today
-            _run_daily_update_job()
-            _run_push_job()
-
-        time.sleep(30)
+def _scheduled_market_data_job():
+    _run_daily_update_job()
+    _run_push_job()
 
 
 def start_scheduler():
-    global _scheduler_thread
-    with _scheduler_lock:
-        if _scheduler_thread and _scheduler_thread.is_alive():
-            return
-        _scheduler_thread = threading.Thread(
-            target=_scheduler_loop,
-            name="daily-update-scheduler",
-            daemon=True,
-        )
-        _scheduler_thread.start()
+    if getattr(scheduler, "running", False):
+        return
+
+    scheduler.init_app(app)
+    scheduler.add_job(
+        id="market_data_daily_update",
+        func=_scheduled_market_data_job,
+        trigger="cron",
+        day_of_week="mon-fri",
+        hour=SCHEDULED_UPDATE_HOUR,
+        minute=SCHEDULED_UPDATE_MINUTE,
+        max_instances=1,
+        coalesce=True,
+        replace_existing=True,
+    )
+    scheduler.start()
+    logger.info(
+        "flask apscheduler started: workdays %02d:%02d update stock/concept/etf",
+        SCHEDULED_UPDATE_HOUR,
+        SCHEDULED_UPDATE_MINUTE,
+    )
 
 
 @app.route("/")

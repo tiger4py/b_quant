@@ -1,30 +1,15 @@
-"""将 data/day_stock/ 和 data/day_concept/ 下的 CSV 批量导入数据库
+"""Import stock daily CSV into SQLite.
 
-用法:
-    # 导入最近7天（默认）
-    python script/import_day_stock.py
+Usage:
+    python script/update_base_data/import_day_stock.py
+    python script/update_base_data/import_day_stock.py --date 2026-07-14
+    python script/update_base_data/import_day_stock.py --start 2026-07-13 --end 2026-07-14
+    python script/update_base_data/import_day_stock.py --all
 
-    # 导入指定日期
-    python script/import_day_stock.py --date 2026-07-03
+Input:
+    data/day_stock/YYYYMM/YYYY-MM-DD.csv
 
-    # 导入日期范围
-    python script/import_day_stock.py --start 2026-07-01 --end 2026-07-03
-
-    # 导入所有历史
-    python script/import_day_stock.py --all
-
-    # 只导入 stock / concept
-    python script/import_day_stock.py --type stock
-    python script/import_day_stock.py --date 2026-07-03 --type concept
-
-    # 静默模式
-    python script/import_day_stock.py -q
-
-CSV 格式（由 update_daily.py 生成）:
-    stock:  code,trade_date,open,high,low,close,volume,amount,turn,pe_ttm
-    concept: concept_code,trade_date,open,high,low,close,volume,amount
-
-导入策略: INSERT OR REPLACE，可重复执行不报错。
+Concept data is file-based under data/concept and is not imported into SQLite here.
 """
 import os, sys, csv, glob, re
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -42,11 +27,9 @@ logger = logging.getLogger(__name__)
 
 # ======== 默认目录 ========
 DAY_STOCK_DIR = os.path.join(DATA_DIR, "day_stock")
-DAY_CONCEPT_DIR = os.path.join(DATA_DIR, "day_concept")
 
 # ======== 表结构 ========
 STOCK_COLUMNS = ["code", "trade_date", "open", "high", "low", "close", "volume", "amount", "turn", "pe_ttm"]
-CONCEPT_COLUMNS = ["concept_code", "trade_date", "open", "high", "low", "close", "volume", "amount"]
 
 # INSERT OR REPLACE 模板
 # SQLite 支持 INSERT OR REPLACE，利用唯一索引自动去重
@@ -54,12 +37,6 @@ STOCK_INSERT_SQL = """
 INSERT OR REPLACE INTO stock_daily (code, trade_date, open, high, low, close, volume, amount, turn, pe_ttm)
 VALUES (:code, :trade_date, :open, :high, :low, :close, :volume, :amount, :turn, :pe_ttm)
 """
-
-CONCEPT_INSERT_SQL = """
-INSERT OR REPLACE INTO concept_daily (concept_code, trade_date, open, high, low, close, volume, amount)
-VALUES (:concept_code, :trade_date, :open, :high, :low, :close, :volume, :amount)
-"""
-
 
 def _find_csv_files(directory: str) -> list:
     """递归查找目录下所有 CSV 文件，按路径排序"""
@@ -145,29 +122,6 @@ def _parse_stock_row(row: dict) -> dict:
     }
 
 
-def _parse_concept_row(row: dict) -> dict:
-    """将 CSV 行转为 INSERT 用的参数字典"""
-    def _float(v):
-        if v is None or v == "" or v == "None":
-            return None
-        return float(v)
-
-    def _int(v):
-        if v is None or v == "" or v == "None":
-            return None
-        return int(float(v))
-
-    return {
-        "concept_code": row["concept_code"],
-        "trade_date": row["trade_date"],
-        "open": _float(row.get("open")),
-        "high": _float(row.get("high")),
-        "low": _float(row.get("low")),
-        "close": _float(row.get("close")),
-        "volume": _int(row.get("volume")),
-        "amount": _float(row.get("amount")),
-    }
-
 
 def import_stock(engine, directory: str = None, start_date: str = None, end_date: str = None) -> int:
     """导入 stock_daily CSV，返回导入行数。
@@ -205,46 +159,11 @@ def import_stock(engine, directory: str = None, start_date: str = None, end_date
     return total
 
 
-def import_concept(engine, directory: str = None, start_date: str = None, end_date: str = None) -> int:
-    """导入 concept_daily CSV，返回导入行数。
-
-    参数:
-        directory: CSV 根目录，默认 DAY_CONCEPT_DIR
-        start_date: 起始日期 YYYY-MM-DD（可选）
-        end_date: 截止日期 YYYY-MM-DD（可选）
-    """
-    if directory is None:
-        directory = DAY_CONCEPT_DIR
-
-    files = _find_csv_files(directory)
-    if start_date or end_date:
-        files = _filter_by_date(files, start_date, end_date)
-
-    if not files:
-        logger.info("No concept CSV files found in %s (date filter: %s ~ %s)", directory, start_date or '-', end_date or '-')
-        return 0
-
-    logger.info("Importing concept daily from %d files in %s", len(files), directory)
-    total = 0
-
-    with engine.begin() as conn:
-        for filepath in files:
-            rows = _read_csv(filepath)
-            if not rows:
-                continue
-
-            params = [_parse_concept_row(r) for r in rows]
-            conn.execute(text(CONCEPT_INSERT_SQL), params)
-            total += len(params)
-            logger.info("  %s: %d rows", os.path.basename(filepath), len(params))
-
-    return total
-
 
 def main():
-    parser = argparse.ArgumentParser(description="导入 day_stock / day_concept CSV 到数据库")
-    parser.add_argument("--type", choices=["stock", "concept"], default=None,
-                        help="只导入指定类型 (默认: 全部)")
+    parser = argparse.ArgumentParser(description="Import stock daily CSV into database")
+    parser.add_argument("--type", choices=["stock"], default="stock",
+                        help="Only stock import is enabled. Concept data stays file-based under data/concept.")
     parser.add_argument("--date", default=None,
                         help="导入指定日期 YYYY-MM-DD (默认: 最近7天)")
     parser.add_argument("--start", default=None,
@@ -288,25 +207,21 @@ def main():
         dbapi_connection.execute("PRAGMA journal_mode=WAL")
 
     total_stock = 0
-    total_concept = 0
-
     sd = start_date if use_date_filter else None
     ed = end_date if use_date_filter else None
 
     if args.path:
         # 指定了路径，智能判断类型
         path_lower = args.path.lower()
-        if args.type == "concept" or "concept" in path_lower:
-            total_concept = import_concept(engine, args.path, sd, ed)
+        if "concept" in path_lower:
+            logger.warning("Concept DB import is disabled; concept data is file-based under data/concept.")
         else:
             total_stock = import_stock(engine, args.path, sd, ed)
     else:
-        if args.type is None or args.type == "stock":
+        if args.type == "stock":
             total_stock = import_stock(engine, start_date=sd, end_date=ed)
-        if args.type is None or args.type == "concept":
-            total_concept = import_concept(engine, start_date=sd, end_date=ed)
 
-    logger.info("=== Import done: stock=%d, concept=%d ===", total_stock, total_concept)
+    logger.info("=== Import done: stock=%d ===", total_stock)
 
 
 if __name__ == "__main__":

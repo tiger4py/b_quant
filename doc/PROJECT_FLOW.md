@@ -17,7 +17,7 @@
 
 ### 2.1 股票日K线 — BaoStock
 
-入口：`script/update_daily.py` — `update_stocks()`
+???`script/update_base_data/update_stock.py` ? `update_stocks()`
 
 ```
 流程:
@@ -30,7 +30,7 @@
 
 ### 2.2 概念指数 — AKShare
 
-入口：`script/update_daily.py` — `update_concepts()`
+???`script/update_base_data/update_concept_ths.py` ? `download_concepts()`
 
 ```
 流程:
@@ -135,7 +135,7 @@
 文件：`script/daily_full_flow.py`
 
 ```
-Step 1:    update_daily.py              → 更新K线数据（BaoStock + AKShare → CSV）
+Step 1:    update_stock.py              → 更新K线数据（BaoStock + AKShare → CSV）
 Step 1.5:  import_day_stock.py          → CSV 导入 SQLite 数据库
 Step 3:    push_latest_trades.py        → 推送当日买卖信号 + 持仓到QQ
 ```
@@ -260,7 +260,7 @@ QQPusher 类:
                                      │
                     ┌────────────────┼────────────────┐
                     ▼                                 ▼
-            update_daily.py                import_day_stock.py
+            update_stock.py                update_concept_ths.py / import_day_stock.py
             (CSV按日期存储)                 (CSV → SQLite)
                     │                                 │
                     └────────────────┼────────────────┘
@@ -316,7 +316,7 @@ QQPusher 类:
 | **盘中随时** | 实时持仓预警 | `check_holdings_alert.py --loop` |
 | **盘中按需** | 价增量增扫描 | `scan_price_volume_rising.py` |
 | **盘中按需** | V反候选扫描 | `daily_guide.py` |
-| **15:00后** | 收盘更新：拉取当日K线 | `update_daily.py` |
+| **15:00后** | 收盘更新：拉取当日K线 | `update_stock.py` |
 | **19:30** (工作日) | 收盘全流程：更新→导入→回测→推送 | `daily_full_flow.py` (Flask调度) |
 | **收盘后** | 每日回顾报告 | `daily_review.py --push` |
 | **按需** | 交易深度分析 | `analyze_trades.py` |

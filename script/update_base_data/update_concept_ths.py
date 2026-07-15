@@ -3,7 +3,7 @@
 同花顺概念指数数据采集 — AKShare 源，按月归档: data/concept/{year}/YYYY-MM.csv
 
 借鉴 update_etf.py 的分批/冷却/增量保存模式，
-使用 update_daily.py 的 AKShare 概念指数获取方式。
+使用 update_stock.py 的 AKShare 概念指数获取方式。
 
 用法:
     python script/update_concept_ths.py                          # 拉取最近交易日

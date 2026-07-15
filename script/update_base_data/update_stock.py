@@ -1,17 +1,17 @@
-"""每日增量数据采集 — 拉取 stock K线 + concept 指数，存为 CSV
+"""Stock daily data updater.
 
-用法:
-    python script/update_daily.py                      # 当日（非交易日则跳过）
-    python script/update_daily.py --date 2026-06-23     # 指定日期
-    python script/update_daily.py --start 2026-01-01 --end 2026-06-23  # 日期范围
+Usage:
+    python script/update_base_data/update_stock.py
+    python script/update_base_data/update_stock.py --date 2026-07-14
+    python script/update_base_data/update_stock.py --start 2026-07-13 --end 2026-07-14
 
-输出目录:
-    data/day_stock/YYYYMM/YYYY-MM-DD.csv   — 股票日K线
-    data/day_concept/YYYYMM/YYYY-MM-DD.csv — 概念指数日线
+Output:
+    data/day_stock/YYYYMM/YYYY-MM-DD.csv
 
-不再直接写数据库，数据库导入由 script/import_day_stock.py 负责。
+Concept data is updated by script/update_base_data/update_concept_ths.py.
+This script does not write to the database; import stock CSV with import_day_stock.py.
 """
-import os, sys, csv, json
+import os, sys, csv
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 import argparse
@@ -19,7 +19,6 @@ import logging
 import time
 from datetime import datetime
 from collections import defaultdict
-from types import SimpleNamespace
 
 import baostock as bs
 
@@ -30,25 +29,9 @@ logger = logging.getLogger(__name__)
 
 # ======== 输出目录 ========
 DAY_STOCK_DIR = os.path.join(DATA_DIR, "day_stock")
-DAY_CONCEPT_DIR = os.path.join(DATA_DIR, "day_concept")
-CONCEPT_BASE_PATH = os.path.join(DATA_DIR, "concept", "base", "concepts.json")
 
 
 _TRADE_DATES_CACHE = None  # 交易日集合缓存
-
-
-def _load_concepts_from_base():
-    if not os.path.exists(CONCEPT_BASE_PATH):
-        return None
-    with open(CONCEPT_BASE_PATH, "r", encoding="utf-8") as f:
-        items = json.load(f)
-    concepts = [
-        SimpleNamespace(code=item["concept_code"], name=item["concept_name"])
-        for item in items
-        if item.get("concept_code") and item.get("concept_name")
-    ]
-    logger.info("Concept list from base: %d", len(concepts))
-    return concepts
 
 
 def _get_trade_dates() -> set:
@@ -366,94 +349,6 @@ def _split_tmp_to_dates(tmp_path: str, out_dir: str):
     logger.info("临时文件已清理")
 
 
-def update_concepts(start: str, end: str):
-    """拉取指定日期范围的概念指数，按日期存 CSV"""
-    import akshare as ak
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import sessionmaker
-    from config import DATABASE_URL
-    from models.stock import Concept
-
-    engine = create_engine(DATABASE_URL, echo=False)
-    Session = sessionmaker(bind=engine)
-
-    # AKShare 需要 YYYYMMDD 格式
-    start_date = start.replace("-", "")
-    end_date = end.replace("-", "")
-
-    concepts = _load_concepts_from_base()
-    if concepts is None:
-        engine = create_engine(DATABASE_URL, echo=False)
-        Session = sessionmaker(bind=engine)
-        with Session() as sess:
-            concepts = sess.query(Concept).all()
-        logger.info("Concept list from DB fallback: %d", len(concepts))
-
-    logger.info("Fetching concept daily: %d concepts, %s ~ %s", len(concepts), start_date, end_date)
-
-    rows_by_date = defaultdict(list)
-    count = 0
-    failed = 0
-    total_concepts = len(concepts)
-
-    for idx, c in enumerate(concepts, start=1):
-        started_at = time.perf_counter()
-        if idx == 1 or idx % 50 == 1:
-            logger.info("Processing concept %d/%d: %s(%s)", idx, total_concepts, c.name, c.code)
-        try:
-            df = ak.stock_board_concept_index_ths(
-                symbol=c.name,
-                start_date=start_date,
-                end_date=end_date,
-            )
-            if df.empty:
-                logger.warning("concept daily empty: %s(%s)", c.name, c.code)
-                continue
-            # 过滤到请求的日期范围，避免 AKShare 返回多余数据
-            df = df[df.iloc[:, 0].astype(str).str[:10].between(start, end)]
-            if df.empty:
-                continue
-            cols = list(df.columns)
-            if len(cols) < 7:
-                failed += 1
-                logger.warning("concept daily columns unexpected for %s(%s): %s", c.name, c.code, cols)
-                continue
-
-            for _, r in df.iterrows():
-                td = str(r.iloc[0])[:10]
-                row_dict = {
-                    "concept_code": c.code,
-                    "trade_date": td,
-                    "open": float(r.iloc[1]) if r.iloc[1] is not None else None,
-                    "high": float(r.iloc[2]) if r.iloc[2] is not None else None,
-                    "low": float(r.iloc[3]) if r.iloc[3] is not None else None,
-                    "close": float(r.iloc[4]) if r.iloc[4] is not None else None,
-                    "volume": int(float(r.iloc[5])) if r.iloc[5] is not None else None,
-                    "amount": float(r.iloc[6]) if r.iloc[6] is not None else None,
-                }
-                rows_by_date[td].append(row_dict)
-                count += 1
-
-        except Exception:
-            failed += 1
-            logger.exception("update concept failed: %s(%s)", c.name, c.code)
-            continue
-        finally:
-            elapsed = time.perf_counter() - started_at
-            if elapsed >= 10:
-                logger.warning("Concept update slow: %s(%s) took %.2fs", c.name, c.code, elapsed)
-            if idx % 20 == 0 or idx == total_concepts:
-                logger.info(
-                    "Concept daily progress: %d/%d (%.1f%%), rows=%d, failed=%d, current=%s(%s), elapsed=%.2fs",
-                    idx, total_concepts,
-                    idx / total_concepts * 100 if total_concepts else 100,
-                    count, failed, c.name, c.code, elapsed,
-                )
-
-    _write_csv_by_date(rows_by_date, DAY_CONCEPT_DIR)
-    logger.info("Concept daily fetched: %d rows across %d dates, failed=%d",
-                count, len(rows_by_date), failed)
-
 
 # ======== BaoStock 连接 ========
 
@@ -481,15 +376,13 @@ def _should_reconnect(error_msg):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="拉取 A 股日K线 + 概念指数，存为 CSV")
+    parser = argparse.ArgumentParser(description="Update stock daily CSV")
     parser.add_argument("--date", default=None,
                         help="指定日期 YYYY-MM-DD（默认: 当日，非交易日跳过）")
     parser.add_argument("--start", default=None,
                         help="起始日期 YYYY-MM-DD（需配合 --end）")
     parser.add_argument("--end", default=None,
                         help="结束日期 YYYY-MM-DD（需配合 --start）")
-    parser.add_argument("--type", choices=["stock", "concept", "all"], default="stock",
-                        help="数据类型 (默认: stock)")
     args = parser.parse_args()
 
     start, end = _resolve_dates(args)
@@ -497,8 +390,5 @@ if __name__ == "__main__":
         sys.exit(0)
 
     logger.info("=== Daily update: %s ~ %s ===", start, end)
-    if args.type in ("stock", "all"):
-        update_stocks(start, end)
-    if args.type in ("concept", "all"):
-        update_concepts(start, end)
+    update_stocks(start, end)
     logger.info("=== Daily update done ===")

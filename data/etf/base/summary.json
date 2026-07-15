@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13 13:36:09",
+  "generated_at": "2026-07-15 14:36:43",
   "source": "data/etf_codes_main.json + data/etf/YYYY/YYYY-MM.csv",
   "etf_count": 123,
   "etf_with_daily": 123,

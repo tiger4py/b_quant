@@ -324,7 +324,10 @@ def main():
     all_ids = {m["id"]: m for m in all_meta}
 
     if args.strategy == "all":
-        strategy_ids = list(all_ids.keys())
+        strategy_ids = [
+            sid for sid, meta in all_ids.items()
+            if meta.get("type", "stock") == args.universe
+        ]
     else:
         strategy_ids = [s.strip() for s in args.strategy.split(",")]
 

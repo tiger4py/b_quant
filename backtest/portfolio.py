@@ -317,7 +317,14 @@ def _build_market_stats(bars_by_code):
                 "growth_amount": 0.0,
                 "growth_advancers": 0,
                 "growth_decliners": 0,
+                "stock_count": 0,
+                "above_ma20": 0,
+                "breakout_prev_count": 0,
+                "false_breakout_count": 0,
+                "return_sum": 0.0,
             })
+            item["stock_count"] += 1
+            item["return_sum"] += change_pct / 100
             item["amount"] += amount
             if change_pct > 0.2:
                 item["advancers"] += 1
@@ -336,10 +343,31 @@ def _build_market_stats(bars_by_code):
             if is_growth:
                 item["growth_amount"] += amount
 
+            if i >= 19:
+                ma20 = sum(float(b["close"]) for b in clean[i - 19:i + 1]) / 20
+                if close >= ma20:
+                    item["above_ma20"] += 1
+
+            if i >= 21:
+                prev_high20 = max(float(b["high"]) for b in clean[i - 21:i - 1])
+                prev_was_breakout = prev_close > prev_high20
+                if prev_was_breakout:
+                    item["breakout_prev_count"] += 1
+                    if close < prev_close:
+                        item["false_breakout_count"] += 1
+
     dates = sorted(by_date)
     trailing_amounts = []
+    trailing_breakouts = []
+    trailing_false_breakouts = []
+    market_index = 100.0
+    market_index_by_date = {}
     for date in dates:
         item = by_date[date]
+        avg_return = item["return_sum"] / item["stock_count"] if item["stock_count"] else 0.0
+        market_index *= (1 + avg_return)
+        market_index_by_date[date] = market_index
+
         trailing_amounts.append(item["amount"])
         recent = trailing_amounts[-20:]
         item["amount_ma20"] = sum(recent) / len(recent)
@@ -349,6 +377,28 @@ def _build_market_stats(bars_by_code):
         growth_movers = item["growth_advancers"] + item["growth_decliners"]
         item["growth_breadth"] = item["growth_advancers"] / growth_movers if growth_movers else item["breadth"]
         item["growth_amount_share"] = item["growth_amount"] / item["amount"] if item["amount"] else 0
+        item["above_ma20_ratio"] = item["above_ma20"] / item["stock_count"] if item["stock_count"] else 0.5
+
+        trailing_breakouts.append(item["breakout_prev_count"])
+        trailing_false_breakouts.append(item["false_breakout_count"])
+        recent_breakouts = sum(trailing_breakouts[-5:])
+        recent_false_breakouts = sum(trailing_false_breakouts[-5:])
+        item["false_breakout_rate_5d"] = (
+            recent_false_breakouts / recent_breakouts if recent_breakouts else 0.0
+        )
+
+        idx_pos = dates.index(date)
+        if idx_pos >= 19:
+            window_dates = dates[idx_pos - 19:idx_pos + 1]
+            values = [market_index_by_date[d] for d in window_dates]
+            first = values[0]
+            item["market_ret_20d"] = market_index / first - 1 if first else 0.0
+            item["market_range_20d"] = (max(values) / min(values) - 1) if min(values) else 0.0
+            item["is_choppy"] = abs(item["market_ret_20d"]) < 0.03 and item["market_range_20d"] > 0.08
+        else:
+            item["market_ret_20d"] = 0.0
+            item["market_range_20d"] = 0.0
+            item["is_choppy"] = False
     return by_date
 
 

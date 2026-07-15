@@ -25,8 +25,9 @@
   - `portfolio.py`: 全市场/组合回测、市场状态、仓位和熔断逻辑。
   - `strategy/`: 策略实现。
 - `script/`: 命令行任务。
-  - `update_base_data/update_daily.py`: 拉取股票和概念日线 CSV。
+  - `update_base_data/update_stock.py`: 拉取股票和概念日线 CSV。
   - `update_base_data/import_day_stock.py`: 将 CSV 导入 SQLite。
+  - `update_base_data/update_concept_ths.py`: ?????? CSV?
   - `update_base_data/update_etf.py`: ETF 数据采集。
   - `run_backtest.py`: 统一回测入口，支持 `stock` / `concept` / `etf`。
   - `daily_guide.py`: 每日候选和市场环境评估。
@@ -57,7 +58,7 @@ python main.py
 常用脚本：
 
 ```bash
-python script/update_base_data/update_daily.py
+python script/update_base_data/update_stock.py
 python script/update_base_data/import_day_stock.py -q
 python script/run_backtest.py --list
 python script/run_backtest.py --universe etf --strategy etf_alpha
@@ -66,7 +67,7 @@ python script/daily_guide.py
 python script/check_holdings_alert.py
 ```
 
-注意：部分历史注释或文档中的路径仍写作 `script/update_daily.py`、`script/import_day_stock.py`，当前实际文件在 `script/update_base_data/` 下。改动调度脚本时要核对真实路径。
+注意：部分历史注释或文档中的路径仍写作 `script/update_stock.py`、`script/import_day_stock.py`，当前实际文件在 `script/update_base_data/` 下。改动调度脚本时要核对真实路径。
 
 ## 数据与状态文件
 

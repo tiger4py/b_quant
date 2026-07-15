@@ -59,6 +59,10 @@ MIN_AMOUNT = 5_000_000
 
 # -- 卖出 --
 MAX_HOLD_DAYS = 30
+RECHECK_HOLD_DAYS = {5}
+RECHECK_CORR_FAIL = 0.60
+RECHECK_NEAR_HIGH_FAIL_PCT = 0.15
+RECHECK_CHG_5D_FAIL = -0.08
 
 # -- 市场择时 --
 MARKET_GREED_BREADTH = 0.80
@@ -203,7 +207,10 @@ def generate_signals(bars):
             no_limit_up = not _has_recent_limit_up(m["daily_change"], i)
             liquid = amount >= MIN_AMOUNT
 
-            if divergence and vol_amplified and near_high and not_falling and no_limit_up and liquid:
+            if (
+                divergence and vol_amplified and near_high and not_falling
+                and no_limit_up and liquid
+            ):
                 in_pos = True
                 entry_price = close
                 entry_index = i
@@ -230,6 +237,16 @@ def generate_signals(bars):
 
         if corr_val > CORR_SELL_THRESH:
             reason = f"量价同步(散户涌入 corr={corr_val:.2f},盈{profit_pct:.1f}%)"
+        elif hold_days in RECHECK_HOLD_DAYS:
+            price_broken = close < high_20 * (1 - RECHECK_NEAR_HIGH_FAIL_PCT)
+            weak_5d = chg_5d < RECHECK_CHG_5D_FAIL
+            corr_failed = corr_val > RECHECK_CORR_FAIL
+            if corr_failed or (price_broken and weak_5d):
+                reason = (
+                    f"{hold_days}日复查走弱("
+                    f"corr={corr_val:.2f},距20日高{(close/high_20-1)*100:.1f}%,"
+                    f"5日{chg_5d*100:.1f}%,盈{profit_pct:.1f}%)"
+                )
         elif hold_days >= MAX_HOLD_DAYS:
             reason = f"持仓{hold_days}天到期(盈{profit_pct:.1f}%)"
 

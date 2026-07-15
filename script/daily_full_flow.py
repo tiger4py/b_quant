@@ -35,15 +35,20 @@ def main():
     parser.add_argument("--max-positions", type=int, default=5, help="Unused legacy option")
     args = parser.parse_args()
 
-    run_step("Step 1/3: update K-line data", "script/update_base_data/update_daily.py")
-    run_step("Step 2/3: import CSV into database", "script/update_base_data/import_day_stock.py", "-q")
+    run_step("Step 1/8: update stock K-line data", "script/update_base_data/update_stock.py")
+    run_step("Step 2/8: update concept files", "script/update_base_data/update_concept_ths.py")
+    run_step("Step 3/8: update ETF files", "script/update_base_data/update_etf.py")
+    run_step("Step 4/8: import stock CSV into database", "script/update_base_data/import_day_stock.py", "--type", "stock", "-q")
+    run_step("Step 5/8: run stock strategy backtests", "script/run_backtest.py", "--universe", "stock", "--strategy", "all")
+    run_step("Step 6/8: run concept strategy backtests", "script/run_backtest.py", "--universe", "concept", "--strategy", "all")
+    run_step("Step 7/8: run ETF strategy backtests", "script/run_backtest.py", "--universe", "etf", "--strategy", "all")
 
     if args.no_push:
         print(f"\n{'=' * 60}")
-        print("  Step 3/3: skip push (--no-push)")
+        print("  Step 8/8: skip push (--no-push)")
         print(f"{'=' * 60}")
     else:
-        run_step("Step 3/3: QQ push", "script/push_latest_trades.py")
+        run_step("Step 8/8: QQ push", "script/push_latest_trades.py")
 
     print("\nDone.")
 
